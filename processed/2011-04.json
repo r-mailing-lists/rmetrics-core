@@ -1,0 +1,92 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-04",
+  "messages": [
+    {
+      "id": "msg-f4bf9df29cd9",
+      "message_id": "<01cbf46f$Blat.v2.2.2$2a93e445@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-04-06T15:27:40Z",
+      "subject": "Package timeDate_2130.93.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2130.93.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.93.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.2 (2011-02-25)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.93.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-f4bf9df29cd9",
+      "thread_depth": 0,
+      "month": "2011-04"
+    },
+    {
+      "id": "msg-2f7d9bb335dc",
+      "message_id": "<39ED754E-81A7-4402-9F95-30045666AC40@phys.ethz.ch>",
+      "from_name": "Yohan",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-04-08T09:52:25Z",
+      "subject": "Question",
+      "subject_clean": "Question",
+      "in_reply_to": "<OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>",
+      "references": [
+        "<OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>"
+      ],
+      "body_plain": "Hi,\n\nI cannot reproduce it.\n\nPlease provide code to show your problem.\n\nRegards,\nYohan\n\nLe 28 mars 11 ? 07:56, ?? a ?crit :\n\n> Dear Rmetrics Core Team:\n>\n> I have encountered a problem when using the garchFit model in the  \n> fGarch\n> Package, and I hope you can help me .\n>\n> The problem is  describled as the following\n>\n> The length of the financial return series to be fitted by garchFit is\n> 2599,but the length of the vector of the fitted values(@fitted)  \n> returned\n> by the garchFit model is 1974.\n>\n> And what's more when I change  the return series to a length of  \n> 1000, the\n> length of the fitted vector returned by the garchFit model is also  \n> 1974.\n> I'm totally at\n>\n> a loss,because I think the length of the return series and of the  \n> fitted\n> values should be the same ,why the garchFit model returns a fitted  \n> values\n> vector with a different\n> length with that of the financial return serires being fitted.\n>\n>\n> Please give me a help .I'm looking forward for your reply.\n>\n> Thank you very much.\n>\n> Yours sincerely,\n> Sophia Song\n> Tel?:(8610)-63635803\n> Email?songjie at clpc.e-chinalife.com\n>\n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi,\n\nI cannot reproduce it.\n\nPlease provide code to show your problem.\n\nRegards,\nYohan\n\nLe 28 mars 11 ? 07:56, ?? a ?crit :\n\n> Dear Rmetrics Core Team:\n>\n> I have encountered a problem when using the ",
+      "thread_id": "thread-2f7d9bb335dc",
+      "thread_depth": 0,
+      "month": "2011-04"
+    },
+    {
+      "id": "msg-f5ff635a70a8",
+      "message_id": "<BANLkTi=MR+Bqd-DVkCKCF6FDhF1ASsUN5Q@mail.gmail.com>",
+      "from_name": "Stat Consult",
+      "from_email_hash": "c91543c0084731758ee0952f7ef7eac3d8dcaaff6b890d1ea6884de86b7e1536",
+      "date": "2011-04-17T05:31:06Z",
+      "subject": "kpss",
+      "subject_clean": "kpss",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl>",
+      "thread_id": "thread-f5ff635a70a8",
+      "thread_depth": 0,
+      "month": "2011-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f4bf9df29cd9",
+      "subject": "Package timeDate_2130.93.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-04-06T15:27:40Z",
+      "last_reply": "2011-04-06T15:27:40Z",
+      "root_message_id": "msg-f4bf9df29cd9"
+    },
+    {
+      "id": "thread-2f7d9bb335dc",
+      "subject": "Question",
+      "message_count": 1,
+      "participants": [
+        "Yohan"
+      ],
+      "started": "2011-04-08T09:52:25Z",
+      "last_reply": "2011-04-08T09:52:25Z",
+      "root_message_id": "msg-2f7d9bb335dc"
+    },
+    {
+      "id": "thread-f5ff635a70a8",
+      "subject": "kpss",
+      "message_count": 1,
+      "participants": [
+        "Stat Consult"
+      ],
+      "started": "2011-04-17T05:31:06Z",
+      "last_reply": "2011-04-17T05:31:06Z",
+      "root_message_id": "msg-f5ff635a70a8"
+    }
+  ]
+}

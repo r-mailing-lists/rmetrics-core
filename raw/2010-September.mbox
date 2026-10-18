@@ -1,0 +1,25 @@
+From tsf2001 at gmail.com  Mon Sep  6 20:43:15 2010
+From: tsf2001 at gmail.com (t sf)
+Date: Mon, 6 Sep 2010 14:43:15 -0400
+Subject: time series, gap, fill-in time stamp
+Message-ID: <AANLkTimFz7f+vsS1k7H_5i0wcLGA+7HceGSPW0mGWoCv@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl>
+
+From ck691 at uow.edu.au  Thu Sep 16 03:23:49 2010
+From: ck691 at uow.edu.au (ck691 at uow.edu.au)
+Date: Thu, 16 Sep 2010 11:23:49 +1000 (EST)
+Subject: i have got some problem in Hessian metrix
+Message-ID: <20100916112349.AWT45349@metis.its.uow.edu.au>
+
+Hi,
+  I am student in Australia. I try to work out in R programming. I did replicate 100 time to get the Garch parameter and then use that Garch model to make volatility forecasting under MAE and MSE measurement so I should get 100 values of MAE and MSE. But there is some problem in Hessian metrix so I can get the values of MAE and MSE only less than 100. How can i skip the singular hessian problem to get 100 value of MAE and MSE. Please help me to slove this problems.
+
+Thank you.
+Best Regards,
+
+Chaiwat
+
+

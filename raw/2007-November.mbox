@@ -1,0 +1,149 @@
+From przemyslaw.klusik at gmail.com  Sat Nov  3 20:11:09 2007
+From: przemyslaw.klusik at gmail.com (=?ISO-8859-2?Q?Przemys=B3aw_Klusik?=)
+Date: Sat, 3 Nov 2007 20:11:09 +0100
+Subject: MonteCarloOptions
+Message-ID: <57817c180711031211if968c02k6f800203667b5d50@mail.gmail.com>
+
+Hi,
+Is there any trick which allows to price option based on two assets
+with correlated returns with MonteCarloOptions
+
+Best Regards
+
+Przemys?aw Klusik
+Phd student in math
+
+From piotr.chmielowski at reechaim.com  Tue Nov 13 09:20:48 2007
+From: piotr.chmielowski at reechaim.com (Piotr Chmielowski)
+Date: Tue, 13 Nov 2007 08:20:48 -0000
+Subject: Problems with fEcofin
+Message-ID: <1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>
+
+Dear Rmetrics Team,
+
+I am having problems downloading the fEcofin binary for windows. I have turned off all anti-virus software on my pc, set the sites to trusted sites in ie, and still cannot download
+
+http://stat.ethz.ch/CRAN/bin/windows/contrib/r-release/fEcofin_260.72.zip
+
+from either the eth site, or any other mirrors that I tried, about ten, elsewhere in Europe and UK.
+
+Internet explorer just comes back with "Internet Explorer cannot display the webpage". The pdf reference manual and the package source download fine, but of course installing the package from source under Win is a challenge.
+
+Any help would be highly appreciated.
+
+  ?
+Piotr Chmielowski?????????????????????? 
+5th Floor
+33 Margaret Street
+London
+W1G 0JD
+UK
+
+www.reechaim.com 
+
+Direct: +44 (0)20 7268 5521
+Switchboard: +44 (0)20 7268 5500
+Fax: +44 (0)20 7268 5598
+Mobile: +44 (0)78 2571 1957
+Email: piotr.chmielowski at reechaim.com 
+?
+
+
+From Markus.Gesmann at libero.uk.com  Thu Nov 15 17:21:56 2007
+From: Markus.Gesmann at libero.uk.com (Markus Gesmann)
+Date: Thu, 15 Nov 2007 16:21:56 +0000
+Subject: fExtremes labels 
+Message-ID: <5B78F43018FC3D488411E5F4903362E311A5975DFC@OBG-EXC-01.OBG>
+
+Dear All,
+
+Maybe someone can help me to understand the labels of the Excess Distribution plot '.gpd1Plot' of the package fExtremes, see the top left plot in the example:
+
+library(fExtermes)
+example(gpdFit)
+
+It appears to me, that the x- and y-label are mixed up.
+
+Kind regards,
+
+Markus
+
+
+
+This message is intended for the personal and confidential use for the designated recipient(s) named above.  If you are not the intended recipient of this message you are hereby notified that any review, dissemination,  distribution or copying of this message is strictly prohibited. This communication is for information purposes only and should not be regarded as an offer to sell or as a solicitation of an offer to buy any financial product, an official confirmation of any transaction or as an official statement of Libero Ventures Ltd.  Email transmissions cannot be guaranteed to be secure or error-free. Therefore we do not represent that this information is complete or accurate and it should not be relied upon as such.  All information is subject to change without notice.
+
+
+From panyuml at gmail.com  Sun Nov 18 04:36:43 2007
+From: panyuml at gmail.com (Weimin Mailing List)
+Date: Sat, 17 Nov 2007 22:36:43 -0500
+Subject: A bug in summary.fGarch?
+Message-ID: <f2e99fc90711171936s710ab6abm426c806a839e84fd@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl 
+
+From maechler at stat.math.ethz.ch  Mon Nov 19 10:10:50 2007
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 19 Nov 2007 10:10:50 +0100
+Subject: Problems with fEcofin
+In-Reply-To: <1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>
+References: <1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>
+Message-ID: <18241.21274.604254.371132@stat.math.ethz.ch>
+
+Dear Piotr,
+
+sorry for the late reply;
+it seems other Rmetrics-core members have been even more busy
+than I...
+
+In principle you should *NOT* ask such questions to the core
+team, but rather a mailing list, either
+-  R-help {most appropriate in the present case},
+   i.e. send to  R-help at r-project.org , or
+
+-  R-SIG-finance
+
+
+>>>>> "PC" == Piotr Chmielowski <piotr.chmielowski at reechaim.com>
+>>>>>     on Tue, 13 Nov 2007 08:20:48 -0000 writes:
+
+    PC> Dear Rmetrics Team, I am having problems downloading the
+    PC> fEcofin binary for windows. I have turned off all
+    PC> anti-virus software on my pc, set the sites to trusted
+    PC> sites in ie, and still cannot download
+
+    PC> http://stat.ethz.ch/CRAN/bin/windows/contrib/r-release/fEcofin_260.72.zip
+
+The file there is perfect.
+
+    PC> from either the eth site, or any other mirrors that I
+    PC> tried, about ten, elsewhere in Europe and UK.
+
+    PC> Internet explorer just comes back with "Internet
+    PC> Explorer cannot display the webpage". The pdf reference
+    PC> manual and the package source download fine, but of
+    PC> course installing the package from source under Win is a
+    PC> challenge.
+
+Well, that's definitely a problem with your setup of M$ Windows,
+Explorer etc.  
+You should  use Firefox instead - also for other reasons.
+
+But infact, you should be able to just
+say
+	install.packages("fEcofin")
+in your R session,
+and R would use the proper tools to download the file and
+install it.
+
+If that does not work directly, please read 
+the help page for 'install.packages' and look at its references.
+
+Regards,
+Martin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler
+Seminar f?r Statistik, ETH Z?rich  LEO C16	Leonhardstr. 27
+CH-8092 Zurich, SWITZERLAND
+phone: +41-44-632-3408       fax: ...-1228      <><
+
+

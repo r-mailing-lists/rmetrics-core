@@ -1,0 +1,138 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-05",
+  "messages": [
+    {
+      "id": "msg-ceec34994c7b",
+      "message_id": "<318459.16562.qm@web161208.mail.bf1.yahoo.com>",
+      "from_name": "Shi",
+      "from_email_hash": "aa6e4668c8708a24a97c5fb685caf45b631fd71d9486021c5de92f595ed0d056",
+      "date": "2011-05-06T21:02:51Z",
+      "subject": "A question about fPortfolio",
+      "subject_clean": "A question about fPortfolio",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl>",
+      "thread_id": "thread-ceec34994c7b",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-3a7a561bd841",
+      "message_id": "<BANLkTim98u+2-u7YovdY0Hn1W1fVtGq9SQ@mail.gmail.com>",
+      "from_name": "Marcin P?�ciennik",
+      "from_email_hash": "c419037d5d3a123c2708aef4217292cee7b1e4cc33885380e3191628281b08e6",
+      "date": "2011-05-24T11:32:59Z",
+      "subject": "AR(1)-GARCH(1,1) regression model",
+      "subject_clean": "AR(1)-GARCH(1,1) regression model",
+      "in_reply_to": "<BANLkTikftZKeLQyyB-sovm4gsJkJnUk5fg@mail.gmail.com>",
+      "references": [
+        "<BANLkTikftZKeLQyyB-sovm4gsJkJnUk5fg@mail.gmail.com>"
+      ],
+      "body_plain": "Dear Rmetrics Core Team,\nI sent this message a couple of times to r-help group but unfortunately did\nnot get any response that would be helpful...so I decided to write directly\nto the maintainer of the package 'fGarch'.\n\n\nI have a rather complex problem... I will have to explain everything in\ndetail because I cannot solve it by myself...i just ran out of ideas. So\nhere is what I want to do:\nI take quotes of two indices - S&P500 and DJ. And my first aim is to\nestimate coefficients of the DCC-GARCH model for them. This is how I do it:\n\n\nlibrary(tseries)\np1 = get.hist.quote(instrument = \"^gspc\",start = \"2005-01-07\",end =\n\"2009-09-04\",compression = \"w\", quote=\"AdjClose\")\np2 = get.hist.quote(instrument = \"^dji\",start = \"2005-01-07\",end =\n\"2009-09-04\",compression = \"w\", quote=\"AdjClose\")\np = cbind(p1,p2)\ny = diff(log(p))*100\ny[,1] = y[,1]-mean(y[,1])\ny[,2] = y[,2]-mean(y[,2])\nT = length(y[,1])\n\nlibrary(ccgarch)\nlibrary(fGarch)\n\nf1 = garchFit(~ garch(1,1), data=y[,1],include.mean=FALSE)\nf1 = f1 at fit$coef\nf2 = garchFit(~ garch(1,1), data=y[,2],include.mean=FALSE)\nf2 = f2 at fit$coef\n\na = c(f1[1], f2[1])\nA = diag(c(f1[2],f2[2]))\nB = diag(c(f1[3], f2[3]))\ndccpara = c(0.2,0.6)\ndccresults = dcc.estimation(inia=a, iniA=A, iniB=B, ini.dcc=dccpara,dvar=y,\nmodel=\"diagonal\")\n\ndccresults$out\nDCCrho = dccresults$DCC[,2]\nmatplot(DCCrho, type='l')\n\n\ndccresults$out deliver me the estimated coefficients of the DCC-GARCH model.\nI had also some questions about this part but it is not connected with the\npackage 'tseries' so I am not going to ask you for help here.\n\nOk. This would be it when it comes to DCC-GARCH.\n\nNow, using conditional correlation obtained from the DCC-GARCH model, I want\nto test for structural shifts in conditional correlations. To be precise, I\nwant to test whether the conditional correlations significantly increase in\nthe turmoil period / during the Subprime crisis.\nThe regression model is AR(1)-GARCH(1,1), using a dummy variable specified\nas:\n\n\n\n*** the equations, you can find in the attachment ***\n\n\n\nwhere the first equation is the conditional correlation among the two\nindices during the Subprime crisis, Dt is a dummy variable for the turmoil\nperiod, and the second equation (hij,t) is the conditional variance of eij,t\n\nThe aim is, of course, to find the estimates of the regression model on\nstructural shifts in the conditional correlations obtained in the DCC-GARCH\nmodel.\n\nI found an information that there is no function for AR(1)-GARCH(1,1)\nregression model. That's why, apparently, it has to be done in two steps:\n\n1) estimate the AR parameters\n2) estimate the GARCH part of the model on the residuals from the AR model\n\nAnd this would be my rather poor idea of how to do it...\n\n\nlibrary(timeSeries)\nlibrary(fSeries)\nlibrary(tseries)\n\nstep1 = arma(DCCrho, order = c(1,0), include.intercept = TRUE)\nstep1$res\nstep11 = na.remove(step1$res)\nstep2 = garch (step11, order = c(1,1), include.intercept = TRUE)\n\n\nTo be honest I have no clue how whther it is correct. I do not even now why\ndo I get a missing value as a result of step1 (step1$res[1]) and how to\naccount for it? Above, I just removed it but then I have a smaller number of\nobservations...and this is probably wrong.\nAnd then these GARCH estimates on the residuals...does the code for that\nmake sense at all?\n\n\nI also had another idea, to apply the following code instead of the one\nwritten above:\n\ngarchFit(formula = ~ arma(1,0) + garch(1,1), data=DCCrho, include.mean=TRUE)\n\nBut I am not sure if this is delivering me the coefficients I am looking\nfor.\n\nHopefully, you will find time to give me a hand because I have to solve the\nproblem and I reached the point where I cannot move forward without\nsomeone's help.\n\nThank you very much in advance for looking at/checking what I wrote and\nhelping me.\n\nBest regards\nMarcin P??ciennik\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110524/4c4b40f5/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: Equations.pdf\nType: application/pdf\nSize: 47651 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110524/4c4b40f5/attachment-0001.pdf>",
+      "body_snippet": "Dear Rmetrics Core Team,\nI sent this message a couple of times to r-help group but unfortunately did\nnot get any response that would be helpful...so I decided to write directly\nto the maintainer of th",
+      "thread_id": "thread-3a7a561bd841",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-5686e9abaaf6",
+      "message_id": "<19937.28328.344276.477939@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-05-28T21:52:40Z",
+      "subject": "fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nDuring a routine rebuild of the Debian archive, it was noticed that\nfUnitRoots no longer builds (http://bugs.debian.org/628324):\n\nmake[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\ngfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o UnitRootMacKinnon.o\ngcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR\nmake[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\nmake[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\nmake[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\ninstalling to /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/lib/R/site-library/fUnitRoots/libs\n** R\n** inst\n** preparing package for lazy loading\nError : object 'BIC' is not exported by 'namespace:nlme'\nError : package 'urca' could not be loaded\nERROR: lazy loading failed for package 'fUnitRoots'\n\n\nDid something change in nlme which upsets urca?  I only see (in urca's\nNAMESPACE)\n\n## Import functions\n\nimportFrom(graphics, plot)\n\nif (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n    importFrom(nlme, BIC)\n} else {\n    importFrom(stats, BIC) # unless you already import stats\n}\n\nI tried adding 'stats' to the Depends: in urca's DESCRIPTION but not beans. \n\nAny ideas?\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "Hi all,\n\nDuring a routine rebuild of the Debian archive, it was noticed that\nfUnitRoots no longer builds (http://bugs.debian.org/628324):\n\nmake[1]: Entering directory `/tmp/buildd/funitroots-2100.76/s",
+      "thread_id": "thread-5686e9abaaf6",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-4200827ad629",
+      "message_id": "<19937.28671.8475.273520@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-05-28T21:58:23Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nDuring a routine rebuild of the Debian archive, it was noticed that\nfOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\ncompiler (now gfortan-4.6) seems pickier:\n\n> make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n> 085A-LowDiscrepancy.f:181.32:\n> \n>                QN(I, J) = HQNORM(QUASI(J))                              \n>                                 1\n> Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n> make[1]: *** [085A-LowDiscrepancy.o] Error 1\n\nI do not write Fortran so would not know how to fix this. Any RMetrics export\nwho can fix this?\n\nDirk\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "Hi all,\n\nDuring a routine rebuild of the Debian archive, it was noticed that\nfOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\ncompiler (now gfortan-4.6) seems pickier:\n\n> make[",
+      "thread_id": "thread-4200827ad629",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-f6a6095a412d",
+      "message_id": "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+      "from_name": "Pfaff, Bernhard Dr.",
+      "from_email_hash": "33cf90f6270884b3fcece1aa7503158c5a8b66548e930a2071ff7a81df8c2c39",
+      "date": "2011-05-30T07:25:36Z",
+      "subject": "AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<19937.28328.344276.477939@max.nulle.part>",
+      "references": [
+        "<19937.28328.344276.477939@max.nulle.part>"
+      ],
+      "body_plain": "Hello Dirk,\n\na couple of weeks ago BDR reminded package maintainers of a change with respect to BIC. He suggested for 'urca' the NAMESPEACE insertion you provided below. The latest CRAN Package Check does not indicate an error for 'urca'. If I recall correctly, the package fUnitRoots was mentioned in that email of BDR, too. Maybe the required changes have not implemented in there?\n\nBest,\nBernhard   \n\n> -----Urspr?ngliche Nachricht-----\n> Von: Dirk Eddelbuettel [mailto:edd at debian.org] \n> Gesendet: Samstag, 28. Mai 2011 23:53\n> An: rmetrics-core; Pfaff, Bernhard Dr.\n> Betreff: fUnitRoots failing with urca import due to BIC\n> \n> \n> Hi all,\n> \n> During a routine rebuild of the Debian archive, it was \n> noticed that fUnitRoots no longer builds \n> (http://bugs.debian.org/628324):\n> \n> make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o \n> UnitRootMacKinnon.o\n> gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack \n> -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath \n> -L/usr/lib/R/lib -lR\n> make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> installing to \n> /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li\nb/R/site-library/fUnitRoots/libs\n> ** R\n> ** inst\n> ** preparing package for lazy loading\n> Error : object 'BIC' is not exported by 'namespace:nlme'\n> Error : package 'urca' could not be loaded\n> ERROR: lazy loading failed for package 'fUnitRoots'\n> \n> \n> Did something change in nlme which upsets urca?  I only see (in urca's\n> NAMESPACE)\n> \n> ## Import functions\n> \n> importFrom(graphics, plot)\n> \n> if (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n>     importFrom(nlme, BIC)\n> } else {\n>     importFrom(stats, BIC) # unless you already import stats }\n> \n> I tried adding 'stats' to the Depends: in urca's DESCRIPTION \n> but not beans. \n> \n> Any ideas?\n> \n> --\n> Gauss once played himself in a zero-sum game and won $50.\n>                       -- #11 at http://www.gaussfacts.com\n> \n*****************************************************************\nConfidentiality Note: The information contained in this ...{{dropped:10}}",
+      "body_snippet": "Hello Dirk,\n\na couple of weeks ago BDR reminded package maintainers of a change with respect to BIC. He suggested for 'urca' the NAMESPEACE insertion you provided below. The latest CRAN Package Check ",
+      "thread_id": "thread-5686e9abaaf6",
+      "thread_depth": 1,
+      "month": "2011-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ceec34994c7b",
+      "subject": "A question about fPortfolio",
+      "message_count": 1,
+      "participants": [
+        "Shi"
+      ],
+      "started": "2011-05-06T21:02:51Z",
+      "last_reply": "2011-05-06T21:02:51Z",
+      "root_message_id": "msg-ceec34994c7b"
+    },
+    {
+      "id": "thread-3a7a561bd841",
+      "subject": "AR(1)-GARCH(1,1) regression model",
+      "message_count": 1,
+      "participants": [
+        "Marcin P?�ciennik"
+      ],
+      "started": "2011-05-24T11:32:59Z",
+      "last_reply": "2011-05-24T11:32:59Z",
+      "root_message_id": "msg-3a7a561bd841"
+    },
+    {
+      "id": "thread-5686e9abaaf6",
+      "subject": "fUnitRoots failing with urca import due to BIC",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Pfaff, Bernhard Dr."
+      ],
+      "started": "2011-05-28T21:52:40Z",
+      "last_reply": "2011-05-30T07:25:36Z",
+      "root_message_id": "msg-5686e9abaaf6"
+    },
+    {
+      "id": "thread-4200827ad629",
+      "subject": "fOptions no longer builds: Fortran error",
+      "message_count": 1,
+      "participants": [
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2011-05-28T21:58:23Z",
+      "last_reply": "2011-05-28T21:58:23Z",
+      "root_message_id": "msg-4200827ad629"
+    }
+  ]
+}

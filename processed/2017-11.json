@@ -1,0 +1,95 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2017-11",
+  "messages": [
+    {
+      "id": "msg-8497b4fdc32b",
+      "message_id": "<23070.27284.606126.352360@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2017-11-29T08:06:44Z",
+      "subject": "I propose to close 'Rmetrics-core'",
+      "subject_clean": "I propose to close 'Rmetrics-core'",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "There are 4 members left of the  Rmetrics-core mailing list,\nAchim Zeileis, Dirk Eddelbuettel, Tobias Setz, and myself.\n\nThe goal is described as\n\n  This is the e-mail address listed as the 'Maintainer' in the DESCRIPTION file of all the Rmetrics R packages.\n\n  A subset of this group has write access to the Rmetrics package\n  sources.\n\nWhereas the 2nd sentence is still true,  the first has not been\ntrue for quite a while.\n\nI propose to close the list -- which gets occasional spam that I\nhave to deal with ... but leave the list archives on the server, so\nthey are still \"there\" if there's any need (which I doubt).\n\nMartin",
+      "body_snippet": "There are 4 members left of the  Rmetrics-core mailing list,\nAchim Zeileis, Dirk Eddelbuettel, Tobias Setz, and myself.\n\nThe goal is described as\n\n  This is the e-mail address listed as the 'Maintaine",
+      "thread_id": "thread-8497b4fdc32b",
+      "thread_depth": 0,
+      "month": "2017-11"
+    },
+    {
+      "id": "msg-324760865f65",
+      "message_id": "<alpine.DEB.2.20.1711291252390.5367@paninaro>",
+      "from_name": "Achim Zeileis",
+      "from_email_hash": "a3898362d2961a86696818123ed6017299b88343a2280efbcbbd1f340f19d948",
+      "date": "2017-11-29T11:52:59Z",
+      "subject": "I propose to close 'Rmetrics-core'",
+      "subject_clean": "I propose to close 'Rmetrics-core'",
+      "in_reply_to": "<23070.27284.606126.352360@stat.math.ethz.ch>",
+      "references": [
+        "<23070.27284.606126.352360@stat.math.ethz.ch>"
+      ],
+      "body_plain": "+1\n\nThanks, Martin.\nZ\n\nOn Wed, 29 Nov 2017, Martin Maechler wrote:\n\n> There are 4 members left of the  Rmetrics-core mailing list,\n> Achim Zeileis, Dirk Eddelbuettel, Tobias Setz, and myself.\n>\n> The goal is described as\n>\n>  This is the e-mail address listed as the 'Maintainer' in the DESCRIPTION file of all the Rmetrics R packages.\n>\n>  A subset of this group has write access to the Rmetrics package\n>  sources.\n>\n> Whereas the 2nd sentence is still true,  the first has not been\n> true for quite a while.\n>\n> I propose to close the list -- which gets occasional spam that I\n> have to deal with ... but leave the list archives on the server, so\n> they are still \"there\" if there's any need (which I doubt).\n>\n> Martin\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "+1\n\nThanks, Martin.\nZ\n\nOn Wed, 29 Nov 2017, Martin Maechler wrote:\n\n> There are 4 members left of the  Rmetrics-core mailing list,\n> Achim Zeileis, Dirk Eddelbuettel, Tobias Setz, and myself.\n>\n> The ",
+      "thread_id": "thread-8497b4fdc32b",
+      "thread_depth": 1,
+      "month": "2017-11"
+    },
+    {
+      "id": "msg-bca2521243ec",
+      "message_id": "<23070.44877.90630.664655@bud.eddelbuettel.com>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2017-11-29T12:59:57Z",
+      "subject": "I propose to close 'Rmetrics-core'",
+      "subject_clean": "I propose to close 'Rmetrics-core'",
+      "in_reply_to": "<alpine.DEB.2.20.1711291252390.5367@paninaro>",
+      "references": [
+        "<23070.27284.606126.352360@stat.math.ethz.ch>",
+        "<alpine.DEB.2.20.1711291252390.5367@paninaro>"
+      ],
+      "body_plain": "On 29 November 2017 at 12:52, Achim Zeileis wrote:\n| +1\n\ncumsum() == 2\n\nD.\n\n-- \nhttp://dirk.eddelbuettel.com | @eddelbuettel | edd at debian.org",
+      "body_snippet": "On 29 November 2017 at 12:52, Achim Zeileis wrote:\n| +1\n\ncumsum() == 2\n\nD.\n\n-- \nhttp://dirk.eddelbuettel.com | @eddelbuettel | edd at debian.org",
+      "thread_id": "thread-8497b4fdc32b",
+      "thread_depth": 2,
+      "month": "2017-11"
+    },
+    {
+      "id": "msg-be3b40a91b0f",
+      "message_id": "<019501d36911$fa81afc0$ef850f40$@phys.ethz.ch>",
+      "from_name": "Tobias Setz",
+      "from_email_hash": "83024898d1b3ccb3ae773bf7b442b7cfc16c0bb80a681c3d0cc946fce147a9c5",
+      "date": "2017-11-29T13:00:06Z",
+      "subject": "I propose to close 'Rmetrics-core'",
+      "subject_clean": "I propose to close 'Rmetrics-core'",
+      "in_reply_to": "<alpine.DEB.2.20.1711291252390.5367@paninaro>",
+      "references": [
+        "<23070.27284.606126.352360@stat.math.ethz.ch>",
+        "<alpine.DEB.2.20.1711291252390.5367@paninaro>"
+      ],
+      "body_plain": "I agree. Thanks as well.\nTobias\n\n\n-----Original Message-----\nFrom: Rmetrics-core [mailto:rmetrics-core-bounces at r-project.org] On Behalf\nOf Achim Zeileis\nSent: Mittwoch, 29. November 2017 12:53\nTo: Martin Maechler <maechler at stat.math.ethz.ch>\nCc: Rmetrics-core <Rmetrics-core at r-project.org>\nSubject: Re: I propose to close 'Rmetrics-core'\n\n+1\n\nThanks, Martin.\nZ\n\nOn Wed, 29 Nov 2017, Martin Maechler wrote:\n\n> There are 4 members left of the  Rmetrics-core mailing list, Achim \n> Zeileis, Dirk Eddelbuettel, Tobias Setz, and myself.\n>\n> The goal is described as\n>\n>  This is the e-mail address listed as the 'Maintainer' in the DESCRIPTION\nfile of all the Rmetrics R packages.\n>\n>  A subset of this group has write access to the Rmetrics package  \n> sources.\n>\n> Whereas the 2nd sentence is still true,  the first has not been true \n> for quite a while.\n>\n> I propose to close the list -- which gets occasional spam that I have \n> to deal with ... but leave the list archives on the server, so they \n> are still \"there\" if there's any need (which I doubt).\n>\n> Martin\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n\n_______________________________________________\nRmetrics-core mailing list\nRmetrics-core at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "I agree. Thanks as well.\nTobias\n\n\n-----Original Message-----\nFrom: Rmetrics-core [mailto:rmetrics-core-bounces at r-project.org] On Behalf\nOf Achim Zeileis\nSent: Mittwoch, 29. November 2017 12:53\nTo: ",
+      "thread_id": "thread-8497b4fdc32b",
+      "thread_depth": 2,
+      "month": "2017-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-8497b4fdc32b",
+      "subject": "I propose to close 'Rmetrics-core'",
+      "message_count": 4,
+      "participants": [
+        "Achim Zeileis",
+        "Dirk Eddelbuettel",
+        "Martin Maechler",
+        "Tobias Setz"
+      ],
+      "started": "2017-11-29T08:06:44Z",
+      "last_reply": "2017-11-29T13:00:06Z",
+      "root_message_id": "msg-8497b4fdc32b"
+    }
+  ]
+}

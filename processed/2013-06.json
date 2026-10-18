@@ -1,0 +1,136 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-06",
+  "messages": [
+    {
+      "id": "msg-45ed07820019",
+      "message_id": "<CANLxH3FEZJ9bMzdggkx8Ka7EKPZWnuam4fc37=kAOThe9QFkXA@mail.gmail.com>",
+      "from_name": "Rho Zhang",
+      "from_email_hash": "1f6b1ae074c66d1d22cec043dc50dedd0378aa71ef631360256882fff5d3794c",
+      "date": "2013-06-05T02:46:38Z",
+      "subject": "about portfolioData() function in fPortfolio package",
+      "subject_clean": "about portfolioData() function in fPortfolio package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl>",
+      "thread_id": "thread-45ed07820019",
+      "thread_depth": 0,
+      "month": "2013-06"
+    },
+    {
+      "id": "msg-adc70b7360d1",
+      "message_id": "<001401ce6227$69f84d10$3de8e730$@it>",
+      "from_name": "Stefan Hummel",
+      "from_email_hash": "af09cac5c9d0ff7fbd14c4f6ce651d0ca5f898b7a4adcd02dfca40fd46ef4da3",
+      "date": "2013-06-05T20:01:05Z",
+      "subject": "stabledist",
+      "subject_clean": "stabledist",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl>",
+      "thread_id": "thread-adc70b7360d1",
+      "thread_depth": 0,
+      "month": "2013-06"
+    },
+    {
+      "id": "msg-0dc51cd0b300",
+      "message_id": "<20912.13464.426607.433619@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2013-06-06T07:04:56Z",
+      "subject": "stabledist",
+      "subject_clean": "stabledist",
+      "in_reply_to": "<001401ce6227$69f84d10$3de8e730$@it>",
+      "references": [
+        "<001401ce6227$69f84d10$3de8e730$@it>"
+      ],
+      "body_plain": "Dear Stefan,\n\n>>>>> \"SH\" == Stefan Hummel <stefanhummel08 at yahoo.it>\n>>>>>     on Wed, 5 Jun 2013 22:01:05 +0200 writes:\n\n    SH> Dear Martin Maechler, I'm trying to install the\n    SH> stabledist package on R (operative System Windows).\n\n    SH> Every time I run the install.packages(\"stabledist\") I\n    SH> get the same error message:\n\n \n\n    SH> Warning: unable to access index for repository\n    SH> http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/2.9\n\n    SH> Warning message:\n\n    SH> In getDependencies(pkgs, dependencies, available, lib) :\n\n    SH>   package 'stabledist' is not available\n\n \n\n    SH> Could you please help me I need this package urgent.\n\nWell, then you need to use a less arcane version of R.\n\nPackages  for  R 2.9.x  are typically not or no longer\navailable.\n\nMartin Maechler,\nETH Zurich",
+      "body_snippet": "Dear Stefan,\n\n>>>>> \"SH\" == Stefan Hummel <stefanhummel08 at yahoo.it>\n>>>>>     on Wed, 5 Jun 2013 22:01:05 +0200 writes:\n\n    SH> Dear Martin Maechler, I'm trying to install the\n    SH> stabledist p",
+      "thread_id": "thread-adc70b7360d1",
+      "thread_depth": 1,
+      "month": "2013-06"
+    },
+    {
+      "id": "msg-037a5dfb7767",
+      "message_id": "<1370550585.51733.YahooMailNeo@web140902.mail.bf1.yahoo.com>",
+      "from_name": "Stphania HOUNGAN",
+      "from_email_hash": "4c81263e7f4cd5c10b59be4c22f07feef8566eff500c3c24cb8b6025527ed301",
+      "date": "2013-06-06T20:29:45Z",
+      "subject": "From Stphania HOUNGAN",
+      "subject_clean": "From Stphania HOUNGAN",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl>",
+      "thread_id": "thread-037a5dfb7767",
+      "thread_depth": 0,
+      "month": "2013-06"
+    },
+    {
+      "id": "msg-2d8cdfe60915",
+      "message_id": "<CAEZ18Kf7M+Rj-0aGWmYDzdCCy7Nv-cXStvE52JJ6OpTusmpnXA@mail.gmail.com>",
+      "from_name": "Colin Gan",
+      "from_email_hash": "aee9c0a6b973ec0a8c822a65c78c7948fc9d4a0a3415390cf9dc67250685dcb2",
+      "date": "2013-06-24T07:57:44Z",
+      "subject": "Efficient frontier for Asymmetric Generalized Hyperbolic Distribution, Asymmetric Normal Inverse Gaussian, Asymmetric Variance Gamma and Gaussian Distributions",
+      "subject_clean": "Efficient frontier for Asymmetric Generalized Hyperbolic Distribution, Asymmetric Normal Inverse Gaussian, Asymmetric Variance Gamma and Gaussian Distributions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl>",
+      "thread_id": "thread-2d8cdfe60915",
+      "thread_depth": 0,
+      "month": "2013-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-45ed07820019",
+      "subject": "about portfolioData() function in fPortfolio package",
+      "message_count": 1,
+      "participants": [
+        "Rho Zhang"
+      ],
+      "started": "2013-06-05T02:46:38Z",
+      "last_reply": "2013-06-05T02:46:38Z",
+      "root_message_id": "msg-45ed07820019"
+    },
+    {
+      "id": "thread-adc70b7360d1",
+      "subject": "stabledist",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Stefan Hummel"
+      ],
+      "started": "2013-06-05T20:01:05Z",
+      "last_reply": "2013-06-06T07:04:56Z",
+      "root_message_id": "msg-adc70b7360d1"
+    },
+    {
+      "id": "thread-037a5dfb7767",
+      "subject": "From Stphania HOUNGAN",
+      "message_count": 1,
+      "participants": [
+        "Stphania HOUNGAN"
+      ],
+      "started": "2013-06-06T20:29:45Z",
+      "last_reply": "2013-06-06T20:29:45Z",
+      "root_message_id": "msg-037a5dfb7767"
+    },
+    {
+      "id": "thread-2d8cdfe60915",
+      "subject": "Efficient frontier for Asymmetric Generalized Hyperbolic Distribution, Asymmetric Normal Inverse Gaussian, Asymmetric Variance Gamma and Gaussian Distributions",
+      "message_count": 1,
+      "participants": [
+        "Colin Gan"
+      ],
+      "started": "2013-06-24T07:57:44Z",
+      "last_reply": "2013-06-24T07:57:44Z",
+      "root_message_id": "msg-2d8cdfe60915"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-12",
+  "messages": [
+    {
+      "id": "msg-665344bca653",
+      "message_id": "<20121210114247.3FFAA81777@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-12-10T11:42:47Z",
+      "subject": "Legacy .First.lib in CRAN package fNonlinear",
+      "subject_clean": "Legacy .First.lib in CRAN package fNonlinear",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "You were reminded at the end of October that .First.lib would no\nlonger be supported soon.  Your package fails once this is done, so\nwill need to be archived on Dec 21 unless updated before then\n('before', not 'on'!).",
+      "body_snippet": "You were reminded at the end of October that .First.lib would no\nlonger be supported soon.  Your package fails once this is done, so\nwill need to be archived on Dec 21 unless updated before then\n('bef",
+      "thread_id": "thread-665344bca653",
+      "thread_depth": 0,
+      "month": "2012-12"
+    },
+    {
+      "id": "msg-10e4fa795d78",
+      "message_id": "<20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-12-10T13:18:31Z",
+      "subject": "Legacy .First.lib in CRAN package fUnitRoots",
+      "subject_clean": "Legacy .First.lib in CRAN package fUnitRoots",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "You were reminded at the end of October that .First.lib would no\nlonger be supported soon.\n\nYour package or one of its dependencies fails once this is done, so we\nneeds an update as soon as possible and at the latest by Dec 21.",
+      "body_snippet": "You were reminded at the end of October that .First.lib would no\nlonger be supported soon.\n\nYour package or one of its dependencies fails once this is done, so we\nneeds an update as soon as possible a",
+      "thread_id": "thread-10e4fa795d78",
+      "thread_depth": 0,
+      "month": "2012-12"
+    },
+    {
+      "id": "msg-4cd20f0f0e4c",
+      "message_id": "<m2wqwqc6o6.fsf@maci.home>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-12-10T14:40:04Z",
+      "subject": "Legacy .First.lib in CRAN package fUnitRoots",
+      "subject_clean": "Legacy .First.lib in CRAN package fUnitRoots",
+      "in_reply_to": "<20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear Brian,\n\nThank you for your message.\n\nI have now submitted new versions of fNonlinear and fUnitRoots to CRAN.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> You were reminded at the end of October that .First.lib would no\n> longer be supported soon.\n>\n> Your package or one of its dependencies fails once this is done, so we\n> needs an update as soon as possible and at the latest by Dec 21.\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Dear Brian,\n\nThank you for your message.\n\nI have now submitted new versions of fNonlinear and fUnitRoots to CRAN.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> You were reminded at the end of Oct",
+      "thread_id": "thread-10e4fa795d78",
+      "thread_depth": 1,
+      "month": "2012-12"
+    },
+    {
+      "id": "msg-386fc68d5327",
+      "message_id": "<m2sj7ec5fa.fsf@maci.home>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-12-10T15:06:49Z",
+      "subject": "Legacy .First.lib call in CRAN package\t‘fBonds’",
+      "subject_clean": "Legacy .First.lib call in CRAN package\t‘fBonds’",
+      "in_reply_to": "<20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear Brian,\n\nThank you for your message.\n\nI have now submitted a new version of fBonds to CRAN.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\n> need a namepsace, but this package did not yet have one.  R CMD build\n> and R CMD INSTALL would add one, and we have now re-built your package\n> on CRAN to have such a namespace.\n>\n> However, the package used a .First.lib function which should be\n> replaced by .onLoad, .onAttach or both, or if the sole purpose is to\n> load compiled code, by a useDynlib declaration in the NAMESPACE file.\n>\n> Some packages are still using .First.lib() for library() calls: these\n> should be replaced by Depends: entries in DESCRIPTION, or removed if\n> there are already such entries.\n>\n> Please review the automatically-generated NAMESPACE file and improve\n> it as needed.  Shortly .First.lib functions will no longer be used so\n> you will need to submit an update not making use of one.\n>\n> There may be other issues that need fixing: see the CRAN check logs at\n> http://cran.r-project.org/web/checks/check_results_NAME.html,\n> replacing NAME by the name of your package.\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Dear Brian,\n\nThank you for your message.\n\nI have now submitted a new version of fBonds to CRAN.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> All packages installled under R >= 2.14.0 (and we are",
+      "thread_id": "thread-386fc68d5327",
+      "thread_depth": 0,
+      "month": "2012-12"
+    },
+    {
+      "id": "msg-a8027980a2cc",
+      "message_id": "<000001cde5b8$a503df50$ef0b9df0$@cmschina.com.cn>",
+      "from_name": "张春荣",
+      "from_email_hash": "d8e1991c14fe5f905db5082b15cced94ff0c8db4da2edc80f1091913c057f841",
+      "date": "2012-12-29T11:35:46Z",
+      "subject": "question for align",
+      "subject_clean": "question for align",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl>",
+      "thread_id": "thread-a8027980a2cc",
+      "thread_depth": 0,
+      "month": "2012-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-665344bca653",
+      "subject": "Legacy .First.lib in CRAN package fNonlinear",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-12-10T11:42:47Z",
+      "last_reply": "2012-12-10T11:42:47Z",
+      "root_message_id": "msg-665344bca653"
+    },
+    {
+      "id": "thread-10e4fa795d78",
+      "subject": "Legacy .First.lib in CRAN package fUnitRoots",
+      "message_count": 2,
+      "participants": [
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-12-10T13:18:31Z",
+      "last_reply": "2012-12-10T14:40:04Z",
+      "root_message_id": "msg-10e4fa795d78"
+    },
+    {
+      "id": "thread-386fc68d5327",
+      "subject": "Legacy .First.lib call in CRAN package\t‘fBonds’",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2012-12-10T15:06:49Z",
+      "last_reply": "2012-12-10T15:06:49Z",
+      "root_message_id": "msg-386fc68d5327"
+    },
+    {
+      "id": "thread-a8027980a2cc",
+      "subject": "question for align",
+      "message_count": 1,
+      "participants": [
+        "张春荣"
+      ],
+      "started": "2012-12-29T11:35:46Z",
+      "last_reply": "2012-12-29T11:35:46Z",
+      "root_message_id": "msg-a8027980a2cc"
+    }
+  ]
+}

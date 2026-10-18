@@ -1,0 +1,600 @@
+From morton.david at gmail.com  Mon Sep  7 19:41:30 2009
+From: morton.david at gmail.com (David Morton de Lachapelle)
+Date: Mon, 7 Sep 2009 19:41:30 +0200
+Subject: Bug with residuals?
+Message-ID: <E20048E6-C106-4085-9D1A-C24332CA65D8@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090907/2b84b67a/attachment.pl>
+
+From chalabi at phys.ethz.ch  Wed Sep  9 00:59:04 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 9 Sep 2009 00:59:04 +0200
+Subject: Bug with residuals?
+In-Reply-To: <E20048E6-C106-4085-9D1A-C24332CA65D8@gmail.com>
+References: <E20048E6-C106-4085-9D1A-C24332CA65D8@gmail.com>
+Message-ID: <20090909005904.59ec8f50@mimi>
+
+>>>> "DMDL" == David Morton de Lachapelle <morton.david at gmail.com>
+>>>> on Mon, 7 Sep 2009 19:41:30 +0200
+
+Hi David,
+
+
+   DMDL> require(fGarch)
+   DMDL> x <- rnorm(200)
+
+rnorm(200) should not be used to compare different garch "solver"
+because there is no garch effect to be filtered in white noise. The
+optimization will most likely fail.
+
+In the output of 'garchFit' and 'garch', you should see at least one of
+the parameters reaching its lower bound 0.
+
+As a side note, 200 points is very short in estimating garch models.
+
+try your example with the 'dem2gbp' dataset included in 'fGarch' :
+
+x <- dem2gbp[,1] # note the subset because garch() 
+                 # does not support data.frame argument. 
+
+   DMDL> g <- garchFit(formula ~ garch(1,1), x, include.mean = FALSE,
+   DMDL> trace =
+   DMDL> FALSE)
+   DMDL> abs( residuals(g) ) - abs(x)
+   DMDL>
+   DMDL> In fact, in general it outputs data +- mu. On the other
+   DMDL> hand, the
+   DMDL> output of
+
+In your case, garch(1,1) with no mean, the residuals are the data
+itself. 
+abs( residuals(g) ) - abs(x) 
+should be equal to zero
+
+   DMDL>
+   DMDL> residuals(g, standard = TRUE)
+
+this gives the standardized residuals (eps_t / sigma_t) which
+correspond to the output of the default 'residuals' methods in
+'tseries'.
+
+   DMDL>
+   DMDL> looks more familiar, as it resembles other residuals:
+   DMDL>
+   DMDL> require(tseries)
+   DMDL> residuals(garch(x,trace=FALSE))
+
+HTH,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From chalabi at phys.ethz.ch  Wed Sep 23 00:09:38 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 23 Sep 2009 00:09:38 +0200
+Subject: Package: fBonds
+In-Reply-To: <E3ADA41A786246B982505D881440CAE8@GUIRRERI>
+References: <E3ADA41A786246B982505D881440CAE8@GUIRRERI>
+Message-ID: <20090923000938.18ea30a7@mimi>
+
+>>>> "SG" == "Sergio Guirreri" <sergioguirreri at gmail.com>
+>>>> on Sun, 26 Jul 2009 17:16:06 +0200
+
+   SG> I'm using the package fBonds to estimate the yield curve
+   SG> by Nelson
+   SG> Siegel's method. I'm focusing on the code of the function
+   SG> NelsonSiegel
+   SG> and I note that could be a problem:
+   SG>
+   SG> 1)
+   SG> the graphic of the yield curve is done with the vector of
+   SG> the starting
+   SG> parameter and not whit the estimated parameters. I report the
+   SG> piece of
+   SG> code:
+   SG>	fit = nlminb(start = gvec, objective = func, rate = rate,
+   SG> maturity = maturity, control = list(eval.max = 2000,
+   SG> iter.max = 2000))
+   SG>	names(fit) = c(beta0, beta1, beta2, tau1)
+   SG>	if (doplot) {
+   SG> ---->>> yfit = fx(maturity, gvec)
+   SG> ---->>> plot(maturity, rate, ylim = c(min(c(rate, yfit)),
+   SG> max(c(rate,
+   SG> yfit))), main = Nelson-Siegel)
+   SG> ---->>> lines(maturity, yfit, col = steelblue)
+   SG> grid()
+   SG>
+   SG> the object yfit contains the interest rates estimated with
+   SG> the vector
+   SG> gvec which is the starting parameter, while the estimated
+   SG> coefficients
+   SG> are in the object fit.
+   SG>
+   SG> Could the same problem be in the function Svensson ?
+   SG>
+   SG> Best regards Sergio Guirreri
+   SG>
+
+
+
+Hi Sergio,
+
+Thanks for the report. I changed the code in fBonds.
+
+Regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:55 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:55 +0200
+Subject: Package fBasics_2100.78.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$de962167@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_2100.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:56 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:56 +0200
+Subject: Package fPortfolio_2100.78.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$df0f87ba@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_2100.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:55 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:55 +0200
+Subject: Package fCopulae_2100.77.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$dec5bcfb@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCopulae_2100.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:56 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:56 +0200
+Subject: Package fGarch_2100.79.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$dee971aa@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_2100.79.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:57 +0200
+Subject: Package timeSeries_2100.84.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$dff1aab9@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2100.84.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:57 +0200
+Subject: Package timeDate_2100.86.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$dfc93348@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_2100.86.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Mon Sep 28 16:27:55 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Mon, 28 Sep 2009 16:27:55 +0200
+Subject: Package fAssets_2100.78.tar.gz has been built for Windows
+Message-ID: <01ca4047$Blat.v2.2.2$de700b57@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_2100.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From ligges at statistik.tu-dortmund.de  Tue Sep 29 10:43:20 2009
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 29 Sep 2009 10:43:20 +0200
+Subject: f* package ERRORs
+Message-ID: <4AC1C8A8.204@statistik.tu-dortmund.de>
+
+Dear Rmetrics-core,
+
+some of your f* packages fail due to updates of other f* packages on 
+CRAN these days:
+
+  fArma, fExtremes, and fTrading show ERRORs now
+  fNonlinear, fOptions, fRegression, and fUnitRoots have WARNINGs
+
+Please fix and upload versions with increased version numbers. Please 
+also check all your packages to work with new releases of other packages 
+_before_ submission.
+
+Thanks, best wishes,
+Uwe Ligges
+
+
+From chalabi at phys.ethz.ch  Tue Sep 29 11:35:10 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 29 Sep 2009 11:35:10 +0200
+Subject: f* package ERRORs
+In-Reply-To: <4AC1C8A8.204@statistik.tu-dortmund.de>
+References: <4AC1C8A8.204@statistik.tu-dortmund.de>
+Message-ID: <20090929113510.47e24cd0@mimi>
+
+>>>> "UL" == Uwe Ligges <ligges at statistik.tu-dortmund.de>
+>>>> on Tue, 29 Sep 2009 10:43:20 +0200
+
+   UL> Dear Rmetrics-core,
+   UL>
+   UL> some of your f* packages fail due to updates of other f*
+   UL> packages on
+   UL> CRAN these days:
+   UL>
+   UL> fArma, fExtremes, and fTrading show ERRORs now
+   UL> fNonlinear, fOptions, fRegression, and fUnitRoots have WARNINGs
+   UL>
+   UL> Please fix and upload versions with increased version
+   UL> numbers. Please
+   UL> also check all your packages to work with new releases of
+   UL> other packages
+   UL> _before_ submission.
+   UL>
+   UL> Thanks, best wishes,
+   UL> Uwe Ligges
+
+
+Hi Uwe,
+
+packages on their way to CRAN.
+
+Regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From ligges at statistik.tu-dortmund.de  Tue Sep 29 17:47:32 2009
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 29 Sep 2009 17:47:32 +0200
+Subject: f* package ERRORs
+In-Reply-To: <20090929113510.47e24cd0@mimi>
+References: <4AC1C8A8.204@statistik.tu-dortmund.de>
+	<20090929113510.47e24cd0@mimi>
+Message-ID: <4AC22C14.6010907@statistik.tu-dortmund.de>
+
+
+
+Yohan Chalabi wrote:
+>>>>> "UL" == Uwe Ligges <ligges at statistik.tu-dortmund.de>
+>>>>> on Tue, 29 Sep 2009 10:43:20 +0200
+> 
+>    UL> Dear Rmetrics-core,
+>    UL>
+>    UL> some of your f* packages fail due to updates of other f*
+>    UL> packages on
+>    UL> CRAN these days:
+>    UL>
+>    UL> fArma, fExtremes, and fTrading show ERRORs now
+>    UL> fNonlinear, fOptions, fRegression, and fUnitRoots have WARNINGs
+>    UL>
+>    UL> Please fix and upload versions with increased version
+>    UL> numbers. Please
+>    UL> also check all your packages to work with new releases of
+>    UL> other packages
+>    UL> _before_ submission.
+>    UL>
+>    UL> Thanks, best wishes,
+>    UL> Uwe Ligges
+> 
+> 
+> Hi Uwe,
+> 
+> packages on their way to CRAN.
+
+
+Thank you, Yohan.
+
+uwe
+
+
+> Regards,
+> Yohan
+>
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:56 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:56 +0200
+Subject: Package fArma_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f40f86f1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fArma_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:57 +0200
+Subject: Package fImport_2100.77.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f469fb57@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_2100.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:56 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:56 +0200
+Subject: Package fBonds_2100.75.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f42e78de@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBonds_2100.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:57 +0200
+Subject: Package fOptions_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f4cb93e0@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:57 +0200
+Subject: Package fExoticOptions_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f44d6acb@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExoticOptions_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:58 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:58 +0200
+Subject: Package fTrading_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f50e3a7c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fTrading_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:58 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:58 +0200
+Subject: Package fUnitRoots_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f52f8dca@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:58 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:58 +0200
+Subject: Package fRegression_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f4ece72e@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:57 +0200
+Subject: Package fNonlinear_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f4aca1f3@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fNonlinear_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:57 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:57 +0200
+Subject: Package fMultivar_2100.76.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f48b4ea5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fMultivar_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Sep 30 00:26:58 2009
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 30 Sep 2009 00:26:58 +0200
+Subject: Package fUtilities_2100.77.tar.gz has been built for Windows
+Message-ID: <01ca4153$Blat.v2.2.2$f550e118@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_2100.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.2 Patched (2009-09-02 r49531)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

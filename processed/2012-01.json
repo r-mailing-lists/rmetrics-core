@@ -1,0 +1,297 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-01",
+  "messages": [
+    {
+      "id": "msg-0c4d1ac82269",
+      "message_id": "<F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2012-01-12T15:22:23Z",
+      "subject": "timeFirstDayInMonth() bug",
+      "subject_clean": "timeFirstDayInMonth() bug",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "#\n# Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.\n#\n\nlibrary(timeDate)\n\nx <- logical(0)\nx <- as.timeDate(x)\n\ntimeFirstDayInMonth(x)\n\n# Best regards, Daniele Amberti\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.",
+      "body_snippet": "#\n# Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.\n#\n\nlibrary(timeDate)\n\nx <- logical(0)\nx <- as.timeDate(x)\n\ntimeFirstDayInMonth(x)\n\n",
+      "thread_id": "thread-0c4d1ac82269",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-02f32ae5fdd9",
+      "message_id": "<d034748429faef46a7fb977dbdfa65bd@LENOVO-101208Y6>",
+      "from_name": "ANTEK SOLAR",
+      "from_email_hash": "522385083b2daa01914375b83fe1af2e2c6e6ebc6600cd00fa8bd2355ae8689e",
+      "date": "2012-01-13T05:42:54Z",
+      "subject": "Greenhouse Solar - Powered By Antek Solar Power",
+      "subject_clean": "Greenhouse Solar - Powered By Antek Solar Power",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Download technical datasheet here, or visit our website\nAntek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120113/7ca9360e/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/jpeg\nSize: 110703 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120113/7ca9360e/attachment-0001.jpe>",
+      "body_snippet": "Download technical datasheet here, or visit our website\nAntek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Tha",
+      "thread_id": "thread-02f32ae5fdd9",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-2aa42774938f",
+      "message_id": "<01ccd1ce$Blat.v2.2.2$01c0c9c5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2012-01-13T08:33:20Z",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files and (if working) the binary package at:\nhttp://win-builder.r-project.org/d824279I2CzI\nThe files will be removed after roughly 72 hours.\nInstallation time in seconds: 6\nCheck time in seconds: 73\nCheck result: ERROR\nR version 2.14.1 (2011-12-22)\n \nAll the best,\nUwe Ligges\n(CRAN maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files an",
+      "thread_id": "thread-2aa42774938f",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-e3526baf273a",
+      "message_id": "<4F110C86.2080003@auckland.ac.nz>",
+      "from_name": "Rolf Turner",
+      "from_email_hash": "904c134d5ad39093183253270ee481b35c208cc4297e137e579e32e8115e7dff",
+      "date": "2012-01-14T05:03:02Z",
+      "subject": "rcauchy2d in package \"fMultivar\"",
+      "subject_clean": "rcauchy2d in package \"fMultivar\"",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I have recently been trying to understand bivariate Cauchy distributions,\nand to this end I've been perusing the tools provided in the \"fMultivar\"\npackage.\n\nI have hit a snag, in that I don't understand what rcauchy2d() is doing.\n\nBasically it calls rt2d with the default degrees of freedom, i.e. 4.\n\nMy understanding is that the bivariate Cauchy distribution is the same as\nthe bivariate t distribution with ***one*** degree of freedom.  So shouldn't\nrcauchy2d call\n\n     rt2d(n=n,rho=rho,nu=1)   ?\n\nI note that dcauchy2d calls dt2d(x = x, y = y, rho = rho, nu = 1), i.e.\nthe degrees of freedom are set equal to 1 as I would have expected.\n\nIs this a bug in rcauchy2d(), or is there something that I am \nmisunderstanding?\n\nThanks.\n\n     cheers,\n\n         Rolf Turner",
+      "body_snippet": "I have recently been trying to understand bivariate Cauchy distributions,\nand to this end I've been perusing the tools provided in the \"fMultivar\"\npackage.\n\nI have hit a snag, in that I don't understa",
+      "thread_id": "thread-e3526baf273a",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-dea6ef6e70fc",
+      "message_id": "<20241.23008.164128.339471@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-01-14T10:33:04Z",
+      "subject": "Somewhat *urgent*: fUtilities \"gone\" -- people crying ...",
+      "subject_clean": "Somewhat *urgent*: fUtilities \"gone\" -- people crying ...",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "A belated happy new year!\n\nHi guys, we have a problem:  People on R-help are complaining\nbecause fUtilities has disappeared from CRAN\n(because we have not fixed its problems after being asked to do so).\n\nI think I remember we wanted to deprecated fUtilities,\ni.e. ask useRs to use a replacement, but which one?\n\nDiethelm,\ncan you remind me/us of the plans?\n\nMartin\n\n\n------- start of forwarded message -------\nList-Id: \"Main R Mailing List: Primary help\" <r-help.r-project.org>\nList-Unsubscribe: <https://stat.ethz.ch/mailman/options/r-help>,\n\t<mailto:r-help-request at r-project.org?subject=unsubscribe>\nList-Archive: <https://stat.ethz.ch/pipermail/r-help>\nList-Post: <mailto:r-help at r-project.org>\nList-Help: <mailto:r-help-request at r-project.org?subject=help>\nList-Subscribe: <https://stat.ethz.ch/mailman/listinfo/r-help>,\n\t<mailto:r-help-request at r-project.org?subject=subscribe>\nFrom: David Winsemius <dwinsemius at comcast.net>\nTo: Dominic Comtois <dominic.comtois at gmail.com>\nCC: <r-help at r-project.org>\nSubject: Re: [R] fUtilities removed\nDate: Fri, 13 Jan 2012 13:52:57 -0500\n\n\nOn Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:\n\n> When setting up my new machine, I had the surprise to see that  \n> \"Package\n> 'fUtilities' was removed from the CRAN repository.\"\n>\n\nhttps://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html\nhttps://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html\n\n>\n>\n> This is problematic for my work. I use many of its functions, and it  \n> will\n> complicate things a lot if other programmers want to use my previous  \n> code in\n> the future. Plus, nowhere can I find the justification for its  \n> removal.\n\nYou need to send your questions to the maintainers. They apparently  \ndid not respond to the requests to fix the errors.\n\n>\n> Thanks for any info on this\n\nYou should perhaps subscribe to the list that is established for  \ndiscussion on this and related packages.\n\n-- \n\nDavid Winsemius, MD\nWest Hartford, CT\n\n______________________________________________\nR-help at r-project.org mailing list\nhttps://stat.ethz.ch/mailman/listinfo/r-help\nPLEASE do read the posting guide http://www.R-project.org/posting-guide.html\nand provide commented, minimal, self-contained, reproducible code.\n------- end of forwarded message -------",
+      "body_snippet": "A belated happy new year!\n\nHi guys, we have a problem:  People on R-help are complaining\nbecause fUtilities has disappeared from CRAN\n(because we have not fixed its problems after being asked to do so",
+      "thread_id": "thread-dea6ef6e70fc",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-4d03b0a42b5e",
+      "message_id": "<20241.26945.768946.474017@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-01-14T11:38:41Z",
+      "subject": "[R] fUtilities removed --> use fBasics ",
+      "subject_clean": "fUtilities removed --> use fBasics",
+      "in_reply_to": "<CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>",
+      "references": [
+        "<009b01ccd219$7a7e88b0$6f7b9a10$@gmail.com>",
+        "<CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>"
+      ],
+      "body_plain": ">>>>> David Winsemius <dwinsemius at comcast.net>\n>>>>>     on Fri, 13 Jan 2012 13:52:57 -0500 writes:\n\n    > On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:\n\n    >> When setting up my new machine, I had the surprise to see\n    >> that \"Package 'fUtilities' was removed from the CRAN\n    >> repository.\"\n    >> \n\n    > https://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html\n    > https://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html\n\nindeed. thank you David (and Google, I presume ..)\n\n    >> \n    >> This is problematic for my work. I use many of its\n    >> functions, and it will complicate things a lot if other\n    >> programmers want to use my previous code in the\n    >> future. Plus, nowhere can I find the justification for\n    >> its removal.\n\nFor a longer time, the Rmetrics \"management\" had planned to\ndeprecate  fUtilities (and fSeries and fCalendar),\nbasically refactoring the functionality ``approximately'' along\nthe lines of\n\n old package     replacement pkgs\n -----------     ----------------\n fUtilities      fBasics\n fSeries         timeSeries\n fCalendar       timeDate\n\nbut clearly not a 1:1 replacement, but a refactoring as said above.\nfBasics, indeed 'Depends' on both timeSeries and timeDate,\nso I think it is safe to say that you should replace\n\n   fUtilities by fBasics\neverywhere ... and things should work...\n\nYes, the communication about these plans where not put out the\nway they should have; and indeed the deprecation would not have\nnecessarily meant that the package be dropped without proper notice.\nOne excuse has been the lack of resources and health on the side\nof Rmetrics.\n\nDisclaimer: I am one of Rmetrics-core at r-project.org, as having\nbeen an active co-maintainer of some parts of the Rmetrics collection,\nbut I have not been part of the \"management\" nor the foundation.\n\nMartin Maechler, ETH Zurich\n\n    > You need to send your questions to the maintainers. They\n    > apparently did not respond to the requests to fix the\n    > errors.\n\n    >> \n    >> Thanks for any info on this\n\n    > You should perhaps subscribe to the list that is\n    > established for discussion on this and related packages.\n\n    > -- \n\n    > David Winsemius, MD West Hartford, CT\n\n    > ______________________________________________\n    > R-help at r-project.org mailing list\n    > https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do\n    > read the posting guide\n    > http://www.R-project.org/posting-guide.html and provide\n    > commented, minimal, self-contained, reproducible code.",
+      "body_snippet": ">>>>> David Winsemius <dwinsemius at comcast.net>\n>>>>>     on Fri, 13 Jan 2012 13:52:57 -0500 writes:\n\n    > On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:\n\n    >> When setting up my new machin",
+      "thread_id": "thread-4d03b0a42b5e",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-580b58003ffd",
+      "message_id": "<20241.28342.346173.130942@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-01-14T12:01:58Z",
+      "subject": "rcauchy2d in package \"fMultivar\"",
+      "subject_clean": "rcauchy2d in package \"fMultivar\"",
+      "in_reply_to": "<4F110C86.2080003@auckland.ac.nz>",
+      "references": [
+        "<4F110C86.2080003@auckland.ac.nz>"
+      ],
+      "body_plain": ">>>>> Rolf Turner <r.turner at auckland.ac.nz>\n>>>>>     on Sat, 14 Jan 2012 18:03:02 +1300 writes:\n\n    > I have recently been trying to understand bivariate Cauchy\n    > distributions, and to this end I've been perusing the\n    > tools provided in the \"fMultivar\" package.\n\n    > I have hit a snag, in that I don't understand what\n    > rcauchy2d() is doing.\n\n    > Basically it calls rt2d with the default degrees of\n    > freedom, i.e. 4.\n\n    > My understanding is that the bivariate Cauchy distribution\n    > is the same as the bivariate t distribution with ***one***\n    > degree of freedom.  So shouldn't rcauchy2d call\n\n    >      rt2d(n=n,rho=rho,nu=1) ?\n\n    > I note that dcauchy2d calls dt2d(x = x, y = y, rho = rho,\n    > nu = 1), i.e.  the degrees of freedom are set equal to 1\n    > as I would have expected.\n\n    > Is this a bug in rcauchy2d(), or is there something that I\n    > am misunderstanding?\n\nYes, this has been a bug, ... and I have fixed it now in the\n(R-forge) development sources.\n\nThanks a lot, Rolf, for the report.\n\nBest regards,\nMartin",
+      "body_snippet": ">>>>> Rolf Turner <r.turner at auckland.ac.nz>\n>>>>>     on Sat, 14 Jan 2012 18:03:02 +1300 writes:\n\n    > I have recently been trying to understand bivariate Cauchy\n    > distributions, and to this e",
+      "thread_id": "thread-e3526baf273a",
+      "thread_depth": 1,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-db6691ba1c5b",
+      "message_id": "<003001ccd2ed$0a4d6c30$1ee84490$@gmail.com>",
+      "from_name": "Dominic Comtois",
+      "from_email_hash": "ff86ae5ea366abf056d51269d8557c8f34af0f91469a54d127cfa1922f1ef98e",
+      "date": "2012-01-14T18:47:59Z",
+      "subject": "[R] fUtilities removed --> use fBasics",
+      "subject_clean": "fUtilities removed --> use fBasics",
+      "in_reply_to": "<20241.26945.768946.474017@stat.math.ethz.ch>",
+      "references": [
+        "<009b01ccd219$7a7e88b0$6f7b9a10$@gmail.com>",
+        "<CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>",
+        "<20241.26945.768946.474017@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Thank you for your prompt and useful replies. I will be using fBasics from\nnow on.\n\nRegards,\n\nDominic Comtois, Montr?al\n\n-----Message d'origine-----\nDe?: Martin Maechler [mailto:maechler at stat.math.ethz.ch] \nEnvoy??: 14 janvier 2012 06:39\n??: David Winsemius\nCc?: Dominic Comtois; r-help at r-project.org; rmetrics-core at r-project.org\nObjet?: Re: [R] fUtilities removed --> use fBasics\n\n>>>>> David Winsemius <dwinsemius at comcast.net>\n>>>>>     on Fri, 13 Jan 2012 13:52:57 -0500 writes:\n\n    > On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:\n\n    >> When setting up my new machine, I had the surprise to see\n    >> that \"Package 'fUtilities' was removed from the CRAN\n    >> repository.\"\n    >> \n\n    > https://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html\n    > https://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html\n\nindeed. thank you David (and Google, I presume ..)\n\n    >> \n    >> This is problematic for my work. I use many of its\n    >> functions, and it will complicate things a lot if other\n    >> programmers want to use my previous code in the\n    >> future. Plus, nowhere can I find the justification for\n    >> its removal.\n\nFor a longer time, the Rmetrics \"management\" had planned to deprecate\nfUtilities (and fSeries and fCalendar), basically refactoring the\nfunctionality ``approximately'' along the lines of\n\n old package     replacement pkgs\n -----------     ----------------\n fUtilities      fBasics\n fSeries         timeSeries\n fCalendar       timeDate\n\nbut clearly not a 1:1 replacement, but a refactoring as said above.\nfBasics, indeed 'Depends' on both timeSeries and timeDate, so I think it is\nsafe to say that you should replace\n\n   fUtilities by fBasics\neverywhere ... and things should work...\n\nYes, the communication about these plans where not put out the way they\nshould have; and indeed the deprecation would not have necessarily meant\nthat the package be dropped without proper notice.\nOne excuse has been the lack of resources and health on the side of\nRmetrics.\n\nDisclaimer: I am one of Rmetrics-core at r-project.org, as having been an\nactive co-maintainer of some parts of the Rmetrics collection, but I have\nnot been part of the \"management\" nor the foundation.\n\nMartin Maechler, ETH Zurich\n\n    > You need to send your questions to the maintainers. They\n    > apparently did not respond to the requests to fix the\n    > errors.\n\n    >> \n    >> Thanks for any info on this\n\n    > You should perhaps subscribe to the list that is\n    > established for discussion on this and related packages.\n\n    > -- \n\n    > David Winsemius, MD West Hartford, CT\n\n    > ______________________________________________\n    > R-help at r-project.org mailing list\n    > https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do\n    > read the posting guide\n    > http://www.R-project.org/posting-guide.html and provide\n    > commented, minimal, self-contained, reproducible code.",
+      "body_snippet": "Thank you for your prompt and useful replies. I will be using fBasics from\nnow on.\n\nRegards,\n\nDominic Comtois, Montr?al\n\n-----Message d'origine-----\nDe?: Martin Maechler [mailto:maechler at stat.math.",
+      "thread_id": "thread-4d03b0a42b5e",
+      "thread_depth": 1,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-1f7d4f6f0aa9",
+      "message_id": "<CAPRP4-eSazRC82o=K00ks3dqw_2H4Vef5HdB-sxAYMON2EsdTw@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-01-19T21:23:10Z",
+      "subject": "Fwd: fImport yahooKeystats",
+      "subject_clean": "fImport yahooKeystats",
+      "in_reply_to": "<CA+nJqYNmjrk-fxkybDxXnZeSRAEuuYJORBjhskYROi0jWBmC0A@mail.gmail.com>",
+      "references": [
+        "<CA+nJqYNmjrk-fxkybDxXnZeSRAEuuYJORBjhskYROi0jWBmC0A@mail.gmail.com>"
+      ],
+      "body_plain": "Dear James,\nthanks a lot for your suggestion.\n\nToday, I've met with other Rmetrics core team members, but forgot to\naddress this issue.\nI'm forwarding it hereby to the others.\n\nMy personal opinion: I think it's a very good idea to work with (and\nhence 'Depend' on) the well maintained and known to be good quality\npackage  'XML'.\nOTOH, I have not been involved in fImports, so\nI really do leave this to those among us who are mainly involved with\n'fImports'.\n\nMartin\n\n---------- Forwarded message ----------\nFrom: J Toll <jctoll at gmail.com>\nDate: Mon, Jan 16, 2012 at 03:57\nSubject: fImport yahooKeystats\nTo: maechler at stat.math.ethz.ch\n\n\nHi Martin,\n\nI was reading your response on the r-help mailing list \"Re: [R]\nfUtilities removed --> use fBasics\"\n\nSpecifically you mentioned, \"One excuse has been the lack of resources\nand health on the side\nof Rmetrics.\n\nDisclaimer: I am one of Rmetrics-core at r-project.org, as having\nbeen an active co-maintainer of some parts of the Rmetrics collection,\nbut I have not been part of the \"management\" nor the foundation.\"\n\nA while back I noticed that the yahooKeystats function from the\nfImport package was broken. Since I wanted to use the function, I went\nahead and fixed it for my use. ?Later, I went back and wrote a new\nversion of the yahooKeystats function utilizing the XML package. ?I\nwould be happy to provide that code as a replacement for yahooKeystats\nif Rmetrics would be interested.\n\nBest regards,\n\nJames",
+      "body_snippet": "Dear James,\nthanks a lot for your suggestion.\n\nToday, I've met with other Rmetrics core team members, but forgot to\naddress this issue.\nI'm forwarding it hereby to the others.\n\nMy personal opinion: I ",
+      "thread_id": "thread-1f7d4f6f0aa9",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-3fae78576c91",
+      "message_id": "<B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>",
+      "from_name": "Linke, Tristan",
+      "from_email_hash": "5847da42fe2dbac47ba9970e36e16c1977cf5e45e21532894ffae81d672c7f02",
+      "date": "2012-01-20T00:58:33Z",
+      "subject": "Request: Garch Ox Fit extension of fGARCH",
+      "subject_clean": "Request: Garch Ox Fit extension of fGARCH",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl>",
+      "thread_id": "thread-3fae78576c91",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-a6720a95d523",
+      "message_id": "<CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>",
+      "from_name": "Klemen Koselj",
+      "from_email_hash": "e11b92db7fa69abb7dfca1ed12d517866ecd973485f4c918ccae838dc070c792",
+      "date": "2012-01-29T23:03:22Z",
+      "subject": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "subject_clean": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl>",
+      "thread_id": "thread-a6720a95d523",
+      "thread_depth": 0,
+      "month": "2012-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0c4d1ac82269",
+      "subject": "timeFirstDayInMonth() bug",
+      "message_count": 1,
+      "participants": [
+        "Daniele Amberti"
+      ],
+      "started": "2012-01-12T15:22:23Z",
+      "last_reply": "2012-01-12T15:22:23Z",
+      "root_message_id": "msg-0c4d1ac82269"
+    },
+    {
+      "id": "thread-02f32ae5fdd9",
+      "subject": "Greenhouse Solar - Powered By Antek Solar Power",
+      "message_count": 1,
+      "participants": [
+        "ANTEK SOLAR"
+      ],
+      "started": "2012-01-13T05:42:54Z",
+      "last_reply": "2012-01-13T05:42:54Z",
+      "root_message_id": "msg-02f32ae5fdd9"
+    },
+    {
+      "id": "thread-2aa42774938f",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2012-01-13T08:33:20Z",
+      "last_reply": "2012-01-13T08:33:20Z",
+      "root_message_id": "msg-2aa42774938f"
+    },
+    {
+      "id": "thread-e3526baf273a",
+      "subject": "rcauchy2d in package \"fMultivar\"",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Rolf Turner"
+      ],
+      "started": "2012-01-14T05:03:02Z",
+      "last_reply": "2012-01-14T12:01:58Z",
+      "root_message_id": "msg-e3526baf273a"
+    },
+    {
+      "id": "thread-dea6ef6e70fc",
+      "subject": "Somewhat *urgent*: fUtilities \"gone\" -- people crying ...",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2012-01-14T10:33:04Z",
+      "last_reply": "2012-01-14T10:33:04Z",
+      "root_message_id": "msg-dea6ef6e70fc"
+    },
+    {
+      "id": "thread-4d03b0a42b5e",
+      "subject": "fUtilities removed --> use fBasics",
+      "message_count": 2,
+      "participants": [
+        "Dominic Comtois",
+        "Martin Maechler"
+      ],
+      "started": "2012-01-14T11:38:41Z",
+      "last_reply": "2012-01-14T18:47:59Z",
+      "root_message_id": "msg-4d03b0a42b5e"
+    },
+    {
+      "id": "thread-1f7d4f6f0aa9",
+      "subject": "fImport yahooKeystats",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2012-01-19T21:23:10Z",
+      "last_reply": "2012-01-19T21:23:10Z",
+      "root_message_id": "msg-1f7d4f6f0aa9"
+    },
+    {
+      "id": "thread-3fae78576c91",
+      "subject": "Request: Garch Ox Fit extension of fGARCH",
+      "message_count": 1,
+      "participants": [
+        "Linke, Tristan"
+      ],
+      "started": "2012-01-20T00:58:33Z",
+      "last_reply": "2012-01-20T00:58:33Z",
+      "root_message_id": "msg-3fae78576c91"
+    },
+    {
+      "id": "thread-a6720a95d523",
+      "subject": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "message_count": 1,
+      "participants": [
+        "Klemen Koselj"
+      ],
+      "started": "2012-01-29T23:03:22Z",
+      "last_reply": "2012-01-29T23:03:22Z",
+      "root_message_id": "msg-a6720a95d523"
+    }
+  ]
+}

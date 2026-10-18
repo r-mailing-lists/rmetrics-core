@@ -1,0 +1,623 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-10",
+  "messages": [
+    {
+      "id": "msg-e167ca4065f9",
+      "message_id": "<ADB2D0C4438D9C40B1C26BC69CCAB63912E5237A@Exch-Mailbox.ors.local>",
+      "from_name": "Marco Giuliano",
+      "from_email_hash": "6d620637f5b3b3e904a08a2c0e1a8f97e232e3d3346415bae8a6dee48d62445b",
+      "date": "2012-10-02T16:41:24Z",
+      "subject": "TimeSeries align odd behavior",
+      "subject_clean": "TimeSeries align odd behavior",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl>",
+      "thread_id": "thread-e167ca4065f9",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-b228895a4caa",
+      "message_id": "<CAG+z+VndRDzdb2M+8mj17tNpCSmrPDWCRxLxmAVoYrWVK-VbBw@mail.gmail.com>",
+      "from_name": "Guoquan Lee",
+      "from_email_hash": "c4131487191988f252176eb23ec210c8d8e9ddd77b4081db9e10daccbf7e0b23",
+      "date": "2012-10-05T06:55:49Z",
+      "subject": "Loss function in mean cvar optimization",
+      "subject_clean": "Loss function in mean cvar optimization",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl>",
+      "thread_id": "thread-b228895a4caa",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-cc436fbc0f2e",
+      "message_id": "<134975204058d59251b56b0197ba1eb5f032d5ebc8_@infowebtech.info>",
+      "from_name": "AP",
+      "from_email_hash": "496bb1e7585dfee685fdd6890dd8d2872fdde5fab4bde5e09aebff21b5e1c247",
+      "date": "2012-10-09T07:48:27Z",
+      "subject": "Community & educational development",
+      "subject_clean": "Community & educational development",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl>",
+      "thread_id": "thread-cc436fbc0f2e",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-fdc4ccdd2664",
+      "message_id": "<20613.26776.250447.880465@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2012-10-22T15:39:04Z",
+      "subject": "Typo",
+      "subject_clean": "Typo",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Just noticed this beauty:\n\n  PlainVanillaOptions          package:fOptions          R Documentation\n\n  Valuation of Plain Vanilla Options\n\n  Description:\n\n       A collection and description of functions to valuate plain vanilla\n       options. Included are functions for the Generalized Block-Scholes\n                                                           ^^^^^^^^^^^^^\n\nDirk\n\n\n-- \nDirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com",
+      "body_snippet": "Just noticed this beauty:\n\n  PlainVanillaOptions          package:fOptions          R Documentation\n\n  Valuation of Plain Vanilla Options\n\n  Description:\n\n       A collection and description of functi",
+      "thread_id": "thread-fdc4ccdd2664",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-a9678b5e2fff",
+      "message_id": "<20613.27822.827741.525797@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2012-10-22T15:56:30Z",
+      "subject": "Typo",
+      "subject_clean": "Typo",
+      "in_reply_to": "<20613.26776.250447.880465@max.nulle.part>",
+      "references": [
+        "<20613.26776.250447.880465@max.nulle.part>"
+      ],
+      "body_plain": "On 22 October 2012 at 10:39, Dirk Eddelbuettel wrote:\n| \n| Just noticed this beauty:\n| \n|   PlainVanillaOptions          package:fOptions          R Documentation\n| \n|   Valuation of Plain Vanilla Options\n| \n|   Description:\n| \n|        A collection and description of functions to valuate plain vanilla\n|        options. Included are functions for the Generalized Block-Scholes\n|                                                            ^^^^^^^^^^^^^\n\nAnd again a few lines later.  But grep only find those two:\n\n\n-*- mode: grep; default-directory: \"/home/edd/mail/\" -*-\nGrep started at Mon Oct 22 10:55:40\n\ngrep -nH -e Block ~/src/debian/CRAN/fOptions-2160.81/man/*\n/home/edd/src/debian/CRAN/fOptions-2160.81/man/PlainVanillaOptions.Rd:35:    Generalized Block-Scholes option pricing model, for \n/home/edd/src/debian/CRAN/fOptions-2160.81/man/PlainVanillaOptions.Rd:43:    \\code{GBS*} \\tab the generalized Block-Scholes option, \\cr\n\nGrep finished (matches found) at Mon Oct 22 10:55:40\n\n\nDirk\n\n| \n| Dirk\n| \n| \n| -- \n| Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com\n| \n| _______________________________________________\n| Rmetrics-core mailing list\n| Rmetrics-core at r-project.org\n| https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n\n-- \nDirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com",
+      "body_snippet": "On 22 October 2012 at 10:39, Dirk Eddelbuettel wrote:\n| \n| Just noticed this beauty:\n| \n|   PlainVanillaOptions          package:fOptions          R Documentation\n| \n|   Valuation of Plain Vanilla Opt",
+      "thread_id": "thread-fdc4ccdd2664",
+      "thread_depth": 1,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-78becceb502c",
+      "message_id": "<CAPRP4-fuNj0XLLruRT6hD1sSQfvVsK=zv1Wu=zY9E7SZNSmT3A@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-10-29T11:27:56Z",
+      "subject": "stabledist",
+      "subject_clean": "stabledist",
+      "in_reply_to": "<64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>",
+      "references": [
+        "<64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>"
+      ],
+      "body_plain": "Dear Oliver\n(I'm writing in English because of the CC).\n\n\nOn Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:\n> Lieber Herr Maechler,\n>\n> ich wollte das stabledist package von rmetrics installieren, wie im wiki beschrieben:\n>\n>\n> The script installs all Rmetrics packages from your default CRAN repository ('repos'). This will ensure that all packages are up-to-date.\n>\n> Open an R process and type the following :\n>\n>    source(\"http://www.rmetrics.org/Rmetrics.R\")\n>    install.Rmetrics()\n>\n>\n> allerdings, neben der installation zahlreicher pakete, kam insbesondere die folgende meldung, in deren vorletzter zeile steht, dass stabledist nicht verfuegbar ist --koennen Sie mir weiterhelfen?\n>\n>\n>\n> + source(\"http://www.rmetrics.org/Rmetrics.R\")\n> +    install.Rmetrics()\n> Warning in install.packages(pkgs = pkgs, ...) :\n>   argument 'lib' is missing: using '/usr/local/lib/R/site-library'\n> Warning in install.packages(pkgs = pkgs, ...) :\n>   'lib = \"/usr/local/lib/R/site-library\"' is not writable\n> --- Please select a CRAN mirror for use in this session ---\n> Loading Tcl/Tk interface ... done\n> Warning: dependency ?stabledist? is not available\n> also installing the dependencies ?numDeriv?, ?DistributionUtils?, ?GeneralizedHyperbolic?\n\nYes, indeed this is a bug in the  install.Rmetrics() function;\nUnfortunately, even though I'm part of Rmetrics-core,\nI have no write access to  http://www.rmetrics.org/Rmetrics.R\nwhich defines the  install.Rmetrics() function  and so I cannot fix it.\n\nHOWEVER, there is an easy workaround:\ndo\n\ninstall.packages(\"stabledist\")\n\nbefore doing the other installations.\n\nPlease let me know if you have problems, observe pecularities, ... in package\n'stabledist'.\n\nBest regards,\nMartin M?chler\n\n\n>\n> Viele Gruesse\n>\n> Oliver Kley\n>",
+      "body_snippet": "Dear Oliver\n(I'm writing in English because of the CC).\n\n\nOn Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:\n> Lieber Herr Maechler,\n>\n> ich wollte das stabledist package vo",
+      "thread_id": "thread-78becceb502c",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-09e1fce892de",
+      "message_id": "<20121029150610.CD3BC8132E@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fExtremes’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fExtremes’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-09e1fce892de",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-1b1486a680ad",
+      "message_id": "<20121029150610.D35848133A@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fNonlinear’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fNonlinear’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-1b1486a680ad",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-335c1be81fb0",
+      "message_id": "<20121029150610.D5C9681347@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fRegression’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fRegression’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-335c1be81fb0",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-9db2b7a6b220",
+      "message_id": "<20121029150610.DD11580DFE@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fTrading’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fTrading’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-9db2b7a6b220",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-b6cb2da2e44a",
+      "message_id": "<20121029150610.E1E728104D@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fUnitRoots’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fUnitRoots’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-b6cb2da2e44a",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-c8934dfc9a18",
+      "message_id": "<20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:06:10Z",
+      "subject": "Legacy .First.lib call in CRAN package ‘fBonds’",
+      "subject_clean": "Legacy .First.lib call in CRAN package ‘fBonds’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nHowever, the package used a .First.lib function which should be\nreplaced by .onLoad, .onAttach or both, or if the sole purpose is to\nload compiled code, by a useDynlib declaration in the NAMESPACE file.\n\nSome packages are still using .First.lib() for library() calls: these\nshould be replaced by Depends: entries in DESCRIPTION, or removed if\nthere are already such entries.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.  Shortly .First.lib functions will no longer be used so\nyou will need to submit an update not making use of one.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-c8934dfc9a18",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-5e0cdf9303c8",
+      "message_id": "<20121029154735.478C281826@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:47:35Z",
+      "subject": "Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "subject_clean": "Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-5e0cdf9303c8",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-bd38fbdc6d70",
+      "message_id": "<20121029154735.4EA3881827@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-29T15:47:35Z",
+      "subject": "Added NAMESPACE file to CRAN package ‘fMultivar’",
+      "subject_clean": "Added NAMESPACE file to CRAN package ‘fMultivar’",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built your package\non CRAN to have such a namespace.\n\nPlease review the automatically-generated NAMESPACE file and improve\nit as needed.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\nneed a namepsace, but this package did not yet have one.  R CMD build\nand R CMD INSTALL would add one, and we have now re-built you",
+      "thread_id": "thread-bd38fbdc6d70",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-260f83071d65",
+      "message_id": "<20121030101324.9D0478132E@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-10-30T10:13:24Z",
+      "subject": "Legacy .First.lib call in CRAN package fMultivar",
+      "subject_clean": "Legacy .First.lib call in CRAN package fMultivar",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "This package is using .First.lib to load its compiled code, and that\nworkaround will be removed shortly (it was only ever intended to help\ntransitioning for 2.14.0 a year ago).\n\nThis should be replaced by .onLoad now all packages have namespaces,\nor preferably by a useDynLib declaration in the NAMESPACE file.\n\nSo we need an update to the package which does not use .First.lib.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "This package is using .First.lib to load its compiled code, and that\nworkaround will be removed shortly (it was only ever intended to help\ntransitioning for 2.14.0 a year ago).\n\nThis should be replace",
+      "thread_id": "thread-260f83071d65",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-14f4973a35ae",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c1e3de9@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fBonds_2100.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fBonds_2100.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBonds_2100.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBonds_2100.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-14f4973a35ae",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-67e660a0a616",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c4dd9e1@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "subject_clean": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-67e660a0a616",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-a5a61fbb4563",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c8238a5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fNonlinear_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fNonlinear_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fNonlinear_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fNonlinear_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-a5a61fbb4563",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-a60329b4c574",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c33aa7f@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "subject_clean": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_2110.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_2110.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corres",
+      "thread_id": "thread-a60329b4c574",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-e40f547fd2d6",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c65a7dd@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fMultivar_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fMultivar_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fMultivar_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fMultivar_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-e40f547fd2d6",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-fdea2af5fa5f",
+      "message_id": "<01cdb717$Blat.v2.2.2$5c9a06a1@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:22Z",
+      "subject": "Package fRegression_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fRegression_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspon",
+      "thread_id": "thread-fdea2af5fa5f",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-2474fa65aef7",
+      "message_id": "<01cdb717$Blat.v2.2.2$5cc9a299@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:23Z",
+      "subject": "Package fUnitRoots_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fUnitRoots_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-2474fa65aef7",
+      "thread_depth": 0,
+      "month": "2012-10"
+    },
+    {
+      "id": "msg-6d05399194fa",
+      "message_id": "<01cdb717$Blat.v2.2.2$5cb43603@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-10-31T03:25:23Z",
+      "subject": "Package fTrading_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fTrading_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fTrading_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.2 (2012-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fTrading_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-6d05399194fa",
+      "thread_depth": 0,
+      "month": "2012-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e167ca4065f9",
+      "subject": "TimeSeries align odd behavior",
+      "message_count": 1,
+      "participants": [
+        "Marco Giuliano"
+      ],
+      "started": "2012-10-02T16:41:24Z",
+      "last_reply": "2012-10-02T16:41:24Z",
+      "root_message_id": "msg-e167ca4065f9"
+    },
+    {
+      "id": "thread-b228895a4caa",
+      "subject": "Loss function in mean cvar optimization",
+      "message_count": 1,
+      "participants": [
+        "Guoquan Lee"
+      ],
+      "started": "2012-10-05T06:55:49Z",
+      "last_reply": "2012-10-05T06:55:49Z",
+      "root_message_id": "msg-b228895a4caa"
+    },
+    {
+      "id": "thread-cc436fbc0f2e",
+      "subject": "Community & educational development",
+      "message_count": 1,
+      "participants": [
+        "AP"
+      ],
+      "started": "2012-10-09T07:48:27Z",
+      "last_reply": "2012-10-09T07:48:27Z",
+      "root_message_id": "msg-cc436fbc0f2e"
+    },
+    {
+      "id": "thread-fdc4ccdd2664",
+      "subject": "Typo",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2012-10-22T15:39:04Z",
+      "last_reply": "2012-10-22T15:56:30Z",
+      "root_message_id": "msg-fdc4ccdd2664"
+    },
+    {
+      "id": "thread-78becceb502c",
+      "subject": "stabledist",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2012-10-29T11:27:56Z",
+      "last_reply": "2012-10-29T11:27:56Z",
+      "root_message_id": "msg-78becceb502c"
+    },
+    {
+      "id": "thread-09e1fce892de",
+      "subject": "Legacy .First.lib call in CRAN package ‘fExtremes’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-09e1fce892de"
+    },
+    {
+      "id": "thread-1b1486a680ad",
+      "subject": "Legacy .First.lib call in CRAN package ‘fNonlinear’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-1b1486a680ad"
+    },
+    {
+      "id": "thread-335c1be81fb0",
+      "subject": "Legacy .First.lib call in CRAN package ‘fRegression’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-335c1be81fb0"
+    },
+    {
+      "id": "thread-9db2b7a6b220",
+      "subject": "Legacy .First.lib call in CRAN package ‘fTrading’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-9db2b7a6b220"
+    },
+    {
+      "id": "thread-b6cb2da2e44a",
+      "subject": "Legacy .First.lib call in CRAN package ‘fUnitRoots’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-b6cb2da2e44a"
+    },
+    {
+      "id": "thread-c8934dfc9a18",
+      "subject": "Legacy .First.lib call in CRAN package ‘fBonds’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:06:10Z",
+      "last_reply": "2012-10-29T15:06:10Z",
+      "root_message_id": "msg-c8934dfc9a18"
+    },
+    {
+      "id": "thread-5e0cdf9303c8",
+      "subject": "Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:47:35Z",
+      "last_reply": "2012-10-29T15:47:35Z",
+      "root_message_id": "msg-5e0cdf9303c8"
+    },
+    {
+      "id": "thread-bd38fbdc6d70",
+      "subject": "Added NAMESPACE file to CRAN package ‘fMultivar’",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-29T15:47:35Z",
+      "last_reply": "2012-10-29T15:47:35Z",
+      "root_message_id": "msg-bd38fbdc6d70"
+    },
+    {
+      "id": "thread-260f83071d65",
+      "subject": "Legacy .First.lib call in CRAN package fMultivar",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-10-30T10:13:24Z",
+      "last_reply": "2012-10-30T10:13:24Z",
+      "root_message_id": "msg-260f83071d65"
+    },
+    {
+      "id": "thread-14f4973a35ae",
+      "subject": "Package fBonds_2100.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-14f4973a35ae"
+    },
+    {
+      "id": "thread-67e660a0a616",
+      "subject": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-67e660a0a616"
+    },
+    {
+      "id": "thread-a5a61fbb4563",
+      "subject": "Package fNonlinear_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-a5a61fbb4563"
+    },
+    {
+      "id": "thread-a60329b4c574",
+      "subject": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-a60329b4c574"
+    },
+    {
+      "id": "thread-e40f547fd2d6",
+      "subject": "Package fMultivar_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-e40f547fd2d6"
+    },
+    {
+      "id": "thread-fdea2af5fa5f",
+      "subject": "Package fRegression_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:22Z",
+      "last_reply": "2012-10-31T03:25:22Z",
+      "root_message_id": "msg-fdea2af5fa5f"
+    },
+    {
+      "id": "thread-2474fa65aef7",
+      "subject": "Package fUnitRoots_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:23Z",
+      "last_reply": "2012-10-31T03:25:23Z",
+      "root_message_id": "msg-2474fa65aef7"
+    },
+    {
+      "id": "thread-6d05399194fa",
+      "subject": "Package fTrading_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-10-31T03:25:23Z",
+      "last_reply": "2012-10-31T03:25:23Z",
+      "root_message_id": "msg-6d05399194fa"
+    }
+  ]
+}

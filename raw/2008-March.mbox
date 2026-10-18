@@ -1,0 +1,511 @@
+From chalabi at phys.ethz.ch  Sat Mar  1 19:05:10 2008
+From: chalabi at phys.ethz.ch (chalabi at phys.ethz.ch)
+Date: Sat, 01 Mar 2008 19:05:10 +0100
+Subject: about fSeries
+In-Reply-To: <200802291155055310096@scut.edu.cn> (chuch@scut.edu.cn's message
+	of "Fri, 29 Feb 2008 11:55:06 +0800")
+References: <200802291155055310096@scut.edu.cn>
+Message-ID: <87r6eupbft.fsf@phys.ethz.ch>
+
+Hi Chuch,
+
+since version 240.?? we have re-organised all Rmetrics packages and it
+is possible that the functions you are looking for  have been moved to
+another packages. 
+
+Could you please be more explicit about the function
+you want to use?
+
+You could install all Rmetrics packages and see if you find the
+functions you are looking for.
+
+install.packages("Rmetrics")
+
+regards,
+Yohan
+
+"chuch" <chuch at scut.edu.cn> writes:
+
+> Dear Rmetrics Core Team members:
+>       
+>      I am a PHD student in South China University of Technology. I need to use the "fSeries" package in my reaserch. But I found the version 260.72 of fSeries is much different from the version 240.10068. The latter has useful tools for analysis long-range dependence which I need, however, the former is now needed for many other packages.
+>
+>     If I install both of the packages, there will be some conflicts. How can I solve this problem?
+>
+> Best regards
+> Robert Chen                                                                                                                                                                          
+>
+>
+>
+> chuch
+> 2008-02-29
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+-- 
+Yohan Chalabi
+
+
+From ecjbosu at aol.com  Mon Mar  3 05:12:58 2008
+From: ecjbosu at aol.com (Joe W. Byers)
+Date: Sun, 02 Mar 2008 22:12:58 -0600
+Subject: [R-SIG-Finance] holidayNYSE missing some
+In-Reply-To: <20080214161431.5570342f@yankee-laptop>
+References: <20080204115153.13a247f4@yankee-laptop>
+	<loom.20080212T162838-798@post.gmane.org>
+	<20080214161431.5570342f@yankee-laptop>
+Message-ID: <47CB7ACA.4040209@aol.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080302/954f0d87/attachment.pl 
+
+From chalabi at phys.ethz.ch  Wed Mar  5 13:34:17 2008
+From: chalabi at phys.ethz.ch (chalabi at phys.ethz.ch)
+Date: Wed, 05 Mar 2008 13:34:17 +0100
+Subject: fGarch: possible bug(s) in ICS & LLH in summary
+In-Reply-To: <799501.80963.qm@web50101.mail.re2.yahoo.com> (michal miklovic's
+	message of "Thu, 28 Feb 2008 08:00:56 -0800 (PST)")
+References: <799501.80963.qm@web50101.mail.re2.yahoo.com>
+Message-ID: <87k5khpcxi.fsf@phys.ethz.ch>
+
+Hi Michal,
+
+I wanted to change the sign of the LLH in the output of garchFit for
+some time now, but for whatever reason I never did it. 
+
+Thanks for your helpful comments!
+
+regards,
+Yohan
+
+michal miklovic <mmiklovic at yahoo.com> writes:
+
+> Hi,
+>
+> I wanted to compare several garch models on the basis of information criteria statistics (ICS) and I found a possible bug, which affects a couple of computations in fGarch.
+>
+> First, I would suggest that the log likelihood in the summary function is reported as follows:
+>
+> LLH = (-1)*object at fit$value
+>
+> because it should be the value of maximised log likelihood (and not minimised negative log likelihood). The consequent discrepancy with the iteration path output could be solved by printing the following:
+>
+> cat("\nFinal Estimate of the Negative LLH:\n")
+>
+>
+> Second, I would suggest changing the hessian and covariance matrices calculations to, respectively:
+>
+> fit$hessian = (-1)*.garch??DAHessian( ... )
+>
+> fit$cvar = (-1)*solve(fit$hessian)
+>
+> These changes would have no effect on the estimates of covariance matrix (and thus also standard errors) but the hessian matrix would correspond to a maximised log likelihood, which is currently not the case, and would have negative numbers on the diagonal, which is rather intuitive for a maximum.
+>
+>
+> Finally, I would suggest removing the minus sign from the computation of the ICS since (-2)*(-1)*fit$value = 2*fit$value = 2*LLH(as defined above, i.e. maximised log likelihood). I think the ICS should be computed from the maximised value of the (log) likelihood function (and not from minimised negative (log) likelihood). Tsay (2002) in Analysis of Financial Time Series states that, in AIC calculation, "the likelihood function is evaluated at the maximum likelihood estimates".
+>
+> Best regards,
+>
+> Michal Miklovic
+>
+>
+>
+>
+>       ____________________________________________________________________________________
+> Be a better friend, newshound, and 
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+-- 
+Yohan Chalabi
+
+
+From chalabi at phys.ethz.ch  Wed Mar  5 15:27:06 2008
+From: chalabi at phys.ethz.ch (chalabi at phys.ethz.ch)
+Date: Wed, 05 Mar 2008 15:27:06 +0100
+Subject: fTrading bug
+In-Reply-To: <290108.13909.qm@web31805.mail.mud.yahoo.com> (Adam Murphy's
+	message of "Thu, 28 Feb 2008 13:06:24 -0800 (PST)")
+References: <290108.13909.qm@web31805.mail.mud.yahoo.com>
+Message-ID: <878x0xi6v9.fsf@phys.ethz.ch>
+
+Adam Murphy <ammurphy at yahoo.com> writes:
+
+> Diethelm et al,
+>
+> Hi, I have been using fairly regulary a number of packages in the rmetrics group--most recently both fImport and fTrading.  I noticed a bug in one of the functions in the fTrading package.  The function cdoTA() is defined as below:
+>
+>   
+>> cdoTA
+> function (x, lag1 = 12, lag2 = 26, lag3 = 9) 
+> {
+>     cdo = macdTA(x, lag1, lag2) - cdsTA(x, lag3)
+>     if (is.timeSeries(x)) 
+>         colnames(cdo) <- "CDO"
+>     cdo
+> }
+>
+> The problem occurs when it calls cdsTA, which is defined as below:
+>
+>  
+>> cdsTA
+> function (x, lag1 = 12, lag2 = 26, lag3 = 9) 
+> {
+>     cds = emaTA(macdTA(x, lag1, lag2), lag3)
+>     if (is.timeSeries(x)) 
+>         colnames(cds) <- "CDS"
+>     cds
+> }
+>
+> cdsTA is expecting a vector and three lag terms.  cdoTA feeds a vector and only one lag term, lag3.  However, cdsTA is expecting lag1 to be the first term.  Thus whatever cdoTA thinks lag3 is, cdsTA is treating it as if it's actually lag1.  This all seems a bit wordy, I know.  However, if you replace the blue text above with:
+>
+> cdo = macdTA(x, lag1, lag2) - cdsTA(x, lag3=lag3)
+>
+> That should clear up the assignment problems.
+>
+> Best Regards,
+> Adam Murphy
+>
+>
+>
+>  
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+Hi Adam,
+
+Thanks for your helpful feedback,
+
+I made the changes to the code.
+
+regards,
+Yohan
+
+-- 
+
+
+The 2nd International R/Rmetrics User and Developer Workshop ...
+[http://www.rmetrics.org]
+
+
+From ripley at stats.ox.ac.uk  Sun Mar 23 08:03:17 2008
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Sun, 23 Mar 2008 07:03:17 +0000 (GMT)
+Subject: [R] Can not install fCalendar package under R 2.6.2
+In-Reply-To: <Pine.SOC.4.63.0803222332180.1222@castle.isye.gatech.edu>
+References: <Pine.SOC.4.63.0803222332180.1222@castle.isye.gatech.edu>
+Message-ID: <alpine.LFD.1.00.0803230647040.9933@gannet.stats.ox.ac.uk>
+
+I suspect you have a rather old version of the fCalendar package (or 
+possibly of one of the packages it loads).  The current version is 262.73 
+and does not use putenv or Sys.putenv.
+
+(Packages really should not be using global system settings but the 
+current version does
+
+> .currentYear
+function ()
+{
+     TZ <- Sys.getenv("TZ")
+     if (TZ[[1]] != "GMT") {
+         Sys.setenv(TZ = "GMT")
+         on.exit(Sys.setenv(TZ = TZ))
+     }
+     as.POSIXlt(Sys.time())$year + 1900
+}
+
+whereas as.POSIXlt has a 'tz' argument.  I also don't see the point of 
+recording the current year *when the package is installed*: a comment 
+says this is done in '.Firstlib' but it is not done in .First.lib.)
+
+On Sat, 22 Mar 2008, Yan Wang wrote:
+
+> Dear R helper:
+> When I was trying to install the fCalendar package, R report the
+> following error and then my installation failed:
+>
+> * Installing *source* package 'fCalendar' ...
+> ** R
+> ** inst
+> ** preparing package for lazy loading
+> Loading required package: MASS
+> Loading required package: fEcofin
+> Loading required package: fUtilities
+> Loading required package: RUnit
+>
+>  RUnit 0.4.17 loaded.
+> Loading required package: spatial
+> Loading required package: tcltk
+> Loading Tcl/Tk interface ... done
+> Loading required package: zoo
+> Error in .Internal(putenv(x)) : no internal function "putenv"
+> Calls: <Anonymous> ... sys.source -> eval -> eval -> .currentYear ->
+> Sys.setenv
+> Execution halted
+> ERROR: lazy loading failed for package 'fCalendar'
+> ** Removing '/usr/local/lib/R/site-library/fCalendar'
+>
+> by the way, my system is Ubuntu 7.04,
+> platform       i486-pc-linux-gnu
+> arch           i486
+> os             linux-gnu
+> system         i486, linux-gnu
+>
+> I tried to look for  putenv myself, R reported that it is a deprecated
+> function in "base" package, I loaded the "base" package and still end up
+> with the same Error report.
+
+It is Sys.putenv that is deprecated.  The internal function putenv went in 
+R 2.5.0.
+
+> Pls do help me.
+>
+> Yan Wang
+> Georgia Institute of Technology
+> School of Industrial and Systems Engineering
+>
+> E-mail address:   ywang67 at isye.gatech.edu
+>
+> ______________________________________________
+> R-help at r-project.org mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-help
+> PLEASE do read the posting guide http://www.R-project.org/posting-guide.html
+> and provide commented, minimal, self-contained, reproducible code.
+>
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From ywang67 at isye.gatech.edu  Sun Mar 23 18:42:01 2008
+From: ywang67 at isye.gatech.edu (Yan Wang)
+Date: Sun, 23 Mar 2008 13:42:01 -0400 (EDT)
+Subject: [R] Can not install fCalendar package under R 2.6.2
+In-Reply-To: <alpine.LFD.1.00.0803230647040.9933@gannet.stats.ox.ac.uk>
+References: <Pine.SOC.4.63.0803222332180.1222@castle.isye.gatech.edu>
+	<alpine.LFD.1.00.0803230647040.9933@gannet.stats.ox.ac.uk>
+Message-ID: <Pine.SOC.4.63.0803231329010.13648@castle.isye.gatech.edu>
+
+Dear Prof Brian Ripley and other R guru:
+   Very happy to receive your help. Actually what I use is 262.73. In 
+detail, what I have been doing is the following:
+   First I have a not-up-to-dated R 2.4.0 under ubuntu 7.04, then I tried 
+to install fCalendar(what I really want to use is fGarch, but it depends 
+on fCalendar), I use install.packages to do it, so the fCalendar packages 
+I had downloaded is up to dated 262.73(I also have checked it to make 
+sure), then R reported a strange error, saying it found a syntax error-a 
+parse error at line 122 and 123 something. It's a pity I did not copy that
+down. Then I found that my R is old, so I upgraded it to 2.6.2 with apt-get
+and tried it again. The situation improved, it did not say it has difficulty
+parsing any more, but it reported the error I have posted.
+
+   Another thing is that I have a R 2.5.1 under windows, yesterday I tried 
+to use install.packages to install fCalendar under it, and everything 
+worked smoothly, it was a success, no problem whatsoever.
+
+   As a common R user, I am not capable of debugging it. I hope R gurus 
+like prof Brian Ripley could have a closer look at my problem.
+
+   Thanks a lot!
+
+Yan Wang
+Georgia Institute of Technology
+School of Industrial and Systems Engineering
+
+E-mail address:   ywang67 at isye.gatech.edu
+
+On Sun, 23 Mar 2008, Prof Brian Ripley wrote:
+
+> I suspect you have a rather old version of the fCalendar package (or possibly 
+> of one of the packages it loads).  The current version is 262.73 and does not 
+> use putenv or Sys.putenv.
+>
+> (Packages really should not be using global system settings but the current 
+> version does
+>
+>> .currentYear
+> function ()
+> {
+>    TZ <- Sys.getenv("TZ")
+>    if (TZ[[1]] != "GMT") {
+>        Sys.setenv(TZ = "GMT")
+>        on.exit(Sys.setenv(TZ = TZ))
+>    }
+>    as.POSIXlt(Sys.time())$year + 1900
+> }
+>
+> whereas as.POSIXlt has a 'tz' argument.  I also don't see the point of 
+> recording the current year *when the package is installed*: a comment says 
+> this is done in '.Firstlib' but it is not done in .First.lib.)
+>
+> On Sat, 22 Mar 2008, Yan Wang wrote:
+>
+>> Dear R helper:
+>> When I was trying to install the fCalendar package, R report the
+>> following error and then my installation failed:
+>> 
+>> * Installing *source* package 'fCalendar' ...
+>> ** R
+>> ** inst
+>> ** preparing package for lazy loading
+>> Loading required package: MASS
+>> Loading required package: fEcofin
+>> Loading required package: fUtilities
+>> Loading required package: RUnit
+>>
+>>  RUnit 0.4.17 loaded.
+>> Loading required package: spatial
+>> Loading required package: tcltk
+>> Loading Tcl/Tk interface ... done
+>> Loading required package: zoo
+>> Error in .Internal(putenv(x)) : no internal function "putenv"
+>> Calls: <Anonymous> ... sys.source -> eval -> eval -> .currentYear ->
+>> Sys.setenv
+>> Execution halted
+>> ERROR: lazy loading failed for package 'fCalendar'
+>> ** Removing '/usr/local/lib/R/site-library/fCalendar'
+>> 
+>> by the way, my system is Ubuntu 7.04,
+>> platform       i486-pc-linux-gnu
+>> arch           i486
+>> os             linux-gnu
+>> system         i486, linux-gnu
+>> 
+>> I tried to look for  putenv myself, R reported that it is a deprecated
+>> function in "base" package, I loaded the "base" package and still end up
+>> with the same Error report.
+>
+> It is Sys.putenv that is deprecated.  The internal function putenv went in R 
+> 2.5.0.
+>
+>> Pls do help me.
+>> 
+>> Yan Wang
+>> Georgia Institute of Technology
+>> School of Industrial and Systems Engineering
+>> 
+>> E-mail address:   ywang67 at isye.gatech.edu
+>> 
+>> ______________________________________________
+>> R-help at r-project.org mailing list
+>> https://stat.ethz.ch/mailman/listinfo/r-help
+>> PLEASE do read the posting guide 
+>> http://www.R-project.org/posting-guide.html
+>> and provide commented, minimal, self-contained, reproducible code.
+>> 
+>
+> -- 
+> Brian D. Ripley,                  ripley at stats.ox.ac.uk
+> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+> University of Oxford,             Tel:  +44 1865 272861 (self)
+> 1 South Parks Road,                     +44 1865 272866 (PA)
+> Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+>
+
+
+From chalabi at phys.ethz.ch  Tue Mar 25 15:27:44 2008
+From: chalabi at phys.ethz.ch (chalabi at phys.ethz.ch)
+Date: Tue, 25 Mar 2008 15:27:44 +0100
+Subject: [R] Can not install fCalendar package under R 2.6.2
+In-Reply-To: <Pine.SOC.4.63.0803231329010.13648@castle.isye.gatech.edu> (Yan
+	Wang's message of "Sun, 23 Mar 2008 13:42:01 -0400 (EDT)")
+References: <Pine.SOC.4.63.0803222332180.1222@castle.isye.gatech.edu>
+	<alpine.LFD.1.00.0803230647040.9933@gannet.stats.ox.ac.uk>
+	<Pine.SOC.4.63.0803231329010.13648@castle.isye.gatech.edu>
+Message-ID: <87k5jqyj33.fsf@phys.ethz.ch>
+
+Yan Wang <ywang67 at isye.gatech.edu> writes:
+
+>    Very happy to receive your help. Actually what I use is 262.73. In 
+> detail, what I have been doing is the following:
+>    First I have a not-up-to-dated R 2.4.0 under ubuntu 7.04, then I tried 
+> to install fCalendar(what I really want to use is fGarch, but it depends 
+> on fCalendar), I use install.packages to do it, so the fCalendar packages 
+> I had downloaded is up to dated 262.73(I also have checked it to make 
+> sure), then R reported a strange error, saying it found a syntax error-a 
+> parse error at line 122 and 123 something. It's a pity I did not copy that
+> down. Then I found that my R is old, so I upgraded it to 2.6.2 with apt-get
+> and tried it again. The situation improved, it did not say it has difficulty
+> parsing any more, but it reported the error I have posted.
+>
+>    Another thing is that I have a R 2.5.1 under windows, yesterday I tried 
+> to use install.packages to install fCalendar under it, and everything 
+> worked smoothly, it was a success, no problem whatsoever.
+>
+>    As a common R user, I am not capable of debugging it. I hope R gurus 
+> like prof Brian Ripley could have a closer look at my problem.
+>
+>    Thanks a lot!
+
+Hi Yan,
+
+Have you installed the r-base-dev package in ubuntu to be able to
+compile packages? (sudo apt-get install r-base-dev)
+
+Could you please send me the error message you have?
+
+Yohan
+
+-- 
+
+
+The 2nd International R/Rmetrics User and Developer Workshop ...
+[http://www.rmetrics.org]
+
+
+From edd at debian.org  Sun Mar 30 18:39:09 2008
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun, 30 Mar 2008 11:39:09 -0500
+Subject: [R] Can not install fCalendar package under R 2.6.2
+In-Reply-To: <Pine.SOC.4.63.0803231329010.13648@castle.isye.gatech.edu>
+References: <Pine.SOC.4.63.0803222332180.1222@castle.isye.gatech.edu>
+	<alpine.LFD.1.00.0803230647040.9933@gannet.stats.ox.ac.uk>
+	<Pine.SOC.4.63.0803231329010.13648@castle.isye.gatech.edu>
+Message-ID: <20080330163909.GA1895@eddelbuettel.com>
+
+On Sun, Mar 23, 2008 at 01:42:01PM -0400, Yan Wang wrote:
+>    First I have a not-up-to-dated R 2.4.0 under ubuntu 7.04, then I tried 
+
+Please see the R FAQ; several volunteers provide up-to-date versions
+of R for Ubuntu.
+
+You also may want to consult your Ubuntu documentation about learning
+what packages are available:  
+
+     $ sudo apt-get install r-cran-fcalendar
+
+would get you a binary of fCalendar onto your system (though it may be
+the version that was current when your version of Ubuntu was build). I
+presume you know that your version of Ubuntu is one release behind too.
+
+Hope this helps, Dirk
+
+
+-- 
+   I was off email for a few days until March 29th, and am now 
+   catching up. My apologies for delayed responses and/or brevity.
+--
+Three out of two people have difficulties with fractions.
+
+

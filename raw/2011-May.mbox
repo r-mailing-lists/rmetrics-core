@@ -1,0 +1,297 @@
+From shi8628 at yahoo.com  Fri May  6 23:02:51 2011
+From: shi8628 at yahoo.com (Shi)
+Date: Fri, 6 May 2011 14:02:51 -0700 (PDT)
+Subject: A question about fPortfolio
+Message-ID: <318459.16562.qm@web161208.mail.bf1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl>
+
+From pucek8 at gmail.com  Tue May 24 13:32:59 2011
+From: pucek8 at gmail.com (=?UTF-8?Q?Marcin_P=3F=EF=BF=BDciennik?=)
+Date: Tue, 24 May 2011 13:32:59 +0200
+Subject: AR(1)-GARCH(1,1) regression model
+In-Reply-To: <BANLkTikftZKeLQyyB-sovm4gsJkJnUk5fg@mail.gmail.com>
+References: <BANLkTikftZKeLQyyB-sovm4gsJkJnUk5fg@mail.gmail.com>
+Message-ID: <BANLkTim98u+2-u7YovdY0Hn1W1fVtGq9SQ@mail.gmail.com>
+
+Dear Rmetrics Core Team,
+I sent this message a couple of times to r-help group but unfortunately did
+not get any response that would be helpful...so I decided to write directly
+to the maintainer of the package 'fGarch'.
+
+
+I have a rather complex problem... I will have to explain everything in
+detail because I cannot solve it by myself...i just ran out of ideas. So
+here is what I want to do:
+I take quotes of two indices - S&P500 and DJ. And my first aim is to
+estimate coefficients of the DCC-GARCH model for them. This is how I do it:
+
+
+library(tseries)
+p1 = get.hist.quote(instrument = "^gspc",start = "2005-01-07",end =
+"2009-09-04",compression = "w", quote="AdjClose")
+p2 = get.hist.quote(instrument = "^dji",start = "2005-01-07",end =
+"2009-09-04",compression = "w", quote="AdjClose")
+p = cbind(p1,p2)
+y = diff(log(p))*100
+y[,1] = y[,1]-mean(y[,1])
+y[,2] = y[,2]-mean(y[,2])
+T = length(y[,1])
+
+library(ccgarch)
+library(fGarch)
+
+f1 = garchFit(~ garch(1,1), data=y[,1],include.mean=FALSE)
+f1 = f1 at fit$coef
+f2 = garchFit(~ garch(1,1), data=y[,2],include.mean=FALSE)
+f2 = f2 at fit$coef
+
+a = c(f1[1], f2[1])
+A = diag(c(f1[2],f2[2]))
+B = diag(c(f1[3], f2[3]))
+dccpara = c(0.2,0.6)
+dccresults = dcc.estimation(inia=a, iniA=A, iniB=B, ini.dcc=dccpara,dvar=y,
+model="diagonal")
+
+dccresults$out
+DCCrho = dccresults$DCC[,2]
+matplot(DCCrho, type='l')
+
+
+dccresults$out deliver me the estimated coefficients of the DCC-GARCH model.
+I had also some questions about this part but it is not connected with the
+package 'tseries' so I am not going to ask you for help here.
+
+Ok. This would be it when it comes to DCC-GARCH.
+
+Now, using conditional correlation obtained from the DCC-GARCH model, I want
+to test for structural shifts in conditional correlations. To be precise, I
+want to test whether the conditional correlations significantly increase in
+the turmoil period / during the Subprime crisis.
+The regression model is AR(1)-GARCH(1,1), using a dummy variable specified
+as:
+
+
+
+*** the equations, you can find in the attachment ***
+
+
+
+where the first equation is the conditional correlation among the two
+indices during the Subprime crisis, Dt is a dummy variable for the turmoil
+period, and the second equation (hij,t) is the conditional variance of eij,t
+
+The aim is, of course, to find the estimates of the regression model on
+structural shifts in the conditional correlations obtained in the DCC-GARCH
+model.
+
+I found an information that there is no function for AR(1)-GARCH(1,1)
+regression model. That's why, apparently, it has to be done in two steps:
+
+1) estimate the AR parameters
+2) estimate the GARCH part of the model on the residuals from the AR model
+
+And this would be my rather poor idea of how to do it...
+
+
+library(timeSeries)
+library(fSeries)
+library(tseries)
+
+step1 = arma(DCCrho, order = c(1,0), include.intercept = TRUE)
+step1$res
+step11 = na.remove(step1$res)
+step2 = garch (step11, order = c(1,1), include.intercept = TRUE)
+
+
+To be honest I have no clue how whther it is correct. I do not even now why
+do I get a missing value as a result of step1 (step1$res[1]) and how to
+account for it? Above, I just removed it but then I have a smaller number of
+observations...and this is probably wrong.
+And then these GARCH estimates on the residuals...does the code for that
+make sense at all?
+
+
+I also had another idea, to apply the following code instead of the one
+written above:
+
+garchFit(formula = ~ arma(1,0) + garch(1,1), data=DCCrho, include.mean=TRUE)
+
+But I am not sure if this is delivering me the coefficients I am looking
+for.
+
+Hopefully, you will find time to give me a hand because I have to solve the
+problem and I reached the point where I cannot move forward without
+someone's help.
+
+Thank you very much in advance for looking at/checking what I wrote and
+helping me.
+
+Best regards
+Marcin P??ciennik
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110524/4c4b40f5/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Equations.pdf
+Type: application/pdf
+Size: 47651 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110524/4c4b40f5/attachment-0001.pdf>
+
+From edd at debian.org  Sat May 28 23:52:40 2011
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 28 May 2011 16:52:40 -0500
+Subject: fUnitRoots failing with urca import due to BIC
+Message-ID: <19937.28328.344276.477939@max.nulle.part>
+
+
+Hi all,
+
+During a routine rebuild of the Debian archive, it was noticed that
+fUnitRoots no longer builds (http://bugs.debian.org/628324):
+
+make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'
+gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o UnitRootMacKinnon.o
+gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'
+make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'
+make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'
+installing to /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/lib/R/site-library/fUnitRoots/libs
+** R
+** inst
+** preparing package for lazy loading
+Error : object 'BIC' is not exported by 'namespace:nlme'
+Error : package 'urca' could not be loaded
+ERROR: lazy loading failed for package 'fUnitRoots'
+
+
+Did something change in nlme which upsets urca?  I only see (in urca's
+NAMESPACE)
+
+## Import functions
+
+importFrom(graphics, plot)
+
+if (!exists("BIC", envir=asNamespace("stats"))) {
+    importFrom(nlme, BIC)
+} else {
+    importFrom(stats, BIC) # unless you already import stats
+}
+
+I tried adding 'stats' to the Depends: in urca's DESCRIPTION but not beans. 
+
+Any ideas?
+
+-- 
+Gauss once played himself in a zero-sum game and won $50.
+                      -- #11 at http://www.gaussfacts.com
+
+From edd at debian.org  Sat May 28 23:58:23 2011
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 28 May 2011 16:58:23 -0500
+Subject: fOptions no longer builds: Fortran error
+Message-ID: <19937.28671.8475.273520@max.nulle.part>
+
+
+Hi all,
+
+During a routine rebuild of the Debian archive, it was noticed that
+fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran
+compiler (now gfortan-4.6) seems pickier:
+
+> make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'
+> gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o
+> 085A-LowDiscrepancy.f:181.32:
+> 
+>                QN(I, J) = HQNORM(QUASI(J))                              
+>                                 1
+> Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))
+> make[1]: *** [085A-LowDiscrepancy.o] Error 1
+
+I do not write Fortran so would not know how to fix this. Any RMetrics export
+who can fix this?
+
+Dirk
+
+-- 
+Gauss once played himself in a zero-sum game and won $50.
+                      -- #11 at http://www.gaussfacts.com
+
+
+From Bernhard_Pfaff at fra.invesco.com  Mon May 30 09:25:36 2011
+From: Bernhard_Pfaff at fra.invesco.com (Pfaff, Bernhard Dr.)
+Date: Mon, 30 May 2011 08:25:36 +0100
+Subject: AW: fUnitRoots failing with urca import due to BIC
+In-Reply-To: <19937.28328.344276.477939@max.nulle.part>
+References: <19937.28328.344276.477939@max.nulle.part>
+Message-ID: <B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>
+
+Hello Dirk,
+
+a couple of weeks ago BDR reminded package maintainers of a change with respect to BIC. He suggested for 'urca' the NAMESPEACE insertion you provided below. The latest CRAN Package Check does not indicate an error for 'urca'. If I recall correctly, the package fUnitRoots was mentioned in that email of BDR, too. Maybe the required changes have not implemented in there?
+
+Best,
+Bernhard   
+
+> -----Urspr?ngliche Nachricht-----
+> Von: Dirk Eddelbuettel [mailto:edd at debian.org] 
+> Gesendet: Samstag, 28. Mai 2011 23:53
+> An: rmetrics-core; Pfaff, Bernhard Dr.
+> Betreff: fUnitRoots failing with urca import due to BIC
+> 
+> 
+> Hi all,
+> 
+> During a routine rebuild of the Debian archive, it was 
+> noticed that fUnitRoots no longer builds 
+> (http://bugs.debian.org/628324):
+> 
+> make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'
+> gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o 
+> UnitRootMacKinnon.o
+> gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack 
+> -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath 
+> -L/usr/lib/R/lib -lR
+> make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'
+> make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'
+> make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'
+> installing to 
+> /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li
+b/R/site-library/fUnitRoots/libs
+> ** R
+> ** inst
+> ** preparing package for lazy loading
+> Error : object 'BIC' is not exported by 'namespace:nlme'
+> Error : package 'urca' could not be loaded
+> ERROR: lazy loading failed for package 'fUnitRoots'
+> 
+> 
+> Did something change in nlme which upsets urca?  I only see (in urca's
+> NAMESPACE)
+> 
+> ## Import functions
+> 
+> importFrom(graphics, plot)
+> 
+> if (!exists("BIC", envir=asNamespace("stats"))) {
+>     importFrom(nlme, BIC)
+> } else {
+>     importFrom(stats, BIC) # unless you already import stats }
+> 
+> I tried adding 'stats' to the Depends: in urca's DESCRIPTION 
+> but not beans. 
+> 
+> Any ideas?
+> 
+> --
+> Gauss once played himself in a zero-sum game and won $50.
+>                       -- #11 at http://www.gaussfacts.com
+> 
+*****************************************************************
+Confidentiality Note: The information contained in this ...{{dropped:10}}
+
+

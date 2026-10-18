@@ -1,0 +1,90 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-11",
+  "messages": [
+    {
+      "id": "msg-bb44e1c037fa",
+      "message_id": "<01ca5c89$Blat.v2.2.2$327404cb@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-11-03T13:26:06Z",
+      "subject": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "subject_clean": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_2110.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_2110.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corres",
+      "thread_id": "thread-bb44e1c037fa",
+      "thread_depth": 0,
+      "month": "2009-11"
+    },
+    {
+      "id": "msg-e2a246354fb8",
+      "message_id": "<4AF2947C.DFDF.006E.0@resbank.co.za>",
+      "from_name": "Stefan JansevanRensburg",
+      "from_email_hash": "7cdc3bafdf7fe7f7c02eb4d7c6b61e1e54ce23396d4743b093c890aa24dbd464",
+      "date": "2009-11-05T07:01:31Z",
+      "subject": "fGarch",
+      "subject_clean": "fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091105/a319d82b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091105/a319d82b/attachment.pl>",
+      "thread_id": "thread-e2a246354fb8",
+      "thread_depth": 0,
+      "month": "2009-11"
+    },
+    {
+      "id": "msg-abeaa212f92f",
+      "message_id": "<01ca6209$Blat.v2.2.2$9990c10e@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-11-10T13:27:50Z",
+      "subject": "Package fGarch_2110.80.tar.gz has been built for Windows",
+      "subject_clean": "Package fGarch_2110.80.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_2110.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_2110.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-abeaa212f92f",
+      "thread_depth": 0,
+      "month": "2009-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-bb44e1c037fa",
+      "subject": "Package fExoticOptions_2110.77.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-11-03T13:26:06Z",
+      "last_reply": "2009-11-03T13:26:06Z",
+      "root_message_id": "msg-bb44e1c037fa"
+    },
+    {
+      "id": "thread-e2a246354fb8",
+      "subject": "fGarch",
+      "message_count": 1,
+      "participants": [
+        "Stefan JansevanRensburg"
+      ],
+      "started": "2009-11-05T07:01:31Z",
+      "last_reply": "2009-11-05T07:01:31Z",
+      "root_message_id": "msg-e2a246354fb8"
+    },
+    {
+      "id": "thread-abeaa212f92f",
+      "subject": "Package fGarch_2110.80.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-11-10T13:27:50Z",
+      "last_reply": "2009-11-10T13:27:50Z",
+      "root_message_id": "msg-abeaa212f92f"
+    }
+  ]
+}

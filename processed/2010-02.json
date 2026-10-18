@@ -1,0 +1,225 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-02",
+  "messages": [
+    {
+      "id": "msg-99e3a6caddf1",
+      "message_id": "<20100202-11560687-dfc-0@CM-Web-Bak>",
+      "from_name": "Elissavet Lykogianni",
+      "from_email_hash": "04a8c48a116327796167b98eaa42ead017c6b802fa40f1f12a94df4bec6c71c7",
+      "date": "2010-02-02T10:56:06Z",
+      "subject": "International mobility of researchers",
+      "subject_clean": "International mobility of researchers",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Sir/Madam,\n\nStimulating knowledge exchange through mobility of researchers has become a key priority to national and European policy makers. However, a lot is still not fully understood and more evidence is needed to develop effective policies on this topic. To this end, the European Commission has launched a large scale study (known as the MORE-study - www.researchersmobility.eu) focusing on mobility patterns and career paths of researchers.\n\nWe would like to invite you to participate to our survey (about 10-15 minutes of your time) in order to collect your experiences with respect to mobility. Your opinion on the problems, needs and attitudes will help the European Commission (and other Governments) to develop better targeted policies on this subject.\n\nAll completed surveys shall remain strictly private and confidential and shall only be used for the purposes of this study.\n\nPlease click here to start the survey:\nhttp://s.checkmarket.com/?e=13049&c=4540162&l=en&h=AB2064CABD4A9422DB75\n\n\nThank you in advance for your survey participation and feedback.\n\nIf you encounter any technical difficulties taking the survey, please contact us at EC-study at researchersmobility.eu\n\nSincerely yours,\n\nArnold Verbeek\n(project director)\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100202/1d758608/attachment.html>",
+      "body_snippet": "Dear Sir/Madam,\n\nStimulating knowledge exchange through mobility of researchers has become a key priority to national and European policy makers. However, a lot is still not fully understood and more ",
+      "thread_id": "thread-99e3a6caddf1",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-1fb2a11f5faa",
+      "message_id": "<19307.64815.938946.177812@hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-02-05T11:12:47Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainers,\n\nThis concerns the packages \n\n   BLCOP NADA Ryacas SNPMaP TIMP amba backtest crosshybDetector fBasics\n   fUtilities filehashSQLite grnnR mmlcr nws portfolio portfolioSim\n   qualV race tradeCosts\n\nmaintained by one of you, which give warnings about code/documentation\nmismatches, see below.\n\nCan we pls have updates fixing these within the next 2 weeks?\n\nNote that other R CMD check problems may need to be addressed as well.\n\nBest\n-k\n\n**********************************************************************\n\nPackage: BLCOP Version: 0.2.2 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'BLResult-class':\nSlots for class 'BLResult'\n  Code: kappa posteriorCovar posteriorMean priorCovar priorMean tau\n        views\n  Docs: confIgnored posteriorCovar posteriorMean priorCovar priorMean\n        tau views\n\n\nPackage: NADA Version: 1.5-2 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'boxplot-methods':\n\\S4method{boxplot}{ros}\n  Code: function(x, log = \"y\", range = 0, ...)\n  Docs: function(x, ...)\n  Argument names in code not in docs:\n    log range\n  Mismatches in argument names:\n    Position: 2 Code: log Docs: ...\n\nCodoc mismatches from documentation object 'median-methods':\n\\S4method{median}{ros}\n  Code: function(x, na.rm = FALSE)\n  Docs: function(x, na.rm = FALSE, ...)\n  Argument names in docs not in code:\n    ...\n\\S4method{median}{cenfit}\n  Code: function(x, na.rm = FALSE)\n  Docs: function(x, na.rm = FALSE, ...)\n  Argument names in docs not in code:\n    ...\n\nCodoc mismatches from documentation object 'predict-methods':\n\\S4method{predict}{cenfit}\n  Code: function(object, newdata, conf.int = FALSE)\n  Docs: function(object, newdata, conf.int = FALSE, ...)\n  Argument names in docs not in code:\n    ...\n\\S4method{pexceed}{cenfit}\n  Code: function(object, newdata, conf.int = FALSE)\n  Docs: function(object, newdata, conf.int = FALSE, ...)\n  Argument names in docs not in code:\n    ...\n\\S4method{pexceed}{ros}\n  Code: function(object, newdata, conf.int = FALSE, conf.level = 0.95)\n  Docs: function(object, newdata, conf.int = FALSE, ...)\n  Argument names in code not in docs:\n    conf.level\n  Argument names in docs not in code:\n    ...\n  Mismatches in argument names:\n    Position: 4 Code: conf.level Docs: ...\n\nCodoc mismatches from documentation object 'quantile-methods':\n\\S4method{quantile}{ros}\n  Code: function(x, probs = NADAprobs, ...)\n  Docs: function(object, probs = NADAprobs, ...)\n  Argument names in code not in docs:\n    x\n  Argument names in docs not in code:\n    object\n  Mismatches in argument names:\n    Position: 1 Code: x Docs: object\n\\S4method{quantile}{cenfit}\n  Code: function(x, probs = NADAprobs, conf.int = FALSE, ...)\n  Docs: function(object, probs = NADAprobs, conf.int = FALSE, ...)\n  Argument names in code not in docs:\n    x\n  Argument names in docs not in code:\n    object\n  Mismatches in argument names:\n    Position: 1 Code: x Docs: object\n\nCodoc mismatches from documentation object 'summary-methods':\n\\S4method{summary}{ros}\n  Code: function(object, plot = FALSE, ...)\n  Docs: function(object, ...)\n  Argument names in code not in docs:\n    plot\n  Mismatches in argument names:\n    Position: 2 Code: plot Docs: ...\n\\S4method{summary}{cenfit}\n  Code: function(object, times, censored = FALSE, scale = 1, ...)\n  Docs: function(object, ...)\n  Argument names in code not in docs:\n    times censored scale\n  Mismatches in argument names:\n    Position: 2 Code: times Docs: ...\n\nS4 class codoc mismatches from documentation object 'cenreg-class':\nSlots for class 'cenreg'\n  Code: conf.int n n.cen survreg y ycen\n  Docs: survreg\n\nS4 class codoc mismatches from documentation object 'summary.cenreg-class':\nSlots for class 'summary.cenreg'\n  Code: .Data\n\n\nPackage: Ryacas Version: 0.2-9 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'runYacas':\nrunYacas\n  Code: function()\n  Docs: function(method = \"system\", yacas.args = \"\", yacas.init = \"\")\n  Argument names in docs not in code:\n    method yacas.args yacas.init\n\n\nPackage: SNPMaP Version: 1.0.2 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'SNPMaP-class':\n\\S4method{plot}{SNPMaP,missing}\n  Code: function(x, FUN = function(x) { x}, xlim = c(loX, hiX), ylim =\n                 c(0, hiY), xlab = \"guess\", ylab = \"Density\", main =\n                 \"\", col = rainbow(length(x at chps)), legend.position =\n                 \"left\", legend.bty = \"n\", lty = 1:length(x at chps),\n                 zero.line = TRUE, ...)\n  Docs: function(x, FUN = function(x) { x}, xlim = c(loX, hiX), ylim =\n                 c(0, hiY), xlab = \"guess\", ylab = \"Density\", main =\n                 x at table, col = rainbow(length(x at chps)),\n                 legend.position = \"left\", legend.bty = \"n\", lty =\n                 1:length(x at chps), zero.line = TRUE, ...)\n  Mismatches in argument default values:\n    Name: 'main' Code: \"\" Docs: x at table\n\\S4method{boxplot}{SNPMaP}\n  Code: function(x, FUN = function(x) { x}, ylab = \"guess\", main = \"\",\n                 ...)\n  Docs: function(x, FUN = function(x) { x}, ylab = \"guess\", main =\n                 x at table, ...)\n  Mismatches in argument default values:\n    Name: 'main' Code: \"\" Docs: x at table\n\n\nPackage: TIMP Version: 1.8 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'amp-class':\nSlots for class 'amp'\n  Code: C2 E2 amps autoclp0 chinde clinde clp0 clpCon clpType clpdep\n        clpequ clpequspec clpequspecBD cohcol compnames constrained\n        datCall datafile drel dscalspec fixed free fvecind getX\n        getXsuper highcon inten iter lclp0 lclpequ lowcon makeps mhist\n        mod_type mvecind ncomp nl nt nvecind outMat parnames\n        positivepar prel prelspec psi.df psi.weight pvecind satMat\n        scalx sigma simdata title usecompnames0 usecompnamesequ weight\n        weightList weightM weightpar weightsmooth x x2\n  Inherited: psi.df psi.weight x nt x2 nl C2 E2 sigma mod_type parnames\n        simdata weightpar weight weightM weightsmooth fixed clp0 makeps\n        clpequspec lclp0 lclpequ title mhist datCall dscalspec mvecind\n        drel clpequ scalx prel prelspec fvecind pvecind nvecind iter\n        free clpCon ncomp clpdep inten positivepar constrained clinde\n        chinde highcon lowcon datafile getX clpType clpequspecBD\n        compnames getXsuper usecompnames0 usecompnamesequ autoclp0\n        cohcol weightList outMat satMat\n  Docs: amp\n\nS4 class codoc mismatches from documentation object 'dat-class':\nSlots for class 'dat'\n  Code: C2 E2 autoclp0 chinde clinde clp0 clpCon clpType clpdep clpequ\n        clpequspec clpequspecBD cohcol compnames constrained datCall\n        datafile drel dscalspec fixed free fvecind getX getXsuper\n        highcon inten iter lclp0 lclpequ lowcon makeps mhist mod_type\n        mvecind ncomp nl nt nvecind outMat parnames positivepar prel\n        prelspec psi.df psi.weight pvecind satMat scalx sigma simdata\n        title usecompnames0 usecompnamesequ weight weightList weightM\n        weightpar weightsmooth x x2\n  Docs: C2 E2 autoclp0 clp0 clpCon clpType clpdep clpequ clpequspec\n        constrained datCall datafile drel drel dscalspec finished fixed\n        free fvecind groups inten iter lclp0 lclpequ makeps mhist\n        mod_type ncomp nl nt parnames positivepar prel prel prelspec\n        psi.df psi.weight pvecind scalx sigma simdata title weight\n        weightM weightpar weightsmooth x x2\n\nS4 class codoc mismatches from documentation object 'fit-class':\nSlots for class 'fit'\n  Code: nlsres resultlist rss\n  Docs: nlsres resultlist\n\nS4 class codoc mismatches from documentation object 'kin-class':\nSlots for class 'kin'\n  Code: C2 E2 amplitudes anipar anispec autoclp0 chinde clinde clp0\n        clpCon clpType clpdep clpequ clpequspec clpequspecBD coh cohcol\n        cohirf cohspec compnames constrained convalg datCall datafile\n        dispmu dispmufun disptau disptaufun doublegaus drel dscalspec\n        fixed fixedkmat free fullk fvecind getX getXsuper highcon\n        initialvals inten irf irffun irfpar iter jvec kin2scal kinpar\n        kinpar2 kinscal kinscalspecial kinscalspecialspec kmat kmatfit\n        lambdac lclp0 lclpequ lightregimespec lowcon makeps\n        measured_irf mhist mirf mod_type mvecind ncolc ncomp nl nt\n        numericalintegration nvecind outMat parmu parnames partau\n        positivepar prel prelspec psi.df psi.weight pvecind\n        reactantstoichiometrymatrix reftau satMat scalx seqmod sigma\n        simdata speckin2 specpar stoichiometrymatrix streak streakT\n        title usecompnames0 usecompnamesequ usekin2 wavedep weight\n        weightList weightM weightpar weightsmooth x x2\n  Inherited: psi.df psi.weight x nt x2 nl C2 E2 sigma mod_type parnames\n        simdata weightpar weight weightM weightsmooth fixed clp0 makeps\n        clpequspec lclp0 lclpequ title mhist datCall dscalspec mvecind\n        drel clpequ scalx prel prelspec fvecind pvecind nvecind iter\n        free clpCon ncomp clpdep inten positivepar constrained clinde\n        chinde highcon lowcon datafile getX clpType clpequspecBD\n        compnames getXsuper usecompnames0 usecompnamesequ autoclp0\n        cohcol weightList outMat satMat\n  Docs: amplitudes coh cohspec convalg dispmu dispmufun disptau\n        disptaufun doublegaus fullk initialvals irf irffun irfpar jvec\n        kinpar kinscal kmat kmatfit lambdac measured_irf mirf ncolc\n        numericalintegration parmu partau reactantstoichiometrymatrix\n        reftau seqmod specpar stoichiometrymatrix streak streakT\n        wavedep\n\nS4 class codoc mismatches from documentation object 'kinopt-class':\nSlots for class 'kinopt'\n  Code: FLIM FLIMresidimag adddataimage addest addfilename algorithm\n        breakdown coldata colfit divdrel getStartTri imagepal iter\n        kinspecerr kinspecest linrange ltydata ltyfit makeps maxfev\n        minFactor nlsalgorithm nnls nnlscrit noFLIMsummary noplotest\n        normspec notraces optimmethod output paropt parscale plot\n        plotcohcolspec plotkinspec plotpulsefol residplot residtraces\n        samespecline selectedtraces specinterpol specinterpolbspline\n        specinterpolpoints specinterpolseg stderrclp summaryplotcol\n        summaryplotrow sumnls superimpose title triStart trilinear\n        writeclperr writecon writedata writefit writefitivo\n        writenormspec writeplaincon writerawcon writespec\n        writespecinterpol xlab xlim xlimspec ylab ylimcomp ylimspec\n        ylimspecplus\n  Inherited: notraces residtraces selectedtraces writecon writespec\n        writenormspec writefit writefitivo writedata writeclperr\n        residplot plot minFactor output nnls divdrel noplotest\n        plotkinspec algorithm superimpose xlab ylab title makeps\n        linrange summaryplotrow summaryplotcol iter stderrclp trilinear\n        getStartTri triStart paropt addfilename addest adddataimage\n        kinspecerr xlimspec ylimspec ylimspecplus xlim specinterpol\n        specinterpolpoints specinterpolseg specinterpolbspline\n        samespecline normspec writespecinterpol nnlscrit nlsalgorithm\n        sumnls colfit coldata ltyfit ltydata optimmethod parscale\n        maxfev imagepal\n  Docs: FLIM: FLIMresidimag: breakdown kinspecest noFLIMsummary:\n        notraces plotcohcolspec plotpulsefol selectedtraces\n        writeplaincon writerawcon ylimcomp\n\nS4 class codoc mismatches from documentation object 'multimodel-class':\nSlots for class 'multimodel'\n  Code: algorithm data datasetind finished fit getXsuper groups\n        modeldiffs modellist modelspec nclp nnls nnlscrit optlist\n        parorder parorderchange parorderdiff stderrclp trilinear\n  Docs: data fit groups model modeldiffs modellist stderrclp\n\nS4 class codoc mismatches from documentation object 'opt-class':\nSlots for class 'opt'\n  Code: adddataimage addest addfilename algorithm coldata colfit\n        divdrel getStartTri imagepal iter kinspecerr linrange ltydata\n        ltyfit makeps maxfev minFactor nlsalgorithm nnls nnlscrit\n        noplotest normspec notraces optimmethod output paropt parscale\n        plot plotkinspec residplot residtraces samespecline\n        selectedtraces specinterpol specinterpolbspline\n        specinterpolpoints specinterpolseg stderrclp summaryplotcol\n        summaryplotrow sumnls superimpose title triStart trilinear\n        writeclperr writecon writedata writefit writefitivo\n        writenormspec writespec writespecinterpol xlab xlim xlimspec\n        ylab ylimspec ylimspecplus\n  Docs: adddataimage addest addfilename algorithm coldata colfit\n        divdrel iter kinspecerr linrange ltydata ltyfit makeps\n        nlsalgorithm nnls normspec output paropt plot plotkinspec\n        residplot samespecline specinterpol specinterpolbspline\n        specinterpolpoints specinterpolseg stderrclp summaryplotcol\n        summaryplotrow superimpose title writeclperr writecon writefit\n        writenormspec writespec writespecinterpol xlab xlimspec ylab\n        ylimspec ylimspecplus\n\nS4 class codoc mismatches from documentation object 'res-class':\nSlots for class 'res'\n  Code: cohirf cp fitted irfvec resid std_err_clp\n  Docs: cp fitted irfvec resid\n\nS4 class codoc mismatches from documentation object 'theta-class':\nSlots for class 'theta'\n  Code: amplitudes amps anipar clpequ coh cohirf drel irfpar jvec\n        kin2scal kinpar kinpar2 kinscal kinscalspecial parmu partau\n        peakpar prel shift specdisppar specpar\n  Docs: clpequ coh drel irfpar kinpar kinscal parmu partau prel\n        specdisppar specpar\n\n\nPackage: amba Version: 0.2.0 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'Estimation':\nEstimation\n  Code: function()\n  Docs: function(...)\n  Argument names in docs not in code:\n    ...\n\n\nPackage: backtest Version: 0.3-0 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'backtest-class':\nSlots for class 'backtest'\n  Code: buckets by.period by.var date.var do.spread in.var natural\n        overlaps results ret.stats ret.var summary.stats turnover\n  Docs: buckets by.var date.var in.var natural rawstats results ret.var\n\n\nPackage: crosshybDetector Version: 1.0.4 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'AASequenceList-class':\nSlots for class 'AASequenceList'\n  Code: .Data info names\n  Docs: .Data info\n\n\nPackage: fBasics Version: 2100.78 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'colorLocator':\ncolorMatrix\n  Code: function()\n  Docs: function(locator = TRUE)\n  Argument names in docs not in code:\n    locator\n\n\nPackage: fUtilities Version: 2100.77 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'colorLocator':\ncolorMatrix\n  Code: function()\n  Docs: function(locator = TRUE)\n  Argument names in docs not in code:\n    locator\n\n\nPackage: filehashSQLite Version: 0.2-2 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'filehashSQLite-class':\nSlots for class 'filehashSQLite'\n  Code: datafile dbcon drv name\n  Inherited: name\n  Docs: datafile dbcon name\n\n\nPackage: grnnR Version: 1.0 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nData sets with usage in documentation object 'P_trn' but not in code:\n  P_trn\n\nData sets with usage in documentation object 'P_tst' but not in code:\n  P_tst\n\nData sets with usage in documentation object 'T_trn' but not in code:\n  T_trn\n\nData sets with usage in documentation object 'T_tst' but not in code:\n  T_trn\n\n\nPackage: mmlcr Version: 1.3.5 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nWarning: file 'Srcdfull.rda' has magic number 'RDA1'\n   Use of save versions prior to 2 is deprecated\n\nPackage: nws Version: 1.7.0.0 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'nwsUseWs':\n\\S4method{nwsUseWs}{nwsServer}\n  Code: function(.Object, wsName, space = NULL, ...)\n  Docs: function(.Object, wsName, space = NULL)\n  Argument names in code not in docs:\n    ...\n\nS4 class codoc mismatches from documentation object 'netWorkSpace':\nSlots for class 'netWorkSpace'\n  Code: cookieProtocol server wsName\n  Docs: server wsName\n\nS4 class codoc mismatches from documentation object 'nwsServer':\nSlots for class 'nwsServer'\n  Code: cookieProtocol nwsSocket port serverHost\n  Docs: nwsSocket port serverHost\n\nS4 class codoc mismatches from documentation object 'sleighPending':\nSlots for class 'sleighPending'\n  Code: accumulator barrierName numSubmitted numTasks nws sleighState\n        state\n  Docs: barrierName numTasks nws sleighState state\n\n\nPackage: portfolio Version: 0.4-4 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'matchedPortfolio-class':\nSlots for class 'matchedPortfolio'\n  Code: formula matches method omitted.control omitted.treatment\n        original\n  Docs: formula matches original\n\nS4 class codoc mismatches from documentation object 'tradelist-class':\nSlots for class 'tradelist'\n  Code: actual candidates chunk.usd chunks chunks.actual data final\n        id.var mv.long.orig mv.short.orig price.var rank.gain.min\n        rank.sorts ranks regions restricted restrictions sorts swaps\n        swaps.actual target.equity tca to.equity trade.usd.min turnover\n        type unrestricted verbose\n  Docs: actual candidates chunk.usd chunks chunks.actual data final\n        id.var mv.long.orig mv.short.orig rank.sorts ranks regions\n        restricted restrictions sorts swaps swaps.actual target.equity\n        tca to.equity trade.usd.min turnover type unrestricted\n\n\nPackage: portfolioSim Version: 0.2-5 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'sdiDf-class':\nSlots for class 'sdiDf'\n  Code: data\n  Docs: data period.var\n\nS4 class codoc mismatches from documentation object 'stiFromSignal-class':\nSlots for class 'stiFromSignal'\n  Code: chunk.usd equity in.var rebal.on sides size target\n        trading.style turnover type\n  Docs: equity in.var rebal.on sides size target trading.style type\n\n\nPackage: qualV Version: 0.2-4 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nCodoc mismatches from documentation object 'compareME':\nprint.compareME\n  Code: function(x, ..., digits = 3)\n  Docs: function(object, ..., digits = 3)\n  Argument names in code not in docs:\n    x\n  Argument names in docs not in code:\n    object\n  Mismatches in argument names:\n    Position: 1 Code: x Docs: object\n\n\nPackage: race Version: 0.1.56 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nFunctions/methods with usage in documentation object 'race.describe' but not in code:\n  race.describe\n\nFunctions/methods with usage in documentation object 'race.info' but not in code:\n  race.info\n\nFunctions/methods with usage in documentation object 'race.init' but not in code:\n  race.init\n\nFunctions/methods with usage in documentation object 'race.wrapper' but not in code:\n  race.wrapper\n\n\nPackage: tradeCosts Version: 0.3-0 Flavor: r-devel-linux-ix86\nCheck: for code/documentation mismatches ... WARNING\nS4 class codoc mismatches from documentation object 'tradeCostsResults-class':\nSlots for class 'tradeCostsResults'\n  Code: base.price batch.method batches benchmark.price executions\n        na.counts name\n  Docs: base.price batch.method benchmark.price na.counts name results",
+      "body_snippet": "Dear maintainers,\n\nThis concerns the packages \n\n   BLCOP NADA Ryacas SNPMaP TIMP amba backtest crosshybDetector fBasics\n   fUtilities filehashSQLite grnnR mmlcr nws portfolio portfolioSim\n   qualV rac",
+      "thread_id": "thread-1fb2a11f5faa",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-e1697d15f0be",
+      "message_id": "<01caa8eb$Blat.v2.2.2$d33ed1c8@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-02-08T18:23:34Z",
+      "subject": "Package fBasics_2110.79.tar.gz has been built for Windows",
+      "subject_clean": "Package fBasics_2110.79.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.1 (2009-12-14)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-e1697d15f0be",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-426cbdbdcb6f",
+      "message_id": "<01caa8eb$Blat.v2.2.2$d36c0bfb@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-02-08T18:23:35Z",
+      "subject": "Package fUtilities_2110.78.tar.gz has been built for Windows",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.1 (2009-12-14)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-426cbdbdcb6f",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-917997a61699",
+      "message_id": "<20100209-11021012-da8-1@CM-Web-Bak>",
+      "from_name": "MORE and European Commission (DG Research)",
+      "from_email_hash": "04a8c48a116327796167b98eaa42ead017c6b802fa40f1f12a94df4bec6c71c7",
+      "date": "2010-02-09T10:02:10Z",
+      "subject": "Reminder: International mobility of researchers",
+      "subject_clean": "Reminder: International mobility of researchers",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Sir/Madam,\n\nRecently, we invited you to participate in our survey. Until now, you have not yet responded. We kindly ask you to take about 15 minutes to complete the survey.\n\nThis project is funded by the European Commission, Directorate General for Research\n\nPlease click here to start the survey:\nhttp://s.checkmarket.com/?e=13049&c=4540162&l=en&h=AB2064CABD4A9422DB75\n\nStimulating knowledge exchange through mobility of researchers has become a key priority to national and European policy makers. However, a lot is still not fully understood and more evidence is needed to develop effective policies on this topic. To this end, the European Commission has launched a large scale study (known as the MORE-study - www.researchersmobility.eu) focusing on mobility patterns and career paths of researchers.\n\nWe would like to invite you to participate to our survey (about 10-15 minutes of your time) in order to collect your experiences with respect to mobility. Your opinion on the problems, needs and attitudes will help the European Commission (and other Governments) to develop better targeted policies on this subject.\n\nAll completed surveys shall remain strictly private and confidential and shall only be used for the purposes of this study.\n\nPlease click here to start the survey:\nhttp://s.checkmarket.com/?e=13049&c=4540162&l=en&h=AB2064CABD4A9422DB75\n\nThank you in advance for your survey participation and feedback.\n\nIf you encounter any technical difficulties taking the survey, please contact us at EC-study at researchersmobility.eu\n\nSincerely yours,\n\nArnold Verbeek\n(project director)\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100209/b7f1a387/attachment.html>",
+      "body_snippet": "Dear Sir/Madam,\n\nRecently, we invited you to participate in our survey. Until now, you have not yet responded. We kindly ask you to take about 15 minutes to complete the survey.\n\nThis project is funde",
+      "thread_id": "thread-917997a61699",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-c7ea9560e68b",
+      "message_id": "<19316.30222.136365.227120@hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-02-11T21:26:38Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainers,\n\nThis concerns the packages\n\n  BioStatR BiplotGUI GAMens MChtest NestedCohort REEMtree ROCR RQDA SGP\n  ca choplump dirmult dlm emdbook extremevalues fPortfolio gene2pathway\n  lemma mclust mixlow plotrix primer randomSurvivalForest rattle\n  rconifers season ssanv tweedie\n\nmaintained by one of you.\n\nThese packages have a file CITATION (in the top-level package source\ndirectory), where R really uses inst/CITATION.\n\nCan we pls have updates with the citation file in the right place?\n\nPlease also ensure that your citation file does not make calls to\npackageDescription() or alike to access the package metadata.  Instead,\nplease require at least R >= 2.8.0, and use a variable called 'meta' in\nyour code which will be passed on automagically to citation().  I.e.,\ninstead of e.g.\n\n  desc <- packageDescription(\"mixlow\")\n  year <- sub(\".*(2[[:digit:]]{3})-.*\", \"\\\\1\", desc$Date)\n  vers <- paste(\"R package version\", desc$Version)\n\nuse\n\n  year <- sub(\".*(2[[:digit:]]{3})-.*\", \"\\\\1\", meta$Date)\n  vers <- paste(\"R package version\", meta$Version)\n\nIf requiring R >= 2.8.0 is a problem, use e.g.\n\n  if(!exists(\"meta\") || is.null(meta)) meta <- packageDescription(\"mixlow\")\n  year <- sub(\".*(2[[:digit:]]{3})-.*\", \"\\\\1\", meta$Date)\n  vers <- paste(\"R package version\", meta$Version)\n\nI find such (and other) problems in the CITATION files for\n\n  BioStatR REEMtree ROCR RQDA dirmult dlm emdbook extremevalues\n  fPortfolio gene2pathway lemma mclust mixlow plotrix primer\n  randomSurvivalForest rattle rconifers season\n\nBest\n-k",
+      "body_snippet": "Dear maintainers,\n\nThis concerns the packages\n\n  BioStatR BiplotGUI GAMens MChtest NestedCohort REEMtree ROCR RQDA SGP\n  ca choplump dirmult dlm emdbook extremevalues fPortfolio gene2pathway\n  lemma m",
+      "thread_id": "thread-c7ea9560e68b",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-ac4502948f24",
+      "message_id": "<619297.49317.qm@web80601.mail.mud.yahoo.com>",
+      "from_name": "Robert Bell",
+      "from_email_hash": "27226a6ab02c8fe9cd50ef07b9a9e4b9bcdffb035986b8061508c9aeb3a04f1f",
+      "date": "2010-02-22T01:05:10Z",
+      "subject": "ARCH and GARCH implementations in CRAN",
+      "subject_clean": "ARCH and GARCH implementations in CRAN",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100221/87229c1f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100221/87229c1f/attachment.pl>",
+      "thread_id": "thread-ac4502948f24",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-73019f94b6ac",
+      "message_id": "<000501cab6c8$474bb9e0$d5e32da0$@com.mk>",
+      "from_name": "Trajce Dimitrovski",
+      "from_email_hash": "b8e32c6792e777474d198b24410b5da40383c9a62ef3a97925f7b2694892d0e6",
+      "date": "2010-02-26T09:44:23Z",
+      "subject": "No subject",
+      "subject_clean": "No subject",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear,\n\nPleace, send me any program with Dickey-fuller test.\n\nSincerely.\n\n?????? ???????????\n\n \n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100226/205e35b7/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/octet-stream\nSize: 12471 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100226/205e35b7/attachment.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: ?????? ???????????.vcf\nType: text/x-vcard\nSize: 3797 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100226/205e35b7/attachment.vcf>",
+      "body_snippet": "Dear,\n\nPleace, send me any program with Dickey-fuller test.\n\nSincerely.\n\n?????? ???????????\n\n \n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pi",
+      "thread_id": "thread-73019f94b6ac",
+      "thread_depth": 0,
+      "month": "2010-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-99e3a6caddf1",
+      "subject": "International mobility of researchers",
+      "message_count": 1,
+      "participants": [
+        "Elissavet Lykogianni"
+      ],
+      "started": "2010-02-02T10:56:06Z",
+      "last_reply": "2010-02-02T10:56:06Z",
+      "root_message_id": "msg-99e3a6caddf1"
+    },
+    {
+      "id": "thread-1fb2a11f5faa",
+      "subject": "CRAN packages maintained by you",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2010-02-05T11:12:47Z",
+      "last_reply": "2010-02-05T11:12:47Z",
+      "root_message_id": "msg-1fb2a11f5faa"
+    },
+    {
+      "id": "thread-e1697d15f0be",
+      "subject": "Package fBasics_2110.79.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-02-08T18:23:34Z",
+      "last_reply": "2010-02-08T18:23:34Z",
+      "root_message_id": "msg-e1697d15f0be"
+    },
+    {
+      "id": "thread-426cbdbdcb6f",
+      "subject": "Package fUtilities_2110.78.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-02-08T18:23:35Z",
+      "last_reply": "2010-02-08T18:23:35Z",
+      "root_message_id": "msg-426cbdbdcb6f"
+    },
+    {
+      "id": "thread-917997a61699",
+      "subject": "Reminder: International mobility of researchers",
+      "message_count": 1,
+      "participants": [
+        "MORE and European Commission (DG Research)"
+      ],
+      "started": "2010-02-09T10:02:10Z",
+      "last_reply": "2010-02-09T10:02:10Z",
+      "root_message_id": "msg-917997a61699"
+    },
+    {
+      "id": "thread-c7ea9560e68b",
+      "subject": "CRAN packages maintained by you",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2010-02-11T21:26:38Z",
+      "last_reply": "2010-02-11T21:26:38Z",
+      "root_message_id": "msg-c7ea9560e68b"
+    },
+    {
+      "id": "thread-ac4502948f24",
+      "subject": "ARCH and GARCH implementations in CRAN",
+      "message_count": 1,
+      "participants": [
+        "Robert Bell"
+      ],
+      "started": "2010-02-22T01:05:10Z",
+      "last_reply": "2010-02-22T01:05:10Z",
+      "root_message_id": "msg-ac4502948f24"
+    },
+    {
+      "id": "thread-73019f94b6ac",
+      "subject": "No subject",
+      "message_count": 1,
+      "participants": [
+        "Trajce Dimitrovski"
+      ],
+      "started": "2010-02-26T09:44:23Z",
+      "last_reply": "2010-02-26T09:44:23Z",
+      "root_message_id": "msg-73019f94b6ac"
+    }
+  ]
+}

@@ -1,0 +1,1149 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-04",
+  "messages": [
+    {
+      "id": "msg-215a3109248f",
+      "message_id": "<01c9b84a$Blat.v2.2.2$c9aca836@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-08T13:06:10Z",
+      "subject": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.9.0 beta\n(but not the current R-2.8.1). R-2.9.0 will be released on April 17.\nPlease consider to submit a fixed version until April 15.\nR version 2.9.0 beta (2009-04-06 r48294)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fRegression.Rcheck'\n* using R version 2.9.0 beta (2009-04-06 r48294)\n* using session charset: ISO8859-1\n* checking for file 'fRegression/DESCRIPTION' ... OK\n* this is package 'fRegression' version '270.74'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fRegression' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd files against version 2 parser ... WARNING\nWarning in parse_Rd(\"./man/fREG-class.Rd\", encoding = \"unknown\") :\n  newline within quoted string at fREG-class.Rd:82\n*** error on file ./man/fREG-class.Rd\nError in parse_Rd(\"./man/fREG-class.Rd\", encoding = \"unknown\") : \n  Unexpected end of input (in \" quoted string opened at fREG-class.Rd:104:47)\n\nWarning in parse_Rd(\"./man/plot-methods.Rd\", encoding = \"unknown\") :\n  newline within quoted string at plot-methods.Rd:73\n*** error on file ./man/plot-methods.Rd\nError in parse_Rd(\"./man/plot-methods.Rd\", encoding = \"unknown\") : \n  Unexpected end of input (in \" quoted string opened at plot-methods.Rd:90:55)\n\nWarning: ./man/regFit.Rd:131: Unnecessary braces at '{| residuals |}'\nWarning: ./man/regSim.Rd:74: Unnecessary braces at '{x2}'\nproblems found in 'fREG-class.Rd', 'plot-methods.Rd'\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $BLAS_LIBS ... OK\n* checking examples ... OK\n* checking tests ... ERROR\nRunning the tests in 'tests/doRUnit.R' failed.\nLast 13 lines of output:\n    numeric 'envir' arg not of length one\n  ERROR in test.termPersp: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  ERROR in test.termPlot: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  ERROR in test.amCoef: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  Error in eval.with.vis(expr, envir, enclos) : \n  \n  unit testing failed (#test failures: 0, R errors: 5)\n  \n  Calls: source -> eval.with.vis -> eval.with.vis\n  Execution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-215a3109248f",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-d91939c67542",
+      "message_id": "<01c9ba55$Blat.v2.2.2$41aeec51@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-11T03:26:09Z",
+      "subject": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\nR version 2.9.0 beta (2009-04-08 r48312)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fRegression.Rcheck'\n* using R version 2.9.0 beta (2009-04-08 r48312)\n* using session charset: ISO8859-1\n* checking for file 'fRegression/DESCRIPTION' ... OK\n* this is package 'fRegression' version '270.74'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fRegression' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd files against version 2 parser ... WARNING\nWarning in parse_Rd(\"./man/fREG-class.Rd\", encoding = \"unknown\") :\n  newline within quoted string at fREG-class.Rd:82\n*** error on file ./man/fREG-class.Rd\nError in parse_Rd(\"./man/fREG-class.Rd\", encoding = \"unknown\") : \n  Unexpected end of input (in \" quoted string opened at fREG-class.Rd:104:47)\n\nWarning in parse_Rd(\"./man/plot-methods.Rd\", encoding = \"unknown\") :\n  newline within quoted string at plot-methods.Rd:73\n*** error on file ./man/plot-methods.Rd\nError in parse_Rd(\"./man/plot-methods.Rd\", encoding = \"unknown\") : \n  Unexpected end of input (in \" quoted string opened at plot-methods.Rd:90:55)\n\nWarning: ./man/regFit.Rd:131: Unnecessary braces at '{| residuals |}'\nWarning: ./man/regSim.Rd:74: Unnecessary braces at '{x2}'\nproblems found in 'fREG-class.Rd', 'plot-methods.Rd'\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $BLAS_LIBS ... OK\n* checking examples ... OK\n* checking tests ... ERROR\nRunning the tests in 'tests/doRUnit.R' failed.\nLast 13 lines of output:\n    numeric 'envir' arg not of length one\n  ERROR in test.termPersp: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  ERROR in test.termPlot: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  ERROR in test.amCoef: Error in eval(inp, data, parent.frame()) : \n    numeric 'envir' arg not of length one\n  Error in eval.with.vis(expr, envir, enclos) : \n  \n  unit testing failed (#test failures: 0, R errors: 5)\n  \n  Calls: source -> eval.with.vis -> eval.with.vis\n  Execution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-d91939c67542",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-496284163f21",
+      "message_id": "<18917.35941.590344.700199@lynne.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2009-04-15T07:27:33Z",
+      "subject": "2hr timeout of some ethz.ch servers: Thu April 16, 3--5 UTC+2",
+      "subject_clean": "2hr timeout of some ethz.ch servers: Thu April 16, 3--5 UTC+2",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "The planned downtime which will include  mailman mailing lists,\npossibly FTP and HTTP, is at a good time for Europeans only.\n\nNote that the subversion (SVN) server should *NOT* be affected.\n\nFor the mailing lists, you should just observe a long timeout\nbefore mails are forwarded / posted, but nothing should be lost,\nand the users would not receive feedback (about the timeout)\nunless the timeout would take considerably longer, unexpectedly.\n\n >> There will be upcoming maintenance work of the central computer services\n >> on our network's storage server (NAS) which will affect all of our user and \n >> software directories. This change will take place on\n >> \n >>                   Thursday 16th April, from 3:15 a.m.\n\n  [................]\n\n >> The interruption will take about 2 hours.\n\n\n--\nBest,\nMartin",
+      "body_snippet": "The planned downtime which will include  mailman mailing lists,\npossibly FTP and HTTP, is at a good time for Europeans only.\n\nNote that the subversion (SVN) server should *NOT* be affected.\n\nFor the m",
+      "thread_id": "thread-496284163f21",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-00f642dad2d7",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3a01db5f@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:49Z",
+      "subject": "Package fArma_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fArma_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fArma_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fArma_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CR",
+      "thread_id": "thread-00f642dad2d7",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-5b52cb7c9d06",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3a7a0652@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:49Z",
+      "subject": "Package fBasics_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fBasics_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-5b52cb7c9d06",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-78cc76451868",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3a531cfc@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:49Z",
+      "subject": "Package fAssets_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fAssets_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-78cc76451868",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-e5817bed6ab7",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3a2e7d9c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:49Z",
+      "subject": "Package fAsianOptions_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fAsianOptions_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspo",
+      "thread_id": "thread-e5817bed6ab7",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-0bfcadc9883d",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3aabffcd@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:50Z",
+      "subject": "Package fBonds_270.74.tar.gz has been built for Windows",
+      "subject_clean": "Package fBonds_270.74.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBonds_270.74.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBonds_270.74.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding C",
+      "thread_id": "thread-0bfcadc9883d",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-259dc0a9cc8b",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3b1c898c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:50Z",
+      "subject": "Package fEcofin_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fEcofin_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fEcofin_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fEcofin_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-259dc0a9cc8b",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-b2fa3948cb3e",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3accce93@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:50Z",
+      "subject": "Package fCalendar_270.78.2.tar.gz has been built for Windows",
+      "subject_clean": "Package fCalendar_270.78.2.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.2.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.2.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-b2fa3948cb3e",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-cd93251e8d2c",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3af5a036@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:50Z",
+      "subject": "Package fCopulae_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fCopulae_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCopulae_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCopulae_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-cd93251e8d2c",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-5f16ff226365",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3b88e108@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:51Z",
+      "subject": "Package fGarch_290.77.tar.gz has been built for Windows",
+      "subject_clean": "Package fGarch_290.77.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_290.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_290.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding C",
+      "thread_id": "thread-5f16ff226365",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-72984c820815",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3baf68b5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:51Z",
+      "subject": "Package fImport_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fImport_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-72984c820815",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-86529bd807fd",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3b431139@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:51Z",
+      "subject": "Package fExoticOptions_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fExoticOptions_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExoticOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresp",
+      "thread_id": "thread-86529bd807fd",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-d8af80375522",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3b6504fa@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:51Z",
+      "subject": "Package fExtremes_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fExtremes_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-d8af80375522",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-65a954bbede3",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3bf7827a@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:52Z",
+      "subject": "Package fNonlinear_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fNonlinear_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fNonlinear_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fNonlinear_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-65a954bbede3",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-c69f319c5b80",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3bd344c3@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:52Z",
+      "subject": "Package fMultivar_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fMultivar_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fMultivar_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fMultivar_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-c69f319c5b80",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-d1eb3c92ffc9",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3c3bcba5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:52Z",
+      "subject": "Package fPortfolio_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fPortfolio_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-d1eb3c92ffc9",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-d7842a2ab87b",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3c191492@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:52Z",
+      "subject": "Package fOptions_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fOptions_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-d7842a2ab87b",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-3538e9c936c9",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3cefdb3d@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:53Z",
+      "subject": "Package fUtilities_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fUtilities_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-3538e9c936c9",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-5e33c8449154",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3caa6d17@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:53Z",
+      "subject": "Package fTrading_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fTrading_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fTrading_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fTrading_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-5e33c8449154",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-62fd2a80bed8",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3ccd85d3@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:53Z",
+      "subject": "Package fUnitRoots_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fUnitRoots_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-62fd2a80bed8",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-aaa591fbd170",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3c64fef1@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:53Z",
+      "subject": "Package fRegression_290.75.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fRegression_290.75.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_290.75.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.8/fRegression.Rcheck'\n* using R version 2.8.1 (2008-12-22)\n* using session charset: ISO8859-1\n* checking for file 'fRegression/DESCRIPTION' ... OK\n* this is package 'fRegression' version '290.75'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fRegression' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... NOTE\n.gam: no visible global function definition for 'gam.method'\n.gam: no visible global function definition for\n  'gam.method.description'\n* checking Rd files ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $BLAS_LIBS ... OK\n* creating fRegression-Ex.R ... OK\n* checking examples ... ERROR\nRunning examples in 'fRegression-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * regFit\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: regFit\n> ### Title: Regression Modelling\n> ### Aliases: regFit gregFit\n> ### Keywords: models\n> \n> ### ** Examples\n> \n> ## regSim -\n>    x = regSim(model = \"LM3\", n = 100)\n>   \n>    # LM       \n>    regFit(Y ~ X1 + X2 + X3, data = x, use = \"lm\") \n\nTitle:\n Linear Regression Modeling \n\nFormula:\n Y ~ X1 + X2 + X3\n\nFamily:\n gaussian identity \n\nModel Parameters:\n(Intercept)           X1           X2           X3  \n    0.01578      0.73967      0.25128     -0.50611  \n\n>    \n>    # RLM      \n>    regFit(Y ~ X1 + X2 + X3, data = x, use = \"rlm\") \n\nTitle:\n Robust Linear Regression Modeling \n\nFormula:\n Y ~ X1 + X2 + X3\n\nFamily:\n gaussian identity \n\nModel Parameters:\n(Intercept)           X1           X2           X3  \n    0.01968      0.74264      0.24736     -0.50123  \n\n>    # AM       \n>    regFit(Y ~ X1 + X2 + X3, data = x, use = \"gam\")                \nError in .gam(formula = Y ~ X1 + X2 + X3, data = as.data.frame(x)) : \n  could not find function \"gam.method\"\nCalls: regFit -> eval -> eval -> .gam\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fRegression_290.75.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-aaa591fbd170",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-b120ae79a3ae",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3c8383c1@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:53Z",
+      "subject": "Package fSeries_270.76.2.tar.gz has been built for Windows",
+      "subject_clean": "Package fSeries_270.76.2.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.2.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.2.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-b120ae79a3ae",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-67fc841a0a26",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3d46126f@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:54Z",
+      "subject": "Package timeDate_290.85.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_290.85.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.85.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.85.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-67fc841a0a26",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-f1cc87721adf",
+      "message_id": "<01c9be6d$Blat.v2.2.2$3d72b4ac@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-16T08:27:54Z",
+      "subject": "Package timeSeries_290.81.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_290.81.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-f1cc87721adf",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-911b3d1d4e12",
+      "message_id": "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+      "from_name": "David Carlson",
+      "from_email_hash": "1c6db2a0e5c011c43dfe903f318d9c072dd5005c8454c036c319f4e4b032fd69",
+      "date": "2009-04-17T16:33:40Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I've downloaded fMultivar and fBasics, but cannot get fBasics to load:\n\n> install.packages(\"fBasics\", dependencies=TRUE)\ntrying URL\n'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29\n0.76.zip'\nContent type 'application/zip' length 1330440 bytes (1.3 Mb)\nopened URL\ndownloaded 1.3 Mb\n\npackage 'fBasics' successfully unpacked and MD5 sums checked\n\nThe downloaded packages are in\n        C:\\Documents and Settings\\David Carlson\\Local\nSettings\\Temp\\RtmpFdYOxE\\downloaded_packages\nupdating HTML package descriptions\n> library(fMultivar)\nLoading required package: fBasics\nError in importIntoEnv(impenv, impnames, ns, impvars) : \n  objects ''colnames', 'as.matrix', 'plot', 'as.data.frame', 'apply',\n'rank', 'rownames'' are not exported by 'namespace:timeSeries'\nError: package 'fBasics' could not be loaded\n\n--------------------------------------------\nDavid L. Carlson\nAssociate Professor\nAnthropology Department\nTexas A&M University\nCollege Station, TX 77843-4352",
+      "body_snippet": "I've downloaded fMultivar and fBasics, but cannot get fBasics to load:\n\n> install.packages(\"fBasics\", dependencies=TRUE)\ntrying URL\n'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fB",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-fe4dcd2f2f35",
+      "message_id": "<20090417195645.788ce337@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-04-17T17:56:45Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>"
+      ],
+      "body_plain": ">>>> \"DC\" == \"David Carlson\" <dcarlson at tamu.edu>\n>>>> on Fri, 17 Apr 2009 11:33:40 -0500\n\n   DC> I've downloaded fMultivar and fBasics, but cannot get fBasics\n   DC> to load:\n   DC>\n   DC> > install.packages(fBasics, dependencies=TRUE)\n   DC> trying URL\n   DC>\n'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29\nDC> 0.76.zip' DC> Content type 'application/zip' length 1330440 bytes (1.3 Mb)\n   DC> opened URL\n   DC> downloaded 1.3 Mb\n   DC>\n   DC> package 'fBasics' successfully unpacked and MD5 sums checked\n   DC>\n   DC> The downloaded packages are in\n   DC> C:\\Documents and Settings\\David Carlson\\Local\n   DC> Settings\\Temp\\RtmpFdYOxE\\downloaded_packages\n   DC> updating HTML package descriptions\n   DC> > library(fMultivar)\n   DC> Loading required package: fBasics\n   DC> Error in importIntoEnv(impenv, impnames, ns, impvars) :\n   DC> objects ''colnames', 'as.matrix', 'plot', 'as.data.frame',\n   DC> 'apply',\n   DC> 'rank', 'rownames'' are not exported by 'namespace:timeSeries'\n   DC> Error: package 'fBasics' could not be loaded\n\nHi David\n\nIt is important to update the other Rmetrics packages when you\ninstall a new version of one of the packages.\n\nThe recommended way to do so is to use the R script available at\nhttp://www.rmetrics.org .\n\n\nIn an R console try\n\nsource(\"http://www.rmetrics.org/Rmetrics.R\")\ninstall.Rmetrics()\n\n\nRegards,\nYohan\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DC\" == \"David Carlson\" <dcarlson at tamu.edu>\n>>>> on Fri, 17 Apr 2009 11:33:40 -0500\n\n   DC> I've downloaded fMultivar and fBasics, but cannot get fBasics\n   DC> to load:\n   DC>\n   DC> > instal",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 1,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-280e25be42e9",
+      "message_id": "<18920.52692.780292.364026@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2009-04-17T18:43:32Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<20090417195645.788ce337@mimi>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+        "<20090417195645.788ce337@mimi>"
+      ],
+      "body_plain": "On 17 April 2009 at 19:56, Yohan Chalabi wrote:\n| >>>> \"DC\" == \"David Carlson\" <dcarlson at tamu.edu>\n| >>>> on Fri, 17 Apr 2009 11:33:40 -0500\n| \n|    DC> I've downloaded fMultivar and fBasics, but cannot get fBasics\n|    DC> to load:\n|    DC>\n|    DC> > install.packages(fBasics, dependencies=TRUE)\n|    DC> trying URL\n|    DC>\n| 'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29\n| DC> 0.76.zip' DC> Content type 'application/zip' length 1330440 bytes (1.3 Mb)\n|    DC> opened URL\n|    DC> downloaded 1.3 Mb\n|    DC>\n|    DC> package 'fBasics' successfully unpacked and MD5 sums checked\n|    DC>\n|    DC> The downloaded packages are in\n|    DC> C:\\Documents and Settings\\David Carlson\\Local\n|    DC> Settings\\Temp\\RtmpFdYOxE\\downloaded_packages\n|    DC> updating HTML package descriptions\n|    DC> > library(fMultivar)\n|    DC> Loading required package: fBasics\n|    DC> Error in importIntoEnv(impenv, impnames, ns, impvars) :\n|    DC> objects ''colnames', 'as.matrix', 'plot', 'as.data.frame',\n|    DC> 'apply',\n|    DC> 'rank', 'rownames'' are not exported by 'namespace:timeSeries'\n|    DC> Error: package 'fBasics' could not be loaded\n| \n| Hi David\n| \n| It is important to update the other Rmetrics packages when you\n| install a new version of one of the packages.\n| \n| The recommended way to do so is to use the R script available at\n| http://www.rmetrics.org .\n| \n| \n| In an R console try\n| \n| source(\"http://www.rmetrics.org/Rmetrics.R\")\n| install.Rmetrics()\n\nI am not convinced that working outside of the existing R package management\nsystem buys you something.  DESCRIPTION file have been supporting Depends\nwith >= and <= operators since R 2.7.0.  It would be nice if these were used\nhere.\n\nFWIW I an once again trying to upgrade an avalanche of Rmetrics packages in\nDebian, rather than working through a phased upgraded. The fBasics Depends:\non timeSeries that tripped up David is not made explicit and is stopping me\ntoo. I consider that to be a bug in Rmetrics.\n\nRegards, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 17 April 2009 at 19:56, Yohan Chalabi wrote:\n| >>>> \"DC\" == \"David Carlson\" <dcarlson at tamu.edu>\n| >>>> on Fri, 17 Apr 2009 11:33:40 -0500\n| \n|    DC> I've downloaded fMultivar and fBasics, but c",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 2,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-a8a973197c8a",
+      "message_id": "<01c9bf9a$Blat.v2.2.2$52005c0a@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-17T20:23:07Z",
+      "subject": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-a8a973197c8a",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-b0e59ae17246",
+      "message_id": "<01c9bf9a$Blat.v2.2.2$51da0e5f@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-17T20:23:07Z",
+      "subject": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-b0e59ae17246",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-2474cc1d9a28",
+      "message_id": "<01c9bf9a$Blat.v2.2.2$522a2c3c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-17T20:23:08Z",
+      "subject": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2100.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2100.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-2474cc1d9a28",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-5658899599c2",
+      "message_id": "<01c9bffa$Blat.v2.2.2$ec42d394@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-18T07:54:38Z",
+      "subject": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.0 (2009-04-17)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-5658899599c2",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-7068ca091fe0",
+      "message_id": "<01c9bffa$Blat.v2.2.2$ec66b02f@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-18T07:54:38Z",
+      "subject": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.0 (2009-04-17)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-7068ca091fe0",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-f1a50f2da301",
+      "message_id": "<01c9bffa$Blat.v2.2.2$ecd52c43@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-04-18T07:54:39Z",
+      "subject": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2100.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.0 (2009-04-17)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2100.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-f1a50f2da301",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-e8540f489f0c",
+      "message_id": "<18921.64771.109162.538004@cmath-5.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2009-04-18T16:17:07Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<18920.52692.780292.364026@ron.nulle.part>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+        "<20090417195645.788ce337@mimi>",
+        "<18920.52692.780292.364026@ron.nulle.part>"
+      ],
+      "body_plain": "{I've dropped  David Carlson from CC}\n\n>>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Fri, 17 Apr 2009 13:43:32 -0500 writes:\n\n    DE> On 17 April 2009 at 19:56, Yohan Chalabi wrote:\n\n     [ ..................... ]\n\n      YC> It is important to update the other Rmetrics packages when you\n      YC> install a new version of one of the packages.\n      YC> \n      YC> The recommended way to do so is to use the R script available at\n      YC> http://www.rmetrics.org .\n      YC> \n      YC> In an R console try\n      YC> \n      YC> source(\"http://www.rmetrics.org/Rmetrics.R\")\n      YC> install.Rmetrics()\n\n    DE> I am not convinced that working outside of the existing\n    DE> R package management system buys you something.\n    DE> DESCRIPTION file have been supporting Depends with >=\n    DE> and <= operators since R 2.7.0.  It would be nice if\n    DE> these were used here.\n\n    DE> FWIW I an once again trying to upgrade an avalanche of\n    DE> Rmetrics packages in Debian, rather than working through\n    DE> a phased upgraded. The fBasics Depends: on timeSeries\n    DE> that tripped up David is not made explicit and is\n    DE> stopping me too. I consider that to be a bug in\n    DE> Rmetrics.\n\nYohan, I agree with Dirk that really this should be solved by\ncorrectly specified\n\t  'Depends:' \nand\t  'Imports:'  in the DESCRIPTION files.\n\n{{ or have you ended up, having *circular* dependencies ? \n   I hope not ! }}\n\n@ Dirk:  Good luck in Boston!\n\nBest regards,\nMartin",
+      "body_snippet": "{I've dropped  David Carlson from CC}\n\n>>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Fri, 17 Apr 2009 13:43:32 -0500 writes:\n\n    DE> On 17 April 2009 at 19:56, Yohan Chalabi wrote:",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 3,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-be5aa78c6a17",
+      "message_id": "<18922.329.72933.155957@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2009-04-18T16:35:21Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<18921.64771.109162.538004@cmath-5.math.ethz.ch>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+        "<20090417195645.788ce337@mimi>",
+        "<18920.52692.780292.364026@ron.nulle.part>",
+        "<18921.64771.109162.538004@cmath-5.math.ethz.ch>"
+      ],
+      "body_plain": "On 18 April 2009 at 18:17, Martin Maechler wrote:\n| Yohan, I agree with Dirk that really this should be solved by\n| correctly specified\n| \t  'Depends:' \n| and\t  'Imports:'  in the DESCRIPTION files.\n| \n| {{ or have you ended up, having *circular* dependencies ? \n|    I hope not ! }}\n\nNo, but there are a gazillion missing (versioned) Depends: on fBasics as it\nbombs with the old version.\n\nI have to build these in chroot environments which required to get the\nDepends exactly right, or it bombs.  What makes this maddening is that I have\nto do everything in three or more waves: timeDate, timeSeries; then when\nthose are in the archive fBasics, then fGarch/fCopulae.  I am just over\nhalf-way through but can't finish it as I now have to wait for\nfGarch/fCopulae to make it into the archive.  I for one would really prefer\nit if the upload could be more staged -- we had a few packages updated\nbetween the last 'wave' around R 2.8.0 and now and I think we should do more\nof that.\n\nNo need to re-upload all of these, but next time please consider explicitly\nversioned Depends at least where you know of a Dependency.  \n \n| @ Dirk:  Good luck in Boston!\n\nThanks :)\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 18 April 2009 at 18:17, Martin Maechler wrote:\n| Yohan, I agree with Dirk that really this should be solved by\n| correctly specified\n| \t  'Depends:' \n| and\t  'Imports:'  in the DESCRIPTION files.\n|",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 4,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-183c7be92f7b",
+      "message_id": "<18922.1229.791101.996312@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2009-04-18T16:50:21Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<18921.64771.109162.538004@cmath-5.math.ethz.ch>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+        "<20090417195645.788ce337@mimi>",
+        "<18920.52692.780292.364026@ron.nulle.part>",
+        "<18921.64771.109162.538004@cmath-5.math.ethz.ch>"
+      ],
+      "body_plain": "And for Pete's sake yet another new and unannounced external dependency, this\ntime of fPortfolio on Rsymphony (which is not in Debian).\n\nExactly how often do I have to explain that I would need to know this a few\nweeks ahead so that I can get the new package through the Debian NEW queue in\ntime?\n\nDirk, unhappy\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "And for Pete's sake yet another new and unannounced external dependency, this\ntime of fPortfolio on Rsymphony (which is not in Debian).\n\nExactly how often do I have to explain that I would need to kno",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 4,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-b5ea1131b0d0",
+      "message_id": "<20090419191851.4699b21c@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-04-19T17:18:51Z",
+      "subject": "fMultivar and fBasics",
+      "subject_clean": "fMultivar and fBasics",
+      "in_reply_to": "<18920.52692.780292.364026@ron.nulle.part>",
+      "references": [
+        "<0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>",
+        "<20090417195645.788ce337@mimi>",
+        "<18920.52692.780292.364026@ron.nulle.part>"
+      ],
+      "body_plain": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Fri, 17 Apr 2009 13:43:32 -0500\n\n   DE> I am not convinced that working outside of the existing R\n   DE> package management\n   DE> system buys you something.  DESCRIPTION file have been\n   DE> supporting Depends\n   DE> with >= and <= operators since R 2.7.0.  It would be nice if\n   DE> these were used\n   DE> here.\n\nHi Dirk,\n\nthanks for the suggestion. I will add explicit dependencies with\nversion numbers in the description files.\n\nRegards,\nYohan\n\n   DE>\n   DE> FWIW I an once again trying to upgrade an avalanche of Rmetrics\n   DE> packages in\n   DE> Debian, rather than working through a phased upgraded. The\n   DE> fBasics Depends:\n   DE> on timeSeries that tripped up David is not made explicit and\n   DE> is stopping me\n   DE> too. I consider that to be a bug in Rmetrics.\n   DE>\n   DE> Regards, Dirk\n\n\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Fri, 17 Apr 2009 13:43:32 -0500\n\n   DE> I am not convinced that working outside of the existing R\n   DE> package management\n   DE> system buy",
+      "thread_id": "thread-911b3d1d4e12",
+      "thread_depth": 3,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-ac5ab25f270c",
+      "message_id": "<49EE8DF3.6090203@uqam.ca>",
+      "from_name": "Pierre Chaussé",
+      "from_email_hash": "ddb1bfb73f93f4abee7fbb948c748b8fd0b220de211f8c1a4e4220f61186e8ec",
+      "date": "2009-04-22T03:24:35Z",
+      "subject": "Package fGarch",
+      "subject_clean": "Package fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI am writing a guide for my financial econometrics class and I found a \nmistake in the method predict() that comes with the package fGarch.  It \ndoes not predict correctly because it does not use the predict.Arima  \nmethod correctly. In arima() the constant term is not an intercept but a \nmean.  For exemple, if we have the following AR(1) process:\n\nX(t) = 6 + 0,9 X(t-1) + e(t)\n\nWhat arima() calls \"intercept\" is not the 6 but the mean of X which is \n6/(1-0,9)=60.  So if we know the model and want to predict it, we can, \nas it is done in methods-predict.R that comes in fGarch, create an arima \nobject and use predict() on it. But we have to provide the mean and not \nthe intercept. For our exemple we can do:\n\nARIMA = arima(x,order=c(1,0,0),init=(0,9,60),optim.control=list(maxit=0))\nand\npredict(ARIMA,n.ahead)\n\nThe problem is that garchFit() computes the intercept and not the mean \n(which I thing it is better) and when we apply predict() on the object \nthat it creates, it provides the intercept to arima() instead of the mean. \n\nIn line 128 of methods-predict.R, you should replace mu by the mean \nwhich is mu/(1-sum_of_ar_coef).\n\nOne more thing. Since fGarch computes conditional variance, why the \npredict() method does not compute the conditional mean square errors of \nthe prediction instead of the unconditional ones. In finance, the former \nwould be more appropriate.\n\nThank you\n\nPierre Chauss?\nUniversit? du Qu?bec ? Montr?al\n http://www.er.uqam.ca/nobel/k34115/",
+      "body_snippet": "Hi,\n\nI am writing a guide for my financial econometrics class and I found a \nmistake in the method predict() that comes with the package fGarch.  It \ndoes not predict correctly because it does not use",
+      "thread_id": "thread-ac5ab25f270c",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-cc83a8c30dfb",
+      "message_id": "<49EF84A2.20207@uqam.ca>",
+      "from_name": "Pierre Chaussé",
+      "from_email_hash": "ddb1bfb73f93f4abee7fbb948c748b8fd0b220de211f8c1a4e4220f61186e8ec",
+      "date": "2009-04-22T20:57:06Z",
+      "subject": "One more thing on fGarch",
+      "subject_clean": "One more thing on fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI have one more question. If I ex?cute the following commands\n\nrequire(fGarch)\nspec=garchSpec(model=list(omega=2,alpha=.4,beta=.55,mu=5,ar=.9,ma=.5))\nset.seed(123)\nx <- garchSim(spec,n=500)\nres_g <- garchFit(~arma(1,1)+garch(1,1),trace=FALSE,x)\nplot(res_g,which=3)\n\nIt produces the included graph.\n\nWhy is the +- 2 * SD arround zero and not arround the series? The \npurpose of this graph is not to have an confidence interval?\n\n\nThank you\n\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: eco_fin_chap4-033.eps\nType: image/x-eps\nSize: 23257 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090422/d5d6bb30/attachment-0001.bin>",
+      "body_snippet": "Hi,\n\nI have one more question. If I ex?cute the following commands\n\nrequire(fGarch)\nspec=garchSpec(model=list(omega=2,alpha=.4,beta=.55,mu=5,ar=.9,ma=.5))\nset.seed(123)\nx <- garchSim(spec,n=500)\nres_g",
+      "thread_id": "thread-cc83a8c30dfb",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-965ec0048e55",
+      "message_id": "<COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>",
+      "from_name": "Budhi Arta Surya",
+      "from_email_hash": "9dd65ef635d37ecf04588c623980d5d5d05bf1c07a947c2c80dab9e8db8ca0cd",
+      "date": "2009-04-27T03:31:18Z",
+      "subject": "Problem with fGarch",
+      "subject_clean": "Problem with fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/61df5c2c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/61df5c2c/attachment.pl>",
+      "thread_id": "thread-965ec0048e55",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-8816b3dceac2",
+      "message_id": "<837913.68533.qm@web52410.mail.re2.yahoo.com>",
+      "from_name": "amjadali ktk",
+      "from_email_hash": "63306c7fcebf94df407e2bea8105ba622f49d7fdd3ca9758402358c2835dd200",
+      "date": "2009-04-28T06:30:00Z",
+      "subject": "problem in using fGARCH package",
+      "subject_clean": "problem in using fGARCH package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/d7d6f7f0/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/d7d6f7f0/attachment.pl>",
+      "thread_id": "thread-8816b3dceac2",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-34abf7be67ec",
+      "message_id": "<20090428232959.54002374@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-04-28T21:29:59Z",
+      "subject": "Problem with fGarch",
+      "subject_clean": "Problem with fGarch",
+      "in_reply_to": "<COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>",
+      "references": [
+        "<COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>"
+      ],
+      "body_plain": ">>>> \"BAS\" == Budhi Arta Surya <budhiarta at hotmail.com>\n>>>> on Mon, 27 Apr 2009 03:31:18 +0000\n\n   BAS> >library(fGarch)\n   BAS> Loading required package: timeSeries\n   BAS> Error: package 'timeDate' 290.84 is loaded, but >= 290.85 is\n   BAS> required by 'timeSeries'\n   BAS> >\n   BAS>\n\n\nHi\n\nplease update your packages to the latest version.\n\nmore info at https://wiki.rmetrics.org/install_rmetrics\n\nRegards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"BAS\" == Budhi Arta Surya <budhiarta at hotmail.com>\n>>>> on Mon, 27 Apr 2009 03:31:18 +0000\n\n   BAS> >library(fGarch)\n   BAS> Loading required package: timeSeries\n   BAS> Error: package 'timeDat",
+      "thread_id": "thread-965ec0048e55",
+      "thread_depth": 1,
+      "month": "2009-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-215a3109248f",
+      "subject": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-08T13:06:10Z",
+      "last_reply": "2009-04-08T13:06:10Z",
+      "root_message_id": "msg-215a3109248f"
+    },
+    {
+      "id": "thread-d91939c67542",
+      "subject": "Package fRegression_270.74.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-11T03:26:09Z",
+      "last_reply": "2009-04-11T03:26:09Z",
+      "root_message_id": "msg-d91939c67542"
+    },
+    {
+      "id": "thread-496284163f21",
+      "subject": "2hr timeout of some ethz.ch servers: Thu April 16, 3--5 UTC+2",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2009-04-15T07:27:33Z",
+      "last_reply": "2009-04-15T07:27:33Z",
+      "root_message_id": "msg-496284163f21"
+    },
+    {
+      "id": "thread-00f642dad2d7",
+      "subject": "Package fArma_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:49Z",
+      "last_reply": "2009-04-16T08:27:49Z",
+      "root_message_id": "msg-00f642dad2d7"
+    },
+    {
+      "id": "thread-5b52cb7c9d06",
+      "subject": "Package fBasics_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:49Z",
+      "last_reply": "2009-04-16T08:27:49Z",
+      "root_message_id": "msg-5b52cb7c9d06"
+    },
+    {
+      "id": "thread-78cc76451868",
+      "subject": "Package fAssets_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:49Z",
+      "last_reply": "2009-04-16T08:27:49Z",
+      "root_message_id": "msg-78cc76451868"
+    },
+    {
+      "id": "thread-e5817bed6ab7",
+      "subject": "Package fAsianOptions_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:49Z",
+      "last_reply": "2009-04-16T08:27:49Z",
+      "root_message_id": "msg-e5817bed6ab7"
+    },
+    {
+      "id": "thread-0bfcadc9883d",
+      "subject": "Package fBonds_270.74.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:50Z",
+      "last_reply": "2009-04-16T08:27:50Z",
+      "root_message_id": "msg-0bfcadc9883d"
+    },
+    {
+      "id": "thread-259dc0a9cc8b",
+      "subject": "Package fEcofin_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:50Z",
+      "last_reply": "2009-04-16T08:27:50Z",
+      "root_message_id": "msg-259dc0a9cc8b"
+    },
+    {
+      "id": "thread-b2fa3948cb3e",
+      "subject": "Package fCalendar_270.78.2.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:50Z",
+      "last_reply": "2009-04-16T08:27:50Z",
+      "root_message_id": "msg-b2fa3948cb3e"
+    },
+    {
+      "id": "thread-cd93251e8d2c",
+      "subject": "Package fCopulae_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:50Z",
+      "last_reply": "2009-04-16T08:27:50Z",
+      "root_message_id": "msg-cd93251e8d2c"
+    },
+    {
+      "id": "thread-5f16ff226365",
+      "subject": "Package fGarch_290.77.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:51Z",
+      "last_reply": "2009-04-16T08:27:51Z",
+      "root_message_id": "msg-5f16ff226365"
+    },
+    {
+      "id": "thread-72984c820815",
+      "subject": "Package fImport_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:51Z",
+      "last_reply": "2009-04-16T08:27:51Z",
+      "root_message_id": "msg-72984c820815"
+    },
+    {
+      "id": "thread-86529bd807fd",
+      "subject": "Package fExoticOptions_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:51Z",
+      "last_reply": "2009-04-16T08:27:51Z",
+      "root_message_id": "msg-86529bd807fd"
+    },
+    {
+      "id": "thread-d8af80375522",
+      "subject": "Package fExtremes_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:51Z",
+      "last_reply": "2009-04-16T08:27:51Z",
+      "root_message_id": "msg-d8af80375522"
+    },
+    {
+      "id": "thread-65a954bbede3",
+      "subject": "Package fNonlinear_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:52Z",
+      "last_reply": "2009-04-16T08:27:52Z",
+      "root_message_id": "msg-65a954bbede3"
+    },
+    {
+      "id": "thread-c69f319c5b80",
+      "subject": "Package fMultivar_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:52Z",
+      "last_reply": "2009-04-16T08:27:52Z",
+      "root_message_id": "msg-c69f319c5b80"
+    },
+    {
+      "id": "thread-d1eb3c92ffc9",
+      "subject": "Package fPortfolio_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:52Z",
+      "last_reply": "2009-04-16T08:27:52Z",
+      "root_message_id": "msg-d1eb3c92ffc9"
+    },
+    {
+      "id": "thread-d7842a2ab87b",
+      "subject": "Package fOptions_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:52Z",
+      "last_reply": "2009-04-16T08:27:52Z",
+      "root_message_id": "msg-d7842a2ab87b"
+    },
+    {
+      "id": "thread-3538e9c936c9",
+      "subject": "Package fUtilities_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:53Z",
+      "last_reply": "2009-04-16T08:27:53Z",
+      "root_message_id": "msg-3538e9c936c9"
+    },
+    {
+      "id": "thread-5e33c8449154",
+      "subject": "Package fTrading_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:53Z",
+      "last_reply": "2009-04-16T08:27:53Z",
+      "root_message_id": "msg-5e33c8449154"
+    },
+    {
+      "id": "thread-62fd2a80bed8",
+      "subject": "Package fUnitRoots_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:53Z",
+      "last_reply": "2009-04-16T08:27:53Z",
+      "root_message_id": "msg-62fd2a80bed8"
+    },
+    {
+      "id": "thread-aaa591fbd170",
+      "subject": "Package fRegression_290.75.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:53Z",
+      "last_reply": "2009-04-16T08:27:53Z",
+      "root_message_id": "msg-aaa591fbd170"
+    },
+    {
+      "id": "thread-b120ae79a3ae",
+      "subject": "Package fSeries_270.76.2.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:53Z",
+      "last_reply": "2009-04-16T08:27:53Z",
+      "root_message_id": "msg-b120ae79a3ae"
+    },
+    {
+      "id": "thread-67fc841a0a26",
+      "subject": "Package timeDate_290.85.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:54Z",
+      "last_reply": "2009-04-16T08:27:54Z",
+      "root_message_id": "msg-67fc841a0a26"
+    },
+    {
+      "id": "thread-f1cc87721adf",
+      "subject": "Package timeSeries_290.81.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-16T08:27:54Z",
+      "last_reply": "2009-04-16T08:27:54Z",
+      "root_message_id": "msg-f1cc87721adf"
+    },
+    {
+      "id": "thread-911b3d1d4e12",
+      "subject": "fMultivar and fBasics",
+      "message_count": 7,
+      "participants": [
+        "David Carlson",
+        "Dirk Eddelbuettel",
+        "Martin Maechler",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-04-17T16:33:40Z",
+      "last_reply": "2009-04-19T17:18:51Z",
+      "root_message_id": "msg-911b3d1d4e12"
+    },
+    {
+      "id": "thread-a8a973197c8a",
+      "subject": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-17T20:23:07Z",
+      "last_reply": "2009-04-17T20:23:07Z",
+      "root_message_id": "msg-a8a973197c8a"
+    },
+    {
+      "id": "thread-b0e59ae17246",
+      "subject": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-17T20:23:07Z",
+      "last_reply": "2009-04-17T20:23:07Z",
+      "root_message_id": "msg-b0e59ae17246"
+    },
+    {
+      "id": "thread-2474cc1d9a28",
+      "subject": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-17T20:23:08Z",
+      "last_reply": "2009-04-17T20:23:08Z",
+      "root_message_id": "msg-2474cc1d9a28"
+    },
+    {
+      "id": "thread-5658899599c2",
+      "subject": "Package fAssets_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-18T07:54:38Z",
+      "last_reply": "2009-04-18T07:54:38Z",
+      "root_message_id": "msg-5658899599c2"
+    },
+    {
+      "id": "thread-7068ca091fe0",
+      "subject": "Package fPortfolio_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-18T07:54:38Z",
+      "last_reply": "2009-04-18T07:54:38Z",
+      "root_message_id": "msg-7068ca091fe0"
+    },
+    {
+      "id": "thread-f1a50f2da301",
+      "subject": "Package timeSeries_2100.82.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-04-18T07:54:39Z",
+      "last_reply": "2009-04-18T07:54:39Z",
+      "root_message_id": "msg-f1a50f2da301"
+    },
+    {
+      "id": "thread-ac5ab25f270c",
+      "subject": "Package fGarch",
+      "message_count": 1,
+      "participants": [
+        "Pierre Chaussé"
+      ],
+      "started": "2009-04-22T03:24:35Z",
+      "last_reply": "2009-04-22T03:24:35Z",
+      "root_message_id": "msg-ac5ab25f270c"
+    },
+    {
+      "id": "thread-cc83a8c30dfb",
+      "subject": "One more thing on fGarch",
+      "message_count": 1,
+      "participants": [
+        "Pierre Chaussé"
+      ],
+      "started": "2009-04-22T20:57:06Z",
+      "last_reply": "2009-04-22T20:57:06Z",
+      "root_message_id": "msg-cc83a8c30dfb"
+    },
+    {
+      "id": "thread-965ec0048e55",
+      "subject": "Problem with fGarch",
+      "message_count": 2,
+      "participants": [
+        "Budhi Arta Surya",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-04-27T03:31:18Z",
+      "last_reply": "2009-04-28T21:29:59Z",
+      "root_message_id": "msg-965ec0048e55"
+    },
+    {
+      "id": "thread-8816b3dceac2",
+      "subject": "problem in using fGARCH package",
+      "message_count": 1,
+      "participants": [
+        "amjadali ktk"
+      ],
+      "started": "2009-04-28T06:30:00Z",
+      "last_reply": "2009-04-28T06:30:00Z",
+      "root_message_id": "msg-8816b3dceac2"
+    }
+  ]
+}

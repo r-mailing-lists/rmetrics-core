@@ -1,0 +1,292 @@
+From mmiklovic at yahoo.com  Thu May  1 14:01:31 2008
+From: mmiklovic at yahoo.com (michal miklovic)
+Date: Thu, 1 May 2008 05:01:31 -0700 (PDT)
+Subject: fGarch: possible bug in .plot.garch.13
+Message-ID: <843170.91857.qm@web50109.mail.re2.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080501/ab815e2f/attachment.pl>
+
+From remigijus.lapinskas at mif.vu.lt  Tue May  6 07:54:13 2008
+From: remigijus.lapinskas at mif.vu.lt (Remigijus Lapinskas)
+Date: Tue, 06 May 2008 08:54:13 +0300
+Subject: stableFit
+Message-ID: <481FF285.9030008@mif.vu.lt>
+
+Dear Maintainers of Rmetrics,
+
+I use Windows XP, R 2.6.1 and fBasics 270.73
+
+I want to estimate the stability parameter of a stable distribution with 
+stableFit. As you can see, I receive three different answers for three 
+calls to stableFit. Is it a bug or a feature?
+
+ > library(fBasics)
+ > set.seed(1)
+ > stableFit(rstable(1000, alpha=0.5, beta=0.5),type="q")
+
+Title:
+  Stable Parameter Estimation
+
+Call:
+  .qStableFit(x = x, doplot = doplot, title = title, description = 
+description)
+
+Model:
+  Student-t Distribution
+
+Estimated Parameter(s):
+       alpha        beta       gamma       delta
+  0.50000000  0.52600000  0.98183990 -0.06277635
+
+***************************************************************
+
+ > set.seed(2)
+ > stableFit(rstable(1000, alpha=0.5, beta=0.5),type="q")
+Error in if (is.na(U) | is.na(V)) { : argument is of length zero
+
+***************************************************************
+ > set.seed(6)
+ > stableFit(rstable(1000, alpha=0.5, beta=0.5),type="q")
+
+Title:
+  Stable Parameter Estimation
+
+Call:
+  .qStableFit(x = x, doplot = doplot, title = title, description = 
+description)
+
+Model:
+  Student-t Distribution
+
+Estimated Parameter(s):
+alpha  beta gamma delta
+    NA    NA    NA    NA
+
+Description:
+  Tue May 06 08:46:01 2008 by user: Remis
+
+******************************************************************
+
+Thank you in advance for your assistance,
+Rem
+
+
+From chalabi at phys.ethz.ch  Tue May  6 12:23:04 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 6 May 2008 12:23:04 +0200
+Subject: fGarch: possible bug in .plot.garch.13
+In-Reply-To: <843170.91857.qm@web50109.mail.re2.yahoo.com>
+References: <843170.91857.qm@web50109.mail.re2.yahoo.com>
+Message-ID: <20080506122304.72bd5c5c@mimi>
+
+>>>> "MM" == michal miklovic <mmiklovic at yahoo.com>
+>>>> on Thu, 1 May 2008 05:01:31 -0700 (PDT)
+
+
+   MM> I was wondering why qq plots for my models with cond.dist =
+   MM> std suggest that standardised residuals have thinner tails
+   MM> than the student distribution with the estimated shape
+   MM> parameter. Then, I found a possible bug in .plot.garch.13,
+   MM> where I would suggest to delete the current definitions of
+   MM> 'skew' and 'shape' and include them into the if statements
+   MM> in the following way:
+
+Hi Michal,
+
+
+Thanks to point this out!
+
+the change I commited is different from your suggestion in order to be
+consistent if "skew" and "shape" have been fitted.
+
+regards,
+Yohan 
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+www.rmetrics.org
+
+NOTE:
+Rmetrics Workshop: http://www.rmetrics.org/meielisalp.htm
+June 29th - July 3rd Meielisalp, Lake Thune, Switzerland
+
+
+From chalabi at phys.ethz.ch  Tue May 13 21:06:49 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 13 May 2008 21:06:49 +0200
+Subject: new version of fUtilities, fEcofin and fCalendar on 'CRAN'
+Message-ID: <20080513210649.78ae86b5@mimi>
+
+Dear all,
+
+a short message to let you know that new versions of 
+
+fUtilities, fEcofin and fCalendar 
+
+are now available on 'CRAN'.
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+www.rmetrics.org
+
+NOTE:
+Rmetrics Workshop: http://www.rmetrics.org/meielisalp.htm
+June 29th - July 3rd Meielisalp, Lake Thune, Switzerland
+
+
+From Uwe.Ligges at r-project.org  Tue May 13 21:52:53 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Tue, 13 May 2008 21:52:53 +0200
+Subject: Package fCalendar_270.74.tar.gz has been built for Windows
+Message-ID: <01c8b532$Blat.v2.2.2$eecda35f@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.7/).
+R version 2.7.0 Patched (2008-05-09 r45656)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Tue May 13 21:52:54 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Tue, 13 May 2008 21:52:54 +0200
+Subject: Package fEcofin_270.73.tar.gz has been built for Windows
+Message-ID: <01c8b532$Blat.v2.2.2$eeffb482@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fEcofin_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.7/).
+R version 2.7.0 Patched (2008-05-09 r45656)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Tue May 13 21:52:54 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Tue, 13 May 2008 21:52:54 +0200
+Subject: Package fUtilities_270.73.tar.gz has been built for Windows
+Message-ID: <01c8b532$Blat.v2.2.2$ef25d9f2@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.7/).
+R version 2.7.0 Patched (2008-05-09 r45656)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From juergen.brommundt at colenco.ch  Tue May 20 15:16:38 2008
+From: juergen.brommundt at colenco.ch (=?iso-8859-1?Q?Brommundt_J=FCrgen?=)
+Date: Tue, 20 May 2008 15:16:38 +0200
+Subject: Question GEVFIT in fExtremes
+Message-ID: <B1B8CB91FB415E4DB97850F6B59EBA2705B3D1FD@mail.colenco.ch>
+
+Hello,
+Doing some extreme value evaluations of wind speed data I found your very useful R-Package fExtremes. Since I started doing my evaluations in MatLab I had a chance to compare the results between the results of the MatLab gevfit and your gevfit routine. Because we need the data for the design of buildings I am interested in extremes of given return intervalls and the uncertainty, estimated from the confidence intervalls.
+Matlab's gevfit estimates the parameters of the GEV and provides another set of parameters for the limits of the confidence intervalls. From these I estimated the design values using the inverse of the GEV. From fExtremes I used the function gevrlevelPlot with the same confidence intervall (c=0.9) to get the uncertainty bands.
+As you can see from the attached Excel-File the MLM-fits of the GEV agree very well from both programs. Unfortunately the confidence bands do not agree. I tried to find out the reason from the documentation, but unfortunately did not succeed. I would appreciate, if you could be so kind, to give me a hint, what a possible reason might be??
+Thanks a lot in advance!
+
+Kind regards,
+J?rgen Brommundt
+
+
+ <<windstatistik_fExtremes.xls>> 
+
+
+J?rgen Brommundt
+Dr.-Ing., Projektingenieur
+AF-Colenco AG, Grundwasserschutz und Entsorgung
+T?fernstrasse 26 | CH-5405 Baden | Schweiz
+Direkt: +41 (0)56 483 15 35 | Fax: +41 (0)56 483 18 46
+juergen.brommundt at afconsult.com | www.af-colenco.com
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080520/8bf029c0/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: windstatistik_fExtremes.xls
+Type: application/vnd.ms-excel
+Size: 25088 bytes
+Desc: windstatistik_fExtremes.xls
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080520/8bf029c0/attachment-0001.xls>
+
+From christophe.dutang at wanadoo.fr  Fri May 23 19:40:30 2008
+From: christophe.dutang at wanadoo.fr (Christophe Dutang)
+Date: Fri, 23 May 2008 19:40:30 +0200
+Subject: low discrepancy sequences
+Message-ID: <87B8D8ED-B7BF-4919-9D88-92F9D9A553D6@wanadoo.fr>
+
+Hi,
+
+I'm currently making a R package (named randtoolbox and under GNU GPL)  
+with pseudo and quasi random generators. And I wanted to add Sobol and  
+Halton low discrepancy sequences to my package.
+
+But I found out the package fOptions already implemented that stuff.  
+So I ask you the permission to use your Fortran code (i.e. 085A- 
+LowDiscrepancy.f) in my package.
+
+I already use foreign codes under GNU GPL: the C code from Matsumoto  
+and Saito for SF-mersenne twister.
+
+If you accept, there will be an explicit banner in my help page saying  
+I use the Rmetrics code such as for SF-mersenne twister.
+
+Otherwise could you advise me some code on www.mcqmc.org/Software.html?
+
+Thanks in advance
+
+Best regards
+
+Christophe Dutang
+
+PS :  I attach the last version of randtoolbox source, because  
+randtoolbox will not be available on CRAN before 3-4 days.
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080523/f21521e9/attachment-0002.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: randtoolbox_1.01.tar.gz
+Type: application/x-gzip
+Size: 905110 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080523/f21521e9/attachment-0001.gz>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080523/f21521e9/attachment-0003.html>
+

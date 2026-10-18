@@ -1,0 +1,301 @@
+From chalabi at phys.ethz.ch  Tue Feb  1 17:28:28 2011
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 1 Feb 2011 17:28:28 +0100
+Subject: Bug in holidayNYSE in timeDate
+In-Reply-To: <AANLkTi=YVw7_V9XfT=x5S7c4Te=3DiKMCGKJGSYwu+kC@mail.gmail.com>
+References: <AANLkTi=YVw7_V9XfT=x5S7c4Te=3DiKMCGKJGSYwu+kC@mail.gmail.com>
+Message-ID: <15EB0032-C061-40BF-AEE4-BE5004BAC3EE@phys.ethz.ch>
+
+Hi Scott,
+
+Thanks for your message.
+
+the NewYork timezone is already specified in the version of the package that I have.
+
+Are you sure you are using the latest version of the package : timeDate 2130.91 ?
+
+HTH,
+Yohan
+
+
+On Jan 25, 2011, at 10:39 PM, Scott Stephens wrote:
+
+> The holidayNYSE function in the timeDate package incorrectly includes
+> 31 Dec 2010 as a holiday (try holidayNYSE(2011)).  The problem seems
+> to stem from not properly specifying the NewYork timezone when the
+> ExceptOnLastFriday vector is built. I believe the line
+> 
+> ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,
+> month = m, lastday = lastday, nday = 5)))
+> 
+> should be replaced with:
+> 
+> ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,
+> month = m, lastday = lastday, nday =
+> 5)),FinCenter="NewYork",zone="NewYork")
+> 
+> 
+> Thanks for the great work on RMetrics,
+> 
+> Scott
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+--
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From sfn.mes at cbs.dk  Fri Feb  4 16:03:54 2011
+From: sfn.mes at cbs.dk (=?ISO-8859-15?Q?S=F8ren_Feodor_Nielsen?=)
+Date: Fri, 4 Feb 2011 16:03:54 +0100
+Subject: bug in fImport:::oandaSeries
+Message-ID: <alpine.DEB.2.00.1102041551070.1986@leonora>
+
+Hi
+
+In oandaSeries the arguments from, to and nDaysBack are not passed on to 
+oandaImport so the actual data-fetching is done using oandaImport's default 
+values. This means that one cannot get data dating back more than one year 
+from today's date when using oandaSeries.
+
+This should be easily fixed by changing
+
+ 	X = oandaImport(query = symbols[1], ...)@data
+
+to
+
+ 	X = oandaImport(query = symbols[1], from = from, to = to,
+ 		nDaysBack = nDaysBack, ...)@data
+
+and
+
+ 	X = merge(X, oandaImport(query = symbols[i], ...)@data)
+
+to
+
+ 	X = merge(X, oandaImport(query = symbols[i], from = from, to = to,
+                 nDaysBack = nDaysBack, ...)@data)
+
+The lines
+
+     if (is.null(from))
+         from = to - nDaysBack * 24 * 3600
+     X = window(X, from, to)
+
+are probably superflous once the bug is fixed.
+
+I think the same bug appears in fredImport and yahooImport.
+
+Best regards
+
+Feodor
+
+
+From Alban.Moura at midgard.univ-tlse1.fr  Sun Feb  6 17:29:44 2011
+From: Alban.Moura at midgard.univ-tlse1.fr (Alban.Moura at midgard.univ-tlse1.fr)
+Date: Sun, 6 Feb 2011 17:29:44 +0100
+Subject: Possible error in garchSpec (package fGarch)
+Message-ID: <1380061809.1297009959420.JavaMail.esup@ents2.univ-tlse1.fr>
+
+Good evening,
+
+I'm currently working on the function garchSpec from package fGarch (version 2110.80) and I don't understand the last part of the code, which deals with the presample option. To set the things, I reproduce this part of the code at the bottom of the mail.
+
+I have two questions:
+
+1/ The help states that "the number of rows must be at least max(m,n,p,q)+1, longer presamples are cutted", but there is no part of the code to perform this cutting. Was something forgotten?
+
+2/ For long presamples, the last part of the code iterates the computation of the conditional variance, but then the result is not stored back in presample, and will certainly not be returned by the function. Something must me missing here.
+
+I thank you for your attention and I wait for your answer,
+
+Respectfully yours,
+
+Alban Moura
+
+% CODE FOR PRESAMPLE (FUNCTION garchSpec)
+    iterate = TRUE
+    if (!is.matrix(presample)) {
+        if (is.null(presample)) {
+            iterate = FALSE
+            n.start = order.max
+        }
+        else {
+            n.start = presample
+        }
+        z = rnorm(n = n.start)
+        h = rep(model$omega/(1 - sum(model$alpha) - sum(model$beta)), 
+            times = n.start)
+        y = rep(model$mu/(1 - sum(model$ar)), times = n.start)
+    }
+    else {
+        z = presample[, 1]
+        h = presample[, 2]
+        y = presample[, 3]
+    }
+    presample = cbind(z, h, y)
+    if (iterate) {
+        n.iterate = length(z) - order.max
+        deltainv = 1/model$delta
+        for (i in n.iterate:1) {
+            h[i] = model$omega + sum(model$alpha * (abs(abs(y[i + 
+                (1:order.alpha)]) - model$gamma * y[i + (1:order.alpha)])^model$delta)) + 
+                sum(model$beta * h[i + (1:order.beta)])
+            y[i] = model$mu + sum(model$ar * y[i + (1:order.ar)]) + 
+                sum(model$ma * (h[i + (1:order.ma)]^deltainv)) + 
+                h[i]^deltainv * z[i]
+        }
+    }
+
+From luigi.bianchi at sns.it  Tue Feb  8 14:39:33 2011
+From: luigi.bianchi at sns.it (Luigi Amedeo Bianchi)
+Date: Tue, 8 Feb 2011 14:39:33 +0100
+Subject: Bug report for package fGarch
+Message-ID: <5C714FD4-186E-4A29-A65D-3E4E233FD629@sns.it>
+
+Dear developers,
+
+I'd like to report a bug I found while using your package fGarch.
+It involves methods-fitted.
+I fitted some data to a GARCH model, with
+	fitN = garchFit(data = returns)
+	fittedN = fitted(fitN)
+and I get the following error message:
+	Error in .local(object, ...) : object 'fit' not found
+The fact is that instead of looking for an object with the name provided, it looks for the object "fit". 
+It can be easily patched, I think, by changing 
+	Name = as.character(fit at formula[2])
+in
+	Name = as.character(object at formula[2])
+on line 55 of methods-fitted.R
+
+Kind regards,
+
+Luigi Amedeo Bianchi
+
+
+------------------------------------------------
+Luigi Amedeo Bianchi
+Ph.D. Student in Applied Mathematics
+Scuola Normale Superiore
+Piazza dei Cavalieri, 7
+56126 Pisa (PI)
+Italy
+
+luigi.bianchi at sns.it
+
+
+From luigi.bianchi at sns.it  Tue Feb  8 15:04:39 2011
+From: luigi.bianchi at sns.it (Luigi Amedeo Bianchi)
+Date: Tue, 8 Feb 2011 15:04:39 +0100
+Subject: man issue report
+Message-ID: <5B0223E8-7A12-491F-852D-7FE2C209E484@sns.it>
+
+Hi again,
+I forgot to mention it in my previous mail, but there is another thing I noticed: in the manpage for Oanda, the Value part shows fredImport and fredSeries, instead of the corresponding oanda functions.
+It's just a small issue, but if you have the cance it can be fixed.
+
+Thank you.
+
+Best regards,
+Luigi Amedeo Bianchi
+
+
+
+------------------------------------------------
+Luigi Amedeo Bianchi
+Ph.D. Student in Applied Mathematics
+Scuola Normale Superiore
+Piazza dei Cavalieri, 7
+56126 Pisa (PI)
+Italy
+
+luigi.bianchi at sns.it
+
+
+From Uwe.Ligges at R-Project.org  Fri Feb 11 01:28:36 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Fri, 11 Feb 2011 01:28:36 +0100
+Subject: Package fPortfolio_2130.80.tar.gz has been built for Windows
+Message-ID: <01cbc982$Blat.v2.2.2$9f398673@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_2130.80.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.1 (2010-12-16)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Fri Feb 11 01:28:38 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Fri, 11 Feb 2011 01:28:38 +0100
+Subject: Package timeDate_2130.92.tar.gz has been built for Windows
+Message-ID: <01cbc982$Blat.v2.2.2$a07ae2b6@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_2130.92.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.1 (2010-12-16)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Fri Feb 11 01:28:38 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Fri, 11 Feb 2011 01:28:38 +0100
+Subject: Package timeSeries_2130.91.tar.gz has been built for Windows
+Message-ID: <01cbc982$Blat.v2.2.2$a0a35a6b@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2130.91.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.1 (2010-12-16)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From xy2138 at columbia.edu  Fri Feb 25 06:06:04 2011
+From: xy2138 at columbia.edu (Shawn X. Yin)
+Date: Fri, 25 Feb 2011 00:06:04 -0500
+Subject: garchOxFit request
+Message-ID: <20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>
+
+Hello,
+
+I am a graduate student at Columbia University. I am doing a project  
+about volatility forecast. I find garchOxFit which was in fGarch  
+package would be extremely helpful to my research. Could I obtain  
+garchOxFit?
+
+Thanks,
+
+Shawn X. Yin
+Graduate Student at IEOR,
+Columbia University,
+New York,NY 10027
+
+

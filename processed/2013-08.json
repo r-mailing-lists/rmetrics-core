@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-08",
+  "messages": [
+    {
+      "id": "msg-74bf72ae5bae",
+      "message_id": "<18.A5.27277.627F3125@mail09.netnoc>",
+      "from_name": "Rihard prek strani Twoo",
+      "from_email_hash": "01ff3f438a51f9f449accd6d2cc2d11b1b86c75280e47c68e9c48f24516bbb64",
+      "date": "2013-08-20T23:09:26Z",
+      "subject": "Rihard te je dodal kot kontakt na Twoo in se hoče povezati",
+      "subject_clean": "Rihard te je dodal kot kontakt na Twoo in se hoče povezati",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130820/42f94cd3/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130820/42f94cd3/attachment.pl>",
+      "thread_id": "thread-74bf72ae5bae",
+      "thread_depth": 0,
+      "month": "2013-08"
+    },
+    {
+      "id": "msg-96e5456f2411",
+      "message_id": "<1D.56.27277.C678E125@mail09.netnoc>",
+      "from_name": "Rihard prek strani Twoo",
+      "from_email_hash": "01ff3f438a51f9f449accd6d2cc2d11b1b86c75280e47c68e9c48f24516bbb64",
+      "date": "2013-08-28T23:27:40Z",
+      "subject": "Reminder: Rihard so te dodali kot kontakt na Twoo in se hočejo povezati",
+      "subject_clean": "Reminder: Rihard so te dodali kot kontakt na Twoo in se hočejo povezati",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130828/8f6b363b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130828/8f6b363b/attachment.pl>",
+      "thread_id": "thread-96e5456f2411",
+      "thread_depth": 0,
+      "month": "2013-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-74bf72ae5bae",
+      "subject": "Rihard te je dodal kot kontakt na Twoo in se hoče povezati",
+      "message_count": 1,
+      "participants": [
+        "Rihard prek strani Twoo"
+      ],
+      "started": "2013-08-20T23:09:26Z",
+      "last_reply": "2013-08-20T23:09:26Z",
+      "root_message_id": "msg-74bf72ae5bae"
+    },
+    {
+      "id": "thread-96e5456f2411",
+      "subject": "Reminder: Rihard so te dodali kot kontakt na Twoo in se hočejo povezati",
+      "message_count": 1,
+      "participants": [
+        "Rihard prek strani Twoo"
+      ],
+      "started": "2013-08-28T23:27:40Z",
+      "last_reply": "2013-08-28T23:27:40Z",
+      "root_message_id": "msg-96e5456f2411"
+    }
+  ]
+}

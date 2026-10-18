@@ -1,0 +1,90 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2014-07",
+  "messages": [
+    {
+      "id": "msg-5109bfd4eaab",
+      "message_id": "<01cf966b$Blat.v2.2.2$2dac5509@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2014-07-03T03:02:08Z",
+      "subject": "winbuilder: Package fUtilities_2110.78.tar.gz has been checked and built",
+      "subject_clean": "winbuilder: Package fUtilities_2110.78.tar.gz has been checked and built",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files and (if working) the binary package at:\nhttp://win-builder.r-project.org/IajaDHbCxqPF\nThe files will be removed after roughly 72 hours.\nInstallation time in seconds: 1\nCheck time in seconds: 7\nCheck result: ERROR\nR version 3.1.0 (2014-04-10)\n \nAll the best,\nUwe Ligges\n(CRAN maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files an",
+      "thread_id": "thread-5109bfd4eaab",
+      "thread_depth": 0,
+      "month": "2014-07"
+    },
+    {
+      "id": "msg-395160283bf8",
+      "message_id": "<53B66643.8040804@wolke7.net>",
+      "from_name": "u0055 at wolke7.net",
+      "from_email_hash": "110e4cbd5f76e77a620d41008899c5f429a13e62b7c39188544844f924803512",
+      "date": "2014-07-04T08:30:59Z",
+      "subject": "fPortfolio - why getting a zero vector as weights for my portfolio",
+      "subject_clean": "fPortfolio - why getting a zero vector as weights for my portfolio",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics-Team,\n\nI would like to optimize the weights of a portfolio.\nI chose the fPortfolio package.\nFor some inputs it's working well,\nfor other inputs I get a zero vector as solution for the weight vector.\nWhy is that ?\n\nHere my R code and input data.\nThe result for the weights is a zero vector.\nDon't be confused about the way the x matrix is initialized.\nThere are 5 columns/assets:\n\nrequire( timeSeries )\nrequire( fPortfolio )\nx = c(\n0.0004101995964433642, -0.00018580025947176148, 0.0001921211753136999, \n-0.0009374090928287272, 0.02179035825399216, -0.0008010181637519165, \n0.02762103313486072, -0.02059593202791299, 0.009890131347811582, \n0.008874502330834042, 0.03270962505025148, 0.0004709525370067878, \n-0.026172393520773156, -0.002070884888637307, -0.021394084189246338, \n0.014663881480845464, 0.000007589055248672503, 0.03357767208442292, \n0.007489994621009966, 0.0354779091735148, -0.004488890361817627,\n0.0006037637415494107, -0.0001747374366735466, 0.0002776560800516695, \n-0.0010539757116864686, 0.007217907272059155, -0.0009999339576310352, \n0.0018097094037338678, -0.0072761973581043134, 0.007274147797504215, \n0.011722205826326859, 0.0284076103749228, 0.00020854896466472906, \n-0.027139287243448704, 0.0009288913408461102, -0.013985585851090089, \n0.008355345607646895, 0.005703625000569552, 0.031154509412550213, \n0.008409491754987508, 0.050116507149955865, -0.002471235927845941,\n0.0004329670989004567, -0.00014108375322680291, 0.00024873249512844, \n-0.0007654340066147783, 0.018092403293930987, -0.0015557105255950537, \n0.015910756127921546, -0.01736078352542159, 0.008348345947451275, \n0.007744974101786212, 0.029968431702077265, 0.0016856756212381618, \n-0.0252969523459683, -0.0006213069455005302, -0.01923409835975207, \n0.012209755091657625, 0.0007510294849596395, 0.03210686006944077, \n0.006634533610756534, 0.04169475959584361, -0.0025908541571262045,\n0.0005954295776526556, -0.00013175957287530423, 0.0002509094271978344, \n-0.0009448108075862921, 0.007528674135685146, -0.0014060182806468655, \n0.0008597209029989182, -0.007178209888799298, 0.00689554753496824, \n0.009766184066262252, 0.02818192946497762, -0.004207950567021389, \n-0.023491857691380978, 0.0005314474698686129, -0.015464139804048354, \n0.008342940298155603, 0.005682816731364199, 0.03209078200750012, \n0.00815688540306469, 0.04912648130491875, -0.004043194319244131,\n0.0004677174973875975, -0.00007283224369502313, 0.0003351392464246223, \n-0.0005029457171303313, 0.012448156249627087, -0.002707609393671422, \n-0.001962824566880327, -0.012422925284776823, 0.005995094546901327, \n0.006020957331134253, 0.025784505012758727, 0.0035397266445386837, \n-0.023960752658108264, 0.0015912067571819243, -0.015937277883155545, \n0.008463983234476183, 0.001885754351360598, 0.029861936467625895, \n0.005328829963527624, 0.05118363655624024, 0.0003061484710870088 )\nm = matrix( x, ncol=5 ) # nrow=21\nt = timeSeries( m )\nspec = portfolioSpec()\nsetTargetReturn( spec ) = 0.005\nefficientPortfolio( data = t, spec = spec )\n\nHere is the vector of my 5 mean returns (corresponding to x):\n[ 0.005549026539862658, 0.00519471267813756, 0.005155380981994628, \n0.004816276542524382, 0.004554553551564478 ].\nAs you can see,\nmy target return of 0.005 has a solution.\n\nThere is a solution.\nSo how can I get it ?\n\nIs there maybe an other way of getting the weights\nof a general input of return values ?\n\nThanks in advance,\nUwe",
+      "body_snippet": "Dear Rmetrics-Team,\n\nI would like to optimize the weights of a portfolio.\nI chose the fPortfolio package.\nFor some inputs it's working well,\nfor other inputs I get a zero vector as solution for the we",
+      "thread_id": "thread-395160283bf8",
+      "thread_depth": 0,
+      "month": "2014-07"
+    },
+    {
+      "id": "msg-e1586c1e1c81",
+      "message_id": "<7B8A76E65FDAB3438A0E6AA593DE71FF1E154AA2@GENO3.wharton.upenn.edu>",
+      "from_name": "Feit, Elea",
+      "from_email_hash": "b6a3d51f3b19fc12551b264c835cc01adb7869764a31d84c2500a8811ce3d906",
+      "date": "2014-07-17T21:17:54Z",
+      "subject": "Change in maintainer for bytd",
+      "subject_clean": "Change in maintainer for bytd",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140717/b84e36be/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140717/b84e36be/attachment.pl>",
+      "thread_id": "thread-e1586c1e1c81",
+      "thread_depth": 0,
+      "month": "2014-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-5109bfd4eaab",
+      "subject": "winbuilder: Package fUtilities_2110.78.tar.gz has been checked and built",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2014-07-03T03:02:08Z",
+      "last_reply": "2014-07-03T03:02:08Z",
+      "root_message_id": "msg-5109bfd4eaab"
+    },
+    {
+      "id": "thread-395160283bf8",
+      "subject": "fPortfolio - why getting a zero vector as weights for my portfolio",
+      "message_count": 1,
+      "participants": [
+        "u0055 at wolke7.net"
+      ],
+      "started": "2014-07-04T08:30:59Z",
+      "last_reply": "2014-07-04T08:30:59Z",
+      "root_message_id": "msg-395160283bf8"
+    },
+    {
+      "id": "thread-e1586c1e1c81",
+      "subject": "Change in maintainer for bytd",
+      "message_count": 1,
+      "participants": [
+        "Feit, Elea"
+      ],
+      "started": "2014-07-17T21:17:54Z",
+      "last_reply": "2014-07-17T21:17:54Z",
+      "root_message_id": "msg-e1586c1e1c81"
+    }
+  ]
+}

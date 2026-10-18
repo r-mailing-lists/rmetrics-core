@@ -1,0 +1,82 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-05",
+  "messages": [
+    {
+      "id": "msg-b887fb898c46",
+      "message_id": "<20100510122248.AGN59201@mpmail2.bbk.ac.uk>",
+      "from_name": "Arif Ahmad",
+      "from_email_hash": "9783b357f1517b0d66f1cab1ab2e75c4a17a86a6dc1370ff9e4d444c6ca9533e",
+      "date": "2010-05-10T11:22:48Z",
+      "subject": "Wish to use function: garchOxFit",
+      "subject_clean": "Wish to use function: garchOxFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI would like to use the above function in orderr to interface to the OxMetrics' Garch functions.\n\nPls advise if this is still possible?\n\nThank you.\n\nRgds,\nArif.",
+      "body_snippet": "Hello,\n\nI would like to use the above function in orderr to interface to the OxMetrics' Garch functions.\n\nPls advise if this is still possible?\n\nThank you.\n\nRgds,\nArif.",
+      "thread_id": "thread-b887fb898c46",
+      "thread_depth": 0,
+      "month": "2010-05"
+    },
+    {
+      "id": "msg-88b514228cf2",
+      "message_id": "<E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>",
+      "from_name": "Bwayo, Andrew M.",
+      "from_email_hash": "5d615b1a706d6854ed1f2d7d31d06b63f8aeb97de95d102a27b8e35cb44f7a60",
+      "date": "2010-05-31T07:21:00Z",
+      "subject": "GARCH MODELLING-garchoxfit()",
+      "subject_clean": "GARCH MODELLING-garchoxfit()",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl>",
+      "thread_id": "thread-88b514228cf2",
+      "thread_depth": 0,
+      "month": "2010-05"
+    },
+    {
+      "id": "msg-779decccebff",
+      "message_id": "<4C0380B7.6030802@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2010-05-31T09:26:15Z",
+      "subject": "GARCH MODELLING-garchoxfit()",
+      "subject_clean": "GARCH MODELLING-garchoxfit()",
+      "in_reply_to": "<E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>",
+      "references": [
+        "<E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>"
+      ],
+      "body_plain": "Bwayo, Andrew M. wrote:\n\nSorry,\nwe do not longer support it, but on the CRAN Archive you can find older \nversions of the code (which may be outdated).\n\nDiethelm\n> Dear Sir/Madam\n>\n> I would like to use the function garchoxFit() from the OX GARCH for my thesis research . I am specifically interested in the EGARCH and GJR GARCH. I realise it is no longer available in the FGARCH package.Could you please advice me what i need to do to get it.\n>\n> i am new to R and i was comparing the log likelihood values for the standard garch(1,1) with those from an book example and the R values are significantly lower( Excel,Eviews,Matlab=13000 compared to my R value of 10500). Is this because of the ARCH parameter - 'mu'?\n>\n>  Thanks in advance.\n> Andrew\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n>\n>",
+      "body_snippet": "Bwayo, Andrew M. wrote:\n\nSorry,\nwe do not longer support it, but on the CRAN Archive you can find older \nversions of the code (which may be outdated).\n\nDiethelm\n> Dear Sir/Madam\n>\n> I would like to us",
+      "thread_id": "thread-88b514228cf2",
+      "thread_depth": 1,
+      "month": "2010-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-b887fb898c46",
+      "subject": "Wish to use function: garchOxFit",
+      "message_count": 1,
+      "participants": [
+        "Arif Ahmad"
+      ],
+      "started": "2010-05-10T11:22:48Z",
+      "last_reply": "2010-05-10T11:22:48Z",
+      "root_message_id": "msg-b887fb898c46"
+    },
+    {
+      "id": "thread-88b514228cf2",
+      "subject": "GARCH MODELLING-garchoxfit()",
+      "message_count": 2,
+      "participants": [
+        "Bwayo, Andrew M.",
+        "Diethelm Wuertz"
+      ],
+      "started": "2010-05-31T07:21:00Z",
+      "last_reply": "2010-05-31T09:26:15Z",
+      "root_message_id": "msg-88b514228cf2"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2015-05",
+  "messages": [
+    {
+      "id": "msg-50459738b3a3",
+      "message_id": "<ac78ce00a783828b43576c869cebb38e@eco-panels.com>",
+      "from_name": "iTunes Store",
+      "from_email_hash": "3d5edb4b7b1629749c37a1715f41798370537b0a582bda84a46e9602078fd09a",
+      "date": "2015-05-01T17:18:52Z",
+      "subject": "=?UTF-8?Q?=E2=9C=94_?=Thank you to confirm this message.",
+      "subject_clean": "=?UTF-8?Q?=E2=9C=94_?=Thank you to confirm this message.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20150501/43204f26/attachment-0001.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20150501/43204f26/attachment-0001.html>",
+      "thread_id": "thread-50459738b3a3",
+      "thread_depth": 0,
+      "month": "2015-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-50459738b3a3",
+      "subject": "=?UTF-8?Q?=E2=9C=94_?=Thank you to confirm this message.",
+      "message_count": 1,
+      "participants": [
+        "iTunes Store"
+      ],
+      "started": "2015-05-01T17:18:52Z",
+      "last_reply": "2015-05-01T17:18:52Z",
+      "root_message_id": "msg-50459738b3a3"
+    }
+  ]
+}

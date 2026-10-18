@@ -1,0 +1,950 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-02",
+  "messages": [
+    {
+      "id": "msg-82da1108cf73",
+      "message_id": "<47A3CF11.7060800@macxred.ch>",
+      "from_name": "Lukas Elmiger",
+      "from_email_hash": "d32a0fbc73ce2443acdab4ef2963d942952651756fafea5dcf0d110545f7a25c",
+      "date": "2008-02-02T02:01:53Z",
+      "subject": "NYSE holiday before 1971",
+      "subject_clean": "NYSE holiday before 1971",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/e4e5ad6d/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/e4e5ad6d/attachment.pl",
+      "thread_id": "thread-82da1108cf73",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-0be46f37e33d",
+      "message_id": "<20080202141308.114ada54@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-02T13:13:08Z",
+      "subject": "NYSE holiday before 1971",
+      "subject_clean": "NYSE holiday before 1971",
+      "in_reply_to": "<47A3CF11.7060800@macxred.ch>",
+      "references": [
+        "<47A3CF11.7060800@macxred.ch>"
+      ],
+      "body_plain": "Hi Lukas,\n\nthanks for your helpful feedback.\nI will care about it in the following week.\n\nregards,\nYohan\n\n>>>> \"LE\" == Lukas Elmiger <l.elmiger at macxred.ch>\n>>>> on Sat, 02 Feb 2008 03:01:53 +0100\n\n   LE> Hello\n   LE> \n   LE> Thanks for writing and maintaining the Rmetrics package!\n   LE> \n   LE> I am working with the Rmetrics holiday calendar and noticed\n   LE> a slight\n   LE> error in NYSE holidays before 1971.\n   LE> I have to admit my point to be picky (who cares about trading\n   LE> holiday's\n   LE> before 1971), but you might still want to correct the source\n   LE> code.\n   LE> \n   LE> According to NYSE's holiday calendar,  Washington's birthay\n   LE> was observed\n   LE> at NYSE as follows:\n   LE> http://www.nyse.com/about/newsevents/1176373643795.html:[..] *\n   LE> Washington's Birthday was first declared a federal holiday by\n   LE> an 1879\n   LE> act of Congress. The Monday Holiday Law, enacted in 1968,\n   LE> shifted the\n   LE> date of the commemoration of Washington's Birthday from February\n   LE> 22 to\n   LE> the third Monday in February [..]\n   LE> http://www.nyse.com/pdfs/closings.pdf [..] Washington's Birthday\n   LE> (Feb.\n   LE> 22) Closed every year. Observed on Mondays since 1971.[..]\n   LE> \n   LE> The function holidayNYSE implements\n   LE> WashingtonsBirthday/PresidentsDay by\n   LE> calling USWashingtonsBirthday() before 1971 and USPresidentsDay()\n   LE> from\n   LE> 1971 on.\n   LE> Unfortunately, USWashingtonsBirthday() is defined in the same\n   LE> way as\n   LE> USPresidentsDay() (third Monday in February) instead of returning\n   LE> February 22nd.\n   LE> USWashingtonsBirthday <- function (year = currentYear)\n   LE> {\n   LE> # instead of the third Monday in February (ans =\n   LE> .nth.of.nday(year, 2, 1, 3))\n   LE> # use February 22nd as trading holiday on NYSE before 1971\n   LE> ans = year * 10000 + 222\n   LE> timeDate(as.character(ans))\n   LE> }\n   LE> \n   LE> Please also note a slight error in the holidayNYSE function: the\n   LE> following conditions are both TRUE for the year 1970. The second\n   LE> condition should read (y > 1970) instead of (y >= 1970).\n   LE> holidayNSYE <- function( year=currentYear )\n   LE> [..]\n   LE> if (y <= 1970)\n   LE> holidays = c(holidays, as.character(USWashingtonsBirthday(y)))\n   LE> if (y >= 1970)\n   LE> holidays = c(holidays, as.character(USPresidentsDay(y)))\n   LE> [..]\n   LE> \n   LE> \n   LE> Best Regards,\n   LE> Lukas Elmiger\n   LE> \n   LE> \n   LE> \n   LE> \n   LE> \n   LE> [[alternative HTML version deleted]]\n   LE> \n   LE> _______________________________________________\n   LE> Rmetrics-core mailing list\n   LE> Rmetrics-core at r-project.org\n   LE> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Hi Lukas,\n\nthanks for your helpful feedback.\nI will care about it in the following week.\n\nregards,\nYohan\n\n>>>> \"LE\" == Lukas Elmiger <l.elmiger at macxred.ch>\n>>>> on Sat, 02 Feb 2008 03:01:53 +0100\n\n",
+      "thread_id": "thread-82da1108cf73",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-59d2ce23e45b",
+      "message_id": "<42362.73756.qm@web50112.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-02T16:28:16Z",
+      "subject": "fGarch: possible bug(s)",
+      "subject_clean": "fGarch: possible bug(s)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/13d166d2/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/13d166d2/attachment.pl",
+      "thread_id": "thread-59d2ce23e45b",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-391cf5d07c31",
+      "message_id": "<20080204105705.678ba7e2@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-04T09:57:05Z",
+      "subject": "fGarch: possible bug(s)",
+      "subject_clean": "fGarch: possible bug(s)",
+      "in_reply_to": "<42362.73756.qm@web50112.mail.re2.yahoo.com>",
+      "references": [
+        "<42362.73756.qm@web50112.mail.re2.yahoo.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Sat, 2 Feb 2008 08:28:16 -0800 (PST)\n\n   MM> In the summary function of fGarch, I would suggest that\n   MM> standardised residuals are computed as:\n   MM> \n   MM> r.s = object at residuals/object at sigma.t\n   MM> \n   MM> because r.s = object at residuals/sqrt(object at h.t) is wrong\n   MM> for aparch models, in which it does not hold that sigma =\n   MM> h^(1/2). The correct expression that holds in general is:\n   MM> sigma = h^(1/delta).\n   MM> \n   MM> In fGarch 260.72 sigma.t is calculated as: (.series)^deltainv,\n   MM> where deltainv = 1/fit. However, fit does not get updated\n   MM> with coefficient estimates and thus is always equal to 2. This\n   MM> leads to wrong calculation of sigma.t, which is always equal\n   MM> to h^(1/2).\n   MM> Has this problem been solved in the development version of\n   MM> Rmetrics (fGarch)?\n\nHi Michal,\n\nI completely agree with you. I made the appropriate changes to the dev\nbranch of Rmetrics.\n\nthanks for your helpful comments,\nYoahn",
+      "body_snippet": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Sat, 2 Feb 2008 08:28:16 -0800 (PST)\n\n   MM> In the summary function of fGarch, I would suggest that\n   MM> standardised residuals are com",
+      "thread_id": "thread-59d2ce23e45b",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-42fa1b3427ac",
+      "message_id": "<20080204180723.5c4a7d3b@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-04T17:07:23Z",
+      "subject": "bug in gevMoments(fExtremes)",
+      "subject_clean": "bug in gevMoments(fExtremes)",
+      "in_reply_to": "<957350601@web.de>",
+      "references": [
+        "<957350601@web.de>"
+      ],
+      "body_plain": ">>>> \"JO\" == Jens Oehlschl?gel <joehl at web.de>\n>>>> on Wed, 30 Jan 2008 12:41:36 +0100\n\n   JO> just wanted to let you know that gevMoments() gave me\n   JO> an apparently wrong mean for the gumbel distribution for\n   JO> mu=-EulerConstant.\n\nthanks for your remark. \nThere was indeed a bug in gevMoments() for mu!=0.\n\nregards,\nYohan",
+      "body_snippet": ">>>> \"JO\" == Jens Oehlschl?gel <joehl at web.de>\n>>>> on Wed, 30 Jan 2008 12:41:36 +0100\n\n   JO> just wanted to let you know that gevMoments() gave me\n   JO> an apparently wrong mean for the gumbel di",
+      "thread_id": "thread-42fa1b3427ac",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-d0e11479e50c",
+      "message_id": "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2008-02-05T16:10:21Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_260.72.tar.gz did not pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.6/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\nR version 2.6.2 RC (2008-02-04 r44320)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.6/fCalendar.Rcheck'\n* using R version 2.6.2 RC (2008-02-04 r44320)\n* checking for file 'fCalendar/DESCRIPTION' ... OK\n* this is package 'fCalendar' version '260.72'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fCalendar' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* creating fCalendar-Ex.R ... OK\n* checking examples ... ERROR\nRunning examples in 'fCalendar-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * TimeDateSubsets\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: TimeDateSubsets\n> ### Title: timeDate Class, Subsetting\n> ### Aliases: TimeDateSubsets isWeekday isWeekend isBizday isHoliday\n> ###   getDayOfWeek getDayOfYear length.timeDate [.timeDate window.timeDate\n> ###   cut.timeDate start.timeDate end.timeDate blockStart blockEnd\n> ### Keywords: chron\n> \n> ### ** Examples\n>   \n> ## Dates in April, currentYear: \n>    tS = timeSequence(\n+       from = paste(currentYear, \"-04-01\", sep = \"\"),\n+       to = paste(currentYear, \"-04-30\", sep = \"\"))\n>    tS\nGMT\n [1] [2008-04-01] [2008-04-02] [2008-04-03] [2008-04-04] [2008-04-05]\n [6] [2008-04-06] [2008-04-07] [2008-04-08] [2008-04-09] [2008-04-10]\n[11] [2008-04-11] [2008-04-12] [2008-04-13] [2008-04-14] [2008-04-15]\n[16] [2008-04-16] [2008-04-17] [2008-04-18] [2008-04-19] [2008-04-20]\n[21] [2008-04-21] [2008-04-22] [2008-04-23] [2008-04-24] [2008-04-25]\n[26] [2008-04-26] [2008-04-27] [2008-04-28] [2008-04-29] [2008-04-30]\n>     \n> ## Subset of Weekends:\n>    isWeekend(tS)\n2008-04-01 2008-04-02 2008-04-03 2008-04-04 2008-04-05 2008-04-06 2008-04-07 \n     FALSE      FALSE      FALSE      FALSE       TRUE       TRUE      FALSE \n2008-04-08 2008-04-09 2008-04-10 2008-04-11 2008-04-12 2008-04-13 2008-04-14 \n     FALSE      FALSE      FALSE      FALSE       TRUE       TRUE      FALSE \n2008-04-15 2008-04-16 2008-04-17 2008-04-18 2008-04-19 2008-04-20 2008-04-21 \n     FALSE      FALSE      FALSE      FALSE       TRUE       TRUE      FALSE \n2008-04-22 2008-04-23 2008-04-24 2008-04-25 2008-04-26 2008-04-27 2008-04-28 \n     FALSE      FALSE      FALSE      FALSE       TRUE       TRUE      FALSE \n2008-04-29 2008-04-30 \n     FALSE      FALSE \n>    tS[isWeekend(tS)]\nGMT\n[1] [2008-04-05] [2008-04-06] [2008-04-12] [2008-04-13] [2008-04-19]\n[6] [2008-04-20] [2008-04-26] [2008-04-27]\n>    \n> ## Subset Wednesdays:\n>    getDayOfWeek(tS)\n2008-04-01 2008-04-02 2008-04-03 2008-04-04 2008-04-05 2008-04-06 2008-04-07 \n     \"Tue\"      \"Wed\"      \"Thu\"      \"Fri\"      \"Sat\"      \"Sun\"      \"Mon\" \n2008-04-08 2008-04-09 2008-04-10 2008-04-11 2008-04-12 2008-04-13 2008-04-14 \n     \"Tue\"      \"Wed\"      \"Thu\"      \"Fri\"      \"Sat\"      \"Sun\"      \"Mon\" \n2008-04-15 2008-04-16 2008-04-17 2008-04-18 2008-04-19 2008-04-20 2008-04-21 \n     \"Tue\"      \"Wed\"      \"Thu\"      \"Fri\"      \"Sat\"      \"Sun\"      \"Mon\" \n2008-04-22 2008-04-23 2008-04-24 2008-04-25 2008-04-26 2008-04-27 2008-04-28 \n     \"Tue\"      \"Wed\"      \"Thu\"      \"Fri\"      \"Sat\"      \"Sun\"      \"Mon\" \n2008-04-29 2008-04-30 \n     \"Tue\"      \"Wed\" \n>    tS[getDayOfWeek(tS) == \"Wed\"]\nGMT\n[1] [2008-04-02] [2008-04-09] [2008-04-16] [2008-04-23] [2008-04-30]\n>    \n> ## Subset Business Days at NYSE:\n>    holidayNYSE()\nNewYork\n[1] [2008-01-01] [2008-01-21] [2008-02-18] [2008-03-21] [2008-05-26]\n[6] [2008-07-04] [2008-09-01] [2008-11-27] [2008-12-25]\n>    isBizday(tS, holidayNYSE())\n2008-04-01 2008-04-02 2008-04-03 2008-04-04 2008-04-05 2008-04-06 2008-04-07 \n      TRUE       TRUE       TRUE       TRUE      FALSE      FALSE       TRUE \n2008-04-08 2008-04-09 2008-04-10 2008-04-11 2008-04-12 2008-04-13 2008-04-14 \n      TRUE       TRUE       TRUE       TRUE      FALSE      FALSE       TRUE \n2008-04-15 2008-04-16 2008-04-17 2008-04-18 2008-04-19 2008-04-20 2008-04-21 \n      TRUE       TRUE       TRUE       TRUE      FALSE      FALSE       TRUE \n2008-04-22 2008-04-23 2008-04-24 2008-04-25 2008-04-26 2008-04-27 2008-04-28 \n      TRUE       TRUE       TRUE       TRUE      FALSE      FALSE       TRUE \n2008-04-29 2008-04-30 \n      TRUE       TRUE \n>    tS[isBizday(tS, holidayNYSE())]\nGMT\n [1] [2008-04-01] [2008-04-02] [2008-04-03] [2008-04-04] [2008-04-07]\n [6] [2008-04-08] [2008-04-09] [2008-04-10] [2008-04-11] [2008-04-14]\n[11] [2008-04-15] [2008-04-16] [2008-04-17] [2008-04-18] [2008-04-21]\n[16] [2008-04-22] [2008-04-23] [2008-04-24] [2008-04-25] [2008-04-28]\n[21] [2008-04-29] [2008-04-30]\n>      \n> ## [ - Subsetting First Five Days:\n>    tS[1:5]   \nGMT\n[1] [2008-04-01] [2008-04-02] [2008-04-03] [2008-04-04] [2008-04-05]\n>    \n> ## window - \n>    GoodFriday(currentYear)\nGMT\n[1] [2008-03-21]\n>    EasterMonday(currentYear)\nGMT\n[1] [2008-03-24]\n>    window(tS, \n+       start = GoodFriday(currentYear), \n+       end = EasterMonday(currentYear))\nWarning in min(x) : no non-missing arguments to min; returning Inf\nWarning in max(x) : no non-missing arguments to max; returning -Inf\nError in .midnightStandard(charvec, format) : \n  'charvec' has non-NA entries of different number of characters\nCalls: window -> window.timeDate -> timeDate -> .midnightStandard\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_260.72.tar.gz did not pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRA",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-5218d360c66b",
+      "message_id": "<20080205180844.4d24a782@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-05T17:08:44Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>"
+      ],
+      "body_plain": ">>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>> on Tue, 05 Feb 2008 17:10:21 +0100\n\n   ULPO> Dear package maintainer,\n   ULPO> \n   ULPO> this notification has been generated automatically.\n   ULPO> Your package fCalendar_260.72.tar.gz did not pass 'R CMD\n   ULPO> check' on\n   ULPO> Windows and will be omitted from the corresponding CRAN\ndirectory ULPO> (CRAN/bin/windows/contrib/2.6/).\n   ULPO> Please check the attached log-file and consider to resubmit\n   ULPO> a version\n   ULPO> with increased version number that passes R CMD check on\nWindows. ULPO> R version 2.6.2 RC (2008-02-04 r44320)\n   ULPO> \n   ULPO> All the best,\n   ULPO> Uwe Ligges\n   ULPO> (Maintainer of binary packages for Windows)\n\nThe problem is coming from the example in TimeDateSubsets.Rd . This\nyear Easter is at the end of March and in the example one tries to find\nthe window time period of Easter in April. to solve it, one can\nincrease the array of dates:\n\nInstead of:\n## Dates in April, currentYear: \n   tS = timeSequence(\n      from = paste(currentYear, \"-04-01\", sep = \"\"),\n      to = paste(currentYear, \"-04-30\", sep = \"\"))\n\none should do:\n## Dates in March and April, currentYear: \n   tS = timeSequence(\n      from = paste(currentYear, \"-03-01\", sep = \"\"),\n      to = paste(currentYear, \"-04-30\", sep = \"\"))\n\n\nWhen this is fixed, there is another error:\n----------------------------------------------\n ERROR\nRunning the tests in 'tests/doRUnit.R' failed.\nLast 13 lines of output:\n  test.extractTimeDate: ... OK (0.04 seconds)\n  test.fromTimeDate: ... OK (0.08 seconds)\n  test.toTimeDate: ... OK (0.02 seconds)\n  --------------------------- \n  Test file: /home/yankee/Desktop/fCalendar.Rcheck/fCalendar/unitTests/runitTimeDateSubsets.R \n  test.extractSubsets: FAILURE !! (check number 2)\n  Error in checkIdentical(format(target), current = format(timeDate(\"2007-01-01\"))) : \n    FALSE \n  test.timeDateSubsets: ... OK (0.63 seconds)\n  Error in eval.with.vis(expr, envir, enclos) : \n    one of the unit tests failed\n  Calls: source -> eval.with.vis -> eval.with.vis\n------------------------------------------------\n\nthis error has been fixed in the new version of fCalendar. One can\njust copy the runitTimeDateSubsets.R file. \n\nAll these errors have been fixed in\nhttps://svn.r-project.org/Rmetrics/trunk/fCalendar\n\nQuestion : Should we submit the new version of fCalendar or fix the\nerror in fCalendar 260.72 and submit it as 260.73? \n\nI would vote for the new version of fCalendar because we also fixed\nproblems in DST tables and in holidays functions.\n\nregards,\nYohan",
+      "body_snippet": ">>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>> on Tue, 05 Feb 2008 17:10:21 +0100\n\n   ULPO> Dear package maintainer,\n   ULPO> \n   ULPO> this notification has been generated automatically.\n   ULPO> Yo",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-7c1e684764e4",
+      "message_id": "<18344.40591.784574.727905@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2008-02-05T17:36:15Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<20080205180844.4d24a782@yankee-laptop>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>"
+      ],
+      "body_plain": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Tue, 5 Feb 2008 18:08:44 +0100 writes:\n\n    >>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n    >>>>> on Tue, 05 Feb 2008 17:10:21 +0100\n\n    ULPO> Dear package maintainer,\n    ULPO> \n    ULPO> this notification has been generated automatically.\n    ULPO> Your package fCalendar_260.72.tar.gz did not pass 'R CMD\n    ULPO> check' on\n    ULPO> Windows and will be omitted from the corresponding CRAN\n    YC> directory ULPO> (CRAN/bin/windows/contrib/2.6/).\n    ULPO> Please check the attached log-file and consider to resubmit\n    ULPO> a version\n    ULPO> with increased version number that passes R CMD check on\n    YC> Windows. ULPO> R version 2.6.2 RC (2008-02-04 r44320)\n    ULPO> \n    ULPO> All the best,\n    ULPO> Uwe Ligges\n    ULPO> (Maintainer of binary packages for Windows)\n\n    YC> The problem is coming from the example in TimeDateSubsets.Rd . This\n    YC> year Easter is at the end of March and in the example one tries to find\n    YC> the window time period of Easter in April. to solve it, one can\n    YC> increase the array of dates:\n\n[............]\n\n[............]\n\n    YC> All these errors have been fixed in\n    YC> https://svn.r-project.org/Rmetrics/trunk/fCalendar\n\n    YC> Question : Should we submit the new version of fCalendar or fix the\n    YC> error in fCalendar 260.72 and submit it as 260.73? \n\n    YC> I would vote for the new version of fCalendar because we also fixed\n    YC> problems in DST tables and in holidays functions.\n\nI'd also vote for releasing the new version.\n\nAnd -- BTW  I really think we should slowly discontinue the idea\nthat Rmetrics is released half-yearly together with new versions of R.\nRmetrics packages should be dealt with as other R packages are.\n\nMartin",
+      "body_snippet": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Tue, 5 Feb 2008 18:08:44 +0100 writes:\n\n    >>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n    >>>>> on Tue, 05 Feb 2008 17:10:21 +0100\n",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 2,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-8319ecb1ccd6",
+      "message_id": "<18344.41206.830337.999993@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2008-02-05T17:46:30Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<20080205180844.4d24a782@yankee-laptop>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>"
+      ],
+      "body_plain": "On 5 February 2008 at 18:08, Yohan Chalabi wrote:\n| Question : Should we submit the new version of fCalendar or fix the\n| error in fCalendar 260.72 and submit it as 260.73? \n| \n| I would vote for the new version of fCalendar because we also fixed\n| problems in DST tables and in holidays functions.\n\nEither way an actual upload would be a huge improvement over the existing\nscheme of 'lots of packages twice a year and silence in-between'.\n\nIf it were up to me I'd say roll up the SVN version if it passes the unit\ntests and R CMD check etc pp.\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 5 February 2008 at 18:08, Yohan Chalabi wrote:\n| Question : Should we submit the new version of fCalendar or fix the\n| error in fCalendar 260.72 and submit it as 260.73? \n| \n| I would vote for the ",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 2,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-4bc151a89dc9",
+      "message_id": "<20080205192024.2c0d7695@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-05T18:20:24Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<18344.41206.830337.999993@ron.nulle.part>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>",
+        "<18344.41206.830337.999993@ron.nulle.part>"
+      ],
+      "body_plain": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Tue, 5 Feb 2008 11:46:30 -0600\n\n   DE> 'lots of packages twice a year and silence in-between'.\n\n>>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n>>>> on Tue, 5 Feb 2008 18:36:15 +0100\n\n   MM> And -- BTW  I really think we should slowly discontinue the idea\n   MM> that Rmetrics is released half-yearly together with new versions\n   MM> of R.\n   MM> Rmetrics packages should be dealt with as other R packages are.\n\nI think we all share the same idea. The plan is to make frequent\nupdates when all Rmetrics packages will be moved to R-forge. This\nshould happen in the following weeks.\n\nYohan",
+      "body_snippet": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Tue, 5 Feb 2008 11:46:30 -0600\n\n   DE> 'lots of packages twice a year and silence in-between'.\n\n>>>> \"MM\" == Martin Maechler <maechler at sta",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 3,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-a70701634515",
+      "message_id": "<18345.49594.125739.177615@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2008-02-06T14:18:34Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<20080205192024.2c0d7695@yankee-laptop>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>",
+        "<18344.41206.830337.999993@ron.nulle.part>",
+        "<20080205192024.2c0d7695@yankee-laptop>"
+      ],
+      "body_plain": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Tue, 5 Feb 2008 19:20:24 +0100 writes:\n\n    >>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n    >>>>> on Tue, 5 Feb 2008 11:46:30 -0600\n\n    DE> 'lots of packages twice a year and silence in-between'.\n\n    >>>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n    >>>>> on Tue, 5 Feb 2008 18:36:15 +0100\n\n    MM> And -- BTW  I really think we should slowly discontinue the idea\n    MM> that Rmetrics is released half-yearly together with new versions\n    MM> of R.\n    MM> Rmetrics packages should be dealt with as other R packages are.\n\n    YC> I think we all share the same idea. The plan is to make frequent\n    YC> updates when all Rmetrics packages will be moved to R-forge. \n\nwhy is this linkt to the packages being on R-forge?\n\nThey still must be checked, built, checked and uploaded to CRAN, \nno?\n\n    YC> This should happen in the following weeks.\n\nIf all goes well.  Otherwise, note that it may be non-trivial or\nimpossible if we'd like\n\n  - each Rmetrics package is daily checked and built\n    but still \"Rmetrics\" should be only one (big fat :-)\n    R-forge project.\n\n  - keeping the current svn history\n\nand that may lead to another few weeks ...\n\nI'd vote to release the package with known bug report \"now\".\nMartin\n\n    YC> Yohan",
+      "body_snippet": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Tue, 5 Feb 2008 19:20:24 +0100 writes:\n\n    >>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n    >>>>> on Tue, 5 Feb 2008 11:46:30",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 4,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-a05aa455d457",
+      "message_id": "<20080206160136.62d2cbcb@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-06T15:01:36Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<18345.49594.125739.177615@stat.math.ethz.ch>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>",
+        "<18344.41206.830337.999993@ron.nulle.part>",
+        "<20080205192024.2c0d7695@yankee-laptop>",
+        "<18345.49594.125739.177615@stat.math.ethz.ch>"
+      ],
+      "body_plain": ">>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n>>>> on Wed, 6 Feb 2008 15:18:34 +0100\n\n   MM> why is this linkt to the packages being on R-forge?\n   MM> \n   MM> They still must be checked, built, checked and uploaded to CRAN,\n   MM> no?\n\nWhat I wanted to say is: we want to change how Rmetrics packages are\nreleased and stop this kind of thing :\n\n   DE>lots of packages twice a year and silence in-between\n\nand have something more like \n\n  MM>Rmetrics packages should be dealt with as other R packages are.\n\nFor the next comments\n\n   MM> - each Rmetrics package is daily checked and built\n   MM> but still \"Rmetrics\" should be only one (big fat :-)\n   MM> R-forge project.\n   MM> - keeping the current svn history\n\nThis would be the main topic of our meeting when you come back from\nholidays :)\n\nSorry for the confusion I might have produced,\nYohan",
+      "body_snippet": ">>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n>>>> on Wed, 6 Feb 2008 15:18:34 +0100\n\n   MM> why is this linkt to the packages being on R-forge?\n   MM> \n   MM> They still must be checke",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 5,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-787f489260c7",
+      "message_id": "<18345.56932.570950.959314@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2008-02-06T16:20:52Z",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "in_reply_to": "<20080206160136.62d2cbcb@yankee-laptop>",
+      "references": [
+        "<01c86811$Blat.v2.2.2$9bb95bfa@mail.statistik.uni-dortmund.de>",
+        "<20080205180844.4d24a782@yankee-laptop>",
+        "<18344.41206.830337.999993@ron.nulle.part>",
+        "<20080205192024.2c0d7695@yankee-laptop>",
+        "<18345.49594.125739.177615@stat.math.ethz.ch>",
+        "<20080206160136.62d2cbcb@yankee-laptop>"
+      ],
+      "body_plain": "Yohan,\n\nThanks for putting a more visible face on the Rmetrics project. I really\nappreciate your work as a maintainer.\n\nOn 6 February 2008 at 16:01, Yohan Chalabi wrote:\n| What I wanted to say is: we want to change how Rmetrics packages are\n| released and stop this kind of thing :\n\nSo ... are you going to put either a repaired or a fresh-from-svn fCalendar\npackage on CRAN or not?\n\nI think it is time for us all to make good on promises regarding more\nfrequent and incremental Rmetrics releases.   Unless I am missing a genuine\nblocker for such a release in which case I'd apprececiate hearing what such a\nblocker could be.\n\nRegards, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Yohan,\n\nThanks for putting a more visible face on the Rmetrics project. I really\nappreciate your work as a maintainer.\n\nOn 6 February 2008 at 16:01, Yohan Chalabi wrote:\n| What I wanted to say is: we ",
+      "thread_id": "thread-d0e11479e50c",
+      "thread_depth": 6,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-c66403db4743",
+      "message_id": "<20080207145800.73aa2414@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-07T13:58:00Z",
+      "subject": "new fCalendar package",
+      "subject_clean": "new fCalendar package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all, \n\nFYI, I submitted today the new version of fCalendar package version\n262.73.\n\nRegards,\nYohan",
+      "body_snippet": "Dear all, \n\nFYI, I submitted today the new version of fCalendar package version\n262.73.\n\nRegards,\nYohan",
+      "thread_id": "thread-c66403db4743",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-da763ccb2717",
+      "message_id": "<18347.13482.383990.145407@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2008-02-07T16:41:14Z",
+      "subject": "new fCalendar package",
+      "subject_clean": "new fCalendar package",
+      "in_reply_to": "<20080207145800.73aa2414@yankee-laptop>",
+      "references": [
+        "<20080207145800.73aa2414@yankee-laptop>"
+      ],
+      "body_plain": "On 7 February 2008 at 14:58, Yohan Chalabi wrote:\n| FYI, I submitted today the new version of fCalendar package version\n| 262.73.\n\nExcellent, thanks, nice work -- and to not stand too far behind I already\nuploaded it Debian as r-cran-fcalendar_262.73-1 ;-)\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 7 February 2008 at 14:58, Yohan Chalabi wrote:\n| FYI, I submitted today the new version of fCalendar package version\n| 262.73.\n\nExcellent, thanks, nice work -- and to not stand too far behind I alr",
+      "thread_id": "thread-c66403db4743",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-7f92850a9b69",
+      "message_id": "<925492.70640.qm@web50112.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-07T20:11:00Z",
+      "subject": "fGarch: question & suggestion",
+      "subject_clean": "fGarch: question & suggestion",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080207/30fe5424/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080207/30fe5424/attachment.pl",
+      "thread_id": "thread-7f92850a9b69",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-40323c136ef0",
+      "message_id": "<900310.95355.qm@web50101.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-11T19:03:56Z",
+      "subject": "fGarch: possible bugs",
+      "subject_clean": "fGarch: possible bugs",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080211/5789f3ee/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080211/5789f3ee/attachment.pl",
+      "thread_id": "thread-40323c136ef0",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-5c884723c02c",
+      "message_id": "<20080212151804.08667643@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-12T14:18:04Z",
+      "subject": "fGarch: question & suggestion",
+      "subject_clean": "fGarch: question & suggestion",
+      "in_reply_to": "<925492.70640.qm@web50112.mail.re2.yahoo.com>",
+      "references": [
+        "<925492.70640.qm@web50112.mail.re2.yahoo.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Thu, 7 Feb 2008 12:11:00 -0800 (PST)\n\n   MM> I would like to ask if was possible to implement in a function\n   MM> computing gradient in the fGarch package. Or is there a quick\n   MM> and easy way of implementing a gradient function so that I can\n   MM> do it myself? Based on the paper 'Parameter Estimation of ARMA\n   MM> Models with GARCH/APARCH Errors' by Wuertz, Chalabi and Luksan,\n   MM> I think that a function computing gradient was available for\n   MM> garch models in Rmetrics in the past. However, I did not find\n   MM> gradient in fGarch 260.72.\n   MM> The reason for my question is that I would like to calculate\n   MM> robust covariance matrix (and robust standard errors) for a garch\n   MM> model estimated under the assumption of normally distributed\n   MM> standardised errors, for which I need hessian and gradient. The\n   MM> robust covariance matrix for such a QML estimator is computed as\n   MM> hessian^(-1)*OPG*hessian^(-1), where OPG is the outer product\n   MM> of the gradient, i.e. gradient*(transposed gradient). Clearly,\n   MM> hessian is available but I do not have the gradient.\n\nHi Michal,\n\nThe gradient of LLH in fGarch is always calculated inside the\noptimization routines and different numerical approximation are used\naccording to the optimization. So, there is no available function in\nfGarch which returns the gradient. Nevertheless it is not difficult to\nimplement the numerical approximation of the gradient in R.\n.garchRCDAHessian in fGarch can give you an idea how to do it.\n\nIf you have garch model estimated under the assumption of normally\ndistributed sd error you can even use the analytical gradient. But\nthis would takes you probably much more time to implement it. \n\nregards,\nYohan",
+      "body_snippet": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Thu, 7 Feb 2008 12:11:00 -0800 (PST)\n\n   MM> I would like to ask if was possible to implement in a function\n   MM> computing gradient in t",
+      "thread_id": "thread-7f92850a9b69",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-314029945cbb",
+      "message_id": "<20080212153358.78101b1d@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-12T14:33:58Z",
+      "subject": "fGarch: possible bugs",
+      "subject_clean": "fGarch: possible bugs",
+      "in_reply_to": "<900310.95355.qm@web50101.mail.re2.yahoo.com>",
+      "references": [
+        "<900310.95355.qm@web50101.mail.re2.yahoo.com>"
+      ],
+      "body_plain": "Hi Michal,\n\n>>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 11 Feb 2008 11:03:56 -0800 (PST)\n\n   MM> 1. In the summary function, N should be calculated as\n   MM> length(object at data) instead of length(object at data) because data\n   MM> does not exist (and thus normalised log likelihood is infinity).\n\nyeah, I was supposed to fix that for a long time now. I changed it to\nNROW(object at data$Data) to make it more general.\n\n   MM> 2. In plot types 10 and 11 of the plot function, it would\n   MM> be better to calculate standardised residuals as sres =\n   MM> as.numeric(residuals(x, standardize = TRUE)) and sres2 =\n   MM> as.numeric(residuals(x, standardize = TRUE))^2, respectively,\n   MM> since the acf function is not able to handle zoo objects while\n   MM> fGarch is and the residuals function assigns the same class to\n   MM> residuals as has the modeled data.\n\nIt is a new feature that garchFit can handle zoo object and we\nstill need to test it! I made the change to as.matrix() to make\nit work with other time series object.\n\n   MM> 3. In the summary function, 'object@' is missing in the command\n   MM> to print mean and variance equations.\n\nthanks to point this out !\n\n   MM> 4. There seems to be a problem in the computation of the\n   MM> hessian. The default hessian=\"fda\" used with algorithm=\"nlminb\"\n   MM> produced a covariance matrix with negative numbers on the\n   MM> diagonal. First, I thought this inaccuracy is the price to pay\n   MM> for faster computation. The setting hessian=\"cda\" produced a\n   MM> covariance matrix with only positive numbers on the diagonal\n   MM> but it took longer to calculate the hessian. However, when\n   MM> I used algorithm=\"sqp\" both hessian=\"fda\" and hessian=\"cda\"\n   MM> produced covariance matrices with negative numbers on the\n   MM> diagonal. Therefore, I would like to ask if such a result\n   MM> is OK or if there is a bug in the fortran implementation of\n   MM> hessian computation.\n\nthe fortran routines for the hessian approximation are new and we\nare still testing them! I just had a look at the code and there is a\nclear problem with hessian=\"fda\". I recommend you to always use\nhessian=\"cda\". \nFYI, \"cda\" is now the default method and we will probably\nremove fda before we release the new package.\n\nYou can compare the different implementation with\n\nlibrary(fGarch)\ndata(sp500dge)\nx <- sp500dge[,1]\nfit <- garchFit(~garch(1,1), x, al = \"mnfb\")\n\nRCDAHessian <- .garchRCDAHessian(fit at fit$par, .params, .series)\nFCDAHessian <- .garchFCDAHessian(fit at fit$par, .params, .series)\nFFDAHessian <- .garchFFDAHessian(fit at fit$par, .params, .series)\n\nthanks for your helpful comments!\nYohan",
+      "body_snippet": "Hi Michal,\n\n>>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 11 Feb 2008 11:03:56 -0800 (PST)\n\n   MM> 1. In the summary function, N should be calculated as\n   MM> length(object at da",
+      "thread_id": "thread-40323c136ef0",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-a29accb0127f",
+      "message_id": "<20080212154002.1d39ad4a@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-12T14:40:02Z",
+      "subject": "fGarch: possible bugs",
+      "subject_clean": "fGarch: possible bugs",
+      "in_reply_to": "<900310.95355.qm@web50101.mail.re2.yahoo.com>",
+      "references": [
+        "<900310.95355.qm@web50101.mail.re2.yahoo.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 11 Feb 2008 11:03:56 -0800 (PST)\n\n   MM> 4. There seems to be a problem in the computation of the\n   MM> hessian. The default hessian=\"fda\" used with algorithm=\"nlminb\"\n   MM> produced a covariance matrix with negative numbers on the\n   MM> diagonal. First, I thought this inaccuracy is the price to pay\n   MM> for faster computation. The setting hessian=\"cda\" produced a\n   MM> covariance matrix with only positive numbers on the diagonal\n   MM> but it took longer to calculate the hessian. However, when\n   MM> I used algorithm=\"sqp\" both hessian=\"fda\" and hessian=\"cda\"\n   MM> produced covariance matrices with negative numbers on the\n   MM> diagonal. Therefore, I would like to ask if such a result\n   MM> is OK or if there is a bug in the fortran implementation of\n   MM> hessian computation.\n\nand to respond to your question...\n\nNo, it is not OK to have negative numbers on the diagonal! And I think\nit should work now with hessian=\"cda\".\nOne possible problem could be a miss specified model. What time\nseries / data are you trying to model? I would be curious to see it and\ncheck if the problem comes from \"cda\".\n\nregards,\nYohan",
+      "body_snippet": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 11 Feb 2008 11:03:56 -0800 (PST)\n\n   MM> 4. There seems to be a problem in the computation of the\n   MM> hessian. The default hessian",
+      "thread_id": "thread-40323c136ef0",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-5800b311d8ce",
+      "message_id": "<20080214161431.5570342f@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-14T15:14:31Z",
+      "subject": "[R-SIG-Finance] holidayNYSE missing some",
+      "subject_clean": "holidayNYSE missing some",
+      "in_reply_to": "<loom.20080212T162838-798@post.gmane.org>",
+      "references": [
+        "<20080204115153.13a247f4@yankee-laptop>",
+        "<loom.20080212T162838-798@post.gmane.org>"
+      ],
+      "body_plain": ">>>> \"JB\" == Joe Byers <ecjbosu at aol.com>\n>>>> on Tue, 12 Feb 2008 16:29:55 +0000 (UTC)\n\n   JB> I am working on adding Haug's Multiasset greeks to the fExotics\n   JB> package.\n   JB> Are you interested in adding these?\n\nNew contribution to any Rmetics package is always very welcome!\n\nDo not hesitate to directly contact me or send your\nsuggestion/contribution to the Rmetrics core team mailing list. \n(Rmetrics-core at r-project.org)\n\nThanks in advance for your contribution,\nYohan",
+      "body_snippet": ">>>> \"JB\" == Joe Byers <ecjbosu at aol.com>\n>>>> on Tue, 12 Feb 2008 16:29:55 +0000 (UTC)\n\n   JB> I am working on adding Haug's Multiasset greeks to the fExotics\n   JB> package.\n   JB> Are you interes",
+      "thread_id": "thread-5800b311d8ce",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-34feba2aefbd",
+      "message_id": "<126091.50924.qm@web50112.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-16T16:33:11Z",
+      "subject": "fGarch: possible bug(s)",
+      "subject_clean": "fGarch: possible bug(s)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080216/47b8f4ee/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080216/47b8f4ee/attachment.pl",
+      "thread_id": "thread-34feba2aefbd",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-f60ea4ed8763",
+      "message_id": "<915421.59588.qm@web50110.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-17T11:30:54Z",
+      "subject": "fGarch: bug in the predict function",
+      "subject_clean": "fGarch: bug in the predict function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080217/9a576758/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080217/9a576758/attachment.pl",
+      "thread_id": "thread-f60ea4ed8763",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-3918c758541f",
+      "message_id": "<877626.31859.qm@web50105.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-18T14:14:56Z",
+      "subject": "fGarch: possible bug(s) in the predict function II",
+      "subject_clean": "fGarch: possible bug(s) in the predict function II",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/de9f6bf2/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/de9f6bf2/attachment.pl",
+      "thread_id": "thread-3918c758541f",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-44fdce97709b",
+      "message_id": "<195324.93969.qm@web50109.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-18T17:00:43Z",
+      "subject": "fGarch: possbible bug(s) in garchSim",
+      "subject_clean": "fGarch: possbible bug(s) in garchSim",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/c1d89dc7/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/c1d89dc7/attachment.pl",
+      "thread_id": "thread-44fdce97709b",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-6e9ad81ad43e",
+      "message_id": "<20080219201827.25f1ccbc@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-19T19:18:27Z",
+      "subject": "fGarch: possbible bug(s) in garchSim",
+      "subject_clean": "fGarch: possbible bug(s) in garchSim",
+      "in_reply_to": "<195324.93969.qm@web50109.mail.re2.yahoo.com>",
+      "references": [
+        "<195324.93969.qm@web50109.mail.re2.yahoo.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 18 Feb 2008 09:00:43 -0800 (PST)\n\n   MM> Finally, I would like to ask why are you using 'rev' in\n   MM> \n   MM> z = c(rev(spec at presample[, 1]), z)\n   MM> h = c(rev(spec at presample[, 2])^delta, rep(NA, times = n))\n   MM> y = c(rev(spec at presample[, 3]), rep(NA, times = n))\n   MM> \n   MM> Thanks for your answer.\n\nspec at presample is a matrix where the rows represented a time in the past.\n\n> spec <- garchSpec(model = list(alpha = c(0.2,0.1), beta = 0.2))\n> spec at presample\n            z     h y\n0  -0.7006318 2e-06 0\n-1  1.3742579 2e-06 0\n\nhere row #1 is at time t = 0 and row #2 is at time t = -1\n\nwhen you expand the whole sample as done in \nz = c(rev(spec at presample[,1]), z) \nyou want to keep the chronological order. i.e\nt = -1, t = 0, t = 1, t = 2, ...\n\nhence the need of rev\n\n> rev(spec at presample[,1])\n        -1          0 \n 1.3742579 -0.7006318 \n\n\nYohan",
+      "body_snippet": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Mon, 18 Feb 2008 09:00:43 -0800 (PST)\n\n   MM> Finally, I would like to ask why are you using 'rev' in\n   MM> \n   MM> z = c(rev(spec at pre",
+      "thread_id": "thread-44fdce97709b",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-aecea656cacd",
+      "message_id": "<20080219203234.224aa211@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-19T19:32:34Z",
+      "subject": "bug reports",
+      "subject_clean": "bug reports",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi Michal,\n\nI had a look at the different reports you send us lately and I\ncompletely agree with you. As I have already told you, we have changed \nmany functions in fGarch and there are many bugs around. We really\nappreciate your work to report those problems. I will definitely add\nyour name in the contributors list!\n\nThanks again for your work!\nYohan",
+      "body_snippet": "Hi Michal,\n\nI had a look at the different reports you send us lately and I\ncompletely agree with you. As I have already told you, we have changed \nmany functions in fGarch and there are many bugs arou",
+      "thread_id": "thread-aecea656cacd",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-fc599adceb4d",
+      "message_id": "<20080219205507.53596993@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-19T19:55:07Z",
+      "subject": "hessian approximation in garchFit",
+      "subject_clean": "hessian approximation in garchFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Please note the new argument names for hessian in dev-version of\nfGarch. \n\nWe dropped the forward difference approximation due to its bad results\nand we will see if we have time to fix it in the future.\n\nThe default approximation is now hessian=\"fca\" which is a central\ndifference approximation implemented in fortran. Please see man page\nfor more details.\n\nregards,\nYohan",
+      "body_snippet": "Please note the new argument names for hessian in dev-version of\nfGarch. \n\nWe dropped the forward difference approximation due to its bad results\nand we will see if we have time to fix it in the futur",
+      "thread_id": "thread-fc599adceb4d",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-e25b9e6053a3",
+      "message_id": "<20080220125649.7c67b367@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-20T11:56:49Z",
+      "subject": "[R-SIG-Finance] Extracting OHLC from trade price series",
+      "subject_clean": "Extracting OHLC from trade price series",
+      "in_reply_to": "<e8e755250802191639p36e42eb3jfc40afcdd2eb1cdf@mail.gmail.com>",
+      "references": [
+        "<e385f1f9245b9.47bb72ca@optonline.net>",
+        "<e8e755250802191639p36e42eb3jfc40afcdd2eb1cdf@mail.gmail.com>"
+      ],
+      "body_plain": ">>>> \"JR\" == \"Jeff Ryan\" <jeff.a.ryan at gmail.com>\n>>>> on Tue, 19 Feb 2008 18:39:27 -0600\n\n   JR> You are probably better off _not_\n   JR> using timeDate - but I wrote xts so I wouldn't have to - to\n   JR> each his\n   JR> own.\n\nHi Jeff,\n\nI am currently working on the different Rmetrics packages I found\nyour advice to not use fCalendar interesting.\nCould you please give me the reasons why you would not recommend it.\nIt will help us to improve the package.\n\nregards,\nYohan",
+      "body_snippet": ">>>> \"JR\" == \"Jeff Ryan\" <jeff.a.ryan at gmail.com>\n>>>> on Tue, 19 Feb 2008 18:39:27 -0600\n\n   JR> You are probably better off _not_\n   JR> using timeDate - but I wrote xts so I wouldn't have to - to",
+      "thread_id": "thread-e25b9e6053a3",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-29107329f998",
+      "message_id": "<536733.74156.qm@web50102.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-20T14:27:46Z",
+      "subject": "fGarch: possible bug(s) and suggestions",
+      "subject_clean": "fGarch: possible bug(s) and suggestions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080220/426cb940/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080220/426cb940/attachment.pl",
+      "thread_id": "thread-29107329f998",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-ea37ae172e99",
+      "message_id": "<20080220162655.70630bfb@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-20T15:26:55Z",
+      "subject": "fGarch: possible bug(s) and suggestions",
+      "subject_clean": "fGarch: possible bug(s) and suggestions",
+      "in_reply_to": "<536733.74156.qm@web50102.mail.re2.yahoo.com>",
+      "references": [
+        "<536733.74156.qm@web50102.mail.re2.yahoo.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Wed, 20 Feb 2008 06:27:46 -0800 (PST)\n\n   MM> h = c(rev(spec at presample[, 2]), rep(NA, times = n))\n   MM> \n\nyes, this is pretty obvious, thanks to point it out.\n\n   MM> That is, the second column in presample should not be raised\n   MM> to the power of delta because it is conditional variance and\n   MM> not conditional sigma as I inferred from the garchSpec function.\n   MM> \n   MM> \n   MM> Second, I would suggest to slightly alter the definition of\n   MM> 'getting and extending series' in the predict function in the\n   MM> following way:\n   MM> \n   MM> # Get and Extend Series:\n   MM> x = c(object at data, rep(mu, M))\n   MM> h = c(object at h.t, rep(omega, M))\n   MM> z = c(object at residuals, rep(0, M))\n\nI think it is a matter of notation. \n\nIt is common to drop the constant terms in the mean and variance\nequations (mu, omega). So, the code makes sense.\n\nregards,\nYohan",
+      "body_snippet": ">>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Wed, 20 Feb 2008 06:27:46 -0800 (PST)\n\n   MM> h = c(rev(spec at presample[, 2]), rep(NA, times = n))\n   MM> \n\nyes, this is pretty obvious,",
+      "thread_id": "thread-29107329f998",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-5e9d9a4efebc",
+      "message_id": "<e8e755250802200743o7f0e9149u95687f0d83343ad4@mail.gmail.com>",
+      "from_name": "Jeff Ryan",
+      "from_email_hash": "4c11198e12fc267ae3e3c06487930e8e9dd8ef89399ad783a1835a1dd01ce593",
+      "date": "2008-02-20T15:43:33Z",
+      "subject": "[R-SIG-Finance] Extracting OHLC from trade price series",
+      "subject_clean": "Extracting OHLC from trade price series",
+      "in_reply_to": "<20080220125649.7c67b367@yankee-laptop>",
+      "references": [
+        "<e385f1f9245b9.47bb72ca@optonline.net>",
+        "<e8e755250802191639p36e42eb3jfc40afcdd2eb1cdf@mail.gmail.com>",
+        "<20080220125649.7c67b367@yankee-laptop>"
+      ],
+      "body_plain": "Hi Yohan,\n\nNot offense meant - sorry if that came across as such.  Rmetrics is\nthe gold standard when it comes to breadth and overall usefulness.\nAlways appreciative of you and your team's efforts.\n\nThe purpose of my comment was with respect to using timeDate as an\nindexing class.  I'll clarify to the list with a more clear response,\nbut I think my reasoning is that even the primary timeSeries class\ndoesn't utilize timeDate for its @positions/charvec.  That coupled\nwith what seemed like a situation that could be handled with something\nsimpler in POSIXct was the _why_.\n\nThat said, timeDate as a tool seems great.  I have yet to fully grasp\nits power (or place in a workflow), but I none-the-less interested in\nit.  If you look at 'xts' you can see that one can easily allow an\n'xts' object to use 'timeDate' for indexing.  [ indexClass(x) <-\n'timeDate' ]\n\nI have been meaning to email you about a few things with respect to my\n'xts' package and 'timeSeries'/'timeDate':\n\nA quick primer on 'xts':\n\nBasically enforces a time-based\n(Date,POSIXct,chron,timeDate,yearmon,yearqtr) index in a modified\n'zoo' class, while allowing for arbitrary attributes to be appended\n(like time zone, data source, comments...).  The latter is only unique\nin that these attributes are displayed differently by using xts as\nopposed to zoo.  In zoo and other classes, they just clutter up the\nscreen.  I like the additional features of timeSeries quite a bit -\nbut in reality the S4 object just doesn't work in many functions that\naren't built for it.\n\nThe main usefulness for developers is in the conversion scheme.\n'as.xts' allows for lossless conversion of one object into 'xts', and\n'reclass()' reverses the procedure.  Basically the parts of the\noriginal object that need to be remembered for re-conversion are\nassigned to xtsAttributes.\n\nInside functions it is possible to simply 'as.xts' the time-series\ninput (can be of any class: timeSeries, ts, zoo, its, irts, even\nproperly formed (rownames in suitable date-convertible format) matrix\nand data.frames) and carry out all your internal tasks only having to\nworry about interacting with a zoo-like (matrix) object.  No more\nmethods/conditionals or worse still, broken code.  It makes writing\nand maintaining code much faster and easier.\n\nExamples from xts include 'to.period' and 'periodicity', and in\nquantmod 'chartSeries' currently converts objects to xts before doing\nanything.\n\n\n\nOk - so I gave you some idea what I have been working on.  The issue I\nhave at present is converting a as.xts(timeSeries) object back to\ntimeSeries from 'xts'.  An example follows. But the basic issue is\nthat the @positions slot loses information when subset.\n\n> data(sample_matrix)\n> sample.timeSeries <- timeSeries(sample_matrix,charvec=as.Date(rownames(sample_matrix)))\n> str(sample.timeSeries)\nFormal class 'timeSeries' [package \"fSeries\"] with 8 slots\n  ..@ Data         : num [1:180, 1:4] 50.0 50.2 50.4 50.4 50.2 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n  .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  .. .. ..$ : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n  ..@ positions    : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04\n2007-01-05 ...\n  .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  ..@ format       : chr \"%Y-%m-%d\"\n  ..@ FinCenter    : chr \"GMT\"\n  ..@ units        : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n  ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n  ..@ title        : chr \"Time Series Object\"\n  ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n> str(sample.timeSeries[1:10,1:2])\nFormal class 'timeSeries' [package \"fSeries\"] with 8 slots\n  ..@ Data         : num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\" \"2007-01-05\" ...\n  .. .. ..$ : chr [1:2] \"Open\" \"High\"\n  ..@ positions    : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\"\n\"2007-01-05\" ...\n  ..@ format       : chr \"%Y-%m-%d\"\n  ..@ FinCenter    : chr \"GMT\"\n  ..@ units        : chr [1:2] \"Open\" \"High\"\n  ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n  ..@ title        : chr \"Time Series Object\"\n  ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>\n\nI can only imagine that if the original had value - it can't be good\nthat it gets lost in the process of subsetting - as everything just\nbecomes a chr vector.\n\nMy issue happens in the conversion:\n\nFirst what an 'as.xts(timeSeries)' looks like:\n\n> str(as.xts(sample.timeSeries[1:10,1:2]))\nAn 'xts' object from 2007-01-02 to 2007-01-11 containing:\n  Data: num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n - attr(*, \"dimnames\")=List of 2\n  ..$ : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\" \"2007-01-05\" ...\n  ..$ : chr [1:2] \"Open\" \"High\"\n  Indexed by:  POSIXct[1:10], format: \"2007-01-02\" \"2007-01-03\"\n\"2007-01-04\" \"2007-01-05\" ...\n  Original class: 'timeSeries'\n  xts Attributes:\nList of 5\n $ format       : chr \"%Y-%m-%d\"\n $ FinCenter    : chr \"GMT\"\n $ recordIDs    :'data.frame':  0 obs. of  0 variables\n $ title        : chr \"Time Series Object\"\n $ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>\n\n\n# Next we are taking timeSeries, converting it to 'xts', then putting\nit back as a timeSeries\n> str(reclass(as.xts(sample.timeSeries)))\nFormal class 'timeSeries' [package \"fSeries\"] with 8 slots\n  ..@ Data         : num [1:180, 1:4] 50.0 50.2 50.4 50.4 50.2 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n  .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  .. .. ..$ : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n  ..@ positions    : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04\n2007-01-05 ...\n  .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  ..@ format       : chr \"%Y-%m-%d\"\n  ..@ FinCenter    : chr \"GMT\"\n  ..@ units        : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n  ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n  ..@ title        : chr \"Time Series Object\"\n  ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n\n# Now the same thing - only first subsetting the timeSeries object.\nThe point to notice is that your 'dimnames' and '@positions' from the\nnon-xts example above change form after subsetting.  The xts reclass\nprocess simply rebuilds, so everything is still the way it should be\n(only subset).\n> str(reclass(as.xts(sample.timeSeries[1:10,1:2])))\nFormal class 'timeSeries' [package \"fSeries\"] with 8 slots\n  ..@ Data         : num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : atomic [1:10] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n  .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  .. .. ..$ : chr [1:2] \"Open\" \"High\"\n  ..@ positions    : atomic [1:10] 2007-01-02 2007-01-03 2007-01-04\n2007-01-05 ...\n  .. ..- attr(*, \"control\")= Named chr \"GMT\"\n  .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n  ..@ format       : chr \"%Y-%m-%d\"\n  ..@ FinCenter    : chr \"GMT\"\n  ..@ units        : chr [1:2] \"Open\" \"High\"\n  ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n  ..@ title        : chr \"Time Series Object\"\n  ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>\nIf you notice, the dimnames and positions haven't changed form.\n\nMy issue - and it may only be my concern :) - is that\n\n> identical(sample.timeSeries[1:10,1:2], reclass(as.xts(sample.timeSeries[1:10,1:2])))\n\nfails.  I have a hard time reconciling the idea of making it pass by\n_removing_ information, only because timeSeries does.\n\nI am not too sure if this makes sense.  If not please tell me so.\n\nOn a slightly different note I would like to learn more about the\ntimeDate class, and how maybe _it_ should be the default indexing\nclass (currently Date or POSIXct has that role) in an 'xts' object.\nAre there methods that might be of use?\n\nThanks for your reply - and hopefully this email didn't take you too\nlong to read :)\n\nJeff Ryan\n\nOn Feb 20, 2008 5:56 AM, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n> >>>> \"JR\" == \"Jeff Ryan\" <jeff.a.ryan at gmail.com>\n> >>>> on Tue, 19 Feb 2008 18:39:27 -0600\n>\n>    JR> You are probably better off _not_\n>    JR> using timeDate - but I wrote xts so I wouldn't have to - to\n>    JR> each his\n>    JR> own.\n>\n> Hi Jeff,\n>\n> I am currently working on the different Rmetrics packages I found\n> your advice to not use fCalendar interesting.\n> Could you please give me the reasons why you would not recommend it.\n> It will help us to improve the package.\n>\n> regards,\n> Yohan\n>\n\n\n\n-- \nThere's a way to do it better - find it.\nThomas A. Edison",
+      "body_snippet": "Hi Yohan,\n\nNot offense meant - sorry if that came across as such.  Rmetrics is\nthe gold standard when it comes to breadth and overall usefulness.\nAlways appreciative of you and your team's efforts.\n\nT",
+      "thread_id": "thread-e25b9e6053a3",
+      "thread_depth": 1,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-7bcb3522a397",
+      "message_id": "<20080225110739.308fa558@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-25T10:07:39Z",
+      "subject": "move of Rmetrics -> R-forge",
+      "subject_clean": "move of Rmetrics -> R-forge",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi Martin,\n\nHow are you doing?\n\nIn one of our last emails you said that the move of Rmetrics to R-forge\nwould be non-trivial and one of the reason was to keep the svn history.\n\nThis morning I had a look at the svn manual and it appears that you can\nsplit a big project in sub-projects without too much of hassles. For\nexample it could be done for package fBasics as follows.\n\nsvnadmin dump [path/to/Rmetircs/svn/server] > Rmetrics.dump\nsvndumpfiler include fBasics < Rmetrics.dump > fBasics.dump\n\nthen one needs to manually edit the fBasics.dump to remove the\ntop-level directory Rmetrics.\n\nMore details can be found in section \"Filtering Repository History\" of\nsvn manual\n(http://svnbook.red-bean.com/en/1.4/svn.reposadmin.maint.html)\n\nWould it be possible to see you this week to discuss it?\n\nregards,\nYohan",
+      "body_snippet": "Hi Martin,\n\nHow are you doing?\n\nIn one of our last emails you said that the move of Rmetrics to R-forge\nwould be non-trivial and one of the reason was to keep the svn history.\n\nThis morning I had a lo",
+      "thread_id": "thread-7bcb3522a397",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-65cb6d0916c7",
+      "message_id": "<799501.80963.qm@web50101.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-28T16:00:56Z",
+      "subject": "fGarch: possible bug(s) in ICS & LLH in summary",
+      "subject_clean": "fGarch: possible bug(s) in ICS & LLH in summary",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/f09bfa13/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/f09bfa13/attachment.pl",
+      "thread_id": "thread-65cb6d0916c7",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-02bb4e9552d8",
+      "message_id": "<290108.13909.qm@web31805.mail.mud.yahoo.com>",
+      "from_name": "Adam Murphy",
+      "from_email_hash": "185f1e84091243b5b5e2e7f9594ea47ed2161ece19e8be0e2b57a2f2fc36b025",
+      "date": "2008-02-28T21:06:24Z",
+      "subject": "fTrading bug",
+      "subject_clean": "fTrading bug",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/03965371/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/03965371/attachment.pl",
+      "thread_id": "thread-02bb4e9552d8",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-49135b8f7029",
+      "message_id": "<200802291155055310096@scut.edu.cn>",
+      "from_name": "chuch",
+      "from_email_hash": "744d8bb23ed36eb8d5c88d29e1ea2cbf65956b12cef3e3fa5fe41dd1d41a69c7",
+      "date": "2008-02-29T03:55:06Z",
+      "subject": "about fSeries",
+      "subject_clean": "about fSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/aa0892ff/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/aa0892ff/attachment.pl",
+      "thread_id": "thread-49135b8f7029",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-84034bd5c8cb",
+      "message_id": "<180099.78312.qm@web50108.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-02-29T08:08:05Z",
+      "subject": "fGarch: possible bug(s) in ICS & LLH in summary II",
+      "subject_clean": "fGarch: possible bug(s) in ICS & LLH in summary II",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/79c14067/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/79c14067/attachment.pl",
+      "thread_id": "thread-84034bd5c8cb",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-e6e15b5f85a6",
+      "message_id": "<8763w8ch67.fsf@phys.ethz.ch>",
+      "from_name": "chalabi at phys.ethz.ch",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-29T08:15:12Z",
+      "subject": "Migration of dev-Rmetrics to R-forge",
+      "subject_clean": "Migration of dev-Rmetrics to R-forge",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all,\n\nWe planned to migrate the dev-version of Rmetrics from\nhttps://svn.r-project.org/Rmetrics/ to R-forge next Monday (3rd March\n2008). \n\nIf you have any change to commit, please make sure to do so by Sunday evening. \n\nWe will make an announcement to the R-sig-finance mailing list when the\nmigration will be done. \n\nregards,\nYohan",
+      "body_snippet": "Dear all,\n\nWe planned to migrate the dev-version of Rmetrics from\nhttps://svn.r-project.org/Rmetrics/ to R-forge next Monday (3rd March\n2008). \n\nIf you have any change to commit, please make sure to d",
+      "thread_id": "thread-e6e15b5f85a6",
+      "thread_depth": 0,
+      "month": "2008-02"
+    },
+    {
+      "id": "msg-f8d08f39453f",
+      "message_id": "<87prufc3dr.fsf@phys.ethz.ch>",
+      "from_name": "chalabi at phys.ethz.ch",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-02-29T13:13:04Z",
+      "subject": "[R-SIG-Finance] Extracting OHLC from trade price series",
+      "subject_clean": "Extracting OHLC from trade price series",
+      "in_reply_to": "<e8e755250802200743o7f0e9149u95687f0d83343ad4@mail.gmail.com> (Jeff Ryan's message of \"Wed, 20 Feb 2008 09:43:33 -0600\")",
+      "references": [
+        "<e385f1f9245b9.47bb72ca@optonline.net>",
+        "<e8e755250802191639p36e42eb3jfc40afcdd2eb1cdf@mail.gmail.com>",
+        "<20080220125649.7c67b367@yankee-laptop>",
+        "<e8e755250802200743o7f0e9149u95687f0d83343ad4@mail.gmail.com>"
+      ],
+      "body_plain": "\"Jeff Ryan\" <jeff.a.ryan at gmail.com> writes:\n\n> Hi Yohan,\n>\n> Not offense meant - sorry if that came across as such.  Rmetrics is\n> the gold standard when it comes to breadth and overall usefulness.\n> Always appreciative of you and your team's efforts.\n\nI know there was no offence :). I was really interested to understand the\nwhy of your comment.\n\n>\n> The purpose of my comment was with respect to using timeDate as an\n> indexing class.  I'll clarify to the list with a more clear response,\n> but I think my reasoning is that even the primary timeSeries class\n> doesn't utilize timeDate for its @positions/charvec.  That coupled\n> with what seemed like a situation that could be handled with something\n> simpler in POSIXct was the _why_.\n\nAlthough @positions in timeSeries is a character, timeDate is\nused to generate these positions. Otherwise it would not be possible to\n to handle situation where series are recorded at different financial\ncenters with different time zones.\n\n> That said, timeDate as a tool seems great.  I have yet to fully grasp\n> its power (or place in a workflow), but I none-the-less interested in\n> it.  If you look at 'xts' you can see that one can easily allow an\n> 'xts' object to use 'timeDate' for indexing.  [ indexClass(x) <-\n> 'timeDate' ]\n>\n> I have been meaning to email you about a few things with respect to my\n> 'xts' package and 'timeSeries'/'timeDate':\n>\n> A quick primer on 'xts':\n>\n> Basically enforces a time-based\n> (Date,POSIXct,chron,timeDate,yearmon,yearqtr) index in a modified\n> 'zoo' class, while allowing for arbitrary attributes to be appended\n> (like time zone, data source, comments...).  The latter is only unique\n> in that these attributes are displayed differently by using xts as\n> opposed to zoo.  In zoo and other classes, they just clutter up the\n> screen.  I like the additional features of timeSeries quite a bit -\n> but in reality the S4 object just doesn't work in many functions that\n> aren't built for it.\n\nwe made few changes to timeSeries to make it more compatible with other\nfunctions. And if it  does not work, you can write a new method for the\nfunction you want to use or convert the timeSeries to a matrix (see\nas.matrix.timeSeries). So, I do not get the point \"in reality the S4\nobject just doesn't work...\". \n\n>\n> The main usefulness for developers is in the conversion scheme.\n> 'as.xts' allows for lossless conversion of one object into 'xts', and\n> 'reclass()' reverses the procedure.  Basically the parts of the\n> original object that need to be remembered for re-conversion are\n> assigned to xtsAttributes.\n>\n> Inside functions it is possible to simply 'as.xts' the time-series\n> input (can be of any class: timeSeries, ts, zoo, its, irts, even\n> properly formed (rownames in suitable date-convertible format) matrix\n> and data.frames) and carry out all your internal tasks only having to\n> worry about interacting with a zoo-like (matrix) object.  No more\n> methods/conditionals or worse still, broken code.  It makes writing\n> and maintaining code much faster and easier.\n>\n> Examples from xts include 'to.period' and 'periodicity', and in\n> quantmod 'chartSeries' currently converts objects to xts before doing\n> anything.\n>\n>\n>\n> Ok - so I gave you some idea what I have been working on.  The issue I\n> have at present is converting a as.xts(timeSeries) object back to\n> timeSeries from 'xts'.  An example follows. But the basic issue is\n> that the @positions slot loses information when subset.\n>\n>> data(sample_matrix)\n>> sample.timeSeries <- timeSeries(sample_matrix,charvec=as.Date(rownames(sample_matrix)))\n>> str(sample.timeSeries)\n> Formal class 'timeSeries' [package \"fSeries\"] with 8 slots\n>   ..@ Data         : num [1:180, 1:4] 50.0 50.2 50.4 50.4 50.2 ...\n>   .. ..- attr(*, \"dimnames\")=List of 2\n>   .. .. ..$ : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n>   .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   .. .. ..$ : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n>   ..@ positions    : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04\n> 2007-01-05 ...\n>   .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   ..@ format       : chr \"%Y-%m-%d\"\n>   ..@ FinCenter    : chr \"GMT\"\n>   ..@ units        : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n>   ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n>   ..@ title        : chr \"Time Series Object\"\n>   ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>> str(sample.timeSeries[1:10,1:2])\n> Formal class 'timeSeries' [package \"fSeries\"] with 8 slots\n>   ..@ Data         : num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n>   .. ..- attr(*, \"dimnames\")=List of 2\n>   .. .. ..$ : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\" \"2007-01-05\" ...\n>   .. .. ..$ : chr [1:2] \"Open\" \"High\"\n>   ..@ positions    : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\"\n> \"2007-01-05\" ...\n>   ..@ format       : chr \"%Y-%m-%d\"\n>   ..@ FinCenter    : chr \"GMT\"\n>   ..@ units        : chr [1:2] \"Open\" \"High\"\n>   ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n>   ..@ title        : chr \"Time Series Object\"\n>   ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>>\n>\n> I can only imagine that if the original had value - it can't be good\n> that it gets lost in the process of subsetting - as everything just\n> becomes a chr vector.\n>\n> My issue happens in the conversion:\n>\n> First what an 'as.xts(timeSeries)' looks like:\n>\n>> str(as.xts(sample.timeSeries[1:10,1:2]))\n> An 'xts' object from 2007-01-02 to 2007-01-11 containing:\n>   Data: num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n>  - attr(*, \"dimnames\")=List of 2\n>   ..$ : chr [1:10] \"2007-01-02\" \"2007-01-03\" \"2007-01-04\" \"2007-01-05\" ...\n>   ..$ : chr [1:2] \"Open\" \"High\"\n>   Indexed by:  POSIXct[1:10], format: \"2007-01-02\" \"2007-01-03\"\n> \"2007-01-04\" \"2007-01-05\" ...\n>   Original class: 'timeSeries'\n>   xts Attributes:\n> List of 5\n>  $ format       : chr \"%Y-%m-%d\"\n>  $ FinCenter    : chr \"GMT\"\n>  $ recordIDs    :'data.frame':  0 obs. of  0 variables\n>  $ title        : chr \"Time Series Object\"\n>  $ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>>\n>\n>\n> # Next we are taking timeSeries, converting it to 'xts', then putting\n> it back as a timeSeries\n>> str(reclass(as.xts(sample.timeSeries)))\n> Formal class 'timeSeries' [package \"fSeries\"] with 8 slots\n>   ..@ Data         : num [1:180, 1:4] 50.0 50.2 50.4 50.4 50.2 ...\n>   .. ..- attr(*, \"dimnames\")=List of 2\n>   .. .. ..$ : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n>   .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   .. .. ..$ : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n>   ..@ positions    : atomic [1:180] 2007-01-02 2007-01-03 2007-01-04\n> 2007-01-05 ...\n>   .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   ..@ format       : chr \"%Y-%m-%d\"\n>   ..@ FinCenter    : chr \"GMT\"\n>   ..@ units        : chr [1:4] \"Open\" \"High\" \"Low\" \"Close\"\n>   ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n>   ..@ title        : chr \"Time Series Object\"\n>   ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>\n> # Now the same thing - only first subsetting the timeSeries object.\n> The point to notice is that your 'dimnames' and '@positions' from the\n> non-xts example above change form after subsetting.  The xts reclass\n> process simply rebuilds, so everything is still the way it should be\n> (only subset).\n>> str(reclass(as.xts(sample.timeSeries[1:10,1:2])))\n> Formal class 'timeSeries' [package \"fSeries\"] with 8 slots\n>   ..@ Data         : num [1:10, 1:2] 50.0 50.2 50.4 50.4 50.2 ...\n>   .. ..- attr(*, \"dimnames\")=List of 2\n>   .. .. ..$ : atomic [1:10] 2007-01-02 2007-01-03 2007-01-04 2007-01-05 ...\n>   .. .. .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   .. .. ..$ : chr [1:2] \"Open\" \"High\"\n>   ..@ positions    : atomic [1:10] 2007-01-02 2007-01-03 2007-01-04\n> 2007-01-05 ...\n>   .. ..- attr(*, \"control\")= Named chr \"GMT\"\n>   .. .. ..- attr(*, \"names\")= chr \"FinCenter\"\n>   ..@ format       : chr \"%Y-%m-%d\"\n>   ..@ FinCenter    : chr \"GMT\"\n>   ..@ units        : chr [1:2] \"Open\" \"High\"\n>   ..@ recordIDs    :'data.frame':       0 obs. of  0 variables\n>   ..@ title        : chr \"Time Series Object\"\n>   ..@ documentation: chr \"Wed Feb 20 15:20:47 2008\"\n>>\n> If you notice, the dimnames and positions haven't changed form.\n>\n> My issue - and it may only be my concern :) - is that\n\nIn timeSeries, @positions are defined as\n\n@positions <- c(as.character(timeDate))\n\nThis also returns the attribute  FinCenter to @positions.\nAs you mentioned this attribute is lost when we subbsets the positions. \nIn fact there is no reason to have this attribute because the financial\ncenter is already stored in @FinCenter.\n\nTo avoid this issue, I changed the following in dev-version of timeSeries\n\n@positions <- c(as.character(timeDate))\n\nthis should fix your issue. Thanks to point this out!\n\n>\n>> identical(sample.timeSeries[1:10,1:2], reclass(as.xts(sample.timeSeries[1:10,1:2])))\n>\n> fails.  I have a hard time reconciling the idea of making it pass by\n> _removing_ information, only because timeSeries does.\n>\n> I am not too sure if this makes sense.  If not please tell me so.\n>\n> On a slightly different note I would like to learn more about the\n> timeDate class, and how maybe _it_ should be the default indexing\n> class (currently Date or POSIXct has that role) in an 'xts' object.\n> Are there methods that might be of use?\n>\n\nWe are extending the documentation of fCalendar package with an overview\nof  timeDate. It should not be too long until we release the new documentation. \n\nthanks for your feedback!\nYohan\n\n> Thanks for your reply - and hopefully this email didn't take you too\n> long to read :)\n>\n> Jeff Ryan\n>\n> On Feb 20, 2008 5:56 AM, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n>> >>>> \"JR\" == \"Jeff Ryan\" <jeff.a.ryan at gmail.com>\n>> >>>> on Tue, 19 Feb 2008 18:39:27 -0600\n>>\n>>    JR> You are probably better off _not_\n>>    JR> using timeDate - but I wrote xts so I wouldn't have to - to\n>>    JR> each his\n>>    JR> own.\n>>\n>> Hi Jeff,\n>>\n>> I am currently working on the different Rmetrics packages I found\n>> your advice to not use fCalendar interesting.\n>> Could you please give me the reasons why you would not recommend it.\n>> It will help us to improve the package.\n>>\n>> regards,\n>> Yohan\n>>\n>\n>\n>\n> -- \n> There's a way to do it better - find it.\n> Thomas A. Edison\n\n-- \nYohan Chalabi",
+      "body_snippet": "\"Jeff Ryan\" <jeff.a.ryan at gmail.com> writes:\n\n> Hi Yohan,\n>\n> Not offense meant - sorry if that came across as such.  Rmetrics is\n> the gold standard when it comes to breadth and overall usefulness.",
+      "thread_id": "thread-e25b9e6053a3",
+      "thread_depth": 2,
+      "month": "2008-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-82da1108cf73",
+      "subject": "NYSE holiday before 1971",
+      "message_count": 2,
+      "participants": [
+        "Lukas Elmiger",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-02T02:01:53Z",
+      "last_reply": "2008-02-02T13:13:08Z",
+      "root_message_id": "msg-82da1108cf73"
+    },
+    {
+      "id": "thread-59d2ce23e45b",
+      "subject": "fGarch: possible bug(s)",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-02-02T16:28:16Z",
+      "last_reply": "2008-02-04T09:57:05Z",
+      "root_message_id": "msg-59d2ce23e45b"
+    },
+    {
+      "id": "thread-42fa1b3427ac",
+      "subject": "bug in gevMoments(fExtremes)",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-04T17:07:23Z",
+      "last_reply": "2008-02-04T17:07:23Z",
+      "root_message_id": "msg-42fa1b3427ac"
+    },
+    {
+      "id": "thread-d0e11479e50c",
+      "subject": "Package fCalendar_260.72.tar.gz did not pass R CMD check",
+      "message_count": 8,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Martin Maechler",
+        "Uwe.Ligges at r-project.org",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-05T16:10:21Z",
+      "last_reply": "2008-02-06T16:20:52Z",
+      "root_message_id": "msg-d0e11479e50c"
+    },
+    {
+      "id": "thread-c66403db4743",
+      "subject": "new fCalendar package",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-07T13:58:00Z",
+      "last_reply": "2008-02-07T16:41:14Z",
+      "root_message_id": "msg-c66403db4743"
+    },
+    {
+      "id": "thread-7f92850a9b69",
+      "subject": "fGarch: question & suggestion",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-02-07T20:11:00Z",
+      "last_reply": "2008-02-12T14:18:04Z",
+      "root_message_id": "msg-7f92850a9b69"
+    },
+    {
+      "id": "thread-40323c136ef0",
+      "subject": "fGarch: possible bugs",
+      "message_count": 3,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-02-11T19:03:56Z",
+      "last_reply": "2008-02-12T14:40:02Z",
+      "root_message_id": "msg-40323c136ef0"
+    },
+    {
+      "id": "thread-5800b311d8ce",
+      "subject": "holidayNYSE missing some",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-14T15:14:31Z",
+      "last_reply": "2008-02-14T15:14:31Z",
+      "root_message_id": "msg-5800b311d8ce"
+    },
+    {
+      "id": "thread-34feba2aefbd",
+      "subject": "fGarch: possible bug(s)",
+      "message_count": 1,
+      "participants": [
+        "michal miklovic"
+      ],
+      "started": "2008-02-16T16:33:11Z",
+      "last_reply": "2008-02-16T16:33:11Z",
+      "root_message_id": "msg-34feba2aefbd"
+    },
+    {
+      "id": "thread-f60ea4ed8763",
+      "subject": "fGarch: bug in the predict function",
+      "message_count": 1,
+      "participants": [
+        "michal miklovic"
+      ],
+      "started": "2008-02-17T11:30:54Z",
+      "last_reply": "2008-02-17T11:30:54Z",
+      "root_message_id": "msg-f60ea4ed8763"
+    },
+    {
+      "id": "thread-3918c758541f",
+      "subject": "fGarch: possible bug(s) in the predict function II",
+      "message_count": 1,
+      "participants": [
+        "michal miklovic"
+      ],
+      "started": "2008-02-18T14:14:56Z",
+      "last_reply": "2008-02-18T14:14:56Z",
+      "root_message_id": "msg-3918c758541f"
+    },
+    {
+      "id": "thread-44fdce97709b",
+      "subject": "fGarch: possbible bug(s) in garchSim",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-02-18T17:00:43Z",
+      "last_reply": "2008-02-19T19:18:27Z",
+      "root_message_id": "msg-44fdce97709b"
+    },
+    {
+      "id": "thread-aecea656cacd",
+      "subject": "bug reports",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-19T19:32:34Z",
+      "last_reply": "2008-02-19T19:32:34Z",
+      "root_message_id": "msg-aecea656cacd"
+    },
+    {
+      "id": "thread-fc599adceb4d",
+      "subject": "hessian approximation in garchFit",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-19T19:55:07Z",
+      "last_reply": "2008-02-19T19:55:07Z",
+      "root_message_id": "msg-fc599adceb4d"
+    },
+    {
+      "id": "thread-e25b9e6053a3",
+      "subject": "Extracting OHLC from trade price series",
+      "message_count": 3,
+      "participants": [
+        "Jeff Ryan",
+        "Yohan Chalabi",
+        "chalabi at phys.ethz.ch"
+      ],
+      "started": "2008-02-20T11:56:49Z",
+      "last_reply": "2008-02-29T13:13:04Z",
+      "root_message_id": "msg-e25b9e6053a3"
+    },
+    {
+      "id": "thread-29107329f998",
+      "subject": "fGarch: possible bug(s) and suggestions",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-02-20T14:27:46Z",
+      "last_reply": "2008-02-20T15:26:55Z",
+      "root_message_id": "msg-29107329f998"
+    },
+    {
+      "id": "thread-7bcb3522a397",
+      "subject": "move of Rmetrics -> R-forge",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-02-25T10:07:39Z",
+      "last_reply": "2008-02-25T10:07:39Z",
+      "root_message_id": "msg-7bcb3522a397"
+    },
+    {
+      "id": "thread-65cb6d0916c7",
+      "subject": "fGarch: possible bug(s) in ICS & LLH in summary",
+      "message_count": 1,
+      "participants": [
+        "michal miklovic"
+      ],
+      "started": "2008-02-28T16:00:56Z",
+      "last_reply": "2008-02-28T16:00:56Z",
+      "root_message_id": "msg-65cb6d0916c7"
+    },
+    {
+      "id": "thread-02bb4e9552d8",
+      "subject": "fTrading bug",
+      "message_count": 1,
+      "participants": [
+        "Adam Murphy"
+      ],
+      "started": "2008-02-28T21:06:24Z",
+      "last_reply": "2008-02-28T21:06:24Z",
+      "root_message_id": "msg-02bb4e9552d8"
+    },
+    {
+      "id": "thread-49135b8f7029",
+      "subject": "about fSeries",
+      "message_count": 1,
+      "participants": [
+        "chuch"
+      ],
+      "started": "2008-02-29T03:55:06Z",
+      "last_reply": "2008-02-29T03:55:06Z",
+      "root_message_id": "msg-49135b8f7029"
+    },
+    {
+      "id": "thread-84034bd5c8cb",
+      "subject": "fGarch: possible bug(s) in ICS & LLH in summary II",
+      "message_count": 1,
+      "participants": [
+        "michal miklovic"
+      ],
+      "started": "2008-02-29T08:08:05Z",
+      "last_reply": "2008-02-29T08:08:05Z",
+      "root_message_id": "msg-84034bd5c8cb"
+    },
+    {
+      "id": "thread-e6e15b5f85a6",
+      "subject": "Migration of dev-Rmetrics to R-forge",
+      "message_count": 1,
+      "participants": [
+        "chalabi at phys.ethz.ch"
+      ],
+      "started": "2008-02-29T08:15:12Z",
+      "last_reply": "2008-02-29T08:15:12Z",
+      "root_message_id": "msg-e6e15b5f85a6"
+    }
+  ]
+}

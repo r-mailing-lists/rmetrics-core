@@ -1,0 +1,850 @@
+From mmiklovic at yahoo.com  Tue Apr  1 14:49:26 2008
+From: mmiklovic at yahoo.com (michal miklovic)
+Date: Tue, 1 Apr 2008 05:49:26 -0700 (PDT)
+Subject: fGarch: possible bug in .garchLLH
+Message-ID: <595073.26258.qm@web50105.mail.re2.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080401/386fa4cb/attachment.pl 
+
+From chalabi at phys.ethz.ch  Thu Apr  3 16:20:18 2008
+From: chalabi at phys.ethz.ch (chalabi at phys.ethz.ch)
+Date: Thu, 03 Apr 2008 16:20:18 +0200
+Subject: fGarch: possible bug in .garchLLH
+In-Reply-To: <595073.26258.qm@web50105.mail.re2.yahoo.com> (michal miklovic's
+	message of "Tue, 1 Apr 2008 05:49:26 -0700 (PDT)")
+References: <595073.26258.qm@web50105.mail.re2.yahoo.com>
+Message-ID: <87ej9n10m5.fsf@phys.ethz.ch>
+
+michal miklovic <mmiklovic at yahoo.com> writes:
+
+hi Michal,
+
+thanks to point this out!
+
+By the way, have you noticed that we moved all Rmetrics development packages
+to R-Forge. You can access the new subversion server with the following
+commands :
+
+svn checkout svn://svn.r-forge.r-project.org/svnroot/rmetrics
+
+regards,
+Yohan
+
+> Hi,
+>
+> I wanted to estimate a garch-gjr model without leverage (which is, in fact, a garch model) using the following code:
+>
+> arma11gjr11n <- garchFit(~ arma(1,1) + aparch(1,1), data, delta=2,
+>             include.delta=FALSE, leverage=FALSE, algorithm="nlminb", hessian="rcd")
+> summary(arma11gjr11n)
+>
+> and obtained the following error:
+>
+> --- START OF TRACE ---
+>
+> R coded nlminb Solver: 
+>
+> Error in gamma[i] : object is not subsettable
+>
+>
+> I would suggest to copy the below line from .garchInitParameters into .garchLLH:
+>
+> if(p > 0 & !leverage) gamma = rep(0, times = p)
+>
+> I tried this, recompiled the fGarch package and it worked fine.
+>
+>
+> Best regards,
+>
+> Michal Miklovic
+>
+>
+>
+>
+>
+>
+>       ____________________________________________________________________________________
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+-- 
+
+
+The 2nd International R/Rmetrics User and Developer Workshop ...
+[http://www.rmetrics.org]
+
+
+From duyemura at ix.netcom.com  Sat Apr  5 18:23:44 2008
+From: duyemura at ix.netcom.com (Dennis Uyemura)
+Date: Sat, 05 Apr 2008 09:23:44 -0700
+Subject: Fwd: Problem using function armaFit
+Message-ID: <E1JiBBh-0000cS-Q9@elasmtp-kukur.atl.sa.earthlink.net>
+
+
+>Date: Sat, 05 Apr 2008 07:59:16 -0700
+>To: wuertz at itp.phys.ethz.ch
+>From: Dennis Uyemura <duyemura at ix.netcom.com>
+>Subject: Problem using function armaFit
+>
+>
+>Dear Prof. Wuertz:
+>
+>I have been reading "Statistics and Finance: An Introduction" by Dr. 
+>David Ruppert.  The R code for this book was developed by a team at 
+>Texas A&M University and they rely on your Rmetrics 
+>libraries.  Their website for the R code 
+>is:  http://www.stat.tamu.edu/~ljin/Finance/stat689-R.htm
+>
+>I am writing because I ran into a problem in running their R 
+>code.  When I try to use the function "armaFit" I get an 
+>error.  Here is the specific code and error:
+>
+> > fit_ar <- armaFit(formula = LogReturn ~ arima(1,0,0))     #AR (1)
+>Error in eval(expr, envir, enclos) : object "package" not found
+>
+>I also noticed that the function was moved into a different library 
+>(fArma) instead of the library that the Texas A&M team used 
+>(fSeries).  While I do not expect any reply to this message, I 
+>thought that you might refer this message to whoever is supporting 
+>this library for further investigation.
+>
+>Let me also thank you very sincerely for your Rmetrics package.  I 
+>am enjoying learning and using it very much.
+>
+>Sincerely,
+>Dennis Uyemura
+>San Diego, CA
+
+
+From duyemura at ix.netcom.com  Mon Apr  7 13:43:20 2008
+From: duyemura at ix.netcom.com (Dennis Uyemura)
+Date: Mon, 07 Apr 2008 04:43:20 -0700
+Subject: Fwd: Problem using function armaFit
+In-Reply-To: <47F8E2B0.60400@itp.phys.ethz.ch>
+References: <E1JiBBh-0000cS-Q9@elasmtp-kukur.atl.sa.earthlink.net>
+	<47F8E2B0.60400@itp.phys.ethz.ch>
+Message-ID: <E1Jipli-0001F3-SO@elasmtp-curtail.atl.sa.earthlink.net>
+
+Prof. Wuertz:
+
+I have downloaded the current version of package fArma from CRAN.  I 
+still get the same error for the "armaFit" function, as follows:
+Error in eval(expr, envir, enclos) : object "package" not found
+
+Thank you,
+Dennis Uyemura
+San Diego, CA
+
+At 07:48 AM 4/6/2008, you wrote:
+>Dennis Uyemura wrote:
+>>>Date: Sat, 05 Apr 2008 07:59:16 -0700
+>>>To: wuertz at itp.phys.ethz.ch
+>>>From: Dennis Uyemura <duyemura at ix.netcom.com>
+>>>Subject: Problem using function armaFit
+>>>
+>>>
+>>>Dear Prof. Wuertz:
+>>>
+>>>I have been reading "Statistics and Finance: An Introduction" by 
+>>>Dr. David Ruppert.  The R code for this book was developed by a 
+>>>team at Texas A&M University and they rely on your Rmetrics 
+>>>libraries.  Their website for the R code 
+>>>is:  http://www.stat.tamu.edu/~ljin/Finance/stat689-R.htm
+>>>
+>>>I am writing because I ran into a problem in running their R 
+>>>code.  When I try to use the function "armaFit" I get an 
+>>>error.  Here is the specific code and error:
+>>>
+>>>
+>>>>fit_ar <- armaFit(formula = LogReturn ~ arima(1,0,0))     #AR (1)
+>>>>
+>ARMA Code has bee moved to the fARMA package. Please load the package from
+>CRAN and try again. If you have still problems, please let me know.
+>
+>Diethelm Wuertz
+>>>Error in eval(expr, envir, enclos) : object "package" not found
+>>>
+>>>I also noticed that the function was moved into a different 
+>>>library (fArma) instead of the library that the Texas A&M team 
+>>>used (fSeries).  While I do not expect any reply to this message, 
+>>>I thought that you might refer this message to whoever is 
+>>>supporting this library for further investigation.
+>>>
+>>>Let me also thank you very sincerely for your Rmetrics package.  I 
+>>>am enjoying learning and using it very much.
+>>>
+>>>Sincerely,
+>>>Dennis Uyemura
+>>>San Diego, CA
+>>>
+>>
+>>_______________________________________________
+>>Rmetrics-core mailing list
+>>Rmetrics-core at r-project.org
+>>https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>>
+>>
+>
+>
+>
+
+
+From naodaihuang at gmail.com  Thu Apr 10 06:25:12 2008
+From: naodaihuang at gmail.com (Hui Huang)
+Date: Thu, 10 Apr 2008 00:25:12 -0400
+Subject: bug in fTrading
+Message-ID: <001801c89ac2$decd0450$9c670cf0$@com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080410/c1ff044e/attachment.pl 
+
+From duyemura at ix.netcom.com  Fri Apr 11 15:46:45 2008
+From: duyemura at ix.netcom.com (Dennis Uyemura)
+Date: Fri, 11 Apr 2008 06:46:45 -0700
+Subject: Fwd: Problem using function armaFit
+In-Reply-To: <47FDE262.2090608@itp.phys.ethz.ch>
+References: <E1JiBBh-0000cS-Q9@elasmtp-kukur.atl.sa.earthlink.net>
+	<47F8E2B0.60400@itp.phys.ethz.ch>
+	<E1Jipli-0001F3-SO@elasmtp-curtail.atl.sa.earthlink.net>
+	<47FDE262.2090608@itp.phys.ethz.ch>
+Message-ID: <E1JkJar-0001dp-Rv@elasmtp-kukur.atl.sa.earthlink.net>
+
+Prof. Wuertz:
+
+Yes, today I re-installed the latest versions of:  fArma, fBasics, 
+fImport, fSeries, fCalendar, fEcofin, fUtilities.
+I have R version 2.6.2.
+I have loaded the other required packages:  robustbase, RUnit, stats, 
+graphics, methods, MASS, utils, spatial, tcltk, and zoo.
+I still get the same error:
+'Error in eval(expr, envir, enclos) : object "package" not found'
+
+Thank you for investigating this issue.
+Dennis Uyemura
+
+
+At 02:48 AM 4/10/2008, Diethelm Wuertz wrote:
+>Dennis Uyemura wrote:
+>>Prof. Wuertz:
+>>
+>>I have downloaded the current version of package fArma from 
+>>CRAN.  I still get the same error for the "armaFit" function, as follows:
+>>Error in eval(expr, envir, enclos) : object "package" not found
+>Have you loaded the package?
+>require(fARMA)
+>kind regards Diethelm Wuertz
+>
+>The 2nd International R/Rmetrics User and Developer Workshop ...
+>[http://www.rmetrics.org]
+>
+>
+>>
+>>Thank you,
+>>Dennis Uyemura
+>>San Diego, CA
+>>
+>>At 07:48 AM 4/6/2008, you wrote:
+>>>Dennis Uyemura wrote:
+>>>>>Date: Sat, 05 Apr 2008 07:59:16 -0700
+>>>>>To: wuertz at itp.phys.ethz.ch
+>>>>>From: Dennis Uyemura <duyemura at ix.netcom.com>
+>>>>>Subject: Problem using function armaFit
+>>>>>
+>>>>>
+>>>>>Dear Prof. Wuertz:
+>>>>>
+>>>>>I have been reading "Statistics and Finance: An Introduction" by 
+>>>>>Dr. David Ruppert.  The R code for this book was developed by a 
+>>>>>team at Texas A&M University and they rely on your Rmetrics 
+>>>>>libraries.  Their website for the R code is:
+>>>>>http://www.stat.tamu.edu/~ljin/Finance/stat689-R.htm
+>>>>>
+>>>>>I am writing because I ran into a problem in running their R code.
+>>>>>When I try to use the function "armaFit" I get an error.  Here 
+>>>>>is the specific code and error:
+>>>>>
+>>>>>
+>>>>>>fit_ar <- armaFit(formula = LogReturn ~ arima(1,0,0))     #AR (1)
+>>>ARMA Code has bee moved to the fARMA package. Please load the package from
+>>>CRAN and try again. If you have still problems, please let me know.
+>>>
+>>>Diethelm Wuertz
+>>>>>Error in eval(expr, envir, enclos) : object "package" not found
+>>>>>
+>>>>>I also noticed that the function was moved into a different 
+>>>>>library (fArma) instead of the library that the Texas A&M team 
+>>>>>used (fSeries).  While I do not expect any reply to this 
+>>>>>message, I thought that you might refer this message to whoever 
+>>>>>is supporting this library for further investigation.
+>>>>>
+>>>>>Let me also thank you very sincerely for your Rmetrics 
+>>>>>package.  I am enjoying learning and using it very much.
+>>>>>
+>>>>>Sincerely,
+>>>>>Dennis Uyemura
+>>>>>San Diego, CA
+>>>>
+>>>>_______________________________________________
+>>>>Rmetrics-core mailing list
+>>>>Rmetrics-core at r-project.org
+>>>>https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>>>>
+>>>
+>>>
+>>
+>
+>
+>
+
+
+From duyemura at ix.netcom.com  Fri Apr 11 23:36:45 2008
+From: duyemura at ix.netcom.com (Dennis Uyemura)
+Date: Fri, 11 Apr 2008 14:36:45 -0700
+Subject: armaFit - IT WORKS!!
+In-Reply-To: <7.1.0.9.0.20080411063522.01cfb090@ix.netcom.com>
+References: <E1JiBBh-0000cS-Q9@elasmtp-kukur.atl.sa.earthlink.net>
+	<47F8E2B0.60400@itp.phys.ethz.ch>
+	<E1Jipli-0001F3-SO@elasmtp-curtail.atl.sa.earthlink.net>
+	<47FDE262.2090608@itp.phys.ethz.ch>
+	<7.1.0.9.0.20080411063522.01cfb090@ix.netcom.com>
+Message-ID: <E1JkQvj-0004Jv-Vz@elasmtp-banded.atl.sa.earthlink.net>
+
+Dear Prof. Wuertz:
+
+I have now successfully run the armaFit function!
+
+As I wrote before, I was using R code developed at Texas A&M 
+University to accompany the book by David Ruppert, "Statistics and Finance".
+That code was written about one year ago.
+At that time, the syntax:  "fit_ar<-armaFit(formula = LogReturn ~ 
+arima(1,0,0))" was correct.
+However, today, it apparently no longer works.
+
+Today, I changed the function call to:  "fit_ar<-armaFit(~ 
+arima(1,0,0),data = LogReturn)" and it works beautifully!
+
+So, I am extremely happy.  Thank you for responding to my earlier 
+emails and for suggesting some help.  Again, I greatly appreciate 
+your wonderful Rmetrics!
+
+Dennis Uyemura
+San Diego, CA
+
+At 06:46 AM 4/11/2008, Dennis Uyemura wrote:
+>Prof. Wuertz:
+>
+>Yes, today I re-installed the latest versions of:  fArma, fBasics, 
+>fImport, fSeries, fCalendar, fEcofin, fUtilities.
+>I have R version 2.6.2.
+>I have loaded the other required packages:  robustbase, RUnit, 
+>stats, graphics, methods, MASS, utils, spatial, tcltk, and zoo.
+>I still get the same error:
+>'Error in eval(expr, envir, enclos) : object "package" not found'
+>
+>Thank you for investigating this issue.
+>Dennis Uyemura
+>
+>
+>At 02:48 AM 4/10/2008, Diethelm Wuertz wrote:
+>>Dennis Uyemura wrote:
+>>>Prof. Wuertz:
+>>>
+>>>I have downloaded the current version of package fArma from 
+>>>CRAN.  I still get the same error for the "armaFit" function, as follows:
+>>>Error in eval(expr, envir, enclos) : object "package" not found
+>>Have you loaded the package?
+>>require(fARMA)
+>>kind regards Diethelm Wuertz
+>>
+>>The 2nd International R/Rmetrics User and Developer Workshop ...
+>>[http://www.rmetrics.org]
+>>
+>>
+>>>
+>>>Thank you,
+>>>Dennis Uyemura
+>>>San Diego, CA
+>>>
+>>>At 07:48 AM 4/6/2008, you wrote:
+>>>>Dennis Uyemura wrote:
+>>>>>>Date: Sat, 05 Apr 2008 07:59:16 -0700
+>>>>>>To: wuertz at itp.phys.ethz.ch
+>>>>>>From: Dennis Uyemura <duyemura at ix.netcom.com>
+>>>>>>Subject: Problem using function armaFit
+>>>>>>
+>>>>>>
+>>>>>>Dear Prof. Wuertz:
+>>>>>>
+>>>>>>I have been reading "Statistics and Finance: An Introduction" 
+>>>>>>by Dr. David Ruppert.  The R code for this book was developed 
+>>>>>>by a team at Texas A&M University and they rely on your 
+>>>>>>Rmetrics libraries.  Their website for the R code is:
+>>>>>>http://www.stat.tamu.edu/~ljin/Finance/stat689-R.htm
+>>>>>>
+>>>>>>I am writing because I ran into a problem in running their R code.
+>>>>>>When I try to use the function "armaFit" I get an error.  Here 
+>>>>>>is the specific code and error:
+>>>>>>
+>>>>>>
+>>>>>>>fit_ar <- armaFit(formula = LogReturn ~ arima(1,0,0))     #AR (1)
+>>>>ARMA Code has bee moved to the fARMA package. Please load the package from
+>>>>CRAN and try again. If you have still problems, please let me know.
+>>>>
+>>>>Diethelm Wuertz
+>>>>>>Error in eval(expr, envir, enclos) : object "package" not found
+>>>>>>
+>>>>>>I also noticed that the function was moved into a different 
+>>>>>>library (fArma) instead of the library that the Texas A&M team 
+>>>>>>used (fSeries).  While I do not expect any reply to this 
+>>>>>>message, I thought that you might refer this message to whoever 
+>>>>>>is supporting this library for further investigation.
+>>>>>>
+>>>>>>Let me also thank you very sincerely for your Rmetrics 
+>>>>>>package.  I am enjoying learning and using it very much.
+>>>>>>
+>>>>>>Sincerely,
+>>>>>>Dennis Uyemura
+>>>>>>San Diego, CA
+>>>>>
+>>>>>_______________________________________________
+>>>>>Rmetrics-core mailing list
+>>>>>Rmetrics-core at r-project.org
+>>>>>https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>>>>
+>>
+>>
+
+
+From vacko at mail.kotelna.sk  Tue Apr 29 11:07:11 2008
+From: vacko at mail.kotelna.sk (Cyril Vaclav)
+Date: Tue, 29 Apr 2008 11:07:11 +0200
+Subject: fCalendar 262.73 install error
+Message-ID: <20080429090711.GB11761@kotelna.sk>
+
+Hi,
+
+I tried to install fCalendar version 262.73 on gentoo 2.6.18  and  R 2.6.2
+It did not worked very well. You can see the error below. I know that similar
+problem named as "[R] Can not install fCalendar package under R 2.6.2" was already posted on 22 Mar
+2008.
+
+In that case the solution was to switch to windows OS. It is definitely not my
+case. 
+
+Can anyone give me guide how to debug the problem. I tried to run the
+function .currentYear and it did work. The command Sys.setenv exist and works. 
+I could not determine where from comes the connection 
+sys.source -> eval -> eval -> .currentYear -> Sys.setenv
+given in the error messege.
+
+thx
+
+Cyril Vaclav
+
+
+> install.packages('fCalendar')
+trying URL
+'http://cran.at.r-project.org/src/contrib/fCalendar_262.73.tar.gz'
+Content type 'application/x-gzip' length 232489 bytes (227 Kb)
+opened URL
+==================================================
+downloaded 227 Kb
+
+* Installing *source* package 'fCalendar' ...
+** R
+** inst
+** preparing package for lazy loading
+Loading required package: MASS
+Loading required package: fEcofin
+Loading required package: fUtilities
+Loading required package: RUnit
+
+ RUnit 0.4.17 loaded.
+Loading required package: spatial
+Loading required package: tcltk
+Loading Tcl/Tk interface ... done
+Loading required package: zoo
+Error in .Internal(putenv(x)) : no internal function "putenv"
+Calls: <Anonymous> ...  sys.source -> eval -> eval -> .currentYear ->
+Sys.setenv
+Execution halted
+ERROR: lazy loading failed for package 'fCalendar'
+** Removing '/usr/lib/R/library/fCalendar'
+
+The downloaded packages are in
+        /tmp/RtmpbSzeUj/downloaded_packages
+Updating HTML index of packages in '.Library'
+Warning message:
+In install.packages("fCalendar") :
+  installation of package 'fCalendar' had non-zero exit status
+
+
+From chalabi at phys.ethz.ch  Tue Apr 29 12:23:15 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 29 Apr 2008 12:23:15 +0200
+Subject: fCalendar 262.73 install error
+In-Reply-To: <20080429090711.GB11761@kotelna.sk>
+References: <20080429090711.GB11761@kotelna.sk>
+Message-ID: <20080429122315.1a7b36d3@mimi>
+
+>>>> "CV" == vacko at mail.kotelna.sk (Cyril Vaclav)
+>>>> on Tue, 29 Apr 2008 11:07:11 +0200
+
+
+   CV> Hi,
+   CV> 
+   CV> I tried to install fCalendar version 262.73 on gentoo 2.6.18
+   CV> and  R 2.6.2
+   CV> It did not worked very well. You can see the error below. I
+   CV> know that similar
+   CV> problem named as "[R] Can not install fCalendar package
+   CV> under R 2.6.2" was already posted on 22 Mar
+   CV> 2008.
+   CV> 
+   CV> In that case the solution was to switch to windows OS. It
+   CV> is definitely not my
+   CV> case.
+   CV> 
+   CV> Can anyone give me guide how to debug the problem. I tried
+   CV> to run the
+   CV> function .currentYear and it did work. The command Sys.setenv
+   CV> exist and works.
+   CV> I could not determine where from comes the connection
+   CV> sys.source -> eval -> eval -> .currentYear -> Sys.setenv
+   CV> given in the error messege.
+   CV> 
+   CV> thx
+   CV> 
+   CV> Cyril Vaclav
+
+Hi Cyril,
+
+I could not reproduce your problem on my debian box. But after a quick
+check, the problem might come from the fUtilities package.
+
+Sys.putenv was depreciated after 2.4.1 and replaced by Sys.setenv. We
+try as much as possible to be backward compatible and we need sometimes
+to play with the different versions of R.
+
+If you download the source package of fUtilities 260.72, you will find
+in file fUtilites/R/BasicExtensions.R the code which might create your
+problem:
+
+if (!exists("Sys.setenv"))
+{
+    Sys.setenv =
+    function(...)
+    {
+        x <- list(...)
+        nm <- names(x)
+        val <- as.character(unlist(x))
+        x <- paste(nm, val, sep = "=")
+        invisible(.Internal(putenv(x)))
+    }
+}
+
+You could comment this section out and compile the modified package.
+
+Please let me know if it solves your issue.
+
+hope this help,
+Yohan
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+www.rmetrics.org
+
+NOTE:
+Rmetrics Workshop: http://www.rmetrics.org/meielisalp.htm
+June 29th - July 3rd Meielisalp, Lake Thune, Switzerland
+
+
+From vacko at mail.kotelna.sk  Tue Apr 29 16:49:06 2008
+From: vacko at mail.kotelna.sk (Cyril Vaclav)
+Date: Tue, 29 Apr 2008 16:49:06 +0200
+Subject: fCalendar 262.73 install error
+In-Reply-To: <20080429122420.26c4c830@mimi>
+References: <20080429090711.GB11761@kotelna.sk> <20080429122420.26c4c830@mimi>
+Message-ID: <20080429144906.GD11761@kotelna.sk>
+
+Hi Yohan,
+
+you were right with the package. The problem was in fUtilities. I'm
+not sure with the rest. 
+
+I checked the installed.packeges() output and realized that
+fUtilities had built   2.4.0 or 2.4.1. Hence I reinstalled fUtilities the
+built field had changed to 2.6.2 and the problem with fCalendar disappeared. 
+ See the report blow.
+
+
+I do not know what exactly happend if someone change the built or I
+installed the fUtilities under previous version of R (I doubt that it might
+have an effect but I'm not expert). 
+
+
+thx
+
+Cyril Vaclav
+
+
+> install.packages('fUtilities')
+trying URL
+> 'http://cran.at.r-project.org/src/contrib/fUtilities_260.72.tar.gz'
+Content type 'application/x-gzip' length 90562 bytes (88 Kb)
+opened URL
+==================================================
+downloaded 88 Kb
+
+* Installing *source* package 'fUtilities' ...
+** R
+** inst
+** preparing package for lazy loading
+Loading required package: RUnit
+
+ RUnit 0.4.17 loaded.
+Loading required package: MASS
+Loading required package: spatial
+Loading required package: tcltk
+Loading Tcl/Tk interface ... done
+Loading required package: zoo
+** help
+ >>> Building/Updating help pages for package 'fUtilities'
+     Formats: text html latex example 
+  BasicExtensions                   text    html    latex   example
+  BivariateInterpolation            text    html    latex   example
+  CodeTables                        text    html    latex   example
+  ColorPalettes                     text    html    latex   example
+  ColumnStatistics                  text    html    latex   example
+  GeneralS4Extractors               text    html    latex   example
+  HeavisideFunction                 text    html    latex   example
+  HypothesisTesting                 text    html    latex   example
+  InteractivePlots                  text    html    latex   example
+  PortableInnovations               text    html    latex   example
+  RowStatistics                     text    html    latex   example
+  SkewnessKurtosis                  text    html    latex   example
+  VectorMatrixAddon                 text    html    latex   example
+** building package indices ...
+* DONE (fUtilities)
+
+The downloaded packages are in
+        /tmp/RtmpmpJZAd/downloaded_packages
+Updating HTML index of packages in '.Library'
+
+
+
+
+
+On Tue, Apr 29, 2008 at 12:24:20PM +0200, Yohan Chalabi wrote:
+> >>>> "CV" == vacko at mail.kotelna.sk (Cyril Vaclav)
+> >>>> on Tue, 29 Apr 2008 11:07:11 +0200
+> 
+> 
+>    CV> I tried to install fCalendar version 262.73 on gentoo 2.6.18
+>    CV> and  R 2.6.2
+>    CV> It did not worked very well. You can see the error below. I
+>    CV> know that similar
+>    CV> problem named as "[R] Can not install fCalendar package
+>    CV> under R 2.6.2" was already posted on 22 Mar
+>    CV> 2008.
+>    CV> 
+>    CV> In that case the solution was to switch to windows OS. It
+>    CV> is definitely not my
+>    CV> case.
+>    CV> 
+>    CV> Can anyone give me guide how to debug the problem. I tried
+>    CV> to run the
+>    CV> function .currentYear and it did work. The command Sys.setenv
+>    CV> exist and works.
+>    CV> I could not determine where from comes the connection
+>    CV> sys.source -> eval -> eval -> .currentYear -> Sys.setenv
+>    CV> given in the error messege.
+>    CV> 
+>    CV> thx
+>    CV> 
+>    CV> Cyril Vaclav
+> 
+> 
+> 
+> Hi Cyril,
+> 
+> I could not reproduce your problem on my debian box. But after a quick
+> check, the problem might come from the fUtilities package.
+> 
+> Sys.putenv was depreciated after 2.4.1 and replaced by Sys.setenv. We
+> try as much as possible to be backward compatible and we need sometimes
+> to play with the different versions of R.
+> 
+> If you download the source package of fUtilities 260.72, you will find
+> in file fUtilites/R/BasicExtensions.R the code which might create your
+> problem:
+> 
+> if (!exists("Sys.setenv"))
+> {
+>     Sys.setenv =
+>     function(...)
+>     {
+>         x <- list(...)
+>         nm <- names(x)
+>         val <- as.character(unlist(x))
+>         x <- paste(nm, val, sep = "=")
+>         invisible(.Internal(putenv(x)))
+>     }
+> }
+> 
+> You could comment this section out and compile the modified package.
+> 
+> Please let me know if it solves your issue.
+> 
+> hope this help,
+> Yohan
+> 
+> 
+> -- 
+> PhD student
+> Swiss Federal Institute of Technology
+> Zurich
+> 
+> www.ethz.ch
+> www.rmetrics.org
+> 
+> NOTE:
+> Rmetrics Workshop: http://www.rmetrics.org/meielisalp.htm
+> June 29th - July 3rd Meielisalp, Lake Thune, Switzerland
+>
+
+
+From Kurt.Hornik at wu-wien.ac.at  Tue Apr 29 13:58:28 2008
+From: Kurt.Hornik at wu-wien.ac.at (Kurt Hornik)
+Date: Tue, 29 Apr 2008 13:58:28 +0200
+Subject: CRAN packages maintained by you
+Message-ID: <18455.3428.772822.379794@fangorn.hornik.net>
+
+Dear maintainers of CRAN packages,
+
+This concerns the packages
+
+   ADaCGH butler chplot compositions crosshybDetector depmixS4 dglm fame
+   fEcofin forensic gam gcmrec genetics geozoo laser RaschSampler RFreak
+   robust sensitivity SLmisc sm stepwise TSSQLite
+
+which give errors when run through R CMD check from a current version of
+R (2.7.0), and are maintained by one of you.
+
+Please try to provide a version of your package which passes R CMD check
+along *WITH NO WARNINGS* as soon as possible.  Packages which fail R CMD
+check when a new release comes out are removed from the main section
+of CRAN.  Ideally, also try to eliminate problems with r-devel.
+
+You can inspect the check status of your packages via section "Daily
+Package Check Results" in
+
+  http://CRAN.R-project.org/web/checks/check_summary.html
+
+or via your CRAN package web pages
+
+  http://CRAN.R-project.org/package=FOO
+
+Some problems may be due to changes made in R 2.7.0.  Please have a look
+at the NEWS file in 2.7.0, or in the current development version of R
+(e.g., via https://svn.r-project.org/R/trunk/NEWS).
+
+Please also note that there is an ongoing effort to standardize the
+license information in package DESCRIPTION files (in order to allow
+tools to reliably compute on this information), so please standardize
+the license information in your package if possible.
+
+Please also take the time to inspect your package DESCRIPTION metadata.
+Are titles and descriptions as informative as they could be?  Are there
+any spelling errors?  Are email addresses up to date?
+
+Finally, pls ensure that your maintainer addresses are the same for all
+packages maintained by you (in case you received multiple copies of this
+message, they are not).
+
+Please do not hesitate to ask for further guidance.
+
+And now keep the updates rolling in ...
+
+Best
+-k
+
+
+From chalabi at phys.ethz.ch  Tue Apr 29 17:21:05 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 29 Apr 2008 17:21:05 +0200
+Subject: fCalendar 262.73 install error
+In-Reply-To: <20080429144906.GD11761@kotelna.sk>
+References: <20080429090711.GB11761@kotelna.sk> <20080429122420.26c4c830@mimi>
+	<20080429144906.GD11761@kotelna.sk>
+Message-ID: <20080429172105.7783cf37@mimi>
+
+>>>> "CV" == vacko at mail.kotelna.sk (Cyril Vaclav)
+>>>> on Tue, 29 Apr 2008 16:49:06 +0200
+
+
+   CV> Hi Yohan,
+   CV> 
+   CV> you were right with the package. The problem was in
+   CV> fUtilities. I'm
+   CV> not sure with the rest.
+   CV> 
+   CV> I checked the installed.packeges() output and realized that
+   CV> fUtilities had built   2.4.0 or 2.4.1. Hence I reinstalled
+   CV> fUtilities the
+   CV> built field had changed to 2.6.2 and the problem with
+   CV> fCalendar disappeared.
+   CV> See the report blow.
+   CV> 
+   CV> 
+   CV> I do not know what exactly happend if someone change the
+   CV> built or I
+   CV> installed the fUtilities under previous version of R (I
+   CV> doubt that it might
+   CV> have an effect but I'm not expert).
+   CV> 
+   CV> 
+   CV> thx
+   CV> 
+   CV> Cyril Vaclav
+
+'install.packages' does only install dependent packages if they are
+not installed and does not update them if they are already installed.
+
+you should use 
+
+> update.packages()
+
+to update all packages.
+
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+www.rmetrics.org
+
+NOTE:
+Rmetrics Workshop: http://www.rmetrics.org/meielisalp.htm
+June 29th - July 3rd Meielisalp, Lake Thune, Switzerland
+
+

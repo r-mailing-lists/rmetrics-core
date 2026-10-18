@@ -1,0 +1,111 @@
+From ligges at statistik.tu-dortmund.de  Tue Jun  9 14:09:33 2009
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 09 Jun 2009 14:09:33 +0200
+Subject: package fails on R < 2.9.0
+Message-ID: <4A2E50FD.3080902@statistik.tu-dortmund.de>
+
+Dear package maintainers,
+
+your packages
+
+      gmodels      2.15.0    ERROR
+      VDCutil        1.15    ERROR
+oblique.tree         1.0    ERROR
+  fRegression      290.75    ERROR
+    SharedHT2         2.0    ERROR
+      Ratings       0.1-1    ERROR
+        Rcsdp       0.1-4    ERROR
+
+fail for R-2.8.1. You probably forgot to declare changed dependencies 
+(i.e. R >= 2.9.0 or another package's version dependency) in the 
+DESCRIPTION file.
+
+Please declare the version dependencies in your DESCRIPTION files (or 
+what else causes the ERROR) and upload fixed versions with increased 
+version numbers to CRAN.
+
+For reference, see the 2.8.1 check results on
+http://cran.r-project.org/bin/windows/contrib/checkSummaryWin.html
+
+Thank you very much,
+Uwe Ligges
+
+
+From e.pavlidis at lancaster.ac.uk  Thu Jun 11 19:48:23 2009
+From: e.pavlidis at lancaster.ac.uk (Pavlidis, Efthymios)
+Date: Thu, 11 Jun 2009 18:48:23 +0100
+Subject: Hill Estimator
+Message-ID: <32BD2A8AF28D794DB8E14E9D0DE3F81B064AB23B@exchange-be6.lancs.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl>
+
+From Uwe.Ligges at r-project.org  Mon Jun 29 17:12:44 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 29 Jun 2009 17:12:44 +0200
+Subject: Package fExtremes_290.76.tar.gz did not pass R CMD check
+Message-ID: <01c9f8cc$Blat.v2.2.2$0dc9b067@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExtremes_290.76.tar.gz did *not* pass 'R CMD check' on
+Windows and will be omitted from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+Please check the attached log-file and consider to resubmit a version
+with increased version number that passes R CMD check on Windows.
+R version 2.9.1 (2009-06-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fExtremes.Rcheck'
+* using R version 2.9.1 (2009-06-26)
+* using session charset: ISO8859-1
+* checking for file 'fExtremes/DESCRIPTION' ... OK
+* this is package 'fExtremes' version '290.76'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fExtremes' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd files against version 2 parser ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking data for non-ASCII characters ... OK
+* checking examples ... OK
+* checking tests ... ERROR
+Running the tests in 'tests/doRUnit.R' failed.
+Last 13 lines of output:
+   
+  1 Test Suite : 
+  fExtremes unit testing - 47 test functions, 2 errors, 0 failures
+  ERROR in test.gevFitByBlocks: Error in as.matrix(applySeries(x, from, to, FUN = which.max)) : 
+    error in evaluating the argument 'x' in selecting a method for function 'as.matrix'
+  ERROR in test.timeSeriesBlocks: Error in as.matrix(applySeries(x, from, to, FUN = which.max)) : 
+    error in evaluating the argument 'x' in selecting a method for function 'as.matrix'
+  Error in eval.with.vis(expr, envir, enclos) : 
+  
+  unit testing failed (#test failures: 0, R errors: 2)
+  
+  Calls: source -> eval.with.vis -> eval.with.vis
+  Execution halted
+

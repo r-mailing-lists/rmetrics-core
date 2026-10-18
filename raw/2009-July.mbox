@@ -1,0 +1,191 @@
+From jurat at infernogate.com  Fri Jul  3 16:01:37 2009
+From: jurat at infernogate.com (Jon)
+Date: Fri, 03 Jul 2009 14:01:37 -0000
+Subject: 5 Ways to Turn Up the Heat in Your Love Relatoinship orr Marriage
+Message-ID: <4c25c7$NWBCtOjs@infernogate.com>
+
+5 Ways to Turn Up the Heat in Yhour Love Relationship or Marrriage www. gen88. net. Drugs and phones wing theeir way to Braazil prisoners
+
+
+From gps at asu.edu  Mon Jul 13 01:49:22 2009
+From: gps at asu.edu (Geoffrey Smith)
+Date: Sun, 12 Jul 2009 16:49:22 -0700
+Subject: fImport question
+Message-ID: <4b5c27440907121649s617bba1aq803caf63f32967e8@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl>
+
+From bill.rea at canterbury.ac.nz  Tue Jul 14 05:49:23 2009
+From: bill.rea at canterbury.ac.nz (Bill Rea)
+Date: Tue, 14 Jul 2009 15:49:23 +1200
+Subject: whittleFit gives error
+Message-ID: <A47458F1AE3BC545911B10628202E9D2014817FC@ucexchange2.canterbury.ac.nz>
+
+Rmetrics Maintainers,
+
+The whittleFit implementation in the fArma package gives an error when
+trying to estimate the H parameter. Below is example code I used. I am
+running R 2.9.1 and fArma 290.75 on RedHat enterprise server 5.3
+compiled with gcc
+
+library(tseries)
+library(fArma)
+data(camp)
+whittleFit(camp)
+
+To output is as follows. As you can see at the bottom of the output
+there are NAs generated. If I can be of any help in solving this problem
+please let me know.
+
+Title:
+ Hurst Exponent from Whittle Estimator
+
+Call:
+ whittleFit(x = camp)
+
+Method:
+ fgn whittle
+
+Hurst Exponent:
+     sigma2 conv.type
+   64.23001        NA
+
+Parameter Settings:
+subseries    order1    order2         h        ar        ma
+        1         1         1         0         0         0
+
+Description:
+ Tue Jul 14 15:47:26 2009 by user:
+
+Warning message:
+In function (object)  : NAs introduced by coercion
+
+
+Bill Rea, Lecturer, Dept of Economics and Finance \_
+University of Canterbury                          </ New
+E-Mail bill.rea at canterbury.ac.nz                 /) Zealand   
+Phone +64-3-364-3474,                           (/'
+
+
+From spencer.graves at prodsyse.com  Wed Jul 15 02:29:15 2009
+From: spencer.graves at prodsyse.com (spencerg)
+Date: Tue, 14 Jul 2009 17:29:15 -0700
+Subject: [R] getting a timeseries element into a string
+In-Reply-To: <4440E94D-4E6A-43D0-A3B0-743CCB8F23A1@comcast.net>
+References: <24429876.post@talk.nabble.com>
+	<24448064.post@talk.nabble.com>	<F510CBCF-9319-45D0-9457-D4A26EB20E51@comcast.net>
+	<4440E94D-4E6A-43D0-A3B0-743CCB8F23A1@comcast.net>
+Message-ID: <4A5D22DB.7020406@prodsyse.com>
+
+Hello: 
+
+
+      1.  I tried the example.  The first thing I noticed was that 
+"library(fSeries)" loaded with the following comment: 
+
+
+# The new version of 'fSeries' has been renamed to 'timeSeries'
+
+
+      2.  With this, I tried "library(timeSeries)".  Then your first 
+example worked without error. 
+
+
+      3.  This time, "head(ts)" generated an error.  To diagnose it, I 
+tried "str(ts)".  This generated a summary that I found beautifully 
+formated but unintelligible.  To understand the object, I then tried 
+"utils:::str.default(ts)".  This described the object in terms I could 
+understand. 
+
+
+      4.  Another "heads up":  "ts" is the name of a function in the 
+"stats" package.  I would avoid creating an object by that name. 
+
+
+      Hope this helps. 
+      Spencer
+
+
+David Winsemius wrote:
+>
+> On Jul 12, 2009, at 1:05 PM, David Winsemius wrote:
+>
+>>
+>> On Jul 12, 2009, at 8:10 AM, tradenet wrote:
+>>
+>>>
+>>> I added a reproducible example to my question...
+>>>
+>>> ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = "", 
+>>> FinCenter =
+>>> "")
+>>
+>>
+>> "Heads up" is an English colloquial warning.
+>>
+>> It may be reproducible on a machine that has all of your particular 
+>> loaded packages, but certainly not on one that doesn't.
+>>
+>> ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = "", 
+>> FinCenter =
+>> + "")
+>> Error: could not find function "dummyDailySeries"
+>>
+>> Many people who read the list just ignore postings where the 
+>> questioner fails to indicate the package from which functions arise.
+>>>
+>>
+>
+> In penance for my failure to trim the r-help list address, I looked up 
+> the function which is part of the fSeries package. I now wonder if 
+> tradenet is using an outdated version. I get a different error after 
+> installing and loading Package fSeries (270.76.1).
+>
+> > ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = "", 
+> FinCenter =
+> + "")
+> Error in rulesFinCenter(FinCenter) :
+>   There are no DST rules for GMT FinCenter!
+>
+> Eventually I convince the function into returning a result and then 
+> ts[1,0] fails with this error message:
+> > ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = "GMT", 
+> FinCenter = "Zurich")
+> > head(ts)
+>                           TS.1
+> 1970-01-01 01:00:00 -0.2463952
+> 1970-01-02 01:00:00  0.9421668
+> 1970-01-03 01:00:00  0.3354345
+> 1970-01-04 01:00:00  1.7449670
+> 1970-01-05 01:00:00  0.1551346
+> 1970-01-06 01:00:00 -1.0082531
+> > ts[1,0]
+> Error in checkSlotAssignment(object, name, value) :
+>   assignment of an object of class "NULL" is not valid for slot 
+> "units" in an object of class "timeSeries"; is(value, "character") is 
+> not TRUE
+>
+> So now I am wondering if the package was recently redesigned to use S4 
+> methods. My suggestion is to repost if you are still puzzled after 
+> updating your copy of fSeriesand reviewing the timeSeries extractor 
+> functions for S4 objects including seriesPositions():
+> X = timeSeries(matrix(rnorm(24), 12), timeCalendar())
+> as.character(seriesPositions(X)@Data[1])
+> [1] "2009-01-01"  # a character vector ... which is what was requested
+>
+>
+> David Winsemius, MD
+> Heritage Laboratories
+> West Hartford, CT
+>
+> ______________________________________________
+> R-help at r-project.org mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-help
+> PLEASE do read the posting guide 
+> http://www.R-project.org/posting-guide.html
+> and provide commented, minimal, self-contained, reproducible code.
+>
+
+

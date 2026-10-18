@@ -1,0 +1,398 @@
+From amberti at inwind.it  Tue Jan 13 12:54:05 2009
+From: amberti at inwind.it (Daniele Amberti)
+Date: Tue, 13 Jan 2009 12:54:05 +0100
+Subject: fPortfolio development ideas
+Message-ID: <KDERQ5$AAA3F9ECF32F67E00347519CFB567E2C@libero.it>
+
+During the first r-metrics meeting in Meielisalp was mentioned that fPortfolio library's target should be on small portfolios (because of optimization problems). I found some very interesting functions in this proprietary library (link to the user manual below) since constraints over number of assets and rebalancing options are most common problems in portfolio management.
+
+Please let me know what you think.
+Best regards
+Daniele Amberti
+
+http://www.burns-stat.com/pages/Product/pop_use_man.pdf
+
+
+From chreko at gmx.net  Fri Jan 23 17:50:56 2009
+From: chreko at gmx.net (Chr. Reimsbach-K.)
+Date: Fri, 23 Jan 2009 17:50:56 +0100
+Subject: fImport: Import yahoo income statement
+Message-ID: <20090123165056.284260@gmx.net>
+
+Greetings!
+
+I am envisioning expanding the fImport module, so that quarterly data of companies can be imported into R. Much like the yahooKeystats() command, I would like to import data from http://finance.yahoo.com/q/is?s=IBM.  
+
+I am not familiar with R programming yet, and before starting spending my time in writing the module, I wanted to know if any efforts in this direction have been made in the past. If not I would appreciate any support.
+
+Best regards
+
+Christian
+
+ 
+--
+
+
+From Uwe.Ligges at r-project.org  Wed Jan 28 18:24:05 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 28 Jan 2009 18:24:05 +0100
+Subject: Package fBasics_290.75.tar.gz has been built for Windows
+Message-ID: <01c9816d$Blat.v2.2.2$388cb07b@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Jan 28 18:24:06 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 28 Jan 2009 18:24:06 +0100
+Subject: Package fGarch_290.76.tar.gz has been built for Windows
+Message-ID: <01c9816d$Blat.v2.2.2$38bead85@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Jan 28 18:24:06 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 28 Jan 2009 18:24:06 +0100
+Subject: Package fImport_290.75.tar.gz has been built for Windows
+Message-ID: <01c9816d$Blat.v2.2.2$38e4c3a5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Jan 28 18:24:07 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 28 Jan 2009 18:24:07 +0100
+Subject: Package timeDate_290.82.tar.gz has been built for Windows
+Message-ID: <01c9816d$Blat.v2.2.2$3981dee9@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_290.82.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From mmorgan at gljpc.com  Wed Jan 28 19:22:28 2009
+From: mmorgan at gljpc.com (Michael Morgan)
+Date: Wed, 28 Jan 2009 11:22:28 -0700
+Subject: economagicImport - NAs error
+Message-ID: <4980A264.3020509@gljpc.com>
+
+Dear Maintainers,
+
+Using the most recent Windows binary (270.74) I get a large number of 
+NAs when importing data from economagic.
+
+
+The following code ...
+
+oil.prices <- economagicSeries("var/west-texas-crude-long", frequency = 
+"monthly", from = "1980-01-01",  to = Sys.timeDate())
+plot(oil.prices, main="WTI Spot Prices")
+
+
+Results in the following message....
+
+Warning message:
+In economagicImport(query, file, source, frequency, from, to, nDaysBack,  :
+  NAs introduced by coercion
+
+
+This only started to happen in the last month, so I suspect economagic 
+changed how their website expresses data.
+
+Does the current linux source (290.75) have this issue?
+
+If it doesn't, when do you estimate you'll be able to update the Windows 
+binary?
+
+
+Mike Morgan
+
+
+
+Michael Morgan
+
+GLJ Petroleum Consultants
+4100, 400 Third Avenue SW
+Calgary, AB, Canada  T2P 4H2  
+Tel: (403) 266-9437 Fax: (403) 262-1855
+
+This message is intended only for the recipient(s) to which it is addressed and may contain information that is privileged and confidential. If you have received this message in error, please notify the sender immediately and delete all copies.
+
+
+From chalabi at phys.ethz.ch  Wed Jan 28 20:15:49 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 28 Jan 2009 20:15:49 +0100
+Subject: economagicImport - NAs error
+In-Reply-To: <4980A264.3020509@gljpc.com>
+References: <4980A264.3020509@gljpc.com>
+Message-ID: <20090128201549.6a4300d3@mimi>
+
+>>>> "MM" == Michael Morgan <mmorgan at gljpc.com>
+>>>> on Wed, 28 Jan 2009 11:22:28 -0700
+
+   MM> Dear Maintainers,
+   MM>
+   MM> Using the most recent Windows binary (270.74) I get a large
+   MM> number of
+   MM> NAs when importing data from economagic.
+   MM>
+   MM>
+   MM> The following code ...
+   MM>
+   MM> oil.prices <- economagicSeries(var/west-texas-crude-long,
+   MM> frequency =
+   MM> monthly, from = 1980-01-01, to = Sys.timeDate())
+   MM> plot(oil.prices, main=WTI Spot Prices)
+   MM>
+   MM>
+   MM> Results in the following message....
+   MM>
+   MM> Warning message:
+   MM> In economagicImport(query, file, source, frequency, from, to,
+   MM> nDaysBack, :
+   MM> NAs introduced by coercion
+   MM>
+   MM>
+   MM> This only started to happen in the last month, so I suspect
+   MM> economagic
+   MM> changed how their website expresses data.
+   MM>
+   MM> Does the current linux source (290.75) have this issue?
+   MM>
+   MM> If it doesn't, when do you estimate you'll be able to update
+   MM> the Windows
+   MM> binary?
+   MM>
+   MM>
+   MM> Mike Morgan
+
+As you said, economagic changed how their website expresses data.
+
+This was fixed in the dev revision version 3773. You can get it from
+our subversion repository at R-forge
+[http://r-forge.r-project.org/projects/rmetrics/]
+
+But we finally decided to remove the economagic* functions from
+'fImport' because economagic requires login account to get access to
+their data and we do not want to go against their policy.
+
+HTH
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From mmorgan at gljpc.com  Thu Jan 29 19:24:00 2009
+From: mmorgan at gljpc.com (Michael Morgan)
+Date: Thu, 29 Jan 2009 11:24:00 -0700
+Subject: yahooSeries for futures listed on Yahoo
+Message-ID: <4981F440.7050702@gljpc.com>
+
+Dear Maintainers,
+
+Is there a way to import futures prices from yahoo or from 
+finance.yahoo.com?
+
+yahooSeries("IBM") gives data for IBM
+
+For light crude delivery in March 2009 traded on NYMEX, the ticker 
+CLH09.NYM can be used to get data from finance.yahoo.com
+
+yahooSeries("CLH09.NYM") currently doesn't provide any data, though the 
+data is available at http://finance.yahoo.com/q?s=CLH09.NYM
+
+
+Mike Morgan
+
+Michael Morgan
+
+GLJ Petroleum Consultants
+4100, 400 Third Avenue SW
+Calgary, AB, Canada  T2P 4H2  
+Tel: (403) 266-9437 Fax: (403) 262-1855
+
+This message is intended only for the recipient(s) to which it is addressed and may contain information that is privileged and confidential. If you have received this message in error, please notify the sender immediately and delete all copies.
+
+
+From spector at stat.berkeley.edu  Thu Jan 29 19:32:49 2009
+From: spector at stat.berkeley.edu (Phil Spector)
+Date: Thu, 29 Jan 2009 10:32:49 -0800 (PST)
+Subject: fUtilities::isS4
+Message-ID: <alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>
+
+Hi!
+    I'm having some difficulties using the isS4 function in 
+the fUtilities package.  Specifically, I think that the 
+test for NULL slotNames may not always give the correct 
+result.
+
+For example, consider an lm object:
+
+> x = rnorm(10)
+> y = rnorm(10)
+> z = lm(y~x)
+> base::isS4(z)
+[1] FALSE
+> fUtilities::isS4(z)
+[1] TRUE
+> slotNames(z)
+[1] ".S3Class"
+
+     Since showMethods(class='lm') doesn't return anything, I don't
+think lm objects should be identified as S4 objects by isS4.
+
+     Thanks!
+                                        - Phil Spector
+ 					 Statistical Computing Facility
+ 					 Department of Statistics
+ 					 UC Berkeley
+ 					 spector at stat.berkeley.edu
+
+
+From chalabi at phys.ethz.ch  Fri Jan 30 09:17:14 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 30 Jan 2009 09:17:14 +0100
+Subject: fUtilities::isS4
+In-Reply-To: <alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>
+References: <alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>
+Message-ID: <20090130091714.71f715cf@mimi>
+
+>>>> "PS" == Phil Spector <spector at stat.berkeley.edu>
+>>>> on Thu, 29 Jan 2009 10:32:49 -0800 (PST)
+
+   PS> Hi!
+   PS> I'm having some difficulties using the isS4 function in
+   PS> the fUtilities package.  Specifically, I think that the
+   PS> test for NULL slotNames may not always give the correct
+   PS> result.
+   PS>
+   PS> For example, consider an lm object:
+   PS>
+   PS> > x = rnorm(10)
+   PS> > y = rnorm(10)
+   PS> > z = lm(y~x)
+   PS> > base::isS4(z)
+   PS> [1] FALSE
+   PS> > fUtilities::isS4(z)
+   PS> [1] TRUE
+   PS> > slotNames(z)
+   PS> [1] .S3Class
+   PS>
+   PS> Since showMethods(class='lm') doesn't return anything, I don't
+   PS> think lm objects should be identified as S4 objects by isS4.
+   PS>
+   PS> Thanks!
+
+
+Hi Phil,
+
+Thanks to point this out!
+
+I will remove 'isS4' from the 'fUtilities' package because it is
+not needed anymore.
+
+BTW, have you noticed that the new Rmetrics packages should not
+depend on 'fUtilities' which will be considered as deprecated in the
+future.
+
+If you are using 'fCalendar' and 'fSeries', please move to their new
+versions named timeDate and timeSeries respectively.
+
+HTH
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From edd at debian.org  Fri Jan 30 18:06:19 2009
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Fri, 30 Jan 2009 11:06:19 -0600
+Subject: fUtilities::isS4
+In-Reply-To: <20090130091714.71f715cf@mimi>
+References: <alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>
+	<20090130091714.71f715cf@mimi>
+Message-ID: <18819.13195.192703.787718@ron.nulle.part>
+
+
+Yohan, Diethelm,
+
+On 30 January 2009 at 09:17, Yohan Chalabi wrote:
+| BTW, have you noticed that the new Rmetrics packages should not
+| depend on 'fUtilities' which will be considered as deprecated in the
+| future.
+| 
+| If you are using 'fCalendar' and 'fSeries', please move to their new
+| versions named timeDate and timeSeries respectively.
+
+Would it be possible to get more regular updates about what is, or is not, or
+will be, or will no longer be, part of what is considered to be Rmetrics ?
+
+Maybe it is just me, but I find it confusing that a project called 'Rmetrics'
+once had a package called Rmetrics which it no longer has ... The calendar /
+date package transition wasn't all that smooth either. As start, a high-level
+changelog and/or roadmap could be added to the wiki.  You may also want to
+use this list. And/or the r-packages or r-sig-finance list.
+
+Finally, I personally would also vote for re-instating the Rmetrics package
+as it can give you at least a small hook (by looking at the search path, or
+at installed.packages(), or ...) into alerting actual users to the fact that
+they still have something installed that you now deem deprecated.  Otherwise,
+I fear you will be confronted with this problem for a long time indeed.
+
+Just my $0.02.  
+
+Regards, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+

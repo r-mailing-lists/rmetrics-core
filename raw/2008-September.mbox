@@ -1,0 +1,232 @@
+From dparraam at banrep.gov.co  Tue Sep  2 00:37:12 2008
+From: dparraam at banrep.gov.co (Parra Amado Daniel)
+Date: Mon, 1 Sep 2008 17:37:12 -0500
+Subject: question about the garchFit
+Message-ID: <FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080901/e9394fd6/attachment.pl>
+
+From chalabi at phys.ethz.ch  Fri Sep  5 13:02:55 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 5 Sep 2008 13:02:55 +0200
+Subject: question about the garchFit
+In-Reply-To: <FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>
+References: <FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>
+Message-ID: <20080905130255.069e2dfd@mimi>
+
+>>>> "PAD" == "Parra Amado Daniel" <dparraam at banrep.gov.co>
+>>>> on Mon, 1 Sep 2008 17:37:12 -0500
+
+   PAD> My name is Daniel Parra, I'm economist and I'm studying time series
+   PAD> models for financial variables. I'm working in R with their package
+   PAD> (fGarch), which I found very interesting and useful.
+   PAD>  
+   PAD> I would ask you please help me with the following question.
+   PAD>  
+   PAD> How do I do to estimate a ARMA(6,1)-GARCH(1,1) without the coefficients
+   PAD> AR(1), AR(2), AR(3), AR(4) and AR(5)?
+   PAD>  
+   PAD> For example, I've tried in this way,
+   PAD>  
+   PAD> y = garchFit(~arma(6,1)+garch(1,1), r.IGBC, trace=F,cond.dist = "dnorm")
+   PAD>  
+   PAD> and result is:
+   PAD>  
+   PAD> Coefficient(s):
+   PAD> Mu       0.20950912  
+   PAD> ar1       -0.27087286   
+   PAD> ar2       0.06539889  
+   PAD> ar3       -0.08086325     I don't want estimate these coefficients
+   PAD> ar4       0.00391767   
+   PAD> ar5        0.05273713  
+   PAD> ar6       -0.04344611   
+   PAD> ma1     0.49958456   
+   PAD> omega  0.44834015   
+   PAD> alpha1  0.34024705   
+   PAD> beta1    0.46750871  
+   PAD>  
+   PAD> According to the results above, you can see that the routine estimate
+   PAD> the coefficients AR (1) to AR (5), which I don't want in the model. How
+   PAD> do I restrict them on the code?.
+   PAD>  
+
+Hi Daniel,
+
+in the current implementation you can not fix specific parameters in the optimization, which are in your case the coefficients AR(1)-AR(5).
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From chalabi at phys.ethz.ch  Mon Sep  8 21:29:53 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Mon, 8 Sep 2008 21:29:53 +0200
+Subject: dmvsnorm & mvst in fMultivar
+In-Reply-To: <20080826104416.15516162.azzalini@stat.unipd.it>
+References: <20080826104416.15516162.azzalini@stat.unipd.it>
+Message-ID: <20080908212953.0362560c@mimi>
+
+>>>> "AA" == Adelchi Azzalini <azzalini at stat.unipd.it>
+>>>> on Tue, 26 Aug 2008 10:44:16 +0200
+
+   AA> Dear Colleagues,
+   AA> 
+   AA> I am writing about some functions incorporated into your package
+   AA> "fMultivar", specifically dmvsnorm & mvst, which originate from 
+   AA> packages 'sn'. In principle, it is welcome that your package
+   AA> incorporates some routines from my package. Unfortunately, this
+   AA> operation has been done improperly, and the effect is seriously
+   AA> misleading for the user.
+   AA> 
+   AA> In the documentation of the above-mentioned functions, one reads:
+   AA> 
+   AA> mu, Omega, alpha, df: [*mvsnorm][*mvst] - 
+   AA>            the model parameters: 
+   AA>            'mu' a vector of mean values, one for each column, 
+   AA>            'Omega' the covariance matrix, 
+   AA>            'alpha' the skewness vector, and 
+   AA>            'df' the number of degrees of freedom which is a measure for
+   AA>           the fatness of the tails (excess kurtosis). 
+   AA> 
+   AA> and in the code mu is set equal to xi, which is a location parameter,
+   AA> but _not_ the mean, as the documentation wrongly indicates. In fact 
+   AA> in the skew-t case the mean may even not exist. Similarly, Omega is 
+   AA> described as "the covariance matrix", which suggests that this is
+   AA> the covariance matrix of the distribution, but it is not true.
+   AA> Omega is _a_ covariance matrix, which is related to the covariance
+   AA> matrix (when this one exists) but it is different. For the
+   AA> parametrization based on mean and variance, see later.
+   AA> 
+   AA> In addition, in the code of dmvsnorm, for the one-dimensional case
+   AA> there is the assignment
+   AA> 
+   AA>  ans = dsn(x, location = xi[1], scale = as.vector(Omega)[1], 
+   AA>            shape = alpha[1])
+   AA> 
+   AA> which is wrong since in this case the scale is the square root of
+   AA> Omega. Similar errors exist in pmvsnorm, dmvst, pmvst.
+   AA> 
+   AA> Please note that the above remarks do not attempt to be exhaustive,
+   AA> since I have not done a full scan of your code and documentation.
+   AA> These are just the problems which I have spotted after a quick
+   AA> browsing of your package.
+   AA> 
+   AA> I take this opportunity to draw your attention to this note:
+   AA>    http://tango.stat.unipd.it/SN/announce2.html
+   AA> When the new "version 1.xx" will be available, it will include
+   AA> a parametrization based on mean/variance.
+   AA> 
+   AA> With best wishes,
+   AA> 
+   AA> Adelchi Azzalini
+
+Dear Adelchi,
+
+Thank you for your message. Your comment is very helpful for us because we
+are in the process to clean some packages and hopefully we will fix the
+issues you raised.
+
+Best regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From theodore.vanrooy at gmail.com  Wed Sep 17 21:53:11 2008
+From: theodore.vanrooy at gmail.com (Theodore Van Rooy)
+Date: Wed, 17 Sep 2008 13:53:11 -0600
+Subject: fMultivar functions not loading under R-2.7
+Message-ID: <3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080917/f76113a0/attachment.pl>
+
+From chalabi at phys.ethz.ch  Thu Sep 18 09:57:22 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Thu, 18 Sep 2008 09:57:22 +0200
+Subject: fMultivar functions not loading under R-2.7
+In-Reply-To: <3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>
+References: <3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>
+Message-ID: <20080918095722.26d8c04e@mimi>
+
+>>>> "TVR" == "Theodore Van Rooy" <theodore.vanrooy at gmail.com>
+>>>> on Wed, 17 Sep 2008 13:53:11 -0600
+
+   TVR> I've been using R-2.4 with Rmetrics successfuly for a year or two.
+   TVR> 
+   TVR> I recently moved to Ubuntu Linux 8.04, loaded R via apt-get install R-base
+   TVR> etc. etc...
+   TVR> 
+   TVR> then in the R interface i ran install.packages("fMultivar"), chose the CRAN
+   TVR> mirror and it loaded fMultivar and all the required dependecies.
+   TVR> 
+   TVR> However, when I try to run the same code which makes use of the indicator
+   TVR> calculators (emaTA etc.) I get this warning:
+   TVR> 
+   TVR> Error: could not find function "fMultivar.emaTA"
+   TVR> 
+   TVR> upon further inspection looking at the available functions for fMultivar
+   TVR> 
+   TVR> > listFunctions(fMultivar)  
+   TVR>  [1] "contour.gridData"     "dcauchy2d"            "delliptical2d"
+   TVR>  [4] ".delliptical2dSlider" "density2d"            "dmvsnorm"
+   TVR>  [7] "dmvst"                "dnorm2d"              ".dnorm2d"
+   TVR> [10] "dt2d"                 ".First.lib"           ".gfunc2d"
+   TVR> [13] "grid2d"               "gridData"             "hexBinning"
+   TVR> [16] "hist2d"               "integrate2d"          "mvFit"
+   TVR> [19] ".mvsnormFit"          ".mvsnormPlot"         ".mvsnorm.plot.1"
+   TVR> [22] ".mvsnorm.plot.1A"     ".mvsnorm.plot.1B"     ".mvsnorm.plot.2"
+   TVR> [25] ".mvsnorm.plot.3"      ".mvsnorm.plot.4"      ".mvsnorm.plot.5"
+   TVR> [28] ".mvstFit"             ".mvstPlot"            ".mvst.plot.1"
+   TVR> [31] ".mvst.plot.1A"        ".mvst.plot.1B"        ".mvst.plot.2"
+   TVR> [34] ".mvst.plot.3"         ".mvst.plot.4"         ".mvst.plot.5"
+   TVR> [37] "pcauchy2d"            "persp.gridData"       "plot.fMV"
+   TVR> [40] "plot.hexBinning"      "plot.squareBinning"   "pmvsnorm"
+   TVR> [43] "pmvst"                "pnorm2d"              ".pnorm2d"
+   TVR> [46] "pt2d"                 "rcauchy2d"            "rmvsnorm"
+   TVR> [49] "rmvst"                "rnorm2d"              ".rnorm2d"
+   TVR> [52] "rt2d"                 "show.fMV"             "squareBinning"
+   TVR> [55] "summary.fMV"          ".TInt"                ".TOwen"
+   TVR> 
+   TVR> shows that none of the indicators previously available under R-2.4 are
+   TVR> available.
+   TVR> 
+   TVR> Is this just a setting somehere in R that I need to enable?  In Linux
+   TVR> maybe?  Do I need to update the packages maybe?  I'm using fMultivar version
+   TVR> 260.72.
+   TVR> 
+   TVR> Thanks in advance
+   TVR> Theo
+
+Since 2.4 we have reorganized the packages and some function have moved
+to new packages. 
+
+you can load all packages with library("Rmetrics") and search which
+package has the function you need.
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+

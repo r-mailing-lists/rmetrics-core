@@ -1,0 +1,159 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-09",
+  "messages": [
+    {
+      "id": "msg-358ae60014c6",
+      "message_id": "<42C99F8A87E4414BB4C297AB63B932380112FC6279EA@SWVLONCUEXDP02.im.root-domain.net>",
+      "from_name": "gaurang.mehta at aviva.com",
+      "from_email_hash": "0e586fb8c5fc48b960ba6ad938f176206668c347422fc1182a911d97c8364bb8",
+      "date": "2012-09-14T15:29:40Z",
+      "subject": "fOptions- Error",
+      "subject_clean": "fOptions- Error",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl>",
+      "thread_id": "thread-358ae60014c6",
+      "thread_depth": 0,
+      "month": "2012-09"
+    },
+    {
+      "id": "msg-860e03240462",
+      "message_id": "<5056D089.5020304@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-09-17T07:26:01Z",
+      "subject": "Fwd: CRAN packages calling .Fortran(\"dqrls\")",
+      "subject_clean": "CRAN packages calling .Fortran(\"dqrls\")",
+      "in_reply_to": "<50519F72.90603@stats.ox.ac.uk>",
+      "references": [
+        "<50519F72.90603@stats.ox.ac.uk>"
+      ],
+      "body_plain": "This also applies to fArma, which buried the problem in a unit test. \nNow that the entry point has been removed, it gives\n\n   fArma unit testing - 24 test functions, 1 error, 0 failures\n   ERROR in test.hurstFit: Error in .Fortran(\"dqrls\", qr = t, n = nrx, p \n= ncx, y = as.matrix(y),  :\n     \"dqrls\" not available for .Fortran() for package \"base\"\n\n-------- Original Message --------\nSubject: CRAN packages calling .Fortran(\"dqrls\")\nDate: Thu, 13 Sep 2012 09:55:14 +0100\nFrom: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n\nThis concerns CRAN packages\n\nCNVassoc NBPSeq ade4 anm arm glm2 haplo.stats\n\nThese call .Fortran(\"dqrls\", PACKAGE = \"base\").  This is no longer used\nby R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy\n\n'CRAN packages should use only the public API.  Hence they should not \nuse entry points not declared as API in installed headers nor \n.Internal() nor .Call() etc calls to base packages. Such usages can \ncause packages to break at any time, even in patched versions of R.'\n\ndoes not allow it.\n\nPlease use the public lm.fit() or lm.wfit() instead.\n\nWe need a corrected update before Sept 28 taking into account any other\nissues shown in the CRAN check logs (via cran.r-project.org/package=name\nfor 'name' of your package) or the package will need to be archived.\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "This also applies to fArma, which buried the problem in a unit test. \nNow that the entry point has been removed, it gives\n\n   fArma unit testing - 24 test functions, 1 error, 0 failures\n   ERROR in te",
+      "thread_id": "thread-860e03240462",
+      "thread_depth": 0,
+      "month": "2012-09"
+    },
+    {
+      "id": "msg-e4958346fa5b",
+      "message_id": "<01cd94af$Blat.v2.2.2$65559058@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-09-17T08:35:30Z",
+      "subject": "Package fUnitRoots_2100.76.tar.gz has been checked and built",
+      "subject_clean": "Package fUnitRoots_2100.76.tar.gz has been checked and built",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_2100.76.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files and (if working) the binary package at:\nhttp://win-builder.r-project.org/TM0dQIoBP68R\nThe files will be removed after roughly 72 hours.\nInstallation time in seconds: 23\nCheck time in seconds: 184\nCheck result: WARNING\nR version 2.15.1 (2012-06-22)\n \nAll the best,\nUwe Ligges\n(CRAN maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUnitRoots_2100.76.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files an",
+      "thread_id": "thread-e4958346fa5b",
+      "thread_depth": 0,
+      "month": "2012-09"
+    },
+    {
+      "id": "msg-8be9e92a703f",
+      "message_id": "<55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-09-17T15:25:41Z",
+      "subject": "CRAN packages calling .Fortran(\"dqrls\")",
+      "subject_clean": "CRAN packages calling .Fortran(\"dqrls\")",
+      "in_reply_to": "<5056D089.5020304@stats.ox.ac.uk>",
+      "references": [
+        "<50519F72.90603@stats.ox.ac.uk>",
+        "<5056D089.5020304@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Thank you for the notification.\n\nPlease find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.\n\nI have also changed the maintainer email address to comply with the new CRAN policy.\n\nKind regards,\nYohan\n\nOn Sep 17, 2012, at 9:26 AM, Prof Brian Ripley wrote:\n\n> This also applies to fArma, which buried the problem in a unit test. Now that the entry point has been removed, it gives\n> \n>  fArma unit testing - 24 test functions, 1 error, 0 failures\n>  ERROR in test.hurstFit: Error in .Fortran(\"dqrls\", qr = t, n = nrx, p = ncx, y = as.matrix(y),  :\n>    \"dqrls\" not available for .Fortran() for package \"base\"\n> \n> -------- Original Message --------\n> Subject: CRAN packages calling .Fortran(\"dqrls\")\n> Date: Thu, 13 Sep 2012 09:55:14 +0100\n> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n> \n> This concerns CRAN packages\n> \n> CNVassoc NBPSeq ade4 anm arm glm2 haplo.stats\n> \n> These call .Fortran(\"dqrls\", PACKAGE = \"base\").  This is no longer used\n> by R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy\n> \n> 'CRAN packages should use only the public API.  Hence they should not use entry points not declared as API in installed headers nor .Internal() nor .Call() etc calls to base packages. Such usages can cause packages to break at any time, even in patched versions of R.'\n> \n> does not allow it.\n> \n> Please use the public lm.fit() or lm.wfit() instead.\n> \n> We need a corrected update before Sept 28 taking into account any other\n> issues shown in the CRAN check logs (via cran.r-project.org/package=name\n> for 'name' of your package) or the package will need to be archived.\n> \n> -- \n> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n> University of Oxford,             Tel:  +44 1865 272861 (self)\n> 1 South Parks Road,                     +44 1865 272866 (PA)\n> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Thank you for the notification.\n\nPlease find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.\n\nI have also changed the maintainer email address to comply wit",
+      "thread_id": "thread-860e03240462",
+      "thread_depth": 1,
+      "month": "2012-09"
+    },
+    {
+      "id": "msg-ba1e57639663",
+      "message_id": "<5057492B.901@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-09-17T16:00:43Z",
+      "subject": "CRAN packages calling .Fortran(\"dqrls\")",
+      "subject_clean": "CRAN packages calling .Fortran(\"dqrls\")",
+      "in_reply_to": "<55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>",
+      "references": [
+        "<50519F72.90603@stats.ox.ac.uk>",
+        "<5056D089.5020304@stats.ox.ac.uk>",
+        "<55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>"
+      ],
+      "body_plain": "On 17/09/2012 16:25, Yohan Chalabi wrote:\n> Thank you for the notification.\n>\n> Please find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.\n>\n> I have also changed the maintainer email address to comply with the new CRAN policy.\n\nThanks, on CRAN now.\n\n> Kind regards,\n> Yohan\n>\n> On Sep 17, 2012, at 9:26 AM, Prof Brian Ripley wrote:\n>\n>> This also applies to fArma, which buried the problem in a unit test. Now that the entry point has been removed, it gives\n>>\n>>   fArma unit testing - 24 test functions, 1 error, 0 failures\n>>   ERROR in test.hurstFit: Error in .Fortran(\"dqrls\", qr = t, n = nrx, p = ncx, y = as.matrix(y),  :\n>>     \"dqrls\" not available for .Fortran() for package \"base\"\n>>\n>> -------- Original Message --------\n>> Subject: CRAN packages calling .Fortran(\"dqrls\")\n>> Date: Thu, 13 Sep 2012 09:55:14 +0100\n>> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>\n>> This concerns CRAN packages\n>>\n>> CNVassoc NBPSeq ade4 anm arm glm2 haplo.stats\n>>\n>> These call .Fortran(\"dqrls\", PACKAGE = \"base\").  This is no longer used\n>> by R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy\n>>\n>> 'CRAN packages should use only the public API.  Hence they should not use entry points not declared as API in installed headers nor .Internal() nor .Call() etc calls to base packages. Such usages can cause packages to break at any time, even in patched versions of R.'\n>>\n>> does not allow it.\n>>\n>> Please use the public lm.fit() or lm.wfit() instead.\n>>\n>> We need a corrected update before Sept 28 taking into account any other\n>> issues shown in the CRAN check logs (via cran.r-project.org/package=name\n>> for 'name' of your package) or the package will need to be archived.\n>>\n>> --\n>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>\n\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "On 17/09/2012 16:25, Yohan Chalabi wrote:\n> Thank you for the notification.\n>\n> Please find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.\n>\n> I have also ",
+      "thread_id": "thread-860e03240462",
+      "thread_depth": 2,
+      "month": "2012-09"
+    },
+    {
+      "id": "msg-08c3c4fce380",
+      "message_id": "<42C99F8A87E4414BB4C297AB63B932380112FC709101@SWVLONCUEXDP02.im.root-domain.net>",
+      "from_name": "gaurang.mehta at aviva.com",
+      "from_email_hash": "0e586fb8c5fc48b960ba6ad938f176206668c347422fc1182a911d97c8364bb8",
+      "date": "2012-09-18T16:14:11Z",
+      "subject": "fOptions - Library Question",
+      "subject_clean": "fOptions - Library Question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl>",
+      "thread_id": "thread-08c3c4fce380",
+      "thread_depth": 0,
+      "month": "2012-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-358ae60014c6",
+      "subject": "fOptions- Error",
+      "message_count": 1,
+      "participants": [
+        "gaurang.mehta at aviva.com"
+      ],
+      "started": "2012-09-14T15:29:40Z",
+      "last_reply": "2012-09-14T15:29:40Z",
+      "root_message_id": "msg-358ae60014c6"
+    },
+    {
+      "id": "thread-860e03240462",
+      "subject": "CRAN packages calling .Fortran(\"dqrls\")",
+      "message_count": 3,
+      "participants": [
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-09-17T07:26:01Z",
+      "last_reply": "2012-09-17T16:00:43Z",
+      "root_message_id": "msg-860e03240462"
+    },
+    {
+      "id": "thread-e4958346fa5b",
+      "subject": "Package fUnitRoots_2100.76.tar.gz has been checked and built",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-09-17T08:35:30Z",
+      "last_reply": "2012-09-17T08:35:30Z",
+      "root_message_id": "msg-e4958346fa5b"
+    },
+    {
+      "id": "thread-08c3c4fce380",
+      "subject": "fOptions - Library Question",
+      "message_count": 1,
+      "participants": [
+        "gaurang.mehta at aviva.com"
+      ],
+      "started": "2012-09-18T16:14:11Z",
+      "last_reply": "2012-09-18T16:14:11Z",
+      "root_message_id": "msg-08c3c4fce380"
+    }
+  ]
+}

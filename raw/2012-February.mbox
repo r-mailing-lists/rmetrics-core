@@ -1,0 +1,383 @@
+From chalabi at phys.ethz.ch  Wed Feb  1 14:03:48 2012
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 1 Feb 2012 14:03:48 +0100
+Subject: Request: Garch Ox Fit extension of fGARCH
+In-Reply-To: <B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>
+References: <B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>
+Message-ID: <28C48B6D-BE41-421B-882E-281D5FA50662@phys.ethz.ch>
+
+Hi Tristan,
+
+the garchOx interface is not available anymore. You can find the old interface in the history of svn repository (r-forge). However the interface has not been updated to the latest version of garchOx.
+
+HTH,
+Yohan
+
+On 20 janv. 2012, at 01:58, Linke, Tristan wrote:
+
+> Dear all
+> 
+> As suggested in the fGarch user outline (updated Jan 2012) I contact you to ask whether it is possible to get access to Garch Ox Fit for fitting e.g. GJR-Garch models in R. I'm a student at Lancaster university.
+> 
+> Thanks a lot in advance.
+> 
+> Kind regards
+> Tristan Linke
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+
+From chalabi at phys.ethz.ch  Wed Feb  1 15:51:17 2012
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 1 Feb 2012 15:51:17 +0100
+Subject: Inconsistency in timeDate between isBizday and holidayNYSE
+In-Reply-To: <CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>
+References: <CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>
+Message-ID: <ED653C7F-6773-4BE5-965C-884179323B82@phys.ethz.ch>
+
+
+On 30 janv. 2012, at 00:03, Klemen Koselj wrote:
+
+> Hello timeDate package maintenars,
+> 
+> Thank you for great rmetrics packages. Thanks for yll the effort in
+> developing and maintaining them.
+> 
+> I have encountered some issues with using timeDate package. Itcan of course
+> be that I just do not understand a few things...
+> 
+> I am trying to check whether a particular date is business day (NYSE
+> opened). When I check this for 2011-12-26 isBizday returns TRUE while
+> holidayNYSE returns FALSE which is correct...
+> 
+>> isBizday(as.timeDate("2011-12-26"))
+> 2011-12-26
+>      TRUE
+>> holidayNYSE(2011)
+> NewYork
+> [1] [2011-01-17] [2011-02-21] [2011-04-22] [2011-05-30] [2011-07-04]
+> [6] [2011-09-05] [2011-11-24] [2011-12-26]
+>> isBizday(as.timeDate("2011-12-26"), holidayNYSE())
+
+Hi,
+
+you are missing the year argument in holidayNYSE() :
+
+isBizday(as.timeDate("2011-12-26"), holidayNYSE(2011))
+
+HTH
+Yohan
+
+> 2011-12-26
+>      TRUE
+> 
+> What am I missing here?
+> 
+> Thanks in advance.
+> 
+> Kind regards,
+> Klemen.
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+
+
+From adv2 at antek-cn.com  Sat Feb  4 00:35:56 2012
+From: adv2 at antek-cn.com (ANTEK SOLAR)
+Date: Sat, 04 Feb 2012 07:35:56 +0800
+Subject: Solar Home System Plug-and-Go! - by Antek Solar
+Message-ID: <0dd6fcb1563c644498a50752bb0eba08@lyfy-20101228MK>
+
+Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved
+If you prefer do not to receive future email, please unsubscribe here, Thank you
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120204/9c1a0724/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/jpeg
+Size: 97134 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120204/9c1a0724/attachment-0001.jpe>
+
+From gaurang.jitendrabhai at aviva.com  Mon Feb  6 11:20:49 2012
+From: gaurang.jitendrabhai at aviva.com (gaurang.jitendrabhai at aviva.com)
+Date: Mon, 6 Feb 2012 10:20:49 +0000
+Subject: fExtremes- how to access elements of gevFit
+Message-ID: <42C99F8A87E4414BB4C297AB63B932380112F7582804@SWVLONCUEXDP02.im.root-domain.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl>
+
+From Bernhard_Pfaff at fra.invesco.com  Thu Feb  9 11:14:59 2012
+From: Bernhard_Pfaff at fra.invesco.com (Pfaff, Bernhard Dr.)
+Date: Thu, 9 Feb 2012 10:14:59 +0000
+Subject: fArma not any longer on CRAN
+Message-ID: <FCD9A33C859ACC469587CB09DD5C6C712C1A78@GBLONXMB11.corp.amvescap.net>
+
+Hello Yohan,
+
+how are you? Have you successfully completed your Phd? Hopefully you are well and Diethelm as well? 
+
+I am writing to you, because the package fArma has been removed from CRAN (did not pass the checks, i.e., an example tossed an error). Will you fix this package and re-release to CRAN?
+
+Best,
+Bernhard
+
+Dr. Bernhard Pfaff
+Director
+Global Asset Allocation
+
+Invesco Asset Management Deutschland GmbH
+An der Welle 5
+D-60322 Frankfurt am Main
+
+Tel: +49 (0)69 29807 230
+Fax: +49 (0)69 29807 178
+www.institutional.invesco.com
+Email: bernhard_pfaff at fra.invesco.com
+
+Gesch?ftsf?hrer: Karl Georg Bayer, Bernhard Langer, Dr. Jens Langewand, Alexander Lehmann, Christian Puschmann
+Handelsregister: Frankfurt am Main, HRB 28469
+Sitz der Gesellschaft: Frankfurt am Main
+
+
+
+*****************************************************************
+Confidentiality Note: The information contained in this ...{{dropped:10}}
+
+
+From daniele.amberti at ors.it  Fri Feb 10 11:09:56 2012
+From: daniele.amberti at ors.it (Daniele Amberti)
+Date: Fri, 10 Feb 2012 10:09:56 +0000
+Subject: timeFirstDayInMonth() bug
+In-Reply-To: <F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>
+References: <F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>
+Message-ID: <F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>
+
+Any news about the bug at:
+https://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=633
+
+Thanks,
+Daniele Amberti
+
+-----Original Message-----
+From: Daniele Amberti
+Sent: Thursday, January 12, 2012 4:22 PM
+To: Rmetrics-core at r-project.org
+Subject: timeFirstDayInMonth() bug
+
+#
+# Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.
+#
+
+library(timeDate)
+
+x <- logical(0)
+x <- as.timeDate(x)
+
+timeFirstDayInMonth(x)
+
+# Best regards, Daniele Amberti
+
+________________________________
+
+ORS Srl
+
+Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy
+Tel. +39 0173 620211
+Fax. +39 0173 620299 / +39 0173 433111
+Web Site www.ors.it
+
+------------------------------------------------------------------------------------------------------------------------
+Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.
+Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso
+e degli eventuali allegati.
+Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o
+alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.
+
+From deleeuw at stat.ucla.edu  Mon Feb 13 02:14:55 2012
+From: deleeuw at stat.ucla.edu (Jan de Leeuw)
+Date: Sun, 12 Feb 2012 17:14:55 -0800
+Subject: fBasics
+Message-ID: <A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>
+
+I think nig.c in the latest fBasics needs 
+
+#include <R_ext/Error.h> 
+
+===
+Jan de Leeuw; Distinguished Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical Software;
+US mail: 8125 Math Sciences Bldg, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw at stat.ucla.edu
+.mac: jdeleeuw ++++++  aim: deleeuwjan ++++++ skype: j_deleeuw
+homepages: http://gifi.stat.ucla.edu ++++++ http://www.cuddyvalley.org
+ -------------------------------------------------------------------------------------------------
+          No matter where you go, there you are. --- Buckaroo Banzai
+                   http://gifi.stat.ucla.edu/sounds/nomatter.au
+
+
+From maechler at stat.math.ethz.ch  Fri Feb 17 00:53:44 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Fri, 17 Feb 2012 00:53:44 +0100
+Subject: fBasics
+In-Reply-To: <A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>
+References: <A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>
+Message-ID: <CAPRP4-e-SSHTQWsdhd-v8Pu_Vs5XOa_fX3nd0Z_LTe_wy=o02A@mail.gmail.com>
+
+On Mon, Feb 13, 2012 at 02:14, Jan de Leeuw <deleeuw at stat.ucla.edu> wrote:
+> I think nig.c in the latest fBasics needs
+>
+> #include <R_ext/Error.h>
+
+Yes, indeed.  Thank you, Jan.
+I'll commit that (and a bit more cosmetics) to the R-forge version of fBasics.
+
+There needs more work to be done for all the new  "partial argument
+match" warnings that
+we now have to fix thanks to the CRAN police...
+
+Martin
+
+>
+> ===
+> Jan de Leeuw; Distinguished Professor and Chair, UCLA Department of Statistics;
+> Editor: Journal of Multivariate Analysis, Journal of Statistical Software;
+> US mail: 8125 Math Sciences Bldg, Box 951554, Los Angeles, CA 90095-1554
+> phone (310)-825-9550; ?fax (310)-206-5658; ?email: deleeuw at stat.ucla.edu
+> .mac: jdeleeuw ++++++ ?aim: deleeuwjan ++++++ skype: j_deleeuw
+> homepages: http://gifi.stat.ucla.edu ++++++ http://www.cuddyvalley.org
+> ?-------------------------------------------------------------------------------------------------
+> ? ? ? ? ?No matter where you go, there you are. --- Buckaroo Banzai
+> ? ? ? ? ? ? ? ? ? http://gifi.stat.ucla.edu/sounds/nomatter.au
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+
+
+From maechler at stat.math.ethz.ch  Sun Feb 19 22:59:42 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sun, 19 Feb 2012 22:59:42 +0100
+Subject: timeFirstDayInMonth() bug
+In-Reply-To: <F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>
+References: <F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>
+	<F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>
+Message-ID: <CAPRP4-fyaaPmJ_cWOC4MCzSfVD4ADEpDwqvoQKz60K54LrchLg@mail.gmail.com>
+
+On Fri, Feb 10, 2012 at 11:09, Daniele Amberti <daniele.amberti at ors.it> wrote:
+> Any news about the bug at:
+> https://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=633
+>
+> Thanks,
+> Daniele Amberti
+>
+> -----Original Message-----
+> From: Daniele Amberti
+> Sent: Thursday, January 12, 2012 4:22 PM
+> To: Rmetrics-core at r-project.org
+> Subject: timeFirstDayInMonth() bug
+>
+> #
+> # Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.
+> #
+>
+> library(timeDate)
+>
+> x <- logical(0)
+> x <- as.timeDate(x)
+>
+> timeFirstDayInMonth(x)
+>
+> # Best regards, Daniele Amberti
+>
+
+Thank you Daniele.    I've decided that (R crash)  is something R's
+internal C code should not do, .... even if there's clearly a missing
+check and hence a bug in
+the   timeFirstDayInMonth()  function ...
+a fix of which I currently leave to my co-authors...
+
+Best regards,
+Martin Maechler
+> ________________________________
+>
+> ORS Srl
+>
+> Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy
+> Tel. +39 0173 620211
+> Fax. +39 0173 620299 / +39 0173 433111
+> Web Site www.ors.it
+>
+> ------------------------------------------------------------------------------------------------------------------------
+> Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.
+> Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso
+> e degli eventuali allegati.
+> Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o
+> alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From luciano.gilli at envitech-ambiente.it  Thu Feb 23 11:20:48 2012
+From: luciano.gilli at envitech-ambiente.it (Luciano Gilli)
+Date: Thu, 23 Feb 2012 11:20:48 +0100
+Subject: Help request about Portfolio Optimization with R/Rmetrics
+Message-ID: <4F461300.4060404@envitech-ambiente.it>
+
+Hi,
+when trying to run (pag. 26 of "Portfolio Optimization with R/Rmetrics")
+
+ > DATA <- 100 * SWX.RET[, c(1:2, 4:5)]
+ > by <- periods(time(DATA), "12m", "1m")
+ > SWX.ROLL <- rollapply(DATA, by, FUN = "colSums")
+
+i get the following message error:
+
+Errore in posns >= 1 : confronto (5) possibile solo per dati atomic o list
+
+Can you help me please?
+All the others example in book seems to work correctly..
+Thanks a lot
+Luciano Gilli
+
+Buyer: Luciano Gilli (luciano.gilli at envitech-ambiente.it) @ 79.38.121.32
+
+-- 
+Dott. Luciano Gilli
+Envitech Ambiente e Tecnologie srl
+V. Bonomelli 1/f
+28100 Novara
+Tel/Fax +39 (0) 321 640121
+cell. + 39 335 8275512
+skype luciano.gilli
+
+
+From zuyang at hotmail.com  Thu Feb 23 22:20:07 2012
+From: zuyang at hotmail.com (zuyang Zu)
+Date: Thu, 23 Feb 2012 21:20:07 +0000
+Subject: qq plot in fGarch
+Message-ID: <BAY157-W55FFF3B6450E4A29706AFD1650@phx.gbl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl>
+

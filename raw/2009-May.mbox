@@ -1,0 +1,312 @@
+From alexander_wutscher at gmx.at  Tue May  5 00:45:39 2009
+From: alexander_wutscher at gmx.at (Alexander Wutscher)
+Date: Tue, 05 May 2009 00:45:39 +0200
+Subject: To Mr. Diethelm Wuertz
+Message-ID: <20090504224539.155040@gmx.net>
+
+S.g. Hr. W?rtz
+
+F?r meine Diplomarbeit verwende ich einige Ihrer publizierten Packages f?r ?R?.
+
+Da einige Unklarheiten beim Programmieren aufgetreten sind, wende ich mich an Sie mit der Bitte diese, wenn m?glich, zu beseitigen.
+
+Mithilfe des Packages ?fPortfolio? habe ich u.a. das ?Tangency Portfolio? ausgerechnet. Meinem Wissensstand nach sollte bei diesem Portfolio der risikofreie Zinssatz beliebig w?hlbar sein, aber sowohl mit meinen Daten als auch mit Ihren mitgelieferten Daten bekomme ich immer das gleiche Ergebnis, unabh?ngig welchen Wert man f?r das rf annimmt.
+
+Meine zweite Frage bezieht sich auf das ?Risk Budget?, das bei s?mtlichen Portfolios mitgeliefert wird. Da mir dieser Begriff bis dato in der Literatur noch nicht untergekommen ist, w?re ich f?r eine kurze Stellungnahme sehr dankbar.
+
+Schlussendlich wollte ich noch in Erfahrung bringen, ob es in einen Ihrer Packages die M?glichkeit gibt den Value-at-Risk mit zumindest drei Einflussgr??en auszurechnen. Ich denke dabei zum Beispiel an Cornish-Fisher. Auch hier w?re ich f?r alle weiteren Informationen sehr dankbar.
+
+Ich w?rde Sie somit sehr bitten mir in diesen Fragestellungen weiterzuhelfen, da ich diese Vorg?nge in meiner Diplomarbeit dokumentieren muss.
+
+Vielen herzlichen Dank im Voraus
+MFG, Alexander Wutscher
+
+--
+
+
+From kh1 at rice.edu  Tue May  5 18:41:49 2009
+From: kh1 at rice.edu (kh1 at rice.edu)
+Date: Tue, 05 May 2009 11:41:49 -0500
+Subject: Question on the fGarch pkh
+Message-ID: <20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>
+
+Hello,
+
+I have a question on the function of "garchFit" in the fGarch package.
+
+What values do you use to for the initial values of the condition mean  
+and the conditional variance?
+
+There is no description on " init.rec = c("mci", "uev") " for the garchFit.
+
+Thank you
+
+Kam hamidieh
+
+
+From chalabi at phys.ethz.ch  Fri May  8 20:59:40 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 8 May 2009 20:59:40 +0200
+Subject: Question on the fGarch pkh
+In-Reply-To: <20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>
+References: <20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>
+Message-ID: <20090508205940.649bc8f7@mimi>
+
+>>>> "KE" == kh1 at rice.edu
+>>>> on Tue, 05 May 2009 11:41:49 -0500
+
+   KE> What values do you use to for the initial values of the
+   KE> condition mean
+   KE> and the conditional variance?
+
+
+Hi Kam
+
+    #   init.rec - names type of initialization of recurrence
+    #       mci = mu-current-iteration, or
+    #       uev = unconditional-expected-variances
+
+
+More info in source file garchFit.R
+
+Regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From ripley at stats.ox.ac.uk  Mon May 25 10:29:19 2009
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 25 May 2009 09:29:19 +0100 (BST)
+Subject: Use of message() in fCalendar and fSeries
+Message-ID: <alpine.OSX.1.00.0905250921230.19202@tystie.local>
+
+With the latest changes in R-patched, we have when testing QRMlib:
+
+* checking data for non-ASCII characters ... NOTE
+
+   #################################################################
+   # The new version of 'fCalendar' has been renamed to 'timeDate' #
+   #################################################################
+
+
+   #################################################################
+   # The new version of 'fSeries' has been renamed to 'timeSeries' #
+   #################################################################
+
+Portable packages use only ASCII characters in their datasets.
+
+These come from the startup messages in those packages -- although you 
+carefully define MSG() you then do not use it for all of the messages, 
+so could you please do so?
+
+If this is supposed to mean that QRMlib should be calling 'timeSeries' 
+rather than 'fSeries', please inform its maintainer.  (I don't know 
+what the message is supposed to help with: if I drive an Opel/Vauxhall 
+Vectra, how does help me to know that the new model is called 
+something else?)
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From chalabi at phys.ethz.ch  Mon May 25 17:20:37 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Mon, 25 May 2009 17:20:37 +0200
+Subject: Use of message() in fCalendar and fSeries
+In-Reply-To: <alpine.OSX.1.00.0905250921230.19202@tystie.local>
+References: <alpine.OSX.1.00.0905250921230.19202@tystie.local>
+Message-ID: <20090525172037.194193a2@mimi>
+
+>>>> "PBR" == Prof Brian Ripley <ripley at stats.ox.ac.uk>
+>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)
+
+   PBR> These come from the startup messages in those packages --
+   PBR> although you
+   PBR> carefully define MSG() you then do not use it for all of
+   PBR> the messages,
+   PBR> so could you please do so?
+
+Thank you for your message. 
+
+I changed zzz.R in fSeries/fCalendar and uploaded new versions to CRAN. 
+
+   PBR>
+   PBR> If this is supposed to mean that QRMlib should be calling
+   PBR> 'timeSeries'
+   PBR> rather than 'fSeries', please inform its maintainer.
+
+We made internal changes in the classes which were not backward
+compatible. So, we decided to continue their development with new
+packages and leave the old classes available. The changes were
+needed to improve usability and performance.
+
+We have already contacted maintainers of the packages which depend on the
+mentioned packages. We will contact them again to encourage them to
+switch to the new versions.
+
+
+   PBR> (I don't know
+   PBR> what the message is supposed to help with: if I drive an
+   PBR> Opel/Vauxhall
+   PBR> Vectra, how does help me to know that the new model is called
+   PBR> something else?)
+
+In terms of cars, the message should help the user to know that he can
+exchange his Opel with a new Porsche with little effort ;)
+
+We'll try to figure out a better phrasing for the startup message.
+
+Thanks again for your suggestions.
+
+Best regards,
+Yohan
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Kurt.Hornik at wu.ac.at  Mon May 25 22:26:12 2009
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Mon, 25 May 2009 22:26:12 +0200
+Subject: Use of message() in fCalendar and fSeries
+In-Reply-To: <20090525172037.194193a2@mimi>
+References: <alpine.OSX.1.00.0905250921230.19202@tystie.local>
+	<20090525172037.194193a2@mimi>
+Message-ID: <18970.65252.143000.258834@fangorn.hornik.net>
+
+>>>>> Yohan Chalabi writes:
+
+>>>>> "PBR" == Prof Brian Ripley <ripley at stats.ox.ac.uk>
+>>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)
+
+PBR> These come from the startup messages in those packages --
+PBR> although you
+PBR> carefully define MSG() you then do not use it for all of
+PBR> the messages,
+PBR> so could you please do so?
+
+> Thank you for your message. 
+
+> I changed zzz.R in fSeries/fCalendar and uploaded new versions to
+> CRAN.
+
+Thanks, on CRAN now.
+
+Best
+-k
+
+
+PBR> 
+PBR> If this is supposed to mean that QRMlib should be calling
+PBR> 'timeSeries'
+PBR> rather than 'fSeries', please inform its maintainer.
+
+> We made internal changes in the classes which were not backward
+> compatible. So, we decided to continue their development with new
+> packages and leave the old classes available. The changes were
+> needed to improve usability and performance.
+
+> We have already contacted maintainers of the packages which depend on the
+> mentioned packages. We will contact them again to encourage them to
+> switch to the new versions.
+
+
+PBR> (I don't know
+PBR> what the message is supposed to help with: if I drive an
+PBR> Opel/Vauxhall
+PBR> Vectra, how does help me to know that the new model is called
+PBR> something else?)
+
+> In terms of cars, the message should help the user to know that he can
+> exchange his Opel with a new Porsche with little effort ;)
+
+> We'll try to figure out a better phrasing for the startup message.
+
+> Thanks again for your suggestions.
+
+> Best regards,
+> Yohan
+
+
+> -- 
+> PhD student
+> Swiss Federal Institute of Technology
+> Zurich
+
+> www.ethz.ch
+
+
+From Uwe.Ligges at r-project.org  Mon May 25 23:26:57 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 25 May 2009 23:26:57 +0200
+Subject: Package fCalendar_270.78.3.tar.gz has been built for Windows
+Message-ID: <01c9dd7f$Blat.v2.2.2$8889ac5c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.78.3.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.0 Patched (2009-04-27 r48414)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon May 25 23:26:58 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 25 May 2009 23:26:58 +0200
+Subject: Package fSeries_270.76.3.tar.gz has been built for Windows
+Message-ID: <01c9dd7f$Blat.v2.2.2$88afc27c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fSeries_270.76.3.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.0 Patched (2009-04-27 r48414)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From vsdimitrov at yahoo.com  Thu May 28 11:47:35 2009
+From: vsdimitrov at yahoo.com (Valentin Dimitrov)
+Date: Thu, 28 May 2009 09:47:35 +0000 (GMT)
+Subject: ArfimaOxFit.ox and ArfimaOxPredict.ox
+Message-ID: <584435.26418.qm@web23707.mail.ird.yahoo.com>
+
+
+Dear Rmetrics team, 
+
+I am trying to run the arfimaOxFit function from fArma in R (2.6.1). unfortunately I don't have the files ArfimaOxFit.ox and ArfimaOxPredict.ox.
+
+Can you send them to me if you have them?
+I thank you in advance for your help
+
+Best Regards,
+
+V.Dimitrov
+
+
+
+

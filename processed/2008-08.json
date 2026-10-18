@@ -1,0 +1,136 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-08",
+  "messages": [
+    {
+      "id": "msg-fc7283f8f378",
+      "message_id": "<255918.82143.qm@web50106.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-08-17T09:21:01Z",
+      "subject": "contribution to fGarch - QML estimation",
+      "subject_clean": "contribution to fGarch - QML estimation",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI added the option to estimate a garch model by the method of Quasi-Maximum Likelihood (QML) to the fGarch package. The QML assumes normal distribution and uses robust standard errors for inference. Hence, my contribution boils down to the computation of robust standard errors.\nI made a couple of small changes to the files 'garchFit.R' and 'methods-summary.R'. I am sending you the files in the attachment because I think it is more convenient than listing the changes here in the email. I am also sending you the file 'garchGradient.R', which is used in the computation of robust standard errors. I am enclosing the corresponding manual files as well. All changes were made to the latest revision of fGarch, i.e. 3486.\nI checked accuracy of the robust standard errors computation with the help of the econometric software TSP. First, I simulated two garch processes and estimated them in R, see the files 'garch QMLE test.R' and 'garch QMLE test output.txt' in the attachment. Then I estimated the same models using the same data in TSP, see the file 'QMLE benchmark.out'. As can be seen in the files, the results are the same. Therefore, I believe the robust standard errors computation is accurate.\nIf you have any questions regarding the QML method, the enclosed files or the changes I made, please do not hesitate to contact me.\n\nBest regards,\n\nMichal\n\n\n\n      \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: garchFit.R\nType: application/octet-stream\nSize: 42042 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0007.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: methods-summary.R\nType: application/octet-stream\nSize: 5902 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0008.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: garchGradient.R\nType: application/octet-stream\nSize: 2795 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0009.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: garchFit.Rd\nType: application/octet-stream\nSize: 12062 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0010.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: methods-summary.Rd\nType: application/octet-stream\nSize: 3091 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0011.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: garch QMLE test.R\nType: application/octet-stream\nSize: 1153 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0012.obj>\n-------------- next part --------------\nAn embedded and charset-unspecified text was scrubbed...\nName: garch QMLE test output.txt\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0001.txt>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: QMLE benchmark.out\nType: application/octet-stream\nSize: 3463 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0013.obj>",
+      "body_snippet": "Hi,\n\nI added the option to estimate a garch model by the method of Quasi-Maximum Likelihood (QML) to the fGarch package. The QML assumes normal distribution and uses robust standard errors for inferen",
+      "thread_id": "thread-fc7283f8f378",
+      "thread_depth": 0,
+      "month": "2008-08"
+    },
+    {
+      "id": "msg-7db543394989",
+      "message_id": "<20080819163833.236cc0bc@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-08-19T14:38:33Z",
+      "subject": "contribution to fGarch - QML estimation",
+      "subject_clean": "contribution to fGarch - QML estimation",
+      "in_reply_to": "<255918.82143.qm@web50106.mail.re2.yahoo.com>",
+      "references": [
+        "<255918.82143.qm@web50106.mail.re2.yahoo.com>"
+      ],
+      "body_plain": "Dear Michal,\n\nThis is great! Thanks for your contribution!\n\nIf I am not wrong, this corresponds to what you told me at the Rmetrics\nWorkshop in Meielisalp.\n\nI will go through your code when I will be back from holidays.\n\nregards,\nYohan\n\n>>>> \"MM\" == michal miklovic <mmiklovic at yahoo.com>\n>>>> on Sun, 17 Aug 2008 02:21:01 -0700 (PDT)\n\n   MM> Hi,\n   MM> \n   MM> I added the option to estimate a garch model by the method of Quasi-Maximum Likelihood (QML) to the fGarch package. The QML assumes normal distribution and uses robust standard errors for inference. Hence, my contribution boils down to the computation of robust standard errors.\n   MM> I made a couple of small changes to the files 'garchFit.R' and 'methods-summary.R'. I am sending you the files in the attachment because I think it is more convenient than listing the changes here in the email. I am also sending you the file 'garchGradient.R', which is used in the computation of robust standard errors. I am enclosing the corresponding manual files as well. All changes were made to the latest revision of fGarch, i.e. 3486.\n   MM> I checked accuracy of the robust standard errors computation with the help of the econometric software TSP. First, I simulated two garch processes and estimated them in R, see the files 'garch QMLE test.R' and 'garch QMLE test output.txt' in the attachment. Then I estimated the same models using the same data in TSP, see the file 'QMLE benchmark.out'. As can be seen in the files, the results are the same. Therefore, I believe the robust standard errors computation is accurate.\n   MM> If you have any questions regarding the QML method, the enclosed files or the changes I made, please do not hesitate to contact me.\n   MM> \n   MM> Best regards,\n   MM> \n   MM> Michal\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Dear Michal,\n\nThis is great! Thanks for your contribution!\n\nIf I am not wrong, this corresponds to what you told me at the Rmetrics\nWorkshop in Meielisalp.\n\nI will go through your code when I will be ",
+      "thread_id": "thread-fc7283f8f378",
+      "thread_depth": 1,
+      "month": "2008-08"
+    },
+    {
+      "id": "msg-6ad05bf5c99a",
+      "message_id": "<8D64D4652EB17048B874B0503309CFCA0215E927@epsilon2003.epsilonsgr.it>",
+      "from_name": "Riccardo Ceretti",
+      "from_email_hash": "449bbc21efbd6169f89508eabac15ab174e6de9abe83e0274a0703ce3e167445",
+      "date": "2008-08-21T10:26:04Z",
+      "subject": "Barrier options documentation",
+      "subject_clean": "Barrier options documentation",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi guys,\n\nI just noticed what looks like a typo in the barrier option\ndocumentation.\nWhen you're talking about rebate you say: \n\"If the option is a knock-in (knock out), a predetermined cash rabate\nmay be paid at expiration if the option has not been knocked-in\n(knocked-out)\"\nDo you mean: \n\"If the option is a knock-in (knock out), a predetermined cash rabate\nmay be paid at expiration if the option has not been knocked-in (has\nbeen knocked-out)\"\nDon't you?\n\nHave a nice day\n\nRC\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080821/a21cbd20/attachment.html>\n-------------- next part --------------\nDISCLAIMER:\\ L'utilizzo non autorizzato del presente mes...{{dropped:17}}",
+      "body_snippet": "Hi guys,\n\nI just noticed what looks like a typo in the barrier option\ndocumentation.\nWhen you're talking about rebate you say: \n\"If the option is a knock-in (knock out), a predetermined cash rabate\nma",
+      "thread_id": "thread-6ad05bf5c99a",
+      "thread_depth": 0,
+      "month": "2008-08"
+    },
+    {
+      "id": "msg-622ffd800beb",
+      "message_id": "<e67ad1a20808220054w391d5e05p174c006440be9772@mail.gmail.com>",
+      "from_name": "Zornitsa Luleva",
+      "from_email_hash": "d122f01285c236c4bb40391186a0d2c68a533e0c10f2bf2cc47a784dc0693ff0",
+      "date": "2008-08-22T07:54:31Z",
+      "subject": "[R] Parabolic cylinder function",
+      "subject_clean": "Parabolic cylinder function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl>",
+      "thread_id": "thread-622ffd800beb",
+      "thread_depth": 0,
+      "month": "2008-08"
+    },
+    {
+      "id": "msg-1ae76eb6fa4e",
+      "message_id": "<20080826104416.15516162.azzalini@stat.unipd.it>",
+      "from_name": "Adelchi Azzalini",
+      "from_email_hash": "d4cac9261c6f982623c3d02c22ec9579f08b5728761e3507346e47a60aec6a2c",
+      "date": "2008-08-26T08:44:16Z",
+      "subject": "dmvsnorm & mvst in fMultivar",
+      "subject_clean": "dmvsnorm & mvst in fMultivar",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Colleagues,\n\nI am writing about some functions incorporated into your package\n\"fMultivar\", specifically dmvsnorm & mvst, which originate from \npackages 'sn'. In principle, it is welcome that your package\nincorporates some routines from my package. Unfortunately, this\noperation has been done improperly, and the effect is seriously\nmisleading for the user.\n\nIn the documentation of the above-mentioned functions, one reads:\n\nmu, Omega, alpha, df: [*mvsnorm][*mvst] - \n           the model parameters: \n           'mu' a vector of mean values, one for each column, \n           'Omega' the covariance matrix, \n           'alpha' the skewness vector, and \n           'df' the number of degrees of freedom which is a measure for\n          the fatness of the tails (excess kurtosis). \n\nand in the code mu is set equal to xi, which is a location parameter,\nbut _not_ the mean, as the documentation wrongly indicates. In fact \nin the skew-t case the mean may even not exist. Similarly, Omega is \ndescribed as \"the covariance matrix\", which suggests that this is\nthe covariance matrix of the distribution, but it is not true.\nOmega is _a_ covariance matrix, which is related to the covariance\nmatrix (when this one exists) but it is different. For the\nparametrization based on mean and variance, see later.\n\nIn addition, in the code of dmvsnorm, for the one-dimensional case\nthere is the assignment\n\n ans = dsn(x, location = xi[1], scale = as.vector(Omega)[1], \n           shape = alpha[1])\n\nwhich is wrong since in this case the scale is the square root of\nOmega. Similar errors exist in pmvsnorm, dmvst, pmvst.\n\nPlease note that the above remarks do not attempt to be exhaustive,\nsince I have not done a full scan of your code and documentation.\nThese are just the problems which I have spotted after a quick\nbrowsing of your package.\n\nI take this opportunity to draw your attention to this note:\n   http://tango.stat.unipd.it/SN/announce2.html\nWhen the new \"version 1.xx\" will be available, it will include\na parametrization based on mean/variance.\n\nWith best wishes,\n\nAdelchi Azzalini  \n\n-- \nAdelchi Azzalini  <azzalini at stat.unipd.it>\nDipart.Scienze Statistiche, Universit? di Padova, Italia\ntel. +39 049 8274147,  http://azzalini.stat.unipd.it/",
+      "body_snippet": "Dear Colleagues,\n\nI am writing about some functions incorporated into your package\n\"fMultivar\", specifically dmvsnorm & mvst, which originate from \npackages 'sn'. In principle, it is welcome that your",
+      "thread_id": "thread-1ae76eb6fa4e",
+      "thread_depth": 0,
+      "month": "2008-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fc7283f8f378",
+      "subject": "contribution to fGarch - QML estimation",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-08-17T09:21:01Z",
+      "last_reply": "2008-08-19T14:38:33Z",
+      "root_message_id": "msg-fc7283f8f378"
+    },
+    {
+      "id": "thread-6ad05bf5c99a",
+      "subject": "Barrier options documentation",
+      "message_count": 1,
+      "participants": [
+        "Riccardo Ceretti"
+      ],
+      "started": "2008-08-21T10:26:04Z",
+      "last_reply": "2008-08-21T10:26:04Z",
+      "root_message_id": "msg-6ad05bf5c99a"
+    },
+    {
+      "id": "thread-622ffd800beb",
+      "subject": "Parabolic cylinder function",
+      "message_count": 1,
+      "participants": [
+        "Zornitsa Luleva"
+      ],
+      "started": "2008-08-22T07:54:31Z",
+      "last_reply": "2008-08-22T07:54:31Z",
+      "root_message_id": "msg-622ffd800beb"
+    },
+    {
+      "id": "thread-1ae76eb6fa4e",
+      "subject": "dmvsnorm & mvst in fMultivar",
+      "message_count": 1,
+      "participants": [
+        "Adelchi Azzalini"
+      ],
+      "started": "2008-08-26T08:44:16Z",
+      "last_reply": "2008-08-26T08:44:16Z",
+      "root_message_id": "msg-1ae76eb6fa4e"
+    }
+  ]
+}

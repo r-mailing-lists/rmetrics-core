@@ -1,0 +1,177 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-05",
+  "messages": [
+    {
+      "id": "msg-2222c5ca703f",
+      "message_id": "<f57fd147fe7fa34fa5f80356d71d7698@lyfy-20101228MK>",
+      "from_name": "ANTEK SOLAR",
+      "from_email_hash": "e8c59b066962266993aafe535437fccb3445e1a17278b66f08f5bfa74f9eb5d3",
+      "date": "2012-05-11T19:44:52Z",
+      "subject": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "subject_clean": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120512/d8bfe800/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/jpeg\nSize: 127510 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120512/d8bfe800/attachment-0001.jpe>",
+      "body_snippet": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML a",
+      "thread_id": "thread-2222c5ca703f",
+      "thread_depth": 0,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-0b1dabe2de3d",
+      "message_id": "<201205160615.q4G6FW6V016523@hypatia.math.ethz.ch>",
+      "from_name": "ETECH GERMANY",
+      "from_email_hash": "232b198e9e3b477aa5396eafcddd917bcb000d43e4e36f100c66a52a08ddf84a",
+      "date": "2012-05-15T23:02:48Z",
+      "subject": "Invitation | Transformation to Sustainable Economy: Global Sustainable Finance Conference, Germany",
+      "subject_clean": "Invitation | Transformation to Sustainable Economy: Global Sustainable Finance Conference, Germany",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120516/555e2380/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120516/555e2380/attachment.pl>",
+      "thread_id": "thread-0b1dabe2de3d",
+      "thread_depth": 0,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-b669c3b6cb76",
+      "message_id": "<4FBB5557.5090406@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-05-22T08:59:03Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "All of these packages have R CMD check reports such as\n\nFound .Internal call in the following function:\n   ?tegarch.est?\nwith calls to .Internal functions\n   ?optimhess?\n\nPackages should not call .Internal(): it is not part of the API, for\nuse only by R itself and subject to change without notice.\n\nThere is no longer such a .Internal function in the development version \nof R.  Please update your package to use the R function optimhess() \ninstead, and add/incorporate\nDepends: R (>= 2.15)\nin your DESCRIPTION file.\n\nBDR\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "All of these packages have R CMD check reports such as\n\nFound .Internal call in the following function:\n   ?tegarch.est?\nwith calls to .Internal functions\n   ?optimhess?\n\nPackages should not call .Int",
+      "thread_id": "thread-b669c3b6cb76",
+      "thread_depth": 0,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-8e791441b3e6",
+      "message_id": "<51A0839C3A745D4AB97760DC41289BE20A28CAED@ELON17P32004A.csfb.cs-group.com>",
+      "from_name": "Sharova, Elena",
+      "from_email_hash": "a6b5c7d588ab3397b014ff533ffa93564e3acdcd1875a575838f76288806fbbd",
+      "date": "2012-05-22T09:39:39Z",
+      "subject": "fUtilities package",
+      "subject_clean": "fUtilities package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120522/84757080/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120522/84757080/attachment.pl>",
+      "thread_id": "thread-8e791441b3e6",
+      "thread_depth": 0,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-ad40c31f689e",
+      "message_id": "<CAJkbuZTNoqptoN_-ecyyn7YONSSyiFq0hcE4XCU162avDJcspA@mail.gmail.com>",
+      "from_name": "Jasjeet S. Sekhon",
+      "from_email_hash": "06a3c1e5fbe783aa18a123aa67248981255d963b163606b755f6316f832f49ee",
+      "date": "2012-05-30T05:10:39Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<4FBB5557.5090406@stats.ox.ac.uk>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120529/cd69abbf/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120529/cd69abbf/attachment.pl>",
+      "thread_id": "thread-b669c3b6cb76",
+      "thread_depth": 1,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-970b4bfa11cd",
+      "message_id": "<CAPRP4-en5LCcJLZC7QYah9x7LFK_giU-QU20DxmsQvW7tEpNeQ@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-05-30T07:05:54Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<CAJkbuZTNoqptoN_-ecyyn7YONSSyiFq0hcE4XCU162avDJcspA@mail.gmail.com>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<CAJkbuZTNoqptoN_-ecyyn7YONSSyiFq0hcE4XCU162avDJcspA@mail.gmail.com>"
+      ],
+      "body_plain": "Dear Yohan and Diethelm,\nI'm assuming that you will fix the corresponding problem   in  fGarch\n``asap'' (or at the latest at the Meielisalp :-))\n\nMartin\n\nOn Wed, May 30, 2012 at 7:10 AM, Jasjeet S. Sekhon <sekhon at berkeley.edu> wrote:\n> OK. Will correct.\n>\n> =================================\n> Department of Political Science\n> Department of Statistics\n> Director, Center for Causal Inference and\n> ? Program Evaluation\n> UC Berkeley\n> http://sekhon.berkeley.edu/\n>\n>\n> On Tue, May 22, 2012 at 1:59 AM, Prof Brian Ripley <ripley at stats.ox.ac.uk>wrote:\n>\n>> All of these packages have R CMD check reports such as\n>>\n>> Found .Internal call in the following function:\n>> ??tegarch.est?\n>> with calls to .Internal functions\n>> ??optimhess?\n>>\n>> Packages should not call .Internal(): it is not part of the API, for\n>> use only by R itself and subject to change without notice.\n>>\n>> There is no longer such a .Internal function in the development version of\n>> R. ?Please update your package to use the R function optimhess() instead,\n>> and add/incorporate\n>> Depends: R (>= 2.15)\n>> in your DESCRIPTION file.\n>>\n>> BDR\n>>\n>> --\n>> Brian D. Ripley, ? ? ? ? ? ? ? ? ?ripley at stats.ox.ac.uk\n>> Professor of Applied Statistics, ?http://www.stats.ox.ac.uk/~**ripley/<http://www.stats.ox.ac.uk/%7Eripley/>\n>> University of Oxford, ? ? ? ? ? ? Tel: ?+44 1865 272861 (self)\n>> 1 South Parks Road, ? ? ? ? ? ? ? ? ? ? +44 1865 272866 (PA)\n>> Oxford OX1 3TG, UK ? ? ? ? ? ? ? ?Fax: ?+44 1865 272595\n>>\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear Yohan and Diethelm,\nI'm assuming that you will fix the corresponding problem   in  fGarch\n``asap'' (or at the latest at the Meielisalp :-))\n\nMartin\n\nOn Wed, May 30, 2012 at 7:10 AM, Jasjeet S. Se",
+      "thread_id": "thread-b669c3b6cb76",
+      "thread_depth": 2,
+      "month": "2012-05"
+    },
+    {
+      "id": "msg-9b9f69bdc96d",
+      "message_id": "<423A3B2D-DADF-4B10-AE5F-DDB4DC7427C9@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-05-30T07:21:09Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<CAPRP4-en5LCcJLZC7QYah9x7LFK_giU-QU20DxmsQvW7tEpNeQ@mail.gmail.com>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<CAJkbuZTNoqptoN_-ecyyn7YONSSyiFq0hcE4XCU162avDJcspA@mail.gmail.com>",
+        "<CAPRP4-en5LCcJLZC7QYah9x7LFK_giU-QU20DxmsQvW7tEpNeQ@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Martin,\n\nThe \"optimhess\" issue is indeed on my todo list.\n\nYohan\n\nOn May 30, 2012, at 9:05 AM, Martin Maechler wrote:\n\n> Dear Yohan and Diethelm,\n> I'm assuming that you will fix the corresponding problem   in  fGarch\n> ``asap'' (or at the latest at the Meielisalp :-))\n> \n> Martin\n> \n> On Wed, May 30, 2012 at 7:10 AM, Jasjeet S. Sekhon <sekhon at berkeley.edu> wrote:\n>> OK. Will correct.\n>> \n>> =================================\n>> Department of Political Science\n>> Department of Statistics\n>> Director, Center for Causal Inference and\n>>   Program Evaluation\n>> UC Berkeley\n>> http://sekhon.berkeley.edu/\n>> \n>> \n>> On Tue, May 22, 2012 at 1:59 AM, Prof Brian Ripley <ripley at stats.ox.ac.uk>wrote:\n>> \n>>> All of these packages have R CMD check reports such as\n>>> \n>>> Found .Internal call in the following function:\n>>>  ?tegarch.est?\n>>> with calls to .Internal functions\n>>>  ?optimhess?\n>>> \n>>> Packages should not call .Internal(): it is not part of the API, for\n>>> use only by R itself and subject to change without notice.\n>>> \n>>> There is no longer such a .Internal function in the development version of\n>>> R.  Please update your package to use the R function optimhess() instead,\n>>> and add/incorporate\n>>> Depends: R (>= 2.15)\n>>> in your DESCRIPTION file.\n>>> \n>>> BDR\n>>> \n>>> --\n>>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~**ripley/<http://www.stats.ox.ac.uk/%7Eripley/>\n>>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>>> \n>> \n>>        [[alternative HTML version deleted]]\n>> \n>> \n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>> \n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Hi Martin,\n\nThe \"optimhess\" issue is indeed on my todo list.\n\nYohan\n\nOn May 30, 2012, at 9:05 AM, Martin Maechler wrote:\n\n> Dear Yohan and Diethelm,\n> I'm assuming that you will fix the corresponding ",
+      "thread_id": "thread-b669c3b6cb76",
+      "thread_depth": 3,
+      "month": "2012-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-2222c5ca703f",
+      "subject": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "message_count": 1,
+      "participants": [
+        "ANTEK SOLAR"
+      ],
+      "started": "2012-05-11T19:44:52Z",
+      "last_reply": "2012-05-11T19:44:52Z",
+      "root_message_id": "msg-2222c5ca703f"
+    },
+    {
+      "id": "thread-0b1dabe2de3d",
+      "subject": "Invitation | Transformation to Sustainable Economy: Global Sustainable Finance Conference, Germany",
+      "message_count": 1,
+      "participants": [
+        "ETECH GERMANY"
+      ],
+      "started": "2012-05-15T23:02:48Z",
+      "last_reply": "2012-05-15T23:02:48Z",
+      "root_message_id": "msg-0b1dabe2de3d"
+    },
+    {
+      "id": "thread-b669c3b6cb76",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud",
+      "message_count": 4,
+      "participants": [
+        "Jasjeet S. Sekhon",
+        "Martin Maechler",
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-05-22T08:59:03Z",
+      "last_reply": "2012-05-30T07:21:09Z",
+      "root_message_id": "msg-b669c3b6cb76"
+    },
+    {
+      "id": "thread-8e791441b3e6",
+      "subject": "fUtilities package",
+      "message_count": 1,
+      "participants": [
+        "Sharova, Elena"
+      ],
+      "started": "2012-05-22T09:39:39Z",
+      "last_reply": "2012-05-22T09:39:39Z",
+      "root_message_id": "msg-8e791441b3e6"
+    }
+  ]
+}

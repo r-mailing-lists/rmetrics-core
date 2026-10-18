@@ -1,0 +1,563 @@
+From Marco.Giuliano at ors.it  Tue Oct  2 18:41:24 2012
+From: Marco.Giuliano at ors.it (Marco Giuliano)
+Date: Tue, 2 Oct 2012 16:41:24 +0000
+Subject: TimeSeries align odd behavior
+Message-ID: <ADB2D0C4438D9C40B1C26BC69CCAB63912E5237A@Exch-Mailbox.ors.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl>
+
+From guoquan.lee at gmail.com  Fri Oct  5 08:55:49 2012
+From: guoquan.lee at gmail.com (Guoquan Lee)
+Date: Fri, 5 Oct 2012 14:55:49 +0800
+Subject: Loss function in mean cvar optimization
+Message-ID: <CAG+z+VndRDzdb2M+8mj17tNpCSmrPDWCRxLxmAVoYrWVK-VbBw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl>
+
+From mail at infowebtech.info  Tue Oct  9 09:48:27 2012
+From: mail at infowebtech.info (AP)
+Date: Tue, 9 Oct 2012 00:48:27 -0700
+Subject: Community & educational development
+Message-ID: <134975204058d59251b56b0197ba1eb5f032d5ebc8_@infowebtech.info>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl>
+
+From edd at debian.org  Mon Oct 22 17:39:04 2012
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Mon, 22 Oct 2012 10:39:04 -0500
+Subject: Typo
+Message-ID: <20613.26776.250447.880465@max.nulle.part>
+
+
+Just noticed this beauty:
+
+  PlainVanillaOptions          package:fOptions          R Documentation
+
+  Valuation of Plain Vanilla Options
+
+  Description:
+
+       A collection and description of functions to valuate plain vanilla
+       options. Included are functions for the Generalized Block-Scholes
+                                                           ^^^^^^^^^^^^^
+
+Dirk
+
+
+-- 
+Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com
+
+
+From edd at debian.org  Mon Oct 22 17:56:30 2012
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Mon, 22 Oct 2012 10:56:30 -0500
+Subject: Typo
+In-Reply-To: <20613.26776.250447.880465@max.nulle.part>
+References: <20613.26776.250447.880465@max.nulle.part>
+Message-ID: <20613.27822.827741.525797@max.nulle.part>
+
+
+On 22 October 2012 at 10:39, Dirk Eddelbuettel wrote:
+| 
+| Just noticed this beauty:
+| 
+|   PlainVanillaOptions          package:fOptions          R Documentation
+| 
+|   Valuation of Plain Vanilla Options
+| 
+|   Description:
+| 
+|        A collection and description of functions to valuate plain vanilla
+|        options. Included are functions for the Generalized Block-Scholes
+|                                                            ^^^^^^^^^^^^^
+
+And again a few lines later.  But grep only find those two:
+
+
+-*- mode: grep; default-directory: "/home/edd/mail/" -*-
+Grep started at Mon Oct 22 10:55:40
+
+grep -nH -e Block ~/src/debian/CRAN/fOptions-2160.81/man/*
+/home/edd/src/debian/CRAN/fOptions-2160.81/man/PlainVanillaOptions.Rd:35:    Generalized Block-Scholes option pricing model, for 
+/home/edd/src/debian/CRAN/fOptions-2160.81/man/PlainVanillaOptions.Rd:43:    \code{GBS*} \tab the generalized Block-Scholes option, \cr
+
+Grep finished (matches found) at Mon Oct 22 10:55:40
+
+
+Dirk
+
+| 
+| Dirk
+| 
+| 
+| -- 
+| Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com
+| 
+| _______________________________________________
+| Rmetrics-core mailing list
+| Rmetrics-core at r-project.org
+| https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+-- 
+Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com
+
+
+From maechler at stat.math.ethz.ch  Mon Oct 29 12:27:56 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 29 Oct 2012 12:27:56 +0100
+Subject: stabledist
+In-Reply-To: <64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>
+References: <64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>
+Message-ID: <CAPRP4-fuNj0XLLruRT6hD1sSQfvVsK=zv1Wu=zY9E7SZNSmT3A@mail.gmail.com>
+
+Dear Oliver
+(I'm writing in English because of the CC).
+
+
+On Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:
+> Lieber Herr Maechler,
+>
+> ich wollte das stabledist package von rmetrics installieren, wie im wiki beschrieben:
+>
+>
+> The script installs all Rmetrics packages from your default CRAN repository ('repos'). This will ensure that all packages are up-to-date.
+>
+> Open an R process and type the following :
+>
+>    source("http://www.rmetrics.org/Rmetrics.R")
+>    install.Rmetrics()
+>
+>
+> allerdings, neben der installation zahlreicher pakete, kam insbesondere die folgende meldung, in deren vorletzter zeile steht, dass stabledist nicht verfuegbar ist --koennen Sie mir weiterhelfen?
+>
+>
+>
+> + source("http://www.rmetrics.org/Rmetrics.R")
+> +    install.Rmetrics()
+> Warning in install.packages(pkgs = pkgs, ...) :
+>   argument 'lib' is missing: using '/usr/local/lib/R/site-library'
+> Warning in install.packages(pkgs = pkgs, ...) :
+>   'lib = "/usr/local/lib/R/site-library"' is not writable
+> --- Please select a CRAN mirror for use in this session ---
+> Loading Tcl/Tk interface ... done
+> Warning: dependency ?stabledist? is not available
+> also installing the dependencies ?numDeriv?, ?DistributionUtils?, ?GeneralizedHyperbolic?
+
+Yes, indeed this is a bug in the  install.Rmetrics() function;
+Unfortunately, even though I'm part of Rmetrics-core,
+I have no write access to  http://www.rmetrics.org/Rmetrics.R
+which defines the  install.Rmetrics() function  and so I cannot fix it.
+
+HOWEVER, there is an easy workaround:
+do
+
+install.packages("stabledist")
+
+before doing the other installations.
+
+Please let me know if you have problems, observe pecularities, ... in package
+'stabledist'.
+
+Best regards,
+Martin M?chler
+
+
+>
+> Viele Gruesse
+>
+> Oliver Kley
+>
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fUnitRoots=E2=80=99?=
+Message-ID: <20121029150610.E1E728104D@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fTrading=E2=80=99?=
+Message-ID: <20121029150610.DD11580DFE@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fRegression=E2=80=99?=
+Message-ID: <20121029150610.D5C9681347@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fNonlinear=E2=80=99?=
+Message-ID: <20121029150610.D35848133A@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fBonds=E2=80=99?=
+Message-ID: <20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:06:10 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:06:10 +0000
+Subject: Legacy .First.lib call in CRAN package
+	=?utf-8?Q?=E2=80=98fExtremes=E2=80=99?=
+Message-ID: <20121029150610.CD3BC8132E@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+However, the package used a .First.lib function which should be
+replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+load compiled code, by a useDynlib declaration in the NAMESPACE file.
+
+Some packages are still using .First.lib() for library() calls: these
+should be replaced by Depends: entries in DESCRIPTION, or removed if
+there are already such entries.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.  Shortly .First.lib functions will no longer be used so
+you will need to submit an update not making use of one.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:47:35 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:47:35 +0000
+Subject: Added NAMESPACE file to CRAN package
+	=?utf-8?Q?=E2=80=98fMultivar=E2=80=99?=
+Message-ID: <20121029154735.4EA3881827@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Mon Oct 29 16:47:35 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 29 Oct 2012 15:47:35 +0000
+Subject: Added NAMESPACE file to CRAN package
+	=?utf-8?Q?=E2=80=98fExoticOptions=E2=80=99?=
+Message-ID: <20121029154735.478C281826@gannet.stats.ox.ac.uk>
+
+All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+need a namepsace, but this package did not yet have one.  R CMD build
+and R CMD INSTALL would add one, and we have now re-built your package
+on CRAN to have such a namespace.
+
+Please review the automatically-generated NAMESPACE file and improve
+it as needed.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From ripley at stats.ox.ac.uk  Tue Oct 30 11:13:24 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Tue, 30 Oct 2012 10:13:24 +0000
+Subject: Legacy .First.lib call in CRAN package fMultivar
+Message-ID: <20121030101324.9D0478132E@gannet.stats.ox.ac.uk>
+
+This package is using .First.lib to load its compiled code, and that
+workaround will be removed shortly (it was only ever intended to help
+transitioning for 2.14.0 a year ago).
+
+This should be replaced by .onLoad now all packages have namespaces,
+or preferably by a useDynLib declaration in the NAMESPACE file.
+
+So we need an update to the package which does not use .First.lib.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fBonds_2100.75.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c1e3de9@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBonds_2100.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fExoticOptions_2110.77.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c33aa7f@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExoticOptions_2110.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fExtremes_2100.77.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c4dd9e1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExtremes_2100.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fNonlinear_2100.76.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c8238a5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fNonlinear_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fRegression_2100.76.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c9a06a1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:23 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:23 +0100
+Subject: Package fTrading_2100.76.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5cb43603@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fTrading_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:23 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:23 +0100
+Subject: Package fUnitRoots_2100.76.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5cc9a299@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Oct 31 04:25:22 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 31 Oct 2012 04:25:22 +0100
+Subject: Package fMultivar_2100.76.tar.gz has been built for Windows
+Message-ID: <01cdb717$Blat.v2.2.2$5c65a7dd@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fMultivar_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.2 (2012-10-26)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2015-03",
+  "messages": [
+    {
+      "id": "msg-0ba110639079",
+      "message_id": "<73ac2241c64eb82a01026580876196dc@Wellstarmove.com>",
+      "from_name": "FedEx International Next Flight",
+      "from_email_hash": "e3513fed0a9a7fbf59a9df25bee695e19d46410344b1dd31dd9336d512d164b6",
+      "date": "2015-03-21T11:09:04Z",
+      "subject": "Shipment delivery problem #000269735",
+      "subject_clean": "Shipment delivery problem #000269735",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Customer,\n\nWe could not deliver your item.\nShipment Label is attached to this email.\n\nWarm regards,\nJimmie Melton,\nFedEx Support Manager.\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: FedEx_ID_000269735.zip\nType: application/zip\nSize: 3899 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20150321/d69e11f5/attachment.zip>",
+      "body_snippet": "Dear Customer,\n\nWe could not deliver your item.\nShipment Label is attached to this email.\n\nWarm regards,\nJimmie Melton,\nFedEx Support Manager.\n\n-------------- next part --------------\nA non-text attac",
+      "thread_id": "thread-0ba110639079",
+      "thread_depth": 0,
+      "month": "2015-03"
+    },
+    {
+      "id": "msg-504ef9589a57",
+      "message_id": "<48c13b7127a8a6a21b34fffc17501fe2@download.qurancomplex.gov.sa>",
+      "from_name": "FedEx International MailService",
+      "from_email_hash": "be4ef91438a187046f3b0df29f1402990166ea309925b56c28ffd03779030c21",
+      "date": "2015-03-27T16:00:59Z",
+      "subject": "Courier was unable to deliver the parcel, ID00000598802",
+      "subject_clean": "Courier was unable to deliver the parcel, ID00000598802",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Customer,\n\nThis is to confirm that one or more of your parcels has been shipped.\nPlease, open email attachment to print shipment label.\n\nThanks and best regards,\nRandy Hagen,\nSupport Manager.\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: Label_00000598802.zip\nType: application/zip\nSize: 4451 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20150327/57c4e626/attachment.zip>",
+      "body_snippet": "Dear Customer,\n\nThis is to confirm that one or more of your parcels has been shipped.\nPlease, open email attachment to print shipment label.\n\nThanks and best regards,\nRandy Hagen,\nSupport Manager.\n\n--",
+      "thread_id": "thread-504ef9589a57",
+      "thread_depth": 0,
+      "month": "2015-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0ba110639079",
+      "subject": "Shipment delivery problem #000269735",
+      "message_count": 1,
+      "participants": [
+        "FedEx International Next Flight"
+      ],
+      "started": "2015-03-21T11:09:04Z",
+      "last_reply": "2015-03-21T11:09:04Z",
+      "root_message_id": "msg-0ba110639079"
+    },
+    {
+      "id": "thread-504ef9589a57",
+      "subject": "Courier was unable to deliver the parcel, ID00000598802",
+      "message_count": 1,
+      "participants": [
+        "FedEx International MailService"
+      ],
+      "started": "2015-03-27T16:00:59Z",
+      "last_reply": "2015-03-27T16:00:59Z",
+      "root_message_id": "msg-504ef9589a57"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+From julija at ac.me  Thu Nov 10 13:36:33 2016
+From: julija at ac.me (julija)
+Date: Thu, 10 Nov 2016 13:36:33 +0100
+Subject: fGarch package
+Message-ID: <12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>
+
+Dear Yohan, Deathelm and Rmetrics Core Team,
+
+I need to model my data by FIAPARCH and HYGARCH model for academic 
+reasons (writing paper for an academic journal), so I wanted to ask you 
+if there is any possibility to include these models in package fGarch. 
+You noted in pdf manual of this package that garchOxFit is no longer 
+part of fGarch package, and if interested to use, to contact you.
+
+I hope you will respond me in a reasonable time.
+
+Thank you in advance.
+
+Best regards,
+Julija Cerovic Smolovic
+University of Montenegro
+Faculty of Economics
+Podgorica
+Jovana Tomasevica 37
+
+
+From maechler at stat.math.ethz.ch  Thu Nov 10 17:44:42 2016
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 10 Nov 2016 17:44:42 +0100
+Subject: fGarch package
+In-Reply-To: <12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>
+References: <12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>
+Message-ID: <22564.41978.574630.528854@stat.math.ethz.ch>
+
+Dear Julija,
+
+Diethelm tragically died much too early, this summer.
+--> https://www.rmetrics.org/obituary
+
+Tobias Setz (in CC), Ph.D. student of Diethelm,
+has been the main maintainer of the "core" R-metrics packages recently.
+I assume he will answer you.
+
+Best regards,
+Martin Maechler,
+ETH Zurich
+
+
+PS:
+
+@Tobias, I have added you to the Rmetrics-core  mailing list.
+
+@Yohan: You are *not* part of the Rmetrics-core list.
+ 	I can add you too.  Do you want to ?
+
+@Andrew Ellis:  Are you getting these e-mail?  Do you want to
+		stay on the list ?
+
+>>>>> julija  <julija at ac.me>
+>>>>>     on Thu, 10 Nov 2016 13:36:33 +0100 writes:
+
+    > Dear Yohan, Deathelm and Rmetrics Core Team,
+    > I need to model my data by FIAPARCH and HYGARCH model for academic 
+    > reasons (writing paper for an academic journal), so I wanted to ask you 
+    > if there is any possibility to include these models in package fGarch. 
+    > You noted in pdf manual of this package that garchOxFit is no longer 
+    > part of fGarch package, and if interested to use, to contact you.
+
+    > I hope you will respond me in a reasonable time.
+
+    > Thank you in advance.
+
+    > Best regards,
+    > Julija Cerovic Smolovic
+    > University of Montenegro
+    > Faculty of Economics
+    > Podgorica
+    > Jovana Tomasevica 37
+
+    > _______________________________________________
+    > Rmetrics-core mailing list
+    > Rmetrics-core at r-project.org
+    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+

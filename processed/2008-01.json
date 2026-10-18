@@ -1,0 +1,140 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-01",
+  "messages": [
+    {
+      "id": "msg-4c1974fa9b09",
+      "message_id": "<478498C7.90102@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-01-09T09:49:59Z",
+      "subject": "RUnit test framework",
+      "subject_clean": "RUnit test framework",
+      "in_reply_to": "<18294.52336.376454.262967@ron.nulle.part>",
+      "references": [
+        "<18294.52336.376454.262967@ron.nulle.part>"
+      ],
+      "body_plain": "Dirk Eddelbuettel wrote:\n> I finally got around to studying the nice Unit test framework now in\n> Rmetrics, and started to adopt it for RQuantLib.  As my source directories\n> often have names like RQuantLib-0.2.8, I needed to another small change in tests/doRUnit.R:\n>\n>     wd <- getwd()\n>     pkg <- sub(\"\\\\.Rcheck$\", '', basename(dirname(wd))) \t# sub out trailing .Rcheck\n>     pkg <- gsub(\"[0-9.-]*$\", '', pkg)\t\t\t\t# sub out -0.1.2 number\n>\n> ie I added that 3rd line to substitute out the '-0.2.8' part --- or else it\n> fails.\n>\n> One quick question:  why do none of the unit tests use the 'checkEquals()'\n> framework?\n>\n> Cheers, Dirk\n>\n>   \nHi Dirk,\n\nThe use of Unit test framework in Rmetrics is rather recent and there \nare still room for a lot of improvement. For the moment we focus on \ntests which check if everything is running and we compare values where \nwe do not need to set a  tolerance threshold. In the future we will \ncheck numerical results with tolerance and use the function \ncheckEquals(). But for the moment we stick to checkIdentical().\n\nregards,\nYohan",
+      "body_snippet": "Dirk Eddelbuettel wrote:\n> I finally got around to studying the nice Unit test framework now in\n> Rmetrics, and started to adopt it for RQuantLib.  As my source directories\n> often have names like RQu",
+      "thread_id": "thread-4c1974fa9b09",
+      "thread_depth": 0,
+      "month": "2008-01"
+    },
+    {
+      "id": "msg-5df5de962a8f",
+      "message_id": "<478498E6.4010205@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-01-09T09:50:30Z",
+      "subject": "possible bug(s) in fGarch",
+      "subject_clean": "possible bug(s) in fGarch",
+      "in_reply_to": "<786445.746.qm@web50103.mail.re2.yahoo.com>",
+      "references": [
+        "<786445.746.qm@web50103.mail.re2.yahoo.com>"
+      ],
+      "body_plain": "michal miklovic wrote:\n> Hi,\n>\n> I estimated a garch model and obtained strange and self-contradictory \n> results when I checked the model using the plot function. I ran the \n> following code:\n>\n> library(fGarch)\n> garchmodel <- garchFit (~ arma(0,3) + garch(1,1), data, \n> init.rec=\"uev\",include.mean=FALSE, algorithm=\"sqp\")\n> summary(garchmodel)\n> plot(garchmodel)\n>\n> Selections 7 ('Residuals') and 9 ('Standardised Residuals') of the \n> plot function produce the same graph. Other selections appear to use \n> 'Residuals' instead of 'Standardised Residuals', which leads to \n> results contradicting the Standardised Residuals Tests from the model \n> output. For example, the Ljung-Box test for squared standardised \n> residuals does not indicate any remaining garch structure but the \n> selection 11 ('ACF of Squared Standardised Residuals') shows \n> significant autocorrelations at the first four lags. Selections 10 \n> ('ACF of Standardised Residuals') and 13 ('QQ-Plot of Standardised \n> Residuals') are similarly affected. On the other hand, I think the \n> Standardised Residuals Tests are computed from 'Standardised \n> Residuals', which is correct. I enclose the model output and the ACF \n> of Squared Standardised Residuals in attachment.\n>\n> I would like to point out that the graph from selection 11 ('ACF of \n> Squared Standardised Residuals') has wrong title, the word 'Squared' \n> is missing in the title.\n>\n> I would also like to ask what is the degree of freedom of the ARCH-LM \n> test. In the model that I estimated the degree of freedom appears to \n> be 12. Is it so? If yes, why did you choose 12? It is a bit too high, \n> in my opinion.\n>\n> Thank you for your answer.\n>\n> Best regards\n>\n> Michal Miklovic\n>\n> ------------------------------------------------------------------------\n> Be a better friend, newshound, and\n> ------------------------------------------------------------------------\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\nHi Michal,\n\nthanks for you feedback. There was a typo in the function which \ncalculates residuals and it always returned non-standardized residuals. \nIt is now fixed on the dev branch of Rmetrics.\n\n\nregards,\nYohan",
+      "body_snippet": "michal miklovic wrote:\n> Hi,\n>\n> I estimated a garch model and obtained strange and self-contradictory \n> results when I checked the model using the plot function. I ran the \n> following code:\n>\n> lib",
+      "thread_id": "thread-5df5de962a8f",
+      "thread_depth": 0,
+      "month": "2008-01"
+    },
+    {
+      "id": "msg-5b5a6c928f99",
+      "message_id": "<728293.26307.qm@web50102.mail.re2.yahoo.com>",
+      "from_name": "michal miklovic",
+      "from_email_hash": "9775c68a926dc587bd59a23419122521f9e5229304c73d671ac119a85923d3db",
+      "date": "2008-01-22T08:11:38Z",
+      "subject": "fGarch: sqp algorithm",
+      "subject_clean": "fGarch: sqp algorithm",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080122/55d212c0/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080122/55d212c0/attachment.pl",
+      "thread_id": "thread-5b5a6c928f99",
+      "thread_depth": 0,
+      "month": "2008-01"
+    },
+    {
+      "id": "msg-40c78a506c11",
+      "message_id": "<20080122114141.5b8631f5@yankee-laptop>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-01-22T10:41:41Z",
+      "subject": "fGarch: sqp algorithm",
+      "subject_clean": "fGarch: sqp algorithm",
+      "in_reply_to": "<728293.26307.qm@web50102.mail.re2.yahoo.com>",
+      "references": [
+        "<728293.26307.qm@web50102.mail.re2.yahoo.com>"
+      ],
+      "body_plain": "Michal,\n\nthe default optimization is now nlminb. The paper you mentioned has\nbeen written a while ago with an older version of fGarch. The\ndocumentation page has been updated since.\n\nThe optimization of ARMA-APARCH mdodels can be problematic due to its\nnon-convex nature and the optimization can be very sensitive to the\ninitial values. Different initial values might lead to different\nresults!\n\nThis is one of the reason we offer different optimization routines in\ngarchFit, so the user can choose which routine fits best his needs. \nYou can also change most of the optimization options through the\ncontrol list argument. \n\nNote we introduced a new optimization routine in the development branch\nof fGarch : \"mnfb\". See the documentation page for more information. So\nfar, it gives very good results. Let me know if it works for you!\n\nAn other common problem in optimization is a badly scaled problem. This\ncan lead to weird results due to machine errors in the optimization.\nThis is the reason we multiply the sp500dge series by 100 before we\noptimize it!\n\n\n# with fGarch rev. 2641\nlibrary(fGarch)\ndata(sp500dge)\nx <- 100*sp500dge[,1]\ngarchFit(~arma(0,1)+aparch(1,1), x, algorithm=\"mnfb\")\n# or\ngarchFit(~arma(0,1)+aparch(1,1), x)\n\n\ngive the same results as in the mentionned paper.\n\nregards,\nYohan",
+      "body_snippet": "Michal,\n\nthe default optimization is now nlminb. The paper you mentioned has\nbeen written a while ago with an older version of fGarch. The\ndocumentation page has been updated since.\n\nThe optimization ",
+      "thread_id": "thread-5b5a6c928f99",
+      "thread_depth": 1,
+      "month": "2008-01"
+    },
+    {
+      "id": "msg-62e54503ed9c",
+      "message_id": "<957350601@web.de>",
+      "from_name": "Jens Oehlschlägel",
+      "from_email_hash": "4e0fb109f16c694b98daf6a3b37fdf9cb40097d493d65be108865d3f509acbdf",
+      "date": "2008-01-30T11:41:36Z",
+      "subject": "bug in gevMoments(fExtremes)",
+      "subject_clean": "bug in gevMoments(fExtremes)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all,\n\njust wanted to let you know that gevMoments() gave me an apparently wrong mean for the gumbel distribution for mu=-EulerConstant. \n\nBest regards\n\n\nDr. Jens Oehlschl?gel\n\n\n\n> library(fExtremes)\n\n> EulerConstant <-  0.57721566490153286060651209008240243104215933519399235988057672348848677267776646709369470632917467495\n> \n> gevMoments(xi=0)\n$param\n  xi   mu beta \n   0    0    1 \n\n$mean\n[1] 0.5772157\n\n$var\n[1] 1.644934\n\n> gevMoments(xi=0, mu=-EulerConstant)\n$param\n        xi         mu       beta \n 0.0000000 -0.5772157  1.0000000 \n\n$mean\n[1] -0.5772157\n\n$var\n[1] 1.644934\n\n\n> meanvar <- function(x)c(mean=mean(x), var=var(x))\n> meanvar(rgev(1000000, xi=0))\n     mean       var \n0.5793065 1.6445646 \n> meanvar(rgev(1000000, xi=0, mu=-EulerConstant))\n        mean          var \n-0.000443175  1.645556911 \n\n\nfExtremes Version 260.72\n\n> version\n               _                           \nplatform       i386-pc-mingw32             \narch           i386                        \nos             mingw32                     \nsystem         i386, mingw32               \nstatus                                     \nmajor          2                           \nminor          6.1                         \nyear           2007                        \nmonth          11                          \nday            26                          \nsvn rev        43537                       \nlanguage       R                           \nversion.string R version 2.6.1 (2007-11-26)",
+      "body_snippet": "Dear all,\n\njust wanted to let you know that gevMoments() gave me an apparently wrong mean for the gumbel distribution for mu=-EulerConstant. \n\nBest regards\n\n\nDr. Jens Oehlschl?gel\n\n\n\n> library(fExtrem",
+      "thread_id": "thread-62e54503ed9c",
+      "thread_depth": 0,
+      "month": "2008-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-4c1974fa9b09",
+      "subject": "RUnit test framework",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-01-09T09:49:59Z",
+      "last_reply": "2008-01-09T09:49:59Z",
+      "root_message_id": "msg-4c1974fa9b09"
+    },
+    {
+      "id": "thread-5df5de962a8f",
+      "subject": "possible bug(s) in fGarch",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-01-09T09:50:30Z",
+      "last_reply": "2008-01-09T09:50:30Z",
+      "root_message_id": "msg-5df5de962a8f"
+    },
+    {
+      "id": "thread-5b5a6c928f99",
+      "subject": "fGarch: sqp algorithm",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "michal miklovic"
+      ],
+      "started": "2008-01-22T08:11:38Z",
+      "last_reply": "2008-01-22T10:41:41Z",
+      "root_message_id": "msg-5b5a6c928f99"
+    },
+    {
+      "id": "thread-62e54503ed9c",
+      "subject": "bug in gevMoments(fExtremes)",
+      "message_count": 1,
+      "participants": [
+        "Jens Oehlschlägel"
+      ],
+      "started": "2008-01-30T11:41:36Z",
+      "last_reply": "2008-01-30T11:41:36Z",
+      "root_message_id": "msg-62e54503ed9c"
+    }
+  ]
+}

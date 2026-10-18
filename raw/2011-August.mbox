@@ -1,0 +1,624 @@
+From johnsson at maths.lth.se  Mon Aug  1 18:07:44 2011
+From: johnsson at maths.lth.se (Kerstin Johnsson)
+Date: Mon, 1 Aug 2011 18:07:44 +0200 (CEST)
+Subject: Error in package 'fAsianOptions', function 'kummerM'
+Message-ID: <8bda80428d67be4dc3351ddfe4906aa2.squirrel@webmail.maths.lth.se>
+
+Hi,
+
+While trying to use the function 'kummerM' to compute the mean of the
+non-central chi-distribution I noticed that 'kummerM' very often yields
+incorrect results, e.g.
+
+library(fAsianOptions)   # Load function: kummerM
+
+x <- seq(-200, 0, length.out = 200)
+y <- kummerM(x, a = 1, b = 2)
+plot(x, log(abs(y)), type = 'l')
+
+Are you working on this?
+
+Best regards,
+Kerstin Johnsson
+
+-- 
+Kerstin Johnsson, PhD student
+Centre for Mathematical Sciences, Lund University
+Office: Matematikcentrum, room 340
+Phone: +46 (0) 46 222 75 34
+E-mail: johnsson at maths.lth.se
+
+
+From Kurt.Hornik at wu.ac.at  Tue Aug  2 18:22:03 2011
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Tue, 2 Aug 2011 18:22:03 +0200
+Subject: CRAN submission fBasics
+Message-ID: <20024.9259.123925.452365@fangorn.hornik.net>
+
+I get
+
+* checking whether package ?fBasics? can be installed ... WARNING
+Found the following significant warnings:
+  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+
+from
+
+** libs
+gcc-4.6 -std=gnu99 -I/home/Hornik/tmp/R/include  -I/usr/local/include    -fpic  -g -O6 -Wall -Wno-unused -pedantic -c gld.c -o gld.o
+gfortran-4.6   -fpic  -g -O2 -c gss.f -o gss.o
+gss.f:911.72:
+
+      call dcore (vmu, qwk, nobs, nobs, n0, tol, ywk, 0, limnla, nlawk, 
+                                                                        1
+Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+gss.f:964.13:
+
+     &nlawk, scrwk, varht, info, twk, work1)                            
+             1
+Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+gss.f:1098.13:
+
+     &nlaht, score, varht, info, twk, work1)                            
+             1
+Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+gss.f:817.72:
+
+     *init, prec, maxite, theta, nlaht, score, varht, c, d, wk(iqraux), 
+                                                                        1
+Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+gss.f:1126.15:
+
+     * wk(iv), wk(ijpvt), wk(icdnew), wk(iwtnew), wk(ifitnew), wk(iwk), 
+               1
+Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+gss.f:2763.46:
+
+     *, wk(imu), wk(imuwk), wk(iv), wk(ivwk), wk(ijpvt), wk(icdnew), wk(
+                                              1
+Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+
+Can you pls fix?
+
+Best
+-k
+
+From jamesasharpe at hotmail.co.uk  Sun Aug 21 21:38:48 2011
+From: jamesasharpe at hotmail.co.uk (James Sharpe)
+Date: Sun, 21 Aug 2011 20:38:48 +0100
+Subject: Question on Extreme Value Calibration - Generalised Pareto
+	Distribution
+Message-ID: <COL120-W725C4661D746122F928589E2C0@phx.gbl>
+
+
+Hello,
+
+I am working as part of the Extreme Events Working Party with
+the UK Institute of Actuaries.  We
+have looked at the QRMlib package and the fExtremes package for use in R to
+calibrate the Generalised Pareto Distribution.  Using the attached data we found
+nearly identical results for calibrating the GPD using the maximum likelihood
+estimate; but quite different results for the probability weighted moments
+estimate.
+
+Could I ask if you are aware of this issue ? or found
+something similar?  The code
+used is below:
+
+setwd("C:/EVT")
+
+a<-read.csv("returns.csv",header=T)
+
+attach(a)
+
+library(QRMlib)
+
+library(fExtremes)
+
+k<-c(UK,AUD,BEL,CAN,DEN,FRA,GER,IRE,ITA,JAP,NET,SAF,SPA,SWE,SWZ,US)
+
+Data<--GER
+
+fGPD<-gpdFit(Data,0.1)
+
+GPD<-fit.GPD(Data,0.1)
+
+fGPDpwm<-gpdFit(Data,0.05,type =
+"pwm")
+
+GPDpwm<-fit.GPD(Data,0.05,method="pwm")
+
+GPD$par.ests
+
+GPDpwm$par.ests
+
+fGPD
+
+fGPDpwm
+
+ 
+
+I tried with various data strings and
+thresholds in the table below highlighting the difference in the PWM
+calibration method:
+
+
+ 
+  
+  Threshold
+  -1% 
+  
+  
+  99.5th
+  
+  
+  Xi
+  
+  
+  B
+  
+ 
+ 
+  
+  UK
+  
+  
+  MLE
+  QRMlib
+  
+  
+  42.2%
+  
+  
+  0.0338
+  
+  
+  0.0979
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  QRMlib
+  
+  
+  47.9%
+  
+  
+  0.1643
+  
+  
+  0.0847
+  
+ 
+ 
+  
+   
+  
+  
+  MLE
+  fExtreme
+  
+  
+  42.3%
+  
+  
+  0.0339
+  
+  
+  0.0979
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  fExtreme
+  
+  
+  44.0%
+  
+  
+  0.0760
+  
+  
+  0.0936
+  
+ 
+ 
+  
+  France
+  
+  
+  MLE
+  QRMlib
+  
+  
+  37.2%
+  
+  
+  -0.2432
+  
+  
+  0.1401
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  QRMlib
+  
+  
+  43.1%
+  
+  
+  -0.0809
+  
+  
+  0.1213
+  
+ 
+ 
+  
+   
+  
+  
+  MLE
+  fExtreme
+  
+  
+  37.2%
+  
+  
+  -0.2430
+  
+  
+  0.1401
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  fExtreme
+  
+  
+  39.2%
+  
+  
+  -0.1801
+  
+  
+  0.1325
+  
+ 
+ 
+  
+  Germany
+  
+  
+  MLE
+  QRMlib
+  
+  
+  69.5%
+  
+  
+  -0.0134
+  
+  
+  0.1729
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  QRMlib
+  
+  
+  72.3%
+  
+  
+  0.0248
+  
+  
+  0.1664
+  
+ 
+ 
+  
+   
+  
+  
+  MLE
+  fExtreme
+  
+  
+  69.5%
+  
+  
+  -0.0134
+  
+  
+  0.1729
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  fExtreme
+  
+  
+  66.0%
+  
+  
+  -0.0644
+  
+  
+  0.1816
+  
+ 
+ 
+  
+  Italy
+  
+  
+  MLE
+  QRMlib
+  
+  
+  45.9%
+  
+  
+  -0.3418
+  
+  
+  0.2030
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  QRMlib
+  
+  
+  48.2%
+  
+  
+  -0.2821
+  
+  
+  0.1934
+  
+ 
+ 
+  
+   
+  
+  
+  MLE
+  fExtreme
+  
+  
+  45.9%
+  
+  
+  -0.3418
+  
+  
+  0.2030
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  fExtreme
+  
+  
+  43.9%
+  
+  
+  -0.3946
+  
+  
+  0.2104
+  
+ 
+ 
+  
+  Spain
+  
+  
+  MLE
+  QRMlib
+  
+  
+  35.4%
+  
+  
+  -0.2968
+  
+  
+  0.1463
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  QRMlib
+  
+  
+  41.5%
+  
+  
+  -0.1071
+  
+  
+  0.1236
+  
+ 
+ 
+  
+   
+  
+  
+  MLE
+  fExtreme
+  
+  
+  35.4%
+  
+  
+  -0.2963
+  
+  
+  0.1462
+  
+ 
+ 
+  
+   
+  
+  
+  PWM
+  fExtreme
+  
+  
+  37.7%
+  
+  
+  -0.2124
+  
+  
+  0.1353
+  
+ 
+
+
+ 
+
+ 
+
+I would be interested to know if you have any ideas where
+the approach may differ eg different sub algorithms used, different calculation
+order etc... Any pointers would be very much appreciated.
+
+
+Many thanks
+
+
+
+Best regards
+
+James Sharpe 		 	   		  
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110821/8ef2cbfc/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: returns.csv
+Type: application/octet-stream
+Size: 20189 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110821/8ef2cbfc/attachment-0001.obj>
+
+From b.whitcher at imperial.ac.uk  Sat Aug 27 15:38:30 2011
+From: b.whitcher at imperial.ac.uk (Brandon Whitcher)
+Date: Sat, 27 Aug 2011 14:38:30 +0100
+Subject: Invitation to Review for the Journal of Statistical Software
+Message-ID: <CAJZBSfEsy6z4mDG=O=m8rD_XJzoWMkAXTLF0diSke4Ks_QFS-w@mail.gmail.com>
+
+Dear Rmetrics Core Team,
+
+Manuscript JSS784 "Estimation, Diagnostic and Forecasting Tools for ARFIMA
+Models: The *afmtools* Package" has been submitted to the *Journal of
+Statistical Software*.  Would someone from your team be willing to review
+the manuscript and accompanying software?  I am aware that the package *
+fArma* was written by members of your team.  The *afmtools* software is
+written as an R package already available from
+CRAN<http://cran.r-project.org/>or one of its mirror sites.
+
+The title and abstract are attached to this email, along with the names of
+the authors and keywords.  I have also attached a draft version of the
+reviewer guidelines.  Please let me know within seven days if you will be
+able to review the manuscript and software by email.
+
+If you are unable to review this manuscript, would you please recommend one
+or two other potential referees with expertise in this area?
+
+If you do choose to review this manuscript, I will provide you with all
+relevant files (essentially the manuscript and R code).  I would ask you to
+complete your review within eight weeks.
+
+
+Sincerely,
+
+Brandon Whitcher PhD CStat
+Associate Editor, Journal of Statistical Software
+b.whitcher at imperial.ac.uk
+
+
+Estimation, Diagnostic and Forecasting Tools for ARFIMA Models: The afmtools
+Package
+
+Javier Contreras and Wilfredo Palma
+
+Abstract
+
+In practice, several time series exhibit long-range dependence or
+persistence in their
+observations. This circumstance has motivated the development of a number of
+estimation
+and prediction methodologies to account for the slowly decaying
+autocorrelations. One
+of the most well known classes of long-memory models is the autoregressive
+fractionally
+integrated moving average (ARFIMA) process. In the package afmtools for R,
+we have
+implemented some of these statistical tools for analyzing ARFIMA models. In
+particular,
+this R package contains functions for parameter estimation, exact
+autocovariance calcu-
+lation, multi-step ahead forecasting, predictive ability testing, among
+others. Finally, the
+implemented methods are illustrated with applications to real-life time
+series.
+
+Keywords: ARFIMA models, long-memory time series, estimation, prediction, R
+package.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110827/4de6be7c/attachment.html>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110827/4de6be7c/attachment-0001.html>
+

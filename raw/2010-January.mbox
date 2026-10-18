@@ -1,0 +1,487 @@
+From Uwe.Ligges at R-Project.org  Sun Jan  3 03:05:52 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 03 Jan 2010 03:05:52 +0100
+Subject: Package fRegression_2100.76.tar.gz has been built for Windows - with
+	a WARNING
+Message-ID: <01ca8c19$Blat.v2.2.2$4725a5f6@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_2100.76.tar.gz did pass 'R CMD check' only with WARNING(s).
+It has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.10/).
+
+Please consider to submit a fixed version without any WARNING until January 15.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+R version 2.10.1 (2009-12-14)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.10/fRegression.Rcheck'
+* using R version 2.10.1 (2009-12-14)
+* using session charset: ISO8859-1
+* checking for file 'fRegression/DESCRIPTION' ... OK
+* this is package 'fRegression' version '2100.76'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fRegression' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... WARNING
+Undocumented S4 methods:
+  generic 'summary' and siglist 'sparseMatrix'
+All user-level objects in a package (including S4 classes and methods)
+should have documentation entries.
+See the chapter 'Writing R documentation files' in manual 'Writing R
+Extensions'.
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* checking examples ... OK
+* checking tests ... OK
+* checking PDF version of manual ... OK
+
+From Uwe.Ligges at R-Project.org  Sun Jan  3 03:07:58 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 03 Jan 2010 03:07:58 +0100
+Subject: Package timeSeries_2110.86.tar.gz did not pass R CMD check
+Message-ID: <01ca8c19$Blat.v2.2.2$91fd60c7@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2110.86.tar.gz did *not* pass 'R CMD check' on
+Windows and will be omitted from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.10/).
+Please check the attached log-file and consider to resubmit a version
+with increased version number that passes R CMD check on Windows.
+
+Please consider to submit a fixed version without any ERROR or WARNING until January 15.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+R version 2.10.1 (2009-12-14)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.10/timeSeries.Rcheck'
+* using R version 2.10.1 (2009-12-14)
+* using session charset: ISO8859-1
+* checking for file 'timeSeries/DESCRIPTION' ... OK
+* this is package 'timeSeries' version '2110.86'
+* checking package name space information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'timeSeries' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the name space can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking data for non-ASCII characters ... OK
+* checking examples ... OK
+* checking tests ... ERROR
+Running the tests in 'tests/doRUnit.R' failed.
+Last 13 lines of output:
+   
+  1 Test Suite : 
+  timeSeries unit testing - 68 test functions, 1 error, 1 failure
+  FAILURE in test.aggregate.timeSeries: Error in checkEquals(sum(x[2:4]), a[2]) : 
+    'is.NA' value mismatch: 1 in current 0 in target
+  ERROR in test.subset: Error in as.matrix(ts["2009-01-01", ]) : 
+    error in evaluating the argument 'x' in selecting a method for function 'as.matrix'
+  Error in eval.with.vis(expr, envir, enclos) : 
+  
+  unit testing failed (#test failures: 1, R errors: 1)
+  
+  Calls: source -> eval.with.vis -> eval.with.vis
+  Execution halted
+
+From ligges at statistik.tu-dortmund.de  Tue Jan  5 14:26:44 2010
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 05 Jan 2010 14:26:44 +0100
+Subject: timeSeries package
+Message-ID: <4B433E14.9020605@statistik.tu-dortmund.de>
+
+Dear Rmetrics Core Team,
+
+please note that timeSeries fails on (almost?) all platforms these days:
+http://cran.r-project.org/web/checks/check_results_timeSeries.html
+
+Best wishes,
+Uwe Ligges
+
+
+From nicolas.chapados at gmail.com  Tue Jan  5 23:40:33 2010
+From: nicolas.chapados at gmail.com (Nicolas Chapados)
+Date: Tue, 5 Jan 2010 17:40:33 -0500
+Subject: Bug in fImport
+Message-ID: <6fdf6d431001051440w57b0e08di2efc221f25f3c070@mail.gmail.com>
+
+Dear RMetrics maintainers,
+
+Congratulations for this very useful R package.  There appears to be a
+bug in the fredImport function in the fImport package.  The line
+
+    if (save) {
+        write.table(as.data.frame(X))
+    }
+
+does not include a filename, and prints out the file to the console
+instead of saving it.  The corresponding line in yahooImport is:
+
+    if (save) {
+        write.table(as.data.frame(X))
+    }
+
+Here is a description of the package version that I am using:
+
+		Information on package 'fImport'
+
+Description:
+
+Package:            fImport
+Version:            2100.77
+Revision:           4057
+Date:               2009-09-28
+Title:              Rmetrics - Economic and Financial Data Import
+Author:             Diethelm Wuertz and many others, see the SOURCE file
+Depends:            R (>= 2.6.0), methods, timeDate, timeSeries
+Suggests:           RUnit
+Maintainer:         Rmetrics Core Team <Rmetrics-core at r-project.org>
+Description:        Environment for teaching "Financial Engineering
+and Computational Finance"
+NOTE:               SEVERAL PARTS ARE STILL PRELIMINARY AND MAY BE
+CHANGED IN THE FUTURE. THIS TYPICALLY INCLUDES FUNCTION AND ARGUMENT
+NAMES, AS WELL AS DEFAULTS FOR ARGUMENTS AND RETURN
+                    VALUES.
+LazyLoad:           yes
+LazyData:           yes
+License:            GPL (>= 2)
+URL:                http://www.rmetrics.org
+Packaged:           2009-09-28 15:21:23 UTC; yankee
+Repository:         CRAN
+Date/Publication:   2009-09-29 18:44:14
+Built:              R 2.9.2; ; 2009-10-21 19:19:38 UTC; unix
+
+
+Best regards,
++ Nicolas Chapados
+
+
+From chalabi at phys.ethz.ch  Wed Jan  6 09:51:30 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 6 Jan 2010 09:51:30 +0100
+Subject: Bug in fImport
+In-Reply-To: <6fdf6d431001051440w57b0e08di2efc221f25f3c070@mail.gmail.com>
+References: <6fdf6d431001051440w57b0e08di2efc221f25f3c070@mail.gmail.com>
+Message-ID: <20100106095130.1a88f51e@mimi>
+
+>>>> "NC" == Nicolas Chapados <nicolas.chapados at gmail.com>
+>>>> on Tue, 5 Jan 2010 17:40:33 -0500
+
+   NC> Dear RMetrics maintainers,
+   NC>
+   NC> Congratulations for this very useful R package.  There appears
+   NC> to be a
+   NC> bug in the fredImport function in the fImport package.  The line
+   NC>
+   NC> if (save) {
+   NC> write.table(as.data.frame(X))
+   NC> }
+   NC>
+   NC> does not include a filename, and prints out the file to
+   NC> the console
+   NC> instead of saving it.  The corresponding line in yahooImport is:
+   NC>
+   NC> if (save) {
+   NC> write.table(as.data.frame(X))
+   NC> }
+   NC>
+   NC> Here is a description of the package version that I am using:
+
+
+
+Hi Nicolas,
+
+Thanks for the report. I will fix this issue.
+
+Regards,
+Yohan
+
+-- 
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From chalabi at phys.ethz.ch  Wed Jan  6 16:33:13 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 6 Jan 2010 16:33:13 +0100
+Subject: false warning -  tools:::.get_S4_methods_list
+In-Reply-To: <01ca8c19$Blat.v2.2.2$4725a5f6@mail.statistik.tu-dortmund.de>
+References: <01ca8c19$Blat.v2.2.2$4725a5f6@mail.statistik.tu-dortmund.de>
+Message-ID: <20100106163313.1eb616b1@mimi>
+
+>>>> "ULPO" == Uwe.Ligges at r-project.org
+>>>> on Sun, 03 Jan 2010 03:05:52 +0100
+
+   ULPO> Dear package maintainer,
+   ULPO>
+   ULPO> this notification has been generated automatically.
+   ULPO> Your package fRegression_2100.76.tar.gz did pass 'R CMD check'
+   ULPO> only with WARNING(s).
+   ULPO> It has been built for Windows and
+   ULPO> will be published within 24 hours in the corresponding
+   ULPO> CRAN directory
+   ULPO> (CRAN/bin/windows/contrib/2.10/).
+   ULPO>
+   ULPO> Please consider to submit a fixed version without any WARNING
+   ULPO> until January 15.
+   ULPO> For details (and for results on other platforms) see
+   ULPO> http://cran.r-project.org/web/checks/check_summary.html
+   ULPO> R version 2.10.1 (2009-12-14)
+   ULPO>
+   ULPO> All the best,
+   ULPO> Uwe Ligges
+   ULPO> (Maintainer of binary packages for Windows)
+   ULPO>
+   ULPO> * using log directory
+   ULPO> 'd:/Rcompile/CRANpkg/local/2.10/fRegression.Rcheck'
+   ULPO> * using R version 2.10.1 (2009-12-14)
+   ULPO> * using session charset: ISO8859-1
+   ULPO> * checking for file 'fRegression/DESCRIPTION' ... OK
+   ULPO> * this is package 'fRegression' version '2100.76'
+   ULPO> * checking package dependencies ... OK
+   ULPO> * checking if this is a source package ... OK
+   ULPO> * checking whether package 'fRegression' can be installed
+   ULPO> ... OK
+   ULPO> * checking package directory ... OK
+   ULPO> * checking for portable file names ... OK
+   ULPO> * checking DESCRIPTION meta-information ... OK
+   ULPO> * checking top-level files ... OK
+   ULPO> * checking index information ... OK
+   ULPO> * checking package subdirectories ... OK
+   ULPO> * checking R files for non-ASCII characters ... OK
+   ULPO> * checking R files for syntax errors ... OK
+   ULPO> * checking whether the package can be loaded ... OK
+   ULPO> * checking whether the package can be loaded with stated
+   ULPO> dependencies ... OK
+   ULPO> * checking for unstated dependencies in R code ... OK
+   ULPO> * checking S3 generic/method consistency ... OK
+   ULPO> * checking replacement functions ... OK
+   ULPO> * checking foreign function calls ... OK
+   ULPO> * checking R code for possible problems ... OK
+   ULPO> * checking Rd files ... OK
+   ULPO> * checking Rd metadata ... OK
+   ULPO> * checking Rd cross-references ... OK
+   ULPO> * checking for missing documentation entries ... WARNING
+   ULPO> Undocumented S4 methods:
+   ULPO> generic 'summary' and siglist 'sparseMatrix'
+   ULPO> All user-level objects in a package (including S4 classes
+   ULPO> and methods)
+   ULPO> should have documentation entries.
+   ULPO> See the chapter 'Writing R documentation files' in manual
+   ULPO> 'Writing R
+   ULPO> Extensions'.
+   ULPO> * checking for code/documentation mismatches ... OK
+   ULPO> * checking Rd \usage sections ... OK
+   ULPO> * checking line endings in C/C++/Fortran sources/headers
+   ULPO> ... OK
+   ULPO> * checking line endings in Makefiles ... OK
+   ULPO> * checking for portable compilation flags in Makevars ... OK
+   ULPO> * checking for portable use of ... OK
+   ULPO> * checking examples ... OK
+   ULPO> * checking tests ... OK
+   ULPO> * checking PDF version of manual ... OK
+
+Hi Uwe, 
+
+It looks like undoc() produces a false warning with packages
+that have no namespace and are using S4 methods.
+
+I could track the problem down to tools:::.get_S4_methods_list which
+returns the summary,sparseMatrix-method as a method defined in
+"fRegression" which is obviously not the case.
+
+
+Regards,
+Yohan
+
+
+From chalabi at phys.ethz.ch  Wed Jan  6 16:35:36 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 6 Jan 2010 16:35:36 +0100
+Subject: timeSeries package
+In-Reply-To: <4B433E14.9020605@statistik.tu-dortmund.de>
+References: <4B433E14.9020605@statistik.tu-dortmund.de>
+Message-ID: <20100106163536.4bd075f1@mimi>
+
+>>>> "UL" == Uwe Ligges <ligges at statistik.tu-dortmund.de>
+>>>> on Tue, 05 Jan 2010 14:26:44 +0100
+
+   UL> Dear Rmetrics Core Team,
+   UL>
+   UL> please note that timeSeries fails on (almost?) all platforms
+   UL> these days:
+   UL>
+http://cran.r-project.org/web/checks/check_results_timeSeries.html UL>
+   UL> Best wishes,
+   UL> Uwe Ligges
+
+
+Hi Uwe,
+
+Thanks for the message.
+
+Please find a new version of timeSeries on CRAN ftp server.
+
+Regards,
+Yohan
+
+-- 
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Kurt.Hornik at wu.ac.at  Wed Jan  6 16:46:43 2010
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Wed, 6 Jan 2010 16:46:43 +0100
+Subject: timeSeries package
+In-Reply-To: <20100106163536.4bd075f1@mimi>
+References: <4B433E14.9020605@statistik.tu-dortmund.de>
+	<20100106163536.4bd075f1@mimi>
+Message-ID: <19268.45155.412979.613371@fangorn.hornik.net>
+
+>>>>> Yohan Chalabi writes:
+
+>>>>> "UL" == Uwe Ligges <ligges at statistik.tu-dortmund.de>
+>>>>> on Tue, 05 Jan 2010 14:26:44 +0100
+
+UL> Dear Rmetrics Core Team,
+UL> 
+UL> please note that timeSeries fails on (almost?) all platforms
+UL> these days:
+UL> 
+> http://cran.r-project.org/web/checks/check_results_timeSeries.html UL>
+UL> Best wishes,
+UL> Uwe Ligges
+
+
+> Hi Uwe,
+
+> Thanks for the message.
+
+> Please find a new version of timeSeries on CRAN ftp server.
+
+Thanks, on CRAN now.
+
+Best
+-k
+
+> Regards,
+> Yohan
+
+> -- 
+> PhD candidate
+> Swiss Federal Institute of Technology
+> Zurich
+
+> www.ethz.ch
+
+
+From Uwe.Ligges at R-Project.org  Wed Jan  6 20:21:36 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 06 Jan 2010 20:21:36 +0100
+Subject: Package timeSeries_2110.87.tar.gz has been built for Windows
+Message-ID: <01ca8f05$Blat.v2.2.2$769d1da5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2110.87.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.10/).
+R version 2.10.1 (2009-12-14)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Jan  6 20:21:35 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 06 Jan 2010 20:21:35 +0100
+Subject: Package fImport_2110.78.tar.gz has been built for Windows
+Message-ID: <01ca8f05$Blat.v2.2.2$765f39cb@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_2110.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.10/).
+R version 2.10.1 (2009-12-14)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From michael.vorraber at uni-graz.at  Wed Jan 27 11:22:22 2010
+From: michael.vorraber at uni-graz.at (michael.vorraber at uni-graz.at)
+Date: Wed, 27 Jan 2010 11:22:22 +0100
+Subject: Package fGarch: "garchOxFit"
+Message-ID: <B98DAD5EF67B8446B5D710A4E19F016C078A4B87@themis.pers.ad.uni-graz.at>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100127/18b94c95/attachment.pl>
+

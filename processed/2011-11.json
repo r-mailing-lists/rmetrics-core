@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-11",
+  "messages": [
+    {
+      "id": "msg-181f03fe969e",
+      "message_id": "<20147.39273.789105.568092@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2011-11-04T07:51:05Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainers,\n\nThis concerns CRAN packages\n\n   fUtilities growthrate caschrono\n\nmaintained by one of you.\n\nThe first fails R CMD check for all current versions of R, and hence\nneeds to be archived.  This will affect packages depending on it\n(growthrate depends on fUtilities, caschrono suggests it).\n\nCan you pls coordinate the necessary actions?\n\nIdeally we would have an update for fUtilities as soon as possible;\notherwise, the reverse dependencies need to be modified to work without\nfUtilities.\n\nBest\n-k",
+      "body_snippet": "Dear maintainers,\n\nThis concerns CRAN packages\n\n   fUtilities growthrate caschrono\n\nmaintained by one of you.\n\nThe first fails R CMD check for all current versions of R, and hence\nneeds to be archived",
+      "thread_id": "thread-181f03fe969e",
+      "thread_depth": 0,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-5e67b8d192a8",
+      "message_id": "<4ED4ED8B.60804@R-Project.org>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-11-29T14:34:51Z",
+      "subject": "fExtremes",
+      "subject_clean": "fExtremes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Please check\n\nhttp://www.r-project.org/nosvn/R.check/r-release-linux-ix86/fExtremes-00check.html.\n\nfExtremes seems to give ERRORs on all platforms today (not all synced to \nCRAN master yet). Perhaps a date related problem again.\n\nUwe Ligges",
+      "body_snippet": "Please check\n\nhttp://www.r-project.org/nosvn/R.check/r-release-linux-ix86/fExtremes-00check.html.\n\nfExtremes seems to give ERRORs on all platforms today (not all synced to \nCRAN master yet). Perhaps a",
+      "thread_id": "thread-5e67b8d192a8",
+      "thread_depth": 0,
+      "month": "2011-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-181f03fe969e",
+      "subject": "CRAN packages maintained by you",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2011-11-04T07:51:05Z",
+      "last_reply": "2011-11-04T07:51:05Z",
+      "root_message_id": "msg-181f03fe969e"
+    },
+    {
+      "id": "thread-5e67b8d192a8",
+      "subject": "fExtremes",
+      "message_count": 1,
+      "participants": [
+        "Uwe Ligges"
+      ],
+      "started": "2011-11-29T14:34:51Z",
+      "last_reply": "2011-11-29T14:34:51Z",
+      "root_message_id": "msg-5e67b8d192a8"
+    }
+  ]
+}

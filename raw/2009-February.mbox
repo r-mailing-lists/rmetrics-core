@@ -1,0 +1,419 @@
+From Uwe.Ligges at r-project.org  Wed Feb  4 12:21:49 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 04 Feb 2009 12:21:49 +0100
+Subject: Package timeSeries_290.80.tar.gz has been built for Windows
+Message-ID: <01c986ba$Blat.v2.2.2$c57ee577@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_290.80.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Wed Feb  4 12:21:48 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 04 Feb 2009 12:21:48 +0100
+Subject: Package timeDate_290.83.tar.gz has been built for Windows
+Message-ID: <01c986ba$Blat.v2.2.2$c551ab31@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_290.83.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Kurt.Hornik at wu-wien.ac.at  Sun Feb  8 21:19:15 2009
+From: Kurt.Hornik at wu-wien.ac.at (Kurt Hornik)
+Date: Sun, 8 Feb 2009 21:19:15 +0100
+Subject: CRAN package timeDate
+Message-ID: <18831.15939.739163.2800@fangorn.hornik.net>
+
+Guys,
+
+This actually fails R CMD check in most cases, see
+
+  http://cran.r-project.org/web/checks/check_results_timeDate.html
+
+from
+
+timeDate/R/subset.R:            length(grep("[a-Z]", subset)), sep = "")
+
+which is invalid in many locales (not with a complete UTF-8 one, though,
+but e.g. with LC_COLLATE=C).
+
+If you want the locale's idea of letters, you can use [[:alpha:]]
+instead.  If just the ASCII letters, you need to give them explicitly.
+
+Can you pls have an update fixing this?
+
+Best
+-k
+
+
+From chalabi at phys.ethz.ch  Sun Feb  8 22:21:29 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Sun, 8 Feb 2009 22:21:29 +0100
+Subject: CRAN package timeDate
+In-Reply-To: <18831.15939.739163.2800@fangorn.hornik.net>
+References: <18831.15939.739163.2800@fangorn.hornik.net>
+Message-ID: <20090208222129.4071fa09@mimi>
+
+>>>> "KH" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>
+>>>> on Sun, 8 Feb 2009 21:19:15 +0100
+
+   KH> Guys,
+   KH>
+   KH> This actually fails R CMD check in most cases, see
+   KH>
+   KH> http://cran.r-project.org/web/checks/check_results_timeDate.html
+   KH>
+   KH> from
+   KH>
+   KH> timeDate/R/subset.R: length(grep([a-Z], subset)), sep = )
+   KH>
+   KH> which is invalid in many locales (not with a complete UTF-8
+   KH> one, though,
+   KH> but e.g. with LC_COLLATE=C).
+   KH>
+   KH> If you want the locale's idea of letters, you can use
+   KH> [[:alpha:]]
+   KH> instead.  If just the ASCII letters, you need to give them
+   KH> explicitly.
+   KH>
+   KH> Can you pls have an update fixing this?
+   KH>
+   KH> Best
+   KH> -k
+  
+Hi Kurt,
+
+Thanks for your message!
+
+I have updated the package with your suggestion and you can find the new
+version on CRAN ftp server. 
+
+Thanks again for your feedback!
+
+Regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Kurt.Hornik at wu-wien.ac.at  Sun Feb  8 22:30:55 2009
+From: Kurt.Hornik at wu-wien.ac.at (Kurt Hornik)
+Date: Sun, 8 Feb 2009 22:30:55 +0100
+Subject: CRAN package timeDate
+In-Reply-To: <20090208222129.4071fa09@mimi>
+References: <18831.15939.739163.2800@fangorn.hornik.net>
+	<20090208222129.4071fa09@mimi>
+Message-ID: <18831.20239.728930.221580@fangorn.hornik.net>
+
+>>>>> Yohan Chalabi writes:
+
+>>>>> "KH" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>
+>>>>> on Sun, 8 Feb 2009 21:19:15 +0100
+
+KH> Guys,
+KH> 
+KH> This actually fails R CMD check in most cases, see
+KH> 
+KH> http://cran.r-project.org/web/checks/check_results_timeDate.html
+KH> 
+KH> from
+KH> 
+KH> timeDate/R/subset.R: length(grep([a-Z], subset)), sep = )
+KH> 
+KH> which is invalid in many locales (not with a complete UTF-8
+KH> one, though,
+KH> but e.g. with LC_COLLATE=C).
+KH> 
+KH> If you want the locale's idea of letters, you can use
+KH> [[:alpha:]]
+KH> instead.  If just the ASCII letters, you need to give them
+KH> explicitly.
+KH> 
+KH> Can you pls have an update fixing this?
+KH> 
+KH> Best
+KH> -k
+  
+> Hi Kurt,
+
+> Thanks for your message!
+
+> I have updated the package with your suggestion and you can find the new
+> version on CRAN ftp server. 
+
+> Thanks again for your feedback!
+
+Thanks for the quick update, on its way to CRAN ...
+
+Best
+-k
+
+
+From Uwe.Ligges at r-project.org  Mon Feb  9 00:21:25 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 09 Feb 2009 00:21:25 +0100
+Subject: Package timeDate_290.84.tar.gz has been built for Windows
+Message-ID: <01c98a43$Blat.v2.2.2$f606b285@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_290.84.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From chalabi at phys.ethz.ch  Tue Feb 10 16:23:25 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 10 Feb 2009 16:23:25 +0100
+Subject: fUtilities::isS4
+In-Reply-To: <18819.13195.192703.787718@ron.nulle.part>
+References: <alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>
+	<20090130091714.71f715cf@mimi>
+	<18819.13195.192703.787718@ron.nulle.part>
+Message-ID: <20090210162325.4b86d154@mimi>
+
+>>>> "DE" == Dirk Eddelbuettel <edd at debian.org>
+>>>> on Fri, 30 Jan 2009 11:06:19 -0600
+
+   DE>
+   DE> Yohan, Diethelm,
+   DE>
+   DE> On 30 January 2009 at 09:17, Yohan Chalabi wrote:
+   DE> | BTW, have you noticed that the new Rmetrics packages
+   DE> should not
+   DE> | depend on 'fUtilities' which will be considered as deprecated
+   DE> in the
+   DE> | future.
+   DE> |
+   DE> | If you are using 'fCalendar' and 'fSeries', please move to
+   DE> their new
+   DE> | versions named timeDate and timeSeries respectively.
+   DE>
+   DE> Would it be possible to get more regular updates about what is,
+   DE> or is not, or
+   DE> will be, or will no longer be, part of what is considered to
+   DE> be Rmetrics ?
+
+Hi Dirk!
+
+
+FYI we made two announcements on the mailing-list describing the changes
+in the packages. 
+
+
+   DE>
+   DE> Maybe it is just me, but I find it confusing that a project
+   DE> called 'Rmetrics'
+   DE> once had a package called Rmetrics which it no longer has
+   DE> ... The calendar /
+   DE> date package transition wasn't all that smooth either. As start,
+   DE> a high-level
+
+not smooth? To recall, we made important changes in the S4 objects.
+So, we decided to rename the packages to avoid backward compatibilities.
+
+As you might have noticed, the old packages are still available on CRAN.
+
+And when one loads the old packages, one gets a banner
+encouraging to switch to the new version.
+
+   DE> changelog and/or roadmap could be added to the wiki.  You may
+   DE> also want to
+   DE> use this list. And/or the r-packages or r-sig-finance list.
+
+The ChangeLog is a good point. I have started to add a ChangeLog in the
+packages.
+
+   DE>
+   DE> Finally, I personally would also vote for re-instating the
+   DE> Rmetrics package
+   DE> as it can give you at least a small hook (by looking at the
+   DE> search path, or
+   DE> at installed.packages(), or ...) into alerting actual users
+   DE> to the fact that
+   DE> they still have something installed that you now deem
+   DE> deprecated.  Otherwise,
+   DE> I fear you will be confronted with this problem for a long
+   DE> time indeed.
+
+You can get the list of all Rmetrics packages from our website with
+
+source("http://www.rmetrics.org/Rmetrics.R")
+pkgsRmetrics() # will give you the list of the packages and 
+install.Rmetrics() # should install all packages.
+
+or search all Rmetrics help pages at http://help.rmetrics.org
+
+These are new tools and we will announce them on the mailing-list as
+soon as we have finished our ebook on portfolio optimization
+with Rmetrics.
+
+Best regards,
+Yohan
+
+   DE>
+   DE> Just my sh.02.
+   DE>
+   DE> Regards, Dirk
+   DE>
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From wlng at essex.ac.uk  Fri Feb 13 10:51:38 2009
+From: wlng at essex.ac.uk (Ng, Wing L)
+Date: Fri, 13 Feb 2009 09:51:38 -0000
+Subject: problem with "timeSeries"
+Message-ID: <F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl>
+
+From guirreri at dssm.unipa.it  Fri Feb 13 12:38:33 2009
+From: guirreri at dssm.unipa.it (Dott. Sergio Guirreri)
+Date: Fri, 13 Feb 2009 12:38:33 +0100
+Subject: Package fBonds - Svensson function
+Message-ID: <1234525113.5535.6.camel@hume>
+
+
+I want to inform you about the result of the function "Svensson"  in the
+package "fBonds" . I want to estimate the parameters of a term structure
+but the resulting tau1 parameter is negative in contrast with the theory
+of Svensson model!!
+
+What happens ? why ? It's a my mistake ?
+
+The data are:
+
+  m6       y1       y5       y7      y10      y20 
+3.550001 3.583334 4.875673 5.198603 5.324215 5.848792 
+
+Kind Regards SG
+
+
+-- 
+__________________________________________
+Dott. Sergio S. Guirreri
+
+University of Palermo
+
+Department of Science Statistics and Mathematical "S. Vianelli" - http://dssm.unipa.it
+
+tel: (+39) 0916626442 - http://www.webalice.it/sergio.guirreri
+
+
+From guirreri at dssm.unipa.it  Fri Feb 13 14:43:00 2009
+From: guirreri at dssm.unipa.it (Dott. Sergio Guirreri)
+Date: Fri, 13 Feb 2009 14:43:00 +0100
+Subject: Package fBonds - Svensson function
+Message-ID: <1234532580.5535.9.camel@hume>
+
+There is an inversion of estimation of parameter beta3 with tau1.
+-- 
+__________________________________________
+Dott. Sergio S. Guirreri
+
+University of Palermo
+
+Department of Science Statistics and Mathematical "S. Vianelli" - http://dssm.unipa.it
+
+tel: (+39) 0916626442 - http://www.webalice.it/sergio.guirreri
+
+
+From chalabi at phys.ethz.ch  Mon Feb 16 15:49:01 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Mon, 16 Feb 2009 15:49:01 +0100
+Subject: problem with "timeSeries"
+In-Reply-To: <F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>
+References: <F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>
+Message-ID: <20090216154901.2883a0b8@mimi>
+
+>>>> "NWL" == "Ng, Wing L" <wlng at essex.ac.uk>
+>>>> on Fri, 13 Feb 2009 09:51:38 -0000
+
+   NWL> Dear Sir/Madam,
+   NWL>
+   NWL>
+   NWL>
+   NWL> I have an old R-code using R-metrics functions that worked
+   NWL> quite well
+   NWL> under R2.7.
+   NWL>
+   NWL>
+   NWL>
+   NWL> Having updated R to 2.8 and all packages as well, the same
+   NWL> (!) code does
+   NWL> not work any more. The main problem that I have is that R keeps
+   NWL> complaining that the timeSeries object does not contain any
+   NWL> data which
+   NWL> is not true. You will find one example below. Can you
+   NWL> help? Thank you.
+   NWL>
+   NWL>
+   NWL>
+   NWL> Yours truly,
+
+
+Have a look at this entry
+[https://wiki.rmetrics.org/doku.php?id=timeseries_data]
+
+It might respond to your question.
+
+regards,
+Yohan
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From perjmi at gmail.com  Wed Feb 18 22:24:04 2009
+From: perjmi at gmail.com (Per Jensen)
+Date: Wed, 18 Feb 2009 22:24:04 +0100
+Subject: yahooKeystats
+Message-ID: <8c0ddffa0902181324m3db97a57vc73190d577a942b7@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl>
+

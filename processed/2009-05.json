@@ -1,0 +1,229 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-05",
+  "messages": [
+    {
+      "id": "msg-a7db1bc40f26",
+      "message_id": "<20090504224539.155040@gmx.net>",
+      "from_name": "Alexander Wutscher",
+      "from_email_hash": "cef877a93fd44ed911b64ccff11ea39bb3f305117fb0e87db6e5d4255196c40f",
+      "date": "2009-05-04T22:45:39Z",
+      "subject": "To Mr. Diethelm Wuertz",
+      "subject_clean": "To Mr. Diethelm Wuertz",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "S.g. Hr. W?rtz\n\nF?r meine Diplomarbeit verwende ich einige Ihrer publizierten Packages f?r ?R?.\n\nDa einige Unklarheiten beim Programmieren aufgetreten sind, wende ich mich an Sie mit der Bitte diese, wenn m?glich, zu beseitigen.\n\nMithilfe des Packages ?fPortfolio? habe ich u.a. das ?Tangency Portfolio? ausgerechnet. Meinem Wissensstand nach sollte bei diesem Portfolio der risikofreie Zinssatz beliebig w?hlbar sein, aber sowohl mit meinen Daten als auch mit Ihren mitgelieferten Daten bekomme ich immer das gleiche Ergebnis, unabh?ngig welchen Wert man f?r das rf annimmt.\n\nMeine zweite Frage bezieht sich auf das ?Risk Budget?, das bei s?mtlichen Portfolios mitgeliefert wird. Da mir dieser Begriff bis dato in der Literatur noch nicht untergekommen ist, w?re ich f?r eine kurze Stellungnahme sehr dankbar.\n\nSchlussendlich wollte ich noch in Erfahrung bringen, ob es in einen Ihrer Packages die M?glichkeit gibt den Value-at-Risk mit zumindest drei Einflussgr??en auszurechnen. Ich denke dabei zum Beispiel an Cornish-Fisher. Auch hier w?re ich f?r alle weiteren Informationen sehr dankbar.\n\nIch w?rde Sie somit sehr bitten mir in diesen Fragestellungen weiterzuhelfen, da ich diese Vorg?nge in meiner Diplomarbeit dokumentieren muss.\n\nVielen herzlichen Dank im Voraus\nMFG, Alexander Wutscher\n\n--",
+      "body_snippet": "S.g. Hr. W?rtz\n\nF?r meine Diplomarbeit verwende ich einige Ihrer publizierten Packages f?r ?R?.\n\nDa einige Unklarheiten beim Programmieren aufgetreten sind, wende ich mich an Sie mit der Bitte diese, ",
+      "thread_id": "thread-a7db1bc40f26",
+      "thread_depth": 0,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-be6f661e23c2",
+      "message_id": "<20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>",
+      "from_name": "kh1 at rice.edu",
+      "from_email_hash": "2e06c1238b65601552ab92104a7a3a73ef626f68f2ca70533dfe70ea239274ca",
+      "date": "2009-05-05T16:41:49Z",
+      "subject": "Question on the fGarch pkh",
+      "subject_clean": "Question on the fGarch pkh",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI have a question on the function of \"garchFit\" in the fGarch package.\n\nWhat values do you use to for the initial values of the condition mean  \nand the conditional variance?\n\nThere is no description on \" init.rec = c(\"mci\", \"uev\") \" for the garchFit.\n\nThank you\n\nKam hamidieh",
+      "body_snippet": "Hello,\n\nI have a question on the function of \"garchFit\" in the fGarch package.\n\nWhat values do you use to for the initial values of the condition mean  \nand the conditional variance?\n\nThere is no desc",
+      "thread_id": "thread-be6f661e23c2",
+      "thread_depth": 0,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-86fd3f8b8877",
+      "message_id": "<20090508205940.649bc8f7@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-05-08T18:59:40Z",
+      "subject": "Question on the fGarch pkh",
+      "subject_clean": "Question on the fGarch pkh",
+      "in_reply_to": "<20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>",
+      "references": [
+        "<20090505114149.16674gn7ptu8baww@webmail.mail.rice.edu>"
+      ],
+      "body_plain": ">>>> \"KE\" == kh1 at rice.edu\n>>>> on Tue, 05 May 2009 11:41:49 -0500\n\n   KE> What values do you use to for the initial values of the\n   KE> condition mean\n   KE> and the conditional variance?\n\n\nHi Kam\n\n    #   init.rec - names type of initialization of recurrence\n    #       mci = mu-current-iteration, or\n    #       uev = unconditional-expected-variances\n\n\nMore info in source file garchFit.R\n\nRegards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"KE\" == kh1 at rice.edu\n>>>> on Tue, 05 May 2009 11:41:49 -0500\n\n   KE> What values do you use to for the initial values of the\n   KE> condition mean\n   KE> and the conditional variance?\n\n\nHi Kam",
+      "thread_id": "thread-be6f661e23c2",
+      "thread_depth": 1,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-b19b3971a72c",
+      "message_id": "<alpine.OSX.1.00.0905250921230.19202@tystie.local>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2009-05-25T08:29:19Z",
+      "subject": "Use of message() in fCalendar and fSeries",
+      "subject_clean": "Use of message() in fCalendar and fSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "With the latest changes in R-patched, we have when testing QRMlib:\n\n* checking data for non-ASCII characters ... NOTE\n\n   #################################################################\n   # The new version of 'fCalendar' has been renamed to 'timeDate' #\n   #################################################################\n\n\n   #################################################################\n   # The new version of 'fSeries' has been renamed to 'timeSeries' #\n   #################################################################\n\nPortable packages use only ASCII characters in their datasets.\n\nThese come from the startup messages in those packages -- although you \ncarefully define MSG() you then do not use it for all of the messages, \nso could you please do so?\n\nIf this is supposed to mean that QRMlib should be calling 'timeSeries' \nrather than 'fSeries', please inform its maintainer.  (I don't know \nwhat the message is supposed to help with: if I drive an Opel/Vauxhall \nVectra, how does help me to know that the new model is called \nsomething else?)\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "With the latest changes in R-patched, we have when testing QRMlib:\n\n* checking data for non-ASCII characters ... NOTE\n\n   #################################################################\n   # The new",
+      "thread_id": "thread-b19b3971a72c",
+      "thread_depth": 0,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-3773872a96d8",
+      "message_id": "<20090525172037.194193a2@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-05-25T15:20:37Z",
+      "subject": "Use of message() in fCalendar and fSeries",
+      "subject_clean": "Use of message() in fCalendar and fSeries",
+      "in_reply_to": "<alpine.OSX.1.00.0905250921230.19202@tystie.local>",
+      "references": [
+        "<alpine.OSX.1.00.0905250921230.19202@tystie.local>"
+      ],
+      "body_plain": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)\n\n   PBR> These come from the startup messages in those packages --\n   PBR> although you\n   PBR> carefully define MSG() you then do not use it for all of\n   PBR> the messages,\n   PBR> so could you please do so?\n\nThank you for your message. \n\nI changed zzz.R in fSeries/fCalendar and uploaded new versions to CRAN. \n\n   PBR>\n   PBR> If this is supposed to mean that QRMlib should be calling\n   PBR> 'timeSeries'\n   PBR> rather than 'fSeries', please inform its maintainer.\n\nWe made internal changes in the classes which were not backward\ncompatible. So, we decided to continue their development with new\npackages and leave the old classes available. The changes were\nneeded to improve usability and performance.\n\nWe have already contacted maintainers of the packages which depend on the\nmentioned packages. We will contact them again to encourage them to\nswitch to the new versions.\n\n\n   PBR> (I don't know\n   PBR> what the message is supposed to help with: if I drive an\n   PBR> Opel/Vauxhall\n   PBR> Vectra, how does help me to know that the new model is called\n   PBR> something else?)\n\nIn terms of cars, the message should help the user to know that he can\nexchange his Opel with a new Porsche with little effort ;)\n\nWe'll try to figure out a better phrasing for the startup message.\n\nThanks again for your suggestions.\n\nBest regards,\nYohan\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)\n\n   PBR> These come from the startup messages in those packages --\n   PBR> although you\n   PBR>",
+      "thread_id": "thread-b19b3971a72c",
+      "thread_depth": 1,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-92b327cf3b33",
+      "message_id": "<18970.65252.143000.258834@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2009-05-25T20:26:12Z",
+      "subject": "Use of message() in fCalendar and fSeries",
+      "subject_clean": "Use of message() in fCalendar and fSeries",
+      "in_reply_to": "<20090525172037.194193a2@mimi>",
+      "references": [
+        "<alpine.OSX.1.00.0905250921230.19202@tystie.local>",
+        "<20090525172037.194193a2@mimi>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)\n\nPBR> These come from the startup messages in those packages --\nPBR> although you\nPBR> carefully define MSG() you then do not use it for all of\nPBR> the messages,\nPBR> so could you please do so?\n\n> Thank you for your message. \n\n> I changed zzz.R in fSeries/fCalendar and uploaded new versions to\n> CRAN.\n\nThanks, on CRAN now.\n\nBest\n-k\n\n\nPBR> \nPBR> If this is supposed to mean that QRMlib should be calling\nPBR> 'timeSeries'\nPBR> rather than 'fSeries', please inform its maintainer.\n\n> We made internal changes in the classes which were not backward\n> compatible. So, we decided to continue their development with new\n> packages and leave the old classes available. The changes were\n> needed to improve usability and performance.\n\n> We have already contacted maintainers of the packages which depend on the\n> mentioned packages. We will contact them again to encourage them to\n> switch to the new versions.\n\n\nPBR> (I don't know\nPBR> what the message is supposed to help with: if I drive an\nPBR> Opel/Vauxhall\nPBR> Vectra, how does help me to know that the new model is called\nPBR> something else?)\n\n> In terms of cars, the message should help the user to know that he can\n> exchange his Opel with a new Porsche with little effort ;)\n\n> We'll try to figure out a better phrasing for the startup message.\n\n> Thanks again for your suggestions.\n\n> Best regards,\n> Yohan\n\n\n> -- \n> PhD student\n> Swiss Federal Institute of Technology\n> Zurich\n\n> www.ethz.ch",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Mon, 25 May 2009 09:29:19 +0100 (BST)\n\nPBR> These come from the startup messages in those packages --\n",
+      "thread_id": "thread-b19b3971a72c",
+      "thread_depth": 2,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-6cf625ef611b",
+      "message_id": "<01c9dd7f$Blat.v2.2.2$8889ac5c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-05-25T21:26:57Z",
+      "subject": "Package fCalendar_270.78.3.tar.gz has been built for Windows",
+      "subject_clean": "Package fCalendar_270.78.3.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.3.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.0 Patched (2009-04-27 r48414)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.3.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-6cf625ef611b",
+      "thread_depth": 0,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-4a3fc30d18d9",
+      "message_id": "<01c9dd7f$Blat.v2.2.2$88afc27c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-05-25T21:26:58Z",
+      "subject": "Package fSeries_270.76.3.tar.gz has been built for Windows",
+      "subject_clean": "Package fSeries_270.76.3.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.0 Patched (2009-04-27 r48414)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-4a3fc30d18d9",
+      "thread_depth": 0,
+      "month": "2009-05"
+    },
+    {
+      "id": "msg-e6169c9a24c4",
+      "message_id": "<584435.26418.qm@web23707.mail.ird.yahoo.com>",
+      "from_name": "Valentin Dimitrov",
+      "from_email_hash": "b763230ffd118b6bb360b9e713a90c755fbba586531388d2ca38dab89556bdc2",
+      "date": "2009-05-28T09:47:35Z",
+      "subject": "ArfimaOxFit.ox and ArfimaOxPredict.ox",
+      "subject_clean": "ArfimaOxFit.ox and ArfimaOxPredict.ox",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics team, \n\nI am trying to run the arfimaOxFit function from fArma in R (2.6.1). unfortunately I don't have the files ArfimaOxFit.ox and ArfimaOxPredict.ox.\n\nCan you send them to me if you have them?\nI thank you in advance for your help\n\nBest Regards,\n\nV.Dimitrov",
+      "body_snippet": "Dear Rmetrics team, \n\nI am trying to run the arfimaOxFit function from fArma in R (2.6.1). unfortunately I don't have the files ArfimaOxFit.ox and ArfimaOxPredict.ox.\n\nCan you send them to me if you h",
+      "thread_id": "thread-e6169c9a24c4",
+      "thread_depth": 0,
+      "month": "2009-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-a7db1bc40f26",
+      "subject": "To Mr. Diethelm Wuertz",
+      "message_count": 1,
+      "participants": [
+        "Alexander Wutscher"
+      ],
+      "started": "2009-05-04T22:45:39Z",
+      "last_reply": "2009-05-04T22:45:39Z",
+      "root_message_id": "msg-a7db1bc40f26"
+    },
+    {
+      "id": "thread-be6f661e23c2",
+      "subject": "Question on the fGarch pkh",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "kh1 at rice.edu"
+      ],
+      "started": "2009-05-05T16:41:49Z",
+      "last_reply": "2009-05-08T18:59:40Z",
+      "root_message_id": "msg-be6f661e23c2"
+    },
+    {
+      "id": "thread-b19b3971a72c",
+      "subject": "Use of message() in fCalendar and fSeries",
+      "message_count": 3,
+      "participants": [
+        "Kurt Hornik",
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-05-25T08:29:19Z",
+      "last_reply": "2009-05-25T20:26:12Z",
+      "root_message_id": "msg-b19b3971a72c"
+    },
+    {
+      "id": "thread-6cf625ef611b",
+      "subject": "Package fCalendar_270.78.3.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-05-25T21:26:57Z",
+      "last_reply": "2009-05-25T21:26:57Z",
+      "root_message_id": "msg-6cf625ef611b"
+    },
+    {
+      "id": "thread-4a3fc30d18d9",
+      "subject": "Package fSeries_270.76.3.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-05-25T21:26:58Z",
+      "last_reply": "2009-05-25T21:26:58Z",
+      "root_message_id": "msg-4a3fc30d18d9"
+    },
+    {
+      "id": "thread-e6169c9a24c4",
+      "subject": "ArfimaOxFit.ox and ArfimaOxPredict.ox",
+      "message_count": 1,
+      "participants": [
+        "Valentin Dimitrov"
+      ],
+      "started": "2009-05-28T09:47:35Z",
+      "last_reply": "2009-05-28T09:47:35Z",
+      "root_message_id": "msg-e6169c9a24c4"
+    }
+  ]
+}

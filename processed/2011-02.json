@@ -1,0 +1,254 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-02",
+  "messages": [
+    {
+      "id": "msg-94c0774c4078",
+      "message_id": "<15EB0032-C061-40BF-AEE4-BE5004BAC3EE@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-02-01T16:28:28Z",
+      "subject": "Bug in holidayNYSE in timeDate",
+      "subject_clean": "Bug in holidayNYSE in timeDate",
+      "in_reply_to": "<AANLkTi=YVw7_V9XfT=x5S7c4Te=3DiKMCGKJGSYwu+kC@mail.gmail.com>",
+      "references": [
+        "<AANLkTi=YVw7_V9XfT=x5S7c4Te=3DiKMCGKJGSYwu+kC@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Scott,\n\nThanks for your message.\n\nthe NewYork timezone is already specified in the version of the package that I have.\n\nAre you sure you are using the latest version of the package : timeDate 2130.91 ?\n\nHTH,\nYohan\n\n\nOn Jan 25, 2011, at 10:39 PM, Scott Stephens wrote:\n\n> The holidayNYSE function in the timeDate package incorrectly includes\n> 31 Dec 2010 as a holiday (try holidayNYSE(2011)).  The problem seems\n> to stem from not properly specifying the NewYork timezone when the\n> ExceptOnLastFriday vector is built. I believe the line\n> \n> ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,\n> month = m, lastday = lastday, nday = 5)))\n> \n> should be replaced with:\n> \n> ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,\n> month = m, lastday = lastday, nday =\n> 5)),FinCenter=\"NewYork\",zone=\"NewYork\")\n> \n> \n> Thanks for the great work on RMetrics,\n> \n> Scott\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> \n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi Scott,\n\nThanks for your message.\n\nthe NewYork timezone is already specified in the version of the package that I have.\n\nAre you sure you are using the latest version of the package : timeDate 2130.",
+      "thread_id": "thread-94c0774c4078",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-5c8e520577e7",
+      "message_id": "<alpine.DEB.2.00.1102041551070.1986@leonora>",
+      "from_name": "Søren Feodor Nielsen",
+      "from_email_hash": "c8e7b08016d084d7d496efe9c223f9f4dca2af234f68d633157d33003dad2309",
+      "date": "2011-02-04T15:03:54Z",
+      "subject": "bug in fImport:::oandaSeries",
+      "subject_clean": "bug in fImport:::oandaSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi\n\nIn oandaSeries the arguments from, to and nDaysBack are not passed on to \noandaImport so the actual data-fetching is done using oandaImport's default \nvalues. This means that one cannot get data dating back more than one year \nfrom today's date when using oandaSeries.\n\nThis should be easily fixed by changing\n\n \tX = oandaImport(query = symbols[1], ...)@data\n\nto\n\n \tX = oandaImport(query = symbols[1], from = from, to = to,\n \t\tnDaysBack = nDaysBack, ...)@data\n\nand\n\n \tX = merge(X, oandaImport(query = symbols[i], ...)@data)\n\nto\n\n \tX = merge(X, oandaImport(query = symbols[i], from = from, to = to,\n                 nDaysBack = nDaysBack, ...)@data)\n\nThe lines\n\n     if (is.null(from))\n         from = to - nDaysBack * 24 * 3600\n     X = window(X, from, to)\n\nare probably superflous once the bug is fixed.\n\nI think the same bug appears in fredImport and yahooImport.\n\nBest regards\n\nFeodor",
+      "body_snippet": "Hi\n\nIn oandaSeries the arguments from, to and nDaysBack are not passed on to \noandaImport so the actual data-fetching is done using oandaImport's default \nvalues. This means that one cannot get data d",
+      "thread_id": "thread-5c8e520577e7",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-6136078966f9",
+      "message_id": "<1380061809.1297009959420.JavaMail.esup@ents2.univ-tlse1.fr>",
+      "from_name": "Alban.Moura at midgard.univ-tlse1.fr",
+      "from_email_hash": "0af34351612cad2aa7e6018f1a259db20758adee954c728feb26440ecbbce973",
+      "date": "2011-02-06T16:29:44Z",
+      "subject": "Possible error in garchSpec (package fGarch)",
+      "subject_clean": "Possible error in garchSpec (package fGarch)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Good evening,\n\nI'm currently working on the function garchSpec from package fGarch (version 2110.80) and I don't understand the last part of the code, which deals with the presample option. To set the things, I reproduce this part of the code at the bottom of the mail.\n\nI have two questions:\n\n1/ The help states that \"the number of rows must be at least max(m,n,p,q)+1, longer presamples are cutted\", but there is no part of the code to perform this cutting. Was something forgotten?\n\n2/ For long presamples, the last part of the code iterates the computation of the conditional variance, but then the result is not stored back in presample, and will certainly not be returned by the function. Something must me missing here.\n\nI thank you for your attention and I wait for your answer,\n\nRespectfully yours,\n\nAlban Moura\n\n% CODE FOR PRESAMPLE (FUNCTION garchSpec)\n    iterate = TRUE\n    if (!is.matrix(presample)) {\n        if (is.null(presample)) {\n            iterate = FALSE\n            n.start = order.max\n        }\n        else {\n            n.start = presample\n        }\n        z = rnorm(n = n.start)\n        h = rep(model$omega/(1 - sum(model$alpha) - sum(model$beta)), \n            times = n.start)\n        y = rep(model$mu/(1 - sum(model$ar)), times = n.start)\n    }\n    else {\n        z = presample[, 1]\n        h = presample[, 2]\n        y = presample[, 3]\n    }\n    presample = cbind(z, h, y)\n    if (iterate) {\n        n.iterate = length(z) - order.max\n        deltainv = 1/model$delta\n        for (i in n.iterate:1) {\n            h[i] = model$omega + sum(model$alpha * (abs(abs(y[i + \n                (1:order.alpha)]) - model$gamma * y[i + (1:order.alpha)])^model$delta)) + \n                sum(model$beta * h[i + (1:order.beta)])\n            y[i] = model$mu + sum(model$ar * y[i + (1:order.ar)]) + \n                sum(model$ma * (h[i + (1:order.ma)]^deltainv)) + \n                h[i]^deltainv * z[i]\n        }\n    }",
+      "body_snippet": "Good evening,\n\nI'm currently working on the function garchSpec from package fGarch (version 2110.80) and I don't understand the last part of the code, which deals with the presample option. To set the",
+      "thread_id": "thread-6136078966f9",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-126c03f22de9",
+      "message_id": "<5C714FD4-186E-4A29-A65D-3E4E233FD629@sns.it>",
+      "from_name": "Luigi Amedeo Bianchi",
+      "from_email_hash": "ad5e09f76f23715f5f7633e72cde257496ebfea5de171327917390619c7e837c",
+      "date": "2011-02-08T13:39:33Z",
+      "subject": "Bug report for package fGarch",
+      "subject_clean": "Bug report for package fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear developers,\n\nI'd like to report a bug I found while using your package fGarch.\nIt involves methods-fitted.\nI fitted some data to a GARCH model, with\n\tfitN = garchFit(data = returns)\n\tfittedN = fitted(fitN)\nand I get the following error message:\n\tError in .local(object, ...) : object 'fit' not found\nThe fact is that instead of looking for an object with the name provided, it looks for the object \"fit\". \nIt can be easily patched, I think, by changing \n\tName = as.character(fit at formula[2])\nin\n\tName = as.character(object at formula[2])\non line 55 of methods-fitted.R\n\nKind regards,\n\nLuigi Amedeo Bianchi\n\n\n------------------------------------------------\nLuigi Amedeo Bianchi\nPh.D. Student in Applied Mathematics\nScuola Normale Superiore\nPiazza dei Cavalieri, 7\n56126 Pisa (PI)\nItaly\n\nluigi.bianchi at sns.it",
+      "body_snippet": "Dear developers,\n\nI'd like to report a bug I found while using your package fGarch.\nIt involves methods-fitted.\nI fitted some data to a GARCH model, with\n\tfitN = garchFit(data = returns)\n\tfittedN = fi",
+      "thread_id": "thread-126c03f22de9",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-8669f3543473",
+      "message_id": "<5B0223E8-7A12-491F-852D-7FE2C209E484@sns.it>",
+      "from_name": "Luigi Amedeo Bianchi",
+      "from_email_hash": "ad5e09f76f23715f5f7633e72cde257496ebfea5de171327917390619c7e837c",
+      "date": "2011-02-08T14:04:39Z",
+      "subject": "man issue report",
+      "subject_clean": "man issue report",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi again,\nI forgot to mention it in my previous mail, but there is another thing I noticed: in the manpage for Oanda, the Value part shows fredImport and fredSeries, instead of the corresponding oanda functions.\nIt's just a small issue, but if you have the cance it can be fixed.\n\nThank you.\n\nBest regards,\nLuigi Amedeo Bianchi\n\n\n\n------------------------------------------------\nLuigi Amedeo Bianchi\nPh.D. Student in Applied Mathematics\nScuola Normale Superiore\nPiazza dei Cavalieri, 7\n56126 Pisa (PI)\nItaly\n\nluigi.bianchi at sns.it",
+      "body_snippet": "Hi again,\nI forgot to mention it in my previous mail, but there is another thing I noticed: in the manpage for Oanda, the Value part shows fredImport and fredSeries, instead of the corresponding oanda",
+      "thread_id": "thread-8669f3543473",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-91c6d1f64edf",
+      "message_id": "<01cbc982$Blat.v2.2.2$9f398673@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-02-11T00:28:36Z",
+      "subject": "Package fPortfolio_2130.80.tar.gz has been built for Windows",
+      "subject_clean": "Package fPortfolio_2130.80.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2130.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.1 (2010-12-16)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2130.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-91c6d1f64edf",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-47e97475dcdc",
+      "message_id": "<01cbc982$Blat.v2.2.2$a07ae2b6@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-02-11T00:28:38Z",
+      "subject": "Package timeDate_2130.92.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2130.92.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.92.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.1 (2010-12-16)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.92.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-47e97475dcdc",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-b753373db6f0",
+      "message_id": "<01cbc982$Blat.v2.2.2$a0a35a6b@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-02-11T00:28:38Z",
+      "subject": "Package timeSeries_2130.91.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2130.91.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.91.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.1 (2010-12-16)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.91.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-b753373db6f0",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-989ee681cfb2",
+      "message_id": "<20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>",
+      "from_name": "Shawn X. Yin",
+      "from_email_hash": "88e4731edc36149f115a9fccf92462274834875428f2f6d084a39975bd09fa52",
+      "date": "2011-02-25T05:06:04Z",
+      "subject": "garchOxFit request",
+      "subject_clean": "garchOxFit request",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI am a graduate student at Columbia University. I am doing a project  \nabout volatility forecast. I find garchOxFit which was in fGarch  \npackage would be extremely helpful to my research. Could I obtain  \ngarchOxFit?\n\nThanks,\n\nShawn X. Yin\nGraduate Student at IEOR,\nColumbia University,\nNew York,NY 10027",
+      "body_snippet": "Hello,\n\nI am a graduate student at Columbia University. I am doing a project  \nabout volatility forecast. I find garchOxFit which was in fGarch  \npackage would be extremely helpful to my research. Cou",
+      "thread_id": "thread-989ee681cfb2",
+      "thread_depth": 0,
+      "month": "2011-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-94c0774c4078",
+      "subject": "Bug in holidayNYSE in timeDate",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2011-02-01T16:28:28Z",
+      "last_reply": "2011-02-01T16:28:28Z",
+      "root_message_id": "msg-94c0774c4078"
+    },
+    {
+      "id": "thread-5c8e520577e7",
+      "subject": "bug in fImport:::oandaSeries",
+      "message_count": 1,
+      "participants": [
+        "Søren Feodor Nielsen"
+      ],
+      "started": "2011-02-04T15:03:54Z",
+      "last_reply": "2011-02-04T15:03:54Z",
+      "root_message_id": "msg-5c8e520577e7"
+    },
+    {
+      "id": "thread-6136078966f9",
+      "subject": "Possible error in garchSpec (package fGarch)",
+      "message_count": 1,
+      "participants": [
+        "Alban.Moura at midgard.univ-tlse1.fr"
+      ],
+      "started": "2011-02-06T16:29:44Z",
+      "last_reply": "2011-02-06T16:29:44Z",
+      "root_message_id": "msg-6136078966f9"
+    },
+    {
+      "id": "thread-126c03f22de9",
+      "subject": "Bug report for package fGarch",
+      "message_count": 1,
+      "participants": [
+        "Luigi Amedeo Bianchi"
+      ],
+      "started": "2011-02-08T13:39:33Z",
+      "last_reply": "2011-02-08T13:39:33Z",
+      "root_message_id": "msg-126c03f22de9"
+    },
+    {
+      "id": "thread-8669f3543473",
+      "subject": "man issue report",
+      "message_count": 1,
+      "participants": [
+        "Luigi Amedeo Bianchi"
+      ],
+      "started": "2011-02-08T14:04:39Z",
+      "last_reply": "2011-02-08T14:04:39Z",
+      "root_message_id": "msg-8669f3543473"
+    },
+    {
+      "id": "thread-91c6d1f64edf",
+      "subject": "Package fPortfolio_2130.80.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-02-11T00:28:36Z",
+      "last_reply": "2011-02-11T00:28:36Z",
+      "root_message_id": "msg-91c6d1f64edf"
+    },
+    {
+      "id": "thread-47e97475dcdc",
+      "subject": "Package timeDate_2130.92.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-02-11T00:28:38Z",
+      "last_reply": "2011-02-11T00:28:38Z",
+      "root_message_id": "msg-47e97475dcdc"
+    },
+    {
+      "id": "thread-b753373db6f0",
+      "subject": "Package timeSeries_2130.91.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-02-11T00:28:38Z",
+      "last_reply": "2011-02-11T00:28:38Z",
+      "root_message_id": "msg-b753373db6f0"
+    },
+    {
+      "id": "thread-989ee681cfb2",
+      "subject": "garchOxFit request",
+      "message_count": 1,
+      "participants": [
+        "Shawn X. Yin"
+      ],
+      "started": "2011-02-25T05:06:04Z",
+      "last_reply": "2011-02-25T05:06:04Z",
+      "root_message_id": "msg-989ee681cfb2"
+    }
+  ]
+}

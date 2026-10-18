@@ -1,0 +1,53 @@
+From lwiinaaj at cc.org  Tue Jan  8 16:58:00 2013
+From: lwiinaaj at cc.org (Mrs Johnson)
+Date: Tue, 08 Jan 2013 10:58:00 -0500
+Subject: Pray
+Message-ID: <E1TsbYu-00075N-7u@server.tapscotthosting.com>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130108/540cf3b5/attachment.html>
+
+From ripley at stats.ox.ac.uk  Thu Jan 10 16:57:42 2013
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Thu, 10 Jan 2013 15:57:42 +0000
+Subject: Use of deprecated {as.,is.,}real() functions in CRAN package
+	fAsianOptions
+Message-ID: <20130110155742.248898181B@gannet.stats.ox.ac.uk>
+
+Functions real(), as.real() and is.real() have been 'deprecated' and
+'for backwards compatibility only' for over 5 years now, but are still
+used in your package (or something it calls, but I have tried to
+elminate those).  They now give formal warnings in R-patched and
+R-devel, and will become defunct shortly, most likely for R 3.0.0 in a
+couple of months.
+
+All that was needed was to use the 'double' versions.
+
+Please submit an update to the package correcting this, to CRAN
+following http://cran.r-project.org/web/packages/policies.html .
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From Marco.Giuliano at ors.it  Fri Jan 18 09:12:33 2013
+From: Marco.Giuliano at ors.it (Marco Giuliano)
+Date: Fri, 18 Jan 2013 08:12:33 +0000
+Subject: TimeSeries align odd behavior
+Message-ID: <ADB2D0C4438D9C40B1C26BC69CCAB6391342CE08@Exch-Mailbox.ors.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl>
+
+From amjadali_ktk at yahoo.com  Mon Jan 21 14:27:44 2013
+From: amjadali_ktk at yahoo.com (Amjad Ali)
+Date: Mon, 21 Jan 2013 05:27:44 -0800 (PST)
+Subject: No subject
+Message-ID: <1358774864.42564.YahooMailNeo@web162203.mail.bf1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl>
+

@@ -1,0 +1,122 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-07",
+  "messages": [
+    {
+      "id": "msg-6ab89708dc4c",
+      "message_id": "<4c25c7$NWBCtOjs@infernogate.com>",
+      "from_name": "Jon",
+      "from_email_hash": "b127ffa0aa6c575aa8ee2340d2c85db8bf12e7c115f42092795ccdf4b7d64839",
+      "date": "2009-07-03T14:01:37Z",
+      "subject": "5 Ways to Turn Up the Heat in Your Love Relatoinship orr Marriage",
+      "subject_clean": "5 Ways to Turn Up the Heat in Your Love Relatoinship orr Marriage",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "5 Ways to Turn Up the Heat in Yhour Love Relationship or Marrriage www. gen88. net. Drugs and phones wing theeir way to Braazil prisoners",
+      "body_snippet": "5 Ways to Turn Up the Heat in Yhour Love Relationship or Marrriage www. gen88. net. Drugs and phones wing theeir way to Braazil prisoners",
+      "thread_id": "thread-6ab89708dc4c",
+      "thread_depth": 0,
+      "month": "2009-07"
+    },
+    {
+      "id": "msg-f4206cbdf949",
+      "message_id": "<4b5c27440907121649s617bba1aq803caf63f32967e8@mail.gmail.com>",
+      "from_name": "Geoffrey Smith",
+      "from_email_hash": "6c829f2d25848af1d52a90e4b27006b9ac3763c053bf3aaf885fb0f7ceb0b753",
+      "date": "2009-07-12T23:49:22Z",
+      "subject": "fImport question",
+      "subject_clean": "fImport question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl>",
+      "thread_id": "thread-f4206cbdf949",
+      "thread_depth": 0,
+      "month": "2009-07"
+    },
+    {
+      "id": "msg-d157f602273d",
+      "message_id": "<A47458F1AE3BC545911B10628202E9D2014817FC@ucexchange2.canterbury.ac.nz>",
+      "from_name": "Bill Rea",
+      "from_email_hash": "ce6f7d2961d8ee735ebaa5d2b1537fd513791eb8f65e5dd5d43b848fe92b29c5",
+      "date": "2009-07-14T03:49:23Z",
+      "subject": "whittleFit gives error",
+      "subject_clean": "whittleFit gives error",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Rmetrics Maintainers,\n\nThe whittleFit implementation in the fArma package gives an error when\ntrying to estimate the H parameter. Below is example code I used. I am\nrunning R 2.9.1 and fArma 290.75 on RedHat enterprise server 5.3\ncompiled with gcc\n\nlibrary(tseries)\nlibrary(fArma)\ndata(camp)\nwhittleFit(camp)\n\nTo output is as follows. As you can see at the bottom of the output\nthere are NAs generated. If I can be of any help in solving this problem\nplease let me know.\n\nTitle:\n Hurst Exponent from Whittle Estimator\n\nCall:\n whittleFit(x = camp)\n\nMethod:\n fgn whittle\n\nHurst Exponent:\n     sigma2 conv.type\n   64.23001        NA\n\nParameter Settings:\nsubseries    order1    order2         h        ar        ma\n        1         1         1         0         0         0\n\nDescription:\n Tue Jul 14 15:47:26 2009 by user:\n\nWarning message:\nIn function (object)  : NAs introduced by coercion\n\n\nBill Rea, Lecturer, Dept of Economics and Finance \\_\nUniversity of Canterbury                          </ New\nE-Mail bill.rea at canterbury.ac.nz                 /) Zealand   \nPhone +64-3-364-3474,                           (/'",
+      "body_snippet": "Rmetrics Maintainers,\n\nThe whittleFit implementation in the fArma package gives an error when\ntrying to estimate the H parameter. Below is example code I used. I am\nrunning R 2.9.1 and fArma 290.75 on",
+      "thread_id": "thread-d157f602273d",
+      "thread_depth": 0,
+      "month": "2009-07"
+    },
+    {
+      "id": "msg-b5906bb64ae3",
+      "message_id": "<4A5D22DB.7020406@prodsyse.com>",
+      "from_name": "spencerg",
+      "from_email_hash": "6586e2ac1511c7ac857f5fde255a82a116c8b018001a5efabe6ff8460c83a853",
+      "date": "2009-07-15T00:29:15Z",
+      "subject": "[R] getting a timeseries element into a string",
+      "subject_clean": "getting a timeseries element into a string",
+      "in_reply_to": "<4440E94D-4E6A-43D0-A3B0-743CCB8F23A1@comcast.net>",
+      "references": [
+        "<24429876.post@talk.nabble.com>",
+        "<24448064.post@talk.nabble.com>",
+        "<F510CBCF-9319-45D0-9457-D4A26EB20E51@comcast.net>",
+        "<4440E94D-4E6A-43D0-A3B0-743CCB8F23A1@comcast.net>"
+      ],
+      "body_plain": "Hello: \n\n\n      1.  I tried the example.  The first thing I noticed was that \n\"library(fSeries)\" loaded with the following comment: \n\n\n# The new version of 'fSeries' has been renamed to 'timeSeries'\n\n\n      2.  With this, I tried \"library(timeSeries)\".  Then your first \nexample worked without error. \n\n\n      3.  This time, \"head(ts)\" generated an error.  To diagnose it, I \ntried \"str(ts)\".  This generated a summary that I found beautifully \nformated but unintelligible.  To understand the object, I then tried \n\"utils:::str.default(ts)\".  This described the object in terms I could \nunderstand. \n\n\n      4.  Another \"heads up\":  \"ts\" is the name of a function in the \n\"stats\" package.  I would avoid creating an object by that name. \n\n\n      Hope this helps. \n      Spencer\n\n\nDavid Winsemius wrote:\n>\n> On Jul 12, 2009, at 1:05 PM, David Winsemius wrote:\n>\n>>\n>> On Jul 12, 2009, at 8:10 AM, tradenet wrote:\n>>\n>>>\n>>> I added a reproducible example to my question...\n>>>\n>>> ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = \"\", \n>>> FinCenter =\n>>> \"\")\n>>\n>>\n>> \"Heads up\" is an English colloquial warning.\n>>\n>> It may be reproducible on a machine that has all of your particular \n>> loaded packages, but certainly not on one that doesn't.\n>>\n>> ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = \"\", \n>> FinCenter =\n>> + \"\")\n>> Error: could not find function \"dummyDailySeries\"\n>>\n>> Many people who read the list just ignore postings where the \n>> questioner fails to indicate the package from which functions arise.\n>>>\n>>\n>\n> In penance for my failure to trim the r-help list address, I looked up \n> the function which is part of the fSeries package. I now wonder if \n> tradenet is using an outdated version. I get a different error after \n> installing and loading Package fSeries (270.76.1).\n>\n> > ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = \"\", \n> FinCenter =\n> + \"\")\n> Error in rulesFinCenter(FinCenter) :\n>   There are no DST rules for GMT FinCenter!\n>\n> Eventually I convince the function into returning a result and then \n> ts[1,0] fails with this error message:\n> > ts<-dummyDailySeries(x = rnorm(365), units = NULL, zone = \"GMT\", \n> FinCenter = \"Zurich\")\n> > head(ts)\n>                           TS.1\n> 1970-01-01 01:00:00 -0.2463952\n> 1970-01-02 01:00:00  0.9421668\n> 1970-01-03 01:00:00  0.3354345\n> 1970-01-04 01:00:00  1.7449670\n> 1970-01-05 01:00:00  0.1551346\n> 1970-01-06 01:00:00 -1.0082531\n> > ts[1,0]\n> Error in checkSlotAssignment(object, name, value) :\n>   assignment of an object of class \"NULL\" is not valid for slot \n> \"units\" in an object of class \"timeSeries\"; is(value, \"character\") is \n> not TRUE\n>\n> So now I am wondering if the package was recently redesigned to use S4 \n> methods. My suggestion is to repost if you are still puzzled after \n> updating your copy of fSeriesand reviewing the timeSeries extractor \n> functions for S4 objects including seriesPositions():\n> X = timeSeries(matrix(rnorm(24), 12), timeCalendar())\n> as.character(seriesPositions(X)@Data[1])\n> [1] \"2009-01-01\"  # a character vector ... which is what was requested\n>\n>\n> David Winsemius, MD\n> Heritage Laboratories\n> West Hartford, CT\n>\n> ______________________________________________\n> R-help at r-project.org mailing list\n> https://stat.ethz.ch/mailman/listinfo/r-help\n> PLEASE do read the posting guide \n> http://www.R-project.org/posting-guide.html\n> and provide commented, minimal, self-contained, reproducible code.\n>",
+      "body_snippet": "Hello: \n\n\n      1.  I tried the example.  The first thing I noticed was that \n\"library(fSeries)\" loaded with the following comment: \n\n\n# The new version of 'fSeries' has been renamed to 'timeSeries'\n\n",
+      "thread_id": "thread-b5906bb64ae3",
+      "thread_depth": 0,
+      "month": "2009-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6ab89708dc4c",
+      "subject": "5 Ways to Turn Up the Heat in Your Love Relatoinship orr Marriage",
+      "message_count": 1,
+      "participants": [
+        "Jon"
+      ],
+      "started": "2009-07-03T14:01:37Z",
+      "last_reply": "2009-07-03T14:01:37Z",
+      "root_message_id": "msg-6ab89708dc4c"
+    },
+    {
+      "id": "thread-f4206cbdf949",
+      "subject": "fImport question",
+      "message_count": 1,
+      "participants": [
+        "Geoffrey Smith"
+      ],
+      "started": "2009-07-12T23:49:22Z",
+      "last_reply": "2009-07-12T23:49:22Z",
+      "root_message_id": "msg-f4206cbdf949"
+    },
+    {
+      "id": "thread-d157f602273d",
+      "subject": "whittleFit gives error",
+      "message_count": 1,
+      "participants": [
+        "Bill Rea"
+      ],
+      "started": "2009-07-14T03:49:23Z",
+      "last_reply": "2009-07-14T03:49:23Z",
+      "root_message_id": "msg-d157f602273d"
+    },
+    {
+      "id": "thread-b5906bb64ae3",
+      "subject": "getting a timeseries element into a string",
+      "message_count": 1,
+      "participants": [
+        "spencerg"
+      ],
+      "started": "2009-07-15T00:29:15Z",
+      "last_reply": "2009-07-15T00:29:15Z",
+      "root_message_id": "msg-b5906bb64ae3"
+    }
+  ]
+}

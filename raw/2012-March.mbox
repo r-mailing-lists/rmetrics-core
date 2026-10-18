@@ -1,0 +1,763 @@
+From sang.oh at gmail.com  Thu Mar  8 22:27:52 2012
+From: sang.oh at gmail.com (Sang Oh)
+Date: Thu, 8 Mar 2012 13:27:52 -0800
+Subject: fmultivar package
+Message-ID: <CA+=5KBcGmg+Q2WSRjStGHjHtW3=-wHdLRAMz+LA+zbeuU2BR_Q@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120308/c8e2a3b8/attachment.pl>
+
+From brunorossetto.office at gmail.com  Mon Mar 12 21:08:53 2012
+From: brunorossetto.office at gmail.com (Bruno Rossetto)
+Date: Mon, 12 Mar 2012 21:08:53 +0100
+Subject: getWeights bug?
+Message-ID: <4f5e57d9.8bbb0e0a.5f06.4b2c@mx.google.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120312/70a8ddcf/attachment.pl>
+
+From maechler at stat.math.ethz.ch  Tue Mar 13 18:44:10 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Tue, 13 Mar 2012 18:44:10 +0100
+Subject: getWeights bug?
+In-Reply-To: <4f5e57d9.8bbb0e0a.5f06.4b2c@mx.google.com>
+References: <4f5e57d9.8bbb0e0a.5f06.4b2c@mx.google.com>
+Message-ID: <20319.34666.660536.879942@stat.math.ethz.ch>
+
+>>>>> Bruno Rossetto <brunorossetto.office at gmail.com>
+>>>>>     on Mon, 12 Mar 2012 21:08:53 +0100 writes:
+
+    > Hi!  I'm trying to use the weightsLinePlot function of the fPortfolio
+    > library.
+
+    > it seems to call the function getWeights(fPortfolioObject), which is
+    > not returning a matrix, but a single vector(a single line). Thus the
+    > weightsLinePlot is not working.
+
+You are right.
+
+I'm an Rmetrics-core member, but not at all involved in the
+fPortfolio package.
+
+After spending 15 minutes,
+I'm pretty convinced that the bug may even be "earlier"
+as it seems *MANY* parts of the code assume a that
+getWeights() returns a matrix
+{{and you are right it does not in this case}}.
+
+    > Can you point me to a solution?
+
+Let's hope for the Rmetrics-core members who have built
+fPortfolio ....
+
+Best regards,
+Martin Maechler
+
+ 
+
+    > Below some specs, the code and the output.
+
+    >> version
+
+    > _                            
+
+    > platform       x86_64-pc-mingw32            
+
+    > arch           x86_64                       
+
+    > os             mingw32                      
+
+    > system         x86_64, mingw32              
+
+    > status                                      
+
+    > major          2                            
+
+    > minor          13.2                         
+
+    > year           2011                         
+
+    > month          09                           
+
+    > day            30                           
+
+    > svn rev        57111                        
+
+    > language       R                            
+
+    > version.string R version 2.13.2 (2011-09-30)
+
+ 
+
+    >> library(fPortfolio)
+
+    >> Data = SMALLCAP.RET
+
+    >> Data = Data[, c("BKE", "GG", "GYMB", "KRON")]
+
+    >> head(Data)
+
+    >> Spec = portfolioSpec();
+
+    >> frontier = portfolioFrontier(Data,Spec)
+
+    >> getWeights(frontier)
+
+    >> weightsLinePlot(frontier)
+
+ 
+
+    > ##OUTPUT:
+
+    >> frontier = portfolioFrontier(Data,Spec)
+
+    >> getWeights(frontier)
+
+    > [1] 0.000000e+00 1.805789e-08 1.000000e+00 0.000000e+00
+
+    > attr(,"invest")
+
+    > [1] 1
+
+    >> weightsLinePlot(frontier)
+
+    > Error in plot.window(xlim, ylim, log, ...) : 'xlim' value not valid
+
+    >> 
+
+ 
+
+
+    > [[alternative HTML version deleted]]
+
+    > _______________________________________________
+    > Rmetrics-core mailing list
+    > Rmetrics-core at r-project.org
+    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From Christoph.Hoerbelt at wiso.uni-hamburg.de  Thu Mar 15 15:36:16 2012
+From: Christoph.Hoerbelt at wiso.uni-hamburg.de (=?iso-8859-1?Q?H=F6rbelt=2C_Christoph?=)
+Date: Thu, 15 Mar 2012 14:36:16 +0000
+Subject: fGarch
+Message-ID: <4D23EA107A3ED04CA36F6223C8E4B8BF347E8607@WISO-SRV-EX01.wiso.uni-hamburg.de>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120315/cdc45370/attachment.pl>
+
+From email at etechgermany.org  Fri Mar 16 09:21:07 2012
+From: email at etechgermany.org (Sustainable Banking & Finance)
+Date: Fri, 16 Mar 2012 09:21:07 +0100
+Subject: Invitation | Global Sustainable Finance Conference, Germany
+Message-ID: <201203160851.q2G8p9Ww009344@hypatia.math.ethz.ch>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120316/bc6f6e8c/attachment.pl>
+
+From Uwe.Ligges at R-Project.org  Sun Mar 18 20:10:04 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 18 Mar 2012 20:10:04 +0100
+Subject: Package timeSeries_2130.92.tar.gz has been built for Windows - with a
+	WARNING
+Message-ID: <01cd053a$Blat.v2.2.2$b9825b1d@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2130.92.tar.gz did pass 'R CMD check' only with WARNING(s).
+It may shortly be omitted  from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+
+Please note that we are talking about R-2.15.0 prerelease
+(not the current release R-2.14.2).
+R-2.15.0 will be released on March 30.
+Please submit a fixed version without any ERROR or WARNING
+until release, otherwise your package will be archived.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+Please read and follow the CRAN policies
+(http://cran.r-project.org/web/packages/policies.html).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.15/timeSeries.Rcheck'
+* using R version 2.15.0 beta (2012-03-17 r58784)
+* using platform: x86_64-pc-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'timeSeries/DESCRIPTION' ... OK
+* this is package 'timeSeries' version '2130.92'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking whether package 'timeSeries' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* loading checks for arch 'i386'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+* loading checks for arch 'x64'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+.plotOHLC: warning in axis(1, at = time.x[lab.ind], lab = DD, ...):
+  partial argument match of 'lab' to 'labels'
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... WARNING
+  
+  Note: significantly better compression could be obtained
+        by using R CMD build --resave-data
+             old_size new_size compress
+  USDCHF.rda    250Kb    140Kb       xz
+* checking examples ...
+** running examples for arch 'i386' ... OK
+** running examples for arch 'x64' ... OK
+* checking for unstated dependencies in tests ... OK
+* checking tests ...
+** running tests for arch 'i386' OK
+  Running 'doRUnit.R'
+** running tests for arch 'x64' OK
+  Running 'doRUnit.R'
+* checking PDF version of manual ... OK
+WARNING: There was 1 warning.
+NOTE: There was 1 note.
+See
+  'd:/Rcompile/CRANpkg/local/2.15/timeSeries.Rcheck/00check.log'
+for details.
+
+From Uwe.Ligges at R-Project.org  Sun Mar 18 20:09:38 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 18 Mar 2012 20:09:38 +0100
+Subject: Package fBasics_2110.79.tar.gz has been built for Windows - with a
+	WARNING
+Message-ID: <01cd053a$Blat.v2.2.2$aa3b54bc@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_2110.79.tar.gz did pass 'R CMD check' only with WARNING(s).
+It may shortly be omitted  from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+
+Please note that we are talking about R-2.15.0 prerelease
+(not the current release R-2.14.2).
+R-2.15.0 will be released on March 30.
+Please submit a fixed version without any ERROR or WARNING
+until release, otherwise your package will be archived.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+Please read and follow the CRAN policies
+(http://cran.r-project.org/web/packages/policies.html).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.15/fBasics.Rcheck'
+* using R version 2.15.0 beta (2012-03-17 r58784)
+* using platform: x86_64-pc-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'fBasics/DESCRIPTION' ... OK
+* this is package 'fBasics' version '2110.79'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking whether package 'fBasics' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)
+  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)
+See 'd:/Rcompile/CRANpkg/local/2.15/fBasics.Rcheck/00install.out' for details.
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* loading checks for arch 'i386'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+* loading checks for arch 'x64'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+.mkphi.tp : fun: warning in backsolve(env$r, phix, tr = TRUE): partial
+  argument match of 'tr' to 'transpose'
+.mkrk.tp : fun: warning in backsolve(env$r, phix, tr = TRUE): partial
+  argument match of 'tr' to 'transpose'
+.mkrk.tp : fun: warning in backsolve(env$r, phiy, tr = TRUE): partial
+  argument match of 'tr' to 'transpose'
+.mspdsty : cv: warning in assign("cd", fit$cd, inherit = TRUE): partial
+  argument match of 'inherit' to 'inherits'
+.mspdsty : cv: warning in assign("int", fit$wk[3], inherit = TRUE):
+  partial argument match of 'inherit' to 'inherits'
+.sliderMenu: warning in get(paste("slider", no, sep = ""), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.sliderMenu: warning in eval(parse(text = paste("tclvalue(slider",
+  set.no.value[1], ")<-", set.no.value[2], sep = "")), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.sliderMenu: warning in assign("sc", sc, env = .slider.env): partial
+  argument match of 'env' to 'envir'
+.sliderMenu: warning in eval(parse(text = paste("tkconfigure(sc,
+  variable = slider", i, ")", sep = "")), env = .slider.env): partial
+  argument match of 'env' to 'envir'
+.sliderMenu : <anonymous>: warning in eval(parse(text =
+  paste("tclvalue(slider", i, ")<-", starts[i], sep = "")), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.sspdsty : cv: warning in assign("cd", fit$cd, inherit = TRUE): partial
+  argument match of 'inherit' to 'inherits'
+.sspdsty : cv: warning in assign("int", fit$wk[3], inherit = TRUE):
+  partial argument match of 'inherit' to 'inherits'
+.tdSliderMenu: warning in get(paste(".tdSlider", no, sep = ""), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.tdSliderMenu: warning in eval(parse(text = paste("tclvalue(.tdSlider",
+  set.no.value[1], ")<-", set.no.value[2], sep = "")), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.tdSliderMenu: warning in assign(obj.name, obj.value, env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.tdSliderMenu: warning in get(obj.name, env = .slider.env): partial
+  argument match of 'env' to 'envir'
+.tdSliderMenu : resetCMD: warning in eval(parse(text =
+  paste("tclvalue(.tdSlider", i, ")<-", starts[i], sep = "")), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.tdSliderMenu: warning in assign("sc", sc, env = .slider.env): partial
+  argument match of 'env' to 'envir'
+.tdSliderMenu: warning in eval(parse(text =
+  paste("tkconfigure(sc,variable=.tdSlider", i, ")", sep = "")), env =
+  .slider.env): partial argument match of 'env' to 'envir'
+.tdSliderMenu: warning in assign("slider.values.old", starts, env =
+  .slider.env): partial argument match of 'env' to 'envir'
+colorLocator: warning in axis(1, at = 1:30, label = 1:30, cex.axis =
+  cex.axis, tick = FALSE): partial argument match of 'label' to
+  'labels'
+colorLocator: warning in axis(2, at = 1:22, label = 1:22, cex.axis =
+  cex.axis, tick = FALSE, las = 1): partial argument match of 'label'
+  to 'labels'
+listFunctions: warning in ls(env, all = TRUE): partial argument match
+  of 'all' to 'all.names'
+Found .Internal call in the following function:
+  '.asRGB'
+with calls to .Internal functions
+  'col2rgb'
+
+Packages should not call .Internal(): it is not part of the API, for
+use only by R itself and subject to change without notice.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking compiled code ... NOTE
+Note: information on .o files for i386 is not available
+Note: information on .o files for x64 is not available
+File 'd:/Rcompile/CRANpkg/lib/2.15/fBasics/libs/i386/fBasics.dll':
+  Found 'abort', possibly from 'abort' (C), 'runtime' (Fortran)
+  Found 'exit', possibly from 'exit' (C), 'stop' (Fortran)
+File 'd:/Rcompile/CRANpkg/lib/2.15/fBasics/libs/x64/fBasics.dll':
+  Found 'abort', possibly from 'abort' (C), 'runtime' (Fortran)
+  Found 'exit', possibly from 'exit' (C), 'stop' (Fortran)
+
+Compiled code should not call functions which might terminate R nor
+write to stdout/stderr instead of to the console.  The detected symbols
+are linked into the code but might come from libraries and not actually
+be called.
+
+See 'Writing portable packages' in the 'Writing R Extensions' manual.
+* checking examples ...
+** running examples for arch 'i386' ... OK
+** running examples for arch 'x64' ... OK
+* checking for unstated dependencies in tests ... OK
+* checking tests ...
+** running tests for arch 'i386' OK
+  Running 'doRUnit.R'
+** running tests for arch 'x64' OK
+  Running 'doRUnit.R'
+* checking PDF version of manual ... OK
+WARNING: There was 1 warning.
+NOTE: There were 2 notes.
+See
+  'd:/Rcompile/CRANpkg/local/2.15/fBasics.Rcheck/00check.log'
+for details.
+
+From Uwe.Ligges at R-Project.org  Sun Mar 18 20:09:38 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 18 Mar 2012 20:09:38 +0100
+Subject: Package fAsianOptions_2100.76.tar.gz has been built for Windows -
+	with a WARNING
+Message-ID: <01cd053a$Blat.v2.2.2$aa1c62b5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAsianOptions_2100.76.tar.gz did pass 'R CMD check' only with WARNING(s).
+It may shortly be omitted  from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+
+Please note that we are talking about R-2.15.0 prerelease
+(not the current release R-2.14.2).
+R-2.15.0 will be released on March 30.
+Please submit a fixed version without any ERROR or WARNING
+until release, otherwise your package will be archived.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+Please read and follow the CRAN policies
+(http://cran.r-project.org/web/packages/policies.html).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.15/fAsianOptions.Rcheck'
+* using R version 2.15.0 beta (2012-03-17 r58784)
+* using platform: x86_64-pc-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'fAsianOptions/DESCRIPTION' ... OK
+* this is package 'fAsianOptions' version '2100.76'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... NOTE
+As from R 2.14.0 all packages need a namespace.
+One will be generated on installation, but it is better to handcraft a
+NAMESPACE file: R CMD build will produce a suitable starting point.
+CRAN requires a NAMESPACE file for all submissions.
+* checking whether package 'fAsianOptions' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: Rank mismatch in argument 'x' at (1) (rank-1 and scalar)
+See 'd:/Rcompile/CRANpkg/local/2.15/fAsianOptions.Rcheck/00install.out' for details.
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* loading checks for arch 'i386'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+* loading checks for arch 'x64'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+GemanYorAsianOption : fx: warning in complex(real = 0, imag = x):
+  partial argument match of 'imag' to 'imaginary'
+GemanYorAsianOption : fx: warning in complex(real = alpha, imag = x):
+  partial argument match of 'imag' to 'imaginary'
+Psi: warning in complex(real = value[[3]], imag = value[[4]]): partial
+  argument match of 'imag' to 'imaginary'
+cgamma: warning in complex(real = x, imag = 0 * x): partial argument
+  match of 'imag' to 'imaginary'
+cgamma: warning in complex(real = value[[4]], imag = value[[5]]):
+  partial argument match of 'imag' to 'imaginary'
+gGemanYor: warning in complex(real = 0, imag = 0): partial argument
+  match of 'imag' to 'imaginary'
+gLinetzky: warning in complex(real = 0, imag = p/2): partial argument
+  match of 'imag' to 'imaginary'
+kummerM: warning in complex(real = x, imag = 0 * x): partial argument
+  match of 'imag' to 'imaginary'
+kummerM: warning in complex(real = a, imag = 0): partial argument match
+  of 'imag' to 'imaginary'
+kummerM: warning in complex(real = b, imag = 0): partial argument match
+  of 'imag' to 'imaginary'
+kummerM: warning in complex(real = 0, imag = 0): partial argument match
+  of 'imag' to 'imaginary'
+kummerM: warning in complex(real = value[[7]], imag = value[[8]]):
+  partial argument match of 'imag' to 'imaginary'
+kummerU: warning in complex(real = x, imag = 0 * x): partial argument
+  match of 'imag' to 'imaginary'
+kummerU: warning in complex(real = a, imag = 0): partial argument match
+  of 'imag' to 'imaginary'
+kummerU: warning in complex(real = b, imag = 0): partial argument match
+  of 'imag' to 'imaginary'
+whittakerM: warning in complex(real = x, imag = 0 * x): partial
+  argument match of 'imag' to 'imaginary'
+whittakerM: warning in complex(real = kappa, imag = 0): partial
+  argument match of 'imag' to 'imaginary'
+whittakerM: warning in complex(real = mu, imag = 0): partial argument
+  match of 'imag' to 'imaginary'
+whittakerW: warning in complex(real = x, imag = 0 * x): partial
+  argument match of 'imag' to 'imaginary'
+whittakerW: warning in complex(real = kappa, imag = 0): partial
+  argument match of 'imag' to 'imaginary'
+whittakerW: warning in complex(real = mu, imag = 0): partial argument
+  match of 'imag' to 'imaginary'
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking compiled code ... NOTE
+Note: information on .o files for i386 is not available
+Note: information on .o files for x64 is not available
+File 'd:/Rcompile/CRANpkg/lib/2.15/fAsianOptions/libs/i386/fAsianOptions.dll':
+  Found 'abort', possibly from 'abort' (C), 'runtime' (Fortran)
+  Found 'exit', possibly from 'exit' (C), 'stop' (Fortran)
+File 'd:/Rcompile/CRANpkg/lib/2.15/fAsianOptions/libs/x64/fAsianOptions.dll':
+  Found 'abort', possibly from 'abort' (C), 'runtime' (Fortran)
+  Found 'exit', possibly from 'exit' (C), 'stop' (Fortran)
+
+Compiled code should not call functions which might terminate R nor
+write to stdout/stderr instead of to the console.  The detected symbols
+are linked into the code but might come from libraries and not actually
+be called.
+
+See 'Writing portable packages' in the 'Writing R Extensions' manual.
+* checking examples ...
+** running examples for arch 'i386' ... OK
+** running examples for arch 'x64' ... OK
+* checking for unstated dependencies in tests ... OK
+* checking tests ...
+** running tests for arch 'i386' OK
+  Running 'doRUnit.R'
+** running tests for arch 'x64' OK
+  Running 'doRUnit.R'
+* checking PDF version of manual ... OK
+WARNING: There was 1 warning.
+NOTE: There were 3 notes.
+See
+  'd:/Rcompile/CRANpkg/local/2.15/fAsianOptions.Rcheck/00check.log'
+for details.
+
+From Uwe.Ligges at R-Project.org  Tue Mar 20 17:33:56 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Tue, 20 Mar 2012 17:33:56 +0100
+Subject: Package fImport_2160.81.tar.gz has been built for Windows
+Message-ID: <01cd06b7$Blat.v2.2.2$3e9cf0b9@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_2160.81.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Tue Mar 20 17:33:56 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Tue, 20 Mar 2012 17:33:56 +0100
+Subject: Package fOptions_2160.80.tar.gz has been built for Windows
+Message-ID: <01cd06b7$Blat.v2.2.2$3ebe4423@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_2160.80.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Tue Mar 20 17:33:55 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Tue, 20 Mar 2012 17:33:55 +0100
+Subject: Package fBasics_2160.81.tar.gz has been built for Windows
+Message-ID: <01cd06b7$Blat.v2.2.2$3e6d54fd@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_2160.81.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Tue Mar 20 17:34:04 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Tue, 20 Mar 2012 17:34:04 +0100
+Subject: Package timeSeries_2160.93.tar.gz has been built for Windows
+Message-ID: <01cd06b7$Blat.v2.2.2$4385cce9@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2160.93.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Tue Mar 20 17:34:04 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Tue, 20 Mar 2012 17:34:04 +0100
+Subject: Package timeDate_2160.95.tar.gz has been built for Windows
+Message-ID: <01cd06b7$Blat.v2.2.2$434f0d04@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_2160.95.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Mar 21 17:00:23 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 21 Mar 2012 17:00:23 +0100
+Subject: Package fArma_2160.77.tar.gz has been built for Windows
+Message-ID: <01cd077b$Blat.v2.2.2$b95b45a0@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fArma_2160.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Wed Mar 21 17:00:28 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 21 Mar 2012 17:00:28 +0100
+Subject: Package fAsianOptions_2160.77.tar.gz has been built for Windows
+Message-ID: <01cd077b$Blat.v2.2.2$bc6f30a1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAsianOptions_2160.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From ligges at statistik.tu-dortmund.de  Wed Mar 21 19:41:49 2012
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Wed, 21 Mar 2012 19:41:49 +0100
+Subject: fExtremes ERROR
+Message-ID: <4F6A20ED.2010907@statistik.tu-dortmund.de>
+
+Dear Rmetrics core team,
+
+probably caused by one of the updates of packages timeDate, timeSeries, 
+fBasics, we see fExtremes failing now:
+
+http://cran.r-project.org/web/checks/check_results_fExtremes.html
+
+Please check your own cross dependencies before upload to CRAN.
+
+Please fix fExtremes or the cause of this ERROR in one of the otehr 
+packages.
+
+Best,
+Uwe Ligges
+
+
+From Uwe.Ligges at R-Project.org  Thu Mar 22 17:24:00 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Thu, 22 Mar 2012 17:24:00 +0100
+Subject: Package timeSeries_2160.94.tar.gz has been built for Windows
+Message-ID: <01cd0848$Blat.v2.2.2$30098455@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2160.94.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 beta (2012-03-17 r58784)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

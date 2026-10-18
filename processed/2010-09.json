@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-09",
+  "messages": [
+    {
+      "id": "msg-44279f77f9b2",
+      "message_id": "<AANLkTimFz7f+vsS1k7H_5i0wcLGA+7HceGSPW0mGWoCv@mail.gmail.com>",
+      "from_name": "t sf",
+      "from_email_hash": "32563359e8fbf972bc3bdbb25f9bc46716f2779d36321f877ccd5ca9e440a3de",
+      "date": "2010-09-06T18:43:15Z",
+      "subject": "time series, gap, fill-in time stamp",
+      "subject_clean": "time series, gap, fill-in time stamp",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl>",
+      "thread_id": "thread-44279f77f9b2",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-694dfaa90114",
+      "message_id": "<20100916112349.AWT45349@metis.its.uow.edu.au>",
+      "from_name": "ck691 at uow.edu.au",
+      "from_email_hash": "2e9486b0a75be7eda2ddb1e317ec50cee209937edfdf885305aaec5ce367375e",
+      "date": "2010-09-16T01:23:49Z",
+      "subject": "i have got some problem in Hessian metrix",
+      "subject_clean": "i have got some problem in Hessian metrix",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n  I am student in Australia. I try to work out in R programming. I did replicate 100 time to get the Garch parameter and then use that Garch model to make volatility forecasting under MAE and MSE measurement so I should get 100 values of MAE and MSE. But there is some problem in Hessian metrix so I can get the values of MAE and MSE only less than 100. How can i skip the singular hessian problem to get 100 value of MAE and MSE. Please help me to slove this problems.\n\nThank you.\nBest Regards,\n\nChaiwat",
+      "body_snippet": "Hi,\n  I am student in Australia. I try to work out in R programming. I did replicate 100 time to get the Garch parameter and then use that Garch model to make volatility forecasting under MAE and MSE ",
+      "thread_id": "thread-694dfaa90114",
+      "thread_depth": 0,
+      "month": "2010-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-44279f77f9b2",
+      "subject": "time series, gap, fill-in time stamp",
+      "message_count": 1,
+      "participants": [
+        "t sf"
+      ],
+      "started": "2010-09-06T18:43:15Z",
+      "last_reply": "2010-09-06T18:43:15Z",
+      "root_message_id": "msg-44279f77f9b2"
+    },
+    {
+      "id": "thread-694dfaa90114",
+      "subject": "i have got some problem in Hessian metrix",
+      "message_count": 1,
+      "participants": [
+        "ck691 at uow.edu.au"
+      ],
+      "started": "2010-09-16T01:23:49Z",
+      "last_reply": "2010-09-16T01:23:49Z",
+      "root_message_id": "msg-694dfaa90114"
+    }
+  ]
+}

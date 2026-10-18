@@ -1,0 +1,1548 @@
+From Kurt.Hornik at wu.ac.at  Mon Dec  2 18:14:55 2013
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Mon, 2 Dec 2013 18:14:55 +0100
+Subject: CRAN packages maintained by you
+In-Reply-To: <21094.50116.787225.450168@fangorn.hornik.net>
+References: <21094.50116.787225.450168@fangorn.hornik.net>
+Message-ID: <21148.49167.52690.286990@fangorn.hornik.net>
+
+>>>>> Kurt Hornik writes:
+
+
+> Dear maintainers,
+
+> This concerns the packages
+
+>     ADM3 BAS Cairo DIME DIRECT DPM.GGM ExactSampling FunCluster FunNet
+>     GGally GLDEX GMD GenKern ISBF JASPAR MetaPath MiST MixSim NSA OPDOE
+>     OPE PCovR PET Peaks QT QTLRel RTDAmeritrade RTextTools RTisean
+>     RcmdrPlugin.SCDA Reol Rsundials Ryacas SDDA SII StochaTR TWIX
+>     TreeSim UScensus2000blkgrp UScensus2000cdp UScensus2000tract amap
+>     binom brainwaver capme cghseg charlson cit coalescentMCMC colbycol
+>     compositions compositionsGUI coxphw ecodist equivalence evdbayes
+>     extracat fAssets fBonds fExtremes fPortfolio fRegression fTrading
+>     factas flubase forensic ftnonpar gazetools gibbs.met huge
+>     iSubpathwayMiner idbg ifa insideRODE integrOmics interactivity kknn
+>     lawstat localdepth maxent mcgibbsit mcr mnormt mpa ndtv ndvits
+>     pdfCluster phyloTop polyclip powell ppMeasures predmixcor proj4
+>     qPCR.CT qlspack qtbase ref refund rgcvpack ringscale sampling seq2R
+>     seqCBS sifds sisus snort spider survAUC tonymisc topologyGSA
+>     validator waveslim weirs wle wombsoft yacca
+
+> maintained by one of you, for which R CMD check finds problems in the
+> 'whether package can be installed' check, see below for details.
+
+> Can we pls have updates fixing these within the next 2 weeks?
+
+> Note that other R CMD check problems may need to be addressed as well.
+
+Still open for packages
+
+    ADM3 BAS Cairo DIME DIRECT DPM.GGM FunCluster FunNet GGally GLDEX
+    GMD JASPAR MetaPath MiST MixSim NSA OPDOE OPE PCovR PET Peaks QT
+    QTLRel RTDAmeritrade RTextTools RTisean RcmdrPlugin.SCDA Rsundials
+    Ryacas SDDA SII StochaTR TWIX TreeSim UScensus2000blkgrp
+    UScensus2000cdp UScensus2000tract amap binom brainwaver capme
+    charlson cit compositions ecodist evdbayes extracat fAssets fBonds
+    fExtremes fPortfolio fRegression fTrading factas flubase forensic
+    ftnonpar gazetools gibbs.met huge iSubpathwayMiner idbg ifa
+    insideRODE integrOmics kknn lawstat mcr mnormt mpa ndvits phyloTop
+    powell ppMeasures predmixcor proj4 qPCR.CT qlspack qtbase ref
+    refund ringscale seq2R seqCBS sifds sisus snort spider survAUC
+    tonymisc validator waveslim weirs wle wombsoft yacca
+
+it seems, see below for details.
+
+This will be the last reminder: if you want your package to remain
+active on CRAN, please address this issue (as well as other pending
+issues shown on the package check results page) within 2 weeks.
+
+***********************************************************************
+
+Package: ADM3 Version: 1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ADM3?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ADM3.Rcheck/00install.out? for details.
+
+Package: BAS Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?BAS?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/BAS.Rcheck/00install.out? for details.
+
+Package: Cairo Version: 1.5-2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Cairo?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Cairo.Rcheck/00install.out? for details.
+
+Package: DIME Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DIME?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DIME.Rcheck/00install.out? for details.
+
+Package: DIRECT Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DIRECT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DIRECT.Rcheck/00install.out? for details.
+
+Package: DPM.GGM Version: 0.14
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DPM.GGM?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DPM.GGM.Rcheck/00install.out? for details.
+
+Package: FunCluster Version: 1.09
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?FunCluster?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/FunCluster.Rcheck/00install.out? for details.
+
+Package: FunNet Version: 1.00-12
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?FunNet?
+  Warning: replacing previous import by ?sna::gapply? when loading ?FunNet?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/FunNet.Rcheck/00install.out? for details.
+
+Package: GGally Version: 0.4.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading ?GGally?
+  Warning: replacing previous import by ?reshape::round_any? when loading ?GGally?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GGally.Rcheck/00install.out? for details.
+
+Package: GLDEX Version: 1.0.4.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?GLDEX?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GLDEX.Rcheck/00install.out? for details.
+
+Package: GMD Version: 0.3.1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?GMD?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GMD.Rcheck/00install.out? for details.
+
+Package: JASPAR Version: 0.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?JASPAR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/JASPAR.Rcheck/00install.out? for details.
+
+Package: MetaPath Version: 0.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?limma::show? when loading ?MetaPath?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MetaPath.Rcheck/00install.out? for details.
+
+Package: MiST Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?CompQuadForm::davies? when loading ?MiST?
+  Warning: replacing previous import by ?CompQuadForm::liu? when loading ?MiST?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MiST.Rcheck/00install.out? for details.
+
+Package: MixSim Version: 1.0-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?MixSim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MixSim.Rcheck/00install.out? for details.
+
+Package: NSA Version: 0.0.32
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?NSA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/NSA.Rcheck/00install.out? for details.
+
+Package: OPDOE Version: 1.0-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gmp::factorize? when loading ?OPDOE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/OPDOE.Rcheck/00install.out? for details.
+
+Package: OPE Version: 0.7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?OPE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/OPE.Rcheck/00install.out? for details.
+
+Package: PCovR Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?psych::logit? when loading ?PCovR?
+  Warning: replacing previous import by ?ThreeWay::phi? when loading ?PCovR?
+  Warning: replacing previous import by ?ThreeWay::tr? when loading ?PCovR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/PCovR.Rcheck/00install.out? for details.
+
+Package: PET Version: 0.4.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?PET?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/PET.Rcheck/00install.out? for details.
+
+Package: Peaks Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Peaks?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Peaks.Rcheck/00install.out? for details.
+
+Package: QT Version: 1.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?QT?
+  Warning: replacing previous import by ?SASxport::label? when loading ?QT?
+  Warning: replacing previous import by ?SASxport::label<-? when loading ?QT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/QT.Rcheck/00install.out? for details.
+
+Package: QTLRel Version: 0.2-12
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?QTLRel?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/QTLRel.Rcheck/00install.out? for details.
+
+Package: RTDAmeritrade Version: 0.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?sfsmisc::last? when loading ?RTDAmeritrade?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTDAmeritrade.Rcheck/00install.out? for details.
+
+Package: RTextTools Version: 1.4.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?SparseM::coerce? when loading ?RTextTools?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTextTools.Rcheck/00install.out? for details.
+
+Package: RTisean Version: 3.0.14
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?RTisean?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTisean.Rcheck/00install.out? for details.
+
+Package: RcmdrPlugin.SCDA Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?SCRT::graph? when loading ?RcmdrPlugin.SCDA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RcmdrPlugin.SCDA.Rcheck/00install.out? for details.
+
+Package: Rsundials Version: 1.6
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Rsundials?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Rsundials.Rcheck/00install.out? for details.
+
+Package: Ryacas Version: 0.2-11
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Ryacas?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Ryacas.Rcheck/00install.out? for details.
+
+Package: SDDA Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?SDDA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/SDDA.Rcheck/00install.out? for details.
+
+Package: SII Version: 1.0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?SII?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/SII.Rcheck/00install.out? for details.
+
+Package: StochaTR Version: 1.0.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?StochaTR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/StochaTR.Rcheck/00install.out? for details.
+
+Package: TWIX Version: 0.2.19
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?TWIX?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/TWIX.Rcheck/00install.out? for details.
+
+Package: TreeSim Version: 1.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?geiger::drop.tip? when loading ?TreeSim?
+  Warning: replacing previous import by ?geiger::vcv.phylo? when loading ?TreeSim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/TreeSim.Rcheck/00install.out? for details.
+
+Package: UScensus2000blkgrp Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000blkgrp?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000blkgrp.Rcheck/00install.out? for details.
+
+Package: UScensus2000cdp Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000cdp?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000cdp.Rcheck/00install.out? for details.
+
+Package: UScensus2000tract Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000tract?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000tract.Rcheck/00install.out? for details.
+
+Package: amap Version: 0.8-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?amap?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/amap.Rcheck/00install.out? for details.
+
+Package: binom Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?binom?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/binom.Rcheck/00install.out? for details.
+
+Package: brainwaver Version: 1.6
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?brainwaver?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/brainwaver.Rcheck/00install.out? for details.
+
+Package: capme Version: 1.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?capme?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/capme.Rcheck/00install.out? for details.
+
+Package: charlson Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading ?charlson?
+  Warning: replacing previous import by ?reshape::round_any? when loading ?charlson?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/charlson.Rcheck/00install.out? for details.
+
+Package: cit Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?cit?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/cit.Rcheck/00install.out? for details.
+
+Package: compositions Version: 1.30-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?graphics::plot? when loading ?compositions?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/compositions.Rcheck/00install.out? for details.
+
+Package: ecodist Version: 1.2.7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ecodist?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ecodist.Rcheck/00install.out? for details.
+
+Package: evdbayes Version: 1.1-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?evdbayes?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/evdbayes.Rcheck/00install.out? for details.
+
+Package: extracat Version: 1.6-3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading ?extracat?
+  Warning: replacing previous import by ?reshape::round_any? when loading ?extracat?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/extracat.Rcheck/00install.out? for details.
+
+Package: fAssets Version: 2110.79
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fAssets?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fAssets.Rcheck/00install.out? for details.
+
+Package: fBonds Version: 2160.76
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fBonds?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fBonds.Rcheck/00install.out? for details.
+
+Package: fExtremes Version: 3010.80
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?fTrading::rollMax? when loading ?fExtremes?
+  Warning: replacing previous import by ?fTrading::rollMean? when loading ?fExtremes?
+  Warning: replacing previous import by ?fTrading::rollMin? when loading ?fExtremes?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fExtremes.Rcheck/00install.out? for details.
+
+Package: fPortfolio Version: 2130.80
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fPortfolio?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fPortfolio.Rcheck/00install.out? for details.
+
+Package: fRegression Version: 3010.78
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?fTrading::rollMax? when loading ?fRegression?
+  Warning: replacing previous import by ?fTrading::rollMean? when loading ?fRegression?
+  Warning: replacing previous import by ?fTrading::rollMin? when loading ?fRegression?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fRegression.Rcheck/00install.out? for details.
+
+Package: fTrading Version: 2160.77
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fTrading?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fTrading.Rcheck/00install.out? for details.
+
+Package: factas Version: 2.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?graphics::image? when loading ?factas?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/factas.Rcheck/00install.out? for details.
+
+Package: flubase Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?FinTS::Acf? when loading ?flubase?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/flubase.Rcheck/00install.out? for details.
+
+Package: forensic Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?forensic?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/forensic.Rcheck/00install.out? for details.
+
+Package: ftnonpar Version: 0.1-88
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ftnonpar?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ftnonpar.Rcheck/00install.out? for details.
+
+Package: gazetools Version: 3.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading ?gazetools?
+  Warning: replacing previous import by ?reshape::round_any? when loading ?gazetools?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/gazetools.Rcheck/00install.out? for details.
+
+Package: gibbs.met Version: 1.1-3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?gibbs.met?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/gibbs.met.Rcheck/00install.out? for details.
+
+Package: huge Version: 1.2.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?huge?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/huge.Rcheck/00install.out? for details.
+
+Package: iSubpathwayMiner Version: 3.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?igraph::degree? when loading ?iSubpathwayMiner?
+  Warning: replacing previous import by ?igraph::edges? when loading ?iSubpathwayMiner?
+  Warning: replacing previous import by ?igraph::transitivity? when loading ?iSubpathwayMiner?
+  Warning: replacing previous import by ?XML::addNode? when loading ?iSubpathwayMiner?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/iSubpathwayMiner.Rcheck/00install.out? for details.
+
+Package: idbg Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?idbg?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/idbg.Rcheck/00install.out? for details.
+
+Package: ifa Version: 7.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ifa?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ifa.Rcheck/00install.out? for details.
+
+Package: insideRODE Version: 2.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?insideRODE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/insideRODE.Rcheck/00install.out? for details.
+
+Package: integrOmics Version: 2.55
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?integrOmics?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/integrOmics.Rcheck/00install.out? for details.
+
+Package: kknn Version: 1.2-2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?stats::cov2cor? when loading ?kknn?
+  Warning: replacing previous import by ?stats::toeplitz? when loading ?kknn?
+  Warning: replacing previous import by ?stats::update? when loading ?kknn?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/kknn.Rcheck/00install.out? for details.
+
+Package: lawstat Version: 2.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?VGAM::case.names? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::coef? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::coefficients? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::df.residual? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::dfbeta? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::fitted? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::fitted.values? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::formula? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::hatvalues? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::poly? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::residuals? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::variable.names? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::weights? when loading ?lawstat?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/lawstat.Rcheck/00install.out? for details.
+
+Package: mcr Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mcr?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mcr.Rcheck/00install.out? for details.
+
+Package: mnormt Version: 1.4-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mnormt?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mnormt.Rcheck/00install.out? for details.
+
+Package: mpa Version: 0.7.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mpa?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mpa.Rcheck/00install.out? for details.
+
+Package: ndvits Version: 1.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?RTisean::project? when loading ?ndvits?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ndvits.Rcheck/00install.out? for details.
+
+Package: phyloTop Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?phylobase::edges? when loading ?phyloTop?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/phyloTop.Rcheck/00install.out? for details.
+
+Package: powell Version: 1.0-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?powell?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/powell.Rcheck/00install.out? for details.
+
+Package: ppMeasures Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ppMeasures?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ppMeasures.Rcheck/00install.out? for details.
+
+Package: predmixcor Version: 1.1-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?predmixcor?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/predmixcor.Rcheck/00install.out? for details.
+
+Package: proj4 Version: 1.0-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?proj4?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/proj4.Rcheck/00install.out? for details.
+
+Package: qPCR.CT Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?qPCR.CT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qPCR.CT.Rcheck/00install.out? for details.
+
+Package: qlspack Version: 2.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?qlspack?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qlspack.Rcheck/00install.out? for details.
+
+Package: qtbase Version: 1.0.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:1035:2: warning: #warning "implement me" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:2603:2: warning: #warning "implemente me (AST)" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:3489:2: warning: #warning "mark the ast as constant" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/name_compiler.cpp:139:2: warning: #warning "NameCompiler::visitUnqualifiedName() -- implement me" [-Wcpp]
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qtbase.Rcheck/00install.out? for details.
+
+Package: ref Version: 0.98
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ref?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ref.Rcheck/00install.out? for details.
+
+Package: refund Version: 0.1-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?magic::magic? when loading ?refund?
+  Warning: replacing previous import by ?lme4::VarCorr? when loading ?refund?
+  Warning: replacing previous import by ?lme4::fixef? when loading ?refund?
+  Warning: replacing previous import by ?lme4::lmList? when loading ?refund?
+  Warning: replacing previous import by ?lme4::ranef? when loading ?refund?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/refund.Rcheck/00install.out? for details.
+
+Package: ringscale Version: 0.1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ringscale?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ringscale.Rcheck/00install.out? for details.
+
+Package: seq2R Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?seq2R?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/seq2R.Rcheck/00install.out? for details.
+
+Package: seqCBS Version: 1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?seqCBS?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/seqCBS.Rcheck/00install.out? for details.
+
+Package: sifds Version: 0.9-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gdata::object.size? when loading ?sifds?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/sifds.Rcheck/00install.out? for details.
+
+Package: sisus Version: 0.09-011
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gdata::combine? when loading ?sisus?
+  Warning: replacing previous import by ?stats::lowess? when loading ?sisus?
+  Warning: replacing previous import by ?stats::nobs? when loading ?sisus?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/sisus.Rcheck/00install.out? for details.
+
+Package: snort Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?sna::%c%? when loading ?snort?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/snort.Rcheck/00install.out? for details.
+
+Package: spider Version: 1.2-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?pegas::mst? when loading ?spider?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/spider.Rcheck/00install.out? for details.
+
+Package: survAUC Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?survAUC?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/survAUC.Rcheck/00install.out? for details.
+
+Package: tonymisc Version: 1.1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?car::recode? when loading ?tonymisc?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/tonymisc.Rcheck/00install.out? for details.
+
+Package: validator Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?clValid::connectivity? when loading ?validator?
+  Warning: replacing previous import by ?flexclust::clusters? when loading ?validator?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/validator.Rcheck/00install.out? for details.
+
+Package: waveslim Version: 1.7.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?waveslim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/waveslim.Rcheck/00install.out? for details.
+
+Package: weirs Version: 0.21
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?weirs?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/weirs.Rcheck/00install.out? for details.
+
+Package: wle Version: 0.9-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?wle?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/wle.Rcheck/00install.out? for details.
+
+Package: wombsoft Version: 2.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?wombsoft?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/wombsoft.Rcheck/00install.out? for details.
+
+Package: yacca Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?yacca?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/yacca.Rcheck/00install.out? for details.
+
+
+From maechler at stat.math.ethz.ch  Thu Dec  5 20:48:44 2013
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 5 Dec 2013 20:48:44 +0100
+Subject: Fwd: CRAN packages maintained by you
+In-Reply-To: <21148.49167.52690.286990@fangorn.hornik.net>
+References: <21094.50116.787225.450168@fangorn.hornik.net>
+	<21148.49167.52690.286990@fangorn.hornik.net>
+Message-ID: <CAPRP4-dWb8ivYTqBDo9SZOwruCWiBqQZ199cnYwmiORew38HMQ@mail.gmail.com>
+
+Yohan,  Diethelm,  did you get this?       Who is currently
+responsible as maintainer for these f<Topic>
+Rmetrics packages?
+
+Best regards,
+Martin
+
+---------- Forwarded message ----------
+From: Kurt Hornik <Kurt.Hornik at wu.ac.at>
+Date: Mon, Dec 2, 2013 at 6:14 PM
+Subject: Re: CRAN packages maintained by you
+To: a.kovac at bristol.ac.uk, albrecht.gebhardt at uni-klu.ac.at,
+alex.lenkoski at uni-heidelberg.de,
+alexander.pilhoefer at math.uni-augsburg.de, allegro.su at gmail.com,
+almquist at uci.edu, ameline.crida at ens-lyon.org, antoinelucas at gmail.com,
+antonio.fabio at gmail.com, audreyqyfu at gmail.com, azzalini at stat.unipd.it,
+balta.nunes at gmail.com, bjw34032 at users.sourceforge.net, buttsc at uci.edu,
+cepardot at unal.edu.co, cinzia.viroli at unibo.it, claudio at unive.it,
+clyde at stat.duke.edu, corneliu at henegar.info, david.clifford at csiro.au,
+david.m.diez at gmail.com, dh at haase-zm.de, econometrics at russia.ru,
+erik at statacumen.com, fabian.model at roche.com, ggrothendieck at gmail.com,
+greg at warnes.net, huangracer at gmail.com, isis.bulte at ppw.kuleuven.be,
+j.c.rougier at bristol.ac.uk, jens.oehlschlaegel at truecluster.com,
+jeremyjshen at gmail.com, jichun at mail.med.upenn.edu, jichun at temple.edu,
+jschulz78 at web.de, jsun at fhcrc.org, k.lecao at uq.edu.au,
+klaus.schliep at gmail.com, kuishen at alumni.pitt.edu, lcqbio at yahoo.com.cn,
+longhai at math.usask.ca, marcus.scherl at gmx.net,
+mark.norrie at yisitechnologies.com, marlies.vervloet at ppw.kuleuven.be,
+maruskay at gmail.com, mathieu.ribatet at math.univ-montp2.fr,
+mboyd855 at gmail.com, michafla at gene.com, millstei at usc.edu,
+mitzpaz at gmail.com, mkondrin at hppi.troitsk.ru, mlu at ne.su.se,
+mortizest at gmail.com, nmvillanueva at uvigo.es,
+pharmacometrics at fda.hhs.gov, rfrelat at yahoo.com,
+riyan.cheng at anu.edu.au, rmetrics-core at r-project.org,
+rmh3093 at gmail.com, romain.bar at univ-lorraine.fr,
+s_d_j_brown at hotmail.com, sarah.goslee at ars.usda.gov,
+schloerke at gmail.com, sdorairaj at gmail.com, sergej.potapov at gmail.com,
+sergej.potapov at googlemail.com, simon.urbanek at r-project.org,
+smcphers at cwru.edu, sophie.achard at gipsa-lab.inpg.fr,
+support at boogaart.de, tanja.stadler at env.ethz.ch, taslim.2 at osu.edu,
+tf2 at sanger.ac.uk, theodore.vanrooy at gmail.com, tony.cookson at gmail.com,
+tpjurka at ucdavis.edu, tzhao5 at jhu.edu, vanessa at stat.tamu.edu,
+vlyubchich at uwaterloo.ca, vmelnykov at cba.ua.edu,
+william.asquith at ttu.edu, xiaobei at binf.ku.dk,
+yohan.chalabi at rmetrics.org, yuzhuo.pan at gmail.com
+Cc: CRAN at r-project.org
+
+
+>>>>> Kurt Hornik writes:
+
+
+> Dear maintainers,
+
+> This concerns the packages
+
+>     ADM3 BAS Cairo DIME DIRECT DPM.GGM ExactSampling FunCluster FunNet
+>     GGally GLDEX GMD GenKern ISBF JASPAR MetaPath MiST MixSim NSA OPDOE
+>     OPE PCovR PET Peaks QT QTLRel RTDAmeritrade RTextTools RTisean
+>     RcmdrPlugin.SCDA Reol Rsundials Ryacas SDDA SII StochaTR TWIX
+>     TreeSim UScensus2000blkgrp UScensus2000cdp UScensus2000tract amap
+>     binom brainwaver capme cghseg charlson cit coalescentMCMC colbycol
+>     compositions compositionsGUI coxphw ecodist equivalence evdbayes
+>     extracat fAssets fBonds fExtremes fPortfolio fRegression fTrading
+>     factas flubase forensic ftnonpar gazetools gibbs.met huge
+>     iSubpathwayMiner idbg ifa insideRODE integrOmics interactivity kknn
+>     lawstat localdepth maxent mcgibbsit mcr mnormt mpa ndtv ndvits
+>     pdfCluster phyloTop polyclip powell ppMeasures predmixcor proj4
+>     qPCR.CT qlspack qtbase ref refund rgcvpack ringscale sampling seq2R
+>     seqCBS sifds sisus snort spider survAUC tonymisc topologyGSA
+>     validator waveslim weirs wle wombsoft yacca
+
+> maintained by one of you, for which R CMD check finds problems in the
+> 'whether package can be installed' check, see below for details.
+
+> Can we pls have updates fixing these within the next 2 weeks?
+
+> Note that other R CMD check problems may need to be addressed as well.
+
+Still open for packages
+
+    ADM3 BAS Cairo DIME DIRECT DPM.GGM FunCluster FunNet GGally GLDEX
+    GMD JASPAR MetaPath MiST MixSim NSA OPDOE OPE PCovR PET Peaks QT
+    QTLRel RTDAmeritrade RTextTools RTisean RcmdrPlugin.SCDA Rsundials
+    Ryacas SDDA SII StochaTR TWIX TreeSim UScensus2000blkgrp
+    UScensus2000cdp UScensus2000tract amap binom brainwaver capme
+    charlson cit compositions ecodist evdbayes extracat fAssets fBonds
+    fExtremes fPortfolio fRegression fTrading factas flubase forensic
+    ftnonpar gazetools gibbs.met huge iSubpathwayMiner idbg ifa
+    insideRODE integrOmics kknn lawstat mcr mnormt mpa ndvits phyloTop
+    powell ppMeasures predmixcor proj4 qPCR.CT qlspack qtbase ref
+    refund ringscale seq2R seqCBS sifds sisus snort spider survAUC
+    tonymisc validator waveslim weirs wle wombsoft yacca
+
+it seems, see below for details.
+
+This will be the last reminder: if you want your package to remain
+active on CRAN, please address this issue (as well as other pending
+issues shown on the package check results page) within 2 weeks.
+
+***********************************************************************
+
+Package: ADM3 Version: 1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ADM3?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ADM3.Rcheck/00install.out?
+for details.
+
+Package: BAS Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?BAS?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/BAS.Rcheck/00install.out?
+for details.
+
+Package: Cairo Version: 1.5-2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Cairo?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Cairo.Rcheck/00install.out?
+for details.
+
+Package: DIME Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DIME?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DIME.Rcheck/00install.out?
+for details.
+
+Package: DIRECT Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DIRECT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DIRECT.Rcheck/00install.out?
+for details.
+
+Package: DPM.GGM Version: 0.14
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?DPM.GGM?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/DPM.GGM.Rcheck/00install.out?
+for details.
+
+Package: FunCluster Version: 1.09
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?FunCluster?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/FunCluster.Rcheck/00install.out?
+for details.
+
+Package: FunNet Version: 1.00-12
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?FunNet?
+  Warning: replacing previous import by ?sna::gapply? when loading ?FunNet?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/FunNet.Rcheck/00install.out?
+for details.
+
+Package: GGally Version: 0.4.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading ?GGally?
+  Warning: replacing previous import by ?reshape::round_any? when
+loading ?GGally?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GGally.Rcheck/00install.out?
+for details.
+
+Package: GLDEX Version: 1.0.4.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?GLDEX?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GLDEX.Rcheck/00install.out?
+for details.
+
+Package: GMD Version: 0.3.1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?GMD?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/GMD.Rcheck/00install.out?
+for details.
+
+Package: JASPAR Version: 0.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?JASPAR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/JASPAR.Rcheck/00install.out?
+for details.
+
+Package: MetaPath Version: 0.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?limma::show? when loading ?MetaPath?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MetaPath.Rcheck/00install.out?
+for details.
+
+Package: MiST Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?CompQuadForm::davies? when
+loading ?MiST?
+  Warning: replacing previous import by ?CompQuadForm::liu? when loading ?MiST?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MiST.Rcheck/00install.out?
+for details.
+
+Package: MixSim Version: 1.0-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?MixSim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/MixSim.Rcheck/00install.out?
+for details.
+
+Package: NSA Version: 0.0.32
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?NSA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/NSA.Rcheck/00install.out?
+for details.
+
+Package: OPDOE Version: 1.0-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gmp::factorize? when loading ?OPDOE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/OPDOE.Rcheck/00install.out?
+for details.
+
+Package: OPE Version: 0.7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?OPE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/OPE.Rcheck/00install.out?
+for details.
+
+Package: PCovR Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?psych::logit? when loading ?PCovR?
+  Warning: replacing previous import by ?ThreeWay::phi? when loading ?PCovR?
+  Warning: replacing previous import by ?ThreeWay::tr? when loading ?PCovR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/PCovR.Rcheck/00install.out?
+for details.
+
+Package: PET Version: 0.4.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?PET?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/PET.Rcheck/00install.out?
+for details.
+
+Package: Peaks Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Peaks?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Peaks.Rcheck/00install.out?
+for details.
+
+Package: QT Version: 1.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?QT?
+  Warning: replacing previous import by ?SASxport::label? when loading ?QT?
+  Warning: replacing previous import by ?SASxport::label<-? when loading ?QT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/QT.Rcheck/00install.out?
+for details.
+
+Package: QTLRel Version: 0.2-12
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?QTLRel?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/QTLRel.Rcheck/00install.out?
+for details.
+
+Package: RTDAmeritrade Version: 0.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?sfsmisc::last? when loading
+?RTDAmeritrade?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTDAmeritrade.Rcheck/00install.out?
+for details.
+
+Package: RTextTools Version: 1.4.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?SparseM::coerce? when loading
+?RTextTools?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTextTools.Rcheck/00install.out?
+for details.
+
+Package: RTisean Version: 3.0.14
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?RTisean?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RTisean.Rcheck/00install.out?
+for details.
+
+Package: RcmdrPlugin.SCDA Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?SCRT::graph? when loading
+?RcmdrPlugin.SCDA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/RcmdrPlugin.SCDA.Rcheck/00install.out?
+for details.
+
+Package: Rsundials Version: 1.6
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Rsundials?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Rsundials.Rcheck/00install.out?
+for details.
+
+Package: Ryacas Version: 0.2-11
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?Ryacas?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/Ryacas.Rcheck/00install.out?
+for details.
+
+Package: SDDA Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?SDDA?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/SDDA.Rcheck/00install.out?
+for details.
+
+Package: SII Version: 1.0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?SII?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/SII.Rcheck/00install.out?
+for details.
+
+Package: StochaTR Version: 1.0.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?StochaTR?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/StochaTR.Rcheck/00install.out?
+for details.
+
+Package: TWIX Version: 0.2.19
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?TWIX?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/TWIX.Rcheck/00install.out?
+for details.
+
+Package: TreeSim Version: 1.9
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?geiger::drop.tip? when
+loading ?TreeSim?
+  Warning: replacing previous import by ?geiger::vcv.phylo? when
+loading ?TreeSim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/TreeSim.Rcheck/00install.out?
+for details.
+
+Package: UScensus2000blkgrp Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000blkgrp?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000blkgrp.Rcheck/00install.out?
+for details.
+
+Package: UScensus2000cdp Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000cdp?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000cdp.Rcheck/00install.out?
+for details.
+
+Package: UScensus2000tract Version: 0.03
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?UScensus2000tract?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/UScensus2000tract.Rcheck/00install.out?
+for details.
+
+Package: amap Version: 0.8-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?amap?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/amap.Rcheck/00install.out?
+for details.
+
+Package: binom Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?binom?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/binom.Rcheck/00install.out?
+for details.
+
+Package: brainwaver Version: 1.6
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?brainwaver?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/brainwaver.Rcheck/00install.out?
+for details.
+
+Package: capme Version: 1.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?capme?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/capme.Rcheck/00install.out?
+for details.
+
+Package: charlson Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading
+?charlson?
+  Warning: replacing previous import by ?reshape::round_any? when
+loading ?charlson?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/charlson.Rcheck/00install.out?
+for details.
+
+Package: cit Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?cit?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/cit.Rcheck/00install.out?
+for details.
+
+Package: compositions Version: 1.30-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?graphics::plot? when loading
+?compositions?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/compositions.Rcheck/00install.out?
+for details.
+
+Package: ecodist Version: 1.2.7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ecodist?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ecodist.Rcheck/00install.out?
+for details.
+
+Package: evdbayes Version: 1.1-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?evdbayes?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/evdbayes.Rcheck/00install.out?
+for details.
+
+Package: extracat Version: 1.6-3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading
+?extracat?
+  Warning: replacing previous import by ?reshape::round_any? when
+loading ?extracat?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/extracat.Rcheck/00install.out?
+for details.
+
+Package: fAssets Version: 2110.79
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fAssets?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fAssets.Rcheck/00install.out?
+for details.
+
+Package: fBonds Version: 2160.76
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fBonds?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fBonds.Rcheck/00install.out?
+for details.
+
+Package: fExtremes Version: 3010.80
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?fTrading::rollMax? when
+loading ?fExtremes?
+  Warning: replacing previous import by ?fTrading::rollMean? when
+loading ?fExtremes?
+  Warning: replacing previous import by ?fTrading::rollMin? when
+loading ?fExtremes?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fExtremes.Rcheck/00install.out?
+for details.
+
+Package: fPortfolio Version: 2130.80
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fPortfolio?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fPortfolio.Rcheck/00install.out?
+for details.
+
+Package: fRegression Version: 3010.78
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?fTrading::rollMax? when
+loading ?fRegression?
+  Warning: replacing previous import by ?fTrading::rollMean? when
+loading ?fRegression?
+  Warning: replacing previous import by ?fTrading::rollMin? when
+loading ?fRegression?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fRegression.Rcheck/00install.out?
+for details.
+
+Package: fTrading Version: 2160.77
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?fTrading?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/fTrading.Rcheck/00install.out?
+for details.
+
+Package: factas Version: 2.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?graphics::image? when loading ?factas?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/factas.Rcheck/00install.out?
+for details.
+
+Package: flubase Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?FinTS::Acf? when loading ?flubase?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/flubase.Rcheck/00install.out?
+for details.
+
+Package: forensic Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?forensic?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/forensic.Rcheck/00install.out?
+for details.
+
+Package: ftnonpar Version: 0.1-88
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ftnonpar?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ftnonpar.Rcheck/00install.out?
+for details.
+
+Package: gazetools Version: 3.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?reshape::rename? when loading
+?gazetools?
+  Warning: replacing previous import by ?reshape::round_any? when
+loading ?gazetools?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/gazetools.Rcheck/00install.out?
+for details.
+
+Package: gibbs.met Version: 1.1-3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?gibbs.met?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/gibbs.met.Rcheck/00install.out?
+for details.
+
+Package: huge Version: 1.2.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?huge?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/huge.Rcheck/00install.out?
+for details.
+
+Package: iSubpathwayMiner Version: 3.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?igraph::degree? when loading
+?iSubpathwayMiner?
+  Warning: replacing previous import by ?igraph::edges? when loading
+?iSubpathwayMiner?
+  Warning: replacing previous import by ?igraph::transitivity? when
+loading ?iSubpathwayMiner?
+  Warning: replacing previous import by ?XML::addNode? when loading
+?iSubpathwayMiner?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/iSubpathwayMiner.Rcheck/00install.out?
+for details.
+
+Package: idbg Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?idbg?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/idbg.Rcheck/00install.out?
+for details.
+
+Package: ifa Version: 7.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ifa?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ifa.Rcheck/00install.out?
+for details.
+
+Package: insideRODE Version: 2.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?insideRODE?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/insideRODE.Rcheck/00install.out?
+for details.
+
+Package: integrOmics Version: 2.55
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?integrOmics?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/integrOmics.Rcheck/00install.out?
+for details.
+
+Package: kknn Version: 1.2-2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?stats::cov2cor? when loading ?kknn?
+  Warning: replacing previous import by ?stats::toeplitz? when loading ?kknn?
+  Warning: replacing previous import by ?stats::update? when loading ?kknn?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/kknn.Rcheck/00install.out?
+for details.
+
+Package: lawstat Version: 2.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?VGAM::case.names? when
+loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::coef? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::coefficients? when
+loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::df.residual? when
+loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::dfbeta? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::fitted? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::fitted.values? when
+loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::formula? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::hatvalues? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::poly? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::residuals? when loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::variable.names? when
+loading ?lawstat?
+  Warning: replacing previous import by ?VGAM::weights? when loading ?lawstat?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/lawstat.Rcheck/00install.out?
+for details.
+
+Package: mcr Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mcr?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mcr.Rcheck/00install.out?
+for details.
+
+Package: mnormt Version: 1.4-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mnormt?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mnormt.Rcheck/00install.out?
+for details.
+
+Package: mpa Version: 0.7.3
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?mpa?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/mpa.Rcheck/00install.out?
+for details.
+
+Package: ndvits Version: 1.0.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?RTisean::project? when loading ?ndvits?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ndvits.Rcheck/00install.out?
+for details.
+
+Package: phyloTop Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?phylobase::edges? when
+loading ?phyloTop?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/phyloTop.Rcheck/00install.out?
+for details.
+
+Package: powell Version: 1.0-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?powell?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/powell.Rcheck/00install.out?
+for details.
+
+Package: ppMeasures Version: 0.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ppMeasures?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ppMeasures.Rcheck/00install.out?
+for details.
+
+Package: predmixcor Version: 1.1-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?predmixcor?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/predmixcor.Rcheck/00install.out?
+for details.
+
+Package: proj4 Version: 1.0-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?proj4?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/proj4.Rcheck/00install.out?
+for details.
+
+Package: qPCR.CT Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?qPCR.CT?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qPCR.CT.Rcheck/00install.out?
+for details.
+
+Package: qlspack Version: 2.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?qlspack?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qlspack.Rcheck/00install.out?
+for details.
+
+Package: qtbase Version: 1.0.4
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:1035:2:
+warning: #warning "implement me" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:2603:2:
+warning: #warning "implemente me (AST)" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/parser/parser.cpp:3489:2:
+warning: #warning "mark the ast as constant" [-Wcpp]
+  /tmp/RtmpsQhizr/R.INSTALL70ca1d9da2c5/qtbase/kdebindings/generator/name_compiler.cpp:139:2:
+warning: #warning "NameCompiler::visitUnqualifiedName() -- implement
+me" [-Wcpp]
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/qtbase.Rcheck/00install.out?
+for details.
+
+Package: ref Version: 0.98
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ref?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ref.Rcheck/00install.out?
+for details.
+
+Package: refund Version: 0.1-8
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?magic::magic? when loading ?refund?
+  Warning: replacing previous import by ?lme4::VarCorr? when loading ?refund?
+  Warning: replacing previous import by ?lme4::fixef? when loading ?refund?
+  Warning: replacing previous import by ?lme4::lmList? when loading ?refund?
+  Warning: replacing previous import by ?lme4::ranef? when loading ?refund?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/refund.Rcheck/00install.out?
+for details.
+
+Package: ringscale Version: 0.1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?ringscale?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/ringscale.Rcheck/00install.out?
+for details.
+
+Package: seq2R Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?seq2R?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/seq2R.Rcheck/00install.out?
+for details.
+
+Package: seqCBS Version: 1.2
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?seqCBS?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/seqCBS.Rcheck/00install.out?
+for details.
+
+Package: sifds Version: 0.9-1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gdata::object.size? when
+loading ?sifds?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/sifds.Rcheck/00install.out?
+for details.
+
+Package: sisus Version: 0.09-011
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?gdata::combine? when loading ?sisus?
+  Warning: replacing previous import by ?stats::lowess? when loading ?sisus?
+  Warning: replacing previous import by ?stats::nobs? when loading ?sisus?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/sisus.Rcheck/00install.out?
+for details.
+
+Package: snort Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?sna::%c%? when loading ?snort?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/snort.Rcheck/00install.out?
+for details.
+
+Package: spider Version: 1.2-0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?pegas::mst? when loading ?spider?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/spider.Rcheck/00install.out?
+for details.
+
+Package: survAUC Version: 1.0-5
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?survAUC?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/survAUC.Rcheck/00install.out?
+for details.
+
+Package: tonymisc Version: 1.1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?car::recode? when loading ?tonymisc?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/tonymisc.Rcheck/00install.out?
+for details.
+
+Package: validator Version: 1.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import by ?clValid::connectivity? when
+loading ?validator?
+  Warning: replacing previous import by ?flexclust::clusters? when
+loading ?validator?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/validator.Rcheck/00install.out?
+for details.
+
+Package: waveslim Version: 1.7.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?waveslim?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/waveslim.Rcheck/00install.out?
+for details.
+
+Package: weirs Version: 0.21
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?weirs?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/weirs.Rcheck/00install.out?
+for details.
+
+Package: wle Version: 0.9-7
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?wle?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/wle.Rcheck/00install.out?
+for details.
+
+Package: wombsoft Version: 2.0
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?wombsoft?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/wombsoft.Rcheck/00install.out?
+for details.
+
+Package: yacca Version: 1.1
+Check: whether package can be installed ... WARNING
+Found the following significant warnings:
+  Warning: ignoring .First.lib() for package ?yacca?
+See ?/home/hornik/tmp/R.check/r-devel-clang/Work/PKGS/yacca.Rcheck/00install.out?
+for details.
+
+_______________________________________________
+Rmetrics-core mailing list
+Rmetrics-core at r-project.org
+https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+

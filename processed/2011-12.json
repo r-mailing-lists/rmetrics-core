@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-12",
+  "messages": [
+    {
+      "id": "msg-684fc0165673",
+      "message_id": "<CANb=kzKPMJ4F3rU20_5ErKhauqdoin_0gZpReyC9MFA+AUdDPg@mail.gmail.com>",
+      "from_name": "Michal Fecko",
+      "from_email_hash": "8999b44bcd0f339e7e9bea23860b28073ff446523f28ab1e6b21118450bb4449",
+      "date": "2011-12-22T09:04:58Z",
+      "subject": "fUnitRoots cannot obtain p.value",
+      "subject_clean": "fUnitRoots cannot obtain p.value",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111222/e6a256d1/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111222/e6a256d1/attachment.pl>",
+      "thread_id": "thread-684fc0165673",
+      "thread_depth": 0,
+      "month": "2011-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-684fc0165673",
+      "subject": "fUnitRoots cannot obtain p.value",
+      "message_count": 1,
+      "participants": [
+        "Michal Fecko"
+      ],
+      "started": "2011-12-22T09:04:58Z",
+      "last_reply": "2011-12-22T09:04:58Z",
+      "root_message_id": "msg-684fc0165673"
+    }
+  ]
+}

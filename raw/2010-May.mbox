@@ -1,0 +1,63 @@
+From aahmad06 at students.bbk.ac.uk  Mon May 10 13:22:48 2010
+From: aahmad06 at students.bbk.ac.uk (Arif Ahmad)
+Date: Mon, 10 May 2010 12:22:48 +0100 (BST)
+Subject: Wish to use function: garchOxFit
+Message-ID: <20100510122248.AGN59201@mpmail2.bbk.ac.uk>
+
+Hello,
+
+I would like to use the above function in orderr to interface to the OxMetrics' Garch functions.
+
+Pls advise if this is still possible?
+
+Thank you.
+
+Rgds,
+Arif.
+
+
+From amb63 at leicester.ac.uk  Mon May 31 09:21:00 2010
+From: amb63 at leicester.ac.uk (Bwayo, Andrew M.)
+Date: Mon, 31 May 2010 08:21:00 +0100
+Subject: GARCH MODELLING-garchoxfit()
+Message-ID: <E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl>
+
+From wuertz at itp.phys.ethz.ch  Mon May 31 11:26:15 2010
+From: wuertz at itp.phys.ethz.ch (Diethelm Wuertz)
+Date: Mon, 31 May 2010 11:26:15 +0200
+Subject: GARCH MODELLING-garchoxfit()
+In-Reply-To: <E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>
+References: <E4DB01F6403F63479C3D0C7F621C65C501A708D1CAC9@EXC-MBX2.cfs.le.ac.uk>
+Message-ID: <4C0380B7.6030802@itp.phys.ethz.ch>
+
+Bwayo, Andrew M. wrote:
+
+Sorry,
+we do not longer support it, but on the CRAN Archive you can find older 
+versions of the code (which may be outdated).
+
+Diethelm
+> Dear Sir/Madam
+>
+> I would like to use the function garchoxFit() from the OX GARCH for my thesis research . I am specifically interested in the EGARCH and GJR GARCH. I realise it is no longer available in the FGARCH package.Could you please advice me what i need to do to get it.
+>
+> i am new to R and i was comparing the log likelihood values for the standard garch(1,1) with those from an book example and the R values are significantly lower( Excel,Eviews,Matlab=13000 compared to my R value of 10500). Is this because of the ARCH parameter - 'mu'?
+>
+>  Thanks in advance.
+> Andrew
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+>
+>
+
+

@@ -1,0 +1,305 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-03",
+  "messages": [
+    {
+      "id": "msg-3771b9de7310",
+      "message_id": "<4D6D3736.3040801@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2011-03-01T18:13:10Z",
+      "subject": "fExtremes",
+      "subject_clean": "fExtremes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainers of fExtremes,\n\nwe see fExtremes failing now, see e.g.:\n\nhttp://cran.r-project.org/web/checks/check_results_fExtremes.html\n\nhttp://www.r-project.org/nosvn/R.check/r-release-windows-ix86+x86_64/fExtremes-00check.html\n\nThe only packages changed in the hierarchy of dependencies of \n\"fExtremes\" during the last day were\n\n\"flexmix\"  \"survey\"   \"urca\"     \"MCMCpack\"\n\nand I do not see if any of those is causing the error or if the data is \njust unfortunate.\n\nCan you please negotiate further actions and fix the problem. Please\nupload fixed version(s) of the package(s) with increased version\nnumber(s) to CRAN in the usual way and report to cran at R-project.org.\n\nBest wishes,\nUwe Ligges",
+      "body_snippet": "Dear package maintainers of fExtremes,\n\nwe see fExtremes failing now, see e.g.:\n\nhttp://cran.r-project.org/web/checks/check_results_fExtremes.html\n\nhttp://www.r-project.org/nosvn/R.check/r-release-win",
+      "thread_id": "thread-3771b9de7310",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-829191a3f215",
+      "message_id": "<72216B40-A2A3-4E26-90AE-1E555680E21B@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-03-03T09:59:20Z",
+      "subject": "garchOxFit request",
+      "subject_clean": "garchOxFit request",
+      "in_reply_to": "<20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>",
+      "references": [
+        "<20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>"
+      ],
+      "body_plain": "Hi,\n\nthanks for your message.\n\nThe garchOxFit interface has not been updated for a while and used to work with older ox versions.\n\nIf you explore the svn repos of fGarch on r-forge https://r-forge.r-project.org/scm/viewvc.php/?root=rmetrics, you should be able to find the interface to oxGarch.\n\nRegards,\nYohan\n\n\n\n\nOn Feb 25, 2011, at 6:06 AM, Shawn X. Yin wrote:\n\n> Hello,\n> \n> I am a graduate student at Columbia University. I am doing a project about volatility forecast. I find garchOxFit which was in fGarch package would be extremely helpful to my research. Could I obtain garchOxFit?\n> \n> Thanks,\n> \n> Shawn X. Yin\n> Graduate Student at IEOR,\n> Columbia University,\n> New York,NY 10027\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> \n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi,\n\nthanks for your message.\n\nThe garchOxFit interface has not been updated for a while and used to work with older ox versions.\n\nIf you explore the svn repos of fGarch on r-forge https://r-forge.r-p",
+      "thread_id": "thread-829191a3f215",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-2016cd57ab74",
+      "message_id": "<01cbde83$Blat.v2.2.2$cad156ca@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-03-09T17:59:53Z",
+      "subject": "Package timeSeries_2130.92.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2130.92.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.92.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.2 (2011-02-25)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.92.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-2016cd57ab74",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-89d450aa39c9",
+      "message_id": "<19837.55091.539567.551011@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-03-14T08:52:03Z",
+      "subject": "*stable distrib in fBasics --> small Rmetrics package \"stableDist\" ?",
+      "subject_clean": "*stable distrib in fBasics --> small Rmetrics package \"stableDist\" ?",
+      "in_reply_to": "<19760.48084.359186.493314@stat.math.ethz.ch>",
+      "references": [
+        "<19757.29893.127643.640049@stat.math.ethz.ch>",
+        "<914FEF49-61AD-423A-9A4E-35B1AC1BE253@phys.ethz.ch>",
+        "<19757.45103.318695.7015@stat.math.ethz.ch>",
+        "<19760.48084.359186.493314@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Two more months have passed.\n\nIn the mean time I had found that there is a \"famous\" \nnon-CRAN package called  'stable' by Jim Lindsey,\na package that has some interesting features (that we lack) \nbut also has drawbacks, and notably has never been on CRAN.\nBut for instance, there have always existed Debian / Ubuntu\npackages for the \"Jim Lindsey - collection\", so I did have to\npick a different name and decided to use\n     'stabledist'\n\nAlso I have spent many hours of experiments and thinking,\nstumbling over several cases where the fBasics::dstable() would\nend in an error (in integrate or optimize),\nand finally studied Nolan's paper,\nnow making use of one more of his hints in computing dstable().\n\nNote also that 'stabledist's  dstable() is nowadays an order of\nmagnitude faster than the original fBasics() one, at least when\napplied to a whole vector.\n\nBecause of all this, \nI'm proposing to follow what I see in other Rmetrics packages as well,\nnamely to list me instead of Rmetrics-core at ... as maintainer.\nPlease tell me if you think this is inappropriate.\nThe DESCRIPTION file (as committed 10 minutes ago) now contains\n\n----------------------------------------------------------------\nPackage: stabledist\nVersion: 0.6-0\nDate: 2011-03-12\nTitle: Stable Distribution Functions\nAuthor: Diethelm Wuertz, Martin Maechler and Rmetrics core team members.\nMaintainer: Martin Maechler <maechler at stat.math.ethz.ch>\nDepends: R (>= 2.10.1)\nSuggests: fBasics, RUnit\nDescription: Density, Probability and Quantile functions, and random number\n  generation for (skew) stable distributions, using the parametrizations of\n  Nolan.\nLazyLoad: yes\nLazyData: yes\nLicense: GPL (>= 2)\nURL: http://www.rmetrics.org\n----------------------------------------------------------------\n\nNotably see 'Author:' and 'Maintainer:'\nIs this ok for you?\n\nIf yes, I'd like to submit it to CRAN asap.\nBest regards,\nMartin\n\n\n>>>>> Martin Maechler <maechler at stat.math.ethz.ch>\n>>>>>     on Fri, 14 Jan 2011 22:10:44 +0100 writes:\n\n>>>>> Martin Maechler <maechler at stat.math.ethz.ch>\n>>>>>     on Wed, 12 Jan 2011 14:44:15 +0100 writes:\n\n>>>>> Diethelm Wuertz <wuertz at phys.ethz.ch>\n>>>>>     on Wed, 12 Jan 2011 11:42:06 +0100 writes:\n\n    >>> On 12.01.2011, at 10:30, Martin Maechler wrote:\n\n\n    >>> Dear Martin, Dear Yohan and David,\n\n    >>> I am completely agree with Martin in all points,\n\n    >> thank you very much, Diethelm!\n\n    >>> beside of the name for the new package: I would prefer\n    >>> to name it \"AlphaStable\".\n\n    >> (see below)\n\n    >>> At the moment David Scott is here at ETH (still to the\n    >>> end of January) and we are working also together with\n    >>> Yohan on several distribution function packages.\n\n    >>> These include David's packages\n\n    >>> Distribution Utils\n\n    >>> GeneralizedHyperbolic (formerly HyperbolicDist) Variance\n    >>> Gamma SkewHyperbolic NormalLaplace\n\t\n    >> [cool!]\n\n    >>> A (yet unpublished) package I have written\n\n    >>> SecantHyperbolic\n\n    >>> on the secant hyperbolic distribution.\n\n\n    >>> And a new package with (Yohan, David and me) on the\n\n    >>> GeneralizedLambda\n\n    >>> distribution with special emphasis on financial return\n    >>> distributions.\n\n    >> out of curiosity: are the stable ones no longer of\n    >> interest for financial returns ?\n\n    >>> So a package with the name \"AlphaStable\" would nicely\n    >>> fit in this concept of distribution packages and would\n    >>> follow the naming convention of the other packages which\n    >>> are already on CRAN or on r-forge/Rmetrics.\n\n    >> I see.  Still, most modern litterature, AFAICS, does not\n    >> mention \"alpha\" in the name anymore.\n\n    >> After all, the (skew) stable distributions with Nolan's\n    >> parametrizations are *the* stable distributions, and\n    >> there are no \"non-alpha\" stable dist.s, so why should we\n    >> need \"alpha\" as part of the name.\n\n    >> Couldn't we settle on \"StableDist\" (so we have the >= 2\n    >> camel bumps you have in the other names),\n\n    >> [ or then I'd use an even shorter all lowercase (faster\n    >> for typing, easier against typos !) name such as simply\n    >> 'stable' ..... as I do like short package names ]\n\n    > Haven't heard back from you.  In the mean time, after\n    > thinking on and off about it, I'd really prefer 'stable'\n    > -- short, simple, clear -- but could be convinced to use\n    > 'StableDist' instead.\n\n    > If I don't here anything soon, I'll take the short name.\n    > Martin\n\n\n    >>> Furthermore we have started to publish an R/Rmetrics\n    >>> eBook entitled \"Handbook on Financial Return\n    >>> Distributions in R\"\n\n    >>> and so it would be great to have you in the boat for a\n    >>> chapter on the new package about alpha stable\n    >>> distributions.\n\n    >> Ah .. thank you !\n\n    >>> I will call you and we can discuss some details how to\n    >>> proceed.  At the end of this process all the\n    >>> distributional stuff will no longer be needed in the\n    >>> fBasics package.\n\n    >>> regards Diethelm\n\n    >> {I'm not in the office any more today, } regards, Martin\n\n\n    >>>> Dear Diethelm and Yohan,\n    >>>> \n    >>>> as you may recall, we (Marius Hofert and I) have been\n    >>>> making use of rstable() in our 'nacopula' package for\n    >>>> more than a year now, but back then, we found small\n    >>>> numerical and efficiency problems in fBasics version of\n    >>>> rstable and as we did not need any other fBasics\n    >>>> function, I wrote a new version called 'rstable1()' {so\n    >>>> as to make no confusion}, and also on its help page\n    >>>> clearly documented that the original code, and\n    >>>> documentation, and d*, p*, q* functions are all in\n    >>>> 'fBasics'.\n    >>>> \n    >>>> Now, for a while, as we have been implementing new\n    >>>> Maximum Likelihood methods for Archimdean copulas, we\n    >>>> have made use of fBasics::dstable(), and for that have\n    >>>> had an importFrom(fBasics, dstable) in our package.  I\n    >>>> have always felt it a bit unconvenient that this loads\n    >>>> all of fBasics, timeDate, and timeSeries just because\n    >>>> of this one function.\n    >>>> \n    >>>> Now, I've found a numerical problem with dstable() and\n    >>>> also performance issues which I have partly adressend\n    >>>> would like to address more.\n    >>>> \n    >>>> For all these reasons, I'm proposing to factor out the\n    >>>> [dpqr]stable() functions out of fBasics into a new\n    >>>> package, say 'stableDist', and have fBasics \"depend\" on\n    >>>> stableDist, such that for the users who call\n    >>>> require(fBasics) or library(fBasics), nothing will\n    >>>> change.\n    >>>> \n    >>>> The big advantage of the change would be that all those\n    >>>> users (like us) who really only need the stable\n    >>>> distributions, they can simply load or import from\n    >>>> 'stableDist' which will be very fast and very small.\n    >>>> \n    >>>> Another advantage will be that the unit tests for\n    >>>> *stable which are currently disabled in 'fBasics', can\n    >>>> be run for 'stableDist' without adding test runtime to\n    >>>> 'fBasics'.\n    >>>> \n    >>>> My proposal is to factor out things as soon as you\n    >>>> agree, and then address the issues I've found one by\n    >>>> one, starting with dstable where I've already\n    >>>> (uncommitted) improvements ready.  BTW: The\n    >>>> stableSlider() of course would remain in 'fBasics'.\n    >>>> \n    >>>> Best regards, Martin\n    >>>> \n    >>>> _______________________________________________\n    >>>> Rmetrics-core mailing list Rmetrics-core at r-project.org\n    >>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n    >>>>",
+      "body_snippet": "Two more months have passed.\n\nIn the mean time I had found that there is a \"famous\" \nnon-CRAN package called  'stable' by Jim Lindsey,\na package that has some interesting features (that we lack) \nbut ",
+      "thread_id": "thread-89d450aa39c9",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-09783ac35604",
+      "message_id": "<19839.31443.454298.529321@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-03-15T14:42:27Z",
+      "subject": "stabledist 0.6-0 uploaded to CRAN's incoming",
+      "subject_clean": "stabledist 0.6-0 uploaded to CRAN's incoming",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "A few minutes ago, \nI have uploaded  stabledist_0.6-0 to CRAN's incoming.\n\nThis is a new, small package which \"factors out\" the\n[dpqr]stable() functions {and stableMode()} of the  Rmetrics\npackage 'fBasics'.\nThe next version of fBasics will depend on 'stabledist'.\n\nAdvances:\n\n1) stabledist is small and compact, and if useRs only need one of\n  the [dpqr]stable() functions, they now can get 'stabledist'\n  instead of all of 'fBasics' (which itself depends on the\n  \"timeDate\" and \"timeSeries\" packages).\n\n2) dstable() has been considerably improved speedwise and in\n   numerical boundary situations, where the previous fBasics\n   version ended in an error, e.g.,\n   dstable(4000., alpha=1.00001, beta=0.6)\n\n3) the RUnit-based unit tests are now active, as they no longer\n   take too much time.\n\nBest regards,\nMartin Maechler (for the Rmetrics team).\n\n--   \nMartin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler\nSeminar f?r Statistik, ETH Z?rich  HG G 16      R?mistrasse 101\nCH-8092 Zurich, SWITZERLAND\nphone: +41-44-632-3408       fax: ...-1228      <><",
+      "body_snippet": "A few minutes ago, \nI have uploaded  stabledist_0.6-0 to CRAN's incoming.\n\nThis is a new, small package which \"factors out\" the\n[dpqr]stable() functions {and stableMode()} of the  Rmetrics\npackage 'fB",
+      "thread_id": "thread-09783ac35604",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-6e8eb3e55a2e",
+      "message_id": "<19839.38603.403890.736126@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2011-03-15T16:41:47Z",
+      "subject": "stabledist 0.6-0 uploaded to CRAN's incoming",
+      "subject_clean": "stabledist 0.6-0 uploaded to CRAN's incoming",
+      "in_reply_to": "<19839.31443.454298.529321@stat.math.ethz.ch>",
+      "references": [
+        "<19839.31443.454298.529321@stat.math.ethz.ch>"
+      ],
+      "body_plain": ">>>>> Martin Maechler writes:\n\nMany thanks for your submission, on CRAN now.\n\nBest\n-k\n\n> A few minutes ago, \n> I have uploaded  stabledist_0.6-0 to CRAN's incoming.\n\n> This is a new, small package which \"factors out\" the\n> [dpqr]stable() functions {and stableMode()} of the  Rmetrics\n> package 'fBasics'.\n> The next version of fBasics will depend on 'stabledist'.\n\n> Advances:\n\n> 1) stabledist is small and compact, and if useRs only need one of\n>   the [dpqr]stable() functions, they now can get 'stabledist'\n>   instead of all of 'fBasics' (which itself depends on the\n>   \"timeDate\" and \"timeSeries\" packages).\n\n> 2) dstable() has been considerably improved speedwise and in\n>    numerical boundary situations, where the previous fBasics\n>    version ended in an error, e.g.,\n>    dstable(4000., alpha=1.00001, beta=0.6)\n\n> 3) the RUnit-based unit tests are now active, as they no longer\n>    take too much time.\n\n> Best regards,\n> Martin Maechler (for the Rmetrics team).\n\n> --   \n> Martin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler\n> Seminar f?r Statistik, ETH Z?rich  HG G 16      R?mistrasse 101\n> CH-8092 Zurich, SWITZERLAND\n> phone: +41-44-632-3408       fax: ...-1228      <><",
+      "body_snippet": ">>>>> Martin Maechler writes:\n\nMany thanks for your submission, on CRAN now.\n\nBest\n-k\n\n> A few minutes ago, \n> I have uploaded  stabledist_0.6-0 to CRAN's incoming.\n\n> This is a new, small package whi",
+      "thread_id": "thread-09783ac35604",
+      "thread_depth": 1,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-2729ac5988b3",
+      "message_id": "<AANLkTin7NGkBok+w1F6AW+4-LKefTgrWkzKrfqM7m6XC@mail.gmail.com>",
+      "from_name": "Ott Toomet",
+      "from_email_hash": "84ec365b796d3e57555511368a76040f8538f926b92f4a902c72d0b2900d7f09",
+      "date": "2011-03-18T11:29:58Z",
+      "subject": "labels in axis.timeDate()",
+      "subject_clean": "labels in axis.timeDate()",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear timeDate() team,\n\nthe 'labels' option in 'axis.timeDate()' does not work as intended,\nlabels are always on (version 2130.92, the most recent CRAN one).\n\nThe bug is easily visible in the code, one can see the labels are\nalways passed as TRUE to axis.POSIXct.\n\n> axis.timeDate\nfunction (side, x, at, format = NULL, labels = TRUE, ...)\n{\n    if (is.null(format))\n        format = whichFormat(x)\n    axis.POSIXct(side = side, x = as.POSIXct(x), at = as.POSIXct(at),\n        format = format, labels = TRUE, ...)\n    invisible()\n}\n<environment: namespace:timeDate>\n\nBest,\nOtt\n\n-- \nOtt Toomet\nSenior research fellow\n\nTartu University\nDepartment of Economics\nNarva 4,\nTartu 51009\nEstonia\n\nph: +372 737 6348\nemail: otoomet at gmail.com",
+      "body_snippet": "Dear timeDate() team,\n\nthe 'labels' option in 'axis.timeDate()' does not work as intended,\nlabels are always on (version 2130.92, the most recent CRAN one).\n\nThe bug is easily visible in the code, one",
+      "thread_id": "thread-2729ac5988b3",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-3e0ce86ab9d1",
+      "message_id": "<01cbe725$Blat.v2.2.2$55499eac@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-03-20T17:36:24Z",
+      "subject": "Package fSeries_270.76.3.tar.gz has been built for Windows - with a WARNING",
+      "subject_clean": "Package fSeries_270.76.3.tar.gz has been built for Windows - with a WARNING",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz did pass 'R CMD check' only with WARNING(s).\nIt has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.13/).\n\nPlease note that we are talking about R-2.13.0 alpha/beta/rc\n(but not the current R-2.12.2). R-2.13.0 will be released on April 13.\nPlease consider to submit a fixed version without any WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.13.0 alpha (2011-03-17 r54849)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.13/fSeries.Rcheck'\n* using R version 2.13.0 alpha (2011-03-17 r54849)\n* using platform: i386-pc-mingw32 (32-bit)\n* using session charset: ISO8859-1\n* checking for file 'fSeries/DESCRIPTION' ... OK\n* this is package 'fSeries' version '270.76.3'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fSeries' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... WARNING\nAssignments in \\usage in documentation object 'dim':\n  colnames <- .timeSeries(x) <- value\n  rownames <- .timeSeries(x) <- value\n\nFunctions with \\usage entries need to have the appropriate \\alias\nentries, and all their arguments documented.\nThe \\usage entries must correspond to syntactically valid R code.\nSee the chapter 'Writing R documentation files' in manual 'Writing R\nExtensions'.\n* checking Rd contents ... OK\n* checking for unstated dependencies in examples ... OK\n* checking examples ... OK\n* checking for unstated dependencies in tests ... OK\n* checking tests ... OK\n  Running 'doRUnit.R'\n* checking PDF version of manual ... OK\nWARNING: There was 1 warning, see\n  'd:/Rcompile/CRANpkg/local/2.13/fSeries.Rcheck/00check.log'\nfor details",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz did pass 'R CMD check' only with WARNING(s).\nIt has been built for Windows and\nwill ",
+      "thread_id": "thread-3e0ce86ab9d1",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-45c31b33163e",
+      "message_id": "<OFD4945C33.B39A94AB-ON4825785C.0009BEA6-4825785C.0020B2A7@mail.clic>",
+      "from_name": "宋杰",
+      "from_email_hash": "569841a90ab27c178fb3900aa4c58d1e7eded3bbbf84e299c3833fd663d3b5ee",
+      "date": "2011-03-23T05:56:41Z",
+      "subject": "Question",
+      "subject_clean": "Question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh>",
+      "thread_id": "thread-45c31b33163e",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-95ff65e350a2",
+      "message_id": "<OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>",
+      "from_name": "宋杰",
+      "from_email_hash": "569841a90ab27c178fb3900aa4c58d1e7eded3bbbf84e299c3833fd663d3b5ee",
+      "date": "2011-03-28T05:56:47Z",
+      "subject": "Question",
+      "subject_clean": "Question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl>",
+      "thread_id": "thread-95ff65e350a2",
+      "thread_depth": 0,
+      "month": "2011-03"
+    },
+    {
+      "id": "msg-644cbeea5cad",
+      "message_id": "<4D91E71C.7060204@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2011-03-29T14:05:16Z",
+      "subject": "fExtremes failing",
+      "subject_clean": "fExtremes failing",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Please note we see fExtremes failing on some platforms (and others will \nfollow):\nhttp://cran.r-project.org/web/checks/check_results_fExtremes.html\n\nI do not know why, but\n\n  intersect(fExtRecDeps, changedPkg)\n\ngives\n\n[1] \"maptools\" \"rgeos\"    \"survey\"\n\non my machine. Can you please check with updated CRAN packages.\n\n\nThanks,\nUwe Ligges",
+      "body_snippet": "Please note we see fExtremes failing on some platforms (and others will \nfollow):\nhttp://cran.r-project.org/web/checks/check_results_fExtremes.html\n\nI do not know why, but\n\n  intersect(fExtRecDeps, ch",
+      "thread_id": "thread-644cbeea5cad",
+      "thread_depth": 0,
+      "month": "2011-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-3771b9de7310",
+      "subject": "fExtremes",
+      "message_count": 1,
+      "participants": [
+        "Uwe Ligges"
+      ],
+      "started": "2011-03-01T18:13:10Z",
+      "last_reply": "2011-03-01T18:13:10Z",
+      "root_message_id": "msg-3771b9de7310"
+    },
+    {
+      "id": "thread-829191a3f215",
+      "subject": "garchOxFit request",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2011-03-03T09:59:20Z",
+      "last_reply": "2011-03-03T09:59:20Z",
+      "root_message_id": "msg-829191a3f215"
+    },
+    {
+      "id": "thread-2016cd57ab74",
+      "subject": "Package timeSeries_2130.92.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-03-09T17:59:53Z",
+      "last_reply": "2011-03-09T17:59:53Z",
+      "root_message_id": "msg-2016cd57ab74"
+    },
+    {
+      "id": "thread-89d450aa39c9",
+      "subject": "*stable distrib in fBasics --> small Rmetrics package \"stableDist\" ?",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2011-03-14T08:52:03Z",
+      "last_reply": "2011-03-14T08:52:03Z",
+      "root_message_id": "msg-89d450aa39c9"
+    },
+    {
+      "id": "thread-09783ac35604",
+      "subject": "stabledist 0.6-0 uploaded to CRAN's incoming",
+      "message_count": 2,
+      "participants": [
+        "Kurt Hornik",
+        "Martin Maechler"
+      ],
+      "started": "2011-03-15T14:42:27Z",
+      "last_reply": "2011-03-15T16:41:47Z",
+      "root_message_id": "msg-09783ac35604"
+    },
+    {
+      "id": "thread-2729ac5988b3",
+      "subject": "labels in axis.timeDate()",
+      "message_count": 1,
+      "participants": [
+        "Ott Toomet"
+      ],
+      "started": "2011-03-18T11:29:58Z",
+      "last_reply": "2011-03-18T11:29:58Z",
+      "root_message_id": "msg-2729ac5988b3"
+    },
+    {
+      "id": "thread-3e0ce86ab9d1",
+      "subject": "Package fSeries_270.76.3.tar.gz has been built for Windows - with a WARNING",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-03-20T17:36:24Z",
+      "last_reply": "2011-03-20T17:36:24Z",
+      "root_message_id": "msg-3e0ce86ab9d1"
+    },
+    {
+      "id": "thread-45c31b33163e",
+      "subject": "Question",
+      "message_count": 1,
+      "participants": [
+        "宋杰"
+      ],
+      "started": "2011-03-23T05:56:41Z",
+      "last_reply": "2011-03-23T05:56:41Z",
+      "root_message_id": "msg-45c31b33163e"
+    },
+    {
+      "id": "thread-95ff65e350a2",
+      "subject": "Question",
+      "message_count": 1,
+      "participants": [
+        "宋杰"
+      ],
+      "started": "2011-03-28T05:56:47Z",
+      "last_reply": "2011-03-28T05:56:47Z",
+      "root_message_id": "msg-95ff65e350a2"
+    },
+    {
+      "id": "thread-644cbeea5cad",
+      "subject": "fExtremes failing",
+      "message_count": 1,
+      "participants": [
+        "Uwe Ligges"
+      ],
+      "started": "2011-03-29T14:05:16Z",
+      "last_reply": "2011-03-29T14:05:16Z",
+      "root_message_id": "msg-644cbeea5cad"
+    }
+  ]
+}

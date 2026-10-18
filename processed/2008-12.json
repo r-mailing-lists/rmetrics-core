@@ -1,0 +1,406 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-12",
+  "messages": [
+    {
+      "id": "msg-eddee05a2ec6",
+      "message_id": "<49364694.9030209@gmx.net>",
+      "from_name": "Stefan Grosse",
+      "from_email_hash": "f1a361b570385e056309a1ef4f8e1307cd8cc223904fbbee1cfe52001c687662",
+      "date": "2008-12-03T08:43:00Z",
+      "subject": "Bug in fArma: does not accept variables as input",
+      "subject_clean": "Bug in fArma: does not accept variables as input",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI believe I found a bug in the r-metrics' fArma package. armaFit does\nnot accept variable input:\n\nlibrary(fArma)\nx = armaSim(model = list(ar = c(0.5, -0.5), ma = 0.1), n = 1000)\n# direct parameter input works:\nfit1 = armaFit(~ arma(2, 1), data = x)\nprint(fit1)\n# parameters via variables do not work:\nar.ord=2\nma.ord=1\nfit2 = armaFit(~ arma(ar.ord, ma.ord), data = x)\n# error!:\nError in if (!is.numeric(order) || length(order) != 3 || any(order < 0))\nstop(\"'order' must be a non-negative numeric vector of length 3\") :\n  missing value where TRUE/FALSE needed\nIn addition: Warning messages:\n1: In armaFit(~arma(ar.ord, ma.ord), data = x) :\n  NAs introduced by coercion\n2: In armaFit(~arma(ar.ord, ma.ord), data = x) :\n  NAs introduced by coercion\n\nIt works of course with the arima function of R:\n\nfit3=arima(x,order=c(ar.ord,0,ma.ord))\nfit3\n\nI tried the newest cran package 270.74 of fArma and the newest r-forge\npackage which is 290.75. I am using R-2.8.0 on Win Vista Business.\n\nI tried to find a possibility to file a bug on r-forge but was not\nsuccessful (Where can I file bugs?)\n\nRegards\nStefan Grosse",
+      "body_snippet": "Hi,\n\nI believe I found a bug in the r-metrics' fArma package. armaFit does\nnot accept variable input:\n\nlibrary(fArma)\nx = armaSim(model = list(ar = c(0.5, -0.5), ma = 0.1), n = 1000)\n# direct paramete",
+      "thread_id": "thread-eddee05a2ec6",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-a19a324325fd",
+      "message_id": "<b44c019db2b8$644df46d$3393d1d1@hideakifan.com>",
+      "from_name": "Adrian Cunningham",
+      "from_email_hash": "035a751f036927f76e0943b0745776039d7765ec155f3bbb8d0053a1baa0eaae",
+      "date": "2008-12-03T15:31:44Z",
+      "subject": "!SPAM: Choose your own price",
+      "subject_clean": "!SPAM: Choose your own price",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Viagra Super Active\nOur price $2.82\n    \n    \n      Cialis Super Active\nOur price $3.66\n  \n    \n    \n      Levitra\nOur price $2.93\n    \n    \n      Viagra Soft Tabs\nOur price $1.64\n    \n    \n      Cialis Soft Tabs\nOur price $3.51\n  \n    And more...\n  \n     \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 2411 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 498 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0001.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 395 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0002.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 728 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0003.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 445 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0004.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 478 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0005.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 496 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0006.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 474 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0007.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 578 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0008.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 932 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0009.gif>",
+      "body_snippet": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Via",
+      "thread_id": "thread-a19a324325fd",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-8ab97d152fe0",
+      "message_id": "<200812031547.mB3FliXt008443@hypatia.math.ethz.ch>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2008-12-03T15:47:44Z",
+      "subject": "!SPAM: Your order",
+      "subject_clean": "!SPAM: Your order",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/f6af7b4a/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/f6af7b4a/attachment.html>",
+      "thread_id": "thread-8ab97d152fe0",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-e9b079625f1c",
+      "message_id": "<2ebf019db26c$523a806d$3597c78d@singapore.net>",
+      "from_name": "Alic Aguilar",
+      "from_email_hash": "1785d399fad5e0da1d1c8a3fc4cb8343f32877070fc29250b691025aa6f76f0d",
+      "date": "2008-12-03T18:47:23Z",
+      "subject": "!SPAM: Your wife need your attention? Solve all the problems with IT.",
+      "subject_clean": "!SPAM: Your wife need your attention? Solve all the problems with IT.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Viagra Super Active\nOur price $2.82\n    \n    \n      Cialis Super Active\nOur price $3.66\n  \n    \n    \n      Levitra\nOur price $2.93\n    \n    \n      Viagra Soft Tabs\nOur price $1.64\n    \n    \n      Cialis Soft Tabs\nOur price $3.51\n  \n    And more...\n  \n     \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 2411 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 498 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0001.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 395 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0002.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 728 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0003.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 445 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0004.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 478 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0005.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 496 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0006.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 474 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0007.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 578 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0008.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 932 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0009.gif>",
+      "body_snippet": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Via",
+      "thread_id": "thread-e9b079625f1c",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-a01797465646",
+      "message_id": "<200812031937.mB3JbkJv022326@hypatia.math.ethz.ch>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2008-12-03T19:37:46Z",
+      "subject": "!SPAM: RE: Message",
+      "subject_clean": "!SPAM: RE: Message",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/d2fff5c7/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/d2fff5c7/attachment.html>",
+      "thread_id": "thread-a01797465646",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-98446bdac9a7",
+      "message_id": "<200812032307.mB3N72bu007469@hypatia.math.ethz.ch>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2008-12-03T23:07:02Z",
+      "subject": "!SPAM: Your order",
+      "subject_clean": "!SPAM: Your order",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/fef977c9/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/fef977c9/attachment.html>",
+      "thread_id": "thread-98446bdac9a7",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-6828244490f3",
+      "message_id": "<10146.ellison@cam>",
+      "from_name": "Cadeaux originaux par anne'e",
+      "from_email_hash": "6144d3b13c17d6126581ba131bdbafd8e0ed1cbf21050ff3e1460de1f1f5a23d",
+      "date": "2008-12-03T23:24:05Z",
+      "subject": "!SPAM: La meilleure collection de cles et de portefeuilles",
+      "subject_clean": "!SPAM: La meilleure collection de cles et de portefeuilles",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/c584cf30/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/c584cf30/attachment.html>",
+      "thread_id": "thread-6828244490f3",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-06a09cd4cced",
+      "message_id": "<2ee6019db87e$fdf6e71a$ba8e96ef@barbf.com>",
+      "from_name": "Abdulkarim Black",
+      "from_email_hash": "91b2a42475288e460804b8c3fbc9d3d426445b7f475d69d69790503f04e21b72",
+      "date": "2008-12-03T23:34:07Z",
+      "subject": "!SPAM: Add more spice into your bedroom life.",
+      "subject_clean": "!SPAM: Add more spice into your bedroom life.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Viagra Super Active\nOur price $2.82\n    \n    \n      Cialis Super Active\nOur price $3.66\n  \n    \n    \n      Levitra\nOur price $2.93\n    \n    \n      Viagra Soft Tabs\nOur price $1.64\n    \n    \n      Cialis Soft Tabs\nOur price $3.51\n  \n    And more...\n  \n     \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 2411 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 498 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0001.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 395 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0002.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 728 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0003.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 445 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0004.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 478 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0005.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 496 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0006.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 474 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0007.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 578 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0008.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 932 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0009.gif>",
+      "body_snippet": "Viagra\nOur price $1.15      \n    \n    \n      Cialis\nOur price $1.99      \n    \n    \n      Viagra Professional\nOur price $3.73\n  \n    \n    \n      Cialis Professionsl\nOur price $4.17\n    \n    \n      Via",
+      "thread_id": "thread-06a09cd4cced",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-73513a222feb",
+      "message_id": "<5906CCF9.58880529@linux-mag.com>",
+      "from_name": "Fiesta Casino Club",
+      "from_email_hash": "23ded70168b21652812f169380fa86ee23744e3126bf8de016f30d61908aa697",
+      "date": "2008-12-04T00:11:04Z",
+      "subject": "!SPAM: Croyez-vous cela?",
+      "subject_clean": "!SPAM: Croyez-vous cela?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/64797668/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/64797668/attachment.html>",
+      "thread_id": "thread-73513a222feb",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-666ffa06b7f0",
+      "message_id": "<200812040148.mB41mG2V013360@hypatia.math.ethz.ch>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2008-12-04T01:48:16Z",
+      "subject": "!SPAM: Re: Order status",
+      "subject_clean": "!SPAM: Re: Order status",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/a34d6931/attachment-0001.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/a34d6931/attachment-0001.html>",
+      "thread_id": "thread-666ffa06b7f0",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-a0a5747c08bd",
+      "message_id": "<01c95635$Blat.v2.2.2$cc65dcd4@mail.statistik.uni-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2008-12-04T17:29:01Z",
+      "subject": "Package timeSeries_290.79.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_290.79.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.0 (2008-10-20)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-a0a5747c08bd",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-6fe6c0605826",
+      "message_id": "<C56400B5.198%g1enn.roberts@btinternet.com>",
+      "from_name": "glenn roberts",
+      "from_email_hash": "a6f3c2c4f407b4a0b2cefc1088675678d0638d8f80f4a4d8bff25348a9c11a9b",
+      "date": "2008-12-09T11:02:13Z",
+      "subject": "<no subject>",
+      "subject_clean": "<no subject>",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl>",
+      "thread_id": "thread-6fe6c0605826",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-92eadb0df780",
+      "message_id": "<B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>",
+      "from_name": "Pfaff, Bernhard Dr.",
+      "from_email_hash": "33cf90f6270884b3fcece1aa7503158c5a8b66548e930a2071ff7a81df8c2c39",
+      "date": "2008-12-10T11:35:01Z",
+      "subject": "Series names not used by stats:::acf when fUtilities (as.matrix.ts seems to be the culprit) is loaded",
+      "subject_clean": "Series names not used by stats:::acf when fUtilities (as.matrix.ts seems to be the culprit) is loaded",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics-core member (probably Diethelm and Yohan),\n\nI detected the following behaviour when the package \"fUtilities\" is\nloaded:\n\n\n> search()\n [1] \".GlobalEnv\"        \"package:MASS\"      \"package:stats\"    \n [4] \"package:graphics\"  \"package:datasets\"  \"package:fortunes\" \n [7] \"package:utils\"     \"package:grDevices\" \"package:methods\"  \n[10] \"Autoloads\"         \"package:base\"     \n> \n> data(EuStockMarkets)\n> [1] \"DAX\"  \"SMI\"  \"CAC\"  \"FTSE\"\n> tmp.mts <- diff(log(EuStockMarkets)) * 100\n> colnames(tmp.mts)\n> acf(tmp.mts)\n## in acf the colnames are preserved in the plot\n> search()\n [1] \".GlobalEnv\"        \"package:MASS\"      \"package:stats\"    \n [4] \"package:graphics\"  \"package:datasets\"  \"package:fortunes\" \n [7] \"package:utils\"     \"package:grDevices\" \"package:methods\"  \n[10] \"Autoloads\"         \"package:base\"     \n> colnames(tmp.mts)\n[1] \"DAX\"  \"SMI\"  \"CAC\"  \"FTSE\"\n> library(fUtilities)\nRmetrics Package fUtilities (270.75) loaded.\n> search()\n [1] \".GlobalEnv\"         \"package:fUtilities\" \"package:MASS\"      \n [4] \"package:stats\"      \"package:graphics\"   \"package:datasets\"  \n [7] \"package:fortunes\"   \"package:utils\"      \"package:grDevices\" \n[10] \"package:methods\"    \"Autoloads\"          \"package:base\"      \n> acf(tmp.mts)\n## in acf the colnames are not any longer preserved!\n## due to as.matrix.ts() in fUtilities\n\n\nas.matrix.ts <- \nfunction (x, ...) \n{\n    ans = as.matrix.default(unclass(x))\n    attr(ans, \"tsp\") <- NULL\n    rownames(ans) <- NULL\n    colnames(ans) <- NULL\n    ans\n}\n\n\nand in stats:::acf you will find the line:\n\n    x <- as.matrix(x)\n\nwhich make use of as.matrix.ts (S3-method dispatch) in fUtilities and\nthere the colnames are set to NULL.\nHence, would it be possible to alter as.matrix.ts() to something like:\n\n\nas.matrix.ts <- function (x, ...) \n{\n    ans = as.matrix.default(unclass(x))\n    attr(ans, \"tsp\") <- NULL\n    rownames(ans) <- NULL\n    ifelse(is.null(colnames(ans)), colnames(ans) <- NULL, colnames(ans)\n<- colnames(x))\n    ans\n}\n\n\nor rename as.matrix.ts() such that it is not dispatched as method in\nacf()? However, I do not know if the former suggested function body\nchange would cause trouble elsewhere.\n\n\nBest,\nBernhard\n\n\n\n\n\n\n> version\n               _                           \nplatform       i386-pc-mingw32             \narch           i386                        \nos             mingw32                     \nsystem         i386, mingw32               \nstatus                                     \nmajor          2                           \nminor          8.0                         \nyear           2008                        \nmonth          10                          \nday            20                          \nsvn rev        46754                       \nlanguage       R                           \nversion.string R version 2.8.0 (2008-10-20)\n*****************************************************************\nConfidentiality Note: The information contained in this ...{{dropped:10}}",
+      "body_snippet": "Dear Rmetrics-core member (probably Diethelm and Yohan),\n\nI detected the following behaviour when the package \"fUtilities\" is\nloaded:\n\n\n> search()\n [1] \".GlobalEnv\"        \"package:MASS\"      \"package",
+      "thread_id": "thread-92eadb0df780",
+      "thread_depth": 0,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-08f1e2fc28d1",
+      "message_id": "<20081210190806.38c21562@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-12-10T18:08:06Z",
+      "subject": "Series names not used by stats:::acf when fUtilities (as.matrix.ts seems to be the culprit) is loaded",
+      "subject_clean": "Series names not used by stats:::acf when fUtilities (as.matrix.ts seems to be the culprit) is loaded",
+      "in_reply_to": "<B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>",
+      "references": [
+        "<B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>"
+      ],
+      "body_plain": ">>>> \"PBD\" == \"Pfaff, Bernhard Dr.\" <Bernhard_Pfaff at fra.invesco.com>\n>>>> on Wed, 10 Dec 2008 11:35:01 -0000\n\n   PBD> Dear Rmetrics-core member (probably Diethelm and Yohan),\n   PBD> \n   PBD> I detected the following behaviour when the package \"fUtilities\" is\n   PBD> loaded:\n   PBD> \n   PBD> \n   PBD> > search()  \n   PBD>  [1] \".GlobalEnv\"        \"package:MASS\"      \"package:stats\"    \n   PBD>  [4] \"package:graphics\"  \"package:datasets\"  \"package:fortunes\" \n   PBD>  [7] \"package:utils\"     \"package:grDevices\" \"package:methods\"  \n   PBD> [10] \"Autoloads\"         \"package:base\"     \n   PBD> > \n   PBD> > data(EuStockMarkets)\n   PBD> > [1] \"DAX\"  \"SMI\"  \"CAC\"  \"FTSE\"\n   PBD> > tmp.mts <- diff(log(EuStockMarkets)) * 100\n   PBD> > colnames(tmp.mts)\n   PBD> > acf(tmp.mts)  \n   PBD> ## in acf the colnames are preserved in the plot\n   PBD> > search()  \n   PBD>  [1] \".GlobalEnv\"        \"package:MASS\"      \"package:stats\"    \n   PBD>  [4] \"package:graphics\"  \"package:datasets\"  \"package:fortunes\" \n   PBD>  [7] \"package:utils\"     \"package:grDevices\" \"package:methods\"  \n   PBD> [10] \"Autoloads\"         \"package:base\"     \n   PBD> > colnames(tmp.mts)  \n   PBD> [1] \"DAX\"  \"SMI\"  \"CAC\"  \"FTSE\"\n   PBD> > library(fUtilities)  \n   PBD> Rmetrics Package fUtilities (270.75) loaded.\n   PBD> > search()  \n   PBD>  [1] \".GlobalEnv\"         \"package:fUtilities\" \"package:MASS\"      \n   PBD>  [4] \"package:stats\"      \"package:graphics\"   \"package:datasets\"  \n   PBD>  [7] \"package:fortunes\"   \"package:utils\"      \"package:grDevices\" \n   PBD> [10] \"package:methods\"    \"Autoloads\"          \"package:base\"      \n   PBD> > acf(tmp.mts)  \n   PBD> ## in acf the colnames are not any longer preserved!\n   PBD> ## due to as.matrix.ts() in fUtilities\n   PBD> \n   PBD> \n   PBD> as.matrix.ts <- \n   PBD> function (x, ...) \n   PBD> {\n   PBD>     ans = as.matrix.default(unclass(x))\n   PBD>     attr(ans, \"tsp\") <- NULL\n   PBD>     rownames(ans) <- NULL\n   PBD>     colnames(ans) <- NULL\n   PBD>     ans\n   PBD> }\n   PBD> \n   PBD> \n   PBD> and in stats:::acf you will find the line:\n   PBD> \n   PBD>     x <- as.matrix(x)\n   PBD> \n   PBD> which make use of as.matrix.ts (S3-method dispatch) in fUtilities and\n   PBD> there the colnames are set to NULL.\n   PBD> Hence, would it be possible to alter as.matrix.ts() to something like:\n   PBD> \n   PBD> \n   PBD> as.matrix.ts <- function (x, ...) \n   PBD> {\n   PBD>     ans = as.matrix.default(unclass(x))\n   PBD>     attr(ans, \"tsp\") <- NULL\n   PBD>     rownames(ans) <- NULL\n   PBD>     ifelse(is.null(colnames(ans)), colnames(ans) <- NULL, colnames(ans)\n   PBD> <- colnames(x))\n   PBD>     ans\n   PBD> }\n   PBD> \n   PBD> \n   PBD> or rename as.matrix.ts() such that it is not dispatched as method in\n   PBD> acf()? However, I do not know if the former suggested function body\n   PBD> change would cause trouble elsewhere.\n   PBD> \n   PBD> \n   PBD> Best,\n   PBD> Bernhard\n\n\nHi Bernhard,\n\nfUtilites was merged to fBasics and is now considered deprecated.\n\nIn the new fBasics package, the function as.matrix.ts has\nbeen already removed to avoid the problem you mentioned.\n\nhope this helps,\nYohan\n\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PBD\" == \"Pfaff, Bernhard Dr.\" <Bernhard_Pfaff at fra.invesco.com>\n>>>> on Wed, 10 Dec 2008 11:35:01 -0000\n\n   PBD> Dear Rmetrics-core member (probably Diethelm and Yohan),\n   PBD> \n   PBD> I det",
+      "thread_id": "thread-92eadb0df780",
+      "thread_depth": 1,
+      "month": "2008-12"
+    },
+    {
+      "id": "msg-181c887c9e0b",
+      "message_id": "<D452E6B8.6EE2D9EB@adobe.com>",
+      "from_name": "Das Erste Kasino",
+      "from_email_hash": "a7abc319944f7b83d782c04f65c2c8bf5502ec51389618a4de64851d37fad012",
+      "date": "2008-12-27T10:17:12Z",
+      "subject": "300 Euro Gratis in Blackjack, Roulette und Spielautomaten online spielen !",
+      "subject_clean": "300 Euro Gratis in Blackjack, Roulette und Spielautomaten online spielen !",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081227/7af7e4f5/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081227/7af7e4f5/attachment.html>",
+      "thread_id": "thread-181c887c9e0b",
+      "thread_depth": 0,
+      "month": "2008-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-eddee05a2ec6",
+      "subject": "Bug in fArma: does not accept variables as input",
+      "message_count": 1,
+      "participants": [
+        "Stefan Grosse"
+      ],
+      "started": "2008-12-03T08:43:00Z",
+      "last_reply": "2008-12-03T08:43:00Z",
+      "root_message_id": "msg-eddee05a2ec6"
+    },
+    {
+      "id": "thread-a19a324325fd",
+      "subject": "!SPAM: Choose your own price",
+      "message_count": 1,
+      "participants": [
+        "Adrian Cunningham"
+      ],
+      "started": "2008-12-03T15:31:44Z",
+      "last_reply": "2008-12-03T15:31:44Z",
+      "root_message_id": "msg-a19a324325fd"
+    },
+    {
+      "id": "thread-8ab97d152fe0",
+      "subject": "!SPAM: Your order",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2008-12-03T15:47:44Z",
+      "last_reply": "2008-12-03T15:47:44Z",
+      "root_message_id": "msg-8ab97d152fe0"
+    },
+    {
+      "id": "thread-e9b079625f1c",
+      "subject": "!SPAM: Your wife need your attention? Solve all the problems with IT.",
+      "message_count": 1,
+      "participants": [
+        "Alic Aguilar"
+      ],
+      "started": "2008-12-03T18:47:23Z",
+      "last_reply": "2008-12-03T18:47:23Z",
+      "root_message_id": "msg-e9b079625f1c"
+    },
+    {
+      "id": "thread-a01797465646",
+      "subject": "!SPAM: RE: Message",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2008-12-03T19:37:46Z",
+      "last_reply": "2008-12-03T19:37:46Z",
+      "root_message_id": "msg-a01797465646"
+    },
+    {
+      "id": "thread-98446bdac9a7",
+      "subject": "!SPAM: Your order",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2008-12-03T23:07:02Z",
+      "last_reply": "2008-12-03T23:07:02Z",
+      "root_message_id": "msg-98446bdac9a7"
+    },
+    {
+      "id": "thread-6828244490f3",
+      "subject": "!SPAM: La meilleure collection de cles et de portefeuilles",
+      "message_count": 1,
+      "participants": [
+        "Cadeaux originaux par anne'e"
+      ],
+      "started": "2008-12-03T23:24:05Z",
+      "last_reply": "2008-12-03T23:24:05Z",
+      "root_message_id": "msg-6828244490f3"
+    },
+    {
+      "id": "thread-06a09cd4cced",
+      "subject": "!SPAM: Add more spice into your bedroom life.",
+      "message_count": 1,
+      "participants": [
+        "Abdulkarim Black"
+      ],
+      "started": "2008-12-03T23:34:07Z",
+      "last_reply": "2008-12-03T23:34:07Z",
+      "root_message_id": "msg-06a09cd4cced"
+    },
+    {
+      "id": "thread-73513a222feb",
+      "subject": "!SPAM: Croyez-vous cela?",
+      "message_count": 1,
+      "participants": [
+        "Fiesta Casino Club"
+      ],
+      "started": "2008-12-04T00:11:04Z",
+      "last_reply": "2008-12-04T00:11:04Z",
+      "root_message_id": "msg-73513a222feb"
+    },
+    {
+      "id": "thread-666ffa06b7f0",
+      "subject": "!SPAM: Re: Order status",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2008-12-04T01:48:16Z",
+      "last_reply": "2008-12-04T01:48:16Z",
+      "root_message_id": "msg-666ffa06b7f0"
+    },
+    {
+      "id": "thread-a0a5747c08bd",
+      "subject": "Package timeSeries_290.79.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2008-12-04T17:29:01Z",
+      "last_reply": "2008-12-04T17:29:01Z",
+      "root_message_id": "msg-a0a5747c08bd"
+    },
+    {
+      "id": "thread-6fe6c0605826",
+      "subject": "<no subject>",
+      "message_count": 1,
+      "participants": [
+        "glenn roberts"
+      ],
+      "started": "2008-12-09T11:02:13Z",
+      "last_reply": "2008-12-09T11:02:13Z",
+      "root_message_id": "msg-6fe6c0605826"
+    },
+    {
+      "id": "thread-92eadb0df780",
+      "subject": "Series names not used by stats:::acf when fUtilities (as.matrix.ts seems to be the culprit) is loaded",
+      "message_count": 2,
+      "participants": [
+        "Pfaff, Bernhard Dr.",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-12-10T11:35:01Z",
+      "last_reply": "2008-12-10T18:08:06Z",
+      "root_message_id": "msg-92eadb0df780"
+    },
+    {
+      "id": "thread-181c887c9e0b",
+      "subject": "300 Euro Gratis in Blackjack, Roulette und Spielautomaten online spielen !",
+      "message_count": 1,
+      "participants": [
+        "Das Erste Kasino"
+      ],
+      "started": "2008-12-27T10:17:12Z",
+      "last_reply": "2008-12-27T10:17:12Z",
+      "root_message_id": "msg-181c887c9e0b"
+    }
+  ]
+}

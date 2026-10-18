@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-07",
+  "messages": [
+    {
+      "id": "msg-dc932b798c72",
+      "message_id": "<000201c8eea7$c4f29340$4ed7b9c0$@com>",
+      "from_name": "Bill Jones",
+      "from_email_hash": "1814b06a3cea2c8286de9f1525ae083d704adc75e74627f06ae343b894923d8e",
+      "date": "2008-07-25T22:42:48Z",
+      "subject": "FW: question on fImport",
+      "subject_clean": "question on fImport",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080725/93979aff/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080725/93979aff/attachment.pl>",
+      "thread_id": "thread-dc932b798c72",
+      "thread_depth": 0,
+      "month": "2008-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-dc932b798c72",
+      "subject": "question on fImport",
+      "message_count": 1,
+      "participants": [
+        "Bill Jones"
+      ],
+      "started": "2008-07-25T22:42:48Z",
+      "last_reply": "2008-07-25T22:42:48Z",
+      "root_message_id": "msg-dc932b798c72"
+    }
+  ]
+}

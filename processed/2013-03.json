@@ -1,0 +1,124 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-03",
+  "messages": [
+    {
+      "id": "msg-56b61d1259c9",
+      "message_id": "<20130314102502.A8D2781884@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2013-03-14T10:25:02Z",
+      "subject": "Use of .find.package or .path.package in CRAN package fImport",
+      "subject_clean": "Use of .find.package or .path.package in CRAN package fImport",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "This concerns CRAN packages which call .find.package and/or .path.package: these have never been public functions.  Way back in R 2.13.0 public functions find.package and path.package were added, so please update your package to use them and check (and update if necessary) the R version requirement in the DESCRIPTION file.\n\nThe dot versions are deprecated and will be removed shortly (but not for 3.0.0 on April 3).\n\nPlease submit a corrected update to CRAN following the CRAN policies at http://cran.r-project.org/web/packages/policies.html by April 11 at the latest.\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "This concerns CRAN packages which call .find.package and/or .path.package: these have never been public functions.  Way back in R 2.13.0 public functions find.package and path.package were added, so p",
+      "thread_id": "thread-56b61d1259c9",
+      "thread_depth": 0,
+      "month": "2013-03"
+    },
+    {
+      "id": "msg-72ef5e8f71dc",
+      "message_id": "<m238vwu7y8.fsf@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2013-03-15T13:08:15Z",
+      "subject": "Use of .find.package or .path.package in CRAN package fImport",
+      "subject_clean": "Use of .find.package or .path.package in CRAN package fImport",
+      "in_reply_to": "<20130314102502.A8D2781884@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<20130314102502.A8D2781884@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear Brian,\n\nThank you to point this out.\n\nI have now submitted a new version of fImport.\n\nRegards,\nYohan\n\n\nOn Thu, Mar 14 2013, Prof Brian Ripley wrote:\n\n> This concerns CRAN packages which call .find.package and/or .path.package: these have never been public functions.  Way back in R 2.13.0 public functions find.package and path.package were added, so please update your package to use them and check (and update if necessary) the R version requirement in the DESCRIPTION file.\n>\n> The dot versions are deprecated and will be removed shortly (but not for 3.0.0 on April 3).\n>\n> Please submit a corrected update to CRAN following the CRAN policies at http://cran.r-project.org/web/packages/policies.html by April 11 at the latest.\n>\n> There may be other issues that need fixing: see the CRAN check logs at\n> http://cran.r-project.org/web/checks/check_results_NAME.html,\n> replacing NAME by the name of your package.\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Dear Brian,\n\nThank you to point this out.\n\nI have now submitted a new version of fImport.\n\nRegards,\nYohan\n\n\nOn Thu, Mar 14 2013, Prof Brian Ripley wrote:\n\n> This concerns CRAN packages which call .fin",
+      "thread_id": "thread-56b61d1259c9",
+      "thread_depth": 1,
+      "month": "2013-03"
+    },
+    {
+      "id": "msg-0d679d2c1036",
+      "message_id": "<514354AC.90001@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2013-03-15T17:04:44Z",
+      "subject": "CRAN submission timeSeries 3000.96",
+      "subject_clean": "CRAN submission timeSeries 3000.96",
+      "in_reply_to": "<m21ubgu4dj.fsf@phys.ethz.ch>",
+      "references": [
+        "<m21ubgu4dj.fsf@phys.ethz.ch>"
+      ],
+      "body_plain": "On 15.03.2013 15:25, Yohan Chalabi wrote:\n> Dear CRAN maintainers,\n>\n> Please find a new version of timeSeries with\n>\n> - updated maintainer field\n> - and without deprecated .First.lib().\n>\n> Thanks in advance for your help.\n>\n> Regards,\n> Yohan\n>\n\n\nThanks.\n\nIn principle we need a formal acceptance of the old maintainer for such \nmaintainer changes, hence replying formally correct to Rmetrics Core \nTeam <Rmetrics-core at r-project.org> and waiting for a confirmation.\n\nBest,\nUwe Ligges",
+      "body_snippet": "On 15.03.2013 15:25, Yohan Chalabi wrote:\n> Dear CRAN maintainers,\n>\n> Please find a new version of timeSeries with\n>\n> - updated maintainer field\n> - and without deprecated .First.lib().\n>\n> Thanks i",
+      "thread_id": "thread-0d679d2c1036",
+      "thread_depth": 0,
+      "month": "2013-03"
+    },
+    {
+      "id": "msg-ba3be58e2f5a",
+      "message_id": "<CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2013-03-15T20:41:09Z",
+      "subject": "CRAN submission timeSeries 3000.96",
+      "subject_clean": "CRAN submission timeSeries 3000.96",
+      "in_reply_to": "<514354AC.90001@statistik.tu-dortmund.de>",
+      "references": [
+        "<m21ubgu4dj.fsf@phys.ethz.ch>",
+        "<514354AC.90001@statistik.tu-dortmund.de>"
+      ],
+      "body_plain": "On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges\n<ligges at statistik.tu-dortmund.de> wrote:\n>\n>\n> On 15.03.2013 15:25, Yohan Chalabi wrote:\n>>\n>> Dear CRAN maintainers,\n>>\n>> Please find a new version of timeSeries with\n>>\n>> - updated maintainer field\n>> - and without deprecated .First.lib().\n>>\n>> Thanks in advance for your help.\n>>\n>> Regards,\n>> Yohan\n>>\n>\n>\n> Thanks.\n>\n> In principle we need a formal acceptance of the old maintainer for such\n> maintainer changes, hence replying formally correct to Rmetrics Core Team\n> <Rmetrics-core at r-project.org> and waiting for a confirmation.\n>\n\n:-)   well,  as you've urged us to change the maintainer..\n\n   indeed, it's fine and great that Yohan Chalabi acts as maintainer\nnow, of most former Rmetrics-core maintained  packages.\n\nMartin\n\n> Best,\n> Uwe Ligges\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges\n<ligges at statistik.tu-dortmund.de> wrote:\n>\n>\n> On 15.03.2013 15:25, Yohan Chalabi wrote:\n>>\n>> Dear CRAN maintainers,\n>>\n>> Please find a new version of ",
+      "thread_id": "thread-0d679d2c1036",
+      "thread_depth": 1,
+      "month": "2013-03"
+    },
+    {
+      "id": "msg-bd0ab1c1ce5e",
+      "message_id": "<51447604.4040700@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2013-03-16T13:39:16Z",
+      "subject": "CRAN submission timeSeries 3000.96",
+      "subject_clean": "CRAN submission timeSeries 3000.96",
+      "in_reply_to": "<CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>",
+      "references": [
+        "<m21ubgu4dj.fsf@phys.ethz.ch>",
+        "<514354AC.90001@statistik.tu-dortmund.de>",
+        "<CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>"
+      ],
+      "body_plain": "On 15.03.2013 21:41, Martin Maechler wrote:\n> On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges\n> <ligges at statistik.tu-dortmund.de> wrote:\n>>\n>>\n>> On 15.03.2013 15:25, Yohan Chalabi wrote:\n>>>\n>>> Dear CRAN maintainers,\n>>>\n>>> Please find a new version of timeSeries with\n>>>\n>>> - updated maintainer field\n>>> - and without deprecated .First.lib().\n>>>\n>>> Thanks in advance for your help.\n>>>\n>>> Regards,\n>>> Yohan\n>>>\n>>\n>>\n>> Thanks.\n>>\n>> In principle we need a formal acceptance of the old maintainer for such\n>> maintainer changes, hence replying formally correct to Rmetrics Core Team\n>> <Rmetrics-core at r-project.org> and waiting for a confirmation.\n>>\n>\n> :-)   well,  as you've urged us to change the maintainer..\n\nYes, I know. Hence I moved the package to CRAN yesterday already and \nfeel happy now that the formalism is in oder.\n\n>\n>     indeed, it's fine and great that Yohan Chalabi acts as maintainer\n> now, of most former Rmetrics-core maintained  packages.\n\n\nThanks from here, too.\n\nUwe\n\n\n> Martin\n>\n>> Best,\n>> Uwe Ligges\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>",
+      "body_snippet": "On 15.03.2013 21:41, Martin Maechler wrote:\n> On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges\n> <ligges at statistik.tu-dortmund.de> wrote:\n>>\n>>\n>> On 15.03.2013 15:25, Yohan Chalabi wrote:\n>>>\n>>> Dear ",
+      "thread_id": "thread-0d679d2c1036",
+      "thread_depth": 2,
+      "month": "2013-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-56b61d1259c9",
+      "subject": "Use of .find.package or .path.package in CRAN package fImport",
+      "message_count": 2,
+      "participants": [
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2013-03-14T10:25:02Z",
+      "last_reply": "2013-03-15T13:08:15Z",
+      "root_message_id": "msg-56b61d1259c9"
+    },
+    {
+      "id": "thread-0d679d2c1036",
+      "subject": "CRAN submission timeSeries 3000.96",
+      "message_count": 3,
+      "participants": [
+        "Martin Maechler",
+        "Uwe Ligges"
+      ],
+      "started": "2013-03-15T17:04:44Z",
+      "last_reply": "2013-03-16T13:39:16Z",
+      "root_message_id": "msg-0d679d2c1036"
+    }
+  ]
+}

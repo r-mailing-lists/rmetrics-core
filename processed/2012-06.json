@@ -1,0 +1,232 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-06",
+  "messages": [
+    {
+      "id": "msg-35c1e02dafe5",
+      "message_id": "<4FCC5ECA.6070002@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-06-04T07:07:54Z",
+      "subject": "Fwd: Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<4FBB5557.5090406@stats.ox.ac.uk>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Ping!\n\nPackage caschrono is failing its tests because of this.\n\nThe fix is simple, and you were asked to do this months ago.  We are \nabout to put up a Non-Maintainer update, 2110.80.1, with this fixed \n(including in the test suite!)\n\nBut really we should not have to remind and sweep up after you.\n\n-------- Original Message --------\nSubject: Misuse of .Internal (optimhess) in packages betatrgarch,, \nfGarch, iterLap and rgenoud\nDate: Tue, 22 May 2012 09:59:03 +0100\nFrom: Prof Brian Ripley <ripley at stats.ox.ac.uk>\nTo: Genaro Sucarrat <genaro.sucarrat at bi.no>,        Rmetrics Core Team \n<Rmetrics-core at r-project.org>,        Bjoern Bornkamp \n<bbnkmp at gmail.com>,        Jasjeet Singh Sekhon <sekhon at berkeley.edu>\nCC: cran at R-project.org <cran at r-project.org>\n\nAll of these packages have R CMD check reports such as\n\nFound .Internal call in the following function:\n   ?tegarch.est?\nwith calls to .Internal functions\n   ?optimhess?\n\nPackages should not call .Internal(): it is not part of the API, for\nuse only by R itself and subject to change without notice.\n\nThere is no longer such a .Internal function in the development version\nof R.  Please update your package to use the R function optimhess()\ninstead, and add/incorporate\nDepends: R (>= 2.15)\nin your DESCRIPTION file.\n\nBDR\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "Ping!\n\nPackage caschrono is failing its tests because of this.\n\nThe fix is simple, and you were asked to do this months ago.  We are \nabout to put up a Non-Maintainer update, 2110.80.1, with this fixe",
+      "thread_id": "thread-35c1e02dafe5",
+      "thread_depth": 0,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-07e648b1a510",
+      "message_id": "<58D76F94-8383-48E3-824F-3A8A2C314782@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-06-04T07:40:20Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<4FCC5ECA.6070002@stats.ox.ac.uk>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<4FCC5ECA.6070002@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Thanks for the reminder.\n\nWe will submit a new version of fGarch ASAP.\n\nRegards,\nYohan\n\nOn 4 juin 2012, at 09:07, Prof Brian Ripley wrote:\n\n> Ping!\n> \n> Package caschrono is failing its tests because of this.\n> \n> The fix is simple, and you were asked to do this months ago.  We are about to put up a Non-Maintainer update, 2110.80.1, with this fixed (including in the test suite!)\n> \n> But really we should not have to remind and sweep up after you.\n> \n> -------- Original Message --------\n> Subject: Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud\n> Date: Tue, 22 May 2012 09:59:03 +0100\n> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n> To: Genaro Sucarrat <genaro.sucarrat at bi.no>,        Rmetrics Core Team <Rmetrics-core at r-project.org>,        Bjoern Bornkamp <bbnkmp at gmail.com>,        Jasjeet Singh Sekhon <sekhon at berkeley.edu>\n> CC: cran at R-project.org <cran at r-project.org>\n> \n> All of these packages have R CMD check reports such as\n> \n> Found .Internal call in the following function:\n>  ?tegarch.est?\n> with calls to .Internal functions\n>  ?optimhess?\n> \n> Packages should not call .Internal(): it is not part of the API, for\n> use only by R itself and subject to change without notice.\n> \n> There is no longer such a .Internal function in the development version\n> of R.  Please update your package to use the R function optimhess()\n> instead, and add/incorporate\n> Depends: R (>= 2.15)\n> in your DESCRIPTION file.\n> \n> BDR\n> \n> -- \n> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n> University of Oxford,             Tel:  +44 1865 272861 (self)\n> 1 South Parks Road,                     +44 1865 272866 (PA)\n> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Thanks for the reminder.\n\nWe will submit a new version of fGarch ASAP.\n\nRegards,\nYohan\n\nOn 4 juin 2012, at 09:07, Prof Brian Ripley wrote:\n\n> Ping!\n> \n> Package caschrono is failing its tests because ",
+      "thread_id": "thread-35c1e02dafe5",
+      "thread_depth": 1,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-0dba63ce37c5",
+      "message_id": "<01cd423c$Blat.v2.2.2$3ac3ee79@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-06-04T10:24:31Z",
+      "subject": "Package fGarch_2110.80.1.tar.gz has been built for Windows",
+      "subject_clean": "Package fGarch_2110.80.1.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_2110.80.1.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.0 (2012-03-30)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_2110.80.1.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-0dba63ce37c5",
+      "thread_depth": 0,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-5fade24e4497",
+      "message_id": "<B3F973B9-22C4-4BBA-8C34-3F3192952707@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-06-04T12:26:45Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<58D76F94-8383-48E3-824F-3A8A2C314782@phys.ethz.ch>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<4FCC5ECA.6070002@stats.ox.ac.uk>",
+        "<58D76F94-8383-48E3-824F-3A8A2C314782@phys.ethz.ch>"
+      ],
+      "body_plain": "Please find a new version of fGarch on CRAN ftp server:\n\nfGarch_2150.81.tar.gz.\n\nThank you for your help.\nYohan\n\nOn 4 juin 2012, at 09:40, Yohan Chalabi wrote:\n\n> Thanks for the reminder.\n> \n> We will submit a new version of fGarch ASAP.\n> \n> Regards,\n> Yohan\n> \n> On 4 juin 2012, at 09:07, Prof Brian Ripley wrote:\n> \n>> Ping!\n>> \n>> Package caschrono is failing its tests because of this.\n>> \n>> The fix is simple, and you were asked to do this months ago.  We are about to put up a Non-Maintainer update, 2110.80.1, with this fixed (including in the test suite!)\n>> \n>> But really we should not have to remind and sweep up after you.\n>> \n>> -------- Original Message --------\n>> Subject: Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud\n>> Date: Tue, 22 May 2012 09:59:03 +0100\n>> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>> To: Genaro Sucarrat <genaro.sucarrat at bi.no>,        Rmetrics Core Team <Rmetrics-core at r-project.org>,        Bjoern Bornkamp <bbnkmp at gmail.com>,        Jasjeet Singh Sekhon <sekhon at berkeley.edu>\n>> CC: cran at R-project.org <cran at r-project.org>\n>> \n>> All of these packages have R CMD check reports such as\n>> \n>> Found .Internal call in the following function:\n>> ?tegarch.est?\n>> with calls to .Internal functions\n>> ?optimhess?\n>> \n>> Packages should not call .Internal(): it is not part of the API, for\n>> use only by R itself and subject to change without notice.\n>> \n>> There is no longer such a .Internal function in the development version\n>> of R.  Please update your package to use the R function optimhess()\n>> instead, and add/incorporate\n>> Depends: R (>= 2.15)\n>> in your DESCRIPTION file.\n>> \n>> BDR\n>> \n>> -- \n>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>> \n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>> \n>",
+      "body_snippet": "Please find a new version of fGarch on CRAN ftp server:\n\nfGarch_2150.81.tar.gz.\n\nThank you for your help.\nYohan\n\nOn 4 juin 2012, at 09:40, Yohan Chalabi wrote:\n\n> Thanks for the reminder.\n> \n> We will",
+      "thread_id": "thread-35c1e02dafe5",
+      "thread_depth": 2,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-1d3c121f8928",
+      "message_id": "<20428.48803.613656.324778@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2012-06-04T13:56:51Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<B3F973B9-22C4-4BBA-8C34-3F3192952707@phys.ethz.ch>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<4FCC5ECA.6070002@stats.ox.ac.uk>",
+        "<58D76F94-8383-48E3-824F-3A8A2C314782@phys.ethz.ch>",
+        "<B3F973B9-22C4-4BBA-8C34-3F3192952707@phys.ethz.ch>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n> Please find a new version of fGarch on CRAN ftp server:\n> fGarch_2150.81.tar.gz.\n\n> Thank you for your help.\n> Yohan\n\nYohan,\n\nI get\n\n* checking tests ... ERROR\nRunning the tests in ?tests/doRUnit.R? failed.\nLast 13 lines of output:\n  Number of failures: 0 \n  \n   \n  1 Test Suite : \n  fGarch unit testing - 52 test functions, 1 error, 0 failures\n  ERROR in test.hessian.rosenbrock: Error in .Internal(optimhess(par, fn, gr = NULL, con)) : \n    there is no .Internal function 'optimhess'\n  Error in eval(expr, envir, enclos) : \n  \n  unit testing failed (#test failures: 0, R errors: 1)\n  \n  Calls: source -> withVisible -> eval -> eval\n  Execution halted\n\nso I guess you need to update your unit tests as well?\n\n-k\n\n> On 4 juin 2012, at 09:40, Yohan Chalabi wrote:\n\n>> Thanks for the reminder.\n>> \n>> We will submit a new version of fGarch ASAP.\n>> \n>> Regards,\n>> Yohan\n>> \n>> On 4 juin 2012, at 09:07, Prof Brian Ripley wrote:\n>> \n>>> Ping!\n>>> \n>>> Package caschrono is failing its tests because of this.\n>>> \n>>> The fix is simple, and you were asked to do this months ago.  We are about to put up a Non-Maintainer update, 2110.80.1, with this fixed (including in the test suite!)\n>>> \n>>> But really we should not have to remind and sweep up after you.\n>>> \n>>> -------- Original Message --------\n>>> Subject: Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud\n>>> Date: Tue, 22 May 2012 09:59:03 +0100\n>>> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>> To: Genaro Sucarrat <genaro.sucarrat at bi.no>,        Rmetrics Core Team <Rmetrics-core at r-project.org>,        Bjoern Bornkamp <bbnkmp at gmail.com>,        Jasjeet Singh Sekhon <sekhon at berkeley.edu>\n>>> CC: cran at R-project.org <cran at r-project.org>\n>>> \n>>> All of these packages have R CMD check reports such as\n>>> \n>>> Found .Internal call in the following function:\n>>> ?tegarch.est?\n>>> with calls to .Internal functions\n>>> ?optimhess?\n>>> \n>>> Packages should not call .Internal(): it is not part of the API, for\n>>> use only by R itself and subject to change without notice.\n>>> \n>>> There is no longer such a .Internal function in the development version\n>>> of R.  Please update your package to use the R function optimhess()\n>>> instead, and add/incorporate\n>>> Depends: R (>= 2.15)\n>>> in your DESCRIPTION file.\n>>> \n>>> BDR\n>>> \n>>> -- \n>>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n>>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>>> \n>>> _______________________________________________\n>>> Rmetrics-core mailing list\n>>> Rmetrics-core at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>> \n>>",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n> Please find a new version of fGarch on CRAN ftp server:\n> fGarch_2150.81.tar.gz.\n\n> Thank you for your help.\n> Yohan\n\nYohan,\n\nI get\n\n* checking tests ... ERROR\nRunning t",
+      "thread_id": "thread-35c1e02dafe5",
+      "thread_depth": 3,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-4d73cd31168a",
+      "message_id": "<4FCCC4F4.3010206@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-06-04T14:23:48Z",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "subject_clean": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "in_reply_to": "<20428.48803.613656.324778@fangorn.hornik.net>",
+      "references": [
+        "<4FBB5557.5090406@stats.ox.ac.uk>",
+        "<4FCC5ECA.6070002@stats.ox.ac.uk>",
+        "<58D76F94-8383-48E3-824F-3A8A2C314782@phys.ethz.ch>",
+        "<B3F973B9-22C4-4BBA-8C34-3F3192952707@phys.ethz.ch>",
+        "<20428.48803.613656.324778@fangorn.hornik.net>"
+      ],
+      "body_plain": "On 04/06/2012 14:56, Kurt Hornik wrote:\n>>>>>> Yohan Chalabi writes:\n>\n>> Please find a new version of fGarch on CRAN ftp server:\n>> fGarch_2150.81.tar.gz.\n>\n>> Thank you for your help.\n>> Yohan\n>\n> Yohan,\n>\n> I get\n>\n> * checking tests ... ERROR\n> Running the tests in ?tests/doRUnit.R? failed.\n> Last 13 lines of output:\n>    Number of failures: 0\n>\n>\n>    1 Test Suite :\n>    fGarch unit testing - 52 test functions, 1 error, 0 failures\n>    ERROR in test.hessian.rosenbrock: Error in .Internal(optimhess(par, fn, gr = NULL, con)) :\n>      there is no .Internal function 'optimhess'\n>    Error in eval(expr, envir, enclos) :\n>\n>    unit testing failed (#test failures: 0, R errors: 1)\n>\n>    Calls: source ->  withVisible ->  eval ->  eval\n>    Execution halted\n>\n> so I guess you need to update your unit tests as well?\n\nHe does, just as I said I did in the NMU ....\n\n>\n> -k\n>\n>> On 4 juin 2012, at 09:40, Yohan Chalabi wrote:\n>\n>>> Thanks for the reminder.\n>>>\n>>> We will submit a new version of fGarch ASAP.\n>>>\n>>> Regards,\n>>> Yohan\n>>>\n>>> On 4 juin 2012, at 09:07, Prof Brian Ripley wrote:\n>>>\n>>>> Ping!\n>>>>\n>>>> Package caschrono is failing its tests because of this.\n>>>>\n>>>> The fix is simple, and you were asked to do this months ago.  We are about to put up a Non-Maintainer update, 2110.80.1, with this fixed (including in the test suite!)\n>>>>\n>>>> But really we should not have to remind and sweep up after you.\n>>>>\n>>>> -------- Original Message --------\n>>>> Subject: Misuse of .Internal (optimhess) in packages betatrgarch,, fGarch, iterLap and rgenoud\n>>>> Date: Tue, 22 May 2012 09:59:03 +0100\n>>>> From: Prof Brian Ripley<ripley at stats.ox.ac.uk>\n>>>> To: Genaro Sucarrat<genaro.sucarrat at bi.no>,        Rmetrics Core Team<Rmetrics-core at r-project.org>,        Bjoern Bornkamp<bbnkmp at gmail.com>,        Jasjeet Singh Sekhon<sekhon at berkeley.edu>\n>>>> CC: cran at R-project.org<cran at r-project.org>\n>>>>\n>>>> All of these packages have R CMD check reports such as\n>>>>\n>>>> Found .Internal call in the following function:\n>>>> ?tegarch.est?\n>>>> with calls to .Internal functions\n>>>> ?optimhess?\n>>>>\n>>>> Packages should not call .Internal(): it is not part of the API, for\n>>>> use only by R itself and subject to change without notice.\n>>>>\n>>>> There is no longer such a .Internal function in the development version\n>>>> of R.  Please update your package to use the R function optimhess()\n>>>> instead, and add/incorporate\n>>>> Depends: R (>= 2.15)\n>>>> in your DESCRIPTION file.\n>>>>\n>>>> BDR\n>>>>\n>>>> --\n>>>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>>>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n>>>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>>>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>>>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>>>>\n>>>> _______________________________________________\n>>>> Rmetrics-core mailing list\n>>>> Rmetrics-core at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>>>\n>>>\n>\n>\n\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "On 04/06/2012 14:56, Kurt Hornik wrote:\n>>>>>> Yohan Chalabi writes:\n>\n>> Please find a new version of fGarch on CRAN ftp server:\n>> fGarch_2150.81.tar.gz.\n>\n>> Thank you for your help.\n>> Yohan\n>\n> Y",
+      "thread_id": "thread-35c1e02dafe5",
+      "thread_depth": 4,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-c910be0f504e",
+      "message_id": "<15dde24c5ce3d647b2d705bafd4fcabf@lyfy-20101228MK>",
+      "from_name": "ANTEK SOLAR",
+      "from_email_hash": "e8c59b066962266993aafe535437fccb3445e1a17278b66f08f5bfa74f9eb5d3",
+      "date": "2012-06-09T20:53:11Z",
+      "subject": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "subject_clean": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120610/05b9c75c/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/jpeg\nSize: 131927 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120610/05b9c75c/attachment-0001.jpe>",
+      "body_snippet": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML a",
+      "thread_id": "thread-c910be0f504e",
+      "thread_depth": 0,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-8848654927b2",
+      "message_id": "<CAPRP4-euup-bZATrg7v2jBru3y+unuZ4WJtGdZrh7zUHashaOA@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-06-19T20:40:11Z",
+      "subject": "fUtilities package",
+      "subject_clean": "fUtilities package",
+      "in_reply_to": "<51A0839C3A745D4AB97760DC41289BE20A28CAED@ELON17P32004A.csfb.cs-group.com>",
+      "references": [
+        "<51A0839C3A745D4AB97760DC41289BE20A28CAED@ELON17P32004A.csfb.cs-group.com>"
+      ],
+      "body_plain": "Dear Elena,\n\nfUtilities is officially deprecated, i.e., should no longer be\ninstalled, nor if possible used.\nHere's the corresponding entry in its DESCRIPTION file:\n\nNote: This package is *deprecated* --- its functionality\n now is provided (and maintained!) mainly in package  fBasics;\n and some also in  timeDate  and timeSeries.\n\nTry to install these other 3 packages. They should provide everything you need.\n\nBest regards,\nMartin Maechler,\nETH Zurich\n\n\nOn Tue, May 22, 2012 at 11:39 AM, Sharova, Elena\n<elena.sharova at credit-suisse.com> wrote:\n>\n>\n>\n>\n> Hello,\n>\n> I am having some difficulty with installing and using the fUtilities\n> package.\n>\n>\n>\n> I have downloaded it from\n> http://cran.uvigo.es/web/packages/fUtilities/index.html\n>\n>\n>\n> When I try to load it, the error message says there is no NAMESPACE\n> file.\n>\n>\n>\n> Do you happen to know if indeed I need this file and where I can get it\n> from.\n>\n>\n>\n> Thanks,\n>\n> Elena\n>\n>\n> ===============================================================================\n> Please access the attached hyperlink for an important el...{{dropped:8}}\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear Elena,\n\nfUtilities is officially deprecated, i.e., should no longer be\ninstalled, nor if possible used.\nHere's the corresponding entry in its DESCRIPTION file:\n\nNote: This package is *deprecated*",
+      "thread_id": "thread-8848654927b2",
+      "thread_depth": 0,
+      "month": "2012-06"
+    },
+    {
+      "id": "msg-40b477d00ea6",
+      "message_id": "<0adc01cd54fe$2e978240$8bc686c0$@seofurnisherteam.com>",
+      "from_name": "aubrey at seofurnisherteam.com",
+      "from_email_hash": "6c95b52277009892f2ef851b52fe6c8a49b29384de7878a6fb09f861385d2470",
+      "date": "2012-06-28T07:18:08Z",
+      "subject": "Google Optimization",
+      "subject_clean": "Google Optimization",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120628/19bc6828/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120628/19bc6828/attachment.pl>",
+      "thread_id": "thread-40b477d00ea6",
+      "thread_depth": 0,
+      "month": "2012-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-35c1e02dafe5",
+      "subject": "Misuse of .Internal (optimhess) in packages betatrgarch, , fGarch, iterLap and rgenoud",
+      "message_count": 5,
+      "participants": [
+        "Kurt Hornik",
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-06-04T07:07:54Z",
+      "last_reply": "2012-06-04T14:23:48Z",
+      "root_message_id": "msg-35c1e02dafe5"
+    },
+    {
+      "id": "thread-0dba63ce37c5",
+      "subject": "Package fGarch_2110.80.1.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-06-04T10:24:31Z",
+      "last_reply": "2012-06-04T10:24:31Z",
+      "root_message_id": "msg-0dba63ce37c5"
+    },
+    {
+      "id": "thread-c910be0f504e",
+      "subject": "Agricoltural Photovoltaic Greenhouse - Power Innovation By Antek Solar Power",
+      "message_count": 1,
+      "participants": [
+        "ANTEK SOLAR"
+      ],
+      "started": "2012-06-09T20:53:11Z",
+      "last_reply": "2012-06-09T20:53:11Z",
+      "root_message_id": "msg-c910be0f504e"
+    },
+    {
+      "id": "thread-8848654927b2",
+      "subject": "fUtilities package",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2012-06-19T20:40:11Z",
+      "last_reply": "2012-06-19T20:40:11Z",
+      "root_message_id": "msg-8848654927b2"
+    },
+    {
+      "id": "thread-40b477d00ea6",
+      "subject": "Google Optimization",
+      "message_count": 1,
+      "participants": [
+        "aubrey at seofurnisherteam.com"
+      ],
+      "started": "2012-06-28T07:18:08Z",
+      "last_reply": "2012-06-28T07:18:08Z",
+      "root_message_id": "msg-40b477d00ea6"
+    }
+  ]
+}

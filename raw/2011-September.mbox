@@ -1,0 +1,399 @@
+From gaochongnan at gmail.com  Fri Sep 23 08:50:38 2011
+From: gaochongnan at gmail.com (Chongnan Gao)
+Date: Fri, 23 Sep 2011 14:50:38 +0800
+Subject: about emaTA
+Message-ID: <CANVS-nqv=MAWyW_wHztc+VvYLfnETrFSpQWPQc=ZiPaGMa-ocQ@mail.gmail.com>
+
+hi,
+
+I checked code of emaTA in fTrading and the head looks like:
+
+ema <- function (x, lambda = 0.1, startup = 0)
+{
+    y = as.vector(x)
+    if (lambda >= 1)
+        lambda = 2/(lambda + 1)
+    if (startup == 0)
+        startup = floor(2/lambda)
+    if (lambda == 0) {
+        ema = rep(mean(x), length(x))
+    }
+
+esp. startup = floor(2/lambda). That translate to 2.88*(memory
+length). Is that necessary to take such a long sub-array to
+calculating startup mean value?
+
+Best,
+Chongnan
+
+
+From maechler at stat.math.ethz.ch  Fri Sep 23 09:43:54 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Fri, 23 Sep 2011 09:43:54 +0200
+Subject: [Bug 14686] New: EastSunday in fCalendar is stuck to current year
+In-Reply-To: <bug-14686-16@http.bugs.r-project.org/bugzilla3/>
+References: <bug-14686-16@http.bugs.r-project.org/bugzilla3/>
+Message-ID: <20092.14522.51421.450692@stat.math.ethz.ch>
+
+
+> https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14686
+>            Summary: EastSunday in fCalendar is stuck to current year
+>            Product: R
+>            Version: R 2.13.1 patched
+>           Platform: x86_64/x64/amd64 (64-bit)
+>         OS/Version: Mac OS X 10.7
+>             Status: NEW
+>           Severity: normal
+>           Priority: P5
+>          Component: Add-ons
+>         AssignedTo: R-core at R-project.org
+>         ReportedBy: gsl at statlab.uni-heidelberg.de
+>    Estimated Hours: 0.0
+> 
+> 
+> In package fCalendar,
+> EasterSunday uses 
+>   ans = Easter(year = currentYear)
+> This pins everything to the current year. It should be
+>   ans = Easter(year = year)
+> 
+> Sorry for posting here. No contact mail for the maintainer is given.
+
+Hmm??
+
+maintainer("fCalendar")
+or also  packageDescription("fCalendar")
+
+all point to the correct e-mail --- to which I now CC,
+so you, G?nther, need not.
+
+*AND*  if you use 'fCalendar' it starts with big message
+
+#################################################################
+# The new version of 'fCalendar' has been renamed to 'timeDate' #
+#################################################################
+
+and  'timeDate' has had a correct  EasterSunday() for many many
+months.
+
+
+Best regards to Heidelberg,
+Martin
+
+>    gs.
+> 
+> -- 
+> Configure bugmail: https://bugs.r-project.org/bugzilla3/userprefs.cgi?tab=email
+> ------- You are receiving this mail because: -------
+> You are the assignee for the bug.
+
+
+From dwinsemius at comcast.net  Fri Sep 23 16:45:50 2011
+From: dwinsemius at comcast.net (David Winsemius)
+Date: Fri, 23 Sep 2011 10:45:50 -0400
+Subject: bug report with fix for timeDate::timeNthNdayInMonth
+Message-ID: <D73F9F80-91EE-4338-9A02-4DCB168EBD6E@comcast.net>
+
+
+There wasa question on StackOverflow this morning that I think reveals  
+a bug in timeNthNdayInMonth. Results of my investiagion reported there  
+are below:
+
+Link to question:
+
+http://stackoverflow.com/questions/7525226/find-whether-a-particular-date-is-an-option-expiration-friday-problem-with-time
+
+
+---- My response ----
+I am guessing it's a timezone problem. What happens if you use this:
+
+format(dates[isOpExFriday], tz="UTC")
+On second look, you probably need to put the 'tz=' argument inside the  
+format call inside the as.Date(format(...)) call. The format function  
+"freezes" that dates value as text.
+
+EDIT: On testing however I think you are right about it being a bug.  
+Even after trying to insert various timezone specs and setting  
+myFinCenter in RmetricsOptions, I still get this error from deep  
+inside your choice of functions:
+
+timeNthNdayInMonth(as.Date("2011-09-01"), nday=5, nth=3)
+America/New_York
+[1] [2011-09-15]
+I suspect it is because of this code since as I understand it Julian  
+dates are not adjusted for timezones or daylight savings times:
+
+ct = 24 * 3600 * (as.integer(julian.POSIXt(lt)) +
+           (nth - 1) * 7 + (nday - lt1$wday)%%7)
+ct=as.POSIXct(ct)
+The ct value in seconds is then coverted to POSIXct from second since  
+"origin" simply by coercion of class. If I change the code to:
+
+ct=as.POSIXct(ct, origin="1970-01-01")  # correct results come back
+My quantmod and timeDate versions are both current per CRAN. Running  
+Mac with R 2.13.1 in 64 bit mode with a US locale. I have not yet  
+tried to reproduce with a minimal session so there could still be some  
+collision or hijacking with other packages:
+
+ > sessionInfo()
+R version 2.13.1 RC (2011-07-03 r56263)
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/C/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] grid      splines   stats     graphics  grDevices utils     datasets
+[8] methods   base
+
+other attached packages:
+  [1] quantmod_0.3-17   TTR_0.20-3        xts_0.8-2
+  [4] Defaults_1.1-1    timeDate_2130.93  zoo_1.7-4
+  [7] gplots_2.10.1     KernSmooth_2.23-6 caTools_1.12
+[10] bitops_1.0-4.1    gdata_2.8.1       gtools_2.6.2
+[13] wordnet_0.1-8     ggplot2_0.8.9     proto_0.3-9.2
+[16] reshape_0.8.4     plyr_1.6          rattle_2.6.10
+[19] RGtk2_2.20.17     rms_3.3-1         Hmisc_3.8-3
+[22] survival_2.36-9   sos_1.3-0         brew_1.0-6
+[25] lattice_0.19-30
+
+-- 
+David Winsemius, MD
+West Hartford, CT
+
+
+From zach.mayer at gmail.com  Fri Sep 23 17:24:42 2011
+From: zach.mayer at gmail.com (Zachary Mayer)
+Date: Fri, 23 Sep 2011 11:24:42 -0400
+Subject: fImport bug
+Message-ID: <CAEr64e8KEcPYuOS5GWgALpoLi+whaF=qAEhsyW+9Rxhd1_yc_Q@mail.gmail.com>
+
+Hello,
+
+The?YahooKeystats function in fImport is broken:
+
+library(fImport)
+yahooKeystats("IBM")
+
+I'm using:
+R version 2.13.1 (2011-07-08)
+fImport 2110.79
+
+Thank you,
+
+Zach
+
+
+From samo.pahor at gmail.com  Sat Sep 24 11:10:50 2011
+From: samo.pahor at gmail.com (Samo Pahor)
+Date: Sat, 24 Sep 2011 11:10:50 +0200
+Subject: Misunderstanding/issues or even bug in timDate
+Message-ID: <CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110924/419f367f/attachment.pl>
+
+From grothered at gmail.com  Mon Sep 26 17:02:16 2011
+From: grothered at gmail.com (Gaz D)
+Date: Tue, 27 Sep 2011 01:02:16 +1000
+Subject: Fwd: [R] problem with 'dgev' in fExtremes with log=TRUE
+In-Reply-To: <CAAmySGPZ=QYnDgJaouWwFNh-_ij9NjfmjdbPEjKbYMEiM4MoDQ@mail.gmail.com>
+References: <CAB5HBpFkcfy12C_1T2Jc91Lk0Lm-eDQ2yUTgf0W3sDHnEhX73w@mail.gmail.com>
+	<CAAmySGPZ=QYnDgJaouWwFNh-_ij9NjfmjdbPEjKbYMEiM4MoDQ@mail.gmail.com>
+Message-ID: <CAB5HBpFacM=b5ptfYTe7aZVAmsuSyU9=FqZFma9jrknxgFmU-g@mail.gmail.com>
+
+Hi,
+The emails below describe what appears to be a problem with dgev in fExtremes.
+Thanks,
+Gareth
+
+
+---------- Forwarded message ----------
+From: R. Michael Weylandt <michael.weylandt at gmail.com>
+Date: Tue, Sep 27, 2011 at 12:33 AM
+Subject: Re: [R] problem with 'dgev' in fExtremes with log=TRUE
+To: Gaz D <grothered at gmail.com>
+
+
+Seems entirely reasonable to me. I'd suggest you send a copy of this
+message to the package maintainer's email -- maintainer("fExtremes")
+-- and hopefully they can get on it pretty quickly since it's an
+obvious fix and log functionality is already implemented for the .devd
+internals.
+
+Thanks for bringing this to my attention - I use this package from
+time to time and had never noticed this.
+
+On Mon, Sep 26, 2011 at 9:04 AM, Gaz D <grothered at gmail.com> wrote:
+>
+> Hi,
+>
+> The function 'dgev' in the 'fExtremes' package contains a 'log'
+> argument, for returning the log of the gev density. For example:
+>
+> > library(fExtremes)
+> > x = seq(100,1000)
+> > density_values_log = dgev(x, 0.21, 455, 150, log=TRUE)
+> > density_values_nolog = dgev(x, 0.21, 455, 150, log=FALSE)
+>
+> However, in my experience, the function seems to always assume that 'log=FALSE':
+>
+> > range(density_values_log-density_values_nolog)
+> [1] 0 0
+>
+> If we look at the code for 'dgev', it seems that 'log=FALSE' is actually always
+> passed to the '.devd' function, which does the density calculation
+>
+> > dgev
+> function (x, xi = 1, mu = 0, beta = 1, log = FALSE)
+> {
+> ? ?d = .devd(x, location = mu, scale = beta, shape = xi, log = FALSE)
+> ? ?attr(d, "control") = data.frame(xi = xi, mu = mu, beta = beta,
+> ? ? ? ?log = log, row.names = "")
+> ? ?d
+> }
+>
+> I did these computations using fExtremes version 2100.77 (downloaded a few
+> weeks ago), on windows 7, 64Bit, R 2.13.1
+>
+> Does this require a change to the fExtremes code -- or am I making some error?
+>
+> Thanks,
+> Gareth Davies
+>
+> ______________________________________________
+> R-help at r-project.org mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-help
+> PLEASE do read the posting guide http://www.R-project.org/posting-guide.html
+> and provide commented, minimal, self-contained, reproducible code.
+
+
+From maechler at stat.math.ethz.ch  Mon Sep 26 17:56:10 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 26 Sep 2011 17:56:10 +0200
+Subject: Misunderstanding/issues or even bug in timDate
+In-Reply-To: <CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>
+References: <CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>
+Message-ID: <20096.41114.848341.708043@stat.math.ethz.ch>
+
+>>>>> Samo Pahor <samo.pahor at gmail.com>
+>>>>>     on Sat, 24 Sep 2011 11:10:50 +0200 writes:
+
+    > Hello authors of great rmetrics package, I use your
+    > packages on a daily basis supporting my market
+    > analysis. Thank you for all your efforts
+    > developing/maintaining them.
+
+    > I have encountered some issues (or I may not be understanding the
+    > design) while using dateTime package. I have ask a question about the
+    > issue here
+    > http://stackoverflow.com/questions/7525226/find-whether-a-particular-date-is-an-option-expiration-friday-problem-with-timeand
+
+We are typically not reading that...
+
+    > user DWin researched a bit and send you a report on the issue.
+
+Yes, though it was not reproducible:
+The crucial part is timezone-dependent !
+
+    > If this is a bug, can I in anyway help/assist you in order
+    > to get the patch for the package on r-forge as soon as
+    > possible? I am desperately dependent on correct
+    > functioning of particular functions in very useful
+    > timeDate.
+
+I have now committed patches to the R-forge version of
+'timeDate',
+	as revision 5121
+{this is *not* yet visible on R-forge; you need to wait a few
+hours, and for the binary Windows or Mac package, probably even a day
+or two ...}
+
+Best regards,
+Martin Maechler, ETH Zurich
+
+
+From dwinsemius at comcast.net  Mon Sep 26 20:11:42 2011
+From: dwinsemius at comcast.net (David Winsemius)
+Date: Mon, 26 Sep 2011 14:11:42 -0400
+Subject: Misunderstanding/issues or even bug in timDate
+In-Reply-To: <20096.41114.848341.708043@stat.math.ethz.ch>
+References: <CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>
+	<20096.41114.848341.708043@stat.math.ethz.ch>
+Message-ID: <D69E20AF-0F02-4362-935A-DBD4F38B7E40@comcast.net>
+
+
+On Sep 26, 2011, at 11:56 AM, Martin Maechler wrote:
+
+>>>>>> Samo Pahor <samo.pahor at gmail.com>
+>>>>>>    on Sat, 24 Sep 2011 11:10:50 +0200 writes:
+>
+>> Hello authors of great rmetrics package, I use your
+>> packages on a daily basis supporting my market
+>> analysis. Thank you for all your efforts
+>> developing/maintaining them.
+>
+>> I have encountered some issues (or I may not be understanding the
+>> design) while using dateTime package. I have ask a question about the
+>> issue here
+>> http://stackoverflow.com/questions/7525226/find-whether-a-particular-date-is-an-option-expiration-friday-problem-with-timeand
+>
+> We are typically not reading that...
+>
+>> user DWin researched a bit and send you a report on the issue.
+>
+> Yes, though it was not reproducible:
+> The crucial part is timezone-dependent !
+>
+>> If this is a bug, can I in anyway help/assist you in order
+>> to get the patch for the package on r-forge as soon as
+>> possible? I am desperately dependent on correct
+>> functioning of particular functions in very useful
+>> timeDate.
+>
+> I have now committed patches to the R-forge version of
+> 'timeDate',
+> 	as revision 5121
+
+Looking first at the bug report page (where I had been expecting to  
+see some version of my Friday report, but only because I don't really  
+understand the system)  and then looking at the new revision, it  
+appears that the fix proposed in July to this code has not been  
+accepted:
+
+## On or after:
+  lt1 <- lt
+  lt1$mday <- 1
+  ct <- 24*3600*(as.integer(julian.POSIXt(lt)) + (nth-1)*7 + (nday- 
+lt1$wday)%%7)
+# ==== It was suggested that it should be:
+  lt1 <- lt
+lt1$mday = 1
+  ct = 24 * 3600 * (as.integer(julian.POSIXt(lt1)) + (nth - 1) * 7 +  
+(nday - lt1$wday)%%7)
+
+> {this is *not* yet visible on R-forge; you need to wait a few
+> hours, and for the binary Windows or Mac package, probably even a day
+> or two ...}
+>
+> Best regards,
+> Martin Maechler, ETH Zurich
+
+David Winsemius, MD
+West Hartford, CT
+
+
+From samo.pahor at gmail.com  Mon Sep 26 20:34:04 2011
+From: samo.pahor at gmail.com (Samo Pahor)
+Date: Mon, 26 Sep 2011 20:34:04 +0200
+Subject: Misunderstanding/issues or even bug in timDate
+In-Reply-To: <20096.41114.848341.708043@stat.math.ethz.ch>
+References: <CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>
+	<20096.41114.848341.708043@stat.math.ethz.ch>
+Message-ID: <CAFNBy2=pHjo=KPv6ts09Xt0TzHHyPntZ5bEAqnQUJLFE8dhSwQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110926/ceaacbc3/attachment.pl>
+

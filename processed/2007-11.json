@@ -1,0 +1,136 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2007-11",
+  "messages": [
+    {
+      "id": "msg-fe8d3ac6cba4",
+      "message_id": "<57817c180711031211if968c02k6f800203667b5d50@mail.gmail.com>",
+      "from_name": "Przemysław Klusik",
+      "from_email_hash": "2344311ba1e3d1e73843e64f089f10be9fd4cf4f3f5df0153eb8a4345402c1f0",
+      "date": "2007-11-03T19:11:09Z",
+      "subject": "MonteCarloOptions",
+      "subject_clean": "MonteCarloOptions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\nIs there any trick which allows to price option based on two assets\nwith correlated returns with MonteCarloOptions\n\nBest Regards\n\nPrzemys?aw Klusik\nPhd student in math",
+      "body_snippet": "Hi,\nIs there any trick which allows to price option based on two assets\nwith correlated returns with MonteCarloOptions\n\nBest Regards\n\nPrzemys?aw Klusik\nPhd student in math",
+      "thread_id": "thread-fe8d3ac6cba4",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-e65ae5637260",
+      "message_id": "<1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>",
+      "from_name": "Piotr Chmielowski",
+      "from_email_hash": "271da35a73def0f4449ffd3560ffc1995cf2edb5519e052c26876995422c977c",
+      "date": "2007-11-13T08:20:48Z",
+      "subject": "Problems with fEcofin",
+      "subject_clean": "Problems with fEcofin",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics Team,\n\nI am having problems downloading the fEcofin binary for windows. I have turned off all anti-virus software on my pc, set the sites to trusted sites in ie, and still cannot download\n\nhttp://stat.ethz.ch/CRAN/bin/windows/contrib/r-release/fEcofin_260.72.zip\n\nfrom either the eth site, or any other mirrors that I tried, about ten, elsewhere in Europe and UK.\n\nInternet explorer just comes back with \"Internet Explorer cannot display the webpage\". The pdf reference manual and the package source download fine, but of course installing the package from source under Win is a challenge.\n\nAny help would be highly appreciated.\n\n  ?\nPiotr Chmielowski?????????????????????? \n5th Floor\n33 Margaret Street\nLondon\nW1G 0JD\nUK\n\nwww.reechaim.com \n\nDirect: +44 (0)20 7268 5521\nSwitchboard: +44 (0)20 7268 5500\nFax: +44 (0)20 7268 5598\nMobile: +44 (0)78 2571 1957\nEmail: piotr.chmielowski at reechaim.com \n?",
+      "body_snippet": "Dear Rmetrics Team,\n\nI am having problems downloading the fEcofin binary for windows. I have turned off all anti-virus software on my pc, set the sites to trusted sites in ie, and still cannot downloa",
+      "thread_id": "thread-e65ae5637260",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-a30ad7ae7967",
+      "message_id": "<5B78F43018FC3D488411E5F4903362E311A5975DFC@OBG-EXC-01.OBG>",
+      "from_name": "Markus Gesmann",
+      "from_email_hash": "a88ec1f8e1af6cfa21570e505d6670e6e70bb39377d89e0d8ca171c6155ac933",
+      "date": "2007-11-15T16:21:56Z",
+      "subject": "fExtremes labels ",
+      "subject_clean": "fExtremes labels",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear All,\n\nMaybe someone can help me to understand the labels of the Excess Distribution plot '.gpd1Plot' of the package fExtremes, see the top left plot in the example:\n\nlibrary(fExtermes)\nexample(gpdFit)\n\nIt appears to me, that the x- and y-label are mixed up.\n\nKind regards,\n\nMarkus\n\n\n\nThis message is intended for the personal and confidential use for the designated recipient(s) named above.  If you are not the intended recipient of this message you are hereby notified that any review, dissemination,  distribution or copying of this message is strictly prohibited. This communication is for information purposes only and should not be regarded as an offer to sell or as a solicitation of an offer to buy any financial product, an official confirmation of any transaction or as an official statement of Libero Ventures Ltd.  Email transmissions cannot be guaranteed to be secure or error-free. Therefore we do not represent that this information is complete or accurate and it should not be relied upon as such.  All information is subject to change without notice.",
+      "body_snippet": "Dear All,\n\nMaybe someone can help me to understand the labels of the Excess Distribution plot '.gpd1Plot' of the package fExtremes, see the top left plot in the example:\n\nlibrary(fExtermes)\nexample(gp",
+      "thread_id": "thread-a30ad7ae7967",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-6488802ab74a",
+      "message_id": "<f2e99fc90711171936s710ab6abm426c806a839e84fd@mail.gmail.com>",
+      "from_name": "Weimin Mailing List",
+      "from_email_hash": "b38cf01932287bf18b6aac58ba484938a153b59fa30ff20d6e22a3fa7cb18cbc",
+      "date": "2007-11-18T03:36:43Z",
+      "subject": "A bug in summary.fGarch?",
+      "subject_clean": "A bug in summary.fGarch?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl",
+      "thread_id": "thread-6488802ab74a",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-775f4ce0ee8e",
+      "message_id": "<18241.21274.604254.371132@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2007-11-19T09:10:50Z",
+      "subject": "Problems with fEcofin",
+      "subject_clean": "Problems with fEcofin",
+      "in_reply_to": "<1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>",
+      "references": [
+        "<1E2BDF951967414B9C46BA48F7AF97FBE6C46B@exch-be09.exchange.local>"
+      ],
+      "body_plain": "Dear Piotr,\n\nsorry for the late reply;\nit seems other Rmetrics-core members have been even more busy\nthan I...\n\nIn principle you should *NOT* ask such questions to the core\nteam, but rather a mailing list, either\n-  R-help {most appropriate in the present case},\n   i.e. send to  R-help at r-project.org , or\n\n-  R-SIG-finance\n\n\n>>>>> \"PC\" == Piotr Chmielowski <piotr.chmielowski at reechaim.com>\n>>>>>     on Tue, 13 Nov 2007 08:20:48 -0000 writes:\n\n    PC> Dear Rmetrics Team, I am having problems downloading the\n    PC> fEcofin binary for windows. I have turned off all\n    PC> anti-virus software on my pc, set the sites to trusted\n    PC> sites in ie, and still cannot download\n\n    PC> http://stat.ethz.ch/CRAN/bin/windows/contrib/r-release/fEcofin_260.72.zip\n\nThe file there is perfect.\n\n    PC> from either the eth site, or any other mirrors that I\n    PC> tried, about ten, elsewhere in Europe and UK.\n\n    PC> Internet explorer just comes back with \"Internet\n    PC> Explorer cannot display the webpage\". The pdf reference\n    PC> manual and the package source download fine, but of\n    PC> course installing the package from source under Win is a\n    PC> challenge.\n\nWell, that's definitely a problem with your setup of M$ Windows,\nExplorer etc.  \nYou should  use Firefox instead - also for other reasons.\n\nBut infact, you should be able to just\nsay\n\tinstall.packages(\"fEcofin\")\nin your R session,\nand R would use the proper tools to download the file and\ninstall it.\n\nIf that does not work directly, please read \nthe help page for 'install.packages' and look at its references.\n\nRegards,\nMartin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler\nSeminar f?r Statistik, ETH Z?rich  LEO C16\tLeonhardstr. 27\nCH-8092 Zurich, SWITZERLAND\nphone: +41-44-632-3408       fax: ...-1228      <><",
+      "body_snippet": "Dear Piotr,\n\nsorry for the late reply;\nit seems other Rmetrics-core members have been even more busy\nthan I...\n\nIn principle you should *NOT* ask such questions to the core\nteam, but rather a mailing ",
+      "thread_id": "thread-e65ae5637260",
+      "thread_depth": 1,
+      "month": "2007-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fe8d3ac6cba4",
+      "subject": "MonteCarloOptions",
+      "message_count": 1,
+      "participants": [
+        "Przemysław Klusik"
+      ],
+      "started": "2007-11-03T19:11:09Z",
+      "last_reply": "2007-11-03T19:11:09Z",
+      "root_message_id": "msg-fe8d3ac6cba4"
+    },
+    {
+      "id": "thread-e65ae5637260",
+      "subject": "Problems with fEcofin",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Piotr Chmielowski"
+      ],
+      "started": "2007-11-13T08:20:48Z",
+      "last_reply": "2007-11-19T09:10:50Z",
+      "root_message_id": "msg-e65ae5637260"
+    },
+    {
+      "id": "thread-a30ad7ae7967",
+      "subject": "fExtremes labels",
+      "message_count": 1,
+      "participants": [
+        "Markus Gesmann"
+      ],
+      "started": "2007-11-15T16:21:56Z",
+      "last_reply": "2007-11-15T16:21:56Z",
+      "root_message_id": "msg-a30ad7ae7967"
+    },
+    {
+      "id": "thread-6488802ab74a",
+      "subject": "A bug in summary.fGarch?",
+      "message_count": 1,
+      "participants": [
+        "Weimin Mailing List"
+      ],
+      "started": "2007-11-18T03:36:43Z",
+      "last_reply": "2007-11-18T03:36:43Z",
+      "root_message_id": "msg-6488802ab74a"
+    }
+  ]
+}

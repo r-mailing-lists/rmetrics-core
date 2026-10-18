@@ -1,0 +1,90 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-02",
+  "messages": [
+    {
+      "id": "msg-d96f2bffc82e",
+      "message_id": "<20130208120849.E19F8817E4@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2013-02-08T12:08:49Z",
+      "subject": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "subject_clean": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "The message below was sent out on Jan 10/11.  These functions have now\nbeen removed from R-devel and in most cases there are now check errors.\nIn all cases R CMD check in R-devel reports the problem.\n\nCan we please have an update by March 1, the beginning of the countdown\nto the release of R 3.0.0.\n\n-------- Original Message --------\nFunctions real(), as.real() and is.real() have been 'deprecated' and\n'for backwards compatibility only' for over 5 years now, but are still\nused in your package (or something it calls, but I have tried to\neliminate those).  They now give formal warnings in R-patched and\nR-devel, and will become defunct shortly, most likely for R 3.0.0 in a\ncouple of months.\n\nR-devel CMD check --as-cran will report in the check output: it\nseems the code concerned is not exercised in the package checks.\n\nAll that was needed was to use the 'double' versions.\n\nPlease submit an update to the package correcting this, to CRAN\nfollowing http://cran.r-project.org/web/packages/policies.html .\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "The message below was sent out on Jan 10/11.  These functions have now\nbeen removed from R-devel and in most cases there are now check errors.\nIn all cases R CMD check in R-devel reports the problem.\n",
+      "thread_id": "thread-d96f2bffc82e",
+      "thread_depth": 0,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-0b58e3b3a597",
+      "message_id": "<1361023535.511f922fa054d@webmail.cuhk.edu.hk>",
+      "from_name": "s1155022273 at mailserv.cuhk.edu.hk",
+      "from_email_hash": "daca934008326ffc9215fa93fdf8c0b0c7714887e3d43b8dd431aa276e773e41",
+      "date": "2013-02-16T14:05:35Z",
+      "subject": "A problem on creating fFOLIODATA-class object",
+      "subject_clean": "A problem on creating fFOLIODATA-class object",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainer of package fPortfolio,\n\nHey guys!\n\nI've came across a problem when creating fFOLIODATA-class object.\n\nAccording to this fPortfolio document(Pg 10), the \"data\" parameter in function\nportfolioData(data, spec = portfolioSpec()) is able to receive a list object:\n\n\"a time series or a named list, containing either a series of returns or named\nentries ?mu? and ?Sigma? being mean and covariance matrix.\"\n\nBut when I attempted to pass a list object containing mu and Sigma matrix as\nrequired to \"data\", an error was prompt: \"Error: class(data) == \"timeSeries\" is\nnot TRUE\". Here is my code:\n\n    data <- list(mu = a_vector_of_mean, sigma = a_matrix_of_cov)\n    p <- portfolioData(data, spec = portfolioSpec())\n\nThe reason I need to specify mu and sigma to create the data object is because\nI\ndo not have return in time series. Any solution or advice will be highly\nappreciated.\n\nThank you!\n\n--\nBEST REGARDS,\nTodd Leo\n\n\n-------------------------------------------------\nThis e-mail is sent by CUHK WebMail http://webmail.cuhk.edu.hk",
+      "body_snippet": "Dear maintainer of package fPortfolio,\n\nHey guys!\n\nI've came across a problem when creating fFOLIODATA-class object.\n\nAccording to this fPortfolio document(Pg 10), the \"data\" parameter in function\npor",
+      "thread_id": "thread-0b58e3b3a597",
+      "thread_depth": 0,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-59f461958273",
+      "message_id": "<136179534658d59251b56b0197ba1eb5f032d5ebc8_@infowebcom.info>",
+      "from_name": "AP",
+      "from_email_hash": "0e486a7503b702fcddaec1a56eccf418411af59ba28de33c4e62298e07dc89d6",
+      "date": "2013-02-25T19:40:16Z",
+      "subject": "Community & educational development",
+      "subject_clean": "Community & educational development",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130225/98cbd9ed/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130225/98cbd9ed/attachment.pl>",
+      "thread_id": "thread-59f461958273",
+      "thread_depth": 0,
+      "month": "2013-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d96f2bffc82e",
+      "subject": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2013-02-08T12:08:49Z",
+      "last_reply": "2013-02-08T12:08:49Z",
+      "root_message_id": "msg-d96f2bffc82e"
+    },
+    {
+      "id": "thread-0b58e3b3a597",
+      "subject": "A problem on creating fFOLIODATA-class object",
+      "message_count": 1,
+      "participants": [
+        "s1155022273 at mailserv.cuhk.edu.hk"
+      ],
+      "started": "2013-02-16T14:05:35Z",
+      "last_reply": "2013-02-16T14:05:35Z",
+      "root_message_id": "msg-0b58e3b3a597"
+    },
+    {
+      "id": "thread-59f461958273",
+      "subject": "Community & educational development",
+      "message_count": 1,
+      "participants": [
+        "AP"
+      ],
+      "started": "2013-02-25T19:40:16Z",
+      "last_reply": "2013-02-25T19:40:16Z",
+      "root_message_id": "msg-59f461958273"
+    }
+  ]
+}

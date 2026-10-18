@@ -1,0 +1,343 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-04",
+  "messages": [
+    {
+      "id": "msg-16d2286fd003",
+      "message_id": "<1338601881.4619039.1333367019607.JavaMail.app@ela4-app0056.prod>",
+      "from_name": "Michael Cohen (LinkedIn Invitations)",
+      "from_email_hash": "121b5971b71f1d0866bdfde0a42e5969896dd017b180c2406a23b4d95ca524d6",
+      "date": "2012-04-02T11:43:39Z",
+      "subject": "Reminder about your invitation from Michael Cohen",
+      "subject_clean": "Reminder about your invitation from Michael Cohen",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl>",
+      "thread_id": "thread-16d2286fd003",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-fb9e47565dc5",
+      "message_id": "<alpine.LFD.2.02.1204040605460.20533@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-04-04T07:04:21Z",
+      "subject": "Array over-runs in CRAN packages",
+      "subject_clean": "Array over-runs in CRAN packages",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "About 15 CRAN packages are now showing segfaults/hangs in both \nR-patched and R-devel, seen at (some columns of) \nhttp://cran.r-project.org/web/checks/check_summary.html .  These were \nuncovered by a change to reduce the copying of arguments in .C and \n.Fortran calls, and include packages\n\nDoseFinding FracSim adehabitat[TL] dcemriS4 dynaTree lmm monomvn \ntimereg\n\nSome of these, e.g. FracSim, dynaTree, lmm, having been showing \nintermittent crashes for a long time (and we have reported the exact \nproblem in FracSim before).\n\nWe wrote some code (currently enabled in R-devel by compiling \nsrc/main/dotcode.c with -DALWAYS_COPY, but that will change) to detect \narray over-runs, by adding guard elements and checking if these were \nchanged.  This shows\n\nDiceOptim.out:  array over-run in .C(\"improvedLHS_C\") in integer \nargument 7\nDoseFinding.out:    array over-run in .C(\"critfunc\") in double \nargument 3\nFracSim.out:  array over-run in .C(\"core_2d\") in double argument 7\nGLDEX.out:  array over-run in .Fortran(\"halton\") in integer argument 4\nKrigInv.out:  array over-run in .C(\"maximinLHS_C\") in integer argument \n7\nSAPP.out:  array over-run in .Fortran(\"momorif\") in double argument 15\nSpatialExtremes.out:  array over-run in .C(\"latentgev\") in double \nargument 26\nadehabitat.out:  array over-run in .C(\"testindepangl\") in double \nargument 1\nadehabitatLT.out:  array over-run in .C(\"testindepangl\") in double \nargument 1\ncts.out:  array over-run in .Fortran(\"setupdate\") in double argument 1\ndcemriS4.out:  array over-run in .C(\"dce_bayes_run_single\") in double \nargument 11\ndynaTree.out:  array over-run in .C(\"dynaTree_R\") in integer argument \n3\nfOptions.out:  array over-run in .Fortran(\"halton\") in integer \nargument 4\nftnonpar.out:  array over-run in .C(\"mintvmon\") in integer argument 3\nlhs.out:  array over-run in .C(\"improvedLHS_C\") in integer argument 7\nlmm.out:  array over-run in .Fortran(\"fastmcmc\") in integer argument \n48\nmedAdherence.out:  array over-run in .C(\"csa\") in integer argument 5\nncomplete.out:  array over-run in .Fortran(\"ncompl\") in integer \nargument 9\nnegenes.out:  array over-run in .C(\"R_negenes\") in integer argument 12\nnoverlap.out:  array over-run in .Fortran(\"novrlp\") in integer \nargument 9\nrandtoolbox.out:  array over-run in .Fortran(\"halton\") in integer \nargument 4\nrrcov.out:  array over-run in .Fortran(\"fsada\") in integer argument 14\ntimereg.out:  array over-run in .C(\"score\") in double argument 29\n\nAs this is experimental code I am not yet 100% sure that it is always \ncorrect, but I have confirmed enough examples to have some confidence \nin it.  (It is also possible the compiled code is not in your package: \nMr lhs please note this for DiceOptim and KrigInv: however it does \nseem that there are 3 copies of the incorrect Halton code.)\n\nBecause of the way allocations work in R (rounding up to a multiple of \n8 bytes) you may get away with over-run-by-one errors for integer and \nlogical arguments.  But otherwise running an instrumented version of R \nunder valgrind will help pinpoint where your code steps out of bounds.\n\nPlease investigate and submit a corrected update.\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "About 15 CRAN packages are now showing segfaults/hangs in both \nR-patched and R-devel, seen at (some columns of) \nhttp://cran.r-project.org/web/checks/check_summary.html .  These were \nuncovered by a ",
+      "thread_id": "thread-fb9e47565dc5",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-22c0915bcdf2",
+      "message_id": "<969561897.1301509.1333959394849.JavaMail.app@ela4-bed46.prod>",
+      "from_name": "Michael Cohen (LinkedIn Invitations)",
+      "from_email_hash": "121b5971b71f1d0866bdfde0a42e5969896dd017b180c2406a23b4d95ca524d6",
+      "date": "2012-04-09T08:16:34Z",
+      "subject": "Reminder about your invitation from Michael Cohen",
+      "subject_clean": "Reminder about your invitation from Michael Cohen",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl>",
+      "thread_id": "thread-22c0915bcdf2",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-f853e5ecbf97",
+      "message_id": "<1333993139.32099.YahooMailNeo@web120702.mail.ne1.yahoo.com>",
+      "from_name": "jefe goode",
+      "from_email_hash": "ab95859ca675d5d898cb972ea5b258ea0f64394bf1d77f1a79e2c989eb730971",
+      "date": "2012-04-09T17:38:59Z",
+      "subject": "fArma problem",
+      "subject_clean": "fArma problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl>",
+      "thread_id": "thread-f853e5ecbf97",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-632a34cf27ac",
+      "message_id": "<1333995087.66648.YahooMailNeo@web120706.mail.ne1.yahoo.com>",
+      "from_name": "jefe goode",
+      "from_email_hash": "ab95859ca675d5d898cb972ea5b258ea0f64394bf1d77f1a79e2c989eb730971",
+      "date": "2012-04-09T18:11:27Z",
+      "subject": "fArma problem solved",
+      "subject_clean": "fArma problem solved",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl>",
+      "thread_id": "thread-632a34cf27ac",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-3c0d6252874f",
+      "message_id": "<023f01cd16a8$3bdc69f0$b3953dd0$@gmail.com>",
+      "from_name": "Marcelo Cabus Klotzle",
+      "from_email_hash": "243dffa3f9505519185c70658b56bfbd4b4bded2570aba83a0326571e8b1e16f",
+      "date": "2012-04-09T23:26:44Z",
+      "subject": "Garch Ox Fit",
+      "subject_clean": "Garch Ox Fit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl>",
+      "thread_id": "thread-3c0d6252874f",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-965b7856e73a",
+      "message_id": "<4F8537A1.7030408@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-04-11T07:49:53Z",
+      "subject": "CRAN packages GLDEX, fOptions, randtoolbox",
+      "subject_clean": "CRAN packages GLDEX, fOptions, randtoolbox",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Several days ago I reported an array over-run in these packages, in the \nfollowing example (precise code taken from fOptions):\n\nrnrm.h>    hist(runif.halton(n = 5000, dimension = 1), main = \"Uniform \nHalton\",\nrnrm.h+      xlab = \"x\", col = \"steelblue3\", border = \"white\")\n\nThe problem is the following lines in the Fortran code:\n\n       DOUBLE PRECISION QUASI(DIMEN), HALF\n       INTRINSIC MOD\n       INTEGER NC, I, K, M, N, NB\n\nC     INIT BASE FROM PRIMES - THIS IMPLEMENTS A SIMPLE SIEVE:\n       BASE(1) = 2\n       BASE(2) = 3\n\nHere DIMEN is 1, so BASE(2) does not exist.\n\nPlease submit corrected updates by April 27.\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "Several days ago I reported an array over-run in these packages, in the \nfollowing example (precise code taken from fOptions):\n\nrnrm.h>    hist(runif.halton(n = 5000, dimension = 1), main = \"Uniform \n",
+      "thread_id": "thread-965b7856e73a",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-165a804de716",
+      "message_id": "<20357.23330.71537.755351@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-04-11T10:21:22Z",
+      "subject": "CRAN packages GLDEX, fOptions, randtoolbox",
+      "subject_clean": "CRAN packages GLDEX, fOptions, randtoolbox",
+      "in_reply_to": "<4F8537A1.7030408@stats.ox.ac.uk>",
+      "references": [
+        "<4F8537A1.7030408@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Thank you, Brian.\n\n>>>>> Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>>     on Wed, 11 Apr 2012 08:49:53 +0100 writes:\n\n    > Several days ago I reported an array over-run in these packages, in the \n    > following example (precise code taken from fOptions):\n\n    rnrm.h> hist(runif.halton(n = 5000, dimension = 1), main = \"Uniform \n    > Halton\",\n    > rnrm.h+      xlab = \"x\", col = \"steelblue3\", border = \"white\")\n\n    > The problem is the following lines in the Fortran code:\n\n    > DOUBLE PRECISION QUASI(DIMEN), HALF\n    > INTRINSIC MOD\n    > INTEGER NC, I, K, M, N, NB\n\n    > C     INIT BASE FROM PRIMES - THIS IMPLEMENTS A SIMPLE SIEVE:\n    > BASE(1) = 2\n    > BASE(2) = 3\n\n    > Here DIMEN is 1, so BASE(2) does not exist.\n\n    > Please submit corrected updates by April 27.\n\nI've committed the necessary change to the R-forge version of fOptions,\nbut leave a new upload to the \"core of Rmetrics-core\".\n\nMartin Maechler\n\n\n\n    > Brian Ripley\n\n    > -- \n    > Brian D. Ripley,                  ripley at stats.ox.ac.uk\n    > Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n    > University of Oxford,             Tel:  +44 1865 272861 (self)\n    > 1 South Parks Road,                     +44 1865 272866 (PA)\n    > Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n\n    > _______________________________________________\n    > Rmetrics-core mailing list\n    > Rmetrics-core at r-project.org\n    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Thank you, Brian.\n\n>>>>> Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>>     on Wed, 11 Apr 2012 08:49:53 +0100 writes:\n\n    > Several days ago I reported an array over-run in these packages, in th",
+      "thread_id": "thread-965b7856e73a",
+      "thread_depth": 1,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-42af9660dd7e",
+      "message_id": "<6de9524e.ebed9.136aaab94f6.Coremail.miniqin@126.com>",
+      "from_name": "miniqin",
+      "from_email_hash": "1cf2bd86eaef171786857d216618d7b9693d8801909f68b84c8731d3603dd49f",
+      "date": "2012-04-13T07:47:13Z",
+      "subject": "questions on garchOxFit",
+      "subject_clean": "questions on garchOxFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl>",
+      "thread_id": "thread-42af9660dd7e",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-058c13d5db08",
+      "message_id": "<A39D0209FD4C874EA9C6481EBAFAFF8817250258@VA3DIAXVSB21.RED001.local>",
+      "from_name": "Farrokh Guiahi",
+      "from_email_hash": "983d5f168ca739fc6b74c1d8db443d3eec61ad80c37b5acd66d0013a3084d9e3",
+      "date": "2012-04-14T14:29:01Z",
+      "subject": "Rrgarding multivariate garch with fGarch",
+      "subject_clean": "Rrgarding multivariate garch with fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl>",
+      "thread_id": "thread-058c13d5db08",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-f7d66118e816",
+      "message_id": "<01cd1d88$Blat.v2.2.2$f5560db7@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2012-04-18T17:30:33Z",
+      "subject": "Package fOptions_2160.81.tar.gz has been built for Windows",
+      "subject_clean": "Package fOptions_2160.81.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2160.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.0 (2012-03-30)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2160.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-f7d66118e816",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-12a8eb6f7741",
+      "message_id": "<BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>",
+      "from_name": "Majid Djennad",
+      "from_email_hash": "c90863d57196c7116a527c1b3e9ba723a83e97f7381e0c71360c99035d4898d7",
+      "date": "2012-04-19T15:58:01Z",
+      "subject": "garchFit()",
+      "subject_clean": "garchFit()",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear sir,\n\nHow can I change the starting value of beta in garchFit() function please,\n\ni can see that the starting value you have for beta is 0.8, \n\nI want to produce the same results of Brooks model page 35 in the attached file, which he has beta =0.7, Brooks used RATS software and I am using R software and your package fGarch\n\nMany thanks\n\nMajid\n \t\t \t   \t\t  \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120419/1d4554fc/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: Autoregressive.Conditional.Kurtosis.pdf\nType: application/pdf\nSize: 770509 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120419/1d4554fc/attachment-0001.pdf>",
+      "body_snippet": "Dear sir,\n\nHow can I change the starting value of beta in garchFit() function please,\n\ni can see that the starting value you have for beta is 0.8, \n\nI want to produce the same results of Brooks model ",
+      "thread_id": "thread-12a8eb6f7741",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-733ab5541a62",
+      "message_id": "<BLU149-W566C7B34248CB5A88209D7B0220@phx.gbl>",
+      "from_name": "Majid Djennad",
+      "from_email_hash": "c90863d57196c7116a527c1b3e9ba723a83e97f7381e0c71360c99035d4898d7",
+      "date": "2012-04-20T11:43:19Z",
+      "subject": "FW: garchFit()",
+      "subject_clean": "garchFit()",
+      "in_reply_to": "<BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>",
+      "references": [
+        "<BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl>",
+      "thread_id": "thread-12a8eb6f7741",
+      "thread_depth": 1,
+      "month": "2012-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-16d2286fd003",
+      "subject": "Reminder about your invitation from Michael Cohen",
+      "message_count": 1,
+      "participants": [
+        "Michael Cohen (LinkedIn Invitations)"
+      ],
+      "started": "2012-04-02T11:43:39Z",
+      "last_reply": "2012-04-02T11:43:39Z",
+      "root_message_id": "msg-16d2286fd003"
+    },
+    {
+      "id": "thread-fb9e47565dc5",
+      "subject": "Array over-runs in CRAN packages",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-04-04T07:04:21Z",
+      "last_reply": "2012-04-04T07:04:21Z",
+      "root_message_id": "msg-fb9e47565dc5"
+    },
+    {
+      "id": "thread-22c0915bcdf2",
+      "subject": "Reminder about your invitation from Michael Cohen",
+      "message_count": 1,
+      "participants": [
+        "Michael Cohen (LinkedIn Invitations)"
+      ],
+      "started": "2012-04-09T08:16:34Z",
+      "last_reply": "2012-04-09T08:16:34Z",
+      "root_message_id": "msg-22c0915bcdf2"
+    },
+    {
+      "id": "thread-f853e5ecbf97",
+      "subject": "fArma problem",
+      "message_count": 1,
+      "participants": [
+        "jefe goode"
+      ],
+      "started": "2012-04-09T17:38:59Z",
+      "last_reply": "2012-04-09T17:38:59Z",
+      "root_message_id": "msg-f853e5ecbf97"
+    },
+    {
+      "id": "thread-632a34cf27ac",
+      "subject": "fArma problem solved",
+      "message_count": 1,
+      "participants": [
+        "jefe goode"
+      ],
+      "started": "2012-04-09T18:11:27Z",
+      "last_reply": "2012-04-09T18:11:27Z",
+      "root_message_id": "msg-632a34cf27ac"
+    },
+    {
+      "id": "thread-3c0d6252874f",
+      "subject": "Garch Ox Fit",
+      "message_count": 1,
+      "participants": [
+        "Marcelo Cabus Klotzle"
+      ],
+      "started": "2012-04-09T23:26:44Z",
+      "last_reply": "2012-04-09T23:26:44Z",
+      "root_message_id": "msg-3c0d6252874f"
+    },
+    {
+      "id": "thread-965b7856e73a",
+      "subject": "CRAN packages GLDEX, fOptions, randtoolbox",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-04-11T07:49:53Z",
+      "last_reply": "2012-04-11T10:21:22Z",
+      "root_message_id": "msg-965b7856e73a"
+    },
+    {
+      "id": "thread-42af9660dd7e",
+      "subject": "questions on garchOxFit",
+      "message_count": 1,
+      "participants": [
+        "miniqin"
+      ],
+      "started": "2012-04-13T07:47:13Z",
+      "last_reply": "2012-04-13T07:47:13Z",
+      "root_message_id": "msg-42af9660dd7e"
+    },
+    {
+      "id": "thread-058c13d5db08",
+      "subject": "Rrgarding multivariate garch with fGarch",
+      "message_count": 1,
+      "participants": [
+        "Farrokh Guiahi"
+      ],
+      "started": "2012-04-14T14:29:01Z",
+      "last_reply": "2012-04-14T14:29:01Z",
+      "root_message_id": "msg-058c13d5db08"
+    },
+    {
+      "id": "thread-f7d66118e816",
+      "subject": "Package fOptions_2160.81.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2012-04-18T17:30:33Z",
+      "last_reply": "2012-04-18T17:30:33Z",
+      "root_message_id": "msg-f7d66118e816"
+    },
+    {
+      "id": "thread-12a8eb6f7741",
+      "subject": "garchFit()",
+      "message_count": 2,
+      "participants": [
+        "Majid Djennad"
+      ],
+      "started": "2012-04-19T15:58:01Z",
+      "last_reply": "2012-04-20T11:43:19Z",
+      "root_message_id": "msg-12a8eb6f7741"
+    }
+  ]
+}

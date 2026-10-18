@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2017-10",
+  "messages": [
+    {
+      "id": "msg-abc7bf11335c",
+      "message_id": "<DB5PR10MB0085C0BC12957B5EB263C1528D430@DB5PR10MB0085.EURPRD10.PROD.OUTLOOK.COM>",
+      "from_name": "Ms Hzz",
+      "from_email_hash": "aea678e944ca56cb27490b698413c743e4a47f203b50774b5e8cddcd86dd0846",
+      "date": "2017-10-20T13:10:11Z",
+      "subject": "Re. WHY Silent ?..",
+      "subject_clean": "Re. WHY Silent ?..",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "got previous message?",
+      "body_snippet": "got previous message?",
+      "thread_id": "thread-abc7bf11335c",
+      "thread_depth": 0,
+      "month": "2017-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-abc7bf11335c",
+      "subject": "Re. WHY Silent ?..",
+      "message_count": 1,
+      "participants": [
+        "Ms Hzz"
+      ],
+      "started": "2017-10-20T13:10:11Z",
+      "last_reply": "2017-10-20T13:10:11Z",
+      "root_message_id": "msg-abc7bf11335c"
+    }
+  ]
+}

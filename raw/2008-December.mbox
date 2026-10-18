@@ -1,0 +1,759 @@
+From singularitaet at gmx.net  Wed Dec  3 09:43:00 2008
+From: singularitaet at gmx.net (Stefan Grosse)
+Date: Wed, 03 Dec 2008 09:43:00 +0100
+Subject: Bug in fArma: does not accept variables as input
+Message-ID: <49364694.9030209@gmx.net>
+
+Hi,
+
+I believe I found a bug in the r-metrics' fArma package. armaFit does
+not accept variable input:
+
+library(fArma)
+x = armaSim(model = list(ar = c(0.5, -0.5), ma = 0.1), n = 1000)
+# direct parameter input works:
+fit1 = armaFit(~ arma(2, 1), data = x)
+print(fit1)
+# parameters via variables do not work:
+ar.ord=2
+ma.ord=1
+fit2 = armaFit(~ arma(ar.ord, ma.ord), data = x)
+# error!:
+Error in if (!is.numeric(order) || length(order) != 3 || any(order < 0))
+stop("'order' must be a non-negative numeric vector of length 3") :
+  missing value where TRUE/FALSE needed
+In addition: Warning messages:
+1: In armaFit(~arma(ar.ord, ma.ord), data = x) :
+  NAs introduced by coercion
+2: In armaFit(~arma(ar.ord, ma.ord), data = x) :
+  NAs introduced by coercion
+
+It works of course with the arima function of R:
+
+fit3=arima(x,order=c(ar.ord,0,ma.ord))
+fit3
+
+I tried the newest cran package 270.74 of fArma and the newest r-forge
+package which is 290.75. I am using R-2.8.0 on Win Vista Business.
+
+I tried to find a possibility to file a bug on r-forge but was not
+successful (Where can I file bugs?)
+
+Regards
+Stefan Grosse
+
+
+From staceys at hideakifan.com  Wed Dec  3 16:31:44 2008
+From: staceys at hideakifan.com (=?windows-1251?B?QWRyaWFuIEN1bm5pbmdoYW0=?=)
+Date: Wed, 03 Dec 2008 15:31:44 -0000
+Subject: !SPAM: Choose your own price
+Message-ID: <b44c019db2b8$644df46d$3393d1d1@hideakifan.com>
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+    
+  
+    
+    
+      Viagra
+Our price $1.15      
+    
+    
+      Cialis
+Our price $1.99      
+    
+    
+      Viagra Professional
+Our price $3.73
+  
+    
+    
+      Cialis Professionsl
+Our price $4.17
+    
+    
+      Viagra Super Active
+Our price $2.82
+    
+    
+      Cialis Super Active
+Our price $3.66
+  
+    
+    
+      Levitra
+Our price $2.93
+    
+    
+      Viagra Soft Tabs
+Our price $1.64
+    
+    
+      Cialis Soft Tabs
+Our price $3.51
+  
+    And more...
+  
+     
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 2411 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 498 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0001.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 395 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0002.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 728 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0003.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 445 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0004.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 478 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0005.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 496 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0006.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 474 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0007.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 578 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0008.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 932 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/33219289/attachment-0009.gif>
+
+From rmetrics-core at r-project.org  Wed Dec  3 16:47:44 2008
+From: rmetrics-core at r-project.org (rmetrics-core at r-project.org)
+Date: Wed, 3 Dec 2008 16:47:44 +0100
+Subject: !SPAM: Your order
+Message-ID: <200812031547.mB3FliXt008443@hypatia.math.ethz.ch>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/f6af7b4a/attachment.html>
+
+From solomanp at singapore.net  Wed Dec  3 19:47:23 2008
+From: solomanp at singapore.net (=?windows-1251?B?QWxpYyBBZ3VpbGFy?=)
+Date: Wed, 03 Dec 2008 18:47:23 -0000
+Subject: !SPAM: =?windows-1251?B?WW91ciB3aWZlIG5lZWQgeW91ciBhdHRlbnRpb24/IFNvbHZlIGFsbCB0aGUgcHJvYmxlbXMgd2l0aCBJVC4=?=
+Message-ID: <2ebf019db26c$523a806d$3597c78d@singapore.net>
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+    
+  
+    
+    
+      Viagra
+Our price $1.15      
+    
+    
+      Cialis
+Our price $1.99      
+    
+    
+      Viagra Professional
+Our price $3.73
+  
+    
+    
+      Cialis Professionsl
+Our price $4.17
+    
+    
+      Viagra Super Active
+Our price $2.82
+    
+    
+      Cialis Super Active
+Our price $3.66
+  
+    
+    
+      Levitra
+Our price $2.93
+    
+    
+      Viagra Soft Tabs
+Our price $1.64
+    
+    
+      Cialis Soft Tabs
+Our price $3.51
+  
+    And more...
+  
+     
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 2411 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 498 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0001.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 395 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0002.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 728 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0003.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 445 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0004.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 478 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0005.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 496 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0006.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 474 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0007.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 578 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0008.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 932 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/5ed1c9fd/attachment-0009.gif>
+
+From rmetrics-core at r-project.org  Wed Dec  3 20:37:46 2008
+From: rmetrics-core at r-project.org (rmetrics-core at r-project.org)
+Date: Wed, 3 Dec 2008 20:37:46 +0100
+Subject: !SPAM: RE: Message
+Message-ID: <200812031937.mB3JbkJv022326@hypatia.math.ethz.ch>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/d2fff5c7/attachment.html>
+
+From rmetrics-core at r-project.org  Thu Dec  4 00:07:02 2008
+From: rmetrics-core at r-project.org (rmetrics-core at r-project.org)
+Date: Thu, 4 Dec 2008 00:07:02 +0100
+Subject: !SPAM: Your order
+Message-ID: <200812032307.mB3N72bu007469@hypatia.math.ethz.ch>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/fef977c9/attachment.html>
+
+From JustinKaufman at lycos.com  Thu Dec  4 00:24:05 2008
+From: JustinKaufman at lycos.com (Cadeaux originaux par anne'e)
+Date: Wed, 03 Dec 2008 18:24:05 -0500
+Subject: !SPAM: La meilleure collection de cles et de portefeuilles
+Message-ID: <10146.ellison@cam>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/c584cf30/attachment.html>
+
+From acywdu at linux-mag.com  Thu Dec  4 01:11:04 2008
+From: acywdu at linux-mag.com (Fiesta Casino Club)
+Date: Thu, 04 Dec 2008 04:11:04 +0400
+Subject: !SPAM: Croyez-vous cela?
+Message-ID: <5906CCF9.58880529@linux-mag.com>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/64797668/attachment.html>
+
+From shemz at barbf.com  Thu Dec  4 00:34:07 2008
+From: shemz at barbf.com (=?windows-1251?B?QWJkdWxrYXJpbSBCbGFjaw==?=)
+Date: Wed, 03 Dec 2008 23:34:07 -0000
+Subject: !SPAM: Add more spice into your bedroom life.
+Message-ID: <2ee6019db87e$fdf6e71a$ba8e96ef@barbf.com>
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+    
+  
+    
+    
+      Viagra
+Our price $1.15      
+    
+    
+      Cialis
+Our price $1.99      
+    
+    
+      Viagra Professional
+Our price $3.73
+  
+    
+    
+      Cialis Professionsl
+Our price $4.17
+    
+    
+      Viagra Super Active
+Our price $2.82
+    
+    
+      Cialis Super Active
+Our price $3.66
+  
+    
+    
+      Levitra
+Our price $2.93
+    
+    
+      Viagra Soft Tabs
+Our price $1.64
+    
+    
+      Cialis Soft Tabs
+Our price $3.51
+  
+    And more...
+  
+     
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 2411 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 498 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0001.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 395 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0002.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 728 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0003.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 445 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0004.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 478 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0005.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 496 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0006.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 474 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0007.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 578 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0008.gif>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 932 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081203/ed89aef4/attachment-0009.gif>
+
+From rmetrics-core at r-project.org  Thu Dec  4 02:48:16 2008
+From: rmetrics-core at r-project.org (rmetrics-core at r-project.org)
+Date: Thu, 4 Dec 2008 02:48:16 +0100
+Subject: !SPAM: Re: Order status
+Message-ID: <200812040148.mB41mG2V013360@hypatia.math.ethz.ch>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081204/a34d6931/attachment-0001.html>
+
+From Uwe.Ligges at r-project.org  Thu Dec  4 18:29:01 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 04 Dec 2008 18:29:01 +0100
+Subject: Package timeSeries_290.79.tar.gz has been built for Windows
+Message-ID: <01c95635$Blat.v2.2.2$cc65dcd4@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_290.79.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From g1enn.roberts at btinternet.com  Tue Dec  9 12:02:13 2008
+From: g1enn.roberts at btinternet.com (glenn roberts)
+Date: Tue, 09 Dec 2008 11:02:13 +0000
+Subject: <no subject>
+Message-ID: <C56400B5.198%g1enn.roberts@btinternet.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl>
+
+From Bernhard_Pfaff at fra.invesco.com  Wed Dec 10 12:35:01 2008
+From: Bernhard_Pfaff at fra.invesco.com (Pfaff, Bernhard Dr.)
+Date: Wed, 10 Dec 2008 11:35:01 -0000
+Subject: Series names not used by stats:::acf when fUtilities (as.matrix.ts
+	seems to be the culprit) is loaded
+Message-ID: <B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>
+
+Dear Rmetrics-core member (probably Diethelm and Yohan),
+
+I detected the following behaviour when the package "fUtilities" is
+loaded:
+
+
+> search()
+ [1] ".GlobalEnv"        "package:MASS"      "package:stats"    
+ [4] "package:graphics"  "package:datasets"  "package:fortunes" 
+ [7] "package:utils"     "package:grDevices" "package:methods"  
+[10] "Autoloads"         "package:base"     
+> 
+> data(EuStockMarkets)
+> [1] "DAX"  "SMI"  "CAC"  "FTSE"
+> tmp.mts <- diff(log(EuStockMarkets)) * 100
+> colnames(tmp.mts)
+> acf(tmp.mts)
+## in acf the colnames are preserved in the plot
+> search()
+ [1] ".GlobalEnv"        "package:MASS"      "package:stats"    
+ [4] "package:graphics"  "package:datasets"  "package:fortunes" 
+ [7] "package:utils"     "package:grDevices" "package:methods"  
+[10] "Autoloads"         "package:base"     
+> colnames(tmp.mts)
+[1] "DAX"  "SMI"  "CAC"  "FTSE"
+> library(fUtilities)
+Rmetrics Package fUtilities (270.75) loaded.
+> search()
+ [1] ".GlobalEnv"         "package:fUtilities" "package:MASS"      
+ [4] "package:stats"      "package:graphics"   "package:datasets"  
+ [7] "package:fortunes"   "package:utils"      "package:grDevices" 
+[10] "package:methods"    "Autoloads"          "package:base"      
+> acf(tmp.mts)
+## in acf the colnames are not any longer preserved!
+## due to as.matrix.ts() in fUtilities
+
+
+as.matrix.ts <- 
+function (x, ...) 
+{
+    ans = as.matrix.default(unclass(x))
+    attr(ans, "tsp") <- NULL
+    rownames(ans) <- NULL
+    colnames(ans) <- NULL
+    ans
+}
+
+
+and in stats:::acf you will find the line:
+
+    x <- as.matrix(x)
+
+which make use of as.matrix.ts (S3-method dispatch) in fUtilities and
+there the colnames are set to NULL.
+Hence, would it be possible to alter as.matrix.ts() to something like:
+
+
+as.matrix.ts <- function (x, ...) 
+{
+    ans = as.matrix.default(unclass(x))
+    attr(ans, "tsp") <- NULL
+    rownames(ans) <- NULL
+    ifelse(is.null(colnames(ans)), colnames(ans) <- NULL, colnames(ans)
+<- colnames(x))
+    ans
+}
+
+
+or rename as.matrix.ts() such that it is not dispatched as method in
+acf()? However, I do not know if the former suggested function body
+change would cause trouble elsewhere.
+
+
+Best,
+Bernhard
+
+
+
+
+
+
+> version
+               _                           
+platform       i386-pc-mingw32             
+arch           i386                        
+os             mingw32                     
+system         i386, mingw32               
+status                                     
+major          2                           
+minor          8.0                         
+year           2008                        
+month          10                          
+day            20                          
+svn rev        46754                       
+language       R                           
+version.string R version 2.8.0 (2008-10-20)
+*****************************************************************
+Confidentiality Note: The information contained in this ...{{dropped:10}}
+
+
+From chalabi at phys.ethz.ch  Wed Dec 10 19:08:06 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 10 Dec 2008 19:08:06 +0100
+Subject: Series names not used by stats:::acf when fUtilities
+	(as.matrix.ts seems to be the culprit) is loaded
+In-Reply-To: <B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>
+References: <B89F0CE41D45644A97CCC93DF548C1C3163B6A41@GBHENXMB02.corp.amvescap.net>
+Message-ID: <20081210190806.38c21562@mimi>
+
+>>>> "PBD" == "Pfaff, Bernhard Dr." <Bernhard_Pfaff at fra.invesco.com>
+>>>> on Wed, 10 Dec 2008 11:35:01 -0000
+
+   PBD> Dear Rmetrics-core member (probably Diethelm and Yohan),
+   PBD> 
+   PBD> I detected the following behaviour when the package "fUtilities" is
+   PBD> loaded:
+   PBD> 
+   PBD> 
+   PBD> > search()  
+   PBD>  [1] ".GlobalEnv"        "package:MASS"      "package:stats"    
+   PBD>  [4] "package:graphics"  "package:datasets"  "package:fortunes" 
+   PBD>  [7] "package:utils"     "package:grDevices" "package:methods"  
+   PBD> [10] "Autoloads"         "package:base"     
+   PBD> > 
+   PBD> > data(EuStockMarkets)
+   PBD> > [1] "DAX"  "SMI"  "CAC"  "FTSE"
+   PBD> > tmp.mts <- diff(log(EuStockMarkets)) * 100
+   PBD> > colnames(tmp.mts)
+   PBD> > acf(tmp.mts)  
+   PBD> ## in acf the colnames are preserved in the plot
+   PBD> > search()  
+   PBD>  [1] ".GlobalEnv"        "package:MASS"      "package:stats"    
+   PBD>  [4] "package:graphics"  "package:datasets"  "package:fortunes" 
+   PBD>  [7] "package:utils"     "package:grDevices" "package:methods"  
+   PBD> [10] "Autoloads"         "package:base"     
+   PBD> > colnames(tmp.mts)  
+   PBD> [1] "DAX"  "SMI"  "CAC"  "FTSE"
+   PBD> > library(fUtilities)  
+   PBD> Rmetrics Package fUtilities (270.75) loaded.
+   PBD> > search()  
+   PBD>  [1] ".GlobalEnv"         "package:fUtilities" "package:MASS"      
+   PBD>  [4] "package:stats"      "package:graphics"   "package:datasets"  
+   PBD>  [7] "package:fortunes"   "package:utils"      "package:grDevices" 
+   PBD> [10] "package:methods"    "Autoloads"          "package:base"      
+   PBD> > acf(tmp.mts)  
+   PBD> ## in acf the colnames are not any longer preserved!
+   PBD> ## due to as.matrix.ts() in fUtilities
+   PBD> 
+   PBD> 
+   PBD> as.matrix.ts <- 
+   PBD> function (x, ...) 
+   PBD> {
+   PBD>     ans = as.matrix.default(unclass(x))
+   PBD>     attr(ans, "tsp") <- NULL
+   PBD>     rownames(ans) <- NULL
+   PBD>     colnames(ans) <- NULL
+   PBD>     ans
+   PBD> }
+   PBD> 
+   PBD> 
+   PBD> and in stats:::acf you will find the line:
+   PBD> 
+   PBD>     x <- as.matrix(x)
+   PBD> 
+   PBD> which make use of as.matrix.ts (S3-method dispatch) in fUtilities and
+   PBD> there the colnames are set to NULL.
+   PBD> Hence, would it be possible to alter as.matrix.ts() to something like:
+   PBD> 
+   PBD> 
+   PBD> as.matrix.ts <- function (x, ...) 
+   PBD> {
+   PBD>     ans = as.matrix.default(unclass(x))
+   PBD>     attr(ans, "tsp") <- NULL
+   PBD>     rownames(ans) <- NULL
+   PBD>     ifelse(is.null(colnames(ans)), colnames(ans) <- NULL, colnames(ans)
+   PBD> <- colnames(x))
+   PBD>     ans
+   PBD> }
+   PBD> 
+   PBD> 
+   PBD> or rename as.matrix.ts() such that it is not dispatched as method in
+   PBD> acf()? However, I do not know if the former suggested function body
+   PBD> change would cause trouble elsewhere.
+   PBD> 
+   PBD> 
+   PBD> Best,
+   PBD> Bernhard
+
+
+Hi Bernhard,
+
+fUtilites was merged to fBasics and is now considered deprecated.
+
+In the new fBasics package, the function as.matrix.ts has
+been already removed to avoid the problem you mentioned.
+
+hope this helps,
+Yohan
+
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From ixveyetaypyve at adobe.com  Sat Dec 27 11:17:12 2008
+From: ixveyetaypyve at adobe.com (Das Erste Kasino)
+Date: Sat, 27 Dec 2008 00:17:12 -1000
+Subject: 300 Euro Gratis in Blackjack,
+	Roulette und Spielautomaten online spielen !
+Message-ID: <D452E6B8.6EE2D9EB@adobe.com>
+
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081227/7af7e4f5/attachment.html>
+

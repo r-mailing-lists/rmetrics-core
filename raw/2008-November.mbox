@@ -1,0 +1,272 @@
+From daniele.amberti at ors.it  Mon Nov  3 18:00:18 2008
+From: daniele.amberti at ors.it (Daniele Amberti)
+Date: Mon, 3 Nov 2008 18:00:18 +0100
+Subject: Bug timeSeries 270.76.1
+Message-ID: <5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl>
+
+From juantomas.sayago at gmail.com  Tue Nov  4 17:28:46 2008
+From: juantomas.sayago at gmail.com (Juan Tomas Sayago)
+Date: Tue, 4 Nov 2008 17:28:46 +0100
+Subject: Dear Rmetrics authors
+Message-ID: <3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl>
+
+From chalabi at phys.ethz.ch  Wed Nov  5 15:21:15 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 5 Nov 2008 15:21:15 +0100
+Subject: Dear Rmetrics authors
+In-Reply-To: <3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>
+References: <3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>
+Message-ID: <20081105152115.498bd7fc@mimi>
+
+>>>> "JTS" == "Juan Tomas Sayago" <juantomas.sayago at gmail.com>
+>>>> on Tue, 4 Nov 2008 17:28:46 +0100
+
+   JTS> Dear Rmetrics authors,
+   JTS> I am a Mac user and I want to know if it is possible to use the interface to
+   JTS> connect R to Oxmetrix.
+   JTS> Thank you
+   JTS> Juan
+
+the Ox interface was removed from the new fGarch package because it
+needs to be updated and nobody volunteered to do so.
+
+If you need the interface and want to update the code so that everybody
+can benefit from it. We can give some support.
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From chalabi at phys.ethz.ch  Wed Nov  5 15:43:13 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 5 Nov 2008 15:43:13 +0100
+Subject: Bug timeSeries 270.76.1
+In-Reply-To: <5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>
+References: <5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>
+Message-ID: <20081105154313.4f564a93@mimi>
+
+>>>> "DA" == Daniele Amberti <daniele.amberti at ors.it>
+>>>> on Mon, 3 Nov 2008 18:00:18 +0100
+
+   DA> I found that if I specify  zone =?GMT? in timeSeries(), the low level function strptime() is called without specifying the zone.
+   DA> 
+   DA> Having an hourly time series with data around the daylightsaving switch date will cause an error and a count instead of dates.
+   DA> 
+   DA> Thanks
+
+Dear Daniele,
+
+thanks for the report. 
+
+Have you noticed that the new version of 'fSeries' and 'fCalendar' are now
+called 'timeSeries' and 'timeDate'. We changed their names to reflect
+the internal changes of their respective classes.
+
+The version number you used in your title is the one of the 'fSeries'
+packages. 
+
+Could you please let me know if you have the same problem with the new
+'timeSeries' package?
+
+It would be very helpful if you could provide a minimal and reproducible
+code to illustrate the problem.
+
+Best regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From daniele.amberti at ors.it  Wed Nov  5 16:52:12 2008
+From: daniele.amberti at ors.it (Daniele Amberti)
+Date: Wed, 5 Nov 2008 16:52:12 +0100
+Subject: Bug timeSeries 270.76.1 - [ ] Message is from an unknown
+	sender
+In-Reply-To: <20081105154313.4f564a93@mimi>
+References: <5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>
+	<20081105154313.4f564a93@mimi>
+Message-ID: <5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>
+
+Yes, below You can find some code that make problem clear:
+
+
+library(timeSeries)
+MyTZ <- Sys.getenv("TZ")
+
+Sys.setenv(TZ = "")
+Sys.getenv("TZ")
+# The problem is in timeSequence in a call to "strptime(charvec, isoFormat)" without the timezone.
+# look for  [2008-03-30 02:00:00]
+tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = "hour", zone = "GMT")
+timeSeries(1:length(tseq), as.character(tseq),)
+
+Sys.setenv(TZ = "GMT")
+Sys.getenv("TZ")
+# The problem is in timeSequence in a call to "strptime(charvec, isoFormat)" without the timezone.
+# look for  [2008-03-30 02:00:00]
+tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = "hour", zone = "GMT")
+timeSeries(1:length(tseq), as.character(tseq),)
+
+Sys.setenv(TZ = MyTZ)
+
+
+
+-----Original Message-----
+From: Yohan Chalabi [mailto:chalabi at phys.ethz.ch]
+Sent: 05 November 2008 15:43
+To: Daniele Amberti
+Cc: Rmetrics-core at r-project.org
+Subject: Re: Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender
+
+>>>> "DA" == Daniele Amberti <daniele.amberti at ors.it>
+>>>> on Mon, 3 Nov 2008 18:00:18 +0100
+
+   DA> I found that if I specify  zone ="GMT" in timeSeries(), the low level function strptime() is called without specifying the zone.
+   DA>
+   DA> Having an hourly time series with data around the daylightsaving switch date will cause an error and a count instead of dates.
+   DA>
+   DA> Thanks
+
+Dear Daniele,
+
+thanks for the report.
+
+Have you noticed that the new version of 'fSeries' and 'fCalendar' are now
+called 'timeSeries' and 'timeDate'. We changed their names to reflect
+the internal changes of their respective classes.
+
+The version number you used in your title is the one of the 'fSeries'
+packages.
+
+Could you please let me know if you have the same problem with the new
+'timeSeries' package?
+
+It would be very helpful if you could provide a minimal and reproducible
+code to illustrate the problem.
+
+Best regards,
+Yohan
+
+--
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+ORS Srl
+
+Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy
+Tel. +39 0173 620211
+Fax. +39 0173 620299 / +39 0173 433111
+Web Site www.ors.it
+
+------------------------------------------------------------------------------------------------------------------------
+Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.
+Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso
+e degli eventuali allegati.
+Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o
+alla missione aziendale di O.R.S. Srl si intendono non  attribuibili alla societ? stessa, n? la impegnano in alcun modo.
+
+
+From chalabi at phys.ethz.ch  Sat Nov  8 08:44:27 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Sat, 8 Nov 2008 08:44:27 +0100
+Subject: Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender
+In-Reply-To: <5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>
+References: <5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>
+	<20081105154313.4f564a93@mimi>
+	<5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>
+Message-ID: <20081108084427.43380e8a@mimi>
+
+>>>> "DA" == Daniele Amberti <daniele.amberti at ors.it>
+>>>> on Wed, 5 Nov 2008 16:52:12 +0100
+
+   DA> Yes, below You can find some code that make problem clear:
+   DA> 
+   DA> 
+   DA> library(timeSeries)
+   DA> MyTZ <- Sys.getenv("TZ")
+   DA> 
+   DA> Sys.setenv(TZ = "")
+   DA> Sys.getenv("TZ")
+   DA> # The problem is in timeSequence in a call to "strptime(charvec, isoFormat)" without the timezone.
+   DA> # look for  [2008-03-30 02:00:00]
+   DA> tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = "hour", zone = "GMT")
+   DA> timeSeries(1:length(tseq), as.character(tseq),)
+   DA> 
+   DA> Sys.setenv(TZ = "GMT")
+   DA> Sys.getenv("TZ")
+   DA> # The problem is in timeSequence in a call to "strptime(charvec, isoFormat)" without the timezone.
+   DA> # look for  [2008-03-30 02:00:00]
+   DA> tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = "hour", zone = "GMT")
+   DA> timeSeries(1:length(tseq), as.character(tseq),)
+   DA> 
+   DA> Sys.setenv(TZ = MyTZ)
+
+Hi Daniele,
+
+thanks for the clarification.
+
+All calls in timeDate to strptime are now done with the argument
+tz="GMT". Moreover, I changed the S3 method seq,timeDate to make it
+similar to seq.POSIXt.
+
+I have also added RUnit tests which corresponds to your report.
+
+You can find the new code at R-Forge
+
+svn co svn://svn.r-forge.r-project.org/svnroot/rmetrics/pkg/timeDate
+
+Please have a look at it and let me know what you think.
+
+Regards
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Uwe.Ligges at r-project.org  Wed Nov 19 20:22:19 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 19 Nov 2008 20:22:19 +0100
+Subject: Package timeDate_290.81.tar.gz has been built for Windows
+Message-ID: <01c94a7c$Blat.v2.2.2$23dae56d@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_290.81.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

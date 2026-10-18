@@ -1,0 +1,65 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2017-08",
+  "messages": [
+    {
+      "id": "msg-ce3fb0494741",
+      "message_id": "<20170816150339.CC05F23584@kxcjsae.kxcjsae.f9.internal.cloudapp.net>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2017-08-16T14:59:35Z",
+      "subject": "NF-e: 83299-17- Emitente: 43.214.055/0001-07 - Martins Com. e Serv. de Dist. S.A. - 14:59:35",
+      "subject_clean": "NF-e: 83299-17- Emitente: 43.214.055/0001-07 - Martins Com. e Serv. de Dist. S.A. - 14:59:35",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20170816/11022b28/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20170816/11022b28/attachment.html>",
+      "thread_id": "thread-ce3fb0494741",
+      "thread_depth": 0,
+      "month": "2017-08"
+    },
+    {
+      "id": "msg-f02f2b7b0a2f",
+      "message_id": "<c52fca4f969b415ab72b1ba83337a7c5@SERVER003.fuchs-heckmeier.local>",
+      "from_name": "Fuchs, Wolfgang",
+      "from_email_hash": "25c0c8a108b5d5785086023949830ba155974d98d137c54ca20664c5292463bd",
+      "date": "2017-08-25T13:43:12Z",
+      "subject": "Automatische Antwort: Tolle Nachrichten",
+      "subject_clean": "Automatische Antwort: Tolle Nachrichten",
+      "in_reply_to": "<004f01d31d8e$0786d2ee$f51d35b9$@r-project.org>",
+      "references": [
+        "<004f01d31d8e$0786d2ee$f51d35b9$@r-project.org>"
+      ],
+      "body_plain": "Vielen Dank f?r Ihre Kontaktaufnahme. Zum 19.12.2008 beende ich meine Beruftst?tigkeit und bin somit nicht mehr erreichbar. Ich bedanke mich sehr herzlich bei allen Gesch?ftspartnern f?r die vertrauensvolle Zusammenarbeit. Die fuchs + heckmeier gmbh steht Ihnen selbstvert?ndlich weiterhin mit Rat und Tat zur Seite. Bitte wenden Sie sich an Herrn Heckmeier und sein Team unter info at fuchs-heckmeier.de Mit freundlichen Gr??en Wolfgang Fuchs\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Vielen Dank f?r Ihre Kontaktaufnahme. Zum 19.12.2008 beende ich meine Beruftst?tigkeit und bin somit nicht mehr erreichbar. Ich bedanke mich sehr herzlich bei allen Gesch?ftspartnern f?r die vertrauen",
+      "thread_id": "thread-f02f2b7b0a2f",
+      "thread_depth": 0,
+      "month": "2017-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ce3fb0494741",
+      "subject": "NF-e: 83299-17- Emitente: 43.214.055/0001-07 - Martins Com. e Serv. de Dist. S.A. - 14:59:35",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2017-08-16T14:59:35Z",
+      "last_reply": "2017-08-16T14:59:35Z",
+      "root_message_id": "msg-ce3fb0494741"
+    },
+    {
+      "id": "thread-f02f2b7b0a2f",
+      "subject": "Automatische Antwort: Tolle Nachrichten",
+      "message_count": 1,
+      "participants": [
+        "Fuchs, Wolfgang"
+      ],
+      "started": "2017-08-25T13:43:12Z",
+      "last_reply": "2017-08-25T13:43:12Z",
+      "root_message_id": "msg-f02f2b7b0a2f"
+    }
+  ]
+}

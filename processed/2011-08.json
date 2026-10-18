@@ -1,0 +1,117 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-08",
+  "messages": [
+    {
+      "id": "msg-4016b0d95103",
+      "message_id": "<8bda80428d67be4dc3351ddfe4906aa2.squirrel@webmail.maths.lth.se>",
+      "from_name": "Kerstin Johnsson",
+      "from_email_hash": "215be3bce5d03d5251fadd818b380d5b882e5dde39ec19c40c903b2612fb8ca8",
+      "date": "2011-08-01T16:07:44Z",
+      "subject": "Error in package 'fAsianOptions', function 'kummerM'",
+      "subject_clean": "Error in package 'fAsianOptions', function 'kummerM'",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nWhile trying to use the function 'kummerM' to compute the mean of the\nnon-central chi-distribution I noticed that 'kummerM' very often yields\nincorrect results, e.g.\n\nlibrary(fAsianOptions)   # Load function: kummerM\n\nx <- seq(-200, 0, length.out = 200)\ny <- kummerM(x, a = 1, b = 2)\nplot(x, log(abs(y)), type = 'l')\n\nAre you working on this?\n\nBest regards,\nKerstin Johnsson\n\n-- \nKerstin Johnsson, PhD student\nCentre for Mathematical Sciences, Lund University\nOffice: Matematikcentrum, room 340\nPhone: +46 (0) 46 222 75 34\nE-mail: johnsson at maths.lth.se",
+      "body_snippet": "Hi,\n\nWhile trying to use the function 'kummerM' to compute the mean of the\nnon-central chi-distribution I noticed that 'kummerM' very often yields\nincorrect results, e.g.\n\nlibrary(fAsianOptions)   # L",
+      "thread_id": "thread-4016b0d95103",
+      "thread_depth": 0,
+      "month": "2011-08"
+    },
+    {
+      "id": "msg-2f115db814df",
+      "message_id": "<20024.9259.123925.452365@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2011-08-02T16:22:03Z",
+      "subject": "CRAN submission fBasics",
+      "subject_clean": "CRAN submission fBasics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I get\n\n* checking whether package ?fBasics? can be installed ... WARNING\nFound the following significant warnings:\n  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\n  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\n  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\n  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\n  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\n  Warning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\n\nfrom\n\n** libs\ngcc-4.6 -std=gnu99 -I/home/Hornik/tmp/R/include  -I/usr/local/include    -fpic  -g -O6 -Wall -Wno-unused -pedantic -c gld.c -o gld.o\ngfortran-4.6   -fpic  -g -O2 -c gss.f -o gss.o\ngss.f:911.72:\n\n      call dcore (vmu, qwk, nobs, nobs, n0, tol, ywk, 0, limnla, nlawk, \n                                                                        1\nWarning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\ngss.f:964.13:\n\n     &nlawk, scrwk, varht, info, twk, work1)                            \n             1\nWarning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\ngss.f:1098.13:\n\n     &nlaht, score, varht, info, twk, work1)                            \n             1\nWarning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\ngss.f:817.72:\n\n     *init, prec, maxite, theta, nlaht, score, varht, c, d, wk(iqraux), \n                                                                        1\nWarning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\ngss.f:1126.15:\n\n     * wk(iv), wk(ijpvt), wk(icdnew), wk(iwtnew), wk(ifitnew), wk(iwk), \n               1\nWarning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\ngss.f:2763.46:\n\n     *, wk(imu), wk(imuwk), wk(iv), wk(ivwk), wk(ijpvt), wk(icdnew), wk(\n                                              1\nWarning: Type mismatch in argument 'jpvt' at (1); passed REAL(8) to INTEGER(4)\n\nCan you pls fix?\n\nBest\n-k",
+      "body_snippet": "I get\n\n* checking whether package ?fBasics? can be installed ... WARNING\nFound the following significant warnings:\n  Warning: Rank mismatch in argument 'score' at (1) (rank-1 and scalar)\n  Warning: Ra",
+      "thread_id": "thread-2f115db814df",
+      "thread_depth": 0,
+      "month": "2011-08"
+    },
+    {
+      "id": "msg-203cbe15651b",
+      "message_id": "<COL120-W725C4661D746122F928589E2C0@phx.gbl>",
+      "from_name": "James Sharpe",
+      "from_email_hash": "79317b1157eac539cc2721b3082d74058502872c50be2ae87bdd7f1d4c8a59c5",
+      "date": "2011-08-21T19:38:48Z",
+      "subject": "Question on Extreme Value Calibration - Generalised Pareto Distribution",
+      "subject_clean": "Question on Extreme Value Calibration - Generalised Pareto Distribution",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI am working as part of the Extreme Events Working Party with\nthe UK Institute of Actuaries.  We\nhave looked at the QRMlib package and the fExtremes package for use in R to\ncalibrate the Generalised Pareto Distribution.  Using the attached data we found\nnearly identical results for calibrating the GPD using the maximum likelihood\nestimate; but quite different results for the probability weighted moments\nestimate.\n\nCould I ask if you are aware of this issue ? or found\nsomething similar?  The code\nused is below:\n\nsetwd(\"C:/EVT\")\n\na<-read.csv(\"returns.csv\",header=T)\n\nattach(a)\n\nlibrary(QRMlib)\n\nlibrary(fExtremes)\n\nk<-c(UK,AUD,BEL,CAN,DEN,FRA,GER,IRE,ITA,JAP,NET,SAF,SPA,SWE,SWZ,US)\n\nData<--GER\n\nfGPD<-gpdFit(Data,0.1)\n\nGPD<-fit.GPD(Data,0.1)\n\nfGPDpwm<-gpdFit(Data,0.05,type =\n\"pwm\")\n\nGPDpwm<-fit.GPD(Data,0.05,method=\"pwm\")\n\nGPD$par.ests\n\nGPDpwm$par.ests\n\nfGPD\n\nfGPDpwm\n\n \n\nI tried with various data strings and\nthresholds in the table below highlighting the difference in the PWM\ncalibration method:\n\n\n \n  \n  Threshold\n  -1% \n  \n  \n  99.5th\n  \n  \n  Xi\n  \n  \n  B\n  \n \n \n  \n  UK\n  \n  \n  MLE\n  QRMlib\n  \n  \n  42.2%\n  \n  \n  0.0338\n  \n  \n  0.0979\n  \n \n \n  \n   \n  \n  \n  PWM\n  QRMlib\n  \n  \n  47.9%\n  \n  \n  0.1643\n  \n  \n  0.0847\n  \n \n \n  \n   \n  \n  \n  MLE\n  fExtreme\n  \n  \n  42.3%\n  \n  \n  0.0339\n  \n  \n  0.0979\n  \n \n \n  \n   \n  \n  \n  PWM\n  fExtreme\n  \n  \n  44.0%\n  \n  \n  0.0760\n  \n  \n  0.0936\n  \n \n \n  \n  France\n  \n  \n  MLE\n  QRMlib\n  \n  \n  37.2%\n  \n  \n  -0.2432\n  \n  \n  0.1401\n  \n \n \n  \n   \n  \n  \n  PWM\n  QRMlib\n  \n  \n  43.1%\n  \n  \n  -0.0809\n  \n  \n  0.1213\n  \n \n \n  \n   \n  \n  \n  MLE\n  fExtreme\n  \n  \n  37.2%\n  \n  \n  -0.2430\n  \n  \n  0.1401\n  \n \n \n  \n   \n  \n  \n  PWM\n  fExtreme\n  \n  \n  39.2%\n  \n  \n  -0.1801\n  \n  \n  0.1325\n  \n \n \n  \n  Germany\n  \n  \n  MLE\n  QRMlib\n  \n  \n  69.5%\n  \n  \n  -0.0134\n  \n  \n  0.1729\n  \n \n \n  \n   \n  \n  \n  PWM\n  QRMlib\n  \n  \n  72.3%\n  \n  \n  0.0248\n  \n  \n  0.1664\n  \n \n \n  \n   \n  \n  \n  MLE\n  fExtreme\n  \n  \n  69.5%\n  \n  \n  -0.0134\n  \n  \n  0.1729\n  \n \n \n  \n   \n  \n  \n  PWM\n  fExtreme\n  \n  \n  66.0%\n  \n  \n  -0.0644\n  \n  \n  0.1816\n  \n \n \n  \n  Italy\n  \n  \n  MLE\n  QRMlib\n  \n  \n  45.9%\n  \n  \n  -0.3418\n  \n  \n  0.2030\n  \n \n \n  \n   \n  \n  \n  PWM\n  QRMlib\n  \n  \n  48.2%\n  \n  \n  -0.2821\n  \n  \n  0.1934\n  \n \n \n  \n   \n  \n  \n  MLE\n  fExtreme\n  \n  \n  45.9%\n  \n  \n  -0.3418\n  \n  \n  0.2030\n  \n \n \n  \n   \n  \n  \n  PWM\n  fExtreme\n  \n  \n  43.9%\n  \n  \n  -0.3946\n  \n  \n  0.2104\n  \n \n \n  \n  Spain\n  \n  \n  MLE\n  QRMlib\n  \n  \n  35.4%\n  \n  \n  -0.2968\n  \n  \n  0.1463\n  \n \n \n  \n   \n  \n  \n  PWM\n  QRMlib\n  \n  \n  41.5%\n  \n  \n  -0.1071\n  \n  \n  0.1236\n  \n \n \n  \n   \n  \n  \n  MLE\n  fExtreme\n  \n  \n  35.4%\n  \n  \n  -0.2963\n  \n  \n  0.1462\n  \n \n \n  \n   \n  \n  \n  PWM\n  fExtreme\n  \n  \n  37.7%\n  \n  \n  -0.2124\n  \n  \n  0.1353\n  \n \n\n\n \n\n \n\nI would be interested to know if you have any ideas where\nthe approach may differ eg different sub algorithms used, different calculation\norder etc... Any pointers would be very much appreciated.\n\n\nMany thanks\n\n\n\nBest regards\n\nJames Sharpe \t\t \t   \t\t  \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110821/8ef2cbfc/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: returns.csv\nType: application/octet-stream\nSize: 20189 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110821/8ef2cbfc/attachment-0001.obj>",
+      "body_snippet": "Hello,\n\nI am working as part of the Extreme Events Working Party with\nthe UK Institute of Actuaries.  We\nhave looked at the QRMlib package and the fExtremes package for use in R to\ncalibrate the Gener",
+      "thread_id": "thread-203cbe15651b",
+      "thread_depth": 0,
+      "month": "2011-08"
+    },
+    {
+      "id": "msg-5522cede9707",
+      "message_id": "<CAJZBSfEsy6z4mDG=O=m8rD_XJzoWMkAXTLF0diSke4Ks_QFS-w@mail.gmail.com>",
+      "from_name": "Brandon Whitcher",
+      "from_email_hash": "53ac8d6415c6df34d5280f020b33c8241fcca4d255e81fbeb8faff1c9102dd0a",
+      "date": "2011-08-27T13:38:30Z",
+      "subject": "Invitation to Review for the Journal of Statistical Software",
+      "subject_clean": "Invitation to Review for the Journal of Statistical Software",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics Core Team,\n\nManuscript JSS784 \"Estimation, Diagnostic and Forecasting Tools for ARFIMA\nModels: The *afmtools* Package\" has been submitted to the *Journal of\nStatistical Software*.  Would someone from your team be willing to review\nthe manuscript and accompanying software?  I am aware that the package *\nfArma* was written by members of your team.  The *afmtools* software is\nwritten as an R package already available from\nCRAN<http://cran.r-project.org/>or one of its mirror sites.\n\nThe title and abstract are attached to this email, along with the names of\nthe authors and keywords.  I have also attached a draft version of the\nreviewer guidelines.  Please let me know within seven days if you will be\nable to review the manuscript and software by email.\n\nIf you are unable to review this manuscript, would you please recommend one\nor two other potential referees with expertise in this area?\n\nIf you do choose to review this manuscript, I will provide you with all\nrelevant files (essentially the manuscript and R code).  I would ask you to\ncomplete your review within eight weeks.\n\n\nSincerely,\n\nBrandon Whitcher PhD CStat\nAssociate Editor, Journal of Statistical Software\nb.whitcher at imperial.ac.uk\n\n\nEstimation, Diagnostic and Forecasting Tools for ARFIMA Models: The afmtools\nPackage\n\nJavier Contreras and Wilfredo Palma\n\nAbstract\n\nIn practice, several time series exhibit long-range dependence or\npersistence in their\nobservations. This circumstance has motivated the development of a number of\nestimation\nand prediction methodologies to account for the slowly decaying\nautocorrelations. One\nof the most well known classes of long-memory models is the autoregressive\nfractionally\nintegrated moving average (ARFIMA) process. In the package afmtools for R,\nwe have\nimplemented some of these statistical tools for analyzing ARFIMA models. In\nparticular,\nthis R package contains functions for parameter estimation, exact\nautocovariance calcu-\nlation, multi-step ahead forecasting, predictive ability testing, among\nothers. Finally, the\nimplemented methods are illustrated with applications to real-life time\nseries.\n\nKeywords: ARFIMA models, long-memory time series, estimation, prediction, R\npackage.\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110827/4de6be7c/attachment.html>\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110827/4de6be7c/attachment-0001.html>",
+      "body_snippet": "Dear Rmetrics Core Team,\n\nManuscript JSS784 \"Estimation, Diagnostic and Forecasting Tools for ARFIMA\nModels: The *afmtools* Package\" has been submitted to the *Journal of\nStatistical Software*.  Would",
+      "thread_id": "thread-5522cede9707",
+      "thread_depth": 0,
+      "month": "2011-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-4016b0d95103",
+      "subject": "Error in package 'fAsianOptions', function 'kummerM'",
+      "message_count": 1,
+      "participants": [
+        "Kerstin Johnsson"
+      ],
+      "started": "2011-08-01T16:07:44Z",
+      "last_reply": "2011-08-01T16:07:44Z",
+      "root_message_id": "msg-4016b0d95103"
+    },
+    {
+      "id": "thread-2f115db814df",
+      "subject": "CRAN submission fBasics",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2011-08-02T16:22:03Z",
+      "last_reply": "2011-08-02T16:22:03Z",
+      "root_message_id": "msg-2f115db814df"
+    },
+    {
+      "id": "thread-203cbe15651b",
+      "subject": "Question on Extreme Value Calibration - Generalised Pareto Distribution",
+      "message_count": 1,
+      "participants": [
+        "James Sharpe"
+      ],
+      "started": "2011-08-21T19:38:48Z",
+      "last_reply": "2011-08-21T19:38:48Z",
+      "root_message_id": "msg-203cbe15651b"
+    },
+    {
+      "id": "thread-5522cede9707",
+      "subject": "Invitation to Review for the Journal of Statistical Software",
+      "message_count": 1,
+      "participants": [
+        "Brandon Whitcher"
+      ],
+      "started": "2011-08-27T13:38:30Z",
+      "last_reply": "2011-08-27T13:38:30Z",
+      "root_message_id": "msg-5522cede9707"
+    }
+  ]
+}

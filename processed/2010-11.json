@@ -1,0 +1,144 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-11",
+  "messages": [
+    {
+      "id": "msg-aa8799d470b5",
+      "message_id": "<127998.5687.qm@web25708.mail.ukl.yahoo.com>",
+      "from_name": "Charle Augusto Londoño",
+      "from_email_hash": "f34f588c4a822fea8b3ff9d7917f42e1eab769c0658b8f9411cb797980b5e2e7",
+      "date": "2010-11-07T18:37:46Z",
+      "subject": "Questions about library fGarch",
+      "subject_clean": "Questions about library fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl>",
+      "thread_id": "thread-aa8799d470b5",
+      "thread_depth": 0,
+      "month": "2010-11"
+    },
+    {
+      "id": "msg-6e6cd83d8cc9",
+      "message_id": "<COL113-W41B11E9E3D3A5D0E9C4F07EE360@phx.gbl>",
+      "from_name": "Murali Menon",
+      "from_email_hash": "32027d831afee4d8d2888a637e52a4b5a6ba412aa422cc72b3391d3ac321a34e",
+      "date": "2010-11-15T15:38:46Z",
+      "subject": "GBBankHoliday() function in timeDate",
+      "subject_clean": "GBBankHoliday() function in timeDate",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl>",
+      "thread_id": "thread-6e6cd83d8cc9",
+      "thread_depth": 0,
+      "month": "2010-11"
+    },
+    {
+      "id": "msg-02e47003d004",
+      "message_id": "<FF111CF91DD8429DB8EE6F18318F1D19@toshibauser>",
+      "from_name": "Brooks Rimes",
+      "from_email_hash": "71eb7d3a1da8fc4b621c1fd92cb86cbb4ed5b8eda0fbba5fa7ce3fcf07c2785c",
+      "date": "2010-11-18T21:48:14Z",
+      "subject": "Package 'fPortfolio' & R",
+      "subject_clean": "Package 'fPortfolio' & R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl>",
+      "thread_id": "thread-02e47003d004",
+      "thread_depth": 0,
+      "month": "2010-11"
+    },
+    {
+      "id": "msg-cd9795bee56d",
+      "message_id": "<4CEF9122.9010408@openanalytics.eu>",
+      "from_name": "Tobias Verbeke",
+      "from_email_hash": "d8ce0b0ad904b2359671d0a196360fdd14f7f73c5f013a12fb723fd16d2abab4",
+      "date": "2010-11-26T10:51:14Z",
+      "subject": "Fwd: advanced portfolio optim ToC",
+      "subject_clean": "advanced portfolio optim ToC",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "L.S.\n\nMy initial choice of e-mail address\nmight not have been appropriate.\n\nBest,\nTobias\n\n-------- Original Message --------\nSubject: advanced portfolio optim ToC\nDate: Wed, 24 Nov 2010 16:57:42 +0100\nFrom: Tobias Verbeke <tobias.verbeke at openanalytics.eu>\nReply-To: tobias.verbeke at openanalytics.eu\nOrganization: OpenAnalytics\nTo: ebooks at rmetrics.org\n\nL.S.\n\nFirst of all allow me to congratulate\nyou with the quality both of the RMetrics\nsoftware project and the accompanying\ne-books.\n\nI'm currently working on a computational\nengine for a financial institution and\nplan to give RMetrics a prominent place.\n\nOne question which arose was about the\nroadmap of the portfolio optimization\nfunctionality. The current fPortfolio\ne-book mentions an Advanced Portfolio\nOptimization book to come and I was\nwondering whether you would  be willing\nto share the table of contents of it in\norder to have some insight into the\ndirections you would like to take.\n\nMany thanks in advance for any information\nyou can provide. If there is already the\npossibility to subscribe for the Early\nBird Access Program for this book, I'm\nperfectly willing to go that way as well.\n\nKind regards,\nTobias\n\n-- \n\nTobias Verbeke\nManager\n\nOpenAnalytics BVBA\nKortestraat 30A\n2220 Heist-op-den-Berg\nBelgium\n\nE tobias.verbeke at openanalytics.eu\nM +32 499 36 33 15\n\nhttp://www.openanalytics.eu",
+      "body_snippet": "L.S.\n\nMy initial choice of e-mail address\nmight not have been appropriate.\n\nBest,\nTobias\n\n-------- Original Message --------\nSubject: advanced portfolio optim ToC\nDate: Wed, 24 Nov 2010 16:57:42 +0100",
+      "thread_id": "thread-cd9795bee56d",
+      "thread_depth": 0,
+      "month": "2010-11"
+    },
+    {
+      "id": "msg-900d23909d82",
+      "message_id": "<4CF1B480.9050500@structuremonitoring.com>",
+      "from_name": "Spencer Graves",
+      "from_email_hash": "8ec78d92da3eb56db6121331a616d2a4da3c790cb80ee93acb1d1f065f7ddfc8",
+      "date": "2010-11-28T01:46:40Z",
+      "subject": "mean.acf?",
+      "subject_clean": "mean.acf?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello:\n\n\n       Does there exist a \"mean.acf\" in any contributed package that you \nknow?  I could not find such but felt a need so created the attached.\n\n\n       If you think this would be a useful addition to Rmetrics, I can \nadd it to, e.g., \"fBasics\".  However, I felt a need to ask before I did it.\n\n\n       If you think it should be modified, I can do that.  For example, \nit might be appropriate add a logical argument \"weights\" indicating \nwhether to use a simple average or a weighted average using, e.g, \n(n.used-1) for the weights.\n\n\n       Best Wishes,\n       Spencer\n\n-- \nSpencer Graves, PE, PhD\nPresident and Chief Operating Officer\nStructure Inspection and Monitoring, Inc.\n751 Emerson Ct.\nSan Jos?, CA 95126\nph:  408-655-4567\n\n-------------- next part --------------\nAn embedded and charset-unspecified text was scrubbed...\nName: mean.acf.Rd\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101127/a0c446e3/attachment.pl>\n-------------- next part --------------\nAn embedded and charset-unspecified text was scrubbed...\nName: mean.acf.R\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101127/a0c446e3/attachment-0001.pl>",
+      "body_snippet": "Hello:\n\n\n       Does there exist a \"mean.acf\" in any contributed package that you \nknow?  I could not find such but felt a need so created the attached.\n\n\n       If you think this would be a useful ad",
+      "thread_id": "thread-900d23909d82",
+      "thread_depth": 0,
+      "month": "2010-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-aa8799d470b5",
+      "subject": "Questions about library fGarch",
+      "message_count": 1,
+      "participants": [
+        "Charle Augusto Londoño"
+      ],
+      "started": "2010-11-07T18:37:46Z",
+      "last_reply": "2010-11-07T18:37:46Z",
+      "root_message_id": "msg-aa8799d470b5"
+    },
+    {
+      "id": "thread-6e6cd83d8cc9",
+      "subject": "GBBankHoliday() function in timeDate",
+      "message_count": 1,
+      "participants": [
+        "Murali Menon"
+      ],
+      "started": "2010-11-15T15:38:46Z",
+      "last_reply": "2010-11-15T15:38:46Z",
+      "root_message_id": "msg-6e6cd83d8cc9"
+    },
+    {
+      "id": "thread-02e47003d004",
+      "subject": "Package 'fPortfolio' & R",
+      "message_count": 1,
+      "participants": [
+        "Brooks Rimes"
+      ],
+      "started": "2010-11-18T21:48:14Z",
+      "last_reply": "2010-11-18T21:48:14Z",
+      "root_message_id": "msg-02e47003d004"
+    },
+    {
+      "id": "thread-cd9795bee56d",
+      "subject": "advanced portfolio optim ToC",
+      "message_count": 1,
+      "participants": [
+        "Tobias Verbeke"
+      ],
+      "started": "2010-11-26T10:51:14Z",
+      "last_reply": "2010-11-26T10:51:14Z",
+      "root_message_id": "msg-cd9795bee56d"
+    },
+    {
+      "id": "thread-900d23909d82",
+      "subject": "mean.acf?",
+      "message_count": 1,
+      "participants": [
+        "Spencer Graves"
+      ],
+      "started": "2010-11-28T01:46:40Z",
+      "last_reply": "2010-11-28T01:46:40Z",
+      "root_message_id": "msg-900d23909d82"
+    }
+  ]
+}

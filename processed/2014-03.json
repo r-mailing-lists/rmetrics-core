@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2014-03",
+  "messages": [
+    {
+      "id": "msg-f9741bfbb02b",
+      "message_id": "<00e75053-41729-45c37273010764@miladsho-2e62cs>",
+      "from_name": "SA",
+      "from_email_hash": "a69bd14dc5e3c495daf8b29c34c471e99bc1a91775d1f5fb2a66b915f84435a9",
+      "date": "2014-04-01T00:26:19Z",
+      "subject": "Partnership",
+      "subject_clean": "Partnership",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I need your cooperation to reprofile over 20M pounds and invest same",
+      "body_snippet": "I need your cooperation to reprofile over 20M pounds and invest same",
+      "thread_id": "thread-f9741bfbb02b",
+      "thread_depth": 0,
+      "month": "2014-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f9741bfbb02b",
+      "subject": "Partnership",
+      "message_count": 1,
+      "participants": [
+        "SA"
+      ],
+      "started": "2014-04-01T00:26:19Z",
+      "last_reply": "2014-04-01T00:26:19Z",
+      "root_message_id": "msg-f9741bfbb02b"
+    }
+  ]
+}

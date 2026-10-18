@@ -1,0 +1,86 @@
+From ripley at stats.ox.ac.uk  Fri Feb  8 13:08:49 2013
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Fri, 08 Feb 2013 12:08:49 +0000
+Subject: Use of deprecated {as.,is.,}real() functions in CRAN package
+	fAsianOptions
+Message-ID: <20130208120849.E19F8817E4@gannet.stats.ox.ac.uk>
+
+The message below was sent out on Jan 10/11.  These functions have now
+been removed from R-devel and in most cases there are now check errors.
+In all cases R CMD check in R-devel reports the problem.
+
+Can we please have an update by March 1, the beginning of the countdown
+to the release of R 3.0.0.
+
+-------- Original Message --------
+Functions real(), as.real() and is.real() have been 'deprecated' and
+'for backwards compatibility only' for over 5 years now, but are still
+used in your package (or something it calls, but I have tried to
+eliminate those).  They now give formal warnings in R-patched and
+R-devel, and will become defunct shortly, most likely for R 3.0.0 in a
+couple of months.
+
+R-devel CMD check --as-cran will report in the check output: it
+seems the code concerned is not exercised in the package checks.
+
+All that was needed was to use the 'double' versions.
+
+Please submit an update to the package correcting this, to CRAN
+following http://cran.r-project.org/web/packages/policies.html .
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From s1155022273 at mailserv.cuhk.edu.hk  Sat Feb 16 15:05:35 2013
+From: s1155022273 at mailserv.cuhk.edu.hk (s1155022273 at mailserv.cuhk.edu.hk)
+Date: Sat, 16 Feb 2013 22:05:35 +0800
+Subject: A problem on creating fFOLIODATA-class object
+Message-ID: <1361023535.511f922fa054d@webmail.cuhk.edu.hk>
+
+Dear maintainer of package fPortfolio,
+
+Hey guys!
+
+I've came across a problem when creating fFOLIODATA-class object.
+
+According to this fPortfolio document(Pg 10), the "data" parameter in function
+portfolioData(data, spec = portfolioSpec()) is able to receive a list object:
+
+"a time series or a named list, containing either a series of returns or named
+entries ?mu? and ?Sigma? being mean and covariance matrix."
+
+But when I attempted to pass a list object containing mu and Sigma matrix as
+required to "data", an error was prompt: "Error: class(data) == "timeSeries" is
+not TRUE". Here is my code:
+
+    data <- list(mu = a_vector_of_mean, sigma = a_matrix_of_cov)
+    p <- portfolioData(data, spec = portfolioSpec())
+
+The reason I need to specify mu and sigma to create the data object is because
+I
+do not have return in time series. Any solution or advice will be highly
+appreciated.
+
+Thank you!
+
+--
+BEST REGARDS,
+Todd Leo
+
+
+-------------------------------------------------
+This e-mail is sent by CUHK WebMail http://webmail.cuhk.edu.hk
+
+
+From mail at infowebcom.info  Mon Feb 25 20:40:16 2013
+From: mail at infowebcom.info (AP)
+Date: Mon, 25 Feb 2013 14:40:16 -0500
+Subject: Community & educational development
+Message-ID: <136179534658d59251b56b0197ba1eb5f032d5ebc8_@infowebcom.info>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130225/98cbd9ed/attachment.pl>
+

@@ -1,0 +1,776 @@
+From jctoll at gmail.com  Sun Jan  2 03:19:28 2011
+From: jctoll at gmail.com (jctoll)
+Date: Sat, 1 Jan 2011 20:19:28 -0600
+Subject: yahooKeystats broken?
+In-Reply-To: <AANLkTi=VpR_c7MgAHJSaSUzpYpZosfHCuz2GHvcFbQ5e@mail.gmail.com>
+References: <AANLkTi=VpR_c7MgAHJSaSUzpYpZosfHCuz2GHvcFbQ5e@mail.gmail.com>
+Message-ID: <AANLkTi=pvpOQoyNQPxpuY5PUHh=EbvnRtG7pXqoq=cKA@mail.gmail.com>
+
+On Thu, Dec 23, 2010 at 9:29 AM, jctoll <jctoll at gmail.com> wrote:
+> Hi,
+>
+> I've been trying to use the yahooKeystats function from fImport, but I
+> think it may be broken.
+>
+>> yahooKeystats("IBM", try=FALSE)
+> trying URL 'http://finance.yahoo.com/q/ks?s=IBM'
+> Content type 'text/html; charset=utf-8' length unknown
+> opened URL
+> .......... .......... .......... ...
+> downloaded 33 Kb
+>
+> Read 151 items
+> Error in matrix(unlist(strsplit(x, "@")), byrow = TRUE, ncol = 2) :
+> ?attempt to set an attribute on NULL
+>
+> I tried to check out the code and the problem is that x is basically
+> empty when it gets passed to matrix().
+>
+> I think the problem is with this earlier section of code:
+>
+> if (length(Index) > 0)
+> ? ? ? ? ? ?x = x[-Index]
+>
+> I'm not sure what they were trying to do with that code, but this
+> looks like the problem.
+>
+> I was hoping someone could confirm whether yahooKeystats is working or
+> not for them.
+>
+> Thanks,
+>
+>
+> James
+>
+>
+>
+>> sessionInfo()
+> R version 2.12.1 (2010-12-16)
+> Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+>
+> locale:
+> [1] en_US.UTF-8/en_US.UTF-8/C/C/en_US.UTF-8/en_US.UTF-8
+>
+> attached base packages:
+> [1] graphics ?grDevices utils ? ? datasets ?stats ? ? methods ? base
+>
+> other attached packages:
+> [1] fImport_2110.79 ? ? ? ? ? ? ?timeSeries_2130.90
+> timeDate_2130.91 ? ? ? ? ? ? PerformanceAnalytics_1.0.3.2
+> [5] quantmod_0.3-15 ? ? ? ? ? ? ?Defaults_1.1-1
+> TTR_0.20-2 ? ? ? ? ? ? ? ? ? xts_0.7-5
+> [9] zoo_1.6-4
+>
+> loaded via a namespace (and not attached):
+> [1] grid_2.12.1 ? ? lattice_0.19-13
+>
+
+Hi,
+
+In case anyone else needs to use yahooKeystats, I am including the
+edited code I used to get it working.  It appears Yahoo has changed
+their page format again.  Additionally, there is a typographical error
+within the html that requires a temporary work-around until it is
+fixed.  It's not pretty but it works for me.
+
+James
+
+
+
+function (query, file = "tempfile", source = NULL, save = FALSE,
+    try = TRUE)
+{
+    if (is.null(source))
+        source = "http://finance.yahoo.com/q/ks?s="
+    if (try) {
+        z = try(yahooKeystats(query, file, source, save, try = FALSE))
+        if (class(z) == "try-error" || class(z) == "Error") {
+            return("No Internet Access")
+        }
+        else {
+            return(z)
+        }
+    }
+    else {
+        url = paste(source, query, sep = "")
+        download.file(url = url, destfile = file)
+        x = scan(file, what = "", sep = "\n")
+        x = x[grep("datamodoutline1", x)]
+        if (!length(x))
+            return(NA)
+        x = gsub("/", "", x, perl = TRUE)
+        x = gsub(" class=.yfnc_\\w+.", "", x, perl = TRUE)
+             # added
+        x = gsub(" colspan=.2.", "", x, perl = TRUE)
+        x = gsub(" cell.......=...", "", x, perl = TRUE)
+        x = gsub(" border=...", "", x, perl = TRUE)
+        x = gsub(" align=.\\w+.", "", x, perl = TRUE)
+                 # added
+        x = gsub(".nbsp.", "", x, perl = TRUE)
+                   # added
+        x = gsub("Financial Highlights", "", x, perl = TRUE)
+              # added
+        x = gsub(" style=.display.block. height.10px.", "", x, perl =
+TRUE)   # added
+        x = gsub(" id=.yfs_j10_\\w+.", "", x, perl = TRUE)
+              # added
+        x = gsub(" width=.74%.>", "", x, perl = TRUE)
+              # edited
+        x = gsub(" width=.100%.", "", x, perl = TRUE)
+        x = gsub(" size=.-1.", "", x, perl = TRUE)
+        x = gsub("<.>", "", x, perl = TRUE)
+        x = gsub("<..>", "", x, perl = TRUE)
+        x = gsub("<....>", "", x, perl = TRUE)
+        x = gsub("<table>", "", x, perl = TRUE)
+        x = gsub("<sup>.<sup>", "", x, perl = TRUE)
+        x = gsub("&amp;", "&", x, perl = TRUE)
+        x = gsub("<td", " @ ", x, perl = TRUE)
+        x = gsub(",", "", x, perl = TRUE)
+        x = unlist(strsplit(x, "@"))
+        x = x[grep(":", x)]
+        x = gsub("^ ", "", x, perl = TRUE)
+        Index = grep("^ ", x)
+        if (length(Index) > 0)
+            x = x[-Index]
+        x = gsub(" $", "", x, perl = TRUE)
+        x = gsub(":$", ":NA", x, perl = TRUE)
+        x = sub(":", "@", x)
+        x = sub(":", "/", x)
+        x = matrix(unlist(strsplit(x, "@")), byrow = TRUE, ncol = 2)
+        stats = as.character(Sys.Date())
+        x = rbind(c("Symbol", query), c("Date", stats), x)
+        x[53,1] <- "Trailing Annual Dividend Rate"
+ # added temporary kludge to fix yahoo typo
+        X = as.data.frame(x[, 2])
+        rownames(X) = x[, 1]
+        colnames(X) = "Value"
+    }
+    X
+}
+
+
+From thomas.chan.sf at boci-pru.com.hk  Mon Jan  3 03:02:04 2011
+From: thomas.chan.sf at boci-pru.com.hk (thomas.chan.sf at boci-pru.com.hk)
+Date: Mon, 3 Jan 2011 10:02:04 +0800
+Subject: Fw: [R-SIG-Finance] error message from portfolioFrontier function
+Message-ID: <OFC581FAE2.2D559AC6-ON4825780D.000ADCA2-4825780D.000B2D1E@boci-pru.com.hk>
+
+
+Hello,
+
+Sorry there is an error in the question I sent before. The codes should
+actually be
+
+> prets = as.timeSeries(prets)
+> Spec = portfolioSpec()
+> setNFrontierPoints(Spec) = 25
+> pconstraints = c("minW[1:10] = 0.00","maxW[1:10] = .3")
+> pFrontier = portfolioFrontier(data = prets, spec = Spec, constraints =
+pconstraints)
+
+Anyway, the error message is the same. The mistake was created when I was
+cleaning up the codes before sending you the question. Once again, any help
+would  be greatly appreciated.
+
+Best Regards,
+
+Thomas Chan
+Quantitative Strategy Business Unit
+BOCI-Prudential Asset Management Limited
+
+----- Forwarded by thomas sf chan/boci-pru on 03/01/2011 09:58 -----
+|------------>
+| From:      |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |thomas sf chan/boci-pru                                                                                                                 |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| To:        |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |Rmetrics-core at r-project.org                                                                                                             |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Cc:        |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |alex.rudnev at gmail.com, Mark Gordon <mgordon at mcphedge.com>, "Brian G. Peterson" <brian at braverock.com>                                    |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Date:      |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |29/12/2010 13:14                                                                                                                        |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Subject:   |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |Re: [R-SIG-Finance] error message from portfolioFrontier function                                                                       |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+
+
+
+
+Hello,
+
+I have used the portfolioFrontier function a few times unsuccessfully using
+the following codes.
+
+> prets = as.timeSeries(prets)
+> Spec = portfolioSpec()
+> setNFrontierPoints(boxSpec) = 25
+> pconstraints = c("minW[1:10] = 0.00","maxW[1:10] = .3")
+> pFrontier = portfolioFrontier(data = prets, spec = Spec, constraints =
+pconstraints)
+
+Here is the consistent error message:
+
+Execution stopped:
+  The minimum risk portfolio could not be computed.
+Possible Reason:
+  Your portfolio constraints may be too restrictive.
+Status Information:
+  status=1 from solver solveRquadprog.
+Error:
+  returned from Rmetrics
+The input file is attached. The time series is short. But the error
+messages are the same even if I use a longer time series, multiply the
+returns by 100, etc. (See attached file: prets.Rdata)Any suggestion would
+be greatly appreciated! I am a new R user. It would be great if it is
+something that I can handle.
+
+Regards,
+
+Thomas Chan
+BOCI-Prudential Asset Management Limited
+
+
+|------------>
+| From:      |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |"Brian G. Peterson" <brian at braverock.com>                                                                                               |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| To:        |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |Mark Gordon <mgordon at mcphedge.com>                                                                                                      |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Cc:        |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |alex.rudnev at gmail.com, thomas.chan.sf at boci-pru.com.hk                                                                                   |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Date:      |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |29/12/2010 05:42                                                                                                                        |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+|------------>
+| Subject:   |
+|------------>
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+  |Re: [R-SIG-Finance] error message from portfolioFrontier function                                                                       |
+  >----------------------------------------------------------------------------------------------------------------------------------------|
+
+
+
+
+
+On 12/28/2010 03:27 PM, Mark Gordon wrote:
+> Please see my posting on December 2, 2010 regarding this problem.  The
+> problem is not with the FORTRAN code, it is with the R code.  I showed a
+> work around that I use to be able to run minriskPortfolio.  How can we
+> get the  package corrected?
+>
+> I apologize for responding off-list, but my prior posting appears to
+> have been lost in the crowd.
+
+While I am the maintainer of many R/Finance packages, I am neither the
+author nor maintainer of the RMetrics packages.
+
+So, the usual method is that you would send a well-formed email to the
+individual listed as the 'Maintainer' of the package.
+
+In this case,
+
+Rmetrics Core Team <Rmetrics-core at r-project.org>
+
+Regards,
+
+   - Brian
+
+> -----Original Message-----
+> From: r-sig-finance-bounces at r-project.org
+> [mailto:r-sig-finance-bounces at r-project.org] On Behalf Of Brian G.
+> Peterson
+> Sent: Friday, December 24, 2010 7:41 AM
+> To: r-sig-finance at r-project.org
+> Subject: Re: [R-SIG-Finance] error message from portfolioFrontier
+> function
+>
+> On 12/24/2010 02:16 AM, thomas.chan.sf at boci-pru.com.hk wrote:
+>>
+>> Hello,
+>>
+>> I have tried to use the function portfolioFrontier a few times and
+>> always get this error message:
+>>
+>> Execution stopped:
+>>     The minimum risk portfolio could not be computed.
+>> Possible Reason:
+>>     Your portfolio constraints may be too restrictive.
+>> Status Information:
+>>     status=1 from solver solveRquadprog.
+>> Error:
+>>     returned from Rmetrics
+>>
+>> Could anyone give me a hint? Thanks.
+>
+> The error message *is* a hint, and likely describes the problem you are
+> having precisely.
+>
+> You need to construct a minimal reproducible example, per the posting
+> guide, so that others may reproduce your problem, and confirm whether
+> the problem is in your constraints, as indicated by the error, or in the
+> code.
+>
+> Regards,
+>
+>     - Brian
+>
+> --
+> Brian G. Peterson
+> http://braverock.com/brian/
+> Ph: 773-459-4973
+> IM: bgpbraverock
+>
+> _______________________________________________
+> R-SIG-Finance at r-project.org mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-sig-finance
+> -- Subscriber-posting only. If you want to post, subscribe first.
+> -- Also note that this is not the r-help list where general R questions
+> should go.
+
+
+--
+Brian G. Peterson
+http://braverock.com/brian/
+Ph: 773-459-4973
+IM: bgpbraverock
+
+______________________________________________________________________
+This email has been scanned by the MessageLabs Email Security System.
+For more information please visit http://www.messagelabs.com/email
+______________________________________________________________________
+
+---------------------------------------------------------------------------------------
+
+Important : The information contained in this e-mail and any attachment thereof is intended only for use of the addressee and is confidential and may be privileged and/or otherwise protected from disclosure. If you are not the intended recipient, you are hereby notified that any use, copying, dissemination or any other action taken or omitted to be taken in reliance upon this information is strictly prohibited. If you have received this communication in error, please notify the sender immediately by reply and delete this message from your system. Any views expressed in this e-mail are those of the individual sender except where the e-mail states otherwise and the sender is authorized to state them to be the views of BOCI-Prudential Asset Management Limited. Unless otherwise stated, any information given in this e-mail shall not be regarded as an offer, solicitation, invitation, advice or recommendation to buy or sell any investment or securities within or outside Hong Kong SAR. Any reference to the terms of executed transactions should be treated as preliminary only and subject to our formal written confirmation.
+
+
+______________________________________________________________________
+This email has been scanned by the MessageLabs Email Security System.
+For more information please visit http://www.messagelabs.com/email 
+______________________________________________________________________
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: prets.Rdata
+Type: application/octet-stream
+Size: 909 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110103/aa550d75/attachment.obj>
+
+From tarimargaretehy at cigna.com  Mon Jan 10 17:29:05 2011
+From: tarimargaretehy at cigna.com (Tari Margarete)
+Date: Mon, 10 Jan 2011 09:29:05 -0700
+Subject: 55hq6
+Message-ID: <48w23b52a97-05778283-700n1b46@jtuuvaf>
+
+337
+
+
+From maechler at stat.math.ethz.ch  Mon Jan 10 17:39:39 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 10 Jan 2011 17:39:39 +0100
+Subject: 55hq6
+In-Reply-To: <48w23b52a97-05778283-700n1b46@jtuuvaf>
+References: <48w23b52a97-05778283-700n1b46@jtuuvaf>
+Message-ID: <19755.13899.612825.462970@lynne.math.ethz.ch>
+
+>>>>> Tari Margarete <tarimargaretehy at cigna.com>
+>>>>>     on Mon, 10 Jan 2011 09:29:05 -0700 writes:
+
+    > 337
+    > _______________________________________________
+    > Rmetrics-core mailing list Rmetrics-core at r-project.org
+    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+Probably a spammer who tries to see if he can freely post.
+
+We may have to consider changing the
+everyone can freely send e-mail to Rmetrics-core
+to a scheme, where all such messages are *moderated* before
+being forwarded...
+... let's hope not ...
+
+Martin
+
+
+From maechler at stat.math.ethz.ch  Wed Jan 12 10:30:45 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 12 Jan 2011 10:30:45 +0100
+Subject: *stable distrib in fBasics --> small Rmetrics package "stableDist" ?
+Message-ID: <19757.29893.127643.640049@stat.math.ethz.ch>
+
+Dear Diethelm and Yohan,
+
+as you may recall, we (Marius Hofert and I) have been making use
+of rstable() in our 'nacopula' package for more than a year now,
+but back then, we found small numerical and efficiency problems
+in  fBasics version of rstable and as we did not need any other
+fBasics function, I wrote a new version called 'rstable1()'
+{so as to make no confusion}, and also on its help page clearly
+documented that the original code, and documentation, and d*,
+p*, q* functions are all in 'fBasics'.
+
+Now, for a while, as we have been implementing new Maximum
+Likelihood methods for Archimdean copulas, we have made use
+of fBasics::dstable(), and for that have had an
+   importFrom(fBasics, dstable)
+in our package.
+I have always felt it a bit unconvenient that this loads all of
+fBasics, timeDate, and timeSeries  just because of this one
+function.
+
+Now, I've found a numerical problem with dstable() and also
+performance issues which I have partly adressend would like to
+address more.
+
+For all these reasons, I'm proposing to factor out the
+[dpqr]stable() functions out of fBasics into a new package, say
+'stableDist', and have fBasics "depend" on stableDist, such that
+for the users who call require(fBasics) or library(fBasics),
+nothing will change.
+
+The big advantage of the change would be that all those users
+(like us) who really only need the stable distributions, they
+can simply  load or import from 'stableDist'  which will be very
+fast and very small.
+
+Another advantage will be that the unit tests for *stable
+which are currently disabled in 'fBasics', can be run for
+'stableDist' without adding test runtime to 'fBasics'.
+
+My proposal is to factor out things as soon as you agree,
+and then address the issues I've found one by one,
+starting with dstable where I've already (uncommitted)
+improvements ready.
+BTW: The stableSlider() of course would remain in 'fBasics'.
+
+Best regards,
+Martin
+
+
+From mat69 at gmx.net  Wed Jan 19 15:50:20 2011
+From: mat69 at gmx.net (Matthias Fuchs)
+Date: Wed, 19 Jan 2011 15:50:20 +0100
+Subject: Fwd: Bug: fOptions-MonteCarloOptions
+Message-ID: <201101191550.20890.mat69@gmx.net>
+
+Hi,
+
+I already mailed Diethelm Wuertz [1] yet did not receive a response so far, 
+that is why I send the mail again to you.
+Hope this helps.
+
+Cheers,
+matthias
+
+[1] Did not RTFM thorough and thus did not see the maintainer mail. ;)
+
+----------  Weitergeleitete Nachricht  ----------
+
+Betreff: RMetrics: fOptions-MonteCarloOptions
+Datum: Dienstag 11 Januar 2011, 18:24:04
+Von: Matthias Fuchs <mat69 at gmx.net>
+An:  Diethelm Wuertz <wuertz at itp.phys.ethz.ch>
+
+Hi,
+
+I was trying to implement the Monte-Carlo-Simulation for a Plain Vanilla call 
+(see ex.R), similar to the example in the documentation.
+
+Yet I did not get meaningful results, it appeared to me as if the mcSteps 
+variable is ignored in the payoff.calc function.
+
+So I digged a little into the code:
+There is a bug in MonteCarloOptions.R, see the attached mc1.patch.
+Further the code could be optimized by avoiding the loop and the matrix 
+transpose, see mc2.patch.
+
+I did not run any unit tests so I am not sure if those would work with either 
+patch.
+
+
+Cheers,
+matthias
+
+PS.: I hope it is ok for me to send this mail directly to you.
+
+-------------------------------------------------------------
+-------------- next part --------------
+library("fOptions")
+set.seed(0) #for reproduceable results
+
+TypeFlag = "c"
+S = 50
+X = 40
+r = 0.05
+b = 0.05
+vola = 0.4
+Time = 1
+delT = Time / 1
+
+print(GBSOption(TypeFlag = TypeFlag, S = S, X = X, Time = Time, r = r, b = b, sigma = vola)) #14.48821
+
+wienerPath <- function(randNum)
+{
+    path = (b - vola * vola / 2) * delT + vola * sqrt(delT) * randNum
+}
+
+plainVanillaPayoff = function(path)
+{
+    ST = S * exp(sum(path))
+    if (TypeFlag == "c") {
+        payoff = exp(-r * Time) * max(ST - X, 0)
+    } else if (TypeFlag == "p") {
+        payoff = exp(-r * Time) * max(0, X - ST)
+    } else {
+        payoff = NaN
+    }
+}
+
+
+mc = MonteCarloOption(delta.t = 1, pathLength = 1, mcSteps = 20000, mcLoops = 1, innovations.gen = rnorm.pseudo, path.gen = wienerPath, payoff.calc = plainVanillaPayoff,
+antithetic = TRUE, standardization = FALSE, trace = TRUE)
+
+## mc has a ridiculous value of 38.44424 despite 20,000 steps, with both patches it has a value of 14.50386
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: mc1.patch
+Type: text/x-patch
+Size: 555 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110119/5028134f/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: mc2.patch
+Type: text/x-patch
+Size: 735 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110119/5028134f/attachment-0001.bin>
+
+From stelope at jcom.home.ne.jp  Mon Jan 24 13:12:29 2011
+From: stelope at jcom.home.ne.jp (stelope)
+Date: Mon, 24 Jan 2011 21:12:29 +0900
+Subject: 'skewness' and 'kurtosis' in 'timeDate' package
+Message-ID: <4D3D6CAD.2090901@jcom.home.ne.jp>
+
+Dear Maintainer, Rmetrics Core Team
+
+Today, I found that tow functions ('skewness' and 'kurtosis' in
+'timeDate' package) output wrong result when we use 'method="fisher"'.
+
+The reason why these functions do not calculate correct value is that,
+in each function, data used are raw data, not scaled data (or mean
+difference data).
+
+in skewness
+
+if (method == "fisher") {
+if (n < 3)
+skewness = NA
+else skewness = ((sqrt(n * (n - 1))/(n - 2)) *
+(sum(x^3)/n))/((sum(x^2)/n)^(3/2))
+}
+
+in kurtosis
+
+if (method == "fisher") {
+kurtosis = ((n + 1) * (n - 1) * ((sum(x^4)/n)/(sum(x^2)/n)^2 -
+(3 * (n - 1))/(n + 1)))/((n - 2) * (n - 3))
+}
+
+These 'x' must be scaled, or at least, subtracted by 'mean(x)'.
+As you know, skewness or kurtosis must be same for 'x' and 'x+constant',
+ie.,
+skewness(x) == skewness(x+constant), kurtosis(x) == kurtosis(x+constant).
+
+For example, in both function, if we use 'method="moment"', R calculate
+as follows;
+
+> set.seed(123)
+> old <- options(digits=20)
+> x <- rnorm(20)
+
+> # correct, if ue use method="moment"(default)
+> cat(skewness(x, method="moment"), skewness(x+10, method="moment"))
+-0.06249520603709942 -0.0624952060370983
+> cat(kurtosis(x, method="moment"), kurtosis(x+10, method="moment"))
+2.452109269820757 2.452109269820757
+
+> # wrong, if we use method="fisher"
+> cat(skewness(x, method="fisher"), skewness(x+10, method="fisher"))
+0.4023203841762693 1.096898941351229
+> cat(kurtosis(x, method="fisher"), kurtosis(x+10, method="fisher"))
+-0.03206259158039006 -2.190617806139012
+
+> options(old)
+
+If we use 'method="fisher"' for scaled data, R outputs correct results
+as follows;
+
+> # correct again, if we use method="fisher" and scaled data
+> cat(skewness(scale(x), method="fisher"), skewness(scale(x+10),
+method="fisher"))
+-0.0730938082305255 -0.0730938082305243
+> cat(kurtosis(scale(x), method="fisher"), kurtosis(scale(x+10),
+method="fisher"))
+0.003563444529474211 0.003563444529473632
+
+As the 'x' argument of each function described as 'a numeric vector or
+object', the program must be as follows.
+
+timeDate:::skewness.default
+
+function (x, na.rm = FALSE, method = c("moment", "fisher"), ...)
+{
+:
+if (method == "fisher") {
+if (n < 3)
+skewness = NA
+else {
+x <- scale(x) # This must be added.
+skewness = ((sqrt(n * (n - 1))/(n - 2)) * (sum(x^3)/n))/((sum(x^2)/n)^(3/2))
+}
+}
+:
+}
+
+timeDate:::kurtosis.default
+
+function (x, na.rm = FALSE, method = c("excess", "moment", "fisher"),
+...)
+{
+:
+if (method == "fisher") {
+x <- scale(x) # This must be added.
+kurtosis = ((n + 1) * (n - 1) * ((sum(x^4)/n)/(sum(x^2)/n)^2 -
+(3 * (n - 1))/(n + 1)))/((n - 2) * (n - 3))
+}
+:
+}
+
+
+From hiroshi-sawada at mh.point.ne.jp  Mon Jan 24 15:48:08 2011
+From: hiroshi-sawada at mh.point.ne.jp (Hiroshi Sawada)
+Date: Mon, 24 Jan 2011 23:48:08 +0900
+Subject: skewness and kurtosis in package timeDate returns incorrect results
+Message-ID: <6F707510739D4EA59ED54DCC210FEEB5@HiroshiPC>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110124/43e82148/attachment.pl>
+
+From stephens.js at gmail.com  Tue Jan 25 22:39:29 2011
+From: stephens.js at gmail.com (Scott Stephens)
+Date: Tue, 25 Jan 2011 15:39:29 -0600
+Subject: Bug in holidayNYSE in timeDate
+Message-ID: <AANLkTi=YVw7_V9XfT=x5S7c4Te=3DiKMCGKJGSYwu+kC@mail.gmail.com>
+
+The holidayNYSE function in the timeDate package incorrectly includes
+31 Dec 2010 as a holiday (try holidayNYSE(2011)).  The problem seems
+to stem from not properly specifying the NewYork timezone when the
+ExceptOnLastFriday vector is built. I believe the line
+
+ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,
+month = m, lastday = lastday, nday = 5)))
+
+should be replaced with:
+
+ExceptOnLastFriday <- timeDate(as.character(.last.of.nday(year = y,
+month = m, lastday = lastday, nday =
+5)),FinCenter="NewYork",zone="NewYork")
+
+
+Thanks for the great work on RMetrics,
+
+Scott
+
+
+From ligges at statistik.tu-dortmund.de  Sat Jan 29 16:01:21 2011
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Sat, 29 Jan 2011 16:01:21 +0100
+Subject: packages fExtremes and mvtnorm
+Message-ID: <4D442BC1.1090702@statistik.tu-dortmund.de>
+
+Dear package maintainers of mvtnorm and fExtremes ,
+
+perhaps (and I am really not sure, but it is the only recursive 
+dependency that got updated) due to yesterday's mvtnorm update on CRAN, 
+we see fExtremes  failing now, see e.g.:
+
+http://www.r-project.org/nosvn/R.check/r-release-windows-ix86+x86_64/fExtremes-00check.html
+
+Can you please negotiate further actions and fix the problem. Please
+upload fixed version(s) of the package(s) with increased version
+number(s) to CRAN in the usual way and report to cran at R-project.org.
+
+Best wishes,
+Uwe
+
+
+From ripley at stats.ox.ac.uk  Sat Jan 29 16:57:00 2011
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Sat, 29 Jan 2011 15:57:00 +0000 (GMT)
+Subject: packages fExtremes and mvtnorm
+In-Reply-To: <4D442BC1.1090702@statistik.tu-dortmund.de>
+References: <4D442BC1.1090702@statistik.tu-dortmund.de>
+Message-ID: <alpine.LFD.2.02.1101291552250.23420@gannet.stats.ox.ac.uk>
+
+I've seen this error before with fExtremes: I don't believe it to be 
+directly due to the mvtnorm change.  It looks more like a protection 
+problem in fExtremes or something it calls.
+
+On Sat, 29 Jan 2011, Uwe Ligges wrote:
+
+> Dear package maintainers of mvtnorm and fExtremes ,
+>
+> perhaps (and I am really not sure, but it is the only recursive dependency 
+> that got updated) due to yesterday's mvtnorm update on CRAN, we see fExtremes 
+> failing now, see e.g.:
+>
+> http://www.r-project.org/nosvn/R.check/r-release-windows-ix86+x86_64/fExtremes-00check.html
+>
+> Can you please negotiate further actions and fix the problem. Please
+> upload fixed version(s) of the package(s) with increased version
+> number(s) to CRAN in the usual way and report to cran at R-project.org.
+>
+> Best wishes,
+> Uwe
+>
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+

@@ -1,0 +1,310 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-01",
+  "messages": [
+    {
+      "id": "msg-df0d7b3105ae",
+      "message_id": "<KDERQ5$AAA3F9ECF32F67E00347519CFB567E2C@libero.it>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "27edb498d33ddc7f4d402ac0beabe0d7161a854f2a17455c22fdeb3a039c973f",
+      "date": "2009-01-13T11:54:05Z",
+      "subject": "fPortfolio development ideas",
+      "subject_clean": "fPortfolio development ideas",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "During the first r-metrics meeting in Meielisalp was mentioned that fPortfolio library's target should be on small portfolios (because of optimization problems). I found some very interesting functions in this proprietary library (link to the user manual below) since constraints over number of assets and rebalancing options are most common problems in portfolio management.\n\nPlease let me know what you think.\nBest regards\nDaniele Amberti\n\nhttp://www.burns-stat.com/pages/Product/pop_use_man.pdf",
+      "body_snippet": "During the first r-metrics meeting in Meielisalp was mentioned that fPortfolio library's target should be on small portfolios (because of optimization problems). I found some very interesting function",
+      "thread_id": "thread-df0d7b3105ae",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-b9002a8c7c3e",
+      "message_id": "<20090123165056.284260@gmx.net>",
+      "from_name": "Chr. Reimsbach-K.",
+      "from_email_hash": "62f18a7d7313474cc57a291776ab4557c092de7c8e7ef7d062f978428f1e48ac",
+      "date": "2009-01-23T16:50:56Z",
+      "subject": "fImport: Import yahoo income statement",
+      "subject_clean": "fImport: Import yahoo income statement",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Greetings!\n\nI am envisioning expanding the fImport module, so that quarterly data of companies can be imported into R. Much like the yahooKeystats() command, I would like to import data from http://finance.yahoo.com/q/is?s=IBM.  \n\nI am not familiar with R programming yet, and before starting spending my time in writing the module, I wanted to know if any efforts in this direction have been made in the past. If not I would appreciate any support.\n\nBest regards\n\nChristian\n\n \n--",
+      "body_snippet": "Greetings!\n\nI am envisioning expanding the fImport module, so that quarterly data of companies can be imported into R. Much like the yahooKeystats() command, I would like to import data from http://fi",
+      "thread_id": "thread-b9002a8c7c3e",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-3eb6a4e38eb0",
+      "message_id": "<01c9816d$Blat.v2.2.2$388cb07b@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-01-28T17:24:05Z",
+      "subject": "Package fBasics_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fBasics_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fBasics_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-3eb6a4e38eb0",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-25b460b258b4",
+      "message_id": "<01c9816d$Blat.v2.2.2$38bead85@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-01-28T17:24:06Z",
+      "subject": "Package fGarch_290.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fGarch_290.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fGarch_290.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding C",
+      "thread_id": "thread-25b460b258b4",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-fbac414472f3",
+      "message_id": "<01c9816d$Blat.v2.2.2$38e4c3a5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-01-28T17:24:06Z",
+      "subject": "Package fImport_290.75.tar.gz has been built for Windows",
+      "subject_clean": "Package fImport_290.75.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_290.75.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding ",
+      "thread_id": "thread-fbac414472f3",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-9160785bba03",
+      "message_id": "<01c9816d$Blat.v2.2.2$3981dee9@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-01-28T17:24:07Z",
+      "subject": "Package timeDate_290.82.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_290.82.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.82.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-9160785bba03",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-9ce79880ad03",
+      "message_id": "<4980A264.3020509@gljpc.com>",
+      "from_name": "Michael Morgan",
+      "from_email_hash": "047f76275d6684d0d7c1e15e7963514333f520bdb1c474a3613140e1f85c10af",
+      "date": "2009-01-28T18:22:28Z",
+      "subject": "economagicImport - NAs error",
+      "subject_clean": "economagicImport - NAs error",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Maintainers,\n\nUsing the most recent Windows binary (270.74) I get a large number of \nNAs when importing data from economagic.\n\n\nThe following code ...\n\noil.prices <- economagicSeries(\"var/west-texas-crude-long\", frequency = \n\"monthly\", from = \"1980-01-01\",  to = Sys.timeDate())\nplot(oil.prices, main=\"WTI Spot Prices\")\n\n\nResults in the following message....\n\nWarning message:\nIn economagicImport(query, file, source, frequency, from, to, nDaysBack,  :\n  NAs introduced by coercion\n\n\nThis only started to happen in the last month, so I suspect economagic \nchanged how their website expresses data.\n\nDoes the current linux source (290.75) have this issue?\n\nIf it doesn't, when do you estimate you'll be able to update the Windows \nbinary?\n\n\nMike Morgan\n\n\n\nMichael Morgan\n\nGLJ Petroleum Consultants\n4100, 400 Third Avenue SW\nCalgary, AB, Canada  T2P 4H2  \nTel: (403) 266-9437 Fax: (403) 262-1855\n\nThis message is intended only for the recipient(s) to which it is addressed and may contain information that is privileged and confidential. If you have received this message in error, please notify the sender immediately and delete all copies.",
+      "body_snippet": "Dear Maintainers,\n\nUsing the most recent Windows binary (270.74) I get a large number of \nNAs when importing data from economagic.\n\n\nThe following code ...\n\noil.prices <- economagicSeries(\"var/west-te",
+      "thread_id": "thread-9ce79880ad03",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-21945f0bb6dc",
+      "message_id": "<20090128201549.6a4300d3@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-01-28T19:15:49Z",
+      "subject": "economagicImport - NAs error",
+      "subject_clean": "economagicImport - NAs error",
+      "in_reply_to": "<4980A264.3020509@gljpc.com>",
+      "references": [
+        "<4980A264.3020509@gljpc.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == Michael Morgan <mmorgan at gljpc.com>\n>>>> on Wed, 28 Jan 2009 11:22:28 -0700\n\n   MM> Dear Maintainers,\n   MM>\n   MM> Using the most recent Windows binary (270.74) I get a large\n   MM> number of\n   MM> NAs when importing data from economagic.\n   MM>\n   MM>\n   MM> The following code ...\n   MM>\n   MM> oil.prices <- economagicSeries(var/west-texas-crude-long,\n   MM> frequency =\n   MM> monthly, from = 1980-01-01, to = Sys.timeDate())\n   MM> plot(oil.prices, main=WTI Spot Prices)\n   MM>\n   MM>\n   MM> Results in the following message....\n   MM>\n   MM> Warning message:\n   MM> In economagicImport(query, file, source, frequency, from, to,\n   MM> nDaysBack, :\n   MM> NAs introduced by coercion\n   MM>\n   MM>\n   MM> This only started to happen in the last month, so I suspect\n   MM> economagic\n   MM> changed how their website expresses data.\n   MM>\n   MM> Does the current linux source (290.75) have this issue?\n   MM>\n   MM> If it doesn't, when do you estimate you'll be able to update\n   MM> the Windows\n   MM> binary?\n   MM>\n   MM>\n   MM> Mike Morgan\n\nAs you said, economagic changed how their website expresses data.\n\nThis was fixed in the dev revision version 3773. You can get it from\nour subversion repository at R-forge\n[http://r-forge.r-project.org/projects/rmetrics/]\n\nBut we finally decided to remove the economagic* functions from\n'fImport' because economagic requires login account to get access to\ntheir data and we do not want to go against their policy.\n\nHTH\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"MM\" == Michael Morgan <mmorgan at gljpc.com>\n>>>> on Wed, 28 Jan 2009 11:22:28 -0700\n\n   MM> Dear Maintainers,\n   MM>\n   MM> Using the most recent Windows binary (270.74) I get a large\n   MM> nu",
+      "thread_id": "thread-9ce79880ad03",
+      "thread_depth": 1,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-b32b3fc97d8d",
+      "message_id": "<4981F440.7050702@gljpc.com>",
+      "from_name": "Michael Morgan",
+      "from_email_hash": "047f76275d6684d0d7c1e15e7963514333f520bdb1c474a3613140e1f85c10af",
+      "date": "2009-01-29T18:24:00Z",
+      "subject": "yahooSeries for futures listed on Yahoo",
+      "subject_clean": "yahooSeries for futures listed on Yahoo",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Maintainers,\n\nIs there a way to import futures prices from yahoo or from \nfinance.yahoo.com?\n\nyahooSeries(\"IBM\") gives data for IBM\n\nFor light crude delivery in March 2009 traded on NYMEX, the ticker \nCLH09.NYM can be used to get data from finance.yahoo.com\n\nyahooSeries(\"CLH09.NYM\") currently doesn't provide any data, though the \ndata is available at http://finance.yahoo.com/q?s=CLH09.NYM\n\n\nMike Morgan\n\nMichael Morgan\n\nGLJ Petroleum Consultants\n4100, 400 Third Avenue SW\nCalgary, AB, Canada  T2P 4H2  \nTel: (403) 266-9437 Fax: (403) 262-1855\n\nThis message is intended only for the recipient(s) to which it is addressed and may contain information that is privileged and confidential. If you have received this message in error, please notify the sender immediately and delete all copies.",
+      "body_snippet": "Dear Maintainers,\n\nIs there a way to import futures prices from yahoo or from \nfinance.yahoo.com?\n\nyahooSeries(\"IBM\") gives data for IBM\n\nFor light crude delivery in March 2009 traded on NYMEX, the ti",
+      "thread_id": "thread-b32b3fc97d8d",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-242798c97178",
+      "message_id": "<alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>",
+      "from_name": "Phil Spector",
+      "from_email_hash": "25116a8a21ee12103ac924b9702a8b3dba6aad6e15ff66b7481deec91eea04f2",
+      "date": "2009-01-29T18:32:49Z",
+      "subject": "fUtilities::isS4",
+      "subject_clean": "fUtilities::isS4",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi!\n    I'm having some difficulties using the isS4 function in \nthe fUtilities package.  Specifically, I think that the \ntest for NULL slotNames may not always give the correct \nresult.\n\nFor example, consider an lm object:\n\n> x = rnorm(10)\n> y = rnorm(10)\n> z = lm(y~x)\n> base::isS4(z)\n[1] FALSE\n> fUtilities::isS4(z)\n[1] TRUE\n> slotNames(z)\n[1] \".S3Class\"\n\n     Since showMethods(class='lm') doesn't return anything, I don't\nthink lm objects should be identified as S4 objects by isS4.\n\n     Thanks!\n                                        - Phil Spector\n \t\t\t\t\t Statistical Computing Facility\n \t\t\t\t\t Department of Statistics\n \t\t\t\t\t UC Berkeley\n \t\t\t\t\t spector at stat.berkeley.edu",
+      "body_snippet": "Hi!\n    I'm having some difficulties using the isS4 function in \nthe fUtilities package.  Specifically, I think that the \ntest for NULL slotNames may not always give the correct \nresult.\n\nFor example,",
+      "thread_id": "thread-242798c97178",
+      "thread_depth": 0,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-9c984dd80b7c",
+      "message_id": "<20090130091714.71f715cf@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-01-30T08:17:14Z",
+      "subject": "fUtilities::isS4",
+      "subject_clean": "fUtilities::isS4",
+      "in_reply_to": "<alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>",
+      "references": [
+        "<alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>"
+      ],
+      "body_plain": ">>>> \"PS\" == Phil Spector <spector at stat.berkeley.edu>\n>>>> on Thu, 29 Jan 2009 10:32:49 -0800 (PST)\n\n   PS> Hi!\n   PS> I'm having some difficulties using the isS4 function in\n   PS> the fUtilities package.  Specifically, I think that the\n   PS> test for NULL slotNames may not always give the correct\n   PS> result.\n   PS>\n   PS> For example, consider an lm object:\n   PS>\n   PS> > x = rnorm(10)\n   PS> > y = rnorm(10)\n   PS> > z = lm(y~x)\n   PS> > base::isS4(z)\n   PS> [1] FALSE\n   PS> > fUtilities::isS4(z)\n   PS> [1] TRUE\n   PS> > slotNames(z)\n   PS> [1] .S3Class\n   PS>\n   PS> Since showMethods(class='lm') doesn't return anything, I don't\n   PS> think lm objects should be identified as S4 objects by isS4.\n   PS>\n   PS> Thanks!\n\n\nHi Phil,\n\nThanks to point this out!\n\nI will remove 'isS4' from the 'fUtilities' package because it is\nnot needed anymore.\n\nBTW, have you noticed that the new Rmetrics packages should not\ndepend on 'fUtilities' which will be considered as deprecated in the\nfuture.\n\nIf you are using 'fCalendar' and 'fSeries', please move to their new\nversions named timeDate and timeSeries respectively.\n\nHTH\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PS\" == Phil Spector <spector at stat.berkeley.edu>\n>>>> on Thu, 29 Jan 2009 10:32:49 -0800 (PST)\n\n   PS> Hi!\n   PS> I'm having some difficulties using the isS4 function in\n   PS> the fUtilities ",
+      "thread_id": "thread-242798c97178",
+      "thread_depth": 1,
+      "month": "2009-01"
+    },
+    {
+      "id": "msg-5b8c1ba2b885",
+      "message_id": "<18819.13195.192703.787718@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2009-01-30T17:06:19Z",
+      "subject": "fUtilities::isS4",
+      "subject_clean": "fUtilities::isS4",
+      "in_reply_to": "<20090130091714.71f715cf@mimi>",
+      "references": [
+        "<alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>",
+        "<20090130091714.71f715cf@mimi>"
+      ],
+      "body_plain": "Yohan, Diethelm,\n\nOn 30 January 2009 at 09:17, Yohan Chalabi wrote:\n| BTW, have you noticed that the new Rmetrics packages should not\n| depend on 'fUtilities' which will be considered as deprecated in the\n| future.\n| \n| If you are using 'fCalendar' and 'fSeries', please move to their new\n| versions named timeDate and timeSeries respectively.\n\nWould it be possible to get more regular updates about what is, or is not, or\nwill be, or will no longer be, part of what is considered to be Rmetrics ?\n\nMaybe it is just me, but I find it confusing that a project called 'Rmetrics'\nonce had a package called Rmetrics which it no longer has ... The calendar /\ndate package transition wasn't all that smooth either. As start, a high-level\nchangelog and/or roadmap could be added to the wiki.  You may also want to\nuse this list. And/or the r-packages or r-sig-finance list.\n\nFinally, I personally would also vote for re-instating the Rmetrics package\nas it can give you at least a small hook (by looking at the search path, or\nat installed.packages(), or ...) into alerting actual users to the fact that\nthey still have something installed that you now deem deprecated.  Otherwise,\nI fear you will be confronted with this problem for a long time indeed.\n\nJust my $0.02.  \n\nRegards, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Yohan, Diethelm,\n\nOn 30 January 2009 at 09:17, Yohan Chalabi wrote:\n| BTW, have you noticed that the new Rmetrics packages should not\n| depend on 'fUtilities' which will be considered as deprecated in",
+      "thread_id": "thread-242798c97178",
+      "thread_depth": 2,
+      "month": "2009-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-df0d7b3105ae",
+      "subject": "fPortfolio development ideas",
+      "message_count": 1,
+      "participants": [
+        "Daniele Amberti"
+      ],
+      "started": "2009-01-13T11:54:05Z",
+      "last_reply": "2009-01-13T11:54:05Z",
+      "root_message_id": "msg-df0d7b3105ae"
+    },
+    {
+      "id": "thread-b9002a8c7c3e",
+      "subject": "fImport: Import yahoo income statement",
+      "message_count": 1,
+      "participants": [
+        "Chr. Reimsbach-K."
+      ],
+      "started": "2009-01-23T16:50:56Z",
+      "last_reply": "2009-01-23T16:50:56Z",
+      "root_message_id": "msg-b9002a8c7c3e"
+    },
+    {
+      "id": "thread-3eb6a4e38eb0",
+      "subject": "Package fBasics_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-01-28T17:24:05Z",
+      "last_reply": "2009-01-28T17:24:05Z",
+      "root_message_id": "msg-3eb6a4e38eb0"
+    },
+    {
+      "id": "thread-25b460b258b4",
+      "subject": "Package fGarch_290.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-01-28T17:24:06Z",
+      "last_reply": "2009-01-28T17:24:06Z",
+      "root_message_id": "msg-25b460b258b4"
+    },
+    {
+      "id": "thread-fbac414472f3",
+      "subject": "Package fImport_290.75.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-01-28T17:24:06Z",
+      "last_reply": "2009-01-28T17:24:06Z",
+      "root_message_id": "msg-fbac414472f3"
+    },
+    {
+      "id": "thread-9160785bba03",
+      "subject": "Package timeDate_290.82.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-01-28T17:24:07Z",
+      "last_reply": "2009-01-28T17:24:07Z",
+      "root_message_id": "msg-9160785bba03"
+    },
+    {
+      "id": "thread-9ce79880ad03",
+      "subject": "economagicImport - NAs error",
+      "message_count": 2,
+      "participants": [
+        "Michael Morgan",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-01-28T18:22:28Z",
+      "last_reply": "2009-01-28T19:15:49Z",
+      "root_message_id": "msg-9ce79880ad03"
+    },
+    {
+      "id": "thread-b32b3fc97d8d",
+      "subject": "yahooSeries for futures listed on Yahoo",
+      "message_count": 1,
+      "participants": [
+        "Michael Morgan"
+      ],
+      "started": "2009-01-29T18:24:00Z",
+      "last_reply": "2009-01-29T18:24:00Z",
+      "root_message_id": "msg-b32b3fc97d8d"
+    },
+    {
+      "id": "thread-242798c97178",
+      "subject": "fUtilities::isS4",
+      "message_count": 3,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Phil Spector",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-01-29T18:32:49Z",
+      "last_reply": "2009-01-30T17:06:19Z",
+      "root_message_id": "msg-242798c97178"
+    }
+  ]
+}

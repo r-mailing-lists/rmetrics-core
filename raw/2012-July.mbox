@@ -1,0 +1,252 @@
+From jfperles at gmail.com  Thu Jul  5 17:09:20 2012
+From: jfperles at gmail.com (JOSE FRANCISCO PERLES RIBES)
+Date: Thu, 5 Jul 2012 16:09:20 +0100
+Subject: Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews
+Message-ID: <CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl>
+
+From maechler at stat.math.ethz.ch  Thu Jul  5 23:10:58 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 5 Jul 2012 23:10:58 +0200
+Subject: Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews
+In-Reply-To: <CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>
+References: <CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>
+Message-ID: <CAPRP4-dFOdXSUTV+syyg=DWUm-j3PQ0M7q=izxCGk-o3LCrMEw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl>
+
+From Uwe.Ligges at r-project.org  Fri Jul 13 15:04:01 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Fri, 13 Jul 2012 15:04:01 +0200
+Subject: Package fUtilities_2110.78.tar.gz has been checked and built
+Message-ID: <01cd60f7$Blat.v2.2.2$f95411fe@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.
+Please check the log files and (if working) the binary package at:
+http://win-builder.r-project.org/gVwVj4H51OXJ
+The files will be removed after roughly 72 hours.
+Installation time in seconds: 6
+Check time in seconds: 115
+Check result: ERROR
+R version 2.15.1 (2012-06-22)
+ 
+All the best,
+Uwe Ligges
+(CRAN maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Fri Jul 13 16:18:54 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Fri, 13 Jul 2012 16:18:54 +0200
+Subject: Package fUtilities_2110.78.tar.gz has been checked and built
+Message-ID: <01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.
+Please check the log files and (if working) the binary package at:
+http://win-builder.r-project.org/avK8gaN9LVyT
+The files will be removed after roughly 72 hours.
+Installation time in seconds: 7
+Check time in seconds: 106
+Check result: ERROR
+R version 2.15.1 (2012-06-22)
+ 
+All the best,
+Uwe Ligges
+(CRAN maintainer of binary packages for Windows)
+
+
+From maechler at stat.math.ethz.ch  Fri Jul 13 19:37:06 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Fri, 13 Jul 2012 19:37:06 +0200
+Subject: Package fUtilities_2110.78.tar.gz has been checked and built
+In-Reply-To: <01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>
+References: <01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>
+Message-ID: <20480.23746.292913.297138@stat.math.ethz.ch>
+
+
+I think  that  fUtilities  has been deprecated for a
+long time.
+
+Shouldn't we  "defunct" it now, i.e., ask the CRAN maintainers
+to put the last version into the 'Archives' ?
+
+{ and people will get an error when trying to install fUtilities from CRAN,
+ from then on }
+
+??
+
+Martin
+
+
+
+> Dear package maintainer,
+> this notification has been generated automatically.
+> Your package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.
+> Please check the log files and (if working) the binary package at:
+> http://win-builder.r-project.org/avK8gaN9LVyT
+> The files will be removed after roughly 72 hours.
+> Installation time in seconds: 7
+> Check time in seconds: 106
+> Check result: ERROR
+> R version 2.15.1 (2012-06-22)
+ 
+> All the best,
+> Uwe Ligges
+> (CRAN maintainer of binary packages for Windows)
+
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From kudybad at gmail.com  Thu Jul 26 07:26:29 2012
+From: kudybad at gmail.com (Dominik Kudyba)
+Date: Thu, 26 Jul 2012 07:26:29 +0200
+Subject: EWMA
+Message-ID: <CAAp4yadR+bW2NmCaWYEH9KOnigMZuo+RzQvRyeA8_HK=PG3=Cg@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl>
+
+From ripley at stats.ox.ac.uk  Sun Jul 29 16:15:46 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Sun, 29 Jul 2012 15:15:46 +0100
+Subject: Use of R intenals in package optBiomarker, ptw and timeSeries
+Message-ID: <50154592.1090705@stats.ox.ac.uk>
+
+A recent check in R-devel shows that you are calling .Call()s in package 
+"stats", which are not part of the API, specifcally
+
+*** optBiomarker
+.C("R_approx", ..., PACKAGE = "stats")
+
+*** ptw
+.C("R_approx", ..., PACKAGE = "stats")
+
+*** timeSeries
+.C("find_interv_vec", ..., PACKAGE = "base")
+
+The question also arises as to how you knew to make those calls unless 
+you copied code from R: and you do not credit such copying.
+
+Can we please have updates which do not use non-API internals, by Aug 20.
+
+See the CRAN daily check pages for your package to see if there are 
+other issues which need attention.
+
+Brian Ripley
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From Kurt.Hornik at wu.ac.at  Mon Jul 30 09:37:44 2012
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Mon, 30 Jul 2012 09:37:44 +0200
+Subject: CRAN package fBasics
+Message-ID: <20502.14792.241832.597609@fangorn.hornik.net>
+
+Dear Rmetrics maintainer(s?),
+
+As you will soon be able to see from the fBasics check results page, for
+r-devel we now get
+
+* checking foreign function calls ... WARNING
+Foreign function call(s) with ?PACKAGE? argument in a base package:
+.C("swilk", ..., PACKAGE = "stats")
+
+and
+
+* checking examples ... ERROR
+Running examples in ?fBasics-Ex.R? failed
+The error most likely occurred in:
+
+> assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: NormalityTests
+> ### Title: Normality Tests
+> ### Aliases: NormalityTests normalTest ksnormTest shapiroTest
+> ###   jarqueberaTest dagoTest jbTest adTest cvmTest lillieTest pchiTest
+> ###   sfTest
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> ## Series:
+>    x = rnorm(100)
+> 
+> ## ksnormTests -
+>    # Kolmogorov - Smirnov One-Sampel Test
+>    ksnormTest(x)
+
+Title:
+ One-sample Kolmogorov-Smirnov test
+
+Test Results:
+  STATISTIC:
+    D: 0.0947
+  P VALUE:
+    Alternative Two-Sided: 0.3317 
+    Alternative      Less: 0.1666 
+    Alternative   Greater: 0.8637 
+
+Description:
+ Sun Jul 29 17:29:30 2012 by user: hornik
+
+> 
+> ## shapiroTest - Shapiro-Wilk Test
+>    shapiroTest(x)
+Error in .C("swilk", init = FALSE, as.single(x), n, n1 = as.integer(n),  : 
+  C symbol name "swilk" not in DLL for package "stats"
+Calls: shapiroTest -> .shapiro.test -> .C
+Execution halted
+
+So obviously this needs fixing, but the underlying issue is quite
+serious: you have yet again copied from R (test-normalityTest.R even
+says
+
+.shapiro.test <- 
+function(x) 
+{   
+    # A copy from R:
+
+etc.) despite the CRAN policy:
+
+  'The ownership of copyright and intellectual property rights of all
+   components of the package must be clear and unambiguous (including
+   from the authors specification in the DESCRIPTION file). Where code
+   is copied (or derived) from the work of others (including from R
+   itself), care must be taken that any copyright statements are
+   preserved and authorship is not misrepresented.'
+
+In principle, packages with copyright and/or license violations need to
+be taken down from CRAN, which would mean removing fBasics and at least
+archiving all its dependencies.  In any case we will need to remove the
+history of fBasics unless you can tell us which earlier versions do meet
+the policies.
+
+Unfortunately, this is not the first such issue arising for Rmetrics
+packages.  Hence, can you pls not only address the issue at hand, but
+also make sure that all Rmetrics packages really comply with CRAN's
+policy?
+
+Best
+-k
+
+

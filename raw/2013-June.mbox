@@ -1,0 +1,85 @@
+From rhozhanghz at gmail.com  Wed Jun  5 04:46:38 2013
+From: rhozhanghz at gmail.com (Rho Zhang)
+Date: Wed, 5 Jun 2013 10:46:38 +0800
+Subject: about portfolioData() function in fPortfolio package
+Message-ID: <CANLxH3FEZJ9bMzdggkx8Ka7EKPZWnuam4fc37=kAOThe9QFkXA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl>
+
+From stefanhummel08 at yahoo.it  Wed Jun  5 22:01:05 2013
+From: stefanhummel08 at yahoo.it (Stefan Hummel)
+Date: Wed, 5 Jun 2013 22:01:05 +0200
+Subject: stabledist
+Message-ID: <001401ce6227$69f84d10$3de8e730$@it>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl>
+
+From maechler at stat.math.ethz.ch  Thu Jun  6 09:04:56 2013
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 6 Jun 2013 09:04:56 +0200
+Subject: stabledist
+In-Reply-To: <001401ce6227$69f84d10$3de8e730$@it>
+References: <001401ce6227$69f84d10$3de8e730$@it>
+Message-ID: <20912.13464.426607.433619@stat.math.ethz.ch>
+
+Dear Stefan,
+
+>>>>> "SH" == Stefan Hummel <stefanhummel08 at yahoo.it>
+>>>>>     on Wed, 5 Jun 2013 22:01:05 +0200 writes:
+
+    SH> Dear Martin Maechler, I'm trying to install the
+    SH> stabledist package on R (operative System Windows).
+
+    SH> Every time I run the install.packages("stabledist") I
+    SH> get the same error message:
+
+ 
+
+    SH> Warning: unable to access index for repository
+    SH> http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/2.9
+
+    SH> Warning message:
+
+    SH> In getDependencies(pkgs, dependencies, available, lib) :
+
+    SH>   package 'stabledist' is not available
+
+ 
+
+    SH> Could you please help me I need this package urgent.
+
+Well, then you need to use a less arcane version of R.
+
+Packages  for  R 2.9.x  are typically not or no longer
+available.
+
+Martin Maechler,
+ETH Zurich
+
+
+From hstephanya at yahoo.com  Thu Jun  6 22:29:45 2013
+From: hstephanya at yahoo.com (Stphania HOUNGAN)
+Date: Thu, 6 Jun 2013 13:29:45 -0700 (PDT)
+Subject: From Stphania HOUNGAN
+Message-ID: <1370550585.51733.YahooMailNeo@web140902.mail.bf1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl>
+
+From colin.gan at sbm-itb.ac.id  Mon Jun 24 09:57:44 2013
+From: colin.gan at sbm-itb.ac.id (Colin Gan)
+Date: Mon, 24 Jun 2013 14:57:44 +0700
+Subject: Efficient frontier for Asymmetric Generalized Hyperbolic
+	Distribution, Asymmetric Normal Inverse Gaussian,
+	Asymmetric Variance Gamma and Gaussian Distributions
+Message-ID: <CAEZ18Kf7M+Rj-0aGWmYDzdCCy7Nv-cXStvE52JJ6OpTusmpnXA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl>
+

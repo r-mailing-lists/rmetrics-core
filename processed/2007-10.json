@@ -1,0 +1,558 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2007-10",
+  "messages": [
+    {
+      "id": "msg-7357f4595ca8",
+      "message_id": "<18178.11449.635650.521658@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-02T11:34:17Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<47015F78.1040902@itp.phys.ethz.ch>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>"
+      ],
+      "body_plain": "Gents,\n\nSwitching to English from a heads-up Diethelm sent to me re the Debian\npackages: \n\nOn 1 October 2007 at 22:58, Diethelm Wuertz wrote:\n| Hallo Dirk,\n| \n| die neuen Rmetrics packages sind fertig auf CRAN.\n| \n| fPortfolio kann im Moment nicht nach Debian,\n| da es den proprietaeren Solver RDonlp2\n| enthaelt.\n| \n| Melde mich etwas ausfuehrlicher in den\n| naechsten Tagen\n\nLooking at CRAN this morning I see that indeed we have\n\n[   ]  fUtilities_260.71.tar.gz  02-Oct-2007 13:22    88K\n[   ]  fUnitRoots_260.71.tar.gz  02-Oct-2007 13:22   590K\n[   ]  fTrading_260.71.tar.gz  02-Oct-2007 13:22    58K\n[   ]  fSeries_260.71.tar.gz  02-Oct-2007 13:22    88K\n[   ]  fRegression_260.71.tar.gz  02-Oct-2007 13:22    81K\n[   ]  fMultivar_260.71.tar.gz  02-Oct-2007 13:18    63K\n[   ]  fImport_260.71.tar.gz  02-Oct-2007 13:18    53K\n[   ]  fGarch_260.71.tar.gz  02-Oct-2007 13:18   124K\n[   ]  fExtremes_260.71.tar.gz  02-Oct-2007 13:18    94K\n[   ]  fExoticOptions_260.71.tar.gz  02-Oct-2007 13:18    76K\n[   ]  fEcofin_260.71.tar.gz  02-Oct-2007 13:18   1.1M\n[   ]  fCopulae_260.71.tar.gz  02-Oct-2007 13:18   128K\n[   ]  fBonds_260.71.tar.gz  02-Oct-2007 13:17    43K\n[   ]  fBasics_260.71.tar.gz  02-Oct-2007 13:17   517K\n[   ]  fAsianOptions_260.71.tar.gz  02-Oct-2007 13:16   116K\n[   ]  fArma_260.71.tar.gz  02-Oct-2007 13:16   129K\n\na number of new packages.  It will take me a while to get these into Debian.\nAs for RMetrics Core, I never saw much of a discussion.  Was there one?\n\nJust from the top of my head, why is eg fAsianOptions not part of\nfExoticOptions? I am sure others have other questions.  \n\nI also see that fPortfolio, for which Diethelm warned me of an inappropriate\nlicense/copyright for Debian, is not in the list.  Is that because of the\ncopyright (which I'd applaud) or 'merely' because it didn't pass R CMD check\nfor other reasons?\n\nCheers, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Gents,\n\nSwitching to English from a heads-up Diethelm sent to me re the Debian\npackages: \n\nOn 1 October 2007 at 22:58, Diethelm Wuertz wrote:\n| Hallo Dirk,\n| \n| die neuen Rmetrics packages sind fertig",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-440641342a0a",
+      "message_id": "<18178.23800.833434.584752@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-02T15:00:08Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<18178.11449.635650.521658@ron.nulle.part>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>"
+      ],
+      "body_plain": "Following up on the new Rmetrics packages, I am a little dismayed by the\nincreased dependencies.  Here is a query from my CRANberries database behind\nmy RSS feed of CRAN entries:\n\nsqlite> select package,version,depends from packages where package like 'f%' and version like '260%';\npackage,version,depends\nfArma,260.71,\"R (>= 2.2.0), fBasics\"\nfAsianOptions,260.71,\"R (>= 2.2.0), fOptions\"\nfBasics,260.71,\"R (>= 2.2.0), fImport\"\nfBonds,260.71,\"R (>= 2.2.0), fBasics\"\nfCopulae,260.71,\"R (>= 2.2.0), adapt, fBasics, fMultivar\"\nfEcofin,260.71,\"R (>= 2.2.0), fUtilities\"\nfExoticOptions,260.71,\"R (>= 2.2.0), fOptions\"\nfExtremes,260.71,\"R (>= 2.2.0), fBasics\"\nfGarch,260.71,\"R (>= 2.2.0), fBasics, fArma\"\nfImport,260.71,\"R (>= 2.2.0), fSeries\"\nfMultivar,260.71,\"R (>= 2.2.0), methods, sn, fBasics\"\nfRegression,260.71,\"R (>= 2.2.0), methods, mgcv, nnet, polspline, fTrading, fMultivar\"\nfSeries,260.71,\"R (>= 2.2.0), robustbase, fCalendar\"\nfTrading,260.71,\"R (>= 2.2.0), fBasics\"\nfUnitRoots,260.71,\"R (>= 2.2.0), urca, fBasics\"\nfUtilities,260.71,\"R (>= 2.2.0), RUnit, methods, MASS, spatial, akima, tcltk, zoo\"\n\nand missing from that were\n\nfCalendar|251.70|R (>= 2.2.1), methods, fEcofin\nfOptions|251.70|R (>= 2.2.1), methods, fEcofin, fBasics, fCalendar, fSeries\nfPortfolio|251.70|R (>= 2.2.1), methods, robustbase, MASS, fEcofin, fCalendar, fBasics, fSeries, fMultivar, fExtremes, fCopulae, quadprog, lpSolve\n\n\nSo trying to put a dependency tree together:\n\n1. fUtilities,260.71,\"R (>= 2.2.0), RUnit, methods, MASS, spatial, akima, tcltk, zoo\"\n\talready fails as RUnit and akima are NOT\n\tin Debian, and akima can't for license reasons\n\twe are checkmate at the outset\n\n2. fEcofin,260.71,\"R (>= 2.2.0), fUtilities\"\n\n3. fCalendar|251.70|R (>= 2.2.1), methods, fEcofin\n\n4. fSeries,260.71,\"R (>= 2.2.0), robustbase, fCalendar\"\n\trobustbase is NOT in Debian\n\n5. fImport,260.71,\"R (>= 2.2.0), fSeries\"\n\n6. fBasics,260.71,\"R (>= 2.2.0), fImport\"\n\n7. fArma,260.71,\"R (>= 2.2.0), fBasics\"\n   fBonds,260.71,\"R (>= 2.2.0), fBasics\"\n   fExtremes,260.71,\"R (>= 2.2.0), fBasics\"\n   fGarch,260.71,\"R (>= 2.2.0), fBasics, fArma\"\n   fMultivar,260.71,\"R (>= 2.2.0), methods, sn, fBasics\"\n\tsn is NOT in Debian \n   fTrading,260.71,\"R (>= 2.2.0), fBasics\"\n   fUnitRoots,260.71,\"R (>= 2.2.0), urca, fBasics\"\n   fOptions|251.70|R (>= 2.2.1), methods, fEcofin, fBasics, fCalendar, fSeries\n\n8. fAsianOptions,260.71,\"R (>= 2.2.0), fOptions\"\n   fCopulae,260.71,\"R (>= 2.2.0), adapt, fBasics, fMultivar\"\n   fExoticOptions,260.71,\"R (>= 2.2.0), fOptions\"\n   fRegression,260.71,\"R (>= 2.2.0), methods, mgcv, nnet, polspline, fTrading, fMultivar\"\n   fPortfolio|251.70|R (>= 2.2.1), methods, robustbase, MASS, fEcofin, fCalendar, fBasics, fSeries, fMultivar, fExtremes, fCopulae, quadprog, lpSolve\n\n\nSo if I want to keep Rmetrics in Debian, even if I added RUnit and spatial I\nwould get into problems with akima.   Robustbase is probably a worthwhile\naddtion, as is RUnit, esp. as neither depends on anything else. sn depends on\nmnormt, so that would be two more for fMultivar.\n\nThe bug issue is akima:\n\"License:  Fortran code: ACM, free for non-commercial use, R functions GPL\"\n\nThis would out _all_ of RMetrics outside of Debian's main and into contrib.\n\nAnybody have any good ideas regarding this?\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Following up on the new Rmetrics packages, I am a little dismayed by the\nincreased dependencies.  Here is a query from my CRANberries database behind\nmy RSS feed of CRAN entries:\n\nsqlite> select packa",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 1,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-29192f7349f7",
+      "message_id": "<4702C840.4070602@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2007-10-02T22:37:52Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<18178.23800.833434.584752@ron.nulle.part>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>",
+        "<18178.23800.833434.584752@ron.nulle.part>"
+      ],
+      "body_plain": "Dirk Eddelbuettel wrote:\n\nFirst many thanks to Dirk ...\n> Following up on the new Rmetrics packages, I am a little dismayed by the\n> increased dependencies.  Here is a query from my CRANberries database behind\n> my RSS feed of CRAN entries:\n>\n> sqlite> select package,version,depends from packages where package like 'f%' and version like '260%';\n> package,version,depends\n> fArma,260.71,\"R (>= 2.2.0), fBasics\"\n> fAsianOptions,260.71,\"R (>= 2.2.0), fOptions\"\n> fBasics,260.71,\"R (>= 2.2.0), fImport\"\n> fBonds,260.71,\"R (>= 2.2.0), fBasics\"\n> fCopulae,260.71,\"R (>= 2.2.0), adapt, fBasics, fMultivar\"\n> fEcofin,260.71,\"R (>= 2.2.0), fUtilities\"\n> fExoticOptions,260.71,\"R (>= 2.2.0), fOptions\"\n> fExtremes,260.71,\"R (>= 2.2.0), fBasics\"\n> fGarch,260.71,\"R (>= 2.2.0), fBasics, fArma\"\n> fImport,260.71,\"R (>= 2.2.0), fSeries\"\n> fMultivar,260.71,\"R (>= 2.2.0), methods, sn, fBasics\"\n> fRegression,260.71,\"R (>= 2.2.0), methods, mgcv, nnet, polspline, fTrading, fMultivar\"\n> fSeries,260.71,\"R (>= 2.2.0), robustbase, fCalendar\"\n> fTrading,260.71,\"R (>= 2.2.0), fBasics\"\n> fUnitRoots,260.71,\"R (>= 2.2.0), urca, fBasics\"\n> fUtilities,260.71,\"R (>= 2.2.0), RUnit, methods, MASS, spatial, akima, tcltk, zoo\"\n>\n> and missing from that were\n>\n> fCalendar|251.70|R (>= 2.2.1), methods, fEcofin\n> fOptions|251.70|R (>= 2.2.1), methods, fEcofin, fBasics, fCalendar, fSeries\n> fPortfolio|251.70|R (>= 2.2.1), methods, robustbase, MASS, fEcofin, fCalendar, fBasics, fSeries, fMultivar, fExtremes, fCopulae, quadprog, lpSolve\n>   \nFirst I have seen, that the latest versions of fCalendar, fOptions, \nfAssets, and fPortfolio are missing,\nso I have them resubmitted to the FTP incoming CRAN server.\n>\n> So trying to put a dependency tree together:\n>\n> 1. fUtilities,260.71,\"R (>= 2.2.0), RUnit, methods, MASS, spatial, akima, tcltk, zoo\"\n> \talready fails as RUnit and akima are NOT\n> \tin Debian, and akima can't for license reasons\n> \twe are checkmate at the outset\n>\n> 2. fEcofin,260.71,\"R (>= 2.2.0), fUtilities\"\n>\n> 3. fCalendar|251.70|R (>= 2.2.1), methods, fEcofin\n>\n> 4. fSeries,260.71,\"R (>= 2.2.0), robustbase, fCalendar\"\n> \trobustbase is NOT in Debian\n>\n> 5. fImport,260.71,\"R (>= 2.2.0), fSeries\"\n>\n> 6. fBasics,260.71,\"R (>= 2.2.0), fImport\"\n>\n> 7. fArma,260.71,\"R (>= 2.2.0), fBasics\"\n>    fBonds,260.71,\"R (>= 2.2.0), fBasics\"\n>    fExtremes,260.71,\"R (>= 2.2.0), fBasics\"\n>    fGarch,260.71,\"R (>= 2.2.0), fBasics, fArma\"\n>    fMultivar,260.71,\"R (>= 2.2.0), methods, sn, fBasics\"\n> \tsn is NOT in Debian \n>    fTrading,260.71,\"R (>= 2.2.0), fBasics\"\n>    fUnitRoots,260.71,\"R (>= 2.2.0), urca, fBasics\"\n>    fOptions|251.70|R (>= 2.2.1), methods, fEcofin, fBasics, fCalendar, fSeries\n>\n> 8. fAsianOptions,260.71,\"R (>= 2.2.0), fOptions\"\n>    fCopulae,260.71,\"R (>= 2.2.0), adapt, fBasics, fMultivar\"\n>    fExoticOptions,260.71,\"R (>= 2.2.0), fOptions\"\n>    fRegression,260.71,\"R (>= 2.2.0), methods, mgcv, nnet, polspline, fTrading, fMultivar\"\n>    fPortfolio|251.70|R (>= 2.2.1), methods, robustbase, MASS, fEcofin, fCalendar, fBasics, fSeries, fMultivar, fExtremes, fCopulae, quadprog, lpSolve\n>   \n\nThe following order of the packages will give you some guidance on the \ndependence tree:\n\n\nfUtilities          WARN\nfEcofin             OK\nfCalendar           ? MISSING\nfSeries             OK\nfImport             OK\nfBasics             OK\nfArma               OK\nfGarch              OK\nfNonlinear          ? MISSING\nfUnitRoots          OK\nfTrading            OK\nfMultivar           OK\nfRegression         OK\nfExtremes           OK\nfCopulae            OK\nfOptions            ? MISSING\nfExoticOptions      OK\nfAsianOptions       OK\nfBonds              OK\nfAssets             ? MISSING\nfPortfolio          ? MISSING\n\nhigher packages have only dependences on previous listed packages.\n\nThere is also a package named Rmetrics which should load all\npackages one after the other as given in the dependence tree.\n\n>\n> So if I want to keep Rmetrics in Debian, even if I added RUnit and spatial I\n> would get into problems with akima.   Robustbase is probably a worthwhile\n> addtion, as is RUnit, esp. as neither depends on anything else. sn depends on\n> mnormt, so that would be two more for fMultivar.\n>\n> The bug issue is akima:\n> \"License:  Fortran code: ACM, free for non-commercial use, R functions GPL\"\n>   \nThis could be solved may in the following way:\n\nThe scientific GNU library has an akima interpolation function:\n\nhttp://www.uni-koeln.de/rrzk/software/mathematik/gsl/gsl-ref-html/gsl-ref_26.html\n\nIs somebody around who can interface the interpolation functions from \nthe GNU\nscientific library to R? There is an example for special functions in \nthe contributed\nR package - gsl \n<http://cran.r-project.org/src/contrib/Descriptions/gsl.html> wrapper \nfor the Gnu Scientific Library.\n\n\n\n\nThere is another problem with the package fPortfolio. It uses currently the\nnonlinear solver with nonlinear constraints Rdonlp2 - it comes as a builtin\nwith the package.\n\nhttp://arumat.net/Rdonlp2/\n\nI think this has also to be replaced by another GNU or GNU like licensed \nsolver.\nA possible candidate may be\n\nhttp://www.coin-or.org/Bonmin/Intro/index.html\n\n\n\nAnother question - is there a reason why robustbase is not part of Debian ?\nRmetrics only needs the robust mean-cov estimators - Should I possibly\ngo back and copy this part of the code to fAssets, or can we find another\nsolution ?\n\n\nDiethelm\n\n\n\n> This would out _all_ of RMetrics outside of Debian's main and into contrib.\n>\n> Anybody have any good ideas regarding this?\n>\n> Dirk\n>\n>",
+      "body_snippet": "Dirk Eddelbuettel wrote:\n\nFirst many thanks to Dirk ...\n> Following up on the new Rmetrics packages, I am a little dismayed by the\n> increased dependencies.  Here is a query from my CRANberries databa",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 2,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-bbe6344c74f1",
+      "message_id": "<4702CB1D.2010509@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2007-10-02T22:50:05Z",
+      "subject": "MIQP - also of interest for Rmetrics Portfolio Optimization ...",
+      "subject_clean": "MIQP - also of interest for Rmetrics Portfolio Optimization ...",
+      "in_reply_to": "<18178.38550.841327.594177@mithrandir.hornik.net>",
+      "references": [
+        "<18170.1320.412311.874120@mithrandir.hornik.net>",
+        "<46FA5769.1040706@braverock.com>",
+        "<18178.38550.841327.594177@mithrandir.hornik.net>"
+      ],
+      "body_plain": "Kurt Hornik wrote:\n>>>>>> Brian G Peterson writes:\n>>>>>>             \n>\n>   \n>> Kurt Hornik wrote:\n>>     \n>>> Diethelm/Brian,\n>>>\n>>> Are you aware of decent open source code for mixed integer quadratic\n>>> programming?\n>>>       \n>\n>   \n>> I assume that you already know about the GNU Linear Programming Kit?\n>>     \n>\n>   \n>> http://www.gnu.org/software/glpk/\n>>     \n>\n>   \n>> I've wanted an R interface to this for some time, and considered using \n>> SWIG to generate the first cut of bindings at my previous job.\n>>     \n>\n> Yes.  There is in fact a low-level R API in package glpk, and we are\n> working on a high level solver (maybe sparse matrix capable).  But it\n> does not seem to have quadratic solvers.\n>\n>   \n>> I don't think they have released quadratic solvers, but I know it's \n>> something they've done some work on, so contacting the project is \n>> probably worthwhile.\n>>     \n>\n> Right.  Or/and maybe also contact the lpSolve people (we currently tend\n> to use this solver, and the project seems to be more active in a way\n> [glpk may be a one-person show].  We are also playing with COIN-OR but\n> again this has no dedicated MIQP solver, it seems.\n>\n> This would be a good project for the Rmetrics foundation.\n>   \nI agree ...\nDW\n> Best\n> -k\n>\n>\n>\n>\n>   \n>> There's some Fortran work I found at Argon here:\n>>     \n>\n>   \n>> http://www-unix.mcs.anl.gov/~leyffer/solvers.html\n>>     \nnon public ?!\nDW\n>\n>   \n>> Although it looks like they've removed their code from the site, so \n>> you'd need to contact them regarding licensing.\n>>     \n>\n>   \n>> Sorry I can't be more help here.\n>>     \n>\n>   \n>> Regards,\n>>     \n>\n>   \n>>    - Brian\n>>     \n>\n>   \nGood Open Source solvers are very limited!\nHave als a look on Ladislav Luksan's web page --- GNU licensed routines\nhttp://www.cs.cas.cz/~luksan/subroutines.html\nDW\n\nOr:\nRdonlp2 (non-public) ---- http://arumat.net/Rdonlp2/\nDW",
+      "body_snippet": "Kurt Hornik wrote:\n>>>>>> Brian G Peterson writes:\n>>>>>>             \n>\n>   \n>> Kurt Hornik wrote:\n>>     \n>>> Diethelm/Brian,\n>>>\n>>> Are you aware of decent open source code for mixed integer quadr",
+      "thread_id": "thread-bbe6344c74f1",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-a271111d1980",
+      "message_id": "<4702CC9C.1080306@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2007-10-02T22:56:28Z",
+      "subject": "RUnit tests - Management",
+      "subject_clean": "RUnit tests - Management",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Has somebody a good idea to manage unit tests in a\ncontributed R-package ?\n\nThe reason is that many tests are very time consuming.\nIn these cases one would only run the fast tests.\nIs there an easy way to set priority flags in\nRUnit testing to exclude some tests from the\npackage building process?\n\n\nThanks\n\nDiethelm",
+      "body_snippet": "Has somebody a good idea to manage unit tests in a\ncontributed R-package ?\n\nThe reason is that many tests are very time consuming.\nIn these cases one would only run the fast tests.\nIs there an easy wa",
+      "thread_id": "thread-a271111d1980",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-52c065062595",
+      "message_id": "<18178.57650.845674.179522@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-03T00:24:18Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<4702C840.4070602@itp.phys.ethz.ch>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>",
+        "<18178.23800.833434.584752@ron.nulle.part>",
+        "<4702C840.4070602@itp.phys.ethz.ch>"
+      ],
+      "body_plain": "Diethelm,\n\nThanks for the reply.  Let me prefix my follow-up by stressing that I am\nwearing two hats here, and that can be confusing\n\na) as someone interested in seeing Rmetrics prosper:  I think the new\npackages are the right idea, as I had hinted earlier when we were about to\nset up the list.\n\nb) as the acting Debian maintainer for the bundle, I am unhappy about the\nchanges and the lack of a simple heads-up.  When I add new packages to\nDebian, it takes two to three weeks for them to be approved and available.\nSo only telling me on release date that 'foo, bar and bling are now needed'\nis suboptimal as I could have used that information three weeks prior ...\n\nThat said, the rest of the mail will be with the Debian hat:\n\n| Is somebody around who can interface the interpolation functions from \n| the GNU scientific library to R? \n\nOkay, I volunteer to do this. I have been the Debian maintainer for the GSL\nand know bits of the code base, and I also successfully ported code out of\nthe GSL into RDieharder.  So let's work on this together and take the threat\noff-line:  can you help me with pointers about what calls Rmetrics makes to\nakima, what GSL functions you had in mind etc pp?\n\nThat way we get rid of akima.\n\n| There is another problem with the package fPortfolio. It uses currently the\n| nonlinear solver with nonlinear constraints Rdonlp2 - it comes as a builtin\n| with the package.\n| \n| http://arumat.net/Rdonlp2/\n| \n| I think this has also to be replaced by another GNU or GNU like licensed \n| solver. A possible candidate may be\n| \n| http://www.coin-or.org/Bonmin/Intro/index.html\n\nThat is harder.\n\n| Another question - is there a reason why robustbase is not part of Debian ?\n\nLack of manpower?  But I agree -- I will add RUnit and robustbase to\nDebian. Both are 'good to have'.\n\nThat leaves two more:  sn, and the mnormt package that sn depends upon.\nCould we possibly alter Rmetrics to make this a run-time test and a Suggests\nrather than a Depends?\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Diethelm,\n\nThanks for the reply.  Let me prefix my follow-up by stressing that I am\nwearing two hats here, and that can be confusing\n\na) as someone interested in seeing Rmetrics prosper:  I think the ",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 3,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-ae3c99991228",
+      "message_id": "<47034403.6050803@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2007-10-03T07:25:55Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<18178.57650.845674.179522@ron.nulle.part>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>",
+        "<18178.23800.833434.584752@ron.nulle.part>",
+        "<4702C840.4070602@itp.phys.ethz.ch>",
+        "<18178.57650.845674.179522@ron.nulle.part>"
+      ],
+      "body_plain": "Dirk Eddelbuettel wrote:\n> Diethelm,\n>\n> Thanks for the reply.  Let me prefix my follow-up by stressing that I am\n> wearing two hats here, and that can be confusing\n>\n> a) as someone interested in seeing Rmetrics prosper:  I think the new\n> packages are the right idea, as I had hinted earlier when we were about to\n> set up the list.\n>\n> b) as the acting Debian maintainer for the bundle, I am unhappy about the\n> changes and the lack of a simple heads-up.  When I add new packages to\n> Debian, it takes two to three weeks for them to be approved and available.\n> So only telling me on release date that 'foo, bar and bling are now needed'\n> is suboptimal as I could have used that information three weeks prior ...\n>\n> That said, the rest of the mail will be with the Debian hat:\n>\n> | Is somebody around who can interface the interpolation functions from \n> | the GNU scientific library to R? \n>\n> Okay, I volunteer to do this. I have been the Debian maintainer for the GSL\n> and know bits of the code base, and I also successfully ported code out of\n> the GSL into RDieharder.  So let's work on this together and take the threat\n> off-line:  can you help me with pointers about what calls Rmetrics makes to\n> akima, what GSL functions you had in mind etc pp?\n>\n> That way we get rid of akima.\n>   \nI'm no longer sure if GSL has a irregular bivariate interpolation \nfunction (which also shape preserving)  ...\nI have to look in more detail into this which needs some time ...\n> | There is another problem with the package fPortfolio. It uses currently the\n> | nonlinear solver with nonlinear constraints Rdonlp2 - it comes as a builtin\n> | with the package.\n> | \n> | http://arumat.net/Rdonlp2/\n> | \n> | I think this has also to be replaced by another GNU or GNU like licensed \n> | solver. A possible candidate may be\n> | \n> | http://www.coin-or.org/Bonmin/Intro/index.html\n>\n> That is harder.\n>\n> | Another question - is there a reason why robustbase is not part of Debian ?\n>\n> Lack of manpower?  But I agree -- I will add RUnit and robustbase to\n> Debian. Both are 'good to have'.\n>\n>   \n\n> That leaves two more:  sn, and the mnormt package that sn depends upon.\n> Could we possibly alter Rmetrics to make this a run-time test and a Suggests\n> rather than a Depends?\n>   \nThere was several times the discussion to remove Builtins from Rmetrics -\nso I removed sn and mvtnorm, but at that time I didn't realize that they are\nnot available under Debian.\n\nWhat would be the best solution ? To add it as Suggests - or again to \ncopy that\npart of the code as Builtin back  to Rmetrics ?  Missing of sn and \nmvtnorm will\nhave a  severe influence on Rmetrics, since anything what has to do with\nmultivarate assets and portfolios depends more or less on sn and mvtnorm.\nAny suggestions how we should proceed ?\n\n(Nota bene, the same is with robustbase, since many robust methods may \nbe used\nin portfolio design. -- but you suggest it to add it to Debian.)\n> Dirk\n>\n>   \nAgain, thank you Dirk for your quick reply,\n\nI remember that we had already about two years ago the problem with\nakima. So I was yesterday night looking again into the code of\nfUtilities concerning the point with akima.\n\nFirst there is NO akima Fortran/C code in fUtilities. Currently, the R\nfunctions were written by my own along the R Code of akima which is GNU\nlicensed. You find the following lines and similar lines in the code of\nthese functions:\n\n.Fortran(..., PACKAGE = \"akima\")\n\nSo doing \"irregular spaced bivariate smooth interpolation\" with Rmetrics\nyou will get an error that akima is missing. So the people have to add\nand load the akima package by their own.\n\nHas anybody a better solution to this problem?\nSo fUtilities can go to my opinion without any problems to Debian ...\n\nConcerning fPortfolio, I will do the same procedure. There I will remove\ndonlp2 and work in the same way with  .Fortran(..., PACKAGE = \"Rdonlp2\").\nThus when using the donlp2 solver in some Portfolio optimization functions\none has to add the Rdonlp2 package, note no licensed code other than GNU\nor GNU like will be part of Rmetrics.\n\nSorry, that I have created the confusion with akima, but the Rmetrics\ncode is meanwhile so huge, that I simply forgot the \"akima\" situation\nfor a moment.\n\n\nDW",
+      "body_snippet": "Dirk Eddelbuettel wrote:\n> Diethelm,\n>\n> Thanks for the reply.  Let me prefix my follow-up by stressing that I am\n> wearing two hats here, and that can be confusing\n>\n> a) as someone interested in see",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 4,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-e0c3f91ab14e",
+      "message_id": "<18179.40641.20683.303326@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-03T13:53:04Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<18179.15249.112812.566002@mithrandir.hornik.net>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>",
+        "<18178.23800.833434.584752@ron.nulle.part>",
+        "<4702C840.4070602@itp.phys.ethz.ch>",
+        "<18179.15249.112812.566002@mithrandir.hornik.net>"
+      ],
+      "body_plain": "On 3 October 2007 at 08:49, Kurt Hornik wrote:\n| > http://www.coin-or.org/Bonmin/Intro/index.html\n| \n| Yes.  It would be really cool to have Debian packages of COIN-OR\n| packages (SYMPHONY being the one that we currently have greater need\n| for).\n\nWould you be able to twist the arm of one or more of your students (or\ncolleagues...) to take on the packaging?\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 3 October 2007 at 08:49, Kurt Hornik wrote:\n| > http://www.coin-or.org/Bonmin/Intro/index.html\n| \n| Yes.  It would be really cool to have Debian packages of COIN-OR\n| packages (SYMPHONY being the o",
+      "thread_id": "thread-e0c3f91ab14e",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-5d3fd3c1a8aa",
+      "message_id": "<18179.41264.420041.228614@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-03T14:03:28Z",
+      "subject": "neue Rmetrics packages",
+      "subject_clean": "neue Rmetrics packages",
+      "in_reply_to": "<47034403.6050803@itp.phys.ethz.ch>",
+      "references": [
+        "<47015F78.1040902@itp.phys.ethz.ch>",
+        "<18178.11449.635650.521658@ron.nulle.part>",
+        "<18178.23800.833434.584752@ron.nulle.part>",
+        "<4702C840.4070602@itp.phys.ethz.ch>",
+        "<18178.57650.845674.179522@ron.nulle.part>",
+        "<47034403.6050803@itp.phys.ethz.ch>"
+      ],
+      "body_plain": "(chopping off good chunks to keep this short)\n\nOn 3 October 2007 at 09:25, Diethelm Wuertz wrote:\n| I'm no longer sure if GSL has a irregular bivariate interpolation \n| function (which also shape preserving)  ...\n| I have to look in more detail into this which needs some time ...\n\nOk. Keep us posted.  From a top-level view of GSL 1.10, it does indeed look\nlike it is only univariate :-/\n\n| > That leaves two more:  sn, and the mnormt package that sn depends upon.\n| > Could we possibly alter Rmetrics to make this a run-time test and a Suggests\n| > rather than a Depends?\n| >   \n| There was several times the discussion to remove Builtins from Rmetrics -\n| so I removed sn and mvtnorm, but at that time I didn't realize that they are\n| not available under Debian.\n| \n| What would be the best solution ? To add it as Suggests - or again to \n| copy that part of the code as Builtin back  to Rmetrics ?  Missing of sn and \n| mvtnorm will have a  severe influence on Rmetrics, since anything what has to do with\n| multivarate assets and portfolios depends more or less on sn and mvtnorm.\n| Any suggestions how we should proceed ?\n\nOr your trusted Debian maintainer bites the bullet and packages them ...\nMaybe that is the cleanest solution.\n\nPackaging RUnit and robustbase was easy enough last night, so maybe I just\nadd them. \n\n| I remember that we had already about two years ago the problem with\n| akima. So I was yesterday night looking again into the code of\n| fUtilities concerning the point with akima.\n| \n| First there is NO akima Fortran/C code in fUtilities. Currently, the R\n| functions were written by my own along the R Code of akima which is GNU\n| licensed. You find the following lines and similar lines in the code of\n| these functions:\n| \n| .Fortran(..., PACKAGE = \"akima\")\n| \n| So doing \"irregular spaced bivariate smooth interpolation\" with Rmetrics\n| you will get an error that akima is missing. So the people have to add\n| and load the akima package by their own.\n| \n| Has anybody a better solution to this problem?\n\nIt's a hack, but I am afraid we have not many other choices.  But I think _do_ have\nto remove akima from DESCRIPTION::Depends or else R will try to load it at\npackage build-time, and fail.\n\n| So fUtilities can go to my opinion without any problems to Debian ...\n\nIf it builds...\n\n| Concerning fPortfolio, I will do the same procedure. There I will remove\n| donlp2 and work in the same way with  .Fortran(..., PACKAGE = \"Rdonlp2\").\n\nYou could wrap a pre-test with require around it.  John Fox is in the same\nsituation with RCmdr, and instead of depending on ten or so packages, he\ndynamically adjusts and sends polite error messages (as tck/tk windows, which\nmakes sense in his case) suggesting to install the other package.\n\nThat may be the best we can do for now.\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "(chopping off good chunks to keep this short)\n\nOn 3 October 2007 at 09:25, Diethelm Wuertz wrote:\n| I'm no longer sure if GSL has a irregular bivariate interpolation \n| function (which also shape pres",
+      "thread_id": "thread-7357f4595ca8",
+      "thread_depth": 5,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-321fa2f9a23b",
+      "message_id": "<470A2A47.2030305@itp.phys.ethz.ch>",
+      "from_name": "Diethelm Wuertz",
+      "from_email_hash": "db72845f148b28bce223455d9f5dbf705d659fd637f9d0697fb0778a67cfebef",
+      "date": "2007-10-08T13:01:59Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics-Core List Memebers,\n\nDear Kurt, Dirk,\n\n\nThanks for all the comments I got so far for the new Rmetrics distribution.\n\nThe Current Status is the following\n\n1.\nNow I have resubmitted all packages under Version\nNumber Rmetrics 260.72. I hope that now everything will be fine:\nYou can have a look on all package reports including\nthe major log,  install, and unit test files:\n\nhttp://www.itp.phys.ethz.ch/econophysics/R/RmetricsPackages/R-2.6.0/\n\n2.\nRdonlp is removed from package fPortfolio, so all packages\ncan also become part of Debian.\n\n\nRegards\nDiethelm",
+      "body_snippet": "Dear Rmetrics-Core List Memebers,\n\nDear Kurt, Dirk,\n\n\nThanks for all the comments I got so far for the new Rmetrics distribution.\n\nThe Current Status is the following\n\n1.\nNow I have resubmitted all pa",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-275c09906d8f",
+      "message_id": "<18186.13442.810241.938689@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-08T13:45:38Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": "<470A2A47.2030305@itp.phys.ethz.ch>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>"
+      ],
+      "body_plain": "Hi Diethelm,\n\nOn 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n| Dear Rmetrics-Core List Memebers,\n| \n| Dear Kurt, Dirk,\n| \n| \n| Thanks for all the comments I got so far for the new Rmetrics distribution.\n| \n| The Current Status is the following\n| \n| 1.\n| Now I have resubmitted all packages under Version\n| Number Rmetrics 260.72. I hope that now everything will be fine:\n\nWhy all?  That makes a lot of manual work for Kurt, and to a lesser degree\nfor me.\n\n| You can have a look on all package reports including\n| the major log,  install, and unit test files:\n| \n| http://www.itp.phys.ethz.ch/econophysics/R/RmetricsPackages/R-2.6.0/\n| \n| 2.\n| Rdonlp is removed from package fPortfolio, so all packages\n| can also become part of Debian.\n\nNot so fast:\n\ni)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n\nii) I submitted RUnit, robustbase, and mnormt to Debian. The last is really\n    silly as already have the 'other multivaritate normal/t' (named mvtnorm) \n    but whatever....  In any event, mnormt needs to be included so that I \n    can then build sn, and then we still need to wait for sn to be included.\n\n    So as I asked before: next we hardwire new Depends, and early heads-up \n    would help.\n\nBest regards, Dirk\n \n| \n| Regards\n| Diethelm\n| \n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Hi Diethelm,\n\nOn 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n| Dear Rmetrics-Core List Memebers,\n| \n| Dear Kurt, Dirk,\n| \n| \n| Thanks for all the comments I got so far for the new Rmetrics distrib",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 1,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-8241c72cc431",
+      "message_id": "<18186.35861.905408.251400@mithrandir.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "af316eba824f81591e5ba568c47fb6a236f37dc698deeb0a0c2e83a757893f95",
+      "date": "2007-10-08T19:59:17Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": "<18186.13442.810241.938689@ron.nulle.part>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>"
+      ],
+      "body_plain": ">>>>> Dirk Eddelbuettel writes:\n\n> Hi Diethelm,\n\n> On 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n> | Dear Rmetrics-Core List Memebers,\n> | \n> | Dear Kurt, Dirk,\n> | \n> | \n> | Thanks for all the comments I got so far for the new Rmetrics distribution.\n> | \n> | The Current Status is the following\n> | \n> | 1.\n> | Now I have resubmitted all packages under Version\n> | Number Rmetrics 260.72. I hope that now everything will be fine:\n\n> Why all?  That makes a lot of manual work for Kurt, and to a lesser\n> degree for me.\n\nIn any case ... everything on CRAN now.\n\nBest\n-k\n\n\n\n> | You can have a look on all package reports including\n> | the major log,  install, and unit test files:\n> | \n> | http://www.itp.phys.ethz.ch/econophysics/R/RmetricsPackages/R-2.6.0/\n> | \n> | 2.\n> | Rdonlp is removed from package fPortfolio, so all packages\n> | can also become part of Debian.\n\n> Not so fast:\n\n> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n\n> ii) I submitted RUnit, robustbase, and mnormt to Debian. The last is really\n>     silly as already have the 'other multivaritate normal/t' (named mvtnorm) \n>     but whatever....  In any event, mnormt needs to be included so that I \n>     can then build sn, and then we still need to wait for sn to be included.\n\n>     So as I asked before: next we hardwire new Depends, and early heads-up \n>     would help.\n\n> Best regards, Dirk\n \n> | \n> | Regards\n> | Diethelm\n> | \n\n> -- \n> Three out of two people have difficulties with fractions.",
+      "body_snippet": ">>>>> Dirk Eddelbuettel writes:\n\n> Hi Diethelm,\n\n> On 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n> | Dear Rmetrics-Core List Memebers,\n> | \n> | Dear Kurt, Dirk,\n> | \n> | \n> | Thanks for all the c",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 2,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-60fcb2b4468a",
+      "message_id": "<18187.36835.343662.95721@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2007-10-09T14:27:47Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": "<18186.13442.810241.938689@ron.nulle.part>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>"
+      ],
+      "body_plain": ">>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Mon, 8 Oct 2007 08:45:38 -0500 writes:\n\n    DE> Hi Diethelm,\n\n    DE> On 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n    DE> | Dear Rmetrics-Core List Memebers,\n    DE> | \n    DE> | Dear Kurt, Dirk,\n    DE> | \n    DE> | \n    DE> | Thanks for all the comments I got so far for the new Rmetrics distribution.\n    DE> | \n    DE> | The Current Status is the following\n    DE> | \n    DE> | 1.\n    DE> | Now I have resubmitted all packages under Version\n    DE> | Number Rmetrics 260.72. I hope that now everything will be fine:\n\n    DE> Why all?  That makes a lot of manual work for Kurt, and to a lesser degree\n    DE> for me.\n\n    DE> | You can have a look on all package reports including\n    DE> | the major log,  install, and unit test files:\n    DE> | \n    DE> | http://www.itp.phys.ethz.ch/econophysics/R/RmetricsPackages/R-2.6.0/\n    DE> | \n    DE> | 2.\n    DE> | Rdonlp is removed from package fPortfolio, so all packages\n    DE> | can also become part of Debian.\n\n    DE> Not so fast:\n\n    DE> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n\nApropos :  I don't quite understand why akima has a licence issue\njust because of a TOMS algorithm,\nwhen R itself uses TOMS algorithms in quite a few places.\nIs it just because R does so more covertly?\n\n    DE> ii) I submitted RUnit, robustbase, and mnormt to Debian. The last is really\n    DE> silly as already have the 'other multivaritate normal/t' (named mvtnorm) \n    DE> but whatever....  In any event, mnormt needs to be included so that I \n    DE> can then build sn, and then we still need to wait for sn to be included.\n\n    DE> So as I asked before: next we hardwire new Depends, and early heads-up \n    DE> would help.\n\nI don't understand     \"next we hardwire new Depends\" \n\nDo you mean --- as I very much agree ---  that \nDESCRIPTION 'Depends:' entries should not too lightly be\nadded, but rather discussed on Rmetrics-core at ... ?\n\nYes, indeed!\nPackage structures should not be changed any more without\na proposal that is discussed *before* things happens.\n\nRegards,\nMartin",
+      "body_snippet": ">>>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Mon, 8 Oct 2007 08:45:38 -0500 writes:\n\n    DE> Hi Diethelm,\n\n    DE> On 8 October 2007 at 15:01, Diethelm Wuertz wrote:\n    DE> | Dear",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 2,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-5a417a73af22",
+      "message_id": "<18187.38078.829481.163862@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-09T14:48:30Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": "<18187.36835.343662.95721@stat.math.ethz.ch>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>",
+        "<18187.36835.343662.95721@stat.math.ethz.ch>"
+      ],
+      "body_plain": "On 9 October 2007 at 16:27, Martin Maechler wrote:\n|     DE> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n| \n| Apropos :  I don't quite understand why akima has a licence issue\n| just because of a TOMS algorithm,\n\nYes, maybe we can get akima relicensed. That would help in several places. \n\n| when R itself uses TOMS algorithms in quite a few places.\n| Is it just because R does so more covertly?\n\nPossibly. I think I once tries to bring that up on r-devel a few years ago,\nbut it went nowhere. \n \n|     DE> ii) I submitted RUnit, robustbase, and mnormt to Debian. The last is really\n|     DE> silly as already have the 'other multivaritate normal/t' (named mvtnorm) \n|     DE> but whatever....  In any event, mnormt needs to be included so that I \n|     DE> can then build sn, and then we still need to wait for sn to be included.\n| \n|     DE> So as I asked before: next we hardwire new Depends, and early heads-up \n|     DE> would help.\n| \n| I don't understand     \"next we hardwire new Depends\" \n\nI must apologize for my typing. That should have read \n\n    \"next TIME BEFORE we hardwire new Depends, AN early heads-up wold help\".\n\nso you interpreted it correctly.\n \n| Do you mean --- as I very much agree ---  that \n| DESCRIPTION 'Depends:' entries should not too lightly be\n| added, but rather discussed on Rmetrics-core at ... ?\n| \n| Yes, indeed!\n| Package structures should not be changed any more without\n| a proposal that is discussed *before* things happens.\n\nAs much as I hate added 'red tape', with my Debian maintainer hat on, it\nwould help me to have depended-upon packages ready when needed.  RUnit,\nrobustbase and mnormt are still in the NEW queue as I only got to prepare\nthem after the Rmetrics release informed me I needed them.  A quick heads-up\nwould help.\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 9 October 2007 at 16:27, Martin Maechler wrote:\n|     DE> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n| \n| Apropos :  I don't quite understand why akima has a licenc",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 3,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-bb22c3f88e4a",
+      "message_id": "<Pine.LNX.4.64.0710091703420.26687@eowyn>",
+      "from_name": "Achim Zeileis",
+      "from_email_hash": "5d0666ce9b4ba3eb5d16d8dda715c40e6659f1707b7e9d0727ac8d70b93c8461",
+      "date": "2007-10-09T15:08:11Z",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "subject_clean": "Status Rmetrics for R 2.6.0",
+      "in_reply_to": "<18187.38078.829481.163862@ron.nulle.part>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>",
+        "<18187.36835.343662.95721@stat.math.ethz.ch>",
+        "<18187.38078.829481.163862@ron.nulle.part>"
+      ],
+      "body_plain": "On Tue, 9 Oct 2007, Dirk Eddelbuettel wrote:\n\n> On 9 October 2007 at 16:27, Martin Maechler wrote:\n> |     DE> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n> |\n> | Apropos :  I don't quite understand why akima has a licence issue\n> | just because of a TOMS algorithm,\n>\n> Yes, maybe we can get akima relicensed. That would help in several places.\n>\n> | when R itself uses TOMS algorithms in quite a few places.\n> | Is it just because R does so more covertly?\n>\n> Possibly. I think I once tries to bring that up on r-devel a few years ago,\n> but it went nowhere.\n\nI had a similar problem for \"lmtest\" which uses an AS algorithm. At the \ntime, I asked Kurt and Fritz whether I could take these things and release \nthem under the GPL. IIRC, Fritz said that R also uses AS algorithms and in \nthe early days of R somehow asked AS for permission to do that. Hence, his \nrecommendation was to simply assume that this permission also extends to \ncontributed packages.\n\nMaybe asking again explicitely would be more polite...but not asking again \nnever produced problems for \"lmtest\".\nZ",
+      "body_snippet": "On Tue, 9 Oct 2007, Dirk Eddelbuettel wrote:\n\n> On 9 October 2007 at 16:27, Martin Maechler wrote:\n> |     DE> i)  You didn't fix the dependence on akima. Or at least you didn't tell us.\n> |\n> | Aprop",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 4,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-bf40c713c21a",
+      "message_id": "<18188.19018.52477.395319@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-10T03:43:06Z",
+      "subject": "Some Rmetrics eye candy (Was: Status Rmetrics for R 2.6.0)",
+      "subject_clean": "Some Rmetrics eye candy (Was: Status Rmetrics for R 2.6.0)",
+      "in_reply_to": "<18187.36835.343662.95721@stat.math.ethz.ch>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>",
+        "<18187.36835.343662.95721@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Diethelm never responded, but it appears that fUtilities does no longer\ndepend on arima. It would apper that the code was copied -- don't ask, don't\ntell -- but was seems odd is that it relies on \n\nedd at ron:~/src/debian/CRAN/fUtilities-260.72/R> grep \"\\.Fortran\" BivariateInterpolation.R\n    ans <- .Fortran(\"idsfft\", as.integer(1), as.integer(ncp),\n    ans <- .Fortran(\"sdsf3p\", as.integer(1), as.integer(n), as.double(x),\n    ans <- .Fortran(\"idbvip\", as.integer(1), as.integer(ncp),\n    ans <- .Fortran(\"sdbi3p\", as.integer(1), as.integer(n), as.double(x),\n\nwithout shipping a src/ directory. This can only crash and burn during\nruntime.  Is that the right approach?\n\n\nAs for the conversion to Debian packages, some fiddling with graphs reveals\nthat everything starts with the new package fUtilities which itself depends\non RUnit which is not yet in Debian, so my hands are tied for now. I'll walk\ndown the graph and add the 12 new package.  That may be finished by the time\nR 2.7.0 comes around...\n\nDirk\n\n\n#!/usr/bin/env r\n\nsuppressMessages(library(Rgraphviz))\n\nrmetricsPkgs <- c(\"fArma\",\"fAsianOptions\",\"fAssets\",\"fBasics\",\"fBonds\",\n                  \"fCalendar\", \"fCopulae\",\"fEcofin\",\"fExoticOptions\",\n                  \"fExtremes\",\"fGarch\",\"fImport\", \"fMultivar\",\"fNonlinear\",\n                  \"fOptions\",\"fPortfolio\",\"fRegression\", \"fSeries\",\n                  \"fTrading\",\"fUnitRoots\",\"fUtilities\")\ng1 <- new(\"graphNEL\", nodes=rmetricsPkgs, edgemode=\"directed\")\n\ng1 <- addEdge(\"fArma\", \"fBasics\", g1)\ng1 <- addEdge(\"fAsianOptions\", \"fOptions\", g1)\ng1 <- addEdge(\"fAssets\", \"fBasics\", g1)\ng1 <- addEdge(\"fAssets\", \"fRegression\", g1)\ng1 <- addEdge(\"fBasics\", \"fImport\", g1)\ng1 <- addEdge(\"fBonds\", \"fBasics\", g1)\ng1 <- addEdge(\"fCalendar\", \"fEcofin\", g1)\ng1 <- addEdge(\"fCalendar\", \"fUtilities\", g1)\ng1 <- addEdge(\"fCopulae\", \"fBasics\", g1)\ng1 <- addEdge(\"fCopulae\", \"fMultivar\", g1)\ng1 <- addEdge(\"fEcofin\", \"fUtilities\", g1)\ng1 <- addEdge(\"fExoticOptions\", \"fOptions\", g1)\ng1 <- addEdge(\"fExtremes\", \"fBasics\", g1)\ng1 <- addEdge(\"fGarch\", \"fBasics\", g1)\ng1 <- addEdge(\"fGarch\", \"fArma\", g1)\ng1 <- addEdge(\"fImport\", \"fSeries\", g1)\ng1 <- addEdge(\"fMultivar\", \"fBasics\", g1)\ng1 <- addEdge(\"fNonlinear\", \"fBasics\", g1)\ng1 <- addEdge(\"fOptions\", \"fBasics\", g1)\ng1 <- addEdge(\"fPortfolio\", \"fAssets\", g1)\ng1 <- addEdge(\"fRegression\", \"fTrading\", g1)\ng1 <- addEdge(\"fRegression\", \"fMultivar\", g1)\ng1 <- addEdge(\"fSeries\", \"fCalendar\", g1)\ng1 <- addEdge(\"fTrading\", \"fBasics\", g1)\ng1 <- addEdge(\"fUnitRoots\", \"fBasics\", g1)\n\n\nif (!interactive())\n  pdf(\"rmetricsPkgs.pdf\", paper=\"letter\", version=\"1.4\")\n\nplot(g1, \"neato\", main=\"Rmetrics Package Graph\")\n\nif (!interactive())\n  dev.off()\n\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Diethelm never responded, but it appears that fUtilities does no longer\ndepend on arima. It would apper that the code was copied -- don't ask, don't\ntell -- but was seems odd is that it relies on \n\ned",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 3,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-c7d32e13c867",
+      "message_id": "<18190.29241.48284.25653@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-11T18:58:01Z",
+      "subject": "Diethelm? (Was: Status Rmetrics for R 2.6.0)",
+      "subject_clean": "Diethelm? (Was: Status Rmetrics for R 2.6.0)",
+      "in_reply_to": "<18188.19018.52477.395319@ron.nulle.part>",
+      "references": [
+        "<470A2A47.2030305@itp.phys.ethz.ch>",
+        "<18186.13442.810241.938689@ron.nulle.part>",
+        "<18187.36835.343662.95721@stat.math.ethz.ch>",
+        "<18188.19018.52477.395319@ron.nulle.part>"
+      ],
+      "body_plain": "On 9 October 2007 at 22:43, Dirk Eddelbuettel wrote:\n| \n| Diethelm never responded, but it appears that fUtilities does no longer\n| depend on arima. It would apper that the code was copied -- don't ask, don't\n| tell -- but was seems odd is that it relies on \n|\n| edd at ron:~/src/debian/CRAN/fUtilities-260.72/R> grep \"\\.Fortran\" BivariateInterpolation.R\n|     ans <- .Fortran(\"idsfft\", as.integer(1), as.integer(ncp),\n|     ans <- .Fortran(\"sdsf3p\", as.integer(1), as.integer(n), as.double(x),\n|     ans <- .Fortran(\"idbvip\", as.integer(1), as.integer(ncp),\n|     ans <- .Fortran(\"sdbi3p\", as.integer(1), as.integer(n), as.double(x),\n| \n| without shipping a src/ directory. This can only crash and burn during\n| runtime.  Is that the right approach?\n\nDiethelm?\n\nDirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 9 October 2007 at 22:43, Dirk Eddelbuettel wrote:\n| \n| Diethelm never responded, but it appears that fUtilities does no longer\n| depend on arima. It would apper that the code was copied -- don't as",
+      "thread_id": "thread-321fa2f9a23b",
+      "thread_depth": 4,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-df859c548541",
+      "message_id": "<18192.10888.92370.832045@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-10-13T02:16:40Z",
+      "subject": "Update",
+      "subject_clean": "Update",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "RUnit, robustbase and mnormt were accepted into Debian today.\n\nSo I was able to build fUtilities [ using RUnit ] and sn [ needed by\nfMultivar, and using mnormt ] which are now in the NEW queue and waiting.\nAfter fUtilities, fImport is the next 'blocker' after which most new packages\nare peripheral.\n\nI'd still like to hear from Diethelm how/why/what changes wrt to akima were\nmade and made the situation is now.   \n\nBut I guess just because we have a dedicated mailing list doesn't mean that\nreply-times have changed their random nature....\n\nCheers, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "RUnit, robustbase and mnormt were accepted into Debian today.\n\nSo I was able to build fUtilities [ using RUnit ] and sn [ needed by\nfMultivar, and using mnormt ] which are now in the NEW queue and wai",
+      "thread_id": "thread-df859c548541",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-2024162e93e6",
+      "message_id": "<CECCE172-6673-4D56-8689-7F321323C3C3@mac.com>",
+      "from_name": "Carlos Ungil",
+      "from_email_hash": "4642addfdc8d6e67399d43741c9b268f96a95adc91dcd552643e594008f89e43",
+      "date": "2007-10-18T23:10:41Z",
+      "subject": "ArfimaOxInterface",
+      "subject_clean": "ArfimaOxInterface",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071019/d2007e18/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071019/d2007e18/attachment.pl",
+      "thread_id": "thread-2024162e93e6",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-a7aa881f0c82",
+      "message_id": "<937293.33467.qm@web82113.mail.mud.yahoo.com>",
+      "from_name": "Sharad Honavar",
+      "from_email_hash": "53aa59f98e4451f0b1b2fbe1699374aa5e530d8ad8bc06177746ebd429365d10",
+      "date": "2007-10-29T01:49:40Z",
+      "subject": "timeSequence problem with new version",
+      "subject_clean": "timeSequence problem with new version",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071028/30ea6e47/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071028/30ea6e47/attachment.pl",
+      "thread_id": "thread-a7aa881f0c82",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-a0613422612e",
+      "message_id": "<BAY113-W268C88FADCD9D2CEB5F480AB930@phx.gbl>",
+      "from_name": "ozlem yorulmaz",
+      "from_email_hash": "e51effacdf7f4ac95ebe01402f19ebb7ea2d23db4983c122ad6c64e475bb4c60",
+      "date": "2007-10-31T11:34:56Z",
+      "subject": "outliers in time series",
+      "subject_clean": "outliers in time series",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071031/5de1aacb/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071031/5de1aacb/attachment.pl",
+      "thread_id": "thread-a0613422612e",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-fa203dc4c7fa",
+      "message_id": "<E1InGfd-0000BK-Pr@monster.ilab.sztaki.hu>",
+      "from_name": "Balazs Torma",
+      "from_email_hash": "0faa967e9199e3bdfe6cd087e4e35c604fc84571d21ab73e02a47ea8778aa61e",
+      "date": "2007-10-31T16:43:57Z",
+      "subject": "problem with package fSeries ",
+      "subject_clean": "problem with package fSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Helo,\n\n  please look at the log below: after loading the fSeries library, I can not use the log function. Is this a bug or what am I doing wrong?\n\nBecause of this, I'm unable to use the garch library.\n\nthanks a lot for any help,\nBalazs Torma\n\n\n> log(1)\n[1] 0\n> require(\"fSeries\")\nLoading required package: fSeries\nLoading required package: robustbase\nLoading required package: fCalendar\nLoading required package: fEcofin\n\nRmetrics, (C) 1999-2006, Diethelm Wuertz, GPL\nfCalendar: Time, Date and Calendar Tools\n\nPackage fSeries (260.72) loaded.\nRmetrics - Financial Time Series Objects\nRmetrics, (C) 1999-2007, Diethelm Wuertz, GPL\n\n> log(1)\nError in .Internal(log(x)) : no internal function \"log\"\n>",
+      "body_snippet": "Helo,\n\n  please look at the log below: after loading the fSeries library, I can not use the log function. Is this a bug or what am I doing wrong?\n\nBecause of this, I'm unable to use the garch library.",
+      "thread_id": "thread-fa203dc4c7fa",
+      "thread_depth": 0,
+      "month": "2007-10"
+    },
+    {
+      "id": "msg-a31bc65444b0",
+      "message_id": "<44A8B25381923D4F93B74B2676A50F6D07656B55@MAIL1.infores.com>",
+      "from_name": "Kerpel, John",
+      "from_email_hash": "8018286a8c4e9c681ae4300c347f068d64d5a8e239519b3289050a0812e3c99b",
+      "date": "2007-10-31T16:58:51Z",
+      "subject": "[R] problem with package fSeries",
+      "subject_clean": "problem with package fSeries",
+      "in_reply_to": "<E1InGfd-0000BK-Pr@monster.ilab.sztaki.hu>",
+      "references": [
+        "<E1InGfd-0000BK-Pr@monster.ilab.sztaki.hu>"
+      ],
+      "body_plain": "Are you using the latest version of R - with the patch?\n\n-----Original Message-----\nFrom: r-help-bounces at r-project.org [mailto:r-help-bounces at r-project.org]\nOn Behalf Of Balazs Torma\nSent: Wednesday, October 31, 2007 11:44 AM\nTo: r-help at r-project.org\nCc: rmetrics-core at r-project.org\nSubject: [R] problem with package fSeries\n\n\nHelo,\n\n  please look at the log below: after loading the fSeries library, I can\nnot use the log function. Is this a bug or what am I doing wrong?\n\nBecause of this, I'm unable to use the garch library.\n\nthanks a lot for any help,\nBalazs Torma\n\n\n> log(1)\n[1] 0\n> require(\"fSeries\")\nLoading required package: fSeries\nLoading required package: robustbase\nLoading required package: fCalendar\nLoading required package: fEcofin\n\nRmetrics, (C) 1999-2006, Diethelm Wuertz, GPL\nfCalendar: Time, Date and Calendar Tools\n\nPackage fSeries (260.72) loaded.\nRmetrics - Financial Time Series Objects\nRmetrics, (C) 1999-2007, Diethelm Wuertz, GPL\n\n> log(1)\nError in .Internal(log(x)) : no internal function \"log\"\n>\n\n______________________________________________\nR-help at r-project.org mailing list\nhttps://stat.ethz.ch/mailman/listinfo/r-help\nPLEASE do read the posting guide\nhttp://www.R-project.org/posting-guide.html\nand provide commented, minimal, self-contained, reproducible code.",
+      "body_snippet": "Are you using the latest version of R - with the patch?\n\n-----Original Message-----\nFrom: r-help-bounces at r-project.org [mailto:r-help-bounces at r-project.org]\nOn Behalf Of Balazs Torma\nSent: Wedne",
+      "thread_id": "thread-fa203dc4c7fa",
+      "thread_depth": 1,
+      "month": "2007-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-7357f4595ca8",
+      "subject": "neue Rmetrics packages",
+      "message_count": 6,
+      "participants": [
+        "Diethelm Wuertz",
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2007-10-02T11:34:17Z",
+      "last_reply": "2007-10-03T14:03:28Z",
+      "root_message_id": "msg-7357f4595ca8"
+    },
+    {
+      "id": "thread-bbe6344c74f1",
+      "subject": "MIQP - also of interest for Rmetrics Portfolio Optimization ...",
+      "message_count": 1,
+      "participants": [
+        "Diethelm Wuertz"
+      ],
+      "started": "2007-10-02T22:50:05Z",
+      "last_reply": "2007-10-02T22:50:05Z",
+      "root_message_id": "msg-bbe6344c74f1"
+    },
+    {
+      "id": "thread-a271111d1980",
+      "subject": "RUnit tests - Management",
+      "message_count": 1,
+      "participants": [
+        "Diethelm Wuertz"
+      ],
+      "started": "2007-10-02T22:56:28Z",
+      "last_reply": "2007-10-02T22:56:28Z",
+      "root_message_id": "msg-a271111d1980"
+    },
+    {
+      "id": "thread-e0c3f91ab14e",
+      "subject": "neue Rmetrics packages",
+      "message_count": 1,
+      "participants": [
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2007-10-03T13:53:04Z",
+      "last_reply": "2007-10-03T13:53:04Z",
+      "root_message_id": "msg-e0c3f91ab14e"
+    },
+    {
+      "id": "thread-321fa2f9a23b",
+      "subject": "Status Rmetrics for R 2.6.0",
+      "message_count": 8,
+      "participants": [
+        "Achim Zeileis",
+        "Diethelm Wuertz",
+        "Dirk Eddelbuettel",
+        "Kurt Hornik",
+        "Martin Maechler"
+      ],
+      "started": "2007-10-08T13:01:59Z",
+      "last_reply": "2007-10-11T18:58:01Z",
+      "root_message_id": "msg-321fa2f9a23b"
+    },
+    {
+      "id": "thread-df859c548541",
+      "subject": "Update",
+      "message_count": 1,
+      "participants": [
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2007-10-13T02:16:40Z",
+      "last_reply": "2007-10-13T02:16:40Z",
+      "root_message_id": "msg-df859c548541"
+    },
+    {
+      "id": "thread-2024162e93e6",
+      "subject": "ArfimaOxInterface",
+      "message_count": 1,
+      "participants": [
+        "Carlos Ungil"
+      ],
+      "started": "2007-10-18T23:10:41Z",
+      "last_reply": "2007-10-18T23:10:41Z",
+      "root_message_id": "msg-2024162e93e6"
+    },
+    {
+      "id": "thread-a7aa881f0c82",
+      "subject": "timeSequence problem with new version",
+      "message_count": 1,
+      "participants": [
+        "Sharad Honavar"
+      ],
+      "started": "2007-10-29T01:49:40Z",
+      "last_reply": "2007-10-29T01:49:40Z",
+      "root_message_id": "msg-a7aa881f0c82"
+    },
+    {
+      "id": "thread-a0613422612e",
+      "subject": "outliers in time series",
+      "message_count": 1,
+      "participants": [
+        "ozlem yorulmaz"
+      ],
+      "started": "2007-10-31T11:34:56Z",
+      "last_reply": "2007-10-31T11:34:56Z",
+      "root_message_id": "msg-a0613422612e"
+    },
+    {
+      "id": "thread-fa203dc4c7fa",
+      "subject": "problem with package fSeries",
+      "message_count": 2,
+      "participants": [
+        "Balazs Torma",
+        "Kerpel, John"
+      ],
+      "started": "2007-10-31T16:43:57Z",
+      "last_reply": "2007-10-31T16:58:51Z",
+      "root_message_id": "msg-fa203dc4c7fa"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+From torgrims at stud.ntnu.no  Thu Oct  7 15:40:03 2010
+From: torgrims at stud.ntnu.no (torgrims at stud.ntnu.no)
+Date: Thu,  7 Oct 2010 15:40:03 +0200
+Subject: building classes with slots of type "timeDate"
+Message-ID: <20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>
+
+Dear rmetrics core team,
+
+As this email was listed in the package timeDate july26.2010 I post  
+this question here. When defining an S4 class with slot of type  
+"timeDate", I get this warning. Is this a bug or a feature?
+
+> library(timeDate)
+> setClass(
++         "testClass",
++         representation(
++                 slot = "timeDate"
++         )
++ )
+[1] "testClass"
+Warning message:
+In is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'
+>
+
+Best regards
+Tomas
+
+
+From maechler at stat.math.ethz.ch  Thu Oct  7 19:16:47 2010
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 7 Oct 2010 19:16:47 +0200
+Subject: building classes with slots of type "timeDate"
+In-Reply-To: <20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>
+References: <20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>
+Message-ID: <19630.127.862184.820551@lynne.math.ethz.ch>
+
+I digged and found that the warning can be more easily
+produced by
+
+  new("timeDate")
+
+and we should fix that, maybe by providing a prototype.
+or rather I think by fixing the initialize() method we have
+there..
+
+Thank you, Tomas, for your good report!
+
+Martin Maechler, ETH Zurich
+
+
+>>>>> "t" == torgrims  <torgrims at stud.ntnu.no>
+>>>>>     on Thu,  7 Oct 2010 15:40:03 +0200 writes:
+
+    t> Dear rmetrics core team,
+    t> As this email was listed in the package timeDate july26.2010 I post  
+    t> this question here. When defining an S4 class with slot of type  
+    t> "timeDate", I get this warning. Is this a bug or a feature?
+
+    >> library(timeDate)
+    >> setClass(
+    t> +         "testClass",
+    t> +         representation(
+    t> +                 slot = "timeDate"
+    t> +         )
+    t> + )
+    t> [1] "testClass"
+    t> Warning message:
+    t> In is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'
+    >> 
+
+    t> Best regards
+    t> Tomas
+
+    t> _______________________________________________
+    t> Rmetrics-core mailing list
+    t> Rmetrics-core at r-project.org
+    t> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From chalabi at phys.ethz.ch  Tue Oct 12 17:34:25 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 12 Oct 2010 17:34:25 +0200
+Subject: building classes with slots of type "timeDate"
+In-Reply-To: <19630.127.862184.820551@lynne.math.ethz.ch>
+References: <20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>
+	<19630.127.862184.820551@lynne.math.ethz.ch>
+Message-ID: <4CB48001.2030606@phys.ethz.ch>
+
+  Thanks for the report,
+
+Please find an updated initialize,timeDate method on R-forge to avoid 
+the mentioned warning.
+
+Regards,
+Yohan
+
+On 10/7/10 7:16 PM, Martin Maechler wrote:
+> I digged and found that the warning can be more easily
+> produced by
+>
+>    new("timeDate")
+>
+> and we should fix that, maybe by providing a prototype.
+> or rather I think by fixing the initialize() method we have
+> there..
+>
+> Thank you, Tomas, for your good report!
+>
+> Martin Maechler, ETH Zurich
+>
+>
+>>>>>> "t" == torgrims<torgrims at stud.ntnu.no>
+>>>>>>      on Thu,  7 Oct 2010 15:40:03 +0200 writes:
+>      t>  Dear rmetrics core team,
+>      t>  As this email was listed in the package timeDate july26.2010 I post
+>      t>  this question here. When defining an S4 class with slot of type
+>      t>  "timeDate", I get this warning. Is this a bug or a feature?
+>
+>      >>  library(timeDate)
+>      >>  setClass(
+>      t>  +         "testClass",
+>      t>  +         representation(
+>      t>  +                 slot = "timeDate"
+>      t>  +         )
+>      t>  + )
+>      t>  [1] "testClass"
+>      t>  Warning message:
+>      t>  In is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'
+>      >>
+>
+>      t>  Best regards
+>      t>  Tomas
+>
+>      t>  _______________________________________________
+>      t>  Rmetrics-core mailing list
+>      t>  Rmetrics-core at r-project.org
+>      t>  https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+
+
+From maciej.ombach at bankofamerica.com  Wed Oct 27 18:06:31 2010
+From: maciej.ombach at bankofamerica.com (Ombach, Maciej)
+Date: Wed, 27 Oct 2010 12:06:31 -0400
+Subject: portfolioFrontier question
+Message-ID: <AA3A69FCFCA0624A8305B3FE3D68886E2B176EB3@ex2k.bankofamerica.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl>
+
+From Uwe.Ligges at R-Project.org  Thu Oct 28 01:36:45 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Thu, 28 Oct 2010 01:36:45 +0200
+Subject: Package timeDate_2130.91.tar.gz has been built for Windows
+Message-ID: <01cb762f$Blat.v2.2.2$d11cfce2@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_2130.91.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.0 (2010-10-15)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at R-Project.org  Thu Oct 28 01:36:45 2010
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Thu, 28 Oct 2010 01:36:45 +0200
+Subject: Package timeSeries_2130.90.tar.gz has been built for Windows
+Message-ID: <01cb762f$Blat.v2.2.2$d14a3728@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2130.90.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.0 (2010-10-15)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

@@ -1,0 +1,297 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-02",
+  "messages": [
+    {
+      "id": "msg-fb15903d1f85",
+      "message_id": "<28C48B6D-BE41-421B-882E-281D5FA50662@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-02-01T13:03:48Z",
+      "subject": "Request: Garch Ox Fit extension of fGARCH",
+      "subject_clean": "Request: Garch Ox Fit extension of fGARCH",
+      "in_reply_to": "<B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>",
+      "references": [
+        "<B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>"
+      ],
+      "body_plain": "Hi Tristan,\n\nthe garchOx interface is not available anymore. You can find the old interface in the history of svn repository (r-forge). However the interface has not been updated to the latest version of garchOx.\n\nHTH,\nYohan\n\nOn 20 janv. 2012, at 01:58, Linke, Tristan wrote:\n\n> Dear all\n> \n> As suggested in the fGarch user outline (updated Jan 2012) I contact you to ask whether it is possible to get access to Garch Ox Fit for fitting e.g. GJR-Garch models in R. I'm a student at Lancaster university.\n> \n> Thanks a lot in advance.\n> \n> Kind regards\n> Tristan Linke\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Hi Tristan,\n\nthe garchOx interface is not available anymore. You can find the old interface in the history of svn repository (r-forge). However the interface has not been updated to the latest version",
+      "thread_id": "thread-fb15903d1f85",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-6f6b0ba8bc22",
+      "message_id": "<ED653C7F-6773-4BE5-965C-884179323B82@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-02-01T14:51:17Z",
+      "subject": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "subject_clean": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "in_reply_to": "<CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>",
+      "references": [
+        "<CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>"
+      ],
+      "body_plain": "On 30 janv. 2012, at 00:03, Klemen Koselj wrote:\n\n> Hello timeDate package maintenars,\n> \n> Thank you for great rmetrics packages. Thanks for yll the effort in\n> developing and maintaining them.\n> \n> I have encountered some issues with using timeDate package. Itcan of course\n> be that I just do not understand a few things...\n> \n> I am trying to check whether a particular date is business day (NYSE\n> opened). When I check this for 2011-12-26 isBizday returns TRUE while\n> holidayNYSE returns FALSE which is correct...\n> \n>> isBizday(as.timeDate(\"2011-12-26\"))\n> 2011-12-26\n>      TRUE\n>> holidayNYSE(2011)\n> NewYork\n> [1] [2011-01-17] [2011-02-21] [2011-04-22] [2011-05-30] [2011-07-04]\n> [6] [2011-09-05] [2011-11-24] [2011-12-26]\n>> isBizday(as.timeDate(\"2011-12-26\"), holidayNYSE())\n\nHi,\n\nyou are missing the year argument in holidayNYSE() :\n\nisBizday(as.timeDate(\"2011-12-26\"), holidayNYSE(2011))\n\nHTH\nYohan\n\n> 2011-12-26\n>      TRUE\n> \n> What am I missing here?\n> \n> Thanks in advance.\n> \n> Kind regards,\n> Klemen.\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On 30 janv. 2012, at 00:03, Klemen Koselj wrote:\n\n> Hello timeDate package maintenars,\n> \n> Thank you for great rmetrics packages. Thanks for yll the effort in\n> developing and maintaining them.\n> \n> ",
+      "thread_id": "thread-6f6b0ba8bc22",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-20753fac5d65",
+      "message_id": "<0dd6fcb1563c644498a50752bb0eba08@lyfy-20101228MK>",
+      "from_name": "ANTEK SOLAR",
+      "from_email_hash": "e8c59b066962266993aafe535437fccb3445e1a17278b66f08f5bfa74f9eb5d3",
+      "date": "2012-02-03T23:35:56Z",
+      "subject": "Solar Home System Plug-and-Go! - by Antek Solar",
+      "subject_clean": "Solar Home System Plug-and-Go! - by Antek Solar",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120204/9c1a0724/attachment-0001.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/jpeg\nSize: 97134 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120204/9c1a0724/attachment-0001.jpe>",
+      "body_snippet": "Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved\nIf you prefer do not to receive future email, please unsubscribe here, Thank you\n-------------- next part --------------\nAn HTML a",
+      "thread_id": "thread-20753fac5d65",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-f917e039c304",
+      "message_id": "<42C99F8A87E4414BB4C297AB63B932380112F7582804@SWVLONCUEXDP02.im.root-domain.net>",
+      "from_name": "gaurang.jitendrabhai at aviva.com",
+      "from_email_hash": "0a04748873570f56c968521064e703d4c4e0e363f26d402bf84778856e4781c4",
+      "date": "2012-02-06T10:20:49Z",
+      "subject": "fExtremes- how to access elements of gevFit",
+      "subject_clean": "fExtremes- how to access elements of gevFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl>",
+      "thread_id": "thread-f917e039c304",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-21e202e46015",
+      "message_id": "<FCD9A33C859ACC469587CB09DD5C6C712C1A78@GBLONXMB11.corp.amvescap.net>",
+      "from_name": "Pfaff, Bernhard Dr.",
+      "from_email_hash": "33cf90f6270884b3fcece1aa7503158c5a8b66548e930a2071ff7a81df8c2c39",
+      "date": "2012-02-09T10:14:59Z",
+      "subject": "fArma not any longer on CRAN",
+      "subject_clean": "fArma not any longer on CRAN",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello Yohan,\n\nhow are you? Have you successfully completed your Phd? Hopefully you are well and Diethelm as well? \n\nI am writing to you, because the package fArma has been removed from CRAN (did not pass the checks, i.e., an example tossed an error). Will you fix this package and re-release to CRAN?\n\nBest,\nBernhard\n\nDr. Bernhard Pfaff\nDirector\nGlobal Asset Allocation\n\nInvesco Asset Management Deutschland GmbH\nAn der Welle 5\nD-60322 Frankfurt am Main\n\nTel: +49 (0)69 29807 230\nFax: +49 (0)69 29807 178\nwww.institutional.invesco.com\nEmail: bernhard_pfaff at fra.invesco.com\n\nGesch?ftsf?hrer: Karl Georg Bayer, Bernhard Langer, Dr. Jens Langewand, Alexander Lehmann, Christian Puschmann\nHandelsregister: Frankfurt am Main, HRB 28469\nSitz der Gesellschaft: Frankfurt am Main\n\n\n\n*****************************************************************\nConfidentiality Note: The information contained in this ...{{dropped:10}}",
+      "body_snippet": "Hello Yohan,\n\nhow are you? Have you successfully completed your Phd? Hopefully you are well and Diethelm as well? \n\nI am writing to you, because the package fArma has been removed from CRAN (did not p",
+      "thread_id": "thread-21e202e46015",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-c573745487c6",
+      "message_id": "<F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2012-02-10T10:09:56Z",
+      "subject": "timeFirstDayInMonth() bug",
+      "subject_clean": "timeFirstDayInMonth() bug",
+      "in_reply_to": "<F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>",
+      "references": [
+        "<F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>"
+      ],
+      "body_plain": "Any news about the bug at:\nhttps://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=633\n\nThanks,\nDaniele Amberti\n\n-----Original Message-----\nFrom: Daniele Amberti\nSent: Thursday, January 12, 2012 4:22 PM\nTo: Rmetrics-core at r-project.org\nSubject: timeFirstDayInMonth() bug\n\n#\n# Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.\n#\n\nlibrary(timeDate)\n\nx <- logical(0)\nx <- as.timeDate(x)\n\ntimeFirstDayInMonth(x)\n\n# Best regards, Daniele Amberti\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.",
+      "body_snippet": "Any news about the bug at:\nhttps://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=633\n\nThanks,\nDaniele Amberti\n\n-----Original Message-----\nFrom: Daniele Amberti\nSent: T",
+      "thread_id": "thread-c573745487c6",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-b0252e9a5418",
+      "message_id": "<A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>",
+      "from_name": "Jan de Leeuw",
+      "from_email_hash": "a167f5fca204abb64fa78a00e65068c9d14455edaf0726f65c9ebfbf7de7fcc8",
+      "date": "2012-02-13T01:14:55Z",
+      "subject": "fBasics",
+      "subject_clean": "fBasics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I think nig.c in the latest fBasics needs \n\n#include <R_ext/Error.h> \n\n===\nJan de Leeuw; Distinguished Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Journal of Statistical Software;\nUS mail: 8125 Math Sciences Bldg, Box 951554, Los Angeles, CA 90095-1554\nphone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw at stat.ucla.edu\n.mac: jdeleeuw ++++++  aim: deleeuwjan ++++++ skype: j_deleeuw\nhomepages: http://gifi.stat.ucla.edu ++++++ http://www.cuddyvalley.org\n -------------------------------------------------------------------------------------------------\n          No matter where you go, there you are. --- Buckaroo Banzai\n                   http://gifi.stat.ucla.edu/sounds/nomatter.au",
+      "body_snippet": "I think nig.c in the latest fBasics needs \n\n#include <R_ext/Error.h> \n\n===\nJan de Leeuw; Distinguished Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Jou",
+      "thread_id": "thread-b0252e9a5418",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-de5f7475ee61",
+      "message_id": "<CAPRP4-e-SSHTQWsdhd-v8Pu_Vs5XOa_fX3nd0Z_LTe_wy=o02A@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-02-16T23:53:44Z",
+      "subject": "fBasics",
+      "subject_clean": "fBasics",
+      "in_reply_to": "<A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>",
+      "references": [
+        "<A361D35C16B446449C2CAAD7DB735475@stat.ucla.edu>"
+      ],
+      "body_plain": "On Mon, Feb 13, 2012 at 02:14, Jan de Leeuw <deleeuw at stat.ucla.edu> wrote:\n> I think nig.c in the latest fBasics needs\n>\n> #include <R_ext/Error.h>\n\nYes, indeed.  Thank you, Jan.\nI'll commit that (and a bit more cosmetics) to the R-forge version of fBasics.\n\nThere needs more work to be done for all the new  \"partial argument\nmatch\" warnings that\nwe now have to fix thanks to the CRAN police...\n\nMartin\n\n>\n> ===\n> Jan de Leeuw; Distinguished Professor and Chair, UCLA Department of Statistics;\n> Editor: Journal of Multivariate Analysis, Journal of Statistical Software;\n> US mail: 8125 Math Sciences Bldg, Box 951554, Los Angeles, CA 90095-1554\n> phone (310)-825-9550; ?fax (310)-206-5658; ?email: deleeuw at stat.ucla.edu\n> .mac: jdeleeuw ++++++ ?aim: deleeuwjan ++++++ skype: j_deleeuw\n> homepages: http://gifi.stat.ucla.edu ++++++ http://www.cuddyvalley.org\n> ?-------------------------------------------------------------------------------------------------\n> ? ? ? ? ?No matter where you go, there you are. --- Buckaroo Banzai\n> ? ? ? ? ? ? ? ? ? http://gifi.stat.ucla.edu/sounds/nomatter.au\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On Mon, Feb 13, 2012 at 02:14, Jan de Leeuw <deleeuw at stat.ucla.edu> wrote:\n> I think nig.c in the latest fBasics needs\n>\n> #include <R_ext/Error.h>\n\nYes, indeed.  Thank you, Jan.\nI'll commit that (",
+      "thread_id": "thread-b0252e9a5418",
+      "thread_depth": 1,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-461498a98c5a",
+      "message_id": "<CAPRP4-fyaaPmJ_cWOC4MCzSfVD4ADEpDwqvoQKz60K54LrchLg@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-02-19T21:59:42Z",
+      "subject": "timeFirstDayInMonth() bug",
+      "subject_clean": "timeFirstDayInMonth() bug",
+      "in_reply_to": "<F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>",
+      "references": [
+        "<F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>",
+        "<F19672F7880134439F66EC21316E27F30CD52229@Exch-Mailbox.ors.local>"
+      ],
+      "body_plain": "On Fri, Feb 10, 2012 at 11:09, Daniele Amberti <daniele.amberti at ors.it> wrote:\n> Any news about the bug at:\n> https://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=633\n>\n> Thanks,\n> Daniele Amberti\n>\n> -----Original Message-----\n> From: Daniele Amberti\n> Sent: Thursday, January 12, 2012 4:22 PM\n> To: Rmetrics-core at r-project.org\n> Subject: timeFirstDayInMonth() bug\n>\n> #\n> # Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.\n> #\n>\n> library(timeDate)\n>\n> x <- logical(0)\n> x <- as.timeDate(x)\n>\n> timeFirstDayInMonth(x)\n>\n> # Best regards, Daniele Amberti\n>\n\nThank you Daniele.    I've decided that (R crash)  is something R's\ninternal C code should not do, .... even if there's clearly a missing\ncheck and hence a bug in\nthe   timeFirstDayInMonth()  function ...\na fix of which I currently leave to my co-authors...\n\nBest regards,\nMartin Maechler\n> ________________________________\n>\n> ORS Srl\n>\n> Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy\n> Tel. +39 0173 620211\n> Fax. +39 0173 620299 / +39 0173 433111\n> Web Site www.ors.it\n>\n> ------------------------------------------------------------------------------------------------------------------------\n> Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\n> Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\n> e degli eventuali allegati.\n> Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\n> alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "On Fri, Feb 10, 2012 at 11:09, Daniele Amberti <daniele.amberti at ors.it> wrote:\n> Any news about the bug at:\n> https://r-forge.r-project.org/tracker/index.php?func=detail&aid=1742&group_id=156&atid=",
+      "thread_id": "thread-c573745487c6",
+      "thread_depth": 1,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-ae0ee62869a3",
+      "message_id": "<4F461300.4060404@envitech-ambiente.it>",
+      "from_name": "Luciano Gilli",
+      "from_email_hash": "9b47b10efdf1ce03829e1318d4160f893cae9a0710aab1d3ac5ebe9c0ac31fb0",
+      "date": "2012-02-23T10:20:48Z",
+      "subject": "Help request about Portfolio Optimization with R/Rmetrics",
+      "subject_clean": "Help request about Portfolio Optimization with R/Rmetrics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\nwhen trying to run (pag. 26 of \"Portfolio Optimization with R/Rmetrics\")\n\n > DATA <- 100 * SWX.RET[, c(1:2, 4:5)]\n > by <- periods(time(DATA), \"12m\", \"1m\")\n > SWX.ROLL <- rollapply(DATA, by, FUN = \"colSums\")\n\ni get the following message error:\n\nErrore in posns >= 1 : confronto (5) possibile solo per dati atomic o list\n\nCan you help me please?\nAll the others example in book seems to work correctly..\nThanks a lot\nLuciano Gilli\n\nBuyer: Luciano Gilli (luciano.gilli at envitech-ambiente.it) @ 79.38.121.32\n\n-- \nDott. Luciano Gilli\nEnvitech Ambiente e Tecnologie srl\nV. Bonomelli 1/f\n28100 Novara\nTel/Fax +39 (0) 321 640121\ncell. + 39 335 8275512\nskype luciano.gilli",
+      "body_snippet": "Hi,\nwhen trying to run (pag. 26 of \"Portfolio Optimization with R/Rmetrics\")\n\n > DATA <- 100 * SWX.RET[, c(1:2, 4:5)]\n > by <- periods(time(DATA), \"12m\", \"1m\")\n > SWX.ROLL <- rollapply(DATA, by, FUN =",
+      "thread_id": "thread-ae0ee62869a3",
+      "thread_depth": 0,
+      "month": "2012-02"
+    },
+    {
+      "id": "msg-ec98fe03b535",
+      "message_id": "<BAY157-W55FFF3B6450E4A29706AFD1650@phx.gbl>",
+      "from_name": "zuyang Zu",
+      "from_email_hash": "5ace41be9da525a402c0275ea43571cb446ec3c78393daac8f4c3e3aaad4e212",
+      "date": "2012-02-23T21:20:07Z",
+      "subject": "qq plot in fGarch",
+      "subject_clean": "qq plot in fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl>",
+      "thread_id": "thread-ec98fe03b535",
+      "thread_depth": 0,
+      "month": "2012-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fb15903d1f85",
+      "subject": "Request: Garch Ox Fit extension of fGARCH",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2012-02-01T13:03:48Z",
+      "last_reply": "2012-02-01T13:03:48Z",
+      "root_message_id": "msg-fb15903d1f85"
+    },
+    {
+      "id": "thread-6f6b0ba8bc22",
+      "subject": "Inconsistency in timeDate between isBizday and holidayNYSE",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2012-02-01T14:51:17Z",
+      "last_reply": "2012-02-01T14:51:17Z",
+      "root_message_id": "msg-6f6b0ba8bc22"
+    },
+    {
+      "id": "thread-20753fac5d65",
+      "subject": "Solar Home System Plug-and-Go! - by Antek Solar",
+      "message_count": 1,
+      "participants": [
+        "ANTEK SOLAR"
+      ],
+      "started": "2012-02-03T23:35:56Z",
+      "last_reply": "2012-02-03T23:35:56Z",
+      "root_message_id": "msg-20753fac5d65"
+    },
+    {
+      "id": "thread-f917e039c304",
+      "subject": "fExtremes- how to access elements of gevFit",
+      "message_count": 1,
+      "participants": [
+        "gaurang.jitendrabhai at aviva.com"
+      ],
+      "started": "2012-02-06T10:20:49Z",
+      "last_reply": "2012-02-06T10:20:49Z",
+      "root_message_id": "msg-f917e039c304"
+    },
+    {
+      "id": "thread-21e202e46015",
+      "subject": "fArma not any longer on CRAN",
+      "message_count": 1,
+      "participants": [
+        "Pfaff, Bernhard Dr."
+      ],
+      "started": "2012-02-09T10:14:59Z",
+      "last_reply": "2012-02-09T10:14:59Z",
+      "root_message_id": "msg-21e202e46015"
+    },
+    {
+      "id": "thread-c573745487c6",
+      "subject": "timeFirstDayInMonth() bug",
+      "message_count": 2,
+      "participants": [
+        "Daniele Amberti",
+        "Martin Maechler"
+      ],
+      "started": "2012-02-10T10:09:56Z",
+      "last_reply": "2012-02-19T21:59:42Z",
+      "root_message_id": "msg-c573745487c6"
+    },
+    {
+      "id": "thread-b0252e9a5418",
+      "subject": "fBasics",
+      "message_count": 2,
+      "participants": [
+        "Jan de Leeuw",
+        "Martin Maechler"
+      ],
+      "started": "2012-02-13T01:14:55Z",
+      "last_reply": "2012-02-16T23:53:44Z",
+      "root_message_id": "msg-b0252e9a5418"
+    },
+    {
+      "id": "thread-ae0ee62869a3",
+      "subject": "Help request about Portfolio Optimization with R/Rmetrics",
+      "message_count": 1,
+      "participants": [
+        "Luciano Gilli"
+      ],
+      "started": "2012-02-23T10:20:48Z",
+      "last_reply": "2012-02-23T10:20:48Z",
+      "root_message_id": "msg-ae0ee62869a3"
+    },
+    {
+      "id": "thread-ec98fe03b535",
+      "subject": "qq plot in fGarch",
+      "message_count": 1,
+      "participants": [
+        "zuyang Zu"
+      ],
+      "started": "2012-02-23T21:20:07Z",
+      "last_reply": "2012-02-23T21:20:07Z",
+      "root_message_id": "msg-ec98fe03b535"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2016-11",
+  "messages": [
+    {
+      "id": "msg-18be3fd3119a",
+      "message_id": "<12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>",
+      "from_name": "julija",
+      "from_email_hash": "21b90e829f72d5c03874dd0132ab780f72ad344f3bdd5e6fa52405511f4e38d4",
+      "date": "2016-11-10T12:36:33Z",
+      "subject": "fGarch package",
+      "subject_clean": "fGarch package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Yohan, Deathelm and Rmetrics Core Team,\n\nI need to model my data by FIAPARCH and HYGARCH model for academic \nreasons (writing paper for an academic journal), so I wanted to ask you \nif there is any possibility to include these models in package fGarch. \nYou noted in pdf manual of this package that garchOxFit is no longer \npart of fGarch package, and if interested to use, to contact you.\n\nI hope you will respond me in a reasonable time.\n\nThank you in advance.\n\nBest regards,\nJulija Cerovic Smolovic\nUniversity of Montenegro\nFaculty of Economics\nPodgorica\nJovana Tomasevica 37",
+      "body_snippet": "Dear Yohan, Deathelm and Rmetrics Core Team,\n\nI need to model my data by FIAPARCH and HYGARCH model for academic \nreasons (writing paper for an academic journal), so I wanted to ask you \nif there is a",
+      "thread_id": "thread-18be3fd3119a",
+      "thread_depth": 0,
+      "month": "2016-11"
+    },
+    {
+      "id": "msg-29b7b541a416",
+      "message_id": "<22564.41978.574630.528854@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2016-11-10T16:44:42Z",
+      "subject": "fGarch package",
+      "subject_clean": "fGarch package",
+      "in_reply_to": "<12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>",
+      "references": [
+        "<12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>"
+      ],
+      "body_plain": "Dear Julija,\n\nDiethelm tragically died much too early, this summer.\n--> https://www.rmetrics.org/obituary\n\nTobias Setz (in CC), Ph.D. student of Diethelm,\nhas been the main maintainer of the \"core\" R-metrics packages recently.\nI assume he will answer you.\n\nBest regards,\nMartin Maechler,\nETH Zurich\n\n\nPS:\n\n@Tobias, I have added you to the Rmetrics-core  mailing list.\n\n@Yohan: You are *not* part of the Rmetrics-core list.\n \tI can add you too.  Do you want to ?\n\n@Andrew Ellis:  Are you getting these e-mail?  Do you want to\n\t\tstay on the list ?\n\n>>>>> julija  <julija at ac.me>\n>>>>>     on Thu, 10 Nov 2016 13:36:33 +0100 writes:\n\n    > Dear Yohan, Deathelm and Rmetrics Core Team,\n    > I need to model my data by FIAPARCH and HYGARCH model for academic \n    > reasons (writing paper for an academic journal), so I wanted to ask you \n    > if there is any possibility to include these models in package fGarch. \n    > You noted in pdf manual of this package that garchOxFit is no longer \n    > part of fGarch package, and if interested to use, to contact you.\n\n    > I hope you will respond me in a reasonable time.\n\n    > Thank you in advance.\n\n    > Best regards,\n    > Julija Cerovic Smolovic\n    > University of Montenegro\n    > Faculty of Economics\n    > Podgorica\n    > Jovana Tomasevica 37\n\n    > _______________________________________________\n    > Rmetrics-core mailing list\n    > Rmetrics-core at r-project.org\n    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "Dear Julija,\n\nDiethelm tragically died much too early, this summer.\n--> https://www.rmetrics.org/obituary\n\nTobias Setz (in CC), Ph.D. student of Diethelm,\nhas been the main maintainer of the \"core\" R-",
+      "thread_id": "thread-18be3fd3119a",
+      "thread_depth": 1,
+      "month": "2016-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-18be3fd3119a",
+      "subject": "fGarch package",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "julija"
+      ],
+      "started": "2016-11-10T12:36:33Z",
+      "last_reply": "2016-11-10T16:44:42Z",
+      "root_message_id": "msg-18be3fd3119a"
+    }
+  ]
+}

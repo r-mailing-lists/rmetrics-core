@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-06",
+  "messages": [
+    {
+      "id": "msg-a5db1d1d2907",
+      "message_id": "<20100617084942.011A358612@mail.softwarelink.co.th>",
+      "from_name": "Jenny J Fontenot",
+      "from_email_hash": "ab0afc885f4d9eabb619d2ca543ab0d2a4ff9b94b340457bfcfbf85d7f5a4161",
+      "date": "2010-06-17T08:49:41Z",
+      "subject": "dentist data",
+      "subject_clean": "dentist data",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Here's a couple of our healthcare list packages on sale this week only:\n\nPackage 1\n\nAlternative Medicine - 1,141,602 total records with 36,320 emails and 38.935 fax numbers\nMassage Therapists - 76,701 records and 8,305 emails\nPhysical Therapists - 125,460 total records with 5,483 emails and 4,405 fax numbers\n\nAll complete lists above: $277\n\nPackage 2\n\nChiropractors - 108,421 total records * 3,414 emails * 6,553 fax numbers\nAcupuncturists - 23,988 records 1,826 emails\nMassage Therapists - 76,701 records and 8,305 emails\n\nAll complete lists above: $247\n\nThere are more packages and not just for healthcare contact me here for more info or to get samples: inspireresults at gmx.com\n\n  \n\n\nto terminate please send a blank message to remfiles at gmx.com",
+      "body_snippet": "Here's a couple of our healthcare list packages on sale this week only:\n\nPackage 1\n\nAlternative Medicine - 1,141,602 total records with 36,320 emails and 38.935 fax numbers\nMassage Therapists - 76,701",
+      "thread_id": "thread-a5db1d1d2907",
+      "thread_depth": 0,
+      "month": "2010-06"
+    },
+    {
+      "id": "msg-c0e06600a21a",
+      "message_id": "<516517.14511.qm@web112507.mail.gq1.yahoo.com>",
+      "from_name": "Suman Kundu",
+      "from_email_hash": "32844e374bd47eaa1bbcd8f36015fbe68c923664b5cdfcef112ebb8c6298e80d",
+      "date": "2010-06-20T19:21:15Z",
+      "subject": "Making R package- final step",
+      "subject_clean": "Making R package- final step",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100620/abc5bc07/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100620/abc5bc07/attachment.pl>",
+      "thread_id": "thread-c0e06600a21a",
+      "thread_depth": 0,
+      "month": "2010-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-a5db1d1d2907",
+      "subject": "dentist data",
+      "message_count": 1,
+      "participants": [
+        "Jenny J Fontenot"
+      ],
+      "started": "2010-06-17T08:49:41Z",
+      "last_reply": "2010-06-17T08:49:41Z",
+      "root_message_id": "msg-a5db1d1d2907"
+    },
+    {
+      "id": "thread-c0e06600a21a",
+      "subject": "Making R package- final step",
+      "message_count": 1,
+      "participants": [
+        "Suman Kundu"
+      ],
+      "started": "2010-06-20T19:21:15Z",
+      "last_reply": "2010-06-20T19:21:15Z",
+      "root_message_id": "msg-c0e06600a21a"
+    }
+  ]
+}

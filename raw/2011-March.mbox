@@ -1,0 +1,572 @@
+From ligges at statistik.tu-dortmund.de  Tue Mar  1 19:13:10 2011
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 01 Mar 2011 19:13:10 +0100
+Subject: fExtremes
+Message-ID: <4D6D3736.3040801@statistik.tu-dortmund.de>
+
+Dear package maintainers of fExtremes,
+
+we see fExtremes failing now, see e.g.:
+
+http://cran.r-project.org/web/checks/check_results_fExtremes.html
+
+http://www.r-project.org/nosvn/R.check/r-release-windows-ix86+x86_64/fExtremes-00check.html
+
+The only packages changed in the hierarchy of dependencies of 
+"fExtremes" during the last day were
+
+"flexmix"  "survey"   "urca"     "MCMCpack"
+
+and I do not see if any of those is causing the error or if the data is 
+just unfortunate.
+
+Can you please negotiate further actions and fix the problem. Please
+upload fixed version(s) of the package(s) with increased version
+number(s) to CRAN in the usual way and report to cran at R-project.org.
+
+Best wishes,
+Uwe Ligges
+
+
+From chalabi at phys.ethz.ch  Thu Mar  3 10:59:20 2011
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Thu, 3 Mar 2011 10:59:20 +0100
+Subject: garchOxFit request
+In-Reply-To: <20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>
+References: <20110225000604.smn6hm7dsgogsgc0@cubmail.cc.columbia.edu>
+Message-ID: <72216B40-A2A3-4E26-90AE-1E555680E21B@phys.ethz.ch>
+
+Hi,
+
+thanks for your message.
+
+The garchOxFit interface has not been updated for a while and used to work with older ox versions.
+
+If you explore the svn repos of fGarch on r-forge https://r-forge.r-project.org/scm/viewvc.php/?root=rmetrics, you should be able to find the interface to oxGarch.
+
+Regards,
+Yohan
+
+
+
+
+On Feb 25, 2011, at 6:06 AM, Shawn X. Yin wrote:
+
+> Hello,
+> 
+> I am a graduate student at Columbia University. I am doing a project about volatility forecast. I find garchOxFit which was in fGarch package would be extremely helpful to my research. Could I obtain garchOxFit?
+> 
+> Thanks,
+> 
+> Shawn X. Yin
+> Graduate Student at IEOR,
+> Columbia University,
+> New York,NY 10027
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+--
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Uwe.Ligges at R-Project.org  Wed Mar  9 18:59:53 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 09 Mar 2011 18:59:53 +0100
+Subject: Package timeSeries_2130.92.tar.gz has been built for Windows
+Message-ID: <01cbde83$Blat.v2.2.2$cad156ca@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2130.92.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.2 (2011-02-25)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From maechler at stat.math.ethz.ch  Mon Mar 14 09:52:03 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 14 Mar 2011 09:52:03 +0100
+Subject: *stable distrib in fBasics --> small Rmetrics package
+	"stableDist" ?
+In-Reply-To: <19760.48084.359186.493314@stat.math.ethz.ch>
+References: <19757.29893.127643.640049@stat.math.ethz.ch>
+	<914FEF49-61AD-423A-9A4E-35B1AC1BE253@phys.ethz.ch>
+	<19757.45103.318695.7015@stat.math.ethz.ch>
+	<19760.48084.359186.493314@stat.math.ethz.ch>
+Message-ID: <19837.55091.539567.551011@stat.math.ethz.ch>
+
+Two more months have passed.
+
+In the mean time I had found that there is a "famous" 
+non-CRAN package called  'stable' by Jim Lindsey,
+a package that has some interesting features (that we lack) 
+but also has drawbacks, and notably has never been on CRAN.
+But for instance, there have always existed Debian / Ubuntu
+packages for the "Jim Lindsey - collection", so I did have to
+pick a different name and decided to use
+     'stabledist'
+
+Also I have spent many hours of experiments and thinking,
+stumbling over several cases where the fBasics::dstable() would
+end in an error (in integrate or optimize),
+and finally studied Nolan's paper,
+now making use of one more of his hints in computing dstable().
+
+Note also that 'stabledist's  dstable() is nowadays an order of
+magnitude faster than the original fBasics() one, at least when
+applied to a whole vector.
+
+Because of all this, 
+I'm proposing to follow what I see in other Rmetrics packages as well,
+namely to list me instead of Rmetrics-core at ... as maintainer.
+Please tell me if you think this is inappropriate.
+The DESCRIPTION file (as committed 10 minutes ago) now contains
+
+----------------------------------------------------------------
+Package: stabledist
+Version: 0.6-0
+Date: 2011-03-12
+Title: Stable Distribution Functions
+Author: Diethelm Wuertz, Martin Maechler and Rmetrics core team members.
+Maintainer: Martin Maechler <maechler at stat.math.ethz.ch>
+Depends: R (>= 2.10.1)
+Suggests: fBasics, RUnit
+Description: Density, Probability and Quantile functions, and random number
+  generation for (skew) stable distributions, using the parametrizations of
+  Nolan.
+LazyLoad: yes
+LazyData: yes
+License: GPL (>= 2)
+URL: http://www.rmetrics.org
+----------------------------------------------------------------
+
+Notably see 'Author:' and 'Maintainer:'
+Is this ok for you?
+
+If yes, I'd like to submit it to CRAN asap.
+Best regards,
+Martin
+
+
+>>>>> Martin Maechler <maechler at stat.math.ethz.ch>
+>>>>>     on Fri, 14 Jan 2011 22:10:44 +0100 writes:
+
+>>>>> Martin Maechler <maechler at stat.math.ethz.ch>
+>>>>>     on Wed, 12 Jan 2011 14:44:15 +0100 writes:
+
+>>>>> Diethelm Wuertz <wuertz at phys.ethz.ch>
+>>>>>     on Wed, 12 Jan 2011 11:42:06 +0100 writes:
+
+    >>> On 12.01.2011, at 10:30, Martin Maechler wrote:
+
+
+    >>> Dear Martin, Dear Yohan and David,
+
+    >>> I am completely agree with Martin in all points,
+
+    >> thank you very much, Diethelm!
+
+    >>> beside of the name for the new package: I would prefer
+    >>> to name it "AlphaStable".
+
+    >> (see below)
+
+    >>> At the moment David Scott is here at ETH (still to the
+    >>> end of January) and we are working also together with
+    >>> Yohan on several distribution function packages.
+
+    >>> These include David's packages
+
+    >>> Distribution Utils
+
+    >>> GeneralizedHyperbolic (formerly HyperbolicDist) Variance
+    >>> Gamma SkewHyperbolic NormalLaplace
+	
+    >> [cool!]
+
+    >>> A (yet unpublished) package I have written
+
+    >>> SecantHyperbolic
+
+    >>> on the secant hyperbolic distribution.
+
+
+    >>> And a new package with (Yohan, David and me) on the
+
+    >>> GeneralizedLambda
+
+    >>> distribution with special emphasis on financial return
+    >>> distributions.
+
+    >> out of curiosity: are the stable ones no longer of
+    >> interest for financial returns ?
+
+    >>> So a package with the name "AlphaStable" would nicely
+    >>> fit in this concept of distribution packages and would
+    >>> follow the naming convention of the other packages which
+    >>> are already on CRAN or on r-forge/Rmetrics.
+
+    >> I see.  Still, most modern litterature, AFAICS, does not
+    >> mention "alpha" in the name anymore.
+
+    >> After all, the (skew) stable distributions with Nolan's
+    >> parametrizations are *the* stable distributions, and
+    >> there are no "non-alpha" stable dist.s, so why should we
+    >> need "alpha" as part of the name.
+
+    >> Couldn't we settle on "StableDist" (so we have the >= 2
+    >> camel bumps you have in the other names),
+
+    >> [ or then I'd use an even shorter all lowercase (faster
+    >> for typing, easier against typos !) name such as simply
+    >> 'stable' ..... as I do like short package names ]
+
+    > Haven't heard back from you.  In the mean time, after
+    > thinking on and off about it, I'd really prefer 'stable'
+    > -- short, simple, clear -- but could be convinced to use
+    > 'StableDist' instead.
+
+    > If I don't here anything soon, I'll take the short name.
+    > Martin
+
+
+    >>> Furthermore we have started to publish an R/Rmetrics
+    >>> eBook entitled "Handbook on Financial Return
+    >>> Distributions in R"
+
+    >>> and so it would be great to have you in the boat for a
+    >>> chapter on the new package about alpha stable
+    >>> distributions.
+
+    >> Ah .. thank you !
+
+    >>> I will call you and we can discuss some details how to
+    >>> proceed.  At the end of this process all the
+    >>> distributional stuff will no longer be needed in the
+    >>> fBasics package.
+
+    >>> regards Diethelm
+
+    >> {I'm not in the office any more today, } regards, Martin
+
+
+    >>>> Dear Diethelm and Yohan,
+    >>>> 
+    >>>> as you may recall, we (Marius Hofert and I) have been
+    >>>> making use of rstable() in our 'nacopula' package for
+    >>>> more than a year now, but back then, we found small
+    >>>> numerical and efficiency problems in fBasics version of
+    >>>> rstable and as we did not need any other fBasics
+    >>>> function, I wrote a new version called 'rstable1()' {so
+    >>>> as to make no confusion}, and also on its help page
+    >>>> clearly documented that the original code, and
+    >>>> documentation, and d*, p*, q* functions are all in
+    >>>> 'fBasics'.
+    >>>> 
+    >>>> Now, for a while, as we have been implementing new
+    >>>> Maximum Likelihood methods for Archimdean copulas, we
+    >>>> have made use of fBasics::dstable(), and for that have
+    >>>> had an importFrom(fBasics, dstable) in our package.  I
+    >>>> have always felt it a bit unconvenient that this loads
+    >>>> all of fBasics, timeDate, and timeSeries just because
+    >>>> of this one function.
+    >>>> 
+    >>>> Now, I've found a numerical problem with dstable() and
+    >>>> also performance issues which I have partly adressend
+    >>>> would like to address more.
+    >>>> 
+    >>>> For all these reasons, I'm proposing to factor out the
+    >>>> [dpqr]stable() functions out of fBasics into a new
+    >>>> package, say 'stableDist', and have fBasics "depend" on
+    >>>> stableDist, such that for the users who call
+    >>>> require(fBasics) or library(fBasics), nothing will
+    >>>> change.
+    >>>> 
+    >>>> The big advantage of the change would be that all those
+    >>>> users (like us) who really only need the stable
+    >>>> distributions, they can simply load or import from
+    >>>> 'stableDist' which will be very fast and very small.
+    >>>> 
+    >>>> Another advantage will be that the unit tests for
+    >>>> *stable which are currently disabled in 'fBasics', can
+    >>>> be run for 'stableDist' without adding test runtime to
+    >>>> 'fBasics'.
+    >>>> 
+    >>>> My proposal is to factor out things as soon as you
+    >>>> agree, and then address the issues I've found one by
+    >>>> one, starting with dstable where I've already
+    >>>> (uncommitted) improvements ready.  BTW: The
+    >>>> stableSlider() of course would remain in 'fBasics'.
+    >>>> 
+    >>>> Best regards, Martin
+    >>>> 
+    >>>> _______________________________________________
+    >>>> Rmetrics-core mailing list Rmetrics-core at r-project.org
+    >>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+    >>>>
+
+
+From maechler at stat.math.ethz.ch  Tue Mar 15 15:42:27 2011
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Tue, 15 Mar 2011 15:42:27 +0100
+Subject: stabledist 0.6-0 uploaded to CRAN's incoming
+Message-ID: <19839.31443.454298.529321@stat.math.ethz.ch>
+
+A few minutes ago, 
+I have uploaded  stabledist_0.6-0 to CRAN's incoming.
+
+This is a new, small package which "factors out" the
+[dpqr]stable() functions {and stableMode()} of the  Rmetrics
+package 'fBasics'.
+The next version of fBasics will depend on 'stabledist'.
+
+Advances:
+
+1) stabledist is small and compact, and if useRs only need one of
+  the [dpqr]stable() functions, they now can get 'stabledist'
+  instead of all of 'fBasics' (which itself depends on the
+  "timeDate" and "timeSeries" packages).
+
+2) dstable() has been considerably improved speedwise and in
+   numerical boundary situations, where the previous fBasics
+   version ended in an error, e.g.,
+   dstable(4000., alpha=1.00001, beta=0.6)
+
+3) the RUnit-based unit tests are now active, as they no longer
+   take too much time.
+
+Best regards,
+Martin Maechler (for the Rmetrics team).
+
+--   
+Martin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler
+Seminar f?r Statistik, ETH Z?rich  HG G 16      R?mistrasse 101
+CH-8092 Zurich, SWITZERLAND
+phone: +41-44-632-3408       fax: ...-1228      <><
+
+
+From Kurt.Hornik at wu.ac.at  Tue Mar 15 17:41:47 2011
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Tue, 15 Mar 2011 17:41:47 +0100
+Subject: stabledist 0.6-0 uploaded to CRAN's incoming
+In-Reply-To: <19839.31443.454298.529321@stat.math.ethz.ch>
+References: <19839.31443.454298.529321@stat.math.ethz.ch>
+Message-ID: <19839.38603.403890.736126@fangorn.hornik.net>
+
+>>>>> Martin Maechler writes:
+
+Many thanks for your submission, on CRAN now.
+
+Best
+-k
+
+> A few minutes ago, 
+> I have uploaded  stabledist_0.6-0 to CRAN's incoming.
+
+> This is a new, small package which "factors out" the
+> [dpqr]stable() functions {and stableMode()} of the  Rmetrics
+> package 'fBasics'.
+> The next version of fBasics will depend on 'stabledist'.
+
+> Advances:
+
+> 1) stabledist is small and compact, and if useRs only need one of
+>   the [dpqr]stable() functions, they now can get 'stabledist'
+>   instead of all of 'fBasics' (which itself depends on the
+>   "timeDate" and "timeSeries" packages).
+
+> 2) dstable() has been considerably improved speedwise and in
+>    numerical boundary situations, where the previous fBasics
+>    version ended in an error, e.g.,
+>    dstable(4000., alpha=1.00001, beta=0.6)
+
+> 3) the RUnit-based unit tests are now active, as they no longer
+>    take too much time.
+
+> Best regards,
+> Martin Maechler (for the Rmetrics team).
+
+> --   
+> Martin <Maechler at stat.math.ethz.ch>  http://stat.ethz.ch/people/maechler
+> Seminar f?r Statistik, ETH Z?rich  HG G 16      R?mistrasse 101
+> CH-8092 Zurich, SWITZERLAND
+> phone: +41-44-632-3408       fax: ...-1228      <><
+
+
+From otoomet at gmail.com  Fri Mar 18 12:29:58 2011
+From: otoomet at gmail.com (Ott Toomet)
+Date: Fri, 18 Mar 2011 13:29:58 +0200
+Subject: labels in axis.timeDate()
+Message-ID: <AANLkTin7NGkBok+w1F6AW+4-LKefTgrWkzKrfqM7m6XC@mail.gmail.com>
+
+Dear timeDate() team,
+
+the 'labels' option in 'axis.timeDate()' does not work as intended,
+labels are always on (version 2130.92, the most recent CRAN one).
+
+The bug is easily visible in the code, one can see the labels are
+always passed as TRUE to axis.POSIXct.
+
+> axis.timeDate
+function (side, x, at, format = NULL, labels = TRUE, ...)
+{
+    if (is.null(format))
+        format = whichFormat(x)
+    axis.POSIXct(side = side, x = as.POSIXct(x), at = as.POSIXct(at),
+        format = format, labels = TRUE, ...)
+    invisible()
+}
+<environment: namespace:timeDate>
+
+Best,
+Ott
+
+-- 
+Ott Toomet
+Senior research fellow
+
+Tartu University
+Department of Economics
+Narva 4,
+Tartu 51009
+Estonia
+
+ph: +372 737 6348
+email: otoomet at gmail.com
+
+
+From Uwe.Ligges at R-Project.org  Sun Mar 20 18:36:24 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Sun, 20 Mar 2011 18:36:24 +0100
+Subject: Package fSeries_270.76.3.tar.gz has been built for Windows - with a
+	WARNING
+Message-ID: <01cbe725$Blat.v2.2.2$55499eac@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fSeries_270.76.3.tar.gz did pass 'R CMD check' only with WARNING(s).
+It has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.13/).
+
+Please note that we are talking about R-2.13.0 alpha/beta/rc
+(but not the current R-2.12.2). R-2.13.0 will be released on April 13.
+Please consider to submit a fixed version without any WARNING until release.
+For details (and for results on other platforms) see
+http://cran.r-project.org/web/checks/check_summary.html
+R version 2.13.0 alpha (2011-03-17 r54849)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.13/fSeries.Rcheck'
+* using R version 2.13.0 alpha (2011-03-17 r54849)
+* using platform: i386-pc-mingw32 (32-bit)
+* using session charset: ISO8859-1
+* checking for file 'fSeries/DESCRIPTION' ... OK
+* this is package 'fSeries' version '270.76.3'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fSeries' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Assignments in \usage in documentation object 'dim':
+  colnames <- .timeSeries(x) <- value
+  rownames <- .timeSeries(x) <- value
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See the chapter 'Writing R documentation files' in manual 'Writing R
+Extensions'.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking for unstated dependencies in tests ... OK
+* checking tests ... OK
+  Running 'doRUnit.R'
+* checking PDF version of manual ... OK
+WARNING: There was 1 warning, see
+  'd:/Rcompile/CRANpkg/local/2.13/fSeries.Rcheck/00check.log'
+for details
+
+From songjie at clpc.e-chinalife.com  Wed Mar 23 06:56:41 2011
+From: songjie at clpc.e-chinalife.com (=?GB2312?B?y8693A==?=)
+Date: Wed, 23 Mar 2011 13:56:41 +0800
+Subject: Question
+Message-ID: <OFD4945C33.B39A94AB-ON4825785C.0009BEA6-4825785C.0020B2A7@mail.clic>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh>
+
+From songjie at clpc.e-chinalife.com  Mon Mar 28 07:56:47 2011
+From: songjie at clpc.e-chinalife.com (=?GB2312?B?y8693A==?=)
+Date: Mon, 28 Mar 2011 13:56:47 +0800
+Subject: Question
+Message-ID: <OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl>
+
+From ligges at statistik.tu-dortmund.de  Tue Mar 29 16:05:16 2011
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Tue, 29 Mar 2011 16:05:16 +0200
+Subject: fExtremes failing
+Message-ID: <4D91E71C.7060204@statistik.tu-dortmund.de>
+
+Please note we see fExtremes failing on some platforms (and others will 
+follow):
+http://cran.r-project.org/web/checks/check_results_fExtremes.html
+
+I do not know why, but
+
+  intersect(fExtRecDeps, changedPkg)
+
+gives
+
+[1] "maptools" "rgeos"    "survey"
+
+on my machine. Can you please check with updated CRAN packages.
+
+
+Thanks,
+Uwe Ligges
+
+

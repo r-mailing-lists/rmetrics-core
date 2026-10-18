@@ -1,0 +1,41 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2007-09",
+  "messages": [
+    {
+      "id": "msg-90bc9d6c8727",
+      "message_id": "<18152.61768.596607.700251@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2007-09-13T08:14:00Z",
+      "subject": "Rmetrics-core Mailing list",
+      "subject_clean": "Rmetrics-core Mailing list",
+      "in_reply_to": "<Pine.LNX.4.64.0709130213060.1877@eowyn>",
+      "references": [
+        "<46E5196A.4000003@itp.phys.ethz.ch>",
+        "<Pine.LNX.4.64.0709130050190.1877@eowyn>",
+        "<18152.32560.299313.933401@ron.nulle.part>",
+        "<Pine.LNX.4.64.0709130213060.1877@eowyn>"
+      ],
+      "body_plain": "[A resend --- this time  Rmetrics-core;\n Note that  I cannot send e-mail to Dirk anymore; possibly\n because we use more spam-protection and our mail server does\n not react quickly enough to debian.org's one.\n \n Maybe this reaches Dirk ?  -- Martin\n]\n\n>>>>> \"AZ\" == Achim Zeileis <Achim.Zeileis at wu-wien.ac.at>\n>>>>>     on Thu, 13 Sep 2007 02:21:52 +0200 (CEST) writes:\n\n    AZ> On Wed, 12 Sep 2007, Dirk Eddelbuettel wrote:\n    >> On 13 September 2007 at 00:56, Achim Zeileis wrote:\n    >> | Wie von Kurt bereits angemerkt kann man deshalb die Namensgebung\n    >> | sicherlich freier gestalten und braucht die Zusammengehoerigkeit nicht\n    >> | durch Namenskonventionen verdeutlichen.\n    >> \n    >> Ich bin da anderer Meinung.  CRAN + BioC sind nun um die 2000 Pakete, und es\n    >> ist mE einfacher wenn da gemeinsame 'Wurzeln' deutlich gemacht.  Meine $0.02\n    >> fuer nen Rmetrix-Prefix oder sowas.\n\n    AZ> Ohne es muehsam machen zu wollen:\n    AZ> o Die Leute, die \"Rmetrics\" wollen, brauchen halt eine geeignete\n    AZ> Info-Uebersicht, die kann man auf Rmetrics.org bekommen, und angenehme\n    AZ> Installations- und Lademechanismen bspw. durch das \"Rmetrics\"\n    AZ> Meta-Paket oder einen CRAN Task View.\n    AZ> o Andererseits moechte man fuer ander Nutzer, die sich nicht fuer\n    AZ> Rmetrics an sich interessieren, die Benutzung nicht unnoetig\n    AZ> kompliziert machen (wenn man nur ein bestimmtes Teil-Feature oder\n    AZ> einen Algorithmus o.ae. braucht). Gemeinsame Namen oder stark\n    AZ> Inderpedendenzen koennen da hemmend wirken. Bei BioC finde ich das bei\n    AZ> vielen Paketen etwas stoerend.\n\n    AZ> Aber letztendlich ist es nur ein Detailfrage und es gibt sicherlich \n    AZ> wichtigere Designentscheidungen...\n\nDa bin ich auch einverstanden.\nIch bin sowieso der Meinung, etwas entgegen dem Vorschlag von\nDiethelm, dass man weitere Package-Reorganisation nicht\nunbedingt wieder mit neuen etc bewerkstelligen soll.\n\nDer End-User m??chte nicht dauernd seine \"Produktion\"-Skripts\nmodifizieren m??ssen, wo \n\t     \nrequire(<pkgname>)  oder\nlibrary(<pkgname>)  drin steht.\n\nDie Package k??nnen und sollen intern re-organisiert werden,\neinen NAMESPACE bekommen etc, aber nicht wieder umbenannt\nwerden.\n\nPS: Wer von Euch (ausser Dirk) m??chte jetzt noch zu\n    Rmetrics-core (erst mal nur E-mail Verteiler) dazu kommen?\n\nMeiner Meinung nach sollten solche Dinge unbedingt auf\nRmetrics-core diskutiert werden, wo sie auch archiviert bleiben,\nund sichtbar werden, f??r zuk??nftige 'Rmetrics-core' Mitglieder.\n\nMartin",
+      "body_snippet": "[A resend --- this time  Rmetrics-core;\n Note that  I cannot send e-mail to Dirk anymore; possibly\n because we use more spam-protection and our mail server does\n not react quickly enough to debian.org",
+      "thread_id": "thread-90bc9d6c8727",
+      "thread_depth": 0,
+      "month": "2007-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-90bc9d6c8727",
+      "subject": "Rmetrics-core Mailing list",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2007-09-13T08:14:00Z",
+      "last_reply": "2007-09-13T08:14:00Z",
+      "root_message_id": "msg-90bc9d6c8727"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+From mmiklovic at yahoo.com  Sun Aug 17 11:21:01 2008
+From: mmiklovic at yahoo.com (michal miklovic)
+Date: Sun, 17 Aug 2008 02:21:01 -0700 (PDT)
+Subject: contribution to fGarch - QML estimation
+Message-ID: <255918.82143.qm@web50106.mail.re2.yahoo.com>
+
+Hi,
+
+I added the option to estimate a garch model by the method of Quasi-Maximum Likelihood (QML) to the fGarch package. The QML assumes normal distribution and uses robust standard errors for inference. Hence, my contribution boils down to the computation of robust standard errors.
+I made a couple of small changes to the files 'garchFit.R' and 'methods-summary.R'. I am sending you the files in the attachment because I think it is more convenient than listing the changes here in the email. I am also sending you the file 'garchGradient.R', which is used in the computation of robust standard errors. I am enclosing the corresponding manual files as well. All changes were made to the latest revision of fGarch, i.e. 3486.
+I checked accuracy of the robust standard errors computation with the help of the econometric software TSP. First, I simulated two garch processes and estimated them in R, see the files 'garch QMLE test.R' and 'garch QMLE test output.txt' in the attachment. Then I estimated the same models using the same data in TSP, see the file 'QMLE benchmark.out'. As can be seen in the files, the results are the same. Therefore, I believe the robust standard errors computation is accurate.
+If you have any questions regarding the QML method, the enclosed files or the changes I made, please do not hesitate to contact me.
+
+Best regards,
+
+Michal
+
+
+
+      
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: garchFit.R
+Type: application/octet-stream
+Size: 42042 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0007.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: methods-summary.R
+Type: application/octet-stream
+Size: 5902 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0008.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: garchGradient.R
+Type: application/octet-stream
+Size: 2795 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0009.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: garchFit.Rd
+Type: application/octet-stream
+Size: 12062 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0010.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: methods-summary.Rd
+Type: application/octet-stream
+Size: 3091 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0011.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: garch QMLE test.R
+Type: application/octet-stream
+Size: 1153 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0012.obj>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: garch QMLE test output.txt
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0001.txt>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: QMLE benchmark.out
+Type: application/octet-stream
+Size: 3463 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080817/c392faa6/attachment-0013.obj>
+
+From chalabi at phys.ethz.ch  Tue Aug 19 16:38:33 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 19 Aug 2008 16:38:33 +0200
+Subject: contribution to fGarch - QML estimation
+In-Reply-To: <255918.82143.qm@web50106.mail.re2.yahoo.com>
+References: <255918.82143.qm@web50106.mail.re2.yahoo.com>
+Message-ID: <20080819163833.236cc0bc@mimi>
+
+Dear Michal,
+
+This is great! Thanks for your contribution!
+
+If I am not wrong, this corresponds to what you told me at the Rmetrics
+Workshop in Meielisalp.
+
+I will go through your code when I will be back from holidays.
+
+regards,
+Yohan
+
+>>>> "MM" == michal miklovic <mmiklovic at yahoo.com>
+>>>> on Sun, 17 Aug 2008 02:21:01 -0700 (PDT)
+
+   MM> Hi,
+   MM> 
+   MM> I added the option to estimate a garch model by the method of Quasi-Maximum Likelihood (QML) to the fGarch package. The QML assumes normal distribution and uses robust standard errors for inference. Hence, my contribution boils down to the computation of robust standard errors.
+   MM> I made a couple of small changes to the files 'garchFit.R' and 'methods-summary.R'. I am sending you the files in the attachment because I think it is more convenient than listing the changes here in the email. I am also sending you the file 'garchGradient.R', which is used in the computation of robust standard errors. I am enclosing the corresponding manual files as well. All changes were made to the latest revision of fGarch, i.e. 3486.
+   MM> I checked accuracy of the robust standard errors computation with the help of the econometric software TSP. First, I simulated two garch processes and estimated them in R, see the files 'garch QMLE test.R' and 'garch QMLE test output.txt' in the attachment. Then I estimated the same models using the same data in TSP, see the file 'QMLE benchmark.out'. As can be seen in the files, the results are the same. Therefore, I believe the robust standard errors computation is accurate.
+   MM> If you have any questions regarding the QML method, the enclosed files or the changes I made, please do not hesitate to contact me.
+   MM> 
+   MM> Best regards,
+   MM> 
+   MM> Michal
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From riccardo.ceretti at epsilonsgr.it  Thu Aug 21 12:26:04 2008
+From: riccardo.ceretti at epsilonsgr.it (Riccardo Ceretti)
+Date: Thu, 21 Aug 2008 12:26:04 +0200
+Subject: Barrier options documentation
+Message-ID: <8D64D4652EB17048B874B0503309CFCA0215E927@epsilon2003.epsilonsgr.it>
+
+Hi guys,
+
+I just noticed what looks like a typo in the barrier option
+documentation.
+When you're talking about rebate you say: 
+"If the option is a knock-in (knock out), a predetermined cash rabate
+may be paid at expiration if the option has not been knocked-in
+(knocked-out)"
+Do you mean: 
+"If the option is a knock-in (knock out), a predetermined cash rabate
+may be paid at expiration if the option has not been knocked-in (has
+been knocked-out)"
+Don't you?
+
+Have a nice day
+
+RC
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080821/a21cbd20/attachment.html>
+-------------- next part --------------
+DISCLAIMER:\ L'utilizzo non autorizzato del presente mes...{{dropped:17}}
+
+
+From zornitsa.luleva at gmail.com  Fri Aug 22 09:54:31 2008
+From: zornitsa.luleva at gmail.com (Zornitsa Luleva)
+Date: Fri, 22 Aug 2008 09:54:31 +0200
+Subject: [R] Parabolic cylinder function
+Message-ID: <e67ad1a20808220054w391d5e05p174c006440be9772@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl>
+
+From azzalini at stat.unipd.it  Tue Aug 26 10:44:16 2008
+From: azzalini at stat.unipd.it (Adelchi Azzalini)
+Date: Tue, 26 Aug 2008 10:44:16 +0200
+Subject: dmvsnorm & mvst in fMultivar
+Message-ID: <20080826104416.15516162.azzalini@stat.unipd.it>
+
+Dear Colleagues,
+
+I am writing about some functions incorporated into your package
+"fMultivar", specifically dmvsnorm & mvst, which originate from 
+packages 'sn'. In principle, it is welcome that your package
+incorporates some routines from my package. Unfortunately, this
+operation has been done improperly, and the effect is seriously
+misleading for the user.
+
+In the documentation of the above-mentioned functions, one reads:
+
+mu, Omega, alpha, df: [*mvsnorm][*mvst] - 
+           the model parameters: 
+           'mu' a vector of mean values, one for each column, 
+           'Omega' the covariance matrix, 
+           'alpha' the skewness vector, and 
+           'df' the number of degrees of freedom which is a measure for
+          the fatness of the tails (excess kurtosis). 
+
+and in the code mu is set equal to xi, which is a location parameter,
+but _not_ the mean, as the documentation wrongly indicates. In fact 
+in the skew-t case the mean may even not exist. Similarly, Omega is 
+described as "the covariance matrix", which suggests that this is
+the covariance matrix of the distribution, but it is not true.
+Omega is _a_ covariance matrix, which is related to the covariance
+matrix (when this one exists) but it is different. For the
+parametrization based on mean and variance, see later.
+
+In addition, in the code of dmvsnorm, for the one-dimensional case
+there is the assignment
+
+ ans = dsn(x, location = xi[1], scale = as.vector(Omega)[1], 
+           shape = alpha[1])
+
+which is wrong since in this case the scale is the square root of
+Omega. Similar errors exist in pmvsnorm, dmvst, pmvst.
+
+Please note that the above remarks do not attempt to be exhaustive,
+since I have not done a full scan of your code and documentation.
+These are just the problems which I have spotted after a quick
+browsing of your package.
+
+I take this opportunity to draw your attention to this note:
+   http://tango.stat.unipd.it/SN/announce2.html
+When the new "version 1.xx" will be available, it will include
+a parametrization based on mean/variance.
+
+With best wishes,
+
+Adelchi Azzalini  
+
+-- 
+Adelchi Azzalini  <azzalini at stat.unipd.it>
+Dipart.Scienze Statistiche, Universit? di Padova, Italia
+tel. +39 049 8274147,  http://azzalini.stat.unipd.it/
+
+

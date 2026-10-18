@@ -1,0 +1,1336 @@
+From Uwe.Ligges at r-project.org  Wed Apr  8 15:06:10 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Wed, 08 Apr 2009 15:06:10 +0200
+Subject: Package fRegression_270.74.tar.gz did not pass R CMD check
+Message-ID: <01c9b84a$Blat.v2.2.2$c9aca836@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on
+Windows and will be omitted from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+Please check the attached log-file and consider to resubmit a version
+with increased version number that passes R CMD check on Windows.
+
+Please note that we are talking about R-2.9.0 beta
+(but not the current R-2.8.1). R-2.9.0 will be released on April 17.
+Please consider to submit a fixed version until April 15.
+R version 2.9.0 beta (2009-04-06 r48294)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fRegression.Rcheck'
+* using R version 2.9.0 beta (2009-04-06 r48294)
+* using session charset: ISO8859-1
+* checking for file 'fRegression/DESCRIPTION' ... OK
+* this is package 'fRegression' version '270.74'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fRegression' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd files against version 2 parser ... WARNING
+Warning in parse_Rd("./man/fREG-class.Rd", encoding = "unknown") :
+  newline within quoted string at fREG-class.Rd:82
+*** error on file ./man/fREG-class.Rd
+Error in parse_Rd("./man/fREG-class.Rd", encoding = "unknown") : 
+  Unexpected end of input (in " quoted string opened at fREG-class.Rd:104:47)
+
+Warning in parse_Rd("./man/plot-methods.Rd", encoding = "unknown") :
+  newline within quoted string at plot-methods.Rd:73
+*** error on file ./man/plot-methods.Rd
+Error in parse_Rd("./man/plot-methods.Rd", encoding = "unknown") : 
+  Unexpected end of input (in " quoted string opened at plot-methods.Rd:90:55)
+
+Warning: ./man/regFit.Rd:131: Unnecessary braces at '{| residuals |}'
+Warning: ./man/regSim.Rd:74: Unnecessary braces at '{x2}'
+problems found in 'fREG-class.Rd', 'plot-methods.Rd'
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* checking examples ... OK
+* checking tests ... ERROR
+Running the tests in 'tests/doRUnit.R' failed.
+Last 13 lines of output:
+    numeric 'envir' arg not of length one
+  ERROR in test.termPersp: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  ERROR in test.termPlot: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  ERROR in test.amCoef: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  Error in eval.with.vis(expr, envir, enclos) : 
+  
+  unit testing failed (#test failures: 0, R errors: 5)
+  
+  Calls: source -> eval.with.vis -> eval.with.vis
+  Execution halted
+
+From Uwe.Ligges at r-project.org  Sat Apr 11 05:26:09 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 11 Apr 2009 05:26:09 +0200
+Subject: Package fRegression_270.74.tar.gz did not pass R CMD check
+Message-ID: <01c9ba55$Blat.v2.2.2$41aeec51@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_270.74.tar.gz did *not* pass 'R CMD check' on
+Windows and will be omitted from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+Please check the attached log-file and consider to resubmit a version
+with increased version number that passes R CMD check on Windows.
+R version 2.9.0 beta (2009-04-08 r48312)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fRegression.Rcheck'
+* using R version 2.9.0 beta (2009-04-08 r48312)
+* using session charset: ISO8859-1
+* checking for file 'fRegression/DESCRIPTION' ... OK
+* this is package 'fRegression' version '270.74'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fRegression' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd files against version 2 parser ... WARNING
+Warning in parse_Rd("./man/fREG-class.Rd", encoding = "unknown") :
+  newline within quoted string at fREG-class.Rd:82
+*** error on file ./man/fREG-class.Rd
+Error in parse_Rd("./man/fREG-class.Rd", encoding = "unknown") : 
+  Unexpected end of input (in " quoted string opened at fREG-class.Rd:104:47)
+
+Warning in parse_Rd("./man/plot-methods.Rd", encoding = "unknown") :
+  newline within quoted string at plot-methods.Rd:73
+*** error on file ./man/plot-methods.Rd
+Error in parse_Rd("./man/plot-methods.Rd", encoding = "unknown") : 
+  Unexpected end of input (in " quoted string opened at plot-methods.Rd:90:55)
+
+Warning: ./man/regFit.Rd:131: Unnecessary braces at '{| residuals |}'
+Warning: ./man/regSim.Rd:74: Unnecessary braces at '{x2}'
+problems found in 'fREG-class.Rd', 'plot-methods.Rd'
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* checking examples ... OK
+* checking tests ... ERROR
+Running the tests in 'tests/doRUnit.R' failed.
+Last 13 lines of output:
+    numeric 'envir' arg not of length one
+  ERROR in test.termPersp: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  ERROR in test.termPlot: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  ERROR in test.amCoef: Error in eval(inp, data, parent.frame()) : 
+    numeric 'envir' arg not of length one
+  Error in eval.with.vis(expr, envir, enclos) : 
+  
+  unit testing failed (#test failures: 0, R errors: 5)
+  
+  Calls: source -> eval.with.vis -> eval.with.vis
+  Execution halted
+
+From maechler at stat.math.ethz.ch  Wed Apr 15 09:27:33 2009
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 15 Apr 2009 09:27:33 +0200
+Subject: 2hr timeout of some ethz.ch servers: Thu April 16, 3--5 UTC+2
+Message-ID: <18917.35941.590344.700199@lynne.math.ethz.ch>
+
+The planned downtime which will include  mailman mailing lists,
+possibly FTP and HTTP, is at a good time for Europeans only.
+
+Note that the subversion (SVN) server should *NOT* be affected.
+
+For the mailing lists, you should just observe a long timeout
+before mails are forwarded / posted, but nothing should be lost,
+and the users would not receive feedback (about the timeout)
+unless the timeout would take considerably longer, unexpectedly.
+
+ >> There will be upcoming maintenance work of the central computer services
+ >> on our network's storage server (NAS) which will affect all of our user and 
+ >> software directories. This change will take place on
+ >> 
+ >>                   Thursday 16th April, from 3:15 a.m.
+
+  [................]
+
+ >> The interruption will take about 2 hours.
+
+
+--
+Best,
+Martin
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:54 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:54 +0200
+Subject: Package timeDate_290.85.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3d46126f@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_290.85.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:53 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:53 +0200
+Subject: Package fTrading_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3caa6d17@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fTrading_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:54 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:54 +0200
+Subject: Package timeSeries_290.81.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3d72b4ac@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_290.81.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:52 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:52 +0200
+Subject: Package fOptions_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3c191492@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:53 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:53 +0200
+Subject: Package fUnitRoots_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3ccd85d3@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:53 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:53 +0200
+Subject: Package fSeries_270.76.2.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3c8383c1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fSeries_270.76.2.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:53 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:53 +0200
+Subject: Package fUtilities_290.76.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3cefdb3d@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:52 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:52 +0200
+Subject: Package fPortfolio_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3c3bcba5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:52 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:52 +0200
+Subject: Package fNonlinear_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3bf7827a@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fNonlinear_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:53 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:53 +0200
+Subject: Package fRegression_290.75.tar.gz did not pass R CMD check
+Message-ID: <01c9be6d$Blat.v2.2.2$3c64fef1@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_290.75.tar.gz did *not* pass 'R CMD check' on
+Windows and will be omitted from the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+Please check the attached log-file and consider to resubmit a version
+with increased version number that passes R CMD check on Windows.
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+-------------- next part --------------
+* using log directory 'd:/Rcompile/CRANpkg/local/2.8/fRegression.Rcheck'
+* using R version 2.8.1 (2008-12-22)
+* using session charset: ISO8859-1
+* checking for file 'fRegression/DESCRIPTION' ... OK
+* this is package 'fRegression' version '290.75'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking whether package 'fRegression' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+.gam: no visible global function definition for 'gam.method'
+.gam: no visible global function definition for
+  'gam.method.description'
+* checking Rd files ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable compilation flags in Makevars ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* creating fRegression-Ex.R ... OK
+* checking examples ... ERROR
+Running examples in 'fRegression-Ex.R' failed.
+The error most likely occurred in:
+
+> ### * regFit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: regFit
+> ### Title: Regression Modelling
+> ### Aliases: regFit gregFit
+> ### Keywords: models
+> 
+> ### ** Examples
+> 
+> ## regSim -
+>    x = regSim(model = "LM3", n = 100)
+>   
+>    # LM       
+>    regFit(Y ~ X1 + X2 + X3, data = x, use = "lm") 
+
+Title:
+ Linear Regression Modeling 
+
+Formula:
+ Y ~ X1 + X2 + X3
+
+Family:
+ gaussian identity 
+
+Model Parameters:
+(Intercept)           X1           X2           X3  
+    0.01578      0.73967      0.25128     -0.50611  
+
+>    
+>    # RLM      
+>    regFit(Y ~ X1 + X2 + X3, data = x, use = "rlm") 
+
+Title:
+ Robust Linear Regression Modeling 
+
+Formula:
+ Y ~ X1 + X2 + X3
+
+Family:
+ gaussian identity 
+
+Model Parameters:
+(Intercept)           X1           X2           X3  
+    0.01968      0.74264      0.24736     -0.50123  
+
+>    # AM       
+>    regFit(Y ~ X1 + X2 + X3, data = x, use = "gam")                
+Error in .gam(formula = Y ~ X1 + X2 + X3, data = as.data.frame(x)) : 
+  could not find function "gam.method"
+Calls: regFit -> eval -> eval -> .gam
+Execution halted
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:52 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:52 +0200
+Subject: Package fMultivar_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3bd344c3@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fMultivar_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:51 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:51 +0200
+Subject: Package fImport_290.76.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3baf68b5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:50 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:50 +0200
+Subject: Package fBonds_270.74.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3aabffcd@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBonds_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:50 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:50 +0200
+Subject: Package fEcofin_290.76.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3b1c898c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fEcofin_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:51 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:51 +0200
+Subject: Package fGarch_290.77.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3b88e108@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_290.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:50 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:50 +0200
+Subject: Package fCopulae_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3af5a036@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCopulae_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:51 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:51 +0200
+Subject: Package fExtremes_290.76.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3b6504fa@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExtremes_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:49 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:49 +0200
+Subject: Package fBasics_290.76.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3a7a0652@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_290.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:49 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:49 +0200
+Subject: Package fArma_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3a01db5f@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fArma_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:50 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:50 +0200
+Subject: Package fCalendar_270.78.2.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3accce93@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.78.2.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:51 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:51 +0200
+Subject: Package fExoticOptions_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3b431139@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExoticOptions_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:49 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:49 +0200
+Subject: Package fAssets_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3a531cfc@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Apr 16 10:27:49 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 16 Apr 2009 10:27:49 +0200
+Subject: Package fAsianOptions_290.75.tar.gz has been built for Windows
+Message-ID: <01c9be6d$Blat.v2.2.2$3a2e7d9c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAsianOptions_290.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From dcarlson at tamu.edu  Fri Apr 17 18:33:40 2009
+From: dcarlson at tamu.edu (David Carlson)
+Date: Fri, 17 Apr 2009 11:33:40 -0500
+Subject: fMultivar and fBasics
+Message-ID: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+
+I've downloaded fMultivar and fBasics, but cannot get fBasics to load:
+
+> install.packages("fBasics", dependencies=TRUE)
+trying URL
+'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29
+0.76.zip'
+Content type 'application/zip' length 1330440 bytes (1.3 Mb)
+opened URL
+downloaded 1.3 Mb
+
+package 'fBasics' successfully unpacked and MD5 sums checked
+
+The downloaded packages are in
+        C:\Documents and Settings\David Carlson\Local
+Settings\Temp\RtmpFdYOxE\downloaded_packages
+updating HTML package descriptions
+> library(fMultivar)
+Loading required package: fBasics
+Error in importIntoEnv(impenv, impnames, ns, impvars) : 
+  objects ''colnames', 'as.matrix', 'plot', 'as.data.frame', 'apply',
+'rank', 'rownames'' are not exported by 'namespace:timeSeries'
+Error: package 'fBasics' could not be loaded
+
+--------------------------------------------
+David L. Carlson
+Associate Professor
+Anthropology Department
+Texas A&M University
+College Station, TX 77843-4352
+
+
+From chalabi at phys.ethz.ch  Fri Apr 17 19:56:45 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 17 Apr 2009 19:56:45 +0200
+Subject: fMultivar and fBasics
+In-Reply-To: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+Message-ID: <20090417195645.788ce337@mimi>
+
+>>>> "DC" == "David Carlson" <dcarlson at tamu.edu>
+>>>> on Fri, 17 Apr 2009 11:33:40 -0500
+
+   DC> I've downloaded fMultivar and fBasics, but cannot get fBasics
+   DC> to load:
+   DC>
+   DC> > install.packages(fBasics, dependencies=TRUE)
+   DC> trying URL
+   DC>
+'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29
+DC> 0.76.zip' DC> Content type 'application/zip' length 1330440 bytes (1.3 Mb)
+   DC> opened URL
+   DC> downloaded 1.3 Mb
+   DC>
+   DC> package 'fBasics' successfully unpacked and MD5 sums checked
+   DC>
+   DC> The downloaded packages are in
+   DC> C:\Documents and Settings\David Carlson\Local
+   DC> Settings\Temp\RtmpFdYOxE\downloaded_packages
+   DC> updating HTML package descriptions
+   DC> > library(fMultivar)
+   DC> Loading required package: fBasics
+   DC> Error in importIntoEnv(impenv, impnames, ns, impvars) :
+   DC> objects ''colnames', 'as.matrix', 'plot', 'as.data.frame',
+   DC> 'apply',
+   DC> 'rank', 'rownames'' are not exported by 'namespace:timeSeries'
+   DC> Error: package 'fBasics' could not be loaded
+
+Hi David
+
+It is important to update the other Rmetrics packages when you
+install a new version of one of the packages.
+
+The recommended way to do so is to use the R script available at
+http://www.rmetrics.org .
+
+
+In an R console try
+
+source("http://www.rmetrics.org/Rmetrics.R")
+install.Rmetrics()
+
+
+Regards,
+Yohan
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From edd at debian.org  Fri Apr 17 20:43:32 2009
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Fri, 17 Apr 2009 13:43:32 -0500
+Subject: fMultivar and fBasics
+In-Reply-To: <20090417195645.788ce337@mimi>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+	<20090417195645.788ce337@mimi>
+Message-ID: <18920.52692.780292.364026@ron.nulle.part>
+
+
+On 17 April 2009 at 19:56, Yohan Chalabi wrote:
+| >>>> "DC" == "David Carlson" <dcarlson at tamu.edu>
+| >>>> on Fri, 17 Apr 2009 11:33:40 -0500
+| 
+|    DC> I've downloaded fMultivar and fBasics, but cannot get fBasics
+|    DC> to load:
+|    DC>
+|    DC> > install.packages(fBasics, dependencies=TRUE)
+|    DC> trying URL
+|    DC>
+| 'http://www.revolution-computing.com/cran/bin/windows/contrib/2.8/fBasics_29
+| DC> 0.76.zip' DC> Content type 'application/zip' length 1330440 bytes (1.3 Mb)
+|    DC> opened URL
+|    DC> downloaded 1.3 Mb
+|    DC>
+|    DC> package 'fBasics' successfully unpacked and MD5 sums checked
+|    DC>
+|    DC> The downloaded packages are in
+|    DC> C:\Documents and Settings\David Carlson\Local
+|    DC> Settings\Temp\RtmpFdYOxE\downloaded_packages
+|    DC> updating HTML package descriptions
+|    DC> > library(fMultivar)
+|    DC> Loading required package: fBasics
+|    DC> Error in importIntoEnv(impenv, impnames, ns, impvars) :
+|    DC> objects ''colnames', 'as.matrix', 'plot', 'as.data.frame',
+|    DC> 'apply',
+|    DC> 'rank', 'rownames'' are not exported by 'namespace:timeSeries'
+|    DC> Error: package 'fBasics' could not be loaded
+| 
+| Hi David
+| 
+| It is important to update the other Rmetrics packages when you
+| install a new version of one of the packages.
+| 
+| The recommended way to do so is to use the R script available at
+| http://www.rmetrics.org .
+| 
+| 
+| In an R console try
+| 
+| source("http://www.rmetrics.org/Rmetrics.R")
+| install.Rmetrics()
+
+I am not convinced that working outside of the existing R package management
+system buys you something.  DESCRIPTION file have been supporting Depends
+with >= and <= operators since R 2.7.0.  It would be nice if these were used
+here.
+
+FWIW I an once again trying to upgrade an avalanche of Rmetrics packages in
+Debian, rather than working through a phased upgraded. The fBasics Depends:
+on timeSeries that tripped up David is not made explicit and is stopping me
+too. I consider that to be a bug in Rmetrics.
+
+Regards, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From Uwe.Ligges at r-project.org  Fri Apr 17 22:23:08 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Fri, 17 Apr 2009 22:23:08 +0200
+Subject: Package timeSeries_2100.82.tar.gz has been built for Windows
+Message-ID: <01c9bf9a$Blat.v2.2.2$522a2c3c@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2100.82.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Fri Apr 17 22:23:07 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Fri, 17 Apr 2009 22:23:07 +0200
+Subject: Package fPortfolio_2100.76.tar.gz has been built for Windows
+Message-ID: <01c9bf9a$Blat.v2.2.2$52005c0a@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Fri Apr 17 22:23:07 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Fri, 17 Apr 2009 22:23:07 +0200
+Subject: Package fAssets_2100.76.tar.gz has been built for Windows
+Message-ID: <01c9bf9a$Blat.v2.2.2$51da0e5f@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.1 (2008-12-22)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Apr 18 09:54:38 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 18 Apr 2009 09:54:38 +0200
+Subject: Package fAssets_2100.76.tar.gz has been built for Windows
+Message-ID: <01c9bffa$Blat.v2.2.2$ec42d394@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.0 (2009-04-17)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Apr 18 09:54:39 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 18 Apr 2009 09:54:39 +0200
+Subject: Package timeSeries_2100.82.tar.gz has been built for Windows
+Message-ID: <01c9bffa$Blat.v2.2.2$ecd52c43@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_2100.82.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.0 (2009-04-17)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Apr 18 09:54:38 2009
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 18 Apr 2009 09:54:38 +0200
+Subject: Package fPortfolio_2100.76.tar.gz has been built for Windows
+Message-ID: <01c9bffa$Blat.v2.2.2$ec66b02f@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_2100.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.9/).
+R version 2.9.0 (2009-04-17)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From maechler at stat.math.ethz.ch  Sat Apr 18 18:17:07 2009
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat, 18 Apr 2009 18:17:07 +0200
+Subject: fMultivar and fBasics
+In-Reply-To: <18920.52692.780292.364026@ron.nulle.part>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+	<20090417195645.788ce337@mimi>
+	<18920.52692.780292.364026@ron.nulle.part>
+Message-ID: <18921.64771.109162.538004@cmath-5.math.ethz.ch>
+
+{I've dropped  David Carlson from CC}
+
+>>>>> "DE" == Dirk Eddelbuettel <edd at debian.org>
+>>>>>     on Fri, 17 Apr 2009 13:43:32 -0500 writes:
+
+    DE> On 17 April 2009 at 19:56, Yohan Chalabi wrote:
+
+     [ ..................... ]
+
+      YC> It is important to update the other Rmetrics packages when you
+      YC> install a new version of one of the packages.
+      YC> 
+      YC> The recommended way to do so is to use the R script available at
+      YC> http://www.rmetrics.org .
+      YC> 
+      YC> In an R console try
+      YC> 
+      YC> source("http://www.rmetrics.org/Rmetrics.R")
+      YC> install.Rmetrics()
+
+    DE> I am not convinced that working outside of the existing
+    DE> R package management system buys you something.
+    DE> DESCRIPTION file have been supporting Depends with >=
+    DE> and <= operators since R 2.7.0.  It would be nice if
+    DE> these were used here.
+
+    DE> FWIW I an once again trying to upgrade an avalanche of
+    DE> Rmetrics packages in Debian, rather than working through
+    DE> a phased upgraded. The fBasics Depends: on timeSeries
+    DE> that tripped up David is not made explicit and is
+    DE> stopping me too. I consider that to be a bug in
+    DE> Rmetrics.
+
+Yohan, I agree with Dirk that really this should be solved by
+correctly specified
+	  'Depends:' 
+and	  'Imports:'  in the DESCRIPTION files.
+
+{{ or have you ended up, having *circular* dependencies ? 
+   I hope not ! }}
+
+@ Dirk:  Good luck in Boston!
+
+Best regards,
+Martin
+
+
+From edd at debian.org  Sat Apr 18 18:35:21 2009
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 18 Apr 2009 11:35:21 -0500
+Subject: fMultivar and fBasics
+In-Reply-To: <18921.64771.109162.538004@cmath-5.math.ethz.ch>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+	<20090417195645.788ce337@mimi>
+	<18920.52692.780292.364026@ron.nulle.part>
+	<18921.64771.109162.538004@cmath-5.math.ethz.ch>
+Message-ID: <18922.329.72933.155957@ron.nulle.part>
+
+
+On 18 April 2009 at 18:17, Martin Maechler wrote:
+| Yohan, I agree with Dirk that really this should be solved by
+| correctly specified
+| 	  'Depends:' 
+| and	  'Imports:'  in the DESCRIPTION files.
+| 
+| {{ or have you ended up, having *circular* dependencies ? 
+|    I hope not ! }}
+
+No, but there are a gazillion missing (versioned) Depends: on fBasics as it
+bombs with the old version.
+
+I have to build these in chroot environments which required to get the
+Depends exactly right, or it bombs.  What makes this maddening is that I have
+to do everything in three or more waves: timeDate, timeSeries; then when
+those are in the archive fBasics, then fGarch/fCopulae.  I am just over
+half-way through but can't finish it as I now have to wait for
+fGarch/fCopulae to make it into the archive.  I for one would really prefer
+it if the upload could be more staged -- we had a few packages updated
+between the last 'wave' around R 2.8.0 and now and I think we should do more
+of that.
+
+No need to re-upload all of these, but next time please consider explicitly
+versioned Depends at least where you know of a Dependency.  
+ 
+| @ Dirk:  Good luck in Boston!
+
+Thanks :)
+
+Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From edd at debian.org  Sat Apr 18 18:50:21 2009
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 18 Apr 2009 11:50:21 -0500
+Subject: fMultivar and fBasics
+In-Reply-To: <18921.64771.109162.538004@cmath-5.math.ethz.ch>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+	<20090417195645.788ce337@mimi>
+	<18920.52692.780292.364026@ron.nulle.part>
+	<18921.64771.109162.538004@cmath-5.math.ethz.ch>
+Message-ID: <18922.1229.791101.996312@ron.nulle.part>
+
+
+And for Pete's sake yet another new and unannounced external dependency, this
+time of fPortfolio on Rsymphony (which is not in Debian).
+
+Exactly how often do I have to explain that I would need to know this a few
+weeks ahead so that I can get the new package through the Debian NEW queue in
+time?
+
+Dirk, unhappy
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From chalabi at phys.ethz.ch  Sun Apr 19 19:18:51 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Sun, 19 Apr 2009 19:18:51 +0200
+Subject: fMultivar and fBasics
+In-Reply-To: <18920.52692.780292.364026@ron.nulle.part>
+References: <0E57F69C6CCE47F1953DF8061440E6B9@davidcarlson>
+	<20090417195645.788ce337@mimi>
+	<18920.52692.780292.364026@ron.nulle.part>
+Message-ID: <20090419191851.4699b21c@mimi>
+
+>>>> "DE" == Dirk Eddelbuettel <edd at debian.org>
+>>>> on Fri, 17 Apr 2009 13:43:32 -0500
+
+   DE> I am not convinced that working outside of the existing R
+   DE> package management
+   DE> system buys you something.  DESCRIPTION file have been
+   DE> supporting Depends
+   DE> with >= and <= operators since R 2.7.0.  It would be nice if
+   DE> these were used
+   DE> here.
+
+Hi Dirk,
+
+thanks for the suggestion. I will add explicit dependencies with
+version numbers in the description files.
+
+Regards,
+Yohan
+
+   DE>
+   DE> FWIW I an once again trying to upgrade an avalanche of Rmetrics
+   DE> packages in
+   DE> Debian, rather than working through a phased upgraded. The
+   DE> fBasics Depends:
+   DE> on timeSeries that tripped up David is not made explicit and
+   DE> is stopping me
+   DE> too. I consider that to be a bug in Rmetrics.
+   DE>
+   DE> Regards, Dirk
+
+
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From pierre.chausse at uqam.ca  Wed Apr 22 05:24:35 2009
+From: pierre.chausse at uqam.ca (=?ISO-8859-1?Q?Pierre_Chauss=E9?=)
+Date: Tue, 21 Apr 2009 23:24:35 -0400
+Subject: Package fGarch
+Message-ID: <49EE8DF3.6090203@uqam.ca>
+
+Hi,
+
+I am writing a guide for my financial econometrics class and I found a 
+mistake in the method predict() that comes with the package fGarch.  It 
+does not predict correctly because it does not use the predict.Arima  
+method correctly. In arima() the constant term is not an intercept but a 
+mean.  For exemple, if we have the following AR(1) process:
+
+X(t) = 6 + 0,9 X(t-1) + e(t)
+
+What arima() calls "intercept" is not the 6 but the mean of X which is 
+6/(1-0,9)=60.  So if we know the model and want to predict it, we can, 
+as it is done in methods-predict.R that comes in fGarch, create an arima 
+object and use predict() on it. But we have to provide the mean and not 
+the intercept. For our exemple we can do:
+
+ARIMA = arima(x,order=c(1,0,0),init=(0,9,60),optim.control=list(maxit=0))
+and
+predict(ARIMA,n.ahead)
+
+The problem is that garchFit() computes the intercept and not the mean 
+(which I thing it is better) and when we apply predict() on the object 
+that it creates, it provides the intercept to arima() instead of the mean. 
+
+In line 128 of methods-predict.R, you should replace mu by the mean 
+which is mu/(1-sum_of_ar_coef).
+
+One more thing. Since fGarch computes conditional variance, why the 
+predict() method does not compute the conditional mean square errors of 
+the prediction instead of the unconditional ones. In finance, the former 
+would be more appropriate.
+
+Thank you
+
+Pierre Chauss?
+Universit? du Qu?bec ? Montr?al
+ http://www.er.uqam.ca/nobel/k34115/
+
+
+From pierre.chausse at uqam.ca  Wed Apr 22 22:57:06 2009
+From: pierre.chausse at uqam.ca (=?ISO-8859-1?Q?Pierre_Chauss=E9?=)
+Date: Wed, 22 Apr 2009 16:57:06 -0400
+Subject: One more thing on fGarch
+Message-ID: <49EF84A2.20207@uqam.ca>
+
+Hi,
+
+I have one more question. If I ex?cute the following commands
+
+require(fGarch)
+spec=garchSpec(model=list(omega=2,alpha=.4,beta=.55,mu=5,ar=.9,ma=.5))
+set.seed(123)
+x <- garchSim(spec,n=500)
+res_g <- garchFit(~arma(1,1)+garch(1,1),trace=FALSE,x)
+plot(res_g,which=3)
+
+It produces the included graph.
+
+Why is the +- 2 * SD arround zero and not arround the series? The 
+purpose of this graph is not to have an confidence interval?
+
+
+Thank you
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: eco_fin_chap4-033.eps
+Type: image/x-eps
+Size: 23257 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090422/d5d6bb30/attachment-0001.bin>
+
+From budhiarta at hotmail.com  Mon Apr 27 05:31:18 2009
+From: budhiarta at hotmail.com (Budhi Arta Surya)
+Date: Mon, 27 Apr 2009 03:31:18 +0000
+Subject: Problem with fGarch
+Message-ID: <COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/61df5c2c/attachment.pl>
+
+From amjadali_ktk at yahoo.com  Tue Apr 28 08:30:00 2009
+From: amjadali_ktk at yahoo.com (amjadali ktk)
+Date: Mon, 27 Apr 2009 23:30:00 -0700 (PDT)
+Subject: problem in using fGARCH package
+Message-ID: <837913.68533.qm@web52410.mail.re2.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090427/d7d6f7f0/attachment.pl>
+
+From chalabi at phys.ethz.ch  Tue Apr 28 23:29:59 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 28 Apr 2009 23:29:59 +0200
+Subject: Problem with fGarch
+In-Reply-To: <COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>
+References: <COL114-W483A88FFEC9DD1BA56BEC3BB710@phx.gbl>
+Message-ID: <20090428232959.54002374@mimi>
+
+>>>> "BAS" == Budhi Arta Surya <budhiarta at hotmail.com>
+>>>> on Mon, 27 Apr 2009 03:31:18 +0000
+
+   BAS> >library(fGarch)
+   BAS> Loading required package: timeSeries
+   BAS> Error: package 'timeDate' 290.84 is loaded, but >= 290.85 is
+   BAS> required by 'timeSeries'
+   BAS> >
+   BAS>
+
+
+Hi
+
+please update your packages to the latest version.
+
+more info at https://wiki.rmetrics.org/install_rmetrics
+
+Regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+

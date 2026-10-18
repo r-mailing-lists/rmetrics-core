@@ -1,0 +1,130 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-09",
+  "messages": [
+    {
+      "id": "msg-1f577988150a",
+      "message_id": "<FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>",
+      "from_name": "Parra Amado Daniel",
+      "from_email_hash": "3bf30c53302eb19aae8fc613ba654c68931de6c3c4345cbb00f982fd911d6413",
+      "date": "2008-09-01T22:37:12Z",
+      "subject": "question about the garchFit",
+      "subject_clean": "question about the garchFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080901/e9394fd6/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080901/e9394fd6/attachment.pl>",
+      "thread_id": "thread-1f577988150a",
+      "thread_depth": 0,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-3543e93f9c95",
+      "message_id": "<20080905130255.069e2dfd@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-09-05T11:02:55Z",
+      "subject": "question about the garchFit",
+      "subject_clean": "question about the garchFit",
+      "in_reply_to": "<FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>",
+      "references": [
+        "<FEC542F93535274486099BF6C37232D301BC96C7@NMAIL1A.banrep.gov.co>"
+      ],
+      "body_plain": ">>>> \"PAD\" == \"Parra Amado Daniel\" <dparraam at banrep.gov.co>\n>>>> on Mon, 1 Sep 2008 17:37:12 -0500\n\n   PAD> My name is Daniel Parra, I'm economist and I'm studying time series\n   PAD> models for financial variables. I'm working in R with their package\n   PAD> (fGarch), which I found very interesting and useful.\n   PAD>  \n   PAD> I would ask you please help me with the following question.\n   PAD>  \n   PAD> How do I do to estimate a ARMA(6,1)-GARCH(1,1) without the coefficients\n   PAD> AR(1), AR(2), AR(3), AR(4) and AR(5)?\n   PAD>  \n   PAD> For example, I've tried in this way,\n   PAD>  \n   PAD> y = garchFit(~arma(6,1)+garch(1,1), r.IGBC, trace=F,cond.dist = \"dnorm\")\n   PAD>  \n   PAD> and result is:\n   PAD>  \n   PAD> Coefficient(s):\n   PAD> Mu       0.20950912  \n   PAD> ar1       -0.27087286   \n   PAD> ar2       0.06539889  \n   PAD> ar3       -0.08086325     I don't want estimate these coefficients\n   PAD> ar4       0.00391767   \n   PAD> ar5        0.05273713  \n   PAD> ar6       -0.04344611   \n   PAD> ma1     0.49958456   \n   PAD> omega  0.44834015   \n   PAD> alpha1  0.34024705   \n   PAD> beta1    0.46750871  \n   PAD>  \n   PAD> According to the results above, you can see that the routine estimate\n   PAD> the coefficients AR (1) to AR (5), which I don't want in the model. How\n   PAD> do I restrict them on the code?.\n   PAD>  \n\nHi Daniel,\n\nin the current implementation you can not fix specific parameters in the optimization, which are in your case the coefficients AR(1)-AR(5).\n\nregards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PAD\" == \"Parra Amado Daniel\" <dparraam at banrep.gov.co>\n>>>> on Mon, 1 Sep 2008 17:37:12 -0500\n\n   PAD> My name is Daniel Parra, I'm economist and I'm studying time series\n   PAD> models for fi",
+      "thread_id": "thread-1f577988150a",
+      "thread_depth": 1,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-da521a844b28",
+      "message_id": "<20080908212953.0362560c@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-09-08T19:29:53Z",
+      "subject": "dmvsnorm & mvst in fMultivar",
+      "subject_clean": "dmvsnorm & mvst in fMultivar",
+      "in_reply_to": "<20080826104416.15516162.azzalini@stat.unipd.it>",
+      "references": [
+        "<20080826104416.15516162.azzalini@stat.unipd.it>"
+      ],
+      "body_plain": ">>>> \"AA\" == Adelchi Azzalini <azzalini at stat.unipd.it>\n>>>> on Tue, 26 Aug 2008 10:44:16 +0200\n\n   AA> Dear Colleagues,\n   AA> \n   AA> I am writing about some functions incorporated into your package\n   AA> \"fMultivar\", specifically dmvsnorm & mvst, which originate from \n   AA> packages 'sn'. In principle, it is welcome that your package\n   AA> incorporates some routines from my package. Unfortunately, this\n   AA> operation has been done improperly, and the effect is seriously\n   AA> misleading for the user.\n   AA> \n   AA> In the documentation of the above-mentioned functions, one reads:\n   AA> \n   AA> mu, Omega, alpha, df: [*mvsnorm][*mvst] - \n   AA>            the model parameters: \n   AA>            'mu' a vector of mean values, one for each column, \n   AA>            'Omega' the covariance matrix, \n   AA>            'alpha' the skewness vector, and \n   AA>            'df' the number of degrees of freedom which is a measure for\n   AA>           the fatness of the tails (excess kurtosis). \n   AA> \n   AA> and in the code mu is set equal to xi, which is a location parameter,\n   AA> but _not_ the mean, as the documentation wrongly indicates. In fact \n   AA> in the skew-t case the mean may even not exist. Similarly, Omega is \n   AA> described as \"the covariance matrix\", which suggests that this is\n   AA> the covariance matrix of the distribution, but it is not true.\n   AA> Omega is _a_ covariance matrix, which is related to the covariance\n   AA> matrix (when this one exists) but it is different. For the\n   AA> parametrization based on mean and variance, see later.\n   AA> \n   AA> In addition, in the code of dmvsnorm, for the one-dimensional case\n   AA> there is the assignment\n   AA> \n   AA>  ans = dsn(x, location = xi[1], scale = as.vector(Omega)[1], \n   AA>            shape = alpha[1])\n   AA> \n   AA> which is wrong since in this case the scale is the square root of\n   AA> Omega. Similar errors exist in pmvsnorm, dmvst, pmvst.\n   AA> \n   AA> Please note that the above remarks do not attempt to be exhaustive,\n   AA> since I have not done a full scan of your code and documentation.\n   AA> These are just the problems which I have spotted after a quick\n   AA> browsing of your package.\n   AA> \n   AA> I take this opportunity to draw your attention to this note:\n   AA>    http://tango.stat.unipd.it/SN/announce2.html\n   AA> When the new \"version 1.xx\" will be available, it will include\n   AA> a parametrization based on mean/variance.\n   AA> \n   AA> With best wishes,\n   AA> \n   AA> Adelchi Azzalini\n\nDear Adelchi,\n\nThank you for your message. Your comment is very helpful for us because we\nare in the process to clean some packages and hopefully we will fix the\nissues you raised.\n\nBest regards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"AA\" == Adelchi Azzalini <azzalini at stat.unipd.it>\n>>>> on Tue, 26 Aug 2008 10:44:16 +0200\n\n   AA> Dear Colleagues,\n   AA> \n   AA> I am writing about some functions incorporated into your packa",
+      "thread_id": "thread-da521a844b28",
+      "thread_depth": 0,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-77805460f8fe",
+      "message_id": "<3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>",
+      "from_name": "Theodore Van Rooy",
+      "from_email_hash": "adfe0c6c4184d3aa0d2d58b77d39dc9c0dd32a932b5b8ee88cee4a548190dc19",
+      "date": "2008-09-17T19:53:11Z",
+      "subject": "fMultivar functions not loading under R-2.7",
+      "subject_clean": "fMultivar functions not loading under R-2.7",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080917/f76113a0/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080917/f76113a0/attachment.pl>",
+      "thread_id": "thread-77805460f8fe",
+      "thread_depth": 0,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-442dc16fce57",
+      "message_id": "<20080918095722.26d8c04e@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-09-18T07:57:22Z",
+      "subject": "fMultivar functions not loading under R-2.7",
+      "subject_clean": "fMultivar functions not loading under R-2.7",
+      "in_reply_to": "<3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>",
+      "references": [
+        "<3c8226f70809171253x4703abcdwf13e84c7e44be0f1@mail.gmail.com>"
+      ],
+      "body_plain": ">>>> \"TVR\" == \"Theodore Van Rooy\" <theodore.vanrooy at gmail.com>\n>>>> on Wed, 17 Sep 2008 13:53:11 -0600\n\n   TVR> I've been using R-2.4 with Rmetrics successfuly for a year or two.\n   TVR> \n   TVR> I recently moved to Ubuntu Linux 8.04, loaded R via apt-get install R-base\n   TVR> etc. etc...\n   TVR> \n   TVR> then in the R interface i ran install.packages(\"fMultivar\"), chose the CRAN\n   TVR> mirror and it loaded fMultivar and all the required dependecies.\n   TVR> \n   TVR> However, when I try to run the same code which makes use of the indicator\n   TVR> calculators (emaTA etc.) I get this warning:\n   TVR> \n   TVR> Error: could not find function \"fMultivar.emaTA\"\n   TVR> \n   TVR> upon further inspection looking at the available functions for fMultivar\n   TVR> \n   TVR> > listFunctions(fMultivar)  \n   TVR>  [1] \"contour.gridData\"     \"dcauchy2d\"            \"delliptical2d\"\n   TVR>  [4] \".delliptical2dSlider\" \"density2d\"            \"dmvsnorm\"\n   TVR>  [7] \"dmvst\"                \"dnorm2d\"              \".dnorm2d\"\n   TVR> [10] \"dt2d\"                 \".First.lib\"           \".gfunc2d\"\n   TVR> [13] \"grid2d\"               \"gridData\"             \"hexBinning\"\n   TVR> [16] \"hist2d\"               \"integrate2d\"          \"mvFit\"\n   TVR> [19] \".mvsnormFit\"          \".mvsnormPlot\"         \".mvsnorm.plot.1\"\n   TVR> [22] \".mvsnorm.plot.1A\"     \".mvsnorm.plot.1B\"     \".mvsnorm.plot.2\"\n   TVR> [25] \".mvsnorm.plot.3\"      \".mvsnorm.plot.4\"      \".mvsnorm.plot.5\"\n   TVR> [28] \".mvstFit\"             \".mvstPlot\"            \".mvst.plot.1\"\n   TVR> [31] \".mvst.plot.1A\"        \".mvst.plot.1B\"        \".mvst.plot.2\"\n   TVR> [34] \".mvst.plot.3\"         \".mvst.plot.4\"         \".mvst.plot.5\"\n   TVR> [37] \"pcauchy2d\"            \"persp.gridData\"       \"plot.fMV\"\n   TVR> [40] \"plot.hexBinning\"      \"plot.squareBinning\"   \"pmvsnorm\"\n   TVR> [43] \"pmvst\"                \"pnorm2d\"              \".pnorm2d\"\n   TVR> [46] \"pt2d\"                 \"rcauchy2d\"            \"rmvsnorm\"\n   TVR> [49] \"rmvst\"                \"rnorm2d\"              \".rnorm2d\"\n   TVR> [52] \"rt2d\"                 \"show.fMV\"             \"squareBinning\"\n   TVR> [55] \"summary.fMV\"          \".TInt\"                \".TOwen\"\n   TVR> \n   TVR> shows that none of the indicators previously available under R-2.4 are\n   TVR> available.\n   TVR> \n   TVR> Is this just a setting somehere in R that I need to enable?  In Linux\n   TVR> maybe?  Do I need to update the packages maybe?  I'm using fMultivar version\n   TVR> 260.72.\n   TVR> \n   TVR> Thanks in advance\n   TVR> Theo\n\nSince 2.4 we have reorganized the packages and some function have moved\nto new packages. \n\nyou can load all packages with library(\"Rmetrics\") and search which\npackage has the function you need.\n\nregards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"TVR\" == \"Theodore Van Rooy\" <theodore.vanrooy at gmail.com>\n>>>> on Wed, 17 Sep 2008 13:53:11 -0600\n\n   TVR> I've been using R-2.4 with Rmetrics successfuly for a year or two.\n   TVR> \n   TVR> I",
+      "thread_id": "thread-77805460f8fe",
+      "thread_depth": 1,
+      "month": "2008-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-1f577988150a",
+      "subject": "question about the garchFit",
+      "message_count": 2,
+      "participants": [
+        "Parra Amado Daniel",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-09-01T22:37:12Z",
+      "last_reply": "2008-09-05T11:02:55Z",
+      "root_message_id": "msg-1f577988150a"
+    },
+    {
+      "id": "thread-da521a844b28",
+      "subject": "dmvsnorm & mvst in fMultivar",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2008-09-08T19:29:53Z",
+      "last_reply": "2008-09-08T19:29:53Z",
+      "root_message_id": "msg-da521a844b28"
+    },
+    {
+      "id": "thread-77805460f8fe",
+      "subject": "fMultivar functions not loading under R-2.7",
+      "message_count": 2,
+      "participants": [
+        "Theodore Van Rooy",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-09-17T19:53:11Z",
+      "last_reply": "2008-09-18T07:57:22Z",
+      "root_message_id": "msg-77805460f8fe"
+    }
+  ]
+}

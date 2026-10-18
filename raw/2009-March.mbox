@@ -1,0 +1,158 @@
+From mdmorgan at ucalgary.ca  Sun Mar  1 23:47:05 2009
+From: mdmorgan at ucalgary.ca (mdmorgan at ucalgary.ca)
+Date: Sun, 1 Mar 2009 15:47:05 -0700 (MST)
+Subject: Error importing with fredSeries in ubuntu 8.04
+Message-ID: <42624.68.145.120.255.1235947625.squirrel@68.145.120.255>
+
+Sirs,
+
+
+I am currently unable to import any data into R using fredSeries.  I get
+an error message about a problem converting to POSIXct objects.
+
+Running the command...
+fredSeries("DPRIME")
+
+
+Results in the following error messages...
+
+trying URL
+'http://research.stlouisfed.org/fred2/series/DPRIME/downloaddata/DPRIME.txt'
+Content type 'text/plain; charset=UTF-8' length 265951 bytes (259 Kb)
+opened URL
+==================================================
+downloaded 259 Kb
+
+Read 13986 items
+Error in as.POSIXct(charvec, format = isoFormat, tz = "GMT") :
+  unused argument(s) (format = "%Y-%m-%d %H:%M:%S")
+Error in fredSeries("DPRIME") :
+  cannot get a slot ("data") from an object of type "character"
+
+
+
+I am running RKWard which was installed from the standard ubuntu packages
+using the Synaptic Package Manager.  The only R package installed was
+fImport 290.75 (the "Include dependencies" box checked), which was
+installed from the CRAN mirror in Canada, BC.
+
+I have no such errors using the Windows binaries of R or fImport.
+
+What should I do to enable fredSeries importing?
+
+
+From chcarty at yahoo.com  Mon Mar  9 18:00:01 2009
+From: chcarty at yahoo.com (Cheryl Carty)
+Date: Mon, 9 Mar 2009 10:00:01 -0700 (PDT)
+Subject: timeSeries Package
+Message-ID: <687855.57254.qm@web31902.mail.mud.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl>
+
+From kh1 at rice.edu  Wed Mar 11 04:11:54 2009
+From: kh1 at rice.edu (kh1 at rice.edu)
+Date: Tue, 10 Mar 2009 22:11:54 -0500
+Subject: Problem with fGarch
+Message-ID: <20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>
+
+Hello,
+
+I get the following error when I try to load the fGarch package in R 2.8.0:
+
+> library(fGarch)
+Loading required package: timeDate
+Loading required package: timeSeries
+Loading required package: fBasics
+Loading required package: MASS
+Error in importIntoEnv(impenv, impnames, ns, impvars) :
+   object '?dsnig?' is not exported by 'namespace:fBasics'
+In addition: Warning message:
+package 'fGarch' was built under R version 2.8.1
+Error: package/namespace load failed for 'fGarch'
+
+Do you know how I can fix this?  Thank you.
+
+Kam Hamidieh
+
+
+From chalabi at phys.ethz.ch  Wed Mar 11 09:04:30 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Wed, 11 Mar 2009 09:04:30 +0100
+Subject: Problem with fGarch
+In-Reply-To: <20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>
+References: <20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>
+Message-ID: <20090311090430.67cf2e92@mimi>
+
+>>>> "KE" == kh1 at rice.edu
+>>>> on Tue, 10 Mar 2009 22:11:54 -0500
+
+   KE> Hello,
+   KE>
+   KE> I get the following error when I try to load the fGarch package
+   KE> in R 2.8.0:
+   KE>
+   KE> > library(fGarch)
+   KE> Loading required package: timeDate
+   KE> Loading required package: timeSeries
+   KE> Loading required package: fBasics
+   KE> Loading required package: MASS
+   KE> Error in importIntoEnv(impenv, impnames, ns, impvars) :
+   KE> object '?dsnig?' is not exported by 'namespace:fBasics'
+   KE> In addition: Warning message:
+   KE> package 'fGarch' was built under R version 2.8.1
+   KE> Error: package/namespace load failed for 'fGarch'
+   KE>
+   KE> Do you know how I can fix this?  Thank you.
+   KE>
+   KE> Kam Hamidieh
+
+
+please update all your packages. 
+
+update.packages()
+
+BTW you could also update your R installation at the same time.
+
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From idrisone at idris.com  Mon Mar  9 16:06:07 2009
+From: idrisone at idris.com (Mrs.Mary Idris)
+Date: 9 Mar 2009 15:06:07 +0000
+Subject: Charity for the less privileged. 8/03/09.........
+Message-ID: <20090309150607.19655.qmail@jud.as>
+
+
+
+Hello,
+
+
+
+I am Mrs. Mary Idris an aging widow suffering from long time illness. I have some funds I inherited from my late husband, the sum of US$7,300,000.00.
+
+
+
+I need a very honest and God fearing person that will use the fund for God's work to help the Charity and the less privileged and I have mapped out $1,700.000.00 for your personal use in this work. 
+
+
+
+Please if you would be able to use the funds for the Lord's work , kindly reply for further details EMAIL:maryidrisone at yahoo.com
+
+
+
+Mrs.Mary Saleh Idris
+
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: BASE64
+
+

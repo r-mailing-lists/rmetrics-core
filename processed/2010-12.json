@@ -1,0 +1,143 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-12",
+  "messages": [
+    {
+      "id": "msg-293a3b529724",
+      "message_id": "<BAY153-w28ED5029388534B3AE9CB0BA100@phx.gbl>",
+      "from_name": "David Norris",
+      "from_email_hash": "095ce6fd894130493b39b576ebbb670ab9974290de2e128fb9f1aa4a3ca88421",
+      "date": "2010-12-11T21:12:57Z",
+      "subject": "No subject",
+      "subject_clean": "No subject",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101211/4196009f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101211/4196009f/attachment.pl>",
+      "thread_id": "thread-293a3b529724",
+      "thread_depth": 0,
+      "month": "2010-12"
+    },
+    {
+      "id": "msg-5afd375561cb",
+      "message_id": "<4D0DD772.8050902@michael-stevens.de>",
+      "from_name": "Michael Stevens",
+      "from_email_hash": "e407213e95c0dd3023533be85d5394396de2c758e2de0253c5835bbeac62590c",
+      "date": "2010-12-19T09:59:14Z",
+      "subject": "rged Generalized Error Distribution generator uses sign(runif)",
+      "subject_clean": "rged Generalized Error Distribution generator uses sign(runif)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello Rmetric,\n\nI have been asked to implement an Generalized Error Distribution in Java \nfor a project. As the basis for this I looked at rged and rsged in the \nRmetrics.\n\nWhile analysing the code I found a couple of problems which I would like \nto give the authors some feedback on. Most importantly I think the use \nof sign(runif) is incorrect. For example in the implementation of rged\n\nz = lambda * (2 * r)^(1/nu) * sign(runif(n) - 1/2)\n\nsign(runif(n) - 1/2) may return 0. However the probablity that this will \noccur is only related to the precision of the internal PRNG and the \nfloating point representation.\n\nI suspect what is is required is a random function which return only -1 \nand 1 with equal probability. Sadly I do not think this can be correctly \ndirectly with runif. If we map >=0 to 1 and <0 to -1 then 1 will be \nslightly more likely then -1. The simplest solution would be to reject 0 \nand try again. Better would be to work directly with an integer PRNG. \nDoes such a thing exist in R?\n\nIn .rsged there is a similar problem with\n     z = runif(n, -weight, 1 - weight)\n     Xi = xi^sign(z)\n\nAlso the value of g\n  g = nu/(lambda * (2^(1 + 1/nu)) * gamma(1/nu))\nis never used in .rsged.\n\nI hope this helps,\n\n\n___________________________________\nMichael Stevens Systems Engineering\n\n34128 Kassel, Germany\nPhone/Fax: +49 561 5603097\nMobile: +49 1577 7807325\n\nNavigation Systems, Estimation  and\n                  Bayesian Filtering\n     http://bayesclasses.sf.net",
+      "body_snippet": "Hello Rmetric,\n\nI have been asked to implement an Generalized Error Distribution in Java \nfor a project. As the basis for this I looked at rged and rsged in the \nRmetrics.\n\nWhile analysing the code I ",
+      "thread_id": "thread-5afd375561cb",
+      "thread_depth": 0,
+      "month": "2010-12"
+    },
+    {
+      "id": "msg-944c3abfedfb",
+      "message_id": "<E37108A6-8E06-445A-AC76-838DA6A43B32@phys.ethz.ch>",
+      "from_name": "Yohan",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-12-23T09:09:42Z",
+      "subject": "",
+      "subject_clean": "",
+      "in_reply_to": "<BAY153-w28ED5029388534B3AE9CB0BA100@phx.gbl>",
+      "references": [
+        "<BAY153-w28ED5029388534B3AE9CB0BA100@phx.gbl>"
+      ],
+      "body_plain": "Hi David,\n\nThe garchOxFit interface has been removed from fGarch because it does  \nnot work with the latest version of oxgarch.\n\nYou can find the old interface either in the CRAN archive or in the  \nhistory of the subversion repository on R-forge.\n\nHTH,\nYohan\n\n\nLe 11 d?c. 10 ? 22:12, David Norris a ?crit :\n\n>\n>\n> Dear Sirs,\n>\n> Please forgive me if this is the wrong address for such a request.\n>\n> I have installed the R package fGarch recently and note the  \n> following excerpt from the pdf file.\n>\n> \"NOTE: garchOxFit is no longer part of fGarch package. If you are  \n> interested to use, please contact\n> us.\"\n>\n> I am.  Please let me know how I might go about getting it.\n>\n> BTW.  What about support for Garch-M?\n>\n> Thanks in advance.\n>\n> Sincerely,\n> David Norris \t\t \t   \t\t\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi David,\n\nThe garchOxFit interface has been removed from fGarch because it does  \nnot work with the latest version of oxgarch.\n\nYou can find the old interface either in the CRAN archive or in the  \nh",
+      "thread_id": "thread-293a3b529724",
+      "thread_depth": 1,
+      "month": "2010-12"
+    },
+    {
+      "id": "msg-10ba8cf14fbf",
+      "message_id": "<OF6E60F285.766C8F54-ON48257808.00122F18-48257808.001CC81C@boci-pru.com.hk>",
+      "from_name": "thomas.chan.sf at boci-pru.com.hk",
+      "from_email_hash": "a54d7e562a4747629b207335fa764d8f0a748effb8a65ac992991df37e78bfb1",
+      "date": "2010-12-29T05:14:20Z",
+      "subject": "[R-SIG-Finance] error message from portfolioFrontier function",
+      "subject_clean": "error message from portfolioFrontier function",
+      "in_reply_to": "<4D1A59B5.3000107@braverock.com>",
+      "references": [
+        "<OF5B0842A8.F83E490E-ON48257803.002D3B6A-48257803.002D6E5D@boci-pru.com.hk>",
+        "<4D1494DF.7050509@braverock.com>",
+        "<2456265B07D72C4AA1EF6B479F3FAB5F01FEF7A2@MCPSERVER3.meridiancapitol.local>",
+        "<4D1A59B5.3000107@braverock.com>"
+      ],
+      "body_plain": "Hello,\n\nI have used the portfolioFrontier function a few times unsuccessfully using\nthe following codes.\n\n> prets = as.timeSeries(prets)\n> Spec = portfolioSpec()\n> setNFrontierPoints(boxSpec) = 25\n> pconstraints = c(\"minW[1:10] = 0.00\",\"maxW[1:10] = .3\")\n> pFrontier = portfolioFrontier(data = prets, spec = Spec, constraints =\npconstraints)\n\nHere is the consistent error message:\n\nExecution stopped:\n  The minimum risk portfolio could not be computed.\nPossible Reason:\n  Your portfolio constraints may be too restrictive.\nStatus Information:\n  status=1 from solver solveRquadprog.\nError:\n  returned from Rmetrics\nThe input file is attached. The time series is short. But the error\nmessages are the same even if I use a longer time series, multiply the\nreturns by 100, etc. (See attached file: prets.Rdata)Any suggestion would\nbe greatly appreciated! I am a new R user. It would be great if it is\nsomething that I can handle.\n\nRegards,\n\nThomas Chan\nBOCI-Prudential Asset Management Limited\n\n\n|------------>\n| From:      |\n|------------>\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n  |\"Brian G. Peterson\" <brian at braverock.com>                                                                                               |\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n|------------>\n| To:        |\n|------------>\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n  |Mark Gordon <mgordon at mcphedge.com>                                                                                                      |\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n|------------>\n| Cc:        |\n|------------>\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n  |alex.rudnev at gmail.com, thomas.chan.sf at boci-pru.com.hk                                                                                   |\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n|------------>\n| Date:      |\n|------------>\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n  |29/12/2010 05:42                                                                                                                        |\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n|------------>\n| Subject:   |\n|------------>\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n  |Re: [R-SIG-Finance] error message from portfolioFrontier function                                                                       |\n  >----------------------------------------------------------------------------------------------------------------------------------------|\n\n\n\n\n\nOn 12/28/2010 03:27 PM, Mark Gordon wrote:\n> Please see my posting on December 2, 2010 regarding this problem.  The\n> problem is not with the FORTRAN code, it is with the R code.  I showed a\n> work around that I use to be able to run minriskPortfolio.  How can we\n> get the  package corrected?\n>\n> I apologize for responding off-list, but my prior posting appears to\n> have been lost in the crowd.\n\nWhile I am the maintainer of many R/Finance packages, I am neither the\nauthor nor maintainer of the RMetrics packages.\n\nSo, the usual method is that you would send a well-formed email to the\nindividual listed as the 'Maintainer' of the package.\n\nIn this case,\n\nRmetrics Core Team <Rmetrics-core at r-project.org>\n\nRegards,\n\n   - Brian\n\n> -----Original Message-----\n> From: r-sig-finance-bounces at r-project.org\n> [mailto:r-sig-finance-bounces at r-project.org] On Behalf Of Brian G.\n> Peterson\n> Sent: Friday, December 24, 2010 7:41 AM\n> To: r-sig-finance at r-project.org\n> Subject: Re: [R-SIG-Finance] error message from portfolioFrontier\n> function\n>\n> On 12/24/2010 02:16 AM, thomas.chan.sf at boci-pru.com.hk wrote:\n>>\n>> Hello,\n>>\n>> I have tried to use the function portfolioFrontier a few times and\n>> always get this error message:\n>>\n>> Execution stopped:\n>>     The minimum risk portfolio could not be computed.\n>> Possible Reason:\n>>     Your portfolio constraints may be too restrictive.\n>> Status Information:\n>>     status=1 from solver solveRquadprog.\n>> Error:\n>>     returned from Rmetrics\n>>\n>> Could anyone give me a hint? Thanks.\n>\n> The error message *is* a hint, and likely describes the problem you are\n> having precisely.\n>\n> You need to construct a minimal reproducible example, per the posting\n> guide, so that others may reproduce your problem, and confirm whether\n> the problem is in your constraints, as indicated by the error, or in the\n> code.\n>\n> Regards,\n>\n>     - Brian\n>\n> --\n> Brian G. Peterson\n> http://braverock.com/brian/\n> Ph: 773-459-4973\n> IM: bgpbraverock\n>\n> _______________________________________________\n> R-SIG-Finance at r-project.org mailing list\n> https://stat.ethz.ch/mailman/listinfo/r-sig-finance\n> -- Subscriber-posting only. If you want to post, subscribe first.\n> -- Also note that this is not the r-help list where general R questions\n> should go.\n\n\n--\nBrian G. Peterson\nhttp://braverock.com/brian/\nPh: 773-459-4973\nIM: bgpbraverock\n\n______________________________________________________________________\nThis email has been scanned by the MessageLabs Email Security System.\nFor more information please visit http://www.messagelabs.com/email\n______________________________________________________________________\n\n---------------------------------------------------------------------------------------\n\nImportant : The information contained in this e-mail and any attachment thereof is intended only for use of the addressee and is confidential and may be privileged and/or otherwise protected from disclosure. If you are not the intended recipient, you are hereby notified that any use, copying, dissemination or any other action taken or omitted to be taken in reliance upon this information is strictly prohibited. If you have received this communication in error, please notify the sender immediately by reply and delete this message from your system. Any views expressed in this e-mail are those of the individual sender except where the e-mail states otherwise and the sender is authorized to state them to be the views of BOCI-Prudential Asset Management Limited. Unless otherwise stated, any information given in this e-mail shall not be regarded as an offer, solicitation, invitation, advice or recommendation to buy or sell any investment or securities within or outside Hong Kong SAR. Any reference to the terms of executed transactions should be treated as preliminary only and subject to our formal written confirmation.\n\n\n______________________________________________________________________\nThis email has been scanned by the MessageLabs Email Security System.\nFor more information please visit http://www.messagelabs.com/email \n______________________________________________________________________\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: prets.Rdata\nType: application/octet-stream\nSize: 909 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101229/b8a9c413/attachment.obj>",
+      "body_snippet": "Hello,\n\nI have used the portfolioFrontier function a few times unsuccessfully using\nthe following codes.\n\n> prets = as.timeSeries(prets)\n> Spec = portfolioSpec()\n> setNFrontierPoints(boxSpec) = 25\n> p",
+      "thread_id": "thread-10ba8cf14fbf",
+      "thread_depth": 0,
+      "month": "2010-12"
+    },
+    {
+      "id": "msg-2f2df4b82382",
+      "message_id": "<2456265B07D72C4AA1EF6B479F3FAB5F01FEF7A4@MCPSERVER3.meridiancapitol.local>",
+      "from_name": "Mark Gordon",
+      "from_email_hash": "b4856d223067f32eac756d47c61240de67564ef1d369a2b7c50366c01a1c1f16",
+      "date": "2010-12-29T13:50:56Z",
+      "subject": "[R-SIG-Finance] fPortfolio (portfolioFrontier function)",
+      "subject_clean": "fPortfolio (portfolioFrontier function)",
+      "in_reply_to": "<BLU156-w436E76FDC361755EB7E07CA8230@phx.gbl>",
+      "references": [
+        "<BLU156-w436E76FDC361755EB7E07CA8230@phx.gbl>"
+      ],
+      "body_plain": "I ran into the same problem with the function minriskPortfolio when I\nstarted using R in September.  I posted the problem, but didn't get any\nresponse.  Since that time several other users have posted with the same\nproblem:\n\nExecution stopped:\n   The minimum risk portfolio could not be computed\nPossible Reason:\n   Your portfolio constraints may be too restrictive.\nStatus Information:\n   status=1 from solver solveRquadprog\nError:\n   returned from Rmetrics\n\neven though the constraints are not too restrictive and that a solution\nreally exists.\n\n I have been able to diagnose the problem.  I hope that you will be able\nto correct the bug soon in the package.\n \n Within minriskPortfolio there is this line of code:\n\n\t portfolio <- optimize(targetRiskFun, interval =\nrange(getMu(Data)), \n      \tdata = Data, spec = spec, constraints = constraints, \n        \ttol = .Machine$double.eps^0.5)\n \n The parameter \"interval\" specificies the range of returns to search for\ndetermining an optimal portfolio.  The \"range\" function returns an array\ncontaining the returns for the best and worst assets in the dataset.\nThese returns are feasible only if there is no constriant on owning 100%\nof the best or worst asset, respectively.  While iterating, the\noptimizatino function will sometimes chose as an iterant a non-feasible\nreturn.\n\n I worked around this by writing my own range function which returns the\nbest and worst returns subject to my constraints.  I look to create the\nminimum return by first setting weights to their minimum constraints\nthen by choosing a maximum weight on the lowest returning asset, then\nchoosing the maximum weight on the second lowest returning asset et\ncetera until I have my weights equal to 100%.  The calculation for\nmaximum return is similar.  I am not an R-maven, so I am sure that it is\npossible to write more concise code but here is what I did and it works\nfor me:\n\nMCPrange<-function(data, constraints)\n{\nmu=getMu(data)\nmaxCon<-maxWConstraints(data, constraints=constraints)\nminCon<-minWConstraints(data, constraints=constraints)\nExcess<-maxCon-minCon\nsummin=sum(minCon)\n\ntemp<-sort(mu, index.return=TRUE)\nsmu=temp$x\nsExcess=Excess[temp$ix]\nsminCon=minCon[temp$ix]\ni=1\nwhile (summin+sum(sExcess[1:i])<1) i=i+1\nsExcess[i]=sExcess[i]+1-sum(sExcess[1:i])-summin\nsExcess[(i+1):length(sExcess)]=0\nmin=sum((sExcess+sminCon)*smu)\n\ntemp<-sort(mu, decreasing=TRUE, index.return=TRUE)\nsmu=temp$x\nsExcess=Excess[temp$ix]\nsminCon=minCon[temp$ix]\ni=1\nwhile (summin+sum(sExcess[1:i])<1) i=i+1\nsExcess[i]=sExcess[i]+1-sum(sExcess[1:i])-summin\nsExcess[(i+1):length(sExcess)]=0\nmax=sum((sExcess+sminCon)*smu)\n\nreturn(c(min, max))\n}\n\n  I substituted MCPrange for the range function in my version of\nminriskPortfolio and use that version in all of my optimization\nfunctions.\n\nMark Gordon\nMeridian Capital Partners",
+      "body_snippet": "I ran into the same problem with the function minriskPortfolio when I\nstarted using R in September.  I posted the problem, but didn't get any\nresponse.  Since that time several other users have posted",
+      "thread_id": "thread-2f2df4b82382",
+      "thread_depth": 0,
+      "month": "2010-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-293a3b529724",
+      "subject": "No subject",
+      "message_count": 2,
+      "participants": [
+        "David Norris",
+        "Yohan"
+      ],
+      "started": "2010-12-11T21:12:57Z",
+      "last_reply": "2010-12-23T09:09:42Z",
+      "root_message_id": "msg-293a3b529724"
+    },
+    {
+      "id": "thread-5afd375561cb",
+      "subject": "rged Generalized Error Distribution generator uses sign(runif)",
+      "message_count": 1,
+      "participants": [
+        "Michael Stevens"
+      ],
+      "started": "2010-12-19T09:59:14Z",
+      "last_reply": "2010-12-19T09:59:14Z",
+      "root_message_id": "msg-5afd375561cb"
+    },
+    {
+      "id": "thread-10ba8cf14fbf",
+      "subject": "error message from portfolioFrontier function",
+      "message_count": 1,
+      "participants": [
+        "thomas.chan.sf at boci-pru.com.hk"
+      ],
+      "started": "2010-12-29T05:14:20Z",
+      "last_reply": "2010-12-29T05:14:20Z",
+      "root_message_id": "msg-10ba8cf14fbf"
+    },
+    {
+      "id": "thread-2f2df4b82382",
+      "subject": "fPortfolio (portfolioFrontier function)",
+      "message_count": 1,
+      "participants": [
+        "Mark Gordon"
+      ],
+      "started": "2010-12-29T13:50:56Z",
+      "last_reply": "2010-12-29T13:50:56Z",
+      "root_message_id": "msg-2f2df4b82382"
+    }
+  ]
+}

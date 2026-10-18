@@ -1,0 +1,55 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-08",
+  "messages": [
+    {
+      "id": "msg-64dd13bb1242",
+      "message_id": "<111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>",
+      "from_name": "Matthieu Stigler",
+      "from_email_hash": "8be7d9af3aa05df3cb73327099ca82a1e00b62ae5b6e52d77e9d9908c4ad6d37",
+      "date": "2009-08-14T08:18:06Z",
+      "subject": "man page of skewness {fUtilities}",
+      "subject_clean": "man page of skewness {fUtilities}",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi\nI guess there is a \\ missing in skewness {fUtilities} - see also section\n\nbests\n\nMat",
+      "body_snippet": "Hi\nI guess there is a \\ missing in skewness {fUtilities} - see also section\n\nbests\n\nMat",
+      "thread_id": "thread-64dd13bb1242",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-ca9ff4a17bb0",
+      "message_id": "<20090814165401.0463949c@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-08-14T14:54:01Z",
+      "subject": "man page of skewness {fUtilities}",
+      "subject_clean": "man page of skewness {fUtilities}",
+      "in_reply_to": "<111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>",
+      "references": [
+        "<111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>"
+      ],
+      "body_plain": ">>>> \"MS\" == Matthieu Stigler <matthieu.stigler at gmail.com>\n>>>> on Fri, 14 Aug 2009 10:18:06 +0200\n\n   MS> Hi\n   MS> I guess there is a \\ missing in skewness {fUtilities} - see\n   MS> also section\n   MS>\n   MS> bests\n   MS>\n   MS> Mat\n   MS>\n   MS> _______________________________________________\n   MS> Rmetrics-core mailing list\n   MS> Rmetrics-core at r-project.org\n   MS> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n\n\nThanks Matthieu to point this out.\n\nregards,\nYohan\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"MS\" == Matthieu Stigler <matthieu.stigler at gmail.com>\n>>>> on Fri, 14 Aug 2009 10:18:06 +0200\n\n   MS> Hi\n   MS> I guess there is a \\ missing in skewness {fUtilities} - see\n   MS> also section\n",
+      "thread_id": "thread-64dd13bb1242",
+      "thread_depth": 1,
+      "month": "2009-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-64dd13bb1242",
+      "subject": "man page of skewness {fUtilities}",
+      "message_count": 2,
+      "participants": [
+        "Matthieu Stigler",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-08-14T08:18:06Z",
+      "last_reply": "2009-08-14T14:54:01Z",
+      "root_message_id": "msg-64dd13bb1242"
+    }
+  ]
+}

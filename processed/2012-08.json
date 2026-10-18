@@ -1,0 +1,296 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-08",
+  "messages": [
+    {
+      "id": "msg-bbc01c1e0082",
+      "message_id": "<50192690.9080204@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-08-01T12:52:32Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "We see in R CMD check in current R-devel\n\n* checking foreign function calls ... WARNING\nForeign function call(s) with ?PACKAGE? argument in a base package:\n   .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n\nThis is not part of the R API and will be removed shortly.\n\nYour uses of it are in any case incorrect and dangerous (e.g. length() \ndoes not need to return an integer and might be NA: see its help page).\n\nPlease remove this from your code (and be aware that such calls are seen \nas prime facie evidence of copying from the R sources, which you have \nnot acknowledged).\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "We see in R CMD check in current R-devel\n\n* checking foreign function calls ... WARNING\nForeign function call(s) with ?PACKAGE? argument in a base package:\n   .C(\"find_interv_vec\", ..., PACKAGE = \"bas",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 0,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-d00d8b644827",
+      "message_id": "<501AA509.4090608@R-Project.org>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-08-02T16:04:25Z",
+      "subject": "CRAN package fExtremes",
+      "subject_clean": "CRAN package fExtremes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainer,\n\nplease note that fExtremes fails for me under R-oldrelease these days \nwith an obfuscated error message:\n\nhttp://www.r-project.org/nosvn/R.check/r-oldrel-windows-ix86+x86_64/fExtremes-00check.html\n\nIn addition, please also fix the Warnings and significant Notes for \nR-devel, e.g. at:\n\nhttp://www.r-project.org/nosvn/R.check/r-devel-linux-x86_64-gcc-debian/fExtremes-00check.html\n\nas well as any other problems that we may have reported before.\n\n\nBest,\nUwe Ligges",
+      "body_snippet": "Dear maintainer,\n\nplease note that fExtremes fails for me under R-oldrelease these days \nwith an obfuscated error message:\n\nhttp://www.r-project.org/nosvn/R.check/r-oldrel-windows-ix86+x86_64/fExtreme",
+      "thread_id": "thread-d00d8b644827",
+      "thread_depth": 0,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-028b4d7a4555",
+      "message_id": "<501C3F3C.8000201@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-08-03T21:14:36Z",
+      "subject": ".C calls in CRAN packages to other packages not depended on",
+      "subject_clean": ".C calls in CRAN packages to other packages not depended on",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "This concerns packages aroma.core, npRmpi, pairwiseCI and timeDate.\n\nAs you can see from the R-devel checks at\n\nhttp://www.r-project.org/nosvn/R.check/r-devel-linux-x86_64-gcc-fedora/<pkgname>-00check.html\n\nyou are making .C calls to another package which is not mentioned in the \nDESCRIPTION file and hence need not even be installed on the system your \npackage is running on.\n\nIn any case, using non-API interfaces in other packages is unsafe, and \nat C level is an all too easy way to crash the R session the user of \nyour package is running (and because that was happening too often, these \nchecks were added).  If you really need a low-level API, please \nnegotiate with the other package maintainer to provide one.\n\nPlease fix this (and other issues showing in those checks) as soon as \npossible.\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "This concerns packages aroma.core, npRmpi, pairwiseCI and timeDate.\n\nAs you can see from the R-devel checks at\n\nhttp://www.r-project.org/nosvn/R.check/r-devel-linux-x86_64-gcc-fedora/<pkgname>-00check",
+      "thread_id": "thread-028b4d7a4555",
+      "thread_depth": 0,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-09fcd7b3c100",
+      "message_id": "<655882F5-A719-403D-AB1B-068CC74EA14B@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-08-07T08:16:02Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<50192690.9080204@stats.ox.ac.uk>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>"
+      ],
+      "body_plain": "On Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n\n> We see in R CMD check in current R-devel\n> \n> * checking foreign function calls ... WARNING\n> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>  .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n> \n> This is not part of the R API and will be removed shortly.\n> \n\nThanks for pointing out that find_interv_vec will has been removed from R-dev. We will make the due changes in the timeSeries package.\n\n> Your uses of it are in any case incorrect and dangerous (e.g. length() does not need to return an integer and might be NA: see its help page).\n> \n> Please remove this from your code (and be aware that such calls are seen as prime facie evidence of copying from the R sources, which you have not acknowledged).\n\nIt is mentioned in the source code that we prefer to call the underlining C routine of findInterval(). Moreover, we only call the C routine and we have not copied the code in findInterval().\n\nRegards,\nYohan\n\n> \n> -- \n> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n> University of Oxford,             Tel:  +44 1865 272861 (self)\n> 1 South Parks Road,                     +44 1865 272866 (PA)\n> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n\n> We see in R CMD check in current R-devel\n> \n> * checking foreign function calls ... WARNING\n> Foreign function call(s) with ?PACKAGE? argument i",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 1,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-741a4b98cb33",
+      "message_id": "<9ED21500-ED2C-4612-AF46-C061AB754BC5@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-08-07T08:46:30Z",
+      "subject": "CRAN package fExtremes",
+      "subject_clean": "CRAN package fExtremes",
+      "in_reply_to": "<501AA509.4090608@R-Project.org>",
+      "references": [
+        "<501AA509.4090608@R-Project.org>"
+      ],
+      "body_plain": "Dear Uwe,\n\nThanks for your message.\n\nI cannot see any error message in the build reports you have mentioned. There are indeed NOTEs and WARNINGs but no ERRORs.\n\nAs regards the WARNINGs and NOTEs, I have no time to fix them at the moment. I will do it later in the month.\n\nRegards,\nYohan\n\nOn Aug 2, 2012, at 6:04 PM, Uwe Ligges wrote:\n\n> Dear maintainer,\n> \n> please note that fExtremes fails for me under R-oldrelease these days with an obfuscated error message:\n> \n> http://www.r-project.org/nosvn/R.check/r-oldrel-windows-ix86+x86_64/fExtremes-00check.html\n> \n> In addition, please also fix the Warnings and significant Notes for R-devel, e.g. at:\n> \n> http://www.r-project.org/nosvn/R.check/r-devel-linux-x86_64-gcc-debian/fExtremes-00check.html\n> \n> as well as any other problems that we may have reported before.\n> \n> \n> Best,\n> Uwe Ligges\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear Uwe,\n\nThanks for your message.\n\nI cannot see any error message in the build reports you have mentioned. There are indeed NOTEs and WARNINGs but no ERRORs.\n\nAs regards the WARNINGs and NOTEs, I ha",
+      "thread_id": "thread-d00d8b644827",
+      "thread_depth": 1,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-df79b64db18f",
+      "message_id": "<5020D951.9050906@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2012-08-07T09:01:05Z",
+      "subject": "CRAN package fExtremes",
+      "subject_clean": "CRAN package fExtremes",
+      "in_reply_to": "<9ED21500-ED2C-4612-AF46-C061AB754BC5@phys.ethz.ch>",
+      "references": [
+        "<501AA509.4090608@R-Project.org>",
+        "<9ED21500-ED2C-4612-AF46-C061AB754BC5@phys.ethz.ch>"
+      ],
+      "body_plain": "On 07.08.2012 10:46, Yohan Chalabi wrote:\n> Dear Uwe,\n>\n> Thanks for your message.\n>\n> I cannot see any error message in the build reports you have mentioned. There are indeed NOTEs and WARNINGs but no ERRORs.\n>\n> As regards the WARNINGs and NOTEs, I have no time to fix them at the moment. I will do it later in the month.\n\n\nYes, 5 days later, it passes again.\n\nUwe\n\n\n> Regards,\n> Yohan\n>\n> On Aug 2, 2012, at 6:04 PM, Uwe Ligges wrote:\n>\n>> Dear maintainer,\n>>\n>> please note that fExtremes fails for me under R-oldrelease these days with an obfuscated error message:\n>>\n>> http://www.r-project.org/nosvn/R.check/r-oldrel-windows-ix86+x86_64/fExtremes-00check.html\n>>\n>> In addition, please also fix the Warnings and significant Notes for R-devel, e.g. at:\n>>\n>> http://www.r-project.org/nosvn/R.check/r-devel-linux-x86_64-gcc-debian/fExtremes-00check.html\n>>\n>> as well as any other problems that we may have reported before.\n>>\n>>\n>> Best,\n>> Uwe Ligges\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>",
+      "body_snippet": "On 07.08.2012 10:46, Yohan Chalabi wrote:\n> Dear Uwe,\n>\n> Thanks for your message.\n>\n> I cannot see any error message in the build reports you have mentioned. There are indeed NOTEs and WARNINGs but n",
+      "thread_id": "thread-d00d8b644827",
+      "thread_depth": 2,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-17b47c1b8ed1",
+      "message_id": "<F13B6A0D-99E9-41A5-A545-24FF2374D700@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-08-07T09:08:12Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<50192690.9080204@stats.ox.ac.uk>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear CRAN maintainers,\n\nPlease find a new version of timeSeries without the C level call as mentioned bellow.\n\nRegards,\nYohan\n\nOn Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n\n> We see in R CMD check in current R-devel\n> \n> * checking foreign function calls ... WARNING\n> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>  .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n> \n> This is not part of the R API and will be removed shortly.\n> \n> Your uses of it are in any case incorrect and dangerous (e.g. length() does not need to return an integer and might be NA: see its help page).\n> \n> Please remove this from your code (and be aware that such calls are seen as prime facie evidence of copying from the R sources, which you have not acknowledged).\n> \n> -- \n> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n> University of Oxford,             Tel:  +44 1865 272861 (self)\n> 1 South Parks Road,                     +44 1865 272866 (PA)\n> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear CRAN maintainers,\n\nPlease find a new version of timeSeries without the C level call as mentioned bellow.\n\nRegards,\nYohan\n\nOn Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n\n> We see in R CMD c",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 1,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-45abb722727d",
+      "message_id": "<50214F66.4020401@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2012-08-07T17:24:54Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<F13B6A0D-99E9-41A5-A545-24FF2374D700@phys.ethz.ch>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>",
+        "<F13B6A0D-99E9-41A5-A545-24FF2374D700@phys.ethz.ch>"
+      ],
+      "body_plain": "On 07.08.2012 11:08, Yohan Chalabi wrote:\n> Dear CRAN maintainers,\n>\n> Please find a new version of timeSeries without the C level call as mentioned bellow.\n\nThanks, this is on CRAN now, *but* it still does not fullfill the CRAN \npolicies re. the maintainer address, I think Kurt brought it up recently.\n\nBest,\nUwe\n\n\n\n>\n> Regards,\n> Yohan\n>\n> On Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n>\n>> We see in R CMD check in current R-devel\n>>\n>> * checking foreign function calls ... WARNING\n>> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>>   .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n>>\n>> This is not part of the R API and will be removed shortly.\n>>\n>> Your uses of it are in any case incorrect and dangerous (e.g. length() does not need to return an integer and might be NA: see its help page).\n>>\n>> Please remove this from your code (and be aware that such calls are seen as prime facie evidence of copying from the R sources, which you have not acknowledged).\n>>\n>> --\n>> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\n>> University of Oxford,             Tel:  +44 1865 272861 (self)\n>> 1 South Parks Road,                     +44 1865 272866 (PA)\n>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>",
+      "body_snippet": "On 07.08.2012 11:08, Yohan Chalabi wrote:\n> Dear CRAN maintainers,\n>\n> Please find a new version of timeSeries without the C level call as mentioned bellow.\n\nThanks, this is on CRAN now, *but* it stil",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 2,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-724b64a1b13a",
+      "message_id": "<alpine.LFD.2.02.1208070949540.3891@toucan.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-08-08T08:53:12Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<655882F5-A719-403D-AB1B-068CC74EA14B@phys.ethz.ch>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>",
+        "<655882F5-A719-403D-AB1B-068CC74EA14B@phys.ethz.ch>"
+      ],
+      "body_plain": "On Tue, 7 Aug 2012, Yohan Chalabi wrote:\n\n>\n> On Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n>\n>> We see in R CMD check in current R-devel\n>>\n>> * checking foreign function calls ... WARNING\n>> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>>  .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n>>\n>> This is not part of the R API and will be removed shortly.\n>>\n>\n> Thanks for pointing out that find_interv_vec will has been removed from R-dev. We will make the due changes in the timeSeries package.\n>\n>> Your uses of it are in any case incorrect and dangerous (e.g. length() does not need to return an integer and might be NA: see its help page).\n>>\n>> Please remove this from your code (and be aware that such calls are seen as prime facie evidence of copying from the R sources, which you have not acknowledged).\n>\n> It is mentioned in the source code that we prefer to call the \n> underlining C routine of findInterval(). Moreover, we only call the \n> C routine and we have not copied the code in findInterval().\n\nBut you did: you copied to write\n\n     .C(\"find_interv_vec\", xt = pos, n = length(pos), x = ipos,\n        nx = nx, FALSE, FALSE, i, DUP = FALSE, NAOK = TRUE,\n        PACKAGE = \"base\")\n\nwhich are not otherwise documented.  You need to acknowledge that this \nis an edited copy of R-core's code.  And most of the parts which \ndiffer from the current findInterval() are in fact wrong: nx need not \nbe of type integer and could be NA, for example.  And if it were \ncalled with the wrong type, the crash would be attributed to R's \ninternals and not to your error.\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "On Tue, 7 Aug 2012, Yohan Chalabi wrote:\n\n>\n> On Aug 1, 2012, at 2:52 PM, Prof Brian Ripley wrote:\n>\n>> We see in R CMD check in current R-devel\n>>\n>> * checking foreign function calls ... WARNING\n>> ",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 2,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-e046c202affc",
+      "message_id": "<01cd7545$Blat.v2.2.2$3a54fb90@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-08-08T09:07:25Z",
+      "subject": "Package timeSeries_2160.95.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2160.95.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2160.95.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.15/).\nR version 2.15.1 (2012-06-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2160.95.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-e046c202affc",
+      "thread_depth": 0,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-6ea548cd808a",
+      "message_id": "<297f891efd61d9965b0788c5380e93c0@ulrik.uio.no>",
+      "from_name": "Magnus Dehli Vigeland",
+      "from_email_hash": "05e1f32a4ca51af25730479d1e06f972ea98df4e56227942032aa5c327e783b3",
+      "date": "2012-08-10T12:03:54Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<50192690.9080204@stats.ox.ac.uk>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>"
+      ],
+      "body_plain": "On Wed, 01 Aug 2012 13:52:32 +0100, Prof Brian Ripley \n <ripley at stats.ox.ac.uk> wrote:\n> We see in R CMD check in current R-devel\n>\n> * checking foreign function calls ... WARNING\n> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>   .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n>\n> This is not part of the R API and will be removed shortly.\n>\n> Your uses of it are in any case incorrect and dangerous (e.g.\n> length() does not need to return an integer and might be NA: see its\n> help page).\n>\n> Please remove this from your code (and be aware that such calls are\n> seen as prime facie evidence of copying from the R sources, which you\n> have not acknowledged).\n\n\n Hi,\n I have now uploaded a new version of IBDsim (IBDsim_0.9-2.tar.gz) to \n CRAN without any such internal code calls.\n\n In normal use of this package findInternal() is called many hundred \n thousand times, so the cost reduction by calling the internal C code \n directly was quite substantial. I guess the best option is to create my \n own version in C, then.\n\n Thanks for your patience,\n Magnus\n\n\n-- \n Magnus Dehli Vigeland, PhD\n Department of Medical Genetics\n University of Oslo\n Norway\n\n E-mail: magnusdv at medisin.uio.no\n Phone: +47 22 11 98 79",
+      "body_snippet": "On Wed, 01 Aug 2012 13:52:32 +0100, Prof Brian Ripley \n <ripley at stats.ox.ac.uk> wrote:\n> We see in R CMD check in current R-devel\n>\n> * checking foreign function calls ... WARNING\n> Foreign functio",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 1,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-ce684d790f67",
+      "message_id": "<502501BE.80009@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2012-08-10T12:42:38Z",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "subject_clean": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "in_reply_to": "<297f891efd61d9965b0788c5380e93c0@ulrik.uio.no>",
+      "references": [
+        "<50192690.9080204@stats.ox.ac.uk>",
+        "<297f891efd61d9965b0788c5380e93c0@ulrik.uio.no>"
+      ],
+      "body_plain": "On 10.08.2012 14:03, Magnus Dehli Vigeland wrote:\n> On Wed, 01 Aug 2012 13:52:32 +0100, Prof Brian Ripley\n> <ripley at stats.ox.ac.uk> wrote:\n>> We see in R CMD check in current R-devel\n>>\n>> * checking foreign function calls ... WARNING\n>> Foreign function call(s) with ?PACKAGE? argument in a base package:\n>>   .C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n>>\n>> This is not part of the R API and will be removed shortly.\n>>\n>> Your uses of it are in any case incorrect and dangerous (e.g.\n>> length() does not need to return an integer and might be NA: see its\n>> help page).\n>>\n>> Please remove this from your code (and be aware that such calls are\n>> seen as prime facie evidence of copying from the R sources, which you\n>> have not acknowledged).\n>\n>\n> Hi,\n> I have now uploaded a new version of IBDsim (IBDsim_0.9-2.tar.gz) to\n> CRAN without any such internal code calls.\n>\n> In normal use of this package findInternal() is called many hundred\n> thousand times, so the cost reduction by calling the internal C code\n> directly was quite substantial. I guess the best option is to create my\n> own version in C, then.\n\nThanks, can you confirm you read and agree to the CRAN policies, please? \nYour package willbe moved to CRAN afterwards.\n\nBest,\nUwe Ligges\n\n\n\n\n>\n> Thanks for your patience,\n> Magnus\n>\n>",
+      "body_snippet": "On 10.08.2012 14:03, Magnus Dehli Vigeland wrote:\n> On Wed, 01 Aug 2012 13:52:32 +0100, Prof Brian Ripley\n> <ripley at stats.ox.ac.uk> wrote:\n>> We see in R CMD check in current R-devel\n>>\n>> * checki",
+      "thread_id": "thread-bbc01c1e0082",
+      "thread_depth": 2,
+      "month": "2012-08"
+    },
+    {
+      "id": "msg-e3b360bec2b9",
+      "message_id": "<CAM2mAMTXXCDAfmBCihZaYDfhgtdqNvSqZetD-04jFoqdqYV6nA@mail.gmail.com>",
+      "from_name": "Xavier fourelementscapital",
+      "from_email_hash": "6b39a3c4313a5fefe9b345326293ee53efbb7d5f33856fc39130b0b683006e67",
+      "date": "2012-08-14T02:13:55Z",
+      "subject": "VaR constraint in fPortfolio",
+      "subject_clean": "VaR constraint in fPortfolio",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120814/148571bc/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120814/148571bc/attachment.pl>",
+      "thread_id": "thread-e3b360bec2b9",
+      "thread_depth": 0,
+      "month": "2012-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-bbc01c1e0082",
+      "subject": "Use of R internal entry points in packages IBDsim and timeSeries",
+      "message_count": 7,
+      "participants": [
+        "Magnus Dehli Vigeland",
+        "Prof Brian Ripley",
+        "Uwe Ligges",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-08-01T12:52:32Z",
+      "last_reply": "2012-08-10T12:42:38Z",
+      "root_message_id": "msg-bbc01c1e0082"
+    },
+    {
+      "id": "thread-d00d8b644827",
+      "subject": "CRAN package fExtremes",
+      "message_count": 3,
+      "participants": [
+        "Uwe Ligges",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-08-02T16:04:25Z",
+      "last_reply": "2012-08-07T09:01:05Z",
+      "root_message_id": "msg-d00d8b644827"
+    },
+    {
+      "id": "thread-028b4d7a4555",
+      "subject": ".C calls in CRAN packages to other packages not depended on",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-08-03T21:14:36Z",
+      "last_reply": "2012-08-03T21:14:36Z",
+      "root_message_id": "msg-028b4d7a4555"
+    },
+    {
+      "id": "thread-e046c202affc",
+      "subject": "Package timeSeries_2160.95.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-08-08T09:07:25Z",
+      "last_reply": "2012-08-08T09:07:25Z",
+      "root_message_id": "msg-e046c202affc"
+    },
+    {
+      "id": "thread-e3b360bec2b9",
+      "subject": "VaR constraint in fPortfolio",
+      "message_count": 1,
+      "participants": [
+        "Xavier fourelementscapital"
+      ],
+      "started": "2012-08-14T02:13:55Z",
+      "last_reply": "2012-08-14T02:13:55Z",
+      "root_message_id": "msg-e3b360bec2b9"
+    }
+  ]
+}

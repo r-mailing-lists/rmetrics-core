@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2014-02",
+  "messages": [
+    {
+      "id": "msg-f9c8763e97f8",
+      "message_id": "<7F001A7F9CC63740BBBFA1969F3D87FF2F8B68@hinder-srv01.hinder.local>",
+      "from_name": "Andreas Homberger",
+      "from_email_hash": "5e9d5c2d9a695ccb29bc2d0337920ba991026afb7060b6d29f0b4df9c32eec75",
+      "date": "2014-02-03T16:11:47Z",
+      "subject": "Question to fPortfolio",
+      "subject_clean": "Question to fPortfolio",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140203/e7c4c2dc/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140203/e7c4c2dc/attachment.pl>",
+      "thread_id": "thread-f9c8763e97f8",
+      "thread_depth": 0,
+      "month": "2014-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f9c8763e97f8",
+      "subject": "Question to fPortfolio",
+      "message_count": 1,
+      "participants": [
+        "Andreas Homberger"
+      ],
+      "started": "2014-02-03T16:11:47Z",
+      "last_reply": "2014-02-03T16:11:47Z",
+      "root_message_id": "msg-f9c8763e97f8"
+    }
+  ]
+}

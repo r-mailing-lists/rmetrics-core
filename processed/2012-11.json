@@ -1,0 +1,213 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-11",
+  "messages": [
+    {
+      "id": "msg-eae24d23f1d0",
+      "message_id": "<455C2FA0-D27A-481D-A527-920DBDAAD1DC@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-11-07T07:27:42Z",
+      "subject": "Legacy .First.lib call in CRAN package fMultivar",
+      "subject_clean": "Legacy .First.lib call in CRAN package fMultivar",
+      "in_reply_to": "<20121030101324.9D0478132E@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<20121030101324.9D0478132E@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear Brian,\n\nThank you for the message.\n\nWe will update the packages accodringly.\n\nKind regards,\nYohan\n\nOn Oct 30, 2012, at 11:13 AM, Prof Brian Ripley wrote:\n\n> This package is using .First.lib to load its compiled code, and that\n> workaround will be removed shortly (it was only ever intended to help\n> transitioning for 2.14.0 a year ago).\n> \n> This should be replaced by .onLoad now all packages have namespaces,\n> or preferably by a useDynLib declaration in the NAMESPACE file.\n> \n> So we need an update to the package which does not use .First.lib.\n> \n> There may be other issues that need fixing: see the CRAN check logs at\n> http://cran.r-project.org/web/checks/check_results_NAME.html,\n> replacing NAME by the name of your package.\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear Brian,\n\nThank you for the message.\n\nWe will update the packages accodringly.\n\nKind regards,\nYohan\n\nOn Oct 30, 2012, at 11:13 AM, Prof Brian Ripley wrote:\n\n> This package is using .First.lib to lo",
+      "thread_id": "thread-eae24d23f1d0",
+      "thread_depth": 0,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-9dabd18a161d",
+      "message_id": "<99514985-A267-4111-B05F-4BDC8A68181B@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-11-07T07:41:01Z",
+      "subject": "stabledist",
+      "subject_clean": "stabledist",
+      "in_reply_to": "<CAPRP4-fuNj0XLLruRT6hD1sSQfvVsK=zv1Wu=zY9E7SZNSmT3A@mail.gmail.com>",
+      "references": [
+        "<64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>",
+        "<CAPRP4-fuNj0XLLruRT6hD1sSQfvVsK=zv1Wu=zY9E7SZNSmT3A@mail.gmail.com>"
+      ],
+      "body_plain": "On Oct 29, 2012, at 12:27 PM, Martin Maechler wrote:\n\n> Dear Oliver\n> (I'm writing in English because of the CC).\n> \n> \n> On Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:\n>> Lieber Herr Maechler,\n>> \n>> ich wollte das stabledist package von rmetrics installieren, wie im wiki beschrieben:\n>> \n>> \n>> The script installs all Rmetrics packages from your default CRAN repository ('repos'). This will ensure that all packages are up-to-date.\n>> \n>> Open an R process and type the following :\n>> \n>>   source(\"http://www.rmetrics.org/Rmetrics.R\")\n>>   install.Rmetrics()\n>> \n>> \n>> allerdings, neben der installation zahlreicher pakete, kam insbesondere die folgende meldung, in deren vorletzter zeile steht, dass stabledist nicht verfuegbar ist --koennen Sie mir weiterhelfen?\n>> \n>> \n>> \n>> + source(\"http://www.rmetrics.org/Rmetrics.R\")\n>> +    install.Rmetrics()\n>> Warning in install.packages(pkgs = pkgs, ...) :\n>>  argument 'lib' is missing: using '/usr/local/lib/R/site-library'\n>> Warning in install.packages(pkgs = pkgs, ...) :\n>>  'lib = \"/usr/local/lib/R/site-library\"' is not writable\n>> --- Please select a CRAN mirror for use in this session ---\n>> Loading Tcl/Tk interface ... done\n>> Warning: dependency ?stabledist? is not available\n>> also installing the dependencies ?numDeriv?, ?DistributionUtils?, ?GeneralizedHyperbolic?\n> \n> Yes, indeed this is a bug in the  install.Rmetrics() function;\n\nHi Martin,\n\ninstall.Rmetrics() is a plain wrapper of install.packages with the list of Rmetrics packages:\n\ninstall.Rmetrics <- function (pkgs = pkgsRmetrics(), ...)\n    install.packages(pkgs = pkgs, ...)\n\nWhat Oliver is missing is either write permission for \"/usr/local/lib/R/site-library\" or the \"lib\" argument to specify a library path in his home directory.\n\nRegards,\nYohan\n\n> Unfortunately, even though I'm part of Rmetrics-core,\n> I have no write access to  http://www.rmetrics.org/Rmetrics.R\n> which defines the  install.Rmetrics() function  and so I cannot fix it.\n> \n> HOWEVER, there is an easy workaround:\n> do\n> \n> install.packages(\"stabledist\")\n> \n> before doing the other installations.\n> \n> Please let me know if you have problems, observe pecularities, ... in package\n> 'stabledist'.\n> \n> Best regards,\n> Martin M?chler\n> \n> \n>> \n>> Viele Gruesse\n>> \n>> Oliver Kley\n>> \n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On Oct 29, 2012, at 12:27 PM, Martin Maechler wrote:\n\n> Dear Oliver\n> (I'm writing in English because of the CC).\n> \n> \n> On Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:\n",
+      "thread_id": "thread-9dabd18a161d",
+      "thread_depth": 0,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-b5b2b9f54975",
+      "message_id": "<E6E83FD2-5314-48C1-AF0C-1A0DBA8D9DFE@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-11-07T07:41:50Z",
+      "subject": "Typo",
+      "subject_clean": "Typo",
+      "in_reply_to": "<20613.26776.250447.880465@max.nulle.part>",
+      "references": [
+        "<20613.26776.250447.880465@max.nulle.part>"
+      ],
+      "body_plain": "Thanks to point this out.\n\nWill take care of it.\n\nRegards,\nYohan\n\nOn Oct 22, 2012, at 5:39 PM, Dirk Eddelbuettel wrote:\n\n> \n> Just noticed this beauty:\n> \n>  PlainVanillaOptions          package:fOptions          R Documentation\n> \n>  Valuation of Plain Vanilla Options\n> \n>  Description:\n> \n>       A collection and description of functions to valuate plain vanilla\n>       options. Included are functions for the Generalized Block-Scholes\n>                                                           ^^^^^^^^^^^^^\n> \n> Dirk\n> \n> \n> -- \n> Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Thanks to point this out.\n\nWill take care of it.\n\nRegards,\nYohan\n\nOn Oct 22, 2012, at 5:39 PM, Dirk Eddelbuettel wrote:\n\n> \n> Just noticed this beauty:\n> \n>  PlainVanillaOptions          package:fOpti",
+      "thread_id": "thread-b5b2b9f54975",
+      "thread_depth": 0,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-6767facbc188",
+      "message_id": "<20634.5843.22233.111024@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-11-07T08:07:47Z",
+      "subject": "stabledist",
+      "subject_clean": "stabledist",
+      "in_reply_to": "<99514985-A267-4111-B05F-4BDC8A68181B@phys.ethz.ch>",
+      "references": [
+        "<64AD78DB5162644CA3E231B8B4F57F59861BD0@BADWLRZ-SWMBX4.ads.mwn.de>",
+        "<CAPRP4-fuNj0XLLruRT6hD1sSQfvVsK=zv1Wu=zY9E7SZNSmT3A@mail.gmail.com>",
+        "<99514985-A267-4111-B05F-4BDC8A68181B@phys.ethz.ch>"
+      ],
+      "body_plain": "Hi Yohan,\n\n[Leaving away   \"Kley, Oliver\"  ..]\n\ngood to see you are back from \"celebrating your Doctor\" (in\nSouthern Africa, right?  I hope you've enjoyed it ... as a honeymoon)\n\n(see inline)\n>>>>> Yohan Chalabi <yohan.chalabi at rmetrics.org>\n>>>>>     on Wed, 7 Nov 2012 08:41:01 +0100 writes:\n\n    > On Oct 29, 2012, at 12:27 PM, Martin Maechler wrote:\n\n    >> Dear Oliver\n    >> (I'm writing in English because of the CC).\n    >> \n    >> \n    >> On Mon, Oct 29, 2012 at 12:20 PM, Kley, Oliver <oliver.kley at tum.de> wrote:\n    >>> Lieber Herr Maechler,\n    >>> \n    >>> ich wollte das stabledist package von rmetrics installieren, wie im wiki beschrieben:\n    >>> \n    >>> \n    >>> The script installs all Rmetrics packages from your default CRAN repository ('repos'). This will ensure that all packages are up-to-date.\n    >>> \n    >>> Open an R process and type the following :\n    >>> \n    >>> source(\"http://www.rmetrics.org/Rmetrics.R\")\n    >>> install.Rmetrics()\n    >>> \n    >>> \n    >>> allerdings, neben der installation zahlreicher pakete, kam insbesondere die folgende meldung, in deren vorletzter zeile steht, dass stabledist nicht verfuegbar ist --koennen Sie mir weiterhelfen?\n    >>> \n    >>> \n    >>> \n    >>> + source(\"http://www.rmetrics.org/Rmetrics.R\")\n    >>> +    install.Rmetrics()\n    >>> Warning in install.packages(pkgs = pkgs, ...) :\n    >>> argument 'lib' is missing: using '/usr/local/lib/R/site-library'\n    >>> Warning in install.packages(pkgs = pkgs, ...) :\n    >>> 'lib = \"/usr/local/lib/R/site-library\"' is not writable\n    >>> --- Please select a CRAN mirror for use in this session ---\n    >>> Loading Tcl/Tk interface ... done\n    >>> Warning: dependency ?stabledist? is not available\n    >>> also installing the dependencies ?numDeriv?, ?DistributionUtils?, ?GeneralizedHyperbolic?\n    >> \n    >> Yes, indeed this is a bug in the  install.Rmetrics() function;\n\n    > Hi Martin,\n\n    > install.Rmetrics() is a plain wrapper of install.packages with the list of Rmetrics packages:\n\n    > install.Rmetrics <- function (pkgs = pkgsRmetrics(), ...)\n    > install.packages(pkgs = pkgs, ...)\n\nOk.\nBut where is the  pkgsRmetrics() source?\nIs that inside R-forge/Rmetrics/   {I think it should}\n\n\n    > What Oliver is missing is either write permission for \"/usr/local/lib/R/site-library\" or the \"lib\" argument to specify a library path in his home directory.\n\nOk, I may have misunderstood the problem\n\n    > Regards,\n    > Yohan\n\n    >> Unfortunately, even though I'm part of Rmetrics-core,\n    >> I have no write access to  http://www.rmetrics.org/Rmetrics.R\n    >> which defines the  install.Rmetrics() function  and so I cannot fix it.\n    >> \n    >> HOWEVER, there is an easy workaround:\n    >> do\n    >> \n    >> install.packages(\"stabledist\")\n    >> \n    >> before doing the other installations.\n    >> \n    >> Please let me know if you have problems, observe pecularities, ... in package\n    >> 'stabledist'.\n\nas Oliver never replied to the above suggestion of mine\n(which I find a bit impolite),\nI think you are right, Yohan, and his problem was completely\ndifferent.\n\nBTW: The drawback of using this extra  install.Rmetrics()\nwrapper is that we (you) have to deal with all the silly user\nerrors.\nIf they were told to use install.packages(), they would ask on\nR-help (or a web forum or such) and we would not have to deal\nwith the user problem.\n\nMartin\n\n    >> \n    >> Best regards,\n    >> Martin M?chler\n    >> \n    >> \n    >>> \n    >>> Viele Gruesse\n    >>> \n    >>> Oliver Kley\n    >>> \n    >> \n    >> _______________________________________________\n    >> Rmetrics-core mailing list\n    >> Rmetrics-core at r-project.org\n    >> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n    >>",
+      "body_snippet": "Hi Yohan,\n\n[Leaving away   \"Kley, Oliver\"  ..]\n\ngood to see you are back from \"celebrating your Doctor\" (in\nSouthern Africa, right?  I hope you've enjoyed it ... as a honeymoon)\n\n(see inline)\n>>>>> Yo",
+      "thread_id": "thread-9dabd18a161d",
+      "thread_depth": 1,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-a64e79417ea6",
+      "message_id": "<C43203D8-B8D3-4DC3-81AC-63E14D7B3394@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "816ed1ba4cbc1d701e4cf420a441abe009b9a36e85d3bcdc9d78a2e951cead81",
+      "date": "2012-11-07T10:47:30Z",
+      "subject": "Re: Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "subject_clean": "Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "in_reply_to": "<20121029154735.478C281826@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<20121029154735.478C281826@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear CRAN maintainers,\n\nPlease find new version of fOptions (fOptions_2160.82.tar.gz) and fExoticOptions (fExoticOptions_2152.78.tar.gz):\n\n- with new maintainer field,\n- NAMESPACE,\n- and minor changes.\n\nKind regards,\nYohan\n\nOn Oct 29, 2012, at 4:47 PM, Prof Brian Ripley wrote:\n\n> All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\n> need a namepsace, but this package did not yet have one.  R CMD build\n> and R CMD INSTALL would add one, and we have now re-built your package\n> on CRAN to have such a namespace.\n> \n> Please review the automatically-generated NAMESPACE file and improve\n> it as needed.\n> \n> There may be other issues that need fixing: see the CRAN check logs at\n> http://cran.r-project.org/web/checks/check_results_NAME.html,\n> replacing NAME by the name of your package.\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Dear CRAN maintainers,\n\nPlease find new version of fOptions (fOptions_2160.82.tar.gz) and fExoticOptions (fExoticOptions_2152.78.tar.gz):\n\n- with new maintainer field,\n- NAMESPACE,\n- and minor changes",
+      "thread_id": "thread-a64e79417ea6",
+      "thread_depth": 0,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-30e1f9d8ea7b",
+      "message_id": "<20634.21759.804156.44290@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2012-11-07T12:33:03Z",
+      "subject": "Added NAMESPACE file to CRAN package ‘f ExoticOptions’",
+      "subject_clean": "Added NAMESPACE file to CRAN package ‘f ExoticOptions’",
+      "in_reply_to": "<C43203D8-B8D3-4DC3-81AC-63E14D7B3394@phys.ethz.ch>",
+      "references": [
+        "<20121029154735.478C281826@gannet.stats.ox.ac.uk>",
+        "<C43203D8-B8D3-4DC3-81AC-63E14D7B3394@phys.ethz.ch>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\nPlease see the CRAN Repository Policy for appropriate subject lines.\n\nThanks, on CRAN now.\n\nBest\n-k\n\n\n\n> Dear CRAN maintainers,\n> Please find new version of fOptions (fOptions_2160.82.tar.gz) and fExoticOptions (fExoticOptions_2152.78.tar.gz):\n\n> - with new maintainer field,\n> - NAMESPACE,\n> - and minor changes.\n\n> Kind regards,\n> Yohan\n\n> On Oct 29, 2012, at 4:47 PM, Prof Brian Ripley wrote:\n\n>> All packages installled under R >= 2.14.0 (and we are now at 2.15.2)\n>> need a namepsace, but this package did not yet have one.  R CMD build\n>> and R CMD INSTALL would add one, and we have now re-built your package\n>> on CRAN to have such a namespace.\n>> \n>> Please review the automatically-generated NAMESPACE file and improve\n>> it as needed.\n>> \n>> There may be other issues that need fixing: see the CRAN check logs at\n>> http://cran.r-project.org/web/checks/check_results_NAME.html,\n>> replacing NAME by the name of your package.\n>> \n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\nPlease see the CRAN Repository Policy for appropriate subject lines.\n\nThanks, on CRAN now.\n\nBest\n-k\n\n\n\n> Dear CRAN maintainers,\n> Please find new version of fOptions (fOpt",
+      "thread_id": "thread-a64e79417ea6",
+      "thread_depth": 1,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-f03fbd40265f",
+      "message_id": "<50B74B0D.9050503@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-11-29T11:46:21Z",
+      "subject": "fExtremes on the second-last day of the month",
+      "subject_clean": "fExtremes on the second-last day of the month",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Yohan,\n\nfExtremes fails on the second-last day of the month, and as today is \nsuch a day and we've worked out the pattern, please take a look today:\n\n* checking tests ...\n   Running ?doRUnit.R? [40s/40s]\n  ERROR\nRunning the tests in ?tests/doRUnit.R? failed.\nLast 13 lines of output:\n   fExtremes unit testing - 47 test functions, 2 errors, 0 failures\n   ERROR in test.gevFitByBlocks: Error in as.matrix(applySeries(x, from, \nto, FUN = which.max)) :\n     error in evaluating the argument 'x' in selecting a method for \nfunction 'as.matrix': Error: NCOL(rowBind) == NCOL(x) is not TRUE\n\n   ERROR in test.timeSeriesBlocks: Error in as.matrix(applySeries(x, \nfrom, to, FUN = which.max)) :\n     error in evaluating the argument 'x' in selecting a method for \nfunction 'as.matrix': Error: NCOL(rowBind) == NCOL(x) is not TRUE\n\n   Error in eval(expr, envir, enclos) :\n\n   unit testing failed (#test failures: 0, R errors: 2)\n\n   Calls: source -> withVisible -> eval -> eval\n\nThe problem is to do with missing the last day of the month as the \nperiod finishes at midnight on the last day (and not at the end of the \nlast day), and hence the records are empty.\n\nThere are several other issues, not least the maintainer and\n\nFound the following significant note:\n   running .First.lib() for package ?fExtremes? as .onLoad/.onAttach \nwere not found\n\n\nBrian\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "Yohan,\n\nfExtremes fails on the second-last day of the month, and as today is \nsuch a day and we've worked out the pattern, please take a look today:\n\n* checking tests ...\n   Running ?doRUnit.R? [40s/4",
+      "thread_id": "thread-f03fbd40265f",
+      "thread_depth": 0,
+      "month": "2012-11"
+    },
+    {
+      "id": "msg-ebae10850bbd",
+      "message_id": "<m2obifig8m.fsf@vpn-global-dhcp2-119.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2012-11-30T09:37:13Z",
+      "subject": "fExtremes on the second-last day of the month",
+      "subject_clean": "fExtremes on the second-last day of the month",
+      "in_reply_to": "<50B74B0D.9050503@stats.ox.ac.uk>",
+      "references": [
+        "<50B74B0D.9050503@stats.ox.ac.uk>"
+      ],
+      "body_plain": "Dear Brian,\n\nThank you for your detailed report.\n\nI have now submitted a new version of the package.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> Yohan,\n>\n> fExtremes fails on the second-last day of the month, and as today is\n> such a day and we've worked out the pattern, please take a look today:\n>\n> * checking tests ...\n>    Running ?doRUnit.R? [40s/40s]\n>   ERROR\n> Running the tests in ?tests/doRUnit.R? failed.\n> Last 13 lines of output:\n>    fExtremes unit testing - 47 test functions, 2 errors, 0 failures\n>    ERROR in test.gevFitByBlocks: Error in as.matrix(applySeries(x, from,\n> to, FUN = which.max)) :\n>      error in evaluating the argument 'x' in selecting a method for\n> function 'as.matrix': Error: NCOL(rowBind) == NCOL(x) is not TRUE\n>\n>    ERROR in test.timeSeriesBlocks: Error in as.matrix(applySeries(x,\n> from, to, FUN = which.max)) :\n>      error in evaluating the argument 'x' in selecting a method for\n> function 'as.matrix': Error: NCOL(rowBind) == NCOL(x) is not TRUE\n>\n>    Error in eval(expr, envir, enclos) :\n>\n>    unit testing failed (#test failures: 0, R errors: 2)\n>\n>    Calls: source -> withVisible -> eval -> eval\n>\n> The problem is to do with missing the last day of the month as the\n> period finishes at midnight on the last day (and not at the end of the\n> last day), and hence the records are empty.\n>\n> There are several other issues, not least the maintainer and\n>\n> Found the following significant note:\n>    running .First.lib() for package ?fExtremes? as .onLoad/.onAttach\n> were not found\n>\n>\n> Brian",
+      "body_snippet": "Dear Brian,\n\nThank you for your detailed report.\n\nI have now submitted a new version of the package.\n\nKind regards,\nYohan\n\nProf Brian Ripley writes:\n\n> Yohan,\n>\n> fExtremes fails on the second-last da",
+      "thread_id": "thread-f03fbd40265f",
+      "thread_depth": 1,
+      "month": "2012-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-eae24d23f1d0",
+      "subject": "Legacy .First.lib call in CRAN package fMultivar",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2012-11-07T07:27:42Z",
+      "last_reply": "2012-11-07T07:27:42Z",
+      "root_message_id": "msg-eae24d23f1d0"
+    },
+    {
+      "id": "thread-9dabd18a161d",
+      "subject": "stabledist",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-11-07T07:41:01Z",
+      "last_reply": "2012-11-07T08:07:47Z",
+      "root_message_id": "msg-9dabd18a161d"
+    },
+    {
+      "id": "thread-b5b2b9f54975",
+      "subject": "Typo",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2012-11-07T07:41:50Z",
+      "last_reply": "2012-11-07T07:41:50Z",
+      "root_message_id": "msg-b5b2b9f54975"
+    },
+    {
+      "id": "thread-a64e79417ea6",
+      "subject": "Added NAMESPACE file to CRAN package ‘fExoticOptions’",
+      "message_count": 2,
+      "participants": [
+        "Kurt Hornik",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-11-07T10:47:30Z",
+      "last_reply": "2012-11-07T12:33:03Z",
+      "root_message_id": "msg-a64e79417ea6"
+    },
+    {
+      "id": "thread-f03fbd40265f",
+      "subject": "fExtremes on the second-last day of the month",
+      "message_count": 2,
+      "participants": [
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2012-11-29T11:46:21Z",
+      "last_reply": "2012-11-30T09:37:13Z",
+      "root_message_id": "msg-f03fbd40265f"
+    }
+  ]
+}

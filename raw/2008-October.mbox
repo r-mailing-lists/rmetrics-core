@@ -1,0 +1,1196 @@
+From rkevinburton at charter.net  Fri Oct  3 01:38:24 2008
+From: rkevinburton at charter.net (rkevinburton at charter.net)
+Date: Thu, 2 Oct 2008 16:38:24 -0700
+Subject: fGarch errors
+Message-ID: <20081002193824.MFWAF.318455.root@mp13>
+
+I am garchFiit as : 
+
+r.fit[[.index]] <- garchFit(formula=~garch(1, 1), data = ts(c(0, diff(r[[.index]]$TimeSeries)), frequency=f), trace=FALSE, title=names(r[.index]))
+
+For some series I get:
+
+<simpleError in filter(edelta, filter = Filter, sides = 1): missing values in 'filter'>
+
+
+How do I "fill-in" the missing values?
+
+If I change the formula (and that is all I change) from garch(1,1) to garch(0,1) I get a ton of errors like:
+
+<simpleError in .garchInitParameters(formula.mean = formula.mean, formula.var = formula.var,     delta = delta, skew = skew, shape = shape, cond.dist = cond.dist[1],     include.mean = include.mean, include.delta = include.delta,     include.skew = include.skew, include.shape = include.shape,     leverage = leverage, algorithm = algorithm[1], control = con,     trace = trace): object "alpha" not found>
+
+
+It is not coming from my input. You will probably require more details about the data that I am using but because of the volume I am not sure how best to get it to you. It might be better for you to give me suggestions on diagnostics that I can try. If that gets too unweldy then I can send you the data.
+
+Thank you.
+
+Kevin
+
+
+From christopher.g.green at gmail.com  Sat Oct 11 19:52:28 2008
+From: christopher.g.green at gmail.com (Christopher G. Green)
+Date: Sat, 11 Oct 2008 10:52:28 -0700
+Subject: economagicImport no longer working correctly due to change in
+	economagic.com's data format
+Message-ID: <24CD2410EB5F4E1FB9590B43F100F22D@cgglappie>
+
+Greetings,
+
+Economagic.com has changed the format of the HTML representation of some of
+their data sets. It seems they have done this to break tools like
+economagicImport.
+
+Consider the following (in R 2.7.2 with the current versions of fImport,
+etc.).
+
+zzz <- economagicImport("fedny/day-fxus2eu", save=F, freq="daily")
+
+> tail(zzz at data)
+           DATE  VALUE
+2457 2008-10-03     NA
+2458 2008-10-06     NA
+2459 2008-10-07     NA
+2460 2008-10-08     NA
+2461 2008-10-09     NA
+2462 2008-10-10 1.3471
+
+If you go to the actual web site
+
+http://www.economagic.com/em-cgi/data.exe/fedny/day-fxus2eu
+
+and look at the source code you will see that they have inserted an entity
+representation "&#149;" for '.' in some places (and possibly more "white"
+characters). 
+
+>From my five minutes of looking at the source code for economagicImport it
+seems like a well-placed 'gsub' to change all of the entities to periods
+would fix things (since then the conversion to numeric would work). I
+haven't had time to test that idea out, but hopefully I have given you
+enough detail to understand what's going on.
+
+Chris Green
+________________________________
+
+Christopher G. Green (cggreen AT stat.washington.edu), 
+Doctoral Candidate,
+Department of Statistics, Box 354322, Seattle, WA, 98195-4322, U.S.A.
+http://www.stat.washington.edu/people/cggreen/
+
+
+From chalabi at phys.ethz.ch  Tue Oct 14 11:05:28 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Tue, 14 Oct 2008 11:05:28 +0200
+Subject: economagicImport no longer working correctly due to change in
+	economagic.com's data format
+In-Reply-To: <24CD2410EB5F4E1FB9590B43F100F22D@cgglappie>
+References: <24CD2410EB5F4E1FB9590B43F100F22D@cgglappie>
+Message-ID: <20081014110528.678067f2@mimi>
+
+>>>> "CGG" == "Christopher G. Green" <christopher.g.green at gmail.com>
+>>>> on Sat, 11 Oct 2008 10:52:28 -0700
+
+   CGG> Greetings,
+   CGG> 
+   CGG> Economagic.com has changed the format of the HTML representation of some of
+   CGG> their data sets. It seems they have done this to break tools like
+   CGG> economagicImport.
+   CGG> 
+   CGG> Consider the following (in R 2.7.2 with the current versions of fImport,
+   CGG> etc.).
+   CGG> 
+   CGG> zzz <- economagicImport("fedny/day-fxus2eu", save=F, freq="daily")
+   CGG> 
+   CGG> > tail(zzz at data)
+   CGG>            DATE  VALUE
+   CGG> 2457 2008-10-03     NA
+   CGG> 2458 2008-10-06     NA
+   CGG> 2459 2008-10-07     NA
+   CGG> 2460 2008-10-08     NA
+   CGG> 2461 2008-10-09     NA
+   CGG> 2462 2008-10-10 1.3471
+   CGG> 
+   CGG> If you go to the actual web site
+   CGG> 
+   CGG> http://www.economagic.com/em-cgi/data.exe/fedny/day-fxus2eu
+   CGG> 
+   CGG> and look at the source code you will see that they have inserted an entity
+   CGG> representation "&#149;" for '.' in some places (and possibly more "white"
+   CGG> characters). 
+   CGG> 
+   CGG> >From my five minutes of looking at the source code for economagicImport it
+   CGG> seems like a well-placed 'gsub' to change all of the entities to periods
+   CGG> would fix things (since then the conversion to numeric would work). I
+   CGG> haven't had time to test that idea out, but hopefully I have given you
+   CGG> enough detail to understand what's going on.
+   CGG> 
+   CGG> Chris Green
+  
+thanks Chris to point this out.
+
+I have updated the function in the dev-package on r-forge.
+
+regards,
+Yohan
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:51 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:51 +0200
+Subject: Package fUtilities_270.74.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4b3f9f3e@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:51 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:51 +0200
+Subject: Package fUnitRoots_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4b23032a@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:51 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:51 +0200
+Subject: Package fTrading_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4b01a268@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fTrading_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:51 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:51 +0200
+Subject: Package fRegression_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4ae2a3fd@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:50 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:50 +0200
+Subject: Package fPortfolio_280.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4abc7e8d@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_280.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:50 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:50 +0200
+Subject: Package fOptions_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4a98bb74@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:48 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:48 +0200
+Subject: Package fAssets_280.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49226c19@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_280.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:49 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:49 +0200
+Subject: Package fGarch_280.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4a1f241f@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_280.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:47 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:47 +0200
+Subject: Package timeSeries_280.75.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$48bbe77c@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_280.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:49 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:49 +0200
+Subject: Package fCopulae_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49a32a73@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCopulae_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:48 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:48 +0200
+Subject: Package fBonds_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$496eb6f9@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBonds_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:50 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:50 +0200
+Subject: Package fNonlinear_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4a7c1f60@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fNonlinear_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:47 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:47 +0200
+Subject: Package fArma_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$48e46f43@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fArma_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:49 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:49 +0200
+Subject: Package fExoticOptions_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49e12749@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExoticOptions_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:49 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:49 +0200
+Subject: Package fEcofin_270.74.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49bfc687@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fEcofin_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:47 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:47 +0200
+Subject: Package timeDate_280.77.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$48935fb5@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_280.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:50 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:50 +0200
+Subject: Package fMultivar_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4a5f834c@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fMultivar_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:48 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:48 +0200
+Subject: Package fBasics_280.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49462f32@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_280.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:48 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:48 +0200
+Subject: Package fCalendar_270.76.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49868e5f@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:48 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:48 +0200
+Subject: Package fAsianOptions_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49036dae@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAsianOptions_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:50 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:50 +0200
+Subject: Package fImport_270.73.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$4a4084e1@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_270.73.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Thu Oct 23 20:43:49 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Thu, 23 Oct 2008 20:43:49 +0200
+Subject: Package fExtremes_270.74.tar.gz has been built for Windows
+Message-ID: <01c9353f$Blat.v2.2.2$49fdc35d@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExtremes_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Oct 25 18:30:08 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 25 Oct 2008 18:30:08 +0200
+Subject: Package fSeries_270.76.tar.gz has been built for Windows
+Message-ID: <01c936be$Blat.v2.2.2$f1d0af71@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fSeries_270.76.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Oct 25 18:30:09 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 25 Oct 2008 18:30:09 +0200
+Subject: Package timeSeries_280.77.tar.gz has been built for Windows
+Message-ID: <01c936be$Blat.v2.2.2$f27795b1@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_280.77.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Oct 25 18:30:09 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 25 Oct 2008 18:30:09 +0200
+Subject: Package timeDate_280.79.tar.gz has been built for Windows
+Message-ID: <01c936be$Blat.v2.2.2$f24583d1@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_280.79.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Sat Oct 25 18:30:08 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sat, 25 Oct 2008 18:30:08 +0200
+Subject: Package fGarch_280.74.tar.gz has been built for Windows
+Message-ID: <01c936be$Blat.v2.2.2$f1b1b091@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_280.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From edd at debian.org  Sat Oct 25 21:27:43 2008
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 25 Oct 2008 14:27:43 -0500
+Subject: New release, and old problem yet again
+Message-ID: <18691.29487.782995.228824@ron.nulle.part>
+
+
+Gents,
+
+Why were timeDate and timeSeries split off fBasics?
+
+Had we not agreed to stop with this proliferation of packages?  Lastly, every
+time this happen, someone promises to give me a heads-up so that I can insert
+pre-releases package into Debian's NEW queue so that we would have a chance
+of having them in at actual release.  
+
+Now we again have the indeterminate wait for them and the rest of Rmetrics is
+upheld as everything depends on timeDate and timeSeries.
+
+Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From chalabi at phys.ethz.ch  Sat Oct 25 22:09:43 2008
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Sat, 25 Oct 2008 22:09:43 +0200
+Subject: New release, and old problem yet again
+In-Reply-To: <18691.29487.782995.228824@ron.nulle.part>
+References: <18691.29487.782995.228824@ron.nulle.part>
+Message-ID: <20081025220943.2bed32c7@mimi>
+
+>>>> "DE" == Dirk Eddelbuettel <edd at debian.org>
+>>>> on Sat, 25 Oct 2008 14:27:43 -0500
+
+   DE> Gents,
+   DE> 
+   DE> Why were timeDate and timeSeries split off fBasics?
+   DE> 
+   DE> Had we not agreed to stop with this proliferation of packages?  Lastly, every
+   DE> time this happen, someone promises to give me a heads-up so that I can insert
+   DE> pre-releases package into Debian's NEW queue so that we would have a chance
+   DE> of having them in at actual release.  
+   DE> 
+   DE> Now we again have the indeterminate wait for them and the rest of Rmetrics is
+   DE> upheld as everything depends on timeDate and timeSeries.
+   DE> 
+   DE> Dirk
+
+Hi Dirk,
+
+timeDate and timeSeries are not split off fBasics. They replace the
+packages fCalendar and fSeries. Their respective classes had many
+internal changes that we decided to rename them and keep the old
+packages on CRAN for backward compatibility purpose.
+
+Actually we are trying to reduce the number of packages. For example
+fUtilities will be considered obsolete because its functions have been
+moved to timeDate, timeSeries and fBasics.
+ 
+I am sorry that we did not get in contact with you before. 
+
+We can continue this discussion off-list.
+
+Best regards,
+Yohan
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From edd at debian.org  Sun Oct 26 00:30:30 2008
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 25 Oct 2008 17:30:30 -0500
+Subject: New release, and old problem yet again
+In-Reply-To: <20081025220943.2bed32c7@mimi>
+References: <18691.29487.782995.228824@ron.nulle.part>
+	<20081025220943.2bed32c7@mimi>
+Message-ID: <18691.40454.24686.168297@ron.nulle.part>
+
+
+Hi Yohan,
+
+On 25 October 2008 at 22:09, Yohan Chalabi wrote:
+| timeDate and timeSeries are not split off fBasics. They replace the
+| packages fCalendar and fSeries. Their respective classes had many
+
+Ah, ok. 
+
+But -- how was that communicated? Am I not on the relevant mailing list?   
+How do users know which Rmetrics components are being deprecated?  
+
+| internal changes that we decided to rename them and keep the old
+| packages on CRAN for backward compatibility purpose.
+| 
+| Actually we are trying to reduce the number of packages. For example
+| fUtilities will be considered obsolete because its functions have been
+| moved to timeDate, timeSeries and fBasics.
+
+Cool. 
+
+Announcements somewhere (rmetrics-core, r-packages, r-sig-finance, ... ?)
+
+I will then retire these from Debian unstable; the old ones will of course
+remain.
+
+| I am sorry that we did not get in contact with you before. 
+
+No problem but please do going forward.
+
+Cheers,
+
+Dirk
+at Google for Summer of Code mentors summit
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From Uwe.Ligges at r-project.org  Sun Oct 26 20:29:59 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Sun, 26 Oct 2008 20:29:59 +0100
+Subject: Package fCalendar_270.78.tar.gz has been built for Windows
+Message-ID: <01c937a1$Blat.v2.2.2$3c654eee@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:29 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:29 +0100
+Subject: Package fBasics_280.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9bfb63fa@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fBasics_280.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:29 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:29 +0100
+Subject: Package fAssets_280.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9bdec7aa@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAssets_280.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:29 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:29 +0100
+Subject: Package fArma_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9ba58f0a@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fArma_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:29 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:29 +0100
+Subject: Package fAsianOptions_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9bbfc8fe@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fAsianOptions_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:30 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:30 +0100
+Subject: Package fExtremes_270.75.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9cc86ee2@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExtremes_270.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:32 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:32 +0100
+Subject: Package fTrading_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9dbb9f8a@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fTrading_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:32 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:32 +0100
+Subject: Package fUnitRoots_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9dd37722@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fImport_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d01a782@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fImport_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:32 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:32 +0100
+Subject: Package fRegression_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d84c946@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fRegression_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:33 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:33 +0100
+Subject: Package timeSeries_280.78.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9e5b5d9e@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeSeries_280.78.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:29 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:29 +0100
+Subject: Package fCalendar_270.78.1.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9c2189ba@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCalendar_270.78.1.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fPortfolio_280.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d682cf6@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fPortfolio_280.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:30 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:30 +0100
+Subject: Package fCopulae_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9c42eac2@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fCopulae_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fGarch_280.75.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9ce2a8d6@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fGarch_280.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:30 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:30 +0100
+Subject: Package fEcofin_270.75.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9c644bca@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fEcofin_270.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:32 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:32 +0100
+Subject: Package fSeries_270.76.1.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9da16596@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fSeries_270.76.1.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:32 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:32 +0100
+Subject: Package fUtilities_270.75.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9deb4eba@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_270.75.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:30 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:30 +0100
+Subject: Package fExoticOptions_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9cae34ee@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fExoticOptions_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:33 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:33 +0100
+Subject: Package timeDate_280.80.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9e3c5ef2@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_280.80.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fMultivar_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d1be176@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fMultivar_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fNonlinear_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d33b90e@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fNonlinear_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From Uwe.Ligges at r-project.org  Mon Oct 27 22:47:31 2008
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 27 Oct 2008 22:47:31 +0100
+Subject: Package fOptions_270.74.tar.gz has been built for Windows
+Message-ID: <01c9387d$Blat.v2.2.2$9d4df302@mail.statistik.uni-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_270.74.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.8/).
+R version 2.8.0 (2008-10-20)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+

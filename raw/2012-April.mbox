@@ -1,0 +1,308 @@
+From invitations at linkedin.com  Mon Apr  2 13:43:39 2012
+From: invitations at linkedin.com (Michael Cohen (LinkedIn Invitations))
+Date: Mon, 2 Apr 2012 11:43:39 +0000 (UTC)
+Subject: Reminder about your invitation from Michael Cohen
+Message-ID: <1338601881.4619039.1333367019607.JavaMail.app@ela4-app0056.prod>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl>
+
+From ripley at stats.ox.ac.uk  Wed Apr  4 09:04:21 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Wed, 4 Apr 2012 08:04:21 +0100 (BST)
+Subject: Array over-runs in CRAN packages
+Message-ID: <alpine.LFD.2.02.1204040605460.20533@gannet.stats.ox.ac.uk>
+
+About 15 CRAN packages are now showing segfaults/hangs in both 
+R-patched and R-devel, seen at (some columns of) 
+http://cran.r-project.org/web/checks/check_summary.html .  These were 
+uncovered by a change to reduce the copying of arguments in .C and 
+.Fortran calls, and include packages
+
+DoseFinding FracSim adehabitat[TL] dcemriS4 dynaTree lmm monomvn 
+timereg
+
+Some of these, e.g. FracSim, dynaTree, lmm, having been showing 
+intermittent crashes for a long time (and we have reported the exact 
+problem in FracSim before).
+
+We wrote some code (currently enabled in R-devel by compiling 
+src/main/dotcode.c with -DALWAYS_COPY, but that will change) to detect 
+array over-runs, by adding guard elements and checking if these were 
+changed.  This shows
+
+DiceOptim.out:  array over-run in .C("improvedLHS_C") in integer 
+argument 7
+DoseFinding.out:    array over-run in .C("critfunc") in double 
+argument 3
+FracSim.out:  array over-run in .C("core_2d") in double argument 7
+GLDEX.out:  array over-run in .Fortran("halton") in integer argument 4
+KrigInv.out:  array over-run in .C("maximinLHS_C") in integer argument 
+7
+SAPP.out:  array over-run in .Fortran("momorif") in double argument 15
+SpatialExtremes.out:  array over-run in .C("latentgev") in double 
+argument 26
+adehabitat.out:  array over-run in .C("testindepangl") in double 
+argument 1
+adehabitatLT.out:  array over-run in .C("testindepangl") in double 
+argument 1
+cts.out:  array over-run in .Fortran("setupdate") in double argument 1
+dcemriS4.out:  array over-run in .C("dce_bayes_run_single") in double 
+argument 11
+dynaTree.out:  array over-run in .C("dynaTree_R") in integer argument 
+3
+fOptions.out:  array over-run in .Fortran("halton") in integer 
+argument 4
+ftnonpar.out:  array over-run in .C("mintvmon") in integer argument 3
+lhs.out:  array over-run in .C("improvedLHS_C") in integer argument 7
+lmm.out:  array over-run in .Fortran("fastmcmc") in integer argument 
+48
+medAdherence.out:  array over-run in .C("csa") in integer argument 5
+ncomplete.out:  array over-run in .Fortran("ncompl") in integer 
+argument 9
+negenes.out:  array over-run in .C("R_negenes") in integer argument 12
+noverlap.out:  array over-run in .Fortran("novrlp") in integer 
+argument 9
+randtoolbox.out:  array over-run in .Fortran("halton") in integer 
+argument 4
+rrcov.out:  array over-run in .Fortran("fsada") in integer argument 14
+timereg.out:  array over-run in .C("score") in double argument 29
+
+As this is experimental code I am not yet 100% sure that it is always 
+correct, but I have confirmed enough examples to have some confidence 
+in it.  (It is also possible the compiled code is not in your package: 
+Mr lhs please note this for DiceOptim and KrigInv: however it does 
+seem that there are 3 copies of the incorrect Halton code.)
+
+Because of the way allocations work in R (rounding up to a multiple of 
+8 bytes) you may get away with over-run-by-one errors for integer and 
+logical arguments.  But otherwise running an instrumented version of R 
+under valgrind will help pinpoint where your code steps out of bounds.
+
+Please investigate and submit a corrected update.
+
+Brian Ripley
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From invitations at linkedin.com  Mon Apr  9 10:16:34 2012
+From: invitations at linkedin.com (Michael Cohen (LinkedIn Invitations))
+Date: Mon, 9 Apr 2012 08:16:34 +0000 (UTC)
+Subject: Reminder about your invitation from Michael Cohen
+Message-ID: <969561897.1301509.1333959394849.JavaMail.app@ela4-bed46.prod>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl>
+
+From jefe_goode at yahoo.com  Mon Apr  9 19:38:59 2012
+From: jefe_goode at yahoo.com (jefe goode)
+Date: Mon, 9 Apr 2012 10:38:59 -0700 (PDT)
+Subject: fArma problem
+Message-ID: <1333993139.32099.YahooMailNeo@web120702.mail.ne1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl>
+
+From jefe_goode at yahoo.com  Mon Apr  9 20:11:27 2012
+From: jefe_goode at yahoo.com (jefe goode)
+Date: Mon, 9 Apr 2012 11:11:27 -0700 (PDT)
+Subject: fArma problem solved
+Message-ID: <1333995087.66648.YahooMailNeo@web120706.mail.ne1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl>
+
+From marcelo.klotzle at gmail.com  Tue Apr 10 01:26:44 2012
+From: marcelo.klotzle at gmail.com (Marcelo Cabus Klotzle)
+Date: Mon, 9 Apr 2012 20:26:44 -0300
+Subject: Garch Ox Fit
+Message-ID: <023f01cd16a8$3bdc69f0$b3953dd0$@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl>
+
+From ripley at stats.ox.ac.uk  Wed Apr 11 09:49:53 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Wed, 11 Apr 2012 08:49:53 +0100
+Subject: CRAN packages GLDEX, fOptions, randtoolbox
+Message-ID: <4F8537A1.7030408@stats.ox.ac.uk>
+
+Several days ago I reported an array over-run in these packages, in the 
+following example (precise code taken from fOptions):
+
+rnrm.h>    hist(runif.halton(n = 5000, dimension = 1), main = "Uniform 
+Halton",
+rnrm.h+      xlab = "x", col = "steelblue3", border = "white")
+
+The problem is the following lines in the Fortran code:
+
+       DOUBLE PRECISION QUASI(DIMEN), HALF
+       INTRINSIC MOD
+       INTEGER NC, I, K, M, N, NB
+
+C     INIT BASE FROM PRIMES - THIS IMPLEMENTS A SIMPLE SIEVE:
+       BASE(1) = 2
+       BASE(2) = 3
+
+Here DIMEN is 1, so BASE(2) does not exist.
+
+Please submit corrected updates by April 27.
+
+Brian Ripley
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From maechler at stat.math.ethz.ch  Wed Apr 11 12:21:22 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 11 Apr 2012 12:21:22 +0200
+Subject: CRAN packages GLDEX, fOptions, randtoolbox
+In-Reply-To: <4F8537A1.7030408@stats.ox.ac.uk>
+References: <4F8537A1.7030408@stats.ox.ac.uk>
+Message-ID: <20357.23330.71537.755351@stat.math.ethz.ch>
+
+Thank you, Brian.
+
+>>>>> Prof Brian Ripley <ripley at stats.ox.ac.uk>
+>>>>>     on Wed, 11 Apr 2012 08:49:53 +0100 writes:
+
+    > Several days ago I reported an array over-run in these packages, in the 
+    > following example (precise code taken from fOptions):
+
+    rnrm.h> hist(runif.halton(n = 5000, dimension = 1), main = "Uniform 
+    > Halton",
+    > rnrm.h+      xlab = "x", col = "steelblue3", border = "white")
+
+    > The problem is the following lines in the Fortran code:
+
+    > DOUBLE PRECISION QUASI(DIMEN), HALF
+    > INTRINSIC MOD
+    > INTEGER NC, I, K, M, N, NB
+
+    > C     INIT BASE FROM PRIMES - THIS IMPLEMENTS A SIMPLE SIEVE:
+    > BASE(1) = 2
+    > BASE(2) = 3
+
+    > Here DIMEN is 1, so BASE(2) does not exist.
+
+    > Please submit corrected updates by April 27.
+
+I've committed the necessary change to the R-forge version of fOptions,
+but leave a new upload to the "core of Rmetrics-core".
+
+Martin Maechler
+
+
+
+    > Brian Ripley
+
+    > -- 
+    > Brian D. Ripley,                  ripley at stats.ox.ac.uk
+    > Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+    > University of Oxford,             Tel:  +44 1865 272861 (self)
+    > 1 South Parks Road,                     +44 1865 272866 (PA)
+    > Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+    > _______________________________________________
+    > Rmetrics-core mailing list
+    > Rmetrics-core at r-project.org
+    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From miniqin at 126.com  Fri Apr 13 09:47:13 2012
+From: miniqin at 126.com (miniqin)
+Date: Fri, 13 Apr 2012 15:47:13 +0800
+Subject: questions on garchOxFit
+Message-ID: <6de9524e.ebed9.136aaab94f6.Coremail.miniqin@126.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl>
+
+From Farrokh.Guiahi at Hofstra.edu  Sat Apr 14 16:29:01 2012
+From: Farrokh.Guiahi at Hofstra.edu (Farrokh Guiahi)
+Date: Sat, 14 Apr 2012 07:29:01 -0700
+Subject: Rrgarding multivariate garch with fGarch
+Message-ID: <A39D0209FD4C874EA9C6481EBAFAFF8817250258@VA3DIAXVSB21.RED001.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl>
+
+From Uwe.Ligges at R-Project.org  Wed Apr 18 19:30:33 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 18 Apr 2012 19:30:33 +0200
+Subject: Package fOptions_2160.81.tar.gz has been built for Windows
+Message-ID: <01cd1d88$Blat.v2.2.2$f5560db7@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fOptions_2160.81.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.15/).
+R version 2.15.0 (2012-03-30)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From a-djennad at hotmail.co.uk  Fri Apr 20 13:43:19 2012
+From: a-djennad at hotmail.co.uk (Majid Djennad)
+Date: Fri, 20 Apr 2012 12:43:19 +0100
+Subject: FW: garchFit()
+In-Reply-To: <BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>
+References: <BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>
+Message-ID: <BLU149-W566C7B34248CB5A88209D7B0220@phx.gbl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl>
+
+From a-djennad at hotmail.co.uk  Thu Apr 19 17:58:01 2012
+From: a-djennad at hotmail.co.uk (Majid Djennad)
+Date: Thu, 19 Apr 2012 16:58:01 +0100
+Subject: garchFit()
+Message-ID: <BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>
+
+
+Dear sir,
+
+How can I change the starting value of beta in garchFit() function please,
+
+i can see that the starting value you have for beta is 0.8, 
+
+I want to produce the same results of Brooks model page 35 in the attached file, which he has beta =0.7, Brooks used RATS software and I am using R software and your package fGarch
+
+Many thanks
+
+Majid
+ 		 	   		  
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120419/1d4554fc/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Autoregressive.Conditional.Kurtosis.pdf
+Type: application/pdf
+Size: 770509 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120419/1d4554fc/attachment-0001.pdf>
+

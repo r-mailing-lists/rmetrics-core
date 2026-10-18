@@ -1,0 +1,167 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2008-11",
+  "messages": [
+    {
+      "id": "msg-5a34a6515f0d",
+      "message_id": "<5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2008-11-03T17:00:18Z",
+      "subject": "Bug timeSeries 270.76.1",
+      "subject_clean": "Bug timeSeries 270.76.1",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl>",
+      "thread_id": "thread-5a34a6515f0d",
+      "thread_depth": 0,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-6add2436d520",
+      "message_id": "<3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>",
+      "from_name": "Juan Tomas Sayago",
+      "from_email_hash": "ffa21842d514b565929a9586abe993fe2085563fcb08bc1259177c1df8d30aa2",
+      "date": "2008-11-04T16:28:46Z",
+      "subject": "Dear Rmetrics authors",
+      "subject_clean": "Dear Rmetrics authors",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl>",
+      "thread_id": "thread-6add2436d520",
+      "thread_depth": 0,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-b0273f75124b",
+      "message_id": "<20081105152115.498bd7fc@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-11-05T14:21:15Z",
+      "subject": "Dear Rmetrics authors",
+      "subject_clean": "Dear Rmetrics authors",
+      "in_reply_to": "<3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>",
+      "references": [
+        "<3364ce110811040828t64356efv4a757785eeee0b27@mail.gmail.com>"
+      ],
+      "body_plain": ">>>> \"JTS\" == \"Juan Tomas Sayago\" <juantomas.sayago at gmail.com>\n>>>> on Tue, 4 Nov 2008 17:28:46 +0100\n\n   JTS> Dear Rmetrics authors,\n   JTS> I am a Mac user and I want to know if it is possible to use the interface to\n   JTS> connect R to Oxmetrix.\n   JTS> Thank you\n   JTS> Juan\n\nthe Ox interface was removed from the new fGarch package because it\nneeds to be updated and nobody volunteered to do so.\n\nIf you need the interface and want to update the code so that everybody\ncan benefit from it. We can give some support.\n\nregards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"JTS\" == \"Juan Tomas Sayago\" <juantomas.sayago at gmail.com>\n>>>> on Tue, 4 Nov 2008 17:28:46 +0100\n\n   JTS> Dear Rmetrics authors,\n   JTS> I am a Mac user and I want to know if it is possible to",
+      "thread_id": "thread-6add2436d520",
+      "thread_depth": 1,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-53e7e8f00401",
+      "message_id": "<20081105154313.4f564a93@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-11-05T14:43:13Z",
+      "subject": "Bug timeSeries 270.76.1",
+      "subject_clean": "Bug timeSeries 270.76.1",
+      "in_reply_to": "<5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>",
+      "references": [
+        "<5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>"
+      ],
+      "body_plain": ">>>> \"DA\" == Daniele Amberti <daniele.amberti at ors.it>\n>>>> on Mon, 3 Nov 2008 18:00:18 +0100\n\n   DA> I found that if I specify  zone =?GMT? in timeSeries(), the low level function strptime() is called without specifying the zone.\n   DA> \n   DA> Having an hourly time series with data around the daylightsaving switch date will cause an error and a count instead of dates.\n   DA> \n   DA> Thanks\n\nDear Daniele,\n\nthanks for the report. \n\nHave you noticed that the new version of 'fSeries' and 'fCalendar' are now\ncalled 'timeSeries' and 'timeDate'. We changed their names to reflect\nthe internal changes of their respective classes.\n\nThe version number you used in your title is the one of the 'fSeries'\npackages. \n\nCould you please let me know if you have the same problem with the new\n'timeSeries' package?\n\nIt would be very helpful if you could provide a minimal and reproducible\ncode to illustrate the problem.\n\nBest regards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DA\" == Daniele Amberti <daniele.amberti at ors.it>\n>>>> on Mon, 3 Nov 2008 18:00:18 +0100\n\n   DA> I found that if I specify  zone =?GMT? in timeSeries(), the low level function strptime() is cal",
+      "thread_id": "thread-5a34a6515f0d",
+      "thread_depth": 1,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-052a5ffb370f",
+      "message_id": "<5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2008-11-05T15:52:12Z",
+      "subject": "Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender",
+      "subject_clean": "Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender",
+      "in_reply_to": "<20081105154313.4f564a93@mimi>",
+      "references": [
+        "<5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>",
+        "<20081105154313.4f564a93@mimi>"
+      ],
+      "body_plain": "Yes, below You can find some code that make problem clear:\n\n\nlibrary(timeSeries)\nMyTZ <- Sys.getenv(\"TZ\")\n\nSys.setenv(TZ = \"\")\nSys.getenv(\"TZ\")\n# The problem is in timeSequence in a call to \"strptime(charvec, isoFormat)\" without the timezone.\n# look for  [2008-03-30 02:00:00]\ntseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = \"hour\", zone = \"GMT\")\ntimeSeries(1:length(tseq), as.character(tseq),)\n\nSys.setenv(TZ = \"GMT\")\nSys.getenv(\"TZ\")\n# The problem is in timeSequence in a call to \"strptime(charvec, isoFormat)\" without the timezone.\n# look for  [2008-03-30 02:00:00]\ntseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = \"hour\", zone = \"GMT\")\ntimeSeries(1:length(tseq), as.character(tseq),)\n\nSys.setenv(TZ = MyTZ)\n\n\n\n-----Original Message-----\nFrom: Yohan Chalabi [mailto:chalabi at phys.ethz.ch]\nSent: 05 November 2008 15:43\nTo: Daniele Amberti\nCc: Rmetrics-core at r-project.org\nSubject: Re: Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender\n\n>>>> \"DA\" == Daniele Amberti <daniele.amberti at ors.it>\n>>>> on Mon, 3 Nov 2008 18:00:18 +0100\n\n   DA> I found that if I specify  zone =\"GMT\" in timeSeries(), the low level function strptime() is called without specifying the zone.\n   DA>\n   DA> Having an hourly time series with data around the daylightsaving switch date will cause an error and a count instead of dates.\n   DA>\n   DA> Thanks\n\nDear Daniele,\n\nthanks for the report.\n\nHave you noticed that the new version of 'fSeries' and 'fCalendar' are now\ncalled 'timeSeries' and 'timeDate'. We changed their names to reflect\nthe internal changes of their respective classes.\n\nThe version number you used in your title is the one of the 'fSeries'\npackages.\n\nCould you please let me know if you have the same problem with the new\n'timeSeries' package?\n\nIt would be very helpful if you could provide a minimal and reproducible\ncode to illustrate the problem.\n\nBest regards,\nYohan\n\n--\nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non  attribuibili alla societ? stessa, n? la impegnano in alcun modo.",
+      "body_snippet": "Yes, below You can find some code that make problem clear:\n\n\nlibrary(timeSeries)\nMyTZ <- Sys.getenv(\"TZ\")\n\nSys.setenv(TZ = \"\")\nSys.getenv(\"TZ\")\n# The problem is in timeSequence in a call to \"strptime(",
+      "thread_id": "thread-5a34a6515f0d",
+      "thread_depth": 2,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-45f7cb820bea",
+      "message_id": "<20081108084427.43380e8a@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2008-11-08T07:44:27Z",
+      "subject": "Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender",
+      "subject_clean": "Bug timeSeries 270.76.1 - [ ] Message is from an unknown sender",
+      "in_reply_to": "<5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>",
+      "references": [
+        "<5C57984CA179A247803E12AAB0F7ABA61D14073F67@adorsmail01.ors.local>",
+        "<20081105154313.4f564a93@mimi>",
+        "<5C57984CA179A247803E12AAB0F7ABA61D14073FC2@adorsmail01.ors.local>"
+      ],
+      "body_plain": ">>>> \"DA\" == Daniele Amberti <daniele.amberti at ors.it>\n>>>> on Wed, 5 Nov 2008 16:52:12 +0100\n\n   DA> Yes, below You can find some code that make problem clear:\n   DA> \n   DA> \n   DA> library(timeSeries)\n   DA> MyTZ <- Sys.getenv(\"TZ\")\n   DA> \n   DA> Sys.setenv(TZ = \"\")\n   DA> Sys.getenv(\"TZ\")\n   DA> # The problem is in timeSequence in a call to \"strptime(charvec, isoFormat)\" without the timezone.\n   DA> # look for  [2008-03-30 02:00:00]\n   DA> tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = \"hour\", zone = \"GMT\")\n   DA> timeSeries(1:length(tseq), as.character(tseq),)\n   DA> \n   DA> Sys.setenv(TZ = \"GMT\")\n   DA> Sys.getenv(\"TZ\")\n   DA> # The problem is in timeSequence in a call to \"strptime(charvec, isoFormat)\" without the timezone.\n   DA> # look for  [2008-03-30 02:00:00]\n   DA> tseq <- timeSequence( from = '2008-03-29', to = '2008-03-31', by = \"hour\", zone = \"GMT\")\n   DA> timeSeries(1:length(tseq), as.character(tseq),)\n   DA> \n   DA> Sys.setenv(TZ = MyTZ)\n\nHi Daniele,\n\nthanks for the clarification.\n\nAll calls in timeDate to strptime are now done with the argument\ntz=\"GMT\". Moreover, I changed the S3 method seq,timeDate to make it\nsimilar to seq.POSIXt.\n\nI have also added RUnit tests which corresponds to your report.\n\nYou can find the new code at R-Forge\n\nsvn co svn://svn.r-forge.r-project.org/svnroot/rmetrics/pkg/timeDate\n\nPlease have a look at it and let me know what you think.\n\nRegards\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DA\" == Daniele Amberti <daniele.amberti at ors.it>\n>>>> on Wed, 5 Nov 2008 16:52:12 +0100\n\n   DA> Yes, below You can find some code that make problem clear:\n   DA> \n   DA> \n   DA> library(timeSe",
+      "thread_id": "thread-5a34a6515f0d",
+      "thread_depth": 3,
+      "month": "2008-11"
+    },
+    {
+      "id": "msg-26f7e2626e47",
+      "message_id": "<01c94a7c$Blat.v2.2.2$23dae56d@mail.statistik.uni-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2008-11-19T19:22:19Z",
+      "subject": "Package timeDate_290.81.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_290.81.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.0 (2008-10-20)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.81.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-26f7e2626e47",
+      "thread_depth": 0,
+      "month": "2008-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-5a34a6515f0d",
+      "subject": "Bug timeSeries 270.76.1",
+      "message_count": 4,
+      "participants": [
+        "Daniele Amberti",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-11-03T17:00:18Z",
+      "last_reply": "2008-11-08T07:44:27Z",
+      "root_message_id": "msg-5a34a6515f0d"
+    },
+    {
+      "id": "thread-6add2436d520",
+      "subject": "Dear Rmetrics authors",
+      "message_count": 2,
+      "participants": [
+        "Juan Tomas Sayago",
+        "Yohan Chalabi"
+      ],
+      "started": "2008-11-04T16:28:46Z",
+      "last_reply": "2008-11-05T14:21:15Z",
+      "root_message_id": "msg-6add2436d520"
+    },
+    {
+      "id": "thread-26f7e2626e47",
+      "subject": "Package timeDate_290.81.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2008-11-19T19:22:19Z",
+      "last_reply": "2008-11-19T19:22:19Z",
+      "root_message_id": "msg-26f7e2626e47"
+    }
+  ]
+}

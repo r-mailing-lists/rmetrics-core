@@ -1,0 +1,44 @@
+From Kurt.Hornik at wu.ac.at  Fri Nov  4 08:51:05 2011
+From: Kurt.Hornik at wu.ac.at (Kurt Hornik)
+Date: Fri, 4 Nov 2011 08:51:05 +0100
+Subject: CRAN packages maintained by you
+Message-ID: <20147.39273.789105.568092@fangorn.hornik.net>
+
+Dear maintainers,
+
+This concerns CRAN packages
+
+   fUtilities growthrate caschrono
+
+maintained by one of you.
+
+The first fails R CMD check for all current versions of R, and hence
+needs to be archived.  This will affect packages depending on it
+(growthrate depends on fUtilities, caschrono suggests it).
+
+Can you pls coordinate the necessary actions?
+
+Ideally we would have an update for fUtilities as soon as possible;
+otherwise, the reverse dependencies need to be modified to work without
+fUtilities.
+
+Best
+-k
+
+
+From Uwe.Ligges at R-Project.org  Tue Nov 29 15:34:51 2011
+From: Uwe.Ligges at R-Project.org (Uwe Ligges)
+Date: Tue, 29 Nov 2011 15:34:51 +0100
+Subject: fExtremes
+Message-ID: <4ED4ED8B.60804@R-Project.org>
+
+Please check
+
+http://www.r-project.org/nosvn/R.check/r-release-linux-ix86/fExtremes-00check.html.
+
+fExtremes seems to give ERRORs on all platforms today (not all synced to 
+CRAN master yet). Perhaps a date related problem again.
+
+Uwe Ligges
+
+

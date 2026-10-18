@@ -1,0 +1,119 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-05",
+  "messages": [
+    {
+      "id": "msg-dcf14d904c67",
+      "message_id": "<136750198758d59251b56b0197ba1eb5f032d5ebc8_@netbitweb.info>",
+      "from_name": "AP",
+      "from_email_hash": "253d5e00a32e6c4f98c4cc573bbcdaf9507fb33fd9d517e660630d31cf64aeef",
+      "date": "2013-05-03T11:59:54Z",
+      "subject": "Community & educational development",
+      "subject_clean": "Community & educational development",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130503/e1548274/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130503/e1548274/attachment.pl>",
+      "thread_id": "thread-dcf14d904c67",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-227010b20d13",
+      "message_id": "<5187848A.8050604@unisa.it>",
+      "from_name": "Vincenzo Candila",
+      "from_email_hash": "6469dc8559301e364f2e1fbeac5fc2e4688a2df0ec2ceb6900b99b0b1660883b",
+      "date": "2013-05-06T10:23:06Z",
+      "subject": "help with fportfolio",
+      "subject_clean": "help with fportfolio",
+      "in_reply_to": "<518783E9.2040502@unisa.it>",
+      "references": [
+        "<518783E9.2040502@unisa.it>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130506/2793099b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130506/2793099b/attachment.pl>",
+      "thread_id": "thread-227010b20d13",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-0f6ab84b3d2f",
+      "message_id": "<CAFPpASndBj33Q03uAag=urOzL_m29m=XVJ6Q+MeC7T9tSoBDUw@mail.gmail.com>",
+      "from_name": "Chang Min Chu",
+      "from_email_hash": "3d95d6ff286f0f1d9b07cfe356b0fbcf2c9618a6da579316bab05ad238b148b3",
+      "date": "2013-05-17T03:54:29Z",
+      "subject": "fPortfolioBacktest could not be installed",
+      "subject_clean": "fPortfolioBacktest could not be installed",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130516/636a4f11/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130516/636a4f11/attachment.pl>",
+      "thread_id": "thread-0f6ab84b3d2f",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-2a61af78ca6f",
+      "message_id": "<382780CF3E30E74EA5FAE7E10C01179E1E23395125@USTLCDBG011.us.db.com>",
+      "from_name": "Yin Luo",
+      "from_email_hash": "7a86ed87258dea102f1d31d02ade351122331b16b3d2d58f416ef0d48e87ff36",
+      "date": "2013-05-18T16:40:14Z",
+      "subject": "Advanced portfolio management with R/Rmetrics",
+      "subject_clean": "Advanced portfolio management with R/Rmetrics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130518/8ccd2d89/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130518/8ccd2d89/attachment.pl>",
+      "thread_id": "thread-2a61af78ca6f",
+      "thread_depth": 0,
+      "month": "2013-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-dcf14d904c67",
+      "subject": "Community & educational development",
+      "message_count": 1,
+      "participants": [
+        "AP"
+      ],
+      "started": "2013-05-03T11:59:54Z",
+      "last_reply": "2013-05-03T11:59:54Z",
+      "root_message_id": "msg-dcf14d904c67"
+    },
+    {
+      "id": "thread-227010b20d13",
+      "subject": "help with fportfolio",
+      "message_count": 1,
+      "participants": [
+        "Vincenzo Candila"
+      ],
+      "started": "2013-05-06T10:23:06Z",
+      "last_reply": "2013-05-06T10:23:06Z",
+      "root_message_id": "msg-227010b20d13"
+    },
+    {
+      "id": "thread-0f6ab84b3d2f",
+      "subject": "fPortfolioBacktest could not be installed",
+      "message_count": 1,
+      "participants": [
+        "Chang Min Chu"
+      ],
+      "started": "2013-05-17T03:54:29Z",
+      "last_reply": "2013-05-17T03:54:29Z",
+      "root_message_id": "msg-0f6ab84b3d2f"
+    },
+    {
+      "id": "thread-2a61af78ca6f",
+      "subject": "Advanced portfolio management with R/Rmetrics",
+      "message_count": 1,
+      "participants": [
+        "Yin Luo"
+      ],
+      "started": "2013-05-18T16:40:14Z",
+      "last_reply": "2013-05-18T16:40:14Z",
+      "root_message_id": "msg-2a61af78ca6f"
+    }
+  ]
+}

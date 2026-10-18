@@ -1,0 +1,574 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-10",
+  "messages": [
+    {
+      "id": "msg-929ed03632cd",
+      "message_id": "<CAN3CnTZnz1_PgFBAexyq4z8AP-c=mGffNnR9g7a9Vu6ZxEbyhQ@mail.gmail.com>",
+      "from_name": "Christophe Dutang",
+      "from_email_hash": "71db47fbb88383c85c0a4105bb9dd5508a39e5eb48ded58e22bd31403fb35064",
+      "date": "2011-10-03T15:44:54Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19950.29778.188592.524184@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+        "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+        "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>",
+        "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>",
+        "<19950.29778.188592.524184@max.nulle.part>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111003/bcf21a8c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111003/bcf21a8c/attachment.pl>",
+      "thread_id": "thread-929ed03632cd",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-13f4eda18e58",
+      "message_id": "<F19672F7880134439F66EC21316E27F388AF0F@Exch-Mailbox.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2011-10-07T09:01:10Z",
+      "subject": "BUGs - timeSeries package and @Frequency slot",
+      "subject_clean": "BUGs - timeSeries package and @Frequency slot",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all,\nbelow  a couple of bugs on package timeSeries 2130.92\n\nI?d like to ask what you think about a slot @Frequency (optional) to better describe the timeSeries.\nThink about time series models: in most cases you are supposed to have regularly spaced time series and being able to specify the frequency of the timeSeries object can provide an easy way to use appropriate functions like align()\n\nBest regards,\nDaniele Amberti\n\n\nlibrary(timeSeries)\ndata(MSFT)\n\nMSFT1 <- window(MSFT, \"2001-01-01\", \"2001-01-12\")\n\n# BUG 1\n# alignDailySeries I suppose to be a shortcut to align\n# but It is no usin align internally\n# because of this we found that behavior is different with method 'fillNA':\n\nalignDailySeries(MSFT1, method= \"fillNA\", include.weekends=TRUE)\n\nalign(MSFT1, by = \"1d\", offset = \"0s\",\n      method = \"fillNA\",\n      include.weekends = TRUE)\n\nalign(MSFT1, by = \"1 d\", offset = \"0s\",\n      method = \"fillNA\",\n      include.weekends = TRUE)\n\n# and other methods seems to work:\nalignDailySeries(MSFT1, method= \"before\", include.weekends=TRUE)\n\nalign(MSFT1, by = \"1d\", offset = \"0s\",\n      method = \"before\",\n      include.weekends = TRUE)\n\n# we suggest to fix align and thenuse It in alignDailySeries\n\n\n# BUG2\n# internally at timeSeries:::.merge.timeSeries you are using this lines of code:\n# data.frame(positions = tx, getDataPart(x), rec.x)\n# data.frame(positions = ty, getDataPart(y), rec.y)\n# if getDataPart return a non standard name for a data.frame\n# e.g. start with a number # merge will have an unexpected behavior with no warning:\n\ndata1 <- 1:6\ndata2 <- data1 + 3\ncharvec1 <- paste(\"2009-0\", 1:6, \"-01\", sep = \"\")\ncharvec2 <- paste(\"2009-0\", 4:9, \"-01\", sep = \"\")\n\ns1 <- timeSeries(data1, as.Date(charvec1), units = \"s1\")\ns2 <- timeSeries(data2, as.Date(charvec2), units = \"s2\")\n\nmerge(s1, s2)\n\ns2 <- timeSeries(data2, as.Date(charvec2), units = \"2s\")\n\nmerge(s1, s2)\n\n\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.",
+      "body_snippet": "Dear all,\nbelow  a couple of bugs on package timeSeries 2130.92\n\nI?d like to ask what you think about a slot @Frequency (optional) to better describe the timeSeries.\nThink about time series models: in",
+      "thread_id": "thread-13f4eda18e58",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-24eb7980f230",
+      "message_id": "<DB813AE11D151A4D82492FE9271D97840476E3BE@FKIMLKI02.Enterprise.afmc.ds.af.mil>",
+      "from_name": "Sutton, Eric K Civ USAF AFMC AFRL/RVBXI",
+      "from_email_hash": "82c36a6d8486ef35ccb738157917e81e9d118ea64d809a31afad561e24bcdde6",
+      "date": "2011-10-12T21:35:44Z",
+      "subject": "bug in fGarch R contributed package",
+      "subject_clean": "bug in fGarch R contributed package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111012/d5144ad6/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111012/d5144ad6/attachment.pl>",
+      "thread_id": "thread-24eb7980f230",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-3ffe651322b6",
+      "message_id": "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-10-14T18:37:36Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Changes in R have necessitated a change in zoo which results in any\nas.Date method in the timeDate package (or any other package that does\nnot export their as.Date methods) not to be dispatched.\n\nThis can be fixed by either exporting any as.Date method in the\nNAMESPACE file (or by importing zoo in the NAMESPACE file).\n\nSee:\n\nhttps://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "Changes in R have necessitated a change in zoo which results in any\nas.Date method in the timeDate package (or any other package that does\nnot export their as.Date methods) not to be dispatched.\n\nThis",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-6d8d387ba655",
+      "message_id": "<01cc8c14$Blat.v2.2.2$4e4e069e@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-10-16T15:00:12Z",
+      "subject": "Package fCalendar_270.78.3.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fCalendar_270.78.3.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.3.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.14/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.14.0 alpha/beta/rc\n(but not the current R-2.13.2, the current release version of R).\nR-2.14.0 will be released on October 31.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nA description on how to update packages for specific R-2.14.0 related changes is\navailable at http://developer.r-project.org/214update.txt\nR version 2.14.0 alpha (2011-10-13 r57240)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.14/fCalendar.Rcheck'\n* using R version 2.14.0 alpha (2011-10-13 r57240)\n* using platform: i386-pc-mingw32 (32-bit)\n* using session charset: ISO8859-1\n* checking for file 'fCalendar/DESCRIPTION' ... OK\n* this is package 'fCalendar' version '270.78.3'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking if there is a namespace ... NOTE\nAs from R 2.14.0 all packages need a namespace.\nOne will be generated on installation, but it is better to handcraft a\nNAMESPACE file: R CMD build will produce a suitable starting point.\n* checking whether package 'fCalendar' can be installed ... OK\n* checking installed package size ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking for unstated dependencies in examples ... OK\n* checking examples ... OK\n* checking for unstated dependencies in tests ... OK\n* checking tests ... ERROR\nRunning the tests in 'tests/doRUnit.R' failed.\nLast 13 lines of output:\n  1 Test Suite : \n  fCalendar unit testing - 46 test functions, 5 errors, 0 failures\n  ERROR in test.displayMethods: Error in func() : cannot change value of locked binding for 'myFinCenter'\n  ERROR in test.timeCalendar: Error in func() : cannot change value of locked binding for 'myFinCenter'\n  ERROR in test.as: Error in func() : cannot change value of locked binding for 'myFinCenter'\n  ERROR in test.asTimeDate: Error in func() : cannot change value of locked binding for 'myFinCenter'\n  ERROR in test.julian: Error in func() : cannot change value of locked binding for 'myFinCenter'\n  Error in eval.with.vis(expr, envir, enclos) : \n  \n  unit testing failed (#test failures: 0, R errors: 5)\n  \n  Calls: source -> eval.with.vis -> eval.with.vis\n  Execution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCalendar_270.78.3.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-6d8d387ba655",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-7137ec61e795",
+      "message_id": "<01cc8c14$Blat.v2.2.2$4e6cf8bf@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-10-16T15:00:12Z",
+      "subject": "Package fSeries_270.76.3.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fSeries_270.76.3.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.14/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.14.0 alpha/beta/rc\n(but not the current R-2.13.2, the current release version of R).\nR-2.14.0 will be released on October 31.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nA description on how to update packages for specific R-2.14.0 related changes is\navailable at http://developer.r-project.org/214update.txt\nR version 2.14.0 alpha (2011-10-13 r57240)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.14/fSeries.Rcheck'\n* using R version 2.14.0 alpha (2011-10-13 r57240)\n* using platform: i386-pc-mingw32 (32-bit)\n* using session charset: ISO8859-1\n* checking for file 'fSeries/DESCRIPTION' ... OK\n* this is package 'fSeries' version '270.76.3'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking if there is a namespace ... NOTE\nAs from R 2.14.0 all packages need a namespace.\nOne will be generated on installation, but it is better to handcraft a\nNAMESPACE file: R CMD build will produce a suitable starting point.\n* checking whether package 'fSeries' can be installed ... OK\n* checking installed package size ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... WARNING\nAssignments in \\usage in documentation object 'dim':\n  colnames <- .timeSeries(x) <- value\n  rownames <- .timeSeries(x) <- value\n\nFunctions with \\usage entries need to have the appropriate \\alias\nentries, and all their arguments documented.\nThe \\usage entries must correspond to syntactically valid R code.\nSee the chapter 'Writing R documentation files' in the 'Writing R\nExtensions' manual.\n* checking Rd contents ... OK\n* checking for unstated dependencies in examples ... OK\n* checking examples ... ERROR\nRunning examples in 'fSeries-Ex.R' failed\nThe error most likely occurred in:\n\n> ### Name: as\n> ### Title: timeSeries Class, Coercion and Transformation\n> ### Aliases: as is.timeSeries as.timeSeries as.timeSeries.default\n> ###   as.timeSeries.numeric as.timeSeries.data.frame as.timeSeries.matrix\n> ###   as.timeSeries.ts as.timeSeries.character as.timeSeries.zoo\n> ###   as.vector.timeSeries as.matrix.timeSeries as.data.frame.timeSeries\n> ###   as.ts.timeSeries\n> ### Keywords: chron\n> \n> ### ** Examples\n> \n> ## data - timeSeries:\n>    # Create an artificial timeSeries object:\n>    myFinCenter <<- \"GMT\"\nError: cannot change value of locked binding for 'myFinCenter'\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fSeries_270.76.3.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding C",
+      "thread_id": "thread-7137ec61e795",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-c0fd51eab6ac",
+      "message_id": "<01cc8c14$Blat.v2.2.2$4e3175e2@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-10-16T15:00:12Z",
+      "subject": "Package fArma_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fArma_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fArma_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.14/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.14.0 alpha/beta/rc\n(but not the current R-2.13.2, the current release version of R).\nR-2.14.0 will be released on October 31.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nA description on how to update packages for specific R-2.14.0 related changes is\navailable at http://developer.r-project.org/214update.txt\nR version 2.14.0 alpha (2011-10-13 r57240)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.14/fArma.Rcheck'\n* using R version 2.14.0 alpha (2011-10-13 r57240)\n* using platform: i386-pc-mingw32 (32-bit)\n* using session charset: ISO8859-1\n* checking for file 'fArma/DESCRIPTION' ... OK\n* this is package 'fArma' version '2100.76'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking if there is a namespace ... NOTE\nAs from R 2.14.0 all packages need a namespace.\nOne will be generated on installation, but it is better to handcraft a\nNAMESPACE file: R CMD build will produce a suitable starting point.\n* checking whether package 'fArma' can be installed ... OK\n* checking installed package size ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* loading checks for arch 'i386'\n** checking whether the package can be loaded ... OK\n** checking whether the package can be loaded with stated dependencies ... OK\n** checking whether the package can be unloaded cleanly ... OK\n* loading checks for arch 'x64'\n** checking whether the package can be loaded ... OK\n** checking whether the package can be loaded with stated dependencies ... OK\n** checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking for unstated dependencies in examples ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK\n* checking compiled code ... NOTE\nFile 'd:/Rcompile/CRANpkg/lib/2.14/fArma/libs/i386/fArma.dll':\n  Found 'printf', possibly from 'printf' (C)\n  Found 'putchar', possibly from 'putchar' (C)\n  Found 'puts', possibly from 'printf' (C), 'puts' (C)\n\nCompiled code should not call functions which might terminate R nor\nwrite to stdout/stderr instead of to the console.  The detected symbols\nare linked into the code but might come from libraries and not actually\nbe called.\n\nSee 'Writing portable packages' in the 'Writing R Extensions' manual.\n* checking examples ...\n** running examples for arch 'i386' ... ERROR\nRunning examples in 'fArma-Ex.R' failed\nThe error most likely occurred in:\n\n> ### Name: ArmaInterface\n> ### Title: Integrated ARMA Time Series Modelling\n> ### Aliases: ArmaInterface fARMA fARMA-class armaSim armaFit\n> ###   show,fARMA-method plot.fARMA summary.fARMA predict.fARMA fitted.fARMA\n> ###   coef.fARMA coefficients.fARMA residuals.fARMA\n> ### Keywords: models\n> \n> ### ** Examples\n> \n> ## armaSim -\n>    # Simulation:\n>    x = armaSim(model = list(ar = c(0.5, -0.5), ma = 0.1), n = 1000)\n>    \n> ## armaFit -\n>    # Estimate the Parameters:\n>    fit = armaFit(~ arma(2, 1), data = x)\nError in ts(x) : 'ts' object must have one or more observations\nCalls: armaFit -> fun -> arima -> as.ts -> as.ts.default -> ts\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fArma_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN",
+      "thread_id": "thread-c0fd51eab6ac",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-252f1e7bf028",
+      "message_id": "<01cc8c14$Blat.v2.2.2$4e8e4c45@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-10-16T15:00:13Z",
+      "subject": "Package fUtilities_2110.78.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.14/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.14.0 alpha/beta/rc\n(but not the current R-2.13.2, the current release version of R).\nR-2.14.0 will be released on October 31.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nA description on how to update packages for specific R-2.14.0 related changes is\navailable at http://developer.r-project.org/214update.txt\nR version 2.14.0 alpha (2011-10-13 r57240)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.14/fUtilities.Rcheck'\n* using R version 2.14.0 alpha (2011-10-13 r57240)\n* using platform: i386-pc-mingw32 (32-bit)\n* using session charset: ISO8859-1\n* checking for file 'fUtilities/DESCRIPTION' ... OK\n* this is package 'fUtilities' version '2110.78'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking if there is a namespace ... NOTE\nAs from R 2.14.0 all packages need a namespace.\nOne will be generated on installation, but it is better to handcraft a\nNAMESPACE file: R CMD build will produce a suitable starting point.\n* checking whether package 'fUtilities' can be installed ... OK\n* checking installed package size ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking for unstated dependencies in examples ... OK\n* checking examples ... ERROR\nRunning examples in 'fUtilities-Ex.R' failed\nThe error most likely occurred in:\n\n> ### Name: lcg\n> ### Title: Generator for Portable Random Innovations\n> ### Aliases: lcg set.lcgseed get.lcgseed runif.lcg rnorm.lcg rt.lcg\n> ### Keywords: programming\n> \n> ### ** Examples\n> \n> ## set.lcgseed -\n>    set.lcgseed(seed = 65890)\nError in set.lcgseed(seed = 65890) : \n  cannot change value of locked binding for '.lcg.seed'\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-252f1e7bf028",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-40f6643e72cc",
+      "message_id": "<F19672F7880134439F66EC21316E27F389D2D4@Exch-Mailbox.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2011-10-17T10:27:59Z",
+      "subject": "lag() bug on output units",
+      "subject_clean": "lag() bug on output units",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "# final result gives\n##             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0]  ...\n# but should be\n##             S.1[-1]    S.1[0]    S.1[1]   S.2[-1]    S.2[0]  ...\n\n\nlibrary(timeSeries) # 2130.92 on R 2.12.2\nset.seed(1953)\ndata <- matrix(runif(18), ncol = 3)\ncharvec <- rev(paste(\"2009-0\", 1:6, \"-01\", sep = \"\"))\nS <- timeSeries(data, charvec)\ncolnames(S) <- paste(\"S\", 1:3, sep = \".\")\n\n#GMT\n#                S.1       S.2       S.3\n#2009-06-01 0.5087459 0.5740212 0.9310609\n#2009-05-01 0.4770248 0.5736546 0.3990106\n#2009-04-01 0.1829114 0.5912718 0.8642168\n#2009-03-01 0.4472982 0.9652389 0.6135854\n#2009-02-01 0.6602838 0.5931596 0.4981308\n#2009-01-01 0.2228321 0.2319316 0.2083319\n\nlag(S, -1:1)\n\n#GMT\n#             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0] ...\n#2009-06-01 0.4770248 0.5087459        NA 0.5736546 0.5740212 ...\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.",
+      "body_snippet": "# final result gives\n##             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0]  ...\n# but should be\n##             S.1[-1]    S.1[0]    S.1[1]   S.2[-1]    S.2[0]  ...\n\n\nlibrary(timeSeries) # 213",
+      "thread_id": "thread-40f6643e72cc",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-0b2b56f58e4f",
+      "message_id": "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-10-18T12:58:19Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Gabor,\n\nThanks for the message.\n\nAs mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n\nThe problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages. \n\nRegards,\nYohan\n\nOn 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n\n> Changes in R have necessitated a change in zoo which results in any\n> as.Date method in the timeDate package (or any other package that does\n> not export their as.Date methods) not to be dispatched.\n> \n> This can be fixed by either exporting any as.Date method in the\n> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n> \n> See:\n> \n> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n> \n> -- \n> Statistics & Software Consulting\n> GKX Group, GKX Associates Inc.\n> tel: 1-877-GKX-GROUP\n> email: ggrothendieck at gmail.com\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Hi Gabor,\n\nThanks for the message.\n\nAs mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n\nThe problem is really coming from zoo which overwrites the base function as.Date and ",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 1,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-b8e020bc8358",
+      "message_id": "<alpine.DEB.2.02.1110181510300.8857@paninaro.uibk.ac.at>",
+      "from_name": "Achim Zeileis",
+      "from_email_hash": "a3898362d2961a86696818123ed6017299b88343a2280efbcbbd1f340f19d948",
+      "date": "2011-10-18T13:15:34Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>"
+      ],
+      "body_plain": "Yohan:\n\n> Thanks for the message.\n>\n> As mentioned in the r-sig-finance, timeDate already exports \n> as.Date.timeDate.\n\nMaybe we should have been more precise in our request: It would be great \nif \"timeDate\" could fully export \"as.Date.timeDate\" and not only as an S3 \nmethod.\n\n> The problem is really coming from zoo which overwrites the base function \n> as.Date and do not import as.Date methods from other packages.\n\nYes, true. However, to make the dependency path not longer than it already \nis, it would be nice if you could fully export your method. Then it is \nfound by both generics - the one in base R and the one in zoo.\n\nIf you're wondering why zoo masks as.Date(). After zoo had long provided \nan as.Date.numeric, base R decided to break that by adding their own that \nrequires an additional \"origin\" argument without default. For several \nyear's we worked around this by simply replacing base:::as.Date.numeric in \nthe base NAMESPACE when loading zoo. Then, R-core decided to disallow this \nworkaround and now we have to ship our own generic to assure correct \ndispatch.\n\nThanks & best regards,\nZ\n\n> Regards,\n> Yohan\n>\n> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n>\n>> Changes in R have necessitated a change in zoo which results in any\n>> as.Date method in the timeDate package (or any other package that does\n>> not export their as.Date methods) not to be dispatched.\n>>\n>> This can be fixed by either exporting any as.Date method in the\n>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n>>\n>> See:\n>>\n>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n>>\n>> --\n>> Statistics & Software Consulting\n>> GKX Group, GKX Associates Inc.\n>> tel: 1-877-GKX-GROUP\n>> email: ggrothendieck at gmail.com\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Yohan:\n\n> Thanks for the message.\n>\n> As mentioned in the r-sig-finance, timeDate already exports \n> as.Date.timeDate.\n\nMaybe we should have been more precise in our request: It would be great \nif \"ti",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 2,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-5d9134f51b07",
+      "message_id": "<CAP01uR=6RoS9y+ck1msEQeLAa3WQ+h7oDrCrcPoo7zOBs=NAjA@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-10-18T14:03:11Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>"
+      ],
+      "body_plain": "While the change is caused by the second generic in zoo (which was\nnecessitated by a change in R), note that the de facto standard set by\nthe base package is to export all as.Date methods.  As we see, none of\nthese methods are asterisked:\n\n> methods(as.Date)\n[1] as.Date.character as.Date.date      as.Date.dates     as.Date.default\n[5] as.Date.factor    as.Date.numeric   as.Date.POSIXct   as.Date.POSIXlt\n\nIf timeDate follows the same standard then there will be no problem.\n\nOn Tue, Oct 18, 2011 at 8:58 AM, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n> Hi Gabor,\n>\n> Thanks for the message.\n>\n> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n>\n> The problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages.\n>\n> Regards,\n> Yohan\n>\n> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n>\n>> Changes in R have necessitated a change in zoo which results in any\n>> as.Date method in the timeDate package (or any other package that does\n>> not export their as.Date methods) not to be dispatched.\n>>\n>> This can be fixed by either exporting any as.Date method in the\n>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n>>\n>> See:\n>>\n>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n>>\n>> --\n>> Statistics & Software Consulting\n>> GKX Group, GKX Associates Inc.\n>> tel: 1-877-GKX-GROUP\n>> email: ggrothendieck at gmail.com\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>\n>\n\n\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "While the change is caused by the second generic in zoo (which was\nnecessitated by a change in R), note that the de facto standard set by\nthe base package is to export all as.Date methods.  As we see,",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 2,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-ec1bb5b96d4b",
+      "message_id": "<20125.42690.361538.466742@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-10-18T16:18:10Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<CAP01uR=6RoS9y+ck1msEQeLAa3WQ+h7oDrCrcPoo7zOBs=NAjA@mail.gmail.com>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+        "<CAP01uR=6RoS9y+ck1msEQeLAa3WQ+h7oDrCrcPoo7zOBs=NAjA@mail.gmail.com>"
+      ],
+      "body_plain": ">>>>> Gabor Grothendieck <ggrothendieck at gmail.com>\n>>>>>     on Tue, 18 Oct 2011 10:03:11 -0400 writes:\n\n    > While the change is caused by the second generic in zoo\n    > (which was necessitated by a change in R), note that the\n    > de facto standard set by the base package is to export all\n    > as.Date methods.\n\nthat's not a \"standard\" but rather a kludge or\na \"historical coincidence\" / an accidental reference to the past\nor .... \nas far as I see it...\n\nReally this should be discussed on R-devel, Gabor.\n\n    >   As we see, none of these methods are asterisked:\n\n    >> methods(as.Date)\n    > [1] as.Date.character as.Date.date      as.Date.dates     as.Date.default\n    > [5] as.Date.factor    as.Date.numeric   as.Date.POSIXct   as.Date.POSIXlt\n\n    > If timeDate follows the same standard then there will be no problem.\n\nWell, that's rather a *NON*-standard.\nThe only reason I can think of currently that\n\"base R\" does not properly hide these is because they were\nalready (mis)used in other CRAN packages.\n\nBut I don't see why timeDate should have to do the same thing\nwhich is \"wrong\" and recommended against typically in several\nplaces (\"Writing R Extensions\").\n\nOf course, if there's no better solution, that's still a\npossibility, but this whole approach  \"smells a bit bad\" to me.\n\nMartin\n\n    > On Tue, Oct 18, 2011 at 8:58 AM, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n    >> Hi Gabor,\n    >> \n    >> Thanks for the message.\n    >> \n    >> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n    >> \n    >> The problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages.\n\nI still think \n\n    >> \n    >> Regards,\n    >> Yohan\n    >> \n    >> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n    >> \n    >>> Changes in R have necessitated a change in zoo which results in any\n    >>> as.Date method in the timeDate package (or any other package that does\n    >>> not export their as.Date methods) not to be dispatched.\n    >>> \n    >>> This can be fixed by either exporting any as.Date method in the\n    >>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n    >>> \n    >>> See:\n    >>> \n    >>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n    >>> \n    >>> --\n    >>> Statistics & Software Consulting\n    >>> GKX Group, GKX Associates Inc.\n    >>> tel: 1-877-GKX-GROUP\n    >>> email: ggrothendieck at gmail.com\n    >>> \n    >>> _______________________________________________\n    >>> Rmetrics-core mailing list\n    >>> Rmetrics-core at r-project.org\n    >>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n    >>> \n    >> \n    >> \n\n\n\n    > -- \n    > Statistics & Software Consulting\n    > GKX Group, GKX Associates Inc.\n    > tel: 1-877-GKX-GROUP\n    > email: ggrothendieck at gmail.com\n\n    > _______________________________________________\n    > Rmetrics-core mailing list\n    > Rmetrics-core at r-project.org\n    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": ">>>>> Gabor Grothendieck <ggrothendieck at gmail.com>\n>>>>>     on Tue, 18 Oct 2011 10:03:11 -0400 writes:\n\n    > While the change is caused by the second generic in zoo\n    > (which was necessitated ",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 3,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-bfc84818d7fe",
+      "message_id": "<alpine.DEB.2.02.1110181831150.32196@paninaro.uibk.ac.at>",
+      "from_name": "Achim Zeileis",
+      "from_email_hash": "a3898362d2961a86696818123ed6017299b88343a2280efbcbbd1f340f19d948",
+      "date": "2011-10-18T16:36:17Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<20125.42690.361538.466742@stat.math.ethz.ch>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+        "<CAP01uR=6RoS9y+ck1msEQeLAa3WQ+h7oDrCrcPoo7zOBs=NAjA@mail.gmail.com>",
+        "<20125.42690.361538.466742@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Martin,\n\nthanks for the feedback. Yes, the approach is bad, but so is the approach \nof the 'origin' argument without default in base::as.Date.numeric. And, \nyes, this is all a big kludge.\n\nHowever, my feeling is that we could avoid some additional confusion by \nsimply fully exporting all as.Date.* functions (just like base R does). \nThis also reduces the overhead that the individual packages with \ngenerics/methods have to provide.\n\nThe devel-version of zoo on R-Forge now does this and hence we asked \nwhether timeDate could do the same.\n\nIf there is another way of resolving this problem without further adding \ndependencies to zoo (or any other package involved), I would also be \ninterested.\n\nThanks & best regards,\nAchim\n\n\nOn Tue, 18 Oct 2011, Martin Maechler wrote:\n\n>>>>>> Gabor Grothendieck <ggrothendieck at gmail.com>\n>>>>>>     on Tue, 18 Oct 2011 10:03:11 -0400 writes:\n>\n>    > While the change is caused by the second generic in zoo\n>    > (which was necessitated by a change in R), note that the\n>    > de facto standard set by the base package is to export all\n>    > as.Date methods.\n>\n> that's not a \"standard\" but rather a kludge or\n> a \"historical coincidence\" / an accidental reference to the past\n> or ....\n> as far as I see it...\n>\n> Really this should be discussed on R-devel, Gabor.\n>\n>    >   As we see, none of these methods are asterisked:\n>\n>    >> methods(as.Date)\n>    > [1] as.Date.character as.Date.date      as.Date.dates     as.Date.default\n>    > [5] as.Date.factor    as.Date.numeric   as.Date.POSIXct   as.Date.POSIXlt\n>\n>    > If timeDate follows the same standard then there will be no problem.\n>\n> Well, that's rather a *NON*-standard.\n> The only reason I can think of currently that\n> \"base R\" does not properly hide these is because they were\n> already (mis)used in other CRAN packages.\n>\n> But I don't see why timeDate should have to do the same thing\n> which is \"wrong\" and recommended against typically in several\n> places (\"Writing R Extensions\").\n>\n> Of course, if there's no better solution, that's still a\n> possibility, but this whole approach  \"smells a bit bad\" to me.\n>\n> Martin\n>\n>    > On Tue, Oct 18, 2011 at 8:58 AM, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n>    >> Hi Gabor,\n>    >>\n>    >> Thanks for the message.\n>    >>\n>    >> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n>    >>\n>    >> The problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages.\n>\n> I still think\n>\n>    >>\n>    >> Regards,\n>    >> Yohan\n>    >>\n>    >> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n>    >>\n>    >>> Changes in R have necessitated a change in zoo which results in any\n>    >>> as.Date method in the timeDate package (or any other package that does\n>    >>> not export their as.Date methods) not to be dispatched.\n>    >>>\n>    >>> This can be fixed by either exporting any as.Date method in the\n>    >>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n>    >>>\n>    >>> See:\n>    >>>\n>    >>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n>    >>>\n>    >>> --\n>    >>> Statistics & Software Consulting\n>    >>> GKX Group, GKX Associates Inc.\n>    >>> tel: 1-877-GKX-GROUP\n>    >>> email: ggrothendieck at gmail.com\n>    >>>\n>    >>> _______________________________________________\n>    >>> Rmetrics-core mailing list\n>    >>> Rmetrics-core at r-project.org\n>    >>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>    >>>\n>    >>\n>    >>\n>\n>\n>\n>    > --\n>    > Statistics & Software Consulting\n>    > GKX Group, GKX Associates Inc.\n>    > tel: 1-877-GKX-GROUP\n>    > email: ggrothendieck at gmail.com\n>\n>    > _______________________________________________\n>    > Rmetrics-core mailing list\n>    > Rmetrics-core at r-project.org\n>    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Martin,\n\nthanks for the feedback. Yes, the approach is bad, but so is the approach \nof the 'origin' argument without default in base::as.Date.numeric. And, \nyes, this is all a big kludge.\n\nHowever, my",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 4,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-5b7a3060aa4a",
+      "message_id": "<CAP01uRm4OTRM1NSxdnVas_qCB8n8kfL-k20hFqMQ+6AY0pMMGg@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-10-18T17:47:20Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<20125.42690.361538.466742@stat.math.ethz.ch>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+        "<CAP01uR=6RoS9y+ck1msEQeLAa3WQ+h7oDrCrcPoo7zOBs=NAjA@mail.gmail.com>",
+        "<20125.42690.361538.466742@stat.math.ethz.ch>"
+      ],
+      "body_plain": "On Tue, Oct 18, 2011 at 12:18 PM, Martin Maechler\n<maechler at stat.math.ethz.ch> wrote:\n>>>>>> Gabor Grothendieck <ggrothendieck at gmail.com>\n>>>>>> ? ? on Tue, 18 Oct 2011 10:03:11 -0400 writes:\n>\n> ? ?> While the change is caused by the second generic in zoo\n> ? ?> (which was necessitated by a change in R), note that the\n> ? ?> de facto standard set by the base package is to export all\n> ? ?> as.Date methods.\n>\n> that's not a \"standard\" but rather a kludge or\n> a \"historical coincidence\" / an accidental reference to the past\n> or ....\n> as far as I see it...\n>\n> Really this should be discussed on R-devel, Gabor.\n>\n> ? ?> ? As we see, none of these methods are asterisked:\n>\n> ? ?>> methods(as.Date)\n> ? ?> [1] as.Date.character as.Date.date ? ? ?as.Date.dates ? ? as.Date.default\n> ? ?> [5] as.Date.factor ? ?as.Date.numeric ? as.Date.POSIXct ? as.Date.POSIXlt\n>\n> ? ?> If timeDate follows the same standard then there will be no problem.\n>\n> Well, that's rather a *NON*-standard.\n> The only reason I can think of currently that\n> \"base R\" does not properly hide these is because they were\n> already (mis)used in other CRAN packages.\n>\n> But I don't see why timeDate should have to do the same thing\n> which is \"wrong\" and recommended against typically in several\n> places (\"Writing R Extensions\").\n>\n> Of course, if there's no better solution, that's still a\n> possibility, but this whole approach ?\"smells a bit bad\" to me.\n>\n\nOf course it shouldn't be necessary but its R's own bizarre design of\nthe Date methods that cause the problem and recent changes to lock\ndown the namespaces mean that prior workarounds (which did not require\nexporting) no longer work.  So, following R's own lead in having all\npackages with as.Date methods fully export them seems the easiest\nalternative.\n\nNote that this is long standing functionality which pre-dated these\nvarious changes in R so its R's own changes that caused the problem\nand not any change in a user package.  Also note that the impact is\nlarge since at the current point in time 74 packages have some sort of\ndependency on or are used with zoo and 207 packages directly depend,\nsuggest, import or extend zoo or depend, suggest, import or extend a\npackage which in turn does (to one level).  If one recursively\nincludes all such dependencies to all levels then over half of all\npackages on CRAN directly or indirectly have such a dependence on zoo\nso the impact is significant.\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "On Tue, Oct 18, 2011 at 12:18 PM, Martin Maechler\n<maechler at stat.math.ethz.ch> wrote:\n>>>>>> Gabor Grothendieck <ggrothendieck at gmail.com>\n>>>>>> ? ? on Tue, 18 Oct 2011 10:03:11 -0400 writes:\n>\n",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 4,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-3bf26a93abda",
+      "message_id": "<F19672F7880134439F66EC21316E27F389EE6F@Exch-Mailbox.ors.local>",
+      "from_name": "Daniele Amberti",
+      "from_email_hash": "6dbedc30f4da3ffec3b8689814b2f390feedd34ea48bbd48201360a65fd546cc",
+      "date": "2011-10-19T07:09:13Z",
+      "subject": "invalid names/units created by lag()",
+      "subject_clean": "invalid names/units created by lag()",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111019/8e8cab98/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111019/8e8cab98/attachment.pl>",
+      "thread_id": "thread-3bf26a93abda",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-ec7a299e5503",
+      "message_id": "<6D1D6652-9ACB-47C3-AE9E-508D4689C0A0@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-10-19T08:02:44Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<alpine.DEB.2.02.1110181510300.8857@paninaro.uibk.ac.at>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+        "<alpine.DEB.2.02.1110181510300.8857@paninaro.uibk.ac.at>"
+      ],
+      "body_plain": "On 18 oct. 2011, at 15:15, Achim Zeileis wrote:\n\n> Yohan:\n> \n>> Thanks for the message.\n>> \n>> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n> \n> Maybe we should have been more precise in our request: It would be great if \"timeDate\" could fully export \"as.Date.timeDate\" and not only as an S3 method.\n> \n>> The problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages.\n> \n> Yes, true. However, to make the dependency path not longer than it already is, it would be nice if you could fully export your method. Then it is found by both generics - the one in base R and the one in zoo.\n> \n> If you're wondering why zoo masks as.Date(). After zoo had long provided an as.Date.numeric, base R decided to break that by adding their own that requires an additional \"origin\" argument without default. For several year's we worked around this by simply replacing base:::as.Date.numeric in the base NAMESPACE when loading zoo. Then, R-core decided to disallow this workaround and now we have to ship our own generic to assure correct dispatch.\n\nHi Achim,\n\nYes, I remember the as.Date.numeric issue. We had to change many functions in our packages because of that.\n\ntimeDate will then fully export as.Date.timeDate in its next release.\n\nRegards,\nYohan\n\n\n> \n> Thanks & best regards,\n> Z\n> \n>> Regards,\n>> Yohan\n>> \n>> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n>> \n>>> Changes in R have necessitated a change in zoo which results in any\n>>> as.Date method in the timeDate package (or any other package that does\n>>> not export their as.Date methods) not to be dispatched.\n>>> \n>>> This can be fixed by either exporting any as.Date method in the\n>>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n>>> \n>>> See:\n>>> \n>>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n>>> \n>>> --\n>>> Statistics & Software Consulting\n>>> GKX Group, GKX Associates Inc.\n>>> tel: 1-877-GKX-GROUP\n>>> email: ggrothendieck at gmail.com\n>>> \n>>> _______________________________________________\n>>> Rmetrics-core mailing list\n>>> Rmetrics-core at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>> \n>> \n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>> \n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On 18 oct. 2011, at 15:15, Achim Zeileis wrote:\n\n> Yohan:\n> \n>> Thanks for the message.\n>> \n>> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n> \n> Maybe we should have b",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 3,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-eef5f3329f54",
+      "message_id": "<alpine.DEB.2.02.1110191007240.4325@paninaro.uibk.ac.at>",
+      "from_name": "Achim Zeileis",
+      "from_email_hash": "a3898362d2961a86696818123ed6017299b88343a2280efbcbbd1f340f19d948",
+      "date": "2011-10-19T08:07:36Z",
+      "subject": "as.Date.timeDate",
+      "subject_clean": "as.Date.timeDate",
+      "in_reply_to": "<6D1D6652-9ACB-47C3-AE9E-508D4689C0A0@phys.ethz.ch>",
+      "references": [
+        "<CAP01uRkVjPzktqmxAfL9-avMBCCL4Jz_A8sj4-_fgDzhEK_Czw@mail.gmail.com>",
+        "<930C8019-C7F1-4FD9-87BA-5D0C33923043@phys.ethz.ch>",
+        "<alpine.DEB.2.02.1110181510300.8857@paninaro.uibk.ac.at>",
+        "<6D1D6652-9ACB-47C3-AE9E-508D4689C0A0@phys.ethz.ch>"
+      ],
+      "body_plain": "Yohan,\n\nthanks a lot, much appreciated!\n\nBest wishes,\nAchim\n\n\nOn Wed, 19 Oct 2011, Yohan Chalabi wrote:\n\n>\n> On 18 oct. 2011, at 15:15, Achim Zeileis wrote:\n>\n>> Yohan:\n>>\n>>> Thanks for the message.\n>>>\n>>> As mentioned in the r-sig-finance, timeDate already exports as.Date.timeDate.\n>>\n>> Maybe we should have been more precise in our request: It would be great if \"timeDate\" could fully export \"as.Date.timeDate\" and not only as an S3 method.\n>>\n>>> The problem is really coming from zoo which overwrites the base function as.Date and do not import as.Date methods from other packages.\n>>\n>> Yes, true. However, to make the dependency path not longer than it already is, it would be nice if you could fully export your method. Then it is found by both generics - the one in base R and the one in zoo.\n>>\n>> If you're wondering why zoo masks as.Date(). After zoo had long provided an as.Date.numeric, base R decided to break that by adding their own that requires an additional \"origin\" argument without default. For several year's we worked around this by simply replacing base:::as.Date.numeric in the base NAMESPACE when loading zoo. Then, R-core decided to disallow this workaround and now we have to ship our own generic to assure correct dispatch.\n>\n> Hi Achim,\n>\n> Yes, I remember the as.Date.numeric issue. We had to change many functions in our packages because of that.\n>\n> timeDate will then fully export as.Date.timeDate in its next release.\n>\n> Regards,\n> Yohan\n>\n>\n>>\n>> Thanks & best regards,\n>> Z\n>>\n>>> Regards,\n>>> Yohan\n>>>\n>>> On 14 oct. 2011, at 20:37, Gabor Grothendieck wrote:\n>>>\n>>>> Changes in R have necessitated a change in zoo which results in any\n>>>> as.Date method in the timeDate package (or any other package that does\n>>>> not export their as.Date methods) not to be dispatched.\n>>>>\n>>>> This can be fixed by either exporting any as.Date method in the\n>>>> NAMESPACE file (or by importing zoo in the NAMESPACE file).\n>>>>\n>>>> See:\n>>>>\n>>>> https://stat.ethz.ch/pipermail/r-sig-finance/2011q4/008751.html\n>>>>\n>>>> --\n>>>> Statistics & Software Consulting\n>>>> GKX Group, GKX Associates Inc.\n>>>> tel: 1-877-GKX-GROUP\n>>>> email: ggrothendieck at gmail.com\n>>>>\n>>>> _______________________________________________\n>>>> Rmetrics-core mailing list\n>>>> Rmetrics-core at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>>>\n>>>\n>>> _______________________________________________\n>>> Rmetrics-core mailing list\n>>> Rmetrics-core at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>>\n>>\n>> _______________________________________________\n>> Rmetrics-core mailing list\n>> Rmetrics-core at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>\n>\n>",
+      "body_snippet": "Yohan,\n\nthanks a lot, much appreciated!\n\nBest wishes,\nAchim\n\n\nOn Wed, 19 Oct 2011, Yohan Chalabi wrote:\n\n>\n> On 18 oct. 2011, at 15:15, Achim Zeileis wrote:\n>\n>> Yohan:\n>>\n>>> Thanks for the message.\n",
+      "thread_id": "thread-3ffe651322b6",
+      "thread_depth": 4,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-918c14f8ad4d",
+      "message_id": "<96B53E46-7120-4025-BF20-5F80C8823649@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-10-24T08:53:53Z",
+      "subject": "lag() bug on output units",
+      "subject_clean": "lag() bug on output units",
+      "in_reply_to": "<F19672F7880134439F66EC21316E27F389D2D4@Exch-Mailbox.ors.local>",
+      "references": [
+        "<F19672F7880134439F66EC21316E27F389D2D4@Exch-Mailbox.ors.local>"
+      ],
+      "body_plain": "On 17 oct. 2011, at 12:27, Daniele Amberti wrote:\n\n> # final result gives\n> ##             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0]  ...\n> # but should be\n> ##             S.1[-1]    S.1[0]    S.1[1]   S.2[-1]    S.2[0]  ?\n\nHi Daniele,\n\nThanks for the report,\n\nI have just committed a patch to R-forge that fixes the problem.\n\nRegards,\nYohan\n\n> \n> \n> library(timeSeries) # 2130.92 on R 2.12.2\n> set.seed(1953)\n> data <- matrix(runif(18), ncol = 3)\n> charvec <- rev(paste(\"2009-0\", 1:6, \"-01\", sep = \"\"))\n> S <- timeSeries(data, charvec)\n> colnames(S) <- paste(\"S\", 1:3, sep = \".\")\n> \n> #GMT\n> #                S.1       S.2       S.3\n> #2009-06-01 0.5087459 0.5740212 0.9310609\n> #2009-05-01 0.4770248 0.5736546 0.3990106\n> #2009-04-01 0.1829114 0.5912718 0.8642168\n> #2009-03-01 0.4472982 0.9652389 0.6135854\n> #2009-02-01 0.6602838 0.5931596 0.4981308\n> #2009-01-01 0.2228321 0.2319316 0.2083319\n> \n> lag(S, -1:1)\n> \n> #GMT\n> #             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0] ...\n> #2009-06-01 0.4770248 0.5087459        NA 0.5736546 0.5740212 ...\n> \n> ________________________________\n> \n> ORS Srl\n> \n> Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy\n> Tel. +39 0173 620211\n> Fax. +39 0173 620299 / +39 0173 433111\n> Web Site www.ors.it\n> \n> ------------------------------------------------------------------------------------------------------------------------\n> Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\n> Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\n> e degli eventuali allegati.\n> Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\n> alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "On 17 oct. 2011, at 12:27, Daniele Amberti wrote:\n\n> # final result gives\n> ##             S.1[-1]    S.2[0]    S.3[1]   S.1[-1]    S.2[0]  ...\n> # but should be\n> ##             S.1[-1]    S.1[0]    ",
+      "thread_id": "thread-40f6643e72cc",
+      "thread_depth": 1,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-09afd9273c97",
+      "message_id": "<ACDC50A6-1E6E-4C11-B8E6-1D86C01D7BB4@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-10-24T09:08:22Z",
+      "subject": "invalid names/units created by lag()",
+      "subject_clean": "invalid names/units created by lag()",
+      "in_reply_to": "<F19672F7880134439F66EC21316E27F389EE6F@Exch-Mailbox.ors.local>",
+      "references": [
+        "<F19672F7880134439F66EC21316E27F389EE6F@Exch-Mailbox.ors.local>"
+      ],
+      "body_plain": "On 19 oct. 2011, at 09:09, Daniele Amberti wrote:\n\n> # function lag() on a timeSeries makes syntactically invalid names\n> # when used with other functions from base package  (e.g. merge)\n> # problems arise.\n> # Suggestion is to check units with function make.names().\n> # make.names() restrict freedom on units but ensure compatibility.\n> \n> \n> library(timeSeries) # 2130.92 on R 2.12.2\n> \n> set.seed(1953)\n> \n> data <- matrix(runif(18), ncol = 3)\n> \n> charvec <- rev(paste(\"2009-0\", 1:6, \"-01\", sep = \"\"))\n> \n> S <- timeSeries(data, charvec)\n> \n> colnames(S) <- paste(\"S\", 1:3, sep = \".\")\n> \n> merge(S[,2], lag(S[,1], -1:1))\n> \n\nHi Daniele,\n\nThanks for the report.\n\nYou can find a new version of merge timeSeries method on R-forge which can handle such units.\n\nRegards,\nYohan\n\n> \n> \n> ________________________________\n> \n> ORS Srl\n> \n> Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy\n> Tel. +39 0173 620211\n> Fax. +39 0173 620299 / +39 0173 433111\n> Web Site www.ors.it\n> \n> ------------------------------------------------------------------------------------------------------------------------\n> Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\n> Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\n> e degli eventuali allegati.\n> Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\n> alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "On 19 oct. 2011, at 09:09, Daniele Amberti wrote:\n\n> # function lag() on a timeSeries makes syntactically invalid names\n> # when used with other functions from base package  (e.g. merge)\n> # problems ",
+      "thread_id": "thread-3bf26a93abda",
+      "thread_depth": 1,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-8760077f4990",
+      "message_id": "<01cc9265$Blat.v2.2.2$03df6924@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-10-24T15:53:04Z",
+      "subject": "Package timeDate_2131.00.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2131.00.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2131.00.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.14/).\nR version 2.14.0 beta (2011-10-21 r57374)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2131.00.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-8760077f4990",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-8171a65ae047",
+      "message_id": "<BAY166-W3608D6E05826380E68FB64A4ED0@phx.gbl>",
+      "from_name": "Tom Ruyter",
+      "from_email_hash": "25330db0b38344261d7dce353832da27c5a75c6c266ea914fbc1c541f2a23def",
+      "date": "2011-10-26T15:58:59Z",
+      "subject": "Fgarch R small question",
+      "subject_clean": "Fgarch R small question",
+      "in_reply_to": "<BAY166-W32C8DD25A490266E073915A4ED0@phx.gbl>",
+      "references": [
+        "<BAY166-W32C8DD25A490266E073915A4ED0@phx.gbl>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111026/939d66ca/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111026/939d66ca/attachment.pl>",
+      "thread_id": "thread-8171a65ae047",
+      "thread_depth": 0,
+      "month": "2011-10"
+    },
+    {
+      "id": "msg-03e841c31e90",
+      "message_id": "<003a01cc958c$36e85e60$a4b91b20$@lahmer@fh-vie.ac.at>",
+      "from_name": "Heinrich Lahmer",
+      "from_email_hash": "5b9efa5c7448f2f6892adafa22e19eee3ca10baf5772938a3c84cf6f861a8339",
+      "date": "2011-10-28T16:11:12Z",
+      "subject": "R package fGarch",
+      "subject_clean": "R package fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111028/f96e2515/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111028/f96e2515/attachment.pl>",
+      "thread_id": "thread-03e841c31e90",
+      "thread_depth": 0,
+      "month": "2011-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-929ed03632cd",
+      "subject": "fOptions no longer builds: Fortran error",
+      "message_count": 1,
+      "participants": [
+        "Christophe Dutang"
+      ],
+      "started": "2011-10-03T15:44:54Z",
+      "last_reply": "2011-10-03T15:44:54Z",
+      "root_message_id": "msg-929ed03632cd"
+    },
+    {
+      "id": "thread-13f4eda18e58",
+      "subject": "BUGs - timeSeries package and @Frequency slot",
+      "message_count": 1,
+      "participants": [
+        "Daniele Amberti"
+      ],
+      "started": "2011-10-07T09:01:10Z",
+      "last_reply": "2011-10-07T09:01:10Z",
+      "root_message_id": "msg-13f4eda18e58"
+    },
+    {
+      "id": "thread-24eb7980f230",
+      "subject": "bug in fGarch R contributed package",
+      "message_count": 1,
+      "participants": [
+        "Sutton, Eric K Civ USAF AFMC AFRL/RVBXI"
+      ],
+      "started": "2011-10-12T21:35:44Z",
+      "last_reply": "2011-10-12T21:35:44Z",
+      "root_message_id": "msg-24eb7980f230"
+    },
+    {
+      "id": "thread-3ffe651322b6",
+      "subject": "as.Date.timeDate",
+      "message_count": 9,
+      "participants": [
+        "Achim Zeileis",
+        "Gabor Grothendieck",
+        "Martin Maechler",
+        "Yohan Chalabi"
+      ],
+      "started": "2011-10-14T18:37:36Z",
+      "last_reply": "2011-10-19T08:07:36Z",
+      "root_message_id": "msg-3ffe651322b6"
+    },
+    {
+      "id": "thread-6d8d387ba655",
+      "subject": "Package fCalendar_270.78.3.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-10-16T15:00:12Z",
+      "last_reply": "2011-10-16T15:00:12Z",
+      "root_message_id": "msg-6d8d387ba655"
+    },
+    {
+      "id": "thread-7137ec61e795",
+      "subject": "Package fSeries_270.76.3.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-10-16T15:00:12Z",
+      "last_reply": "2011-10-16T15:00:12Z",
+      "root_message_id": "msg-7137ec61e795"
+    },
+    {
+      "id": "thread-c0fd51eab6ac",
+      "subject": "Package fArma_2100.76.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-10-16T15:00:12Z",
+      "last_reply": "2011-10-16T15:00:12Z",
+      "root_message_id": "msg-c0fd51eab6ac"
+    },
+    {
+      "id": "thread-252f1e7bf028",
+      "subject": "Package fUtilities_2110.78.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-10-16T15:00:13Z",
+      "last_reply": "2011-10-16T15:00:13Z",
+      "root_message_id": "msg-252f1e7bf028"
+    },
+    {
+      "id": "thread-40f6643e72cc",
+      "subject": "lag() bug on output units",
+      "message_count": 2,
+      "participants": [
+        "Daniele Amberti",
+        "Yohan Chalabi"
+      ],
+      "started": "2011-10-17T10:27:59Z",
+      "last_reply": "2011-10-24T08:53:53Z",
+      "root_message_id": "msg-40f6643e72cc"
+    },
+    {
+      "id": "thread-3bf26a93abda",
+      "subject": "invalid names/units created by lag()",
+      "message_count": 2,
+      "participants": [
+        "Daniele Amberti",
+        "Yohan Chalabi"
+      ],
+      "started": "2011-10-19T07:09:13Z",
+      "last_reply": "2011-10-24T09:08:22Z",
+      "root_message_id": "msg-3bf26a93abda"
+    },
+    {
+      "id": "thread-8760077f4990",
+      "subject": "Package timeDate_2131.00.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-10-24T15:53:04Z",
+      "last_reply": "2011-10-24T15:53:04Z",
+      "root_message_id": "msg-8760077f4990"
+    },
+    {
+      "id": "thread-8171a65ae047",
+      "subject": "Fgarch R small question",
+      "message_count": 1,
+      "participants": [
+        "Tom Ruyter"
+      ],
+      "started": "2011-10-26T15:58:59Z",
+      "last_reply": "2011-10-26T15:58:59Z",
+      "root_message_id": "msg-8171a65ae047"
+    },
+    {
+      "id": "thread-03e841c31e90",
+      "subject": "R package fGarch",
+      "message_count": 1,
+      "participants": [
+        "Heinrich Lahmer"
+      ],
+      "started": "2011-10-28T16:11:12Z",
+      "last_reply": "2011-10-28T16:11:12Z",
+      "root_message_id": "msg-03e841c31e90"
+    }
+  ]
+}

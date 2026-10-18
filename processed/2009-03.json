@@ -1,0 +1,136 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-03",
+  "messages": [
+    {
+      "id": "msg-4c2dbe032dba",
+      "message_id": "<42624.68.145.120.255.1235947625.squirrel@68.145.120.255>",
+      "from_name": "mdmorgan at ucalgary.ca",
+      "from_email_hash": "508a8ae8f7b42c16ca3ad0fd19f2dba6309a745a6497550149561fd6a1726409",
+      "date": "2009-03-01T22:47:05Z",
+      "subject": "Error importing with fredSeries in ubuntu 8.04",
+      "subject_clean": "Error importing with fredSeries in ubuntu 8.04",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Sirs,\n\n\nI am currently unable to import any data into R using fredSeries.  I get\nan error message about a problem converting to POSIXct objects.\n\nRunning the command...\nfredSeries(\"DPRIME\")\n\n\nResults in the following error messages...\n\ntrying URL\n'http://research.stlouisfed.org/fred2/series/DPRIME/downloaddata/DPRIME.txt'\nContent type 'text/plain; charset=UTF-8' length 265951 bytes (259 Kb)\nopened URL\n==================================================\ndownloaded 259 Kb\n\nRead 13986 items\nError in as.POSIXct(charvec, format = isoFormat, tz = \"GMT\") :\n  unused argument(s) (format = \"%Y-%m-%d %H:%M:%S\")\nError in fredSeries(\"DPRIME\") :\n  cannot get a slot (\"data\") from an object of type \"character\"\n\n\n\nI am running RKWard which was installed from the standard ubuntu packages\nusing the Synaptic Package Manager.  The only R package installed was\nfImport 290.75 (the \"Include dependencies\" box checked), which was\ninstalled from the CRAN mirror in Canada, BC.\n\nI have no such errors using the Windows binaries of R or fImport.\n\nWhat should I do to enable fredSeries importing?",
+      "body_snippet": "Sirs,\n\n\nI am currently unable to import any data into R using fredSeries.  I get\nan error message about a problem converting to POSIXct objects.\n\nRunning the command...\nfredSeries(\"DPRIME\")\n\n\nResults ",
+      "thread_id": "thread-4c2dbe032dba",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-642889849f38",
+      "message_id": "<20090309150607.19655.qmail@jud.as>",
+      "from_name": "Mrs.Mary Idris",
+      "from_email_hash": "38ad3c64e23a6eea1c0efd62f379ece351f8c622fdda0826d7bb2d0e81b595bb",
+      "date": "2009-03-09T15:06:07Z",
+      "subject": "Charity for the less privileged. 8/03/09.........",
+      "subject_clean": "Charity for the less privileged. 8/03/09.........",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\n\n\nI am Mrs. Mary Idris an aging widow suffering from long time illness. I have some funds I inherited from my late husband, the sum of US$7,300,000.00.\n\n\n\nI need a very honest and God fearing person that will use the fund for God's work to help the Charity and the less privileged and I have mapped out $1,700.000.00 for your personal use in this work. \n\n\n\nPlease if you would be able to use the funds for the Lord's work , kindly reply for further details EMAIL:maryidrisone at yahoo.com\n\n\n\nMrs.Mary Saleh Idris\n\nMime-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: BASE64",
+      "body_snippet": "Hello,\n\n\n\nI am Mrs. Mary Idris an aging widow suffering from long time illness. I have some funds I inherited from my late husband, the sum of US$7,300,000.00.\n\n\n\nI need a very honest and God fearing ",
+      "thread_id": "thread-642889849f38",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-ed1f4b67cefa",
+      "message_id": "<687855.57254.qm@web31902.mail.mud.yahoo.com>",
+      "from_name": "Cheryl Carty",
+      "from_email_hash": "eb1c9bb50c484720559d993b0d2a13ac4c896405d4dd5992f348ffdf4667e82f",
+      "date": "2009-03-09T17:00:01Z",
+      "subject": "timeSeries Package",
+      "subject_clean": "timeSeries Package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl>",
+      "thread_id": "thread-ed1f4b67cefa",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-5412606445c5",
+      "message_id": "<20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>",
+      "from_name": "kh1 at rice.edu",
+      "from_email_hash": "2e06c1238b65601552ab92104a7a3a73ef626f68f2ca70533dfe70ea239274ca",
+      "date": "2009-03-11T03:11:54Z",
+      "subject": "Problem with fGarch",
+      "subject_clean": "Problem with fGarch",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI get the following error when I try to load the fGarch package in R 2.8.0:\n\n> library(fGarch)\nLoading required package: timeDate\nLoading required package: timeSeries\nLoading required package: fBasics\nLoading required package: MASS\nError in importIntoEnv(impenv, impnames, ns, impvars) :\n   object '?dsnig?' is not exported by 'namespace:fBasics'\nIn addition: Warning message:\npackage 'fGarch' was built under R version 2.8.1\nError: package/namespace load failed for 'fGarch'\n\nDo you know how I can fix this?  Thank you.\n\nKam Hamidieh",
+      "body_snippet": "Hello,\n\nI get the following error when I try to load the fGarch package in R 2.8.0:\n\n> library(fGarch)\nLoading required package: timeDate\nLoading required package: timeSeries\nLoading required package:",
+      "thread_id": "thread-5412606445c5",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-0d93a126c8ac",
+      "message_id": "<20090311090430.67cf2e92@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-03-11T08:04:30Z",
+      "subject": "Problem with fGarch",
+      "subject_clean": "Problem with fGarch",
+      "in_reply_to": "<20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>",
+      "references": [
+        "<20090310221154.146521fjib2vs7i8@webmail.mail.rice.edu>"
+      ],
+      "body_plain": ">>>> \"KE\" == kh1 at rice.edu\n>>>> on Tue, 10 Mar 2009 22:11:54 -0500\n\n   KE> Hello,\n   KE>\n   KE> I get the following error when I try to load the fGarch package\n   KE> in R 2.8.0:\n   KE>\n   KE> > library(fGarch)\n   KE> Loading required package: timeDate\n   KE> Loading required package: timeSeries\n   KE> Loading required package: fBasics\n   KE> Loading required package: MASS\n   KE> Error in importIntoEnv(impenv, impnames, ns, impvars) :\n   KE> object '?dsnig?' is not exported by 'namespace:fBasics'\n   KE> In addition: Warning message:\n   KE> package 'fGarch' was built under R version 2.8.1\n   KE> Error: package/namespace load failed for 'fGarch'\n   KE>\n   KE> Do you know how I can fix this?  Thank you.\n   KE>\n   KE> Kam Hamidieh\n\n\nplease update all your packages. \n\nupdate.packages()\n\nBTW you could also update your R installation at the same time.\n\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"KE\" == kh1 at rice.edu\n>>>> on Tue, 10 Mar 2009 22:11:54 -0500\n\n   KE> Hello,\n   KE>\n   KE> I get the following error when I try to load the fGarch package\n   KE> in R 2.8.0:\n   KE>\n   KE> > lib",
+      "thread_id": "thread-5412606445c5",
+      "thread_depth": 1,
+      "month": "2009-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-4c2dbe032dba",
+      "subject": "Error importing with fredSeries in ubuntu 8.04",
+      "message_count": 1,
+      "participants": [
+        "mdmorgan at ucalgary.ca"
+      ],
+      "started": "2009-03-01T22:47:05Z",
+      "last_reply": "2009-03-01T22:47:05Z",
+      "root_message_id": "msg-4c2dbe032dba"
+    },
+    {
+      "id": "thread-642889849f38",
+      "subject": "Charity for the less privileged. 8/03/09.........",
+      "message_count": 1,
+      "participants": [
+        "Mrs.Mary Idris"
+      ],
+      "started": "2009-03-09T15:06:07Z",
+      "last_reply": "2009-03-09T15:06:07Z",
+      "root_message_id": "msg-642889849f38"
+    },
+    {
+      "id": "thread-ed1f4b67cefa",
+      "subject": "timeSeries Package",
+      "message_count": 1,
+      "participants": [
+        "Cheryl Carty"
+      ],
+      "started": "2009-03-09T17:00:01Z",
+      "last_reply": "2009-03-09T17:00:01Z",
+      "root_message_id": "msg-ed1f4b67cefa"
+    },
+    {
+      "id": "thread-5412606445c5",
+      "subject": "Problem with fGarch",
+      "message_count": 2,
+      "participants": [
+        "Yohan Chalabi",
+        "kh1 at rice.edu"
+      ],
+      "started": "2009-03-11T03:11:54Z",
+      "last_reply": "2009-03-11T08:04:30Z",
+      "root_message_id": "msg-5412606445c5"
+    }
+  ]
+}

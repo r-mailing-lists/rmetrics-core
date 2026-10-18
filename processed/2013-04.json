@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-04",
+  "messages": [
+    {
+      "id": "msg-e1112c85f356",
+      "message_id": "<FC1688E897DB268311150AB8AF2B21D0@qdqjfjerliishniqhe.>",
+      "from_name": "Hershel Beck",
+      "from_email_hash": "76f296472b04b10f3fffccbd1df976e25f3c682cb3a6e2ab2816d3845ef5a6bc",
+      "date": "2013-04-21T07:38:43Z",
+      "subject": "Lively Ukrainian girls love to chat with foreign people !",
+      "subject_clean": "Lively Ukrainian girls love to chat with foreign people !",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130421/537ab76b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130421/537ab76b/attachment.pl>",
+      "thread_id": "thread-e1112c85f356",
+      "thread_depth": 0,
+      "month": "2013-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e1112c85f356",
+      "subject": "Lively Ukrainian girls love to chat with foreign people !",
+      "message_count": 1,
+      "participants": [
+        "Hershel Beck"
+      ],
+      "started": "2013-04-21T07:38:43Z",
+      "last_reply": "2013-04-21T07:38:43Z",
+      "root_message_id": "msg-e1112c85f356"
+    }
+  ]
+}

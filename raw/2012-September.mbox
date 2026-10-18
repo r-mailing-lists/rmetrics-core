@@ -1,0 +1,227 @@
+From gaurang.mehta at aviva.com  Fri Sep 14 17:29:40 2012
+From: gaurang.mehta at aviva.com (gaurang.mehta at aviva.com)
+Date: Fri, 14 Sep 2012 16:29:40 +0100
+Subject: fOptions- Error
+Message-ID: <42C99F8A87E4414BB4C297AB63B932380112FC6279EA@SWVLONCUEXDP02.im.root-domain.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl>
+
+From ripley at stats.ox.ac.uk  Mon Sep 17 09:26:01 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 17 Sep 2012 08:26:01 +0100
+Subject: Fwd: CRAN packages calling .Fortran("dqrls")
+In-Reply-To: <50519F72.90603@stats.ox.ac.uk>
+References: <50519F72.90603@stats.ox.ac.uk>
+Message-ID: <5056D089.5020304@stats.ox.ac.uk>
+
+This also applies to fArma, which buried the problem in a unit test. 
+Now that the entry point has been removed, it gives
+
+   fArma unit testing - 24 test functions, 1 error, 0 failures
+   ERROR in test.hurstFit: Error in .Fortran("dqrls", qr = t, n = nrx, p 
+= ncx, y = as.matrix(y),  :
+     "dqrls" not available for .Fortran() for package "base"
+
+-------- Original Message --------
+Subject: CRAN packages calling .Fortran("dqrls")
+Date: Thu, 13 Sep 2012 09:55:14 +0100
+From: Prof Brian Ripley <ripley at stats.ox.ac.uk>
+
+This concerns CRAN packages
+
+CNVassoc NBPSeq ade4 anm arm glm2 haplo.stats
+
+These call .Fortran("dqrls", PACKAGE = "base").  This is no longer used
+by R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy
+
+'CRAN packages should use only the public API.  Hence they should not 
+use entry points not declared as API in installed headers nor 
+.Internal() nor .Call() etc calls to base packages. Such usages can 
+cause packages to break at any time, even in patched versions of R.'
+
+does not allow it.
+
+Please use the public lm.fit() or lm.wfit() instead.
+
+We need a corrected update before Sept 28 taking into account any other
+issues shown in the CRAN check logs (via cran.r-project.org/package=name
+for 'name' of your package) or the package will need to be archived.
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From Uwe.Ligges at r-project.org  Mon Sep 17 10:35:30 2012
+From: Uwe.Ligges at r-project.org (Uwe.Ligges at r-project.org)
+Date: Mon, 17 Sep 2012 10:35:30 +0200
+Subject: Package fUnitRoots_2100.76.tar.gz has been checked and built
+Message-ID: <01cd94af$Blat.v2.2.2$65559058@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUnitRoots_2100.76.tar.gz has been built (if working) and checked for Windows.
+Please check the log files and (if working) the binary package at:
+http://win-builder.r-project.org/TM0dQIoBP68R
+The files will be removed after roughly 72 hours.
+Installation time in seconds: 23
+Check time in seconds: 184
+Check result: WARNING
+R version 2.15.1 (2012-06-22)
+ 
+All the best,
+Uwe Ligges
+(CRAN maintainer of binary packages for Windows)
+
+
+From yohan.chalabi at rmetrics.org  Mon Sep 17 17:25:41 2012
+From: yohan.chalabi at rmetrics.org (Yohan Chalabi)
+Date: Mon, 17 Sep 2012 17:25:41 +0200
+Subject: CRAN packages calling .Fortran("dqrls")
+In-Reply-To: <5056D089.5020304@stats.ox.ac.uk>
+References: <50519F72.90603@stats.ox.ac.uk> <5056D089.5020304@stats.ox.ac.uk>
+Message-ID: <55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>
+
+Thank you for the notification.
+
+Please find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.
+
+I have also changed the maintainer email address to comply with the new CRAN policy.
+
+Kind regards,
+Yohan
+
+On Sep 17, 2012, at 9:26 AM, Prof Brian Ripley wrote:
+
+> This also applies to fArma, which buried the problem in a unit test. Now that the entry point has been removed, it gives
+> 
+>  fArma unit testing - 24 test functions, 1 error, 0 failures
+>  ERROR in test.hurstFit: Error in .Fortran("dqrls", qr = t, n = nrx, p = ncx, y = as.matrix(y),  :
+>    "dqrls" not available for .Fortran() for package "base"
+> 
+> -------- Original Message --------
+> Subject: CRAN packages calling .Fortran("dqrls")
+> Date: Thu, 13 Sep 2012 09:55:14 +0100
+> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>
+> 
+> This concerns CRAN packages
+> 
+> CNVassoc NBPSeq ade4 anm arm glm2 haplo.stats
+> 
+> These call .Fortran("dqrls", PACKAGE = "base").  This is no longer used
+> by R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy
+> 
+> 'CRAN packages should use only the public API.  Hence they should not use entry points not declared as API in installed headers nor .Internal() nor .Call() etc calls to base packages. Such usages can cause packages to break at any time, even in patched versions of R.'
+> 
+> does not allow it.
+> 
+> Please use the public lm.fit() or lm.wfit() instead.
+> 
+> We need a corrected update before Sept 28 taking into account any other
+> issues shown in the CRAN check logs (via cran.r-project.org/package=name
+> for 'name' of your package) or the package will need to be archived.
+> 
+> -- 
+> Brian D. Ripley,                  ripley at stats.ox.ac.uk
+> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+> University of Oxford,             Tel:  +44 1865 272861 (self)
+> 1 South Parks Road,                     +44 1865 272866 (PA)
+> Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+
+From ripley at stats.ox.ac.uk  Mon Sep 17 18:00:43 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 17 Sep 2012 17:00:43 +0100
+Subject: CRAN packages calling .Fortran("dqrls")
+In-Reply-To: <55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>
+References: <50519F72.90603@stats.ox.ac.uk> <5056D089.5020304@stats.ox.ac.uk>
+	<55117BBB-E3A6-4014-9510-D4FE59DC25AC@phys.ethz.ch>
+Message-ID: <5057492B.901@stats.ox.ac.uk>
+
+On 17/09/2012 16:25, Yohan Chalabi wrote:
+> Thank you for the notification.
+>
+> Please find a new version of fArma (fArma_2160.78.tar.gz) without the mentioned external .Fortran call.
+>
+> I have also changed the maintainer email address to comply with the new CRAN policy.
+
+Thanks, on CRAN now.
+
+> Kind regards,
+> Yohan
+>
+> On Sep 17, 2012, at 9:26 AM, Prof Brian Ripley wrote:
+>
+>> This also applies to fArma, which buried the problem in a unit test. Now that the entry point has been removed, it gives
+>>
+>>   fArma unit testing - 24 test functions, 1 error, 0 failures
+>>   ERROR in test.hurstFit: Error in .Fortran("dqrls", qr = t, n = nrx, p = ncx, y = as.matrix(y),  :
+>>     "dqrls" not available for .Fortran() for package "base"
+>>
+>> -------- Original Message --------
+>> Subject: CRAN packages calling .Fortran("dqrls")
+>> Date: Thu, 13 Sep 2012 09:55:14 +0100
+>> From: Prof Brian Ripley <ripley at stats.ox.ac.uk>
+>>
+>> This concerns CRAN packages
+>>
+>> CNVassoc NBPSeq ade4 anm arm glm2 haplo.stats
+>>
+>> These call .Fortran("dqrls", PACKAGE = "base").  This is no longer used
+>> by R >=2.15.1 and will be removed shortly.  In any case, the CRAN policy
+>>
+>> 'CRAN packages should use only the public API.  Hence they should not use entry points not declared as API in installed headers nor .Internal() nor .Call() etc calls to base packages. Such usages can cause packages to break at any time, even in patched versions of R.'
+>>
+>> does not allow it.
+>>
+>> Please use the public lm.fit() or lm.wfit() instead.
+>>
+>> We need a corrected update before Sept 28 taking into account any other
+>> issues shown in the CRAN check logs (via cran.r-project.org/package=name
+>> for 'name' of your package) or the package will need to be archived.
+>>
+>> --
+>> Brian D. Ripley,                  ripley at stats.ox.ac.uk
+>> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+>> University of Oxford,             Tel:  +44 1865 272861 (self)
+>> 1 South Parks Road,                     +44 1865 272866 (PA)
+>> Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+>>
+>> _______________________________________________
+>> Rmetrics-core mailing list
+>> Rmetrics-core at r-project.org
+>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>>
+>
+
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From gaurang.mehta at aviva.com  Tue Sep 18 18:14:11 2012
+From: gaurang.mehta at aviva.com (gaurang.mehta at aviva.com)
+Date: Tue, 18 Sep 2012 17:14:11 +0100
+Subject: fOptions - Library Question
+Message-ID: <42C99F8A87E4414BB4C297AB63B932380112FC709101@SWVLONCUEXDP02.im.root-domain.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl>
+

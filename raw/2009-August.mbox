@@ -1,0 +1,53 @@
+From matthieu.stigler at gmail.com  Fri Aug 14 10:18:06 2009
+From: matthieu.stigler at gmail.com (Matthieu Stigler)
+Date: Fri, 14 Aug 2009 10:18:06 +0200
+Subject: man page of skewness {fUtilities}
+Message-ID: <111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>
+
+Hi
+I guess there is a \ missing in skewness {fUtilities} - see also section
+
+bests
+
+Mat
+
+
+From chalabi at phys.ethz.ch  Fri Aug 14 16:54:01 2009
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 14 Aug 2009 16:54:01 +0200
+Subject: man page of skewness {fUtilities}
+In-Reply-To: <111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>
+References: <111060c20908140118r651b21du783d3ea08ccbb6cb@mail.gmail.com>
+Message-ID: <20090814165401.0463949c@mimi>
+
+>>>> "MS" == Matthieu Stigler <matthieu.stigler at gmail.com>
+>>>> on Fri, 14 Aug 2009 10:18:06 +0200
+
+   MS> Hi
+   MS> I guess there is a \ missing in skewness {fUtilities} - see
+   MS> also section
+   MS>
+   MS> bests
+   MS>
+   MS> Mat
+   MS>
+   MS> _______________________________________________
+   MS> Rmetrics-core mailing list
+   MS> Rmetrics-core at r-project.org
+   MS> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+Thanks Matthieu to point this out.
+
+regards,
+Yohan
+
+
+-- 
+PhD student
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+

@@ -1,0 +1,66 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2016-12",
+  "messages": [
+    {
+      "id": "msg-0f4443e84a32",
+      "message_id": "<003501d24bda$4befdbd0$e3cf9370$@ac.me>",
+      "from_name": "Julija Cerovic Smolovic",
+      "from_email_hash": "21b90e829f72d5c03874dd0132ab780f72ad344f3bdd5e6fa52405511f4e38d4",
+      "date": "2016-12-01T13:53:29Z",
+      "subject": "fGarch package",
+      "subject_clean": "fGarch package",
+      "in_reply_to": "<22564.41978.574630.528854@stat.math.ethz.ch>",
+      "references": [
+        "<12c61fac7b40fc8e74f5ea26e40d5ffd@ac.me>",
+        "<22564.41978.574630.528854@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Dear Tobias,\n\nI need to model my data by FIAPARCH and HYGARCH model for academic reasons\n(writing paper for an academic journal), so I wanted to ask you if there is\nany possibility to include these models in package fGarch. You noted in pdf\nmanual of this package that garchOxFit is no longer part of fGarch package,\nand if interested to use, to contact you.\n\nI hope you will respond me in a reasonable time.\n\nThank you in advance.\n\nBest regards,\nJulija Cerovic Smolovic\nUniversity of Montenegro\nFaculty of Economics\nPodgorica\n Jovana Tomasevica 37\n\n\n\n-----Original Message-----\nFrom: Martin Maechler [mailto:maechler at stat.math.ethz.ch] \nSent: Thursday, November 10, 2016 5:45 PM\nTo: julija\nCc: yohan.chalabi at rmetrics.org; Tobias Setz; Rmetrics-core at r-project.org\nSubject: Re: fGarch package\n\nDear Julija,\n\nDiethelm tragically died much too early, this summer.\n--> https://www.rmetrics.org/obituary\n\nTobias Setz (in CC), Ph.D. student of Diethelm, has been the main maintainer\nof the \"core\" R-metrics packages recently.\nI assume he will answer you.\n\nBest regards,\nMartin Maechler,\nETH Zurich\n\n\nPS:\n\n@Tobias, I have added you to the Rmetrics-core  mailing list.\n\n@Yohan: You are *not* part of the Rmetrics-core list.\n \tI can add you too.  Do you want to ?\n\n@Andrew Ellis:  Are you getting these e-mail?  Do you want to\n\t\tstay on the list ?\n\n>>>>> julija  <julija at ac.me>\n>>>>>     on Thu, 10 Nov 2016 13:36:33 +0100 writes:\n\n    > Dear Yohan, Deathelm and Rmetrics Core Team,\n    > I need to model my data by FIAPARCH and HYGARCH model for academic \n    > reasons (writing paper for an academic journal), so I wanted to ask\nyou \n    > if there is any possibility to include these models in package fGarch.\n\n    > You noted in pdf manual of this package that garchOxFit is no longer \n    > part of fGarch package, and if interested to use, to contact you.\n\n    > I hope you will respond me in a reasonable time.\n\n    > Thank you in advance.\n\n    > Best regards,\n    > Julija Cerovic Smolovic\n    > University of Montenegro\n    > Faculty of Economics\n    > Podgorica\n    > Jovana Tomasevica 37\n\n    > _______________________________________________\n    > Rmetrics-core mailing list\n    > Rmetrics-core at r-project.org\n    > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n\n\n---\nOva e-po?ta je provjerena na viruse Avast protuvirusnim programom.\nhttps://www.avast.com/antivirus",
+      "body_snippet": "Dear Tobias,\n\nI need to model my data by FIAPARCH and HYGARCH model for academic reasons\n(writing paper for an academic journal), so I wanted to ask you if there is\nany possibility to include these mo",
+      "thread_id": "thread-0f4443e84a32",
+      "thread_depth": 0,
+      "month": "2016-12"
+    },
+    {
+      "id": "msg-dde96548a2c8",
+      "message_id": "<2ac512b2.5e00.158d74bed71.Coremail.xianbeiao@vip.163.com>",
+      "from_name": "xianbeiao at vip.163.com",
+      "from_email_hash": "cfa947443dd23d3a0c162417acdbf2c2ad3ff05d472d0462f2363ee101d0c704",
+      "date": "2016-12-08T03:00:00Z",
+      "subject": "inquiry",
+      "subject_clean": "inquiry",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Sir / Madam,\n\n\n     We are  Xi'an BeiAo Co.,LTD  in China . According to the  demands of the market, our customers are interested in your products and want to buy them. If you also have the same interests, please send me your catalogue, document and the  prices of your products for reference. So we could refer to and order them.\n\n\n     Looking forward to your reply as soon as possible .   \n\n\nThanks & Best Regards ,\nPurchasing Department\nCathy\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir / Madam,\n\n\n     We are  Xi'an BeiAo Co.,LTD  in China . According to the  demands of the market, our customers are interested in your products and want to buy them. If you also have the same ",
+      "thread_id": "thread-dde96548a2c8",
+      "thread_depth": 0,
+      "month": "2016-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0f4443e84a32",
+      "subject": "fGarch package",
+      "message_count": 1,
+      "participants": [
+        "Julija Cerovic Smolovic"
+      ],
+      "started": "2016-12-01T13:53:29Z",
+      "last_reply": "2016-12-01T13:53:29Z",
+      "root_message_id": "msg-0f4443e84a32"
+    },
+    {
+      "id": "thread-dde96548a2c8",
+      "subject": "inquiry",
+      "message_count": 1,
+      "participants": [
+        "xianbeiao at vip.163.com"
+      ],
+      "started": "2016-12-08T03:00:00Z",
+      "last_reply": "2016-12-08T03:00:00Z",
+      "root_message_id": "msg-dde96548a2c8"
+    }
+  ]
+}

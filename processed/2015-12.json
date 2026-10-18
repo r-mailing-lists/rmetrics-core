@@ -1,0 +1,36 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2015-12",
+  "messages": [
+    {
+      "id": "msg-251576c3edb3",
+      "message_id": "<201512141337.tBEDbcG9009242@hypatia.math.ethz.ch>",
+      "from_name": "828-434-1336",
+      "from_email_hash": "a6804ad951804c7215c63e73bac542ca6d7b632417d9a53c38ec24060cbb387e",
+      "date": "2015-12-14T13:30:43Z",
+      "subject": "4 pgs hFax from 828-434-1336",
+      "subject_clean": "4 pgs hFax from 828-434-1336",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Ref: 2XL1G2GB8O \n\nSender Number: 828-434-1336\n\nDate and time: 14.12.2015\n\nReview this fax using your MS Office. \n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: 2XL1G2GB8O.doc\nType: application/msword\nSize: 265216 bytes\nDesc: Attached file: 2XL1G2GB8O.doc\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20151214/ba659109/attachment-0001.doc>",
+      "body_snippet": "Ref: 2XL1G2GB8O \n\nSender Number: 828-434-1336\n\nDate and time: 14.12.2015\n\nReview this fax using your MS Office. \n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: 2XL",
+      "thread_id": "thread-251576c3edb3",
+      "thread_depth": 0,
+      "month": "2015-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-251576c3edb3",
+      "subject": "4 pgs hFax from 828-434-1336",
+      "message_count": 1,
+      "participants": [
+        "828-434-1336"
+      ],
+      "started": "2015-12-14T13:30:43Z",
+      "last_reply": "2015-12-14T13:30:43Z",
+      "root_message_id": "msg-251576c3edb3"
+    }
+  ]
+}

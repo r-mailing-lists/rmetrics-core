@@ -1,0 +1,375 @@
+From spencer.graves at pdf.com  Tue Dec  4 04:25:18 2007
+From: spencer.graves at pdf.com (Spencer Graves)
+Date: Mon, 03 Dec 2007 19:25:18 -0800
+Subject: Dickey-Fuller?
+In-Reply-To: <de92c5c08e45.4753d77c@gsb.uchicago.edu>
+References: <5e0e195e21f8.5e21f85e0e19@gsb.uchicago.edu>
+	<470F4916.5070209@pdf.com> <f60ca7307493.47134dc1@gsb.uchicago.edu>
+	<4714DFF3.2040406@pdf.com> <e13be2fb4f80.471729c8@gsb.uchicago.edu>
+	<472D19E0.6050601@pdf.com> <de79c7855843.472ef67b@gsb.uchicago.edu>
+	<4731DF16.7090406@pdf.com> <f609ede64f1e.4731d5cb@gsb.uchicago.edu>
+	<473233B7.6070405@pdf.com> <df4d9b7b1dd5.4731ee7b@gsb.uchicago.edu>
+	<47373977.6060109@pdf.com> <f614dacfaa19.4739d3a5@gsb.uchicago.edu>
+	<4741B687.5060201@pdf.com> <f60ab2ca8a1c.474168f9@gsb.uchicago.edu>
+	<474646B6.2020804@pdf.com> <f60aafaee780.4746a31b@gsb.uchicago.edu>
+	<4746FD69.1020007@pdf.com> <f60ae369eff1.4746dfa5@gsb.uchicago.edu>
+	<47474F0B.2010503@pdf.com> <debd93ffdfe1.47475384@gsb.uchicago.edu>
+	<47531DCD.1000705@pdf.com> <de92c5c08e45.4753d77c@gsb.uchicago.edu>
+Message-ID: <4754C89E.4090209@pdf.com>
+
+Hello, Kurt, Bernhard, Diethelm, and Javier: 
+
+      Can you help me find an R match for the S-Plus Finmetrics 
+'unitroot' results below for the Augmented Dickey-Fuller test?  This 
+will become part of the "FinTS" package companion to Tsay (2005) 
+Analysis of Financial Time Series, 2nd ed. (Wiley).  This example is 
+discussed on pp. 69-71 of Tsay (2005).  I'm writing to you, because you 
+are the (primary) maintainers for packages with Augmented Dickey-Fuller 
+functions, and I've so far been unable to replicate the 'unitroot' 
+results.  Below please find my best guess so far of how I should use 
+your functions, none of which produce answers sufficiently close to 
+'unitroot' to convince me I knew what I was doing. 
+
+      Any help you can give me will be greatly appreciated. 
+      Spencer Graves
+##################################
+##
+## 1.  Get the data
+##
+FinTS.url <- "http://gsbwww.uchicago.edu/fac/ruey.tsay/teaching/fts2/"
+gdpFile <- paste(FinTS.url, "q-gdp4703.txt", sep="")
+gdp. <- read.table(gdpFile)
+gdp <- log(gdp.[, 3])
+
+##
+## 2.  Try to replicate the analysis
+##
+
+library(tseries)
+(adf.e.gdp <- adf.test(gdp, alternative="explosive", k=10))
+#Dickey-Fuller = -0.9741, Lag order = 10, p-value = 0.05918
+
+library(urca)
+summary(ur.d.gdp <- ur.df(gdp, lags=10))
+# statistic = 2.262, between 1 and 5% levels
+
+library(fUnitRoots)
+(fadf.c.gdp <- adfTest(gdp, lags=10))
+# ADF = 2.262, p-value = 0.99
+
+library(uroot)
+(ADF.d.l.gdp <- ADF.test(gdp, c(1,0,0),
+                        selectlags=list(mode="signif", Pmax=10)))
+#Error in switch(selectlags[[1]], aic = selP <- selPabic(lmdet = lmdf, 
+#  argument is missing, with no default
+##################################
+Ruey S. Tsay ,(Faculty) wrote:
+> Hi Spencer:
+>
+> GDP = ln(x), where x is the column three of the data file "q-gdp4703.txt". 
+> The test result may depend onthe way people treat the order and constant term. 
+> If you print out more information from R, you may be able to find the difference.
+>
+> Ruey
+>
+>
+> Below is the output I got from S-Plus. [I did it this morning.]
+>   
+>> x=read.table("q-gdp4703.txt")
+>> gdp=log(x[,3])
+>>     
+>
+>   
+>> m=unitroot(gdp,trend='c',method='adf',lags=10)
+>> summary(m)
+>>     
+>
+> Test for Unit Root: Augmented DF Test
+>
+> Null Hypothesis: there is a unit root
+>    Type of Test: t-test
+>  Test Statistic: -1.131
+>         P-value: 0.7038
+>
+> Coefficients:
+>            Value Std. Error t value Pr(>|t|)
+>     lag1 -0.0006  0.0006    -1.1306  0.2595
+>     lag2  0.3797  0.0679     5.5946  0.0000
+>     lag3  0.1866  0.0719     2.5940  0.0102
+>     lag4 -0.1056  0.0730    -1.4474  0.1493
+>     lag5  0.0287  0.0728     0.3938  0.6942
+>     lag6 -0.1535  0.0718    -2.1376  0.0337
+>     lag7  0.0790  0.0725     1.0896  0.2772
+>     lag8  0.0685  0.0718     0.9550  0.3407
+>     lag9 -0.1006  0.0709    -1.4187  0.1575
+>    lag10  0.1798  0.0656     2.7405  0.0067
+> constant  0.0123  0.0048     2.5654  0.0110
+>
+> Regression Diagnostics:
+>
+>          R-Squared 0.2831
+> Adjusted R-Squared 0.2485
+> Durbin-Watson Stat 2.0265
+>
+> Residual standard error: 0.009498 on 214 degrees of freedom
+> F-statistic: 8.175 on 10 and 207 degrees of freedom, the p-value is 4.078e-11
+>
+>
+
+
+From javlacalle at yahoo.es  Tue Dec  4 09:23:15 2007
+From: javlacalle at yahoo.es (=?iso-8859-1?q?Javier=20L=F3pez=20de=20Lacalle=20Beltr=E1n=20de=20Heredia?=)
+Date: Tue, 4 Dec 2007 09:23:15 +0100 (CET)
+Subject: Dickey-Fuller?
+In-Reply-To: <4754C89E.4090209@pdf.com>
+Message-ID: <838387.22492.qm@web23309.mail.ird.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/ac68d56c/attachment.pl 
+
+From cgauthron at yahoo.com  Wed Dec  5 03:13:42 2007
+From: cgauthron at yahoo.com (Christophe Gauthron)
+Date: Tue, 4 Dec 2007 18:13:42 -0800 (PST)
+Subject: unit root test 'urppTest' with no intercept
+Message-ID: <332037.11317.qm@web30603.mail.mud.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/17a3b12c/attachment.pl 
+
+From eric.thibault at gazdefrance.com  Wed Dec 12 10:02:38 2007
+From: eric.thibault at gazdefrance.com (Eric THIBAULT)
+Date: Wed, 12 Dec 2007 10:02:38 +0100
+Subject: Information fGarch Package R
+Message-ID: <OF6E9C8F98.8607FDA6-ONC12573AF.00306581-C12573AF.0031AE14@notes.edfgdf.fr>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071212/7ccd3217/attachment.pl 
+
+From maechler at stat.math.ethz.ch  Wed Dec 12 10:11:35 2007
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 12 Dec 2007 10:11:35 +0100
+Subject: Rmetrics core status - now with 6 members
+Message-ID: <18271.42439.984151.712380@stat.math.ethz.ch>
+
+Hi,
+this is a bit of a status report (and implicitly an RFC):
+
+With the joining of Kurt and Yohan Chalabi (Physics ETHZ)
+we now have the following members
+
+ 	Achim.Zeileis at wu-wien.ac.at
+	chalabi at phys.ethz.ch
+	edd at debian.org
+	Kurt.Hornik at wu-wien.ac.at
+	maechler at stat.math.ethz.ch
+	wuertz at itp.phys.ethz.ch
+
+Note that
+
+ 1) Rmetrics-core is the listed maintainer of the Rmetrics packages
+
+ 2) is a closed mailing list 
+
+    https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+   - addressable by everyone (including spammers)
+   - but the subscriber list is closed 
+   - the mailing list archives are only open to members
+
+-----------
+
+The idea of "1)" was that not only Diethelm, but also others
+might react to e-mails about the Rmetrics' packages; 
+possibly also taking responsibility for parts of the Rmetrics
+packages, code or docs or testing or ...
+As most of you should know (but it seems is forgotten again and
+again), the Rmetrics packages have been in SVN for close to 2
+years now at
+      https://svn.r-project.org/Rmetrics/
+
+all world-readable.
+Write access can be made on a sub-directory specific basis,
+e.g. Kris Boudt (Ph.D student of Christophe Croux from KU Leuwen) 
+(also was at the Rmetrics workshop on Meielisalp) has recently
+given write-access to 'fGARCH' in order to add a robust version
+of (univariate) garch modelling.
+
+
+Also, for historic reasons, Achim has had write access to
+
+[Rmetrics:/trunk/fCalendar]
+[Rmetrics:/trunk/fEcofin]
+[Rmetrics:/trunk/fBasics]
+[Rmetrics:/trunk/fGARCH]
+
+for a long time, but never used it AFAIK, 
+further, Spencer Graves who had volunteered in the past to work on
+improving documentation (*.Rd) notably examples, but AFAIK has
+also never made use of it.
+Myself, I've also had write access to the above four packages
+and did for a few weeks make extensive of it when fixing an fCalendar bug
+(that was posted and a bit discussed on R-SIG-Finance at the time),
+and introducing the new way of RUnits based 'R CMD check'
+testing.
+
+If I correctly remember my/our chats with Diethelm on this,
+he'd be happy if others took a more active role here.
+He would particularly welcome if someone would take principal
+responsibility for some specific packages.
+
+Currently, svn write access has to go through me,
+where I need an 'htdigest' string for you, in the form
+        <your_user_name>:Rmetrics:<........>
+produced by following instructions at
+https://svn.r-project.org/htdigest.html
+
+Last but not least: The plan *is* to move everything to R-forge
+which will make several of the above considerably more
+transparent and in particular will allow Windows users to install
+development versions of packages.
+
+Martin
+
+
+From maechler at stat.math.ethz.ch  Wed Dec 12 15:12:09 2007
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 12 Dec 2007 15:12:09 +0100
+Subject: Information fGarch Package R
+In-Reply-To: <OF6E9C8F98.8607FDA6-ONC12573AF.00306581-C12573AF.0031AE14@notes.edfgdf.fr>
+References: <OF6E9C8F98.8607FDA6-ONC12573AF.00306581-C12573AF.0031AE14@notes.edfgdf.fr>
+Message-ID: <18271.60473.685365.506042@stat.math.ethz.ch>
+
+Salut Eric,
+
+can you please direct such questions to the  R-SIG-finance
+mailing list?
+
+Rmetrics-core at .. is "just a few individuals" ...
+
+Regards,
+Martin Maechler
+
+>>>>> "ET" == Eric THIBAULT <eric.thibault at gazdefrance.com>
+>>>>>     on Wed, 12 Dec 2007 10:02:38 +0100 writes:
+
+    ET> Hello, I work in a "Gaz de France" research unit and I
+    ET> use the R language for statistical computing .  I have a
+    ET> question about the fGarch package.  Can I fix individual
+    ET> Arma + Garch coefficients in the new fGarch package?
+
+    ET> Thanks for your answer,
+
+    ET> Best regards,
+
+    ET> Eric Thibault [[alternative HTML version deleted]]
+
+    ET> _______________________________________________
+    ET> Rmetrics-core mailing list Rmetrics-core at r-project.org
+    ET> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From maechler at stat.math.ethz.ch  Mon Dec 24 11:37:18 2007
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon, 24 Dec 2007 11:37:18 +0100
+Subject: asMatrix() instead of as.matrix() ??
+Message-ID: <18287.35806.566154.579091@ada-stat.math.ethz.ch>
+
+I just see the new function, an S3 generic  asMatrix()
+with some methods in the "fSeries" commits.
+
+Why that?
+Why don't you define methods for as.matrix() ??
+
+As very  active co-author of the "Matrix" package
+(which defines S4 matrix classes, dense and sparse,
+ all using "Matrix" with an uppercase "M"), I'm particularly 
+puzzled.
+
+as.matrix() is *THE* year-long well-documented S3 generic 
+for defining "traditional" matrices....
+
+??
+
+Apart from that..  Merry Christmas   !!!
+
+Martin
+
+
+From mmiklovic at yahoo.com  Thu Dec 27 13:55:11 2007
+From: mmiklovic at yahoo.com (michal miklovic)
+Date: Thu, 27 Dec 2007 04:55:11 -0800 (PST)
+Subject: possible bug(s) in fGarch
+Message-ID: <786445.746.qm@web50103.mail.re2.yahoo.com>
+
+Hi,
+
+I estimated a garch model and obtained strange and self-contradictory results when I checked the model using the plot function. I ran the following code:
+
+library(fGarch)
+garchmodel <- garchFit (~ arma(0,3) + garch(1,1), data, init.rec="uev",include.mean=FALSE, algorithm="sqp")
+summary(garchmodel)
+plot(garchmodel)
+
+Selections 7 ('Residuals') and 9 ('Standardised Residuals') of the plot function produce the same graph. Other selections appear to use 'Residuals' instead of 'Standardised Residuals', which leads to results contradicting the Standardised Residuals Tests from the model output. For example, the Ljung-Box test for squared standardised residuals does not indicate any remaining garch structure but the selection 11 ('ACF of Squared Standardised Residuals') shows significant autocorrelations at the first four lags. Selections 10 ('ACF of Standardised Residuals') and 13 ('QQ-Plot of Standardised Residuals') are similarly affected. On the other hand, I think the Standardised Residuals Tests are computed from 'Standardised Residuals', which is correct. I enclose the model output and the ACF of Squared Standardised Residuals in attachment.
+
+I would like to point out that the graph from selection 11 ('ACF of Squared Standardised Residuals') has wrong title, the word 'Squared' is missing in the title.
+
+I would also like to ask what is the degree of freedom of the ARCH-LM test. In the model that I estimated the degree of freedom appears to be 12. Is it so? If yes, why did you choose 12? It is a bit too high, in my opinion.
+
+Thank you for your answer.
+
+Best regards
+
+Michal Miklovic
+
+
+
+
+      ____________________________________________________________________________________
+Be a better friend, newshound, and 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071227/a756603d/attachment.html 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ACF of sq standardised resids.pdf
+Type: application/pdf
+Size: 4303 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071227/a756603d/attachment.pdf 
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: model output.txt
+Url: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071227/a756603d/attachment.txt 
+
+From edd at debian.org  Sat Dec 29 23:38:40 2007
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sat, 29 Dec 2007 16:38:40 -0600
+Subject: RUnit test framework
+Message-ID: <18294.52336.376454.262967@ron.nulle.part>
+
+
+I finally got around to studying the nice Unit test framework now in
+Rmetrics, and started to adopt it for RQuantLib.  As my source directories
+often have names like RQuantLib-0.2.8, I needed to another small change in tests/doRUnit.R:
+
+    wd <- getwd()
+    pkg <- sub("\\.Rcheck$", '', basename(dirname(wd))) 	# sub out trailing .Rcheck
+    pkg <- gsub("[0-9.-]*$", '', pkg)				# sub out -0.1.2 number
+
+ie I added that 3rd line to substitute out the '-0.2.8' part --- or else it
+fails.
+
+One quick question:  why do none of the unit tests use the 'checkEquals()'
+framework?
+
+Cheers, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+

@@ -1,0 +1,601 @@
+From etheber at gmx.de  Thu Aug 12 09:52:51 2010
+From: etheber at gmx.de (Thomas Etheber)
+Date: Thu, 12 Aug 2010 09:52:51 +0200
+Subject: timeSeries - Error in cbind function
+Message-ID: <4C63A853.3070300@gmx.de>
+
+Hello,
+
+hopefully I am sending the following bug-report to the correct mail adress.
+I found the following bug, with the cbind function in the timeSeries 
+package.
+Whenever there is just a single data point in the timeSeries the cbind 
+with other timeSeries objects fails.
+
+Regards,
+Thomas
+
+ > library(timeSeries)
+ > a <- timeSeries(1, as.Date(1, origin="2010-01-01") )
+ > a
+GMT
+            TS.1
+2010-01-02    1
+ > b <- timeSeries( 2:3, as.Date(1:2, origin="2010-01-01")  )
+ > b
+GMT
+            TS.1
+2010-01-02    2
+2010-01-03    3
+
+##################################################
+ > cbind(a, b)
+Fehler in cbind(deparse.level, ...) : number of rows must match
+##################################################
+
+ > d <- timeSeries( 2:10, as.Date(2:10, origin="2010-01-01") )
+ > d
+GMT
+            TS.1
+2010-01-03    2
+2010-01-04    3
+2010-01-05    4
+2010-01-06    5
+2010-01-07    6
+2010-01-08    7
+2010-01-09    8
+2010-01-10    9
+2010-01-11   10
+
+ > cbind(b,d)
+GMT
+            TS.1.1 TS.1.2
+2010-01-02      2     NA
+2010-01-03      3      2
+2010-01-04     NA      3
+2010-01-05     NA      4
+2010-01-06     NA      5
+2010-01-07     NA      6
+2010-01-08     NA      7
+2010-01-09     NA      8
+2010-01-10     NA      9
+2010-01-11     NA     10
+ >
+
+
+From chalabi at phys.ethz.ch  Thu Aug 12 11:02:10 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Thu, 12 Aug 2010 11:02:10 +0200
+Subject: timeSeries - Error in cbind function
+In-Reply-To: <4C63A853.3070300@gmx.de>
+References: <4C63A853.3070300@gmx.de>
+Message-ID: <A271CDAB-0A30-4FB2-8810-133399325C0F@phys.ethz.ch>
+
+Hi Thomas,
+
+Thank you for your report.
+
+I have updated the cbind method on R-forge which should fix the issue.
+
+Regards,
+Yohan
+
+On Aug 12, 2010, at 9:52 AM, Thomas Etheber wrote:
+
+> Hello,
+> 
+> hopefully I am sending the following bug-report to the correct mail adress.
+> I found the following bug, with the cbind function in the timeSeries package.
+> Whenever there is just a single data point in the timeSeries the cbind with other timeSeries objects fails.
+> 
+> Regards,
+> Thomas
+> 
+> > library(timeSeries)
+> > a <- timeSeries(1, as.Date(1, origin="2010-01-01") )
+> > a
+> GMT
+>           TS.1
+> 2010-01-02    1
+> > b <- timeSeries( 2:3, as.Date(1:2, origin="2010-01-01")  )
+> > b
+> GMT
+>           TS.1
+> 2010-01-02    2
+> 2010-01-03    3
+> 
+> ##################################################
+> > cbind(a, b)
+> Fehler in cbind(deparse.level, ...) : number of rows must match
+> ##################################################
+> 
+> > d <- timeSeries( 2:10, as.Date(2:10, origin="2010-01-01") )
+> > d
+> GMT
+>           TS.1
+> 2010-01-03    2
+> 2010-01-04    3
+> 2010-01-05    4
+> 2010-01-06    5
+> 2010-01-07    6
+> 2010-01-08    7
+> 2010-01-09    8
+> 2010-01-10    9
+> 2010-01-11   10
+> 
+> > cbind(b,d)
+> GMT
+>           TS.1.1 TS.1.2
+> 2010-01-02      2     NA
+> 2010-01-03      3      2
+> 2010-01-04     NA      3
+> 2010-01-05     NA      4
+> 2010-01-06     NA      5
+> 2010-01-07     NA      6
+> 2010-01-08     NA      7
+> 2010-01-09     NA      8
+> 2010-01-10     NA      9
+> 2010-01-11     NA     10
+> >
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+--
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From marius.hofert at math.ethz.ch  Mon Aug 16 11:21:52 2010
+From: marius.hofert at math.ethz.ch (Marius Hofert)
+Date: Mon, 16 Aug 2010 11:21:52 +0200
+Subject: fGarch: how to use garchFit() in loop?
+Message-ID: <F95EB34F-C5DA-4228-A49B-136744DD4886@math.ethz.ch>
+
+Hallo fGarch expeRts,
+
+Ich wuerde gerne Garch Modelle verschiedener Ordnung in einer Schleife fitten. Was ist bei folgendem Code falsch?
+
+library(fGarch)
+spec <- garchSpec(model = list(alpha = 0.1, beta = c(0.4, 0.4)))
+Xt <- garchSim(spec, n = 100)
+x <- list()
+for(q in 1:3){
+	print(q)
+	x[q] <- list(garchFit(~garch(1,q), data = Xt, trace = FALSE))
+}
+
+Herzliche Gruesse
+
+Marius Hofert
+
+Ps: s. auch http://r.789695.n4.nabble.com/fGarch-how-to-use-garchFit-in-loop-td2326209.html
+
+
+
+ETH Zurich
+Dr. Marius Hofert
+Department of Mathematics
+HG G 37.2
+R?mistrasse 101
+8092 Zurich
+Switzerland
+
+marius.hofert at math.ethz.ch
++41 44 632 24 23 phone
+http://www.math.ethz.ch/~hofertj/
+
+
+From chalabi at phys.ethz.ch  Mon Aug 16 13:09:35 2010
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Mon, 16 Aug 2010 13:09:35 +0200
+Subject: fGarch: how to use garchFit() in loop?
+In-Reply-To: <F95EB34F-C5DA-4228-A49B-136744DD4886@math.ethz.ch>
+References: <F95EB34F-C5DA-4228-A49B-136744DD4886@math.ethz.ch>
+Message-ID: <226C336E-0E0B-4557-8DC6-71421EF19AD1@phys.ethz.ch>
+
+
+On Aug 16, 2010, at 11:21 AM, Marius Hofert wrote:
+
+> Hallo fGarch expeRts,
+> 
+> Ich wuerde gerne Garch Modelle verschiedener Ordnung in einer Schleife fitten. Was ist bei folgendem Code falsch?
+> 
+> library(fGarch)
+> spec <- garchSpec(model = list(alpha = 0.1, beta = c(0.4, 0.4)))
+> Xt <- garchSim(spec, n = 100)
+> x <- list()
+> for(q in 1:3){
+> 	print(q)
+> 	x[q] <- list(garchFit(~garch(1,q), data = Xt, trace = FALSE))
+> }
+
+
+library(fGarch)
+spec <- garchSpec(model = list(alpha = 0.1, beta = c(0.4, 0.4)))
+Xt <- garchSim(spec, n = 100)
+x <- list()
+for(q in 1:3){
+	print(q)
+	x[q] <- list(garchFit(substitute(~garch(1,beta), list(beta =q)) , data = Xt, trace = FALSE))
+}
+
+should do the trick
+
+HTH,
+Yohan
+
+> 
+> Herzliche Gruesse
+> 
+> Marius Hofert
+> 
+> Ps: s. auch http://r.789695.n4.nabble.com/fGarch-how-to-use-garchFit-in-loop-td2326209.html
+> 
+> 
+> 
+> ETH Zurich
+> Dr. Marius Hofert
+> Department of Mathematics
+> HG G 37.2
+> R?mistrasse 101
+> 8092 Zurich
+> Switzerland
+> 
+> marius.hofert at math.ethz.ch
+> +41 44 632 24 23 phone
+> http://www.math.ethz.ch/~hofertj/
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+> 
+
+--
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From hansenfrank at yahoo.com  Thu Aug 19 18:56:38 2010
+From: hansenfrank at yahoo.com (Frank Hansen)
+Date: Thu, 19 Aug 2010 09:56:38 -0700 (PDT)
+Subject: question about scaling for garchSim in R
+Message-ID: <807087.26833.qm@web53702.mail.re2.yahoo.com>
+
+Hi Rmetrics core team,
+
+If I run the default garchFit() to estimate garch(1,1) on dem2gbp (the default data) and then run garchSim() to simulate the dem2gbp data I seem to get very different standard deviations between the original dem2gbp data and the simulated data output from garchSim()
+
+I'm probably doing something dumb, but I've read the docs and the draft of the paper in J. Stat. Software by W\"urtz, Chalabi and Luksan, but I can't figure out how to use the extended output from garchSim() to generate simulated time series with the same characteristics of the data used in garchFit.
+
+Below is my output.
+
+THanks
+
+Frank Hansen
+
+> gf.df <- garchFit()
+
+> gf.df
+Title:
+ GARCH Modelling 
+
+Call:
+ garchFit() 
+
+Mean and Variance Equation:
+ data ~ garch(1, 1)
+ [data = dem2gbp]
+
+Conditional Distribution:
+ norm 
+
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+-0.0061903   0.0107614   0.1531341   0.8059737  
+
+Std. Errors:
+ based on Hessian 
+
+Error Analysis:
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     -0.006190    0.008462   -0.732 0.464447    
+omega   0.010761    0.002838    3.793 0.000149 ***
+alpha1  0.153134    0.026422    5.796  6.8e-09 ***
+beta1   0.805974    0.033381   24.144  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Log Likelihood:
+ -1106.608    normalized:  -0.5605916 
+
+Description:
+ Thu Aug 19 11:42:48 2010 by user:  
+
+> gs.ex.df <- garchSim( garchSpec(gf.df),n=1974, extended=TRUE)
+> head(gs.ex.df)
+GMT
+                   garch       sigma         eps
+2005-03-24  0.0021844729 0.002570202  0.84992253
+2005-03-25  0.0031580105 0.002600374  1.21444479
+2005-03-26  0.0006590028 0.002721554  0.24214205
+2005-03-27 -0.0024301833 0.002639870 -0.92056921
+2005-03-28  0.0046903885 0.002676885  1.75218180
+2005-03-29  0.0001290736 0.002988736  0.04318667
+> sd(dem2gbp)
+  DEM2GBP 
+0.4702445 
+> sd( gs.ex.df)
+       garch        sigma          eps 
+0.0031823660 0.0004845456 1.0008265912
+
+
+From hansenfrank at yahoo.com  Thu Aug 19 19:58:56 2010
+From: hansenfrank at yahoo.com (Frank Hansen)
+Date: Thu, 19 Aug 2010 10:58:56 -0700 (PDT)
+Subject: question about scaling for garchSim in R
+Message-ID: <139095.40504.qm@web53706.mail.re2.yahoo.com>
+
+OK, I think I see that 
+garchSpec(gf.df)
+is not the way to specify the model.
+Thanks.
+
+--- On Thu, 8/19/10, Frank Hansen <hansenfrank at yahoo.com> wrote:
+
+> From: Frank Hansen <hansenfrank at yahoo.com>
+> Subject: question about scaling for garchSim in R
+> To: Rmetrics-core at r-project.org
+> Date: Thursday, August 19, 2010, 11:56 AM
+> Hi Rmetrics core team,
+> 
+> If I run the default garchFit() to estimate garch(1,1) on
+> dem2gbp (the default data) and then run garchSim() to
+> simulate the dem2gbp data I seem to get very different
+> standard deviations between the original dem2gbp data and
+> the simulated data output from garchSim()
+> 
+> I'm probably doing something dumb, but I've read the docs
+> and the draft of the paper in J. Stat. Software by W\"urtz,
+> Chalabi and Luksan, but I can't figure out how to use the
+> extended output from garchSim() to generate simulated time
+> series with the same characteristics of the data used in
+> garchFit.
+> 
+> Below is my output.
+> 
+> THanks
+> 
+> Frank Hansen
+> 
+> > gf.df <- garchFit()
+> 
+> > gf.df
+> Title:
+>  GARCH Modelling 
+> 
+> Call:
+>  garchFit() 
+> 
+> Mean and Variance Equation:
+>  data ~ garch(1, 1)
+>  [data = dem2gbp]
+> 
+> Conditional Distribution:
+>  norm 
+> 
+> Coefficient(s):
+> ? ? ? ? mu? ?
+> ???omega? ? ? alpha1?
+> ? ???beta1? 
+> -0.0061903???0.0107614???0.1531341???0.8059737?
+> 
+> 
+> Std. Errors:
+>  based on Hessian 
+> 
+> Error Analysis:
+> ? ? ? ? Estimate? Std. Error?
+> t value Pr(>|t|)? ? 
+> mu? ???-0.006190? ?
+> 0.008462???-0.732 0.464447? ? 
+> omega???0.010761? ? 0.002838?
+> ? 3.793 0.000149 ***
+> alpha1? 0.153134? ? 0.026422? ?
+> 5.796? 6.8e-09 ***
+> beta1???0.805974? ?
+> 0.033381???24.144? < 2e-16 ***
+> ---
+> Signif. codes:? 0 '***' 0.001 '**' 0.01 '*' 0.05 '.'
+> 0.1 ' ' 1 
+> 
+> Log Likelihood:
+>  -1106.608? ? normalized:? -0.5605916 
+> 
+> Description:
+>  Thu Aug 19 11:42:48 2010 by user:? 
+> 
+> > gs.ex.df <- garchSim( garchSpec(gf.df),n=1974,
+> extended=TRUE)
+> > head(gs.ex.df)
+> GMT
+> ? ? ? ? ? ? ? ?
+> ???garch? ?
+> ???sigma? ? ?
+> ???eps
+> 2005-03-24? 0.0021844729 0.002570202? 0.84992253
+> 2005-03-25? 0.0031580105 0.002600374? 1.21444479
+> 2005-03-26? 0.0006590028 0.002721554? 0.24214205
+> 2005-03-27 -0.0024301833 0.002639870 -0.92056921
+> 2005-03-28? 0.0046903885 0.002676885? 1.75218180
+> 2005-03-29? 0.0001290736 0.002988736? 0.04318667
+> > sd(dem2gbp)
+> ? DEM2GBP 
+> 0.4702445 
+> > sd( gs.ex.df)
+> ? ? ???garch? ? ?
+> ? sigma? ? ? ? ? eps 
+> 0.0031823660 0.0004845456 1.0008265912 
+> 
+> 
+> 
+> 
+> ? ? ? 
+> 
+
+
+
+
+
+From seb_didi at yahoo.com  Fri Aug 20 15:10:10 2010
+From: seb_didi at yahoo.com (Seb Didi)
+Date: Fri, 20 Aug 2010 06:10:10 -0700 (PDT)
+Subject: fPortfolioBacktest
+Message-ID: <188438.89502.qm@web45204.mail.sp1.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100820/a0a60f17/attachment.pl>
+
+From andrew.ellis at rmetrics.org  Tue Aug 24 14:28:57 2010
+From: andrew.ellis at rmetrics.org (Andrew Ellis)
+Date: Tue, 24 Aug 2010 14:28:57 +0200
+Subject: fPortfolioBacktest
+In-Reply-To: <188438.89502.qm@web45204.mail.sp1.yahoo.com>
+References: <188438.89502.qm@web45204.mail.sp1.yahoo.com>
+Message-ID: <FC851AD6-2F4C-4A85-8ABD-6C402E0C038E@rmetrics.org>
+
+Hi S?bastien,
+
+1) Please send corrections to books at rmetrics.org
+
+2) You can download fPortfolioBacktest from Rforge:
+https://r-forge.r-project.org/R/?group_id=156
+
+to install:
+install.packages("fPortfolioBacktest", repos="http://R-Forge.R-project.org")
+
+3) There will be a major update to Portfolio optimisation later this year.
+
+regards,
+Andrew
+
+On 20 Aug 2010, at 15:10, Seb Didi wrote:
+
+> Hello
+> 
+> I have bought and read the ebook Port Optimization with R Metrics and I have 
+> some questions:
+> 
+> 1) Where could I send a list of corrections I found (in the book or in the 
+> programs)?
+> 
+> 2) Where can I find the library fPortfolioBacktesting described in part IV? (it 
+> is not available on Cran or Rmetrics)
+> 
+> 3) When do you plan to make the next ebook "Advanced Portfolio Optim" available?
+> 
+> Thanks in advance
+> Kind regards
+> 
+> S?bastien Dirren
+> 
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From matthieu.stigler at gmail.com  Wed Aug 25 17:18:53 2010
+From: matthieu.stigler at gmail.com (Matthieu Stigler)
+Date: Wed, 25 Aug 2010 17:18:53 +0200
+Subject: Problem with predict(armaFit()) and small series
+Message-ID: <4C75345D.7020809@gmail.com>
+
+hi
+
+There is a problem with the predict method on armaFit()when the series 
+is too small, I guess because of the pre-specified n.ahead and n.back 
+values, see:
+
+ >library(fArma)
+ > l<-armaFit(~arma(1,1), lynx[1:20])
+ > predict(l)
+Error in `[.default`(data, (n - n.back + 1):n) :
+   only 0's may be mixed with negative subscripts
+ > predict(l, n.ahead=1)
+Error in `[.default`(data, (n - n.back + 1):n) :
+   only 0's may be mixed with negative subscripts
+ > predict(l, n.ahead=1, n.back=1)
+Error in `colnames<-`(`*tmp*`, value = c("Low 95", "Low 80", "Forecast",  :
+   attempt to set colnames on object with less than two dimensions
+
+Thanks!
+
+Matthieu
+
+
+From swtzang at gmail.com  Wed Aug 25 23:24:28 2010
+From: swtzang at gmail.com (ShyhWeir Tzang)
+Date: Thu, 26 Aug 2010 05:24:28 +0800
+Subject: ox interface in R
+Message-ID: <AANLkTi=JnvHBqm1cfA4bHetm6i3WywvS0TRfaF7t9eTi@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100826/1d5bf776/attachment.pl>
+
+From matthieu.stigler at gmail.com  Thu Aug 26 17:32:14 2010
+From: matthieu.stigler at gmail.com (Matthieu Stigler)
+Date: Thu, 26 Aug 2010 17:32:14 +0200
+Subject: predict arma: bug when xreg
+Message-ID: <4C7688FE.2020009@gmail.com>
+
+Please see:
+
+LL<-length(lynx)
+mod<-arima(lynx, order=c(1,0,1), xreg=1:LL)
+predict(mod, n.ahead=5, newxreg=(LL+1):(LL+5))
+
+library(fArma)
+modFM<-armaFit(~arima(1,0,1), lynx, xreg=1:LL)
+predict(modFM, n.ahead=5, newxreg=(LL+1):(LL+5))
+
+This comes in my opinion from fact that indeed the argument newxreg is 
+passed explcitely and implicitely (through ...). I see that just removing
+armaPredict.R
+line 202
+     ans = predict(object = fit, n.ahead = n.ahead,
+         newxreg = newxreg, se.fit = se.fit, xreg = xreg, ...)
+
+removing newxreg:
+   if (!exists("newxreg")) newxreg = NULL #remove
+
+
+     ans = predict(object = fit, n.ahead = n.ahead,
+          se.fit = se.fit, xreg = xreg, ...)
+
+seems to solve the bug. I am not sure neither of the utility of having
+   if (!exists("xreg")) xreg = NULL ?
+
+as it seems to be extracted from the x object in stats:::predict.Arima
+
+Best
+
+Matthieu
+
+

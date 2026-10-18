@@ -1,0 +1,693 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-04",
+  "messages": [
+    {
+      "id": "msg-822ed0fc1043",
+      "message_id": "<4BBC5071.3050400@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2010-04-07T09:29:21Z",
+      "subject": "fPortfolio ERRORs (caused by quadprog?)",
+      "subject_clean": "fPortfolio ERRORs (caused by quadprog?)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics team,\n\nfPortfolio is failing under Windows these days:\nIt either crashes or hangs these days under all flavors of R under \ncheck. Please see the CRAN check summaries (R-release results are not \nyet available there), e.g.\nhttp://www.r-project.org/nosvn/R.check/r-prerel-windows-ix86/fPortfolio-00check.html\n\nIt seems to be related to the recent quadprog update. Hence CCing Berwin \nTurlach.\n\nAny ideas?\n\nBest wishes,\nUwe",
+      "body_snippet": "Dear Rmetrics team,\n\nfPortfolio is failing under Windows these days:\nIt either crashes or hangs these days under all flavors of R under \ncheck. Please see the CRAN check summaries (R-release results a",
+      "thread_id": "thread-822ed0fc1043",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-9f1bb84a9040",
+      "message_id": "<20100407213017.5d0a6646@bossiaea>",
+      "from_name": "Berwin A Turlach",
+      "from_email_hash": "dadee490f6d12e6d01d3cf93103992ecce7694d3206df3005df6d69a69ca60a0",
+      "date": "2010-04-07T13:30:17Z",
+      "subject": "fPortfolio ERRORs (caused by quadprog?)",
+      "subject_clean": "fPortfolio ERRORs (caused by quadprog?)",
+      "in_reply_to": "<4BBC5071.3050400@statistik.tu-dortmund.de>",
+      "references": [
+        "<4BBC5071.3050400@statistik.tu-dortmund.de>"
+      ],
+      "body_plain": "G'day all,\n\nOn Wed, 07 Apr 2010 11:29:21 +0200\nUwe Ligges <ligges at statistik.tu-dortmund.de> wrote:\n\n> Dear Rmetrics team,\n> \n> fPortfolio is failing under Windows these days:\n> It either crashes or hangs these days under all flavors of R under \n> check. Please see the CRAN check summaries (R-release results are not \n> yet available there), e.g.\n> http://www.r-project.org/nosvn/R.check/r-prerel-windows-ix86/fPortfolio-00check.html\n> \n> It seems to be related to the recent quadprog update. Hence CCing\n> Berwin Turlach.\n> \n> Any ideas?\n\nThe FORTRAN code in quadprog was modified to return the Lagrangian\nmultipliers too.  I see in fPortfolio's solveRquadprog.R that in the\nfunction .rquadprog the FORTRAN code of quadprog is called directly\ninstead of using quadprog's R interface.  \n\nChanging \n\n    optim = .Fortran(\"qpgen2\",\n        as.double(Dmat),\n        dvec = as.double(dvec),\n        as.integer(n),\n        as.integer(n),\n        sol = as.double(rep(0, n)),\n        crval = as.double(0),\n        as.double(Amat),\n        as.double(bvec),\n        as.integer(n),\n        as.integer(q),\n        as.integer(meq),\n        iact = as.integer(rep(0, q)),\n        nact = as.integer(0),\n        iter = as.integer(rep(0, 2)),\n        work = as.double(work),\n        ierr = as.integer(0),\n        PACKAGE = \"quadprog\")\n\nto\n\n    optim = .Fortran(\"qpgen2\",\n        as.double(Dmat),\n        dvec = as.double(dvec),\n        as.integer(n),\n        as.integer(n),\n        sol = as.double(rep(0, n)),\n\tlagr = as.double(rep(0, q)),   ### here is the change\n        crval = as.double(0),\n        as.double(Amat),\n        as.double(bvec),\n        as.integer(n),\n        as.integer(q),\n        as.integer(meq),\n        iact = as.integer(rep(0, q)),\n        nact = as.integer(0),\n        iter = as.integer(rep(0, 2)),\n        work = as.double(work),\n        ierr = as.integer(0),\n        PACKAGE = \"quadprog\")\n\nshould do the trick.\n\nHTH.\n\nCheers,\n\n\tBerwin",
+      "body_snippet": "G'day all,\n\nOn Wed, 07 Apr 2010 11:29:21 +0200\nUwe Ligges <ligges at statistik.tu-dortmund.de> wrote:\n\n> Dear Rmetrics team,\n> \n> fPortfolio is failing under Windows these days:\n> It either crashes or",
+      "thread_id": "thread-822ed0fc1043",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-13fc08bf8d6e",
+      "message_id": "<9E8CBEC169F6C94D8FFD9E97AC051998010ED6D4@mail.cfr.msstate.edu>",
+      "from_name": "Changyou Sun",
+      "from_email_hash": "8a699d689b83be27bcc1e8b31c526aedb5a9a45fdd80449a21d95f93e7477945",
+      "date": "2010-04-09T16:53:00Z",
+      "subject": "help - garch estimation with exogenouse variables",
+      "subject_clean": "help - garch estimation with exogenouse variables",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100409/11e94661/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100409/11e94661/attachment.pl>",
+      "thread_id": "thread-13fc08bf8d6e",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-3de50627f53f",
+      "message_id": "<alpine.LFD.2.00.1004100758000.19159@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2010-04-10T07:06:38Z",
+      "subject": "fPortfolio calls internals of quadprog which have changed",
+      "subject_clean": "fPortfolio calls internals of quadprog which have changed",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "You will see failures for BLCOP and fPortfolio on the more recent \nentries on the CRAN Package checks at \nhttp://cran.r-project.org/web/checks/check_summary.html\n\nE.g.\n\nhttp://www.r-project.org/nosvn/R.check/r-prerel-linux-x86_64-gcc-fedora/BLCOP-00check.html\nhas\n\n# File \n/data/gannet/tmp/ripley/R/packages/tests-devel/BLCOP.Rcheck/inst/doc/BLCOP.Rnw \n:\nchunk 7\nError in .Fortran(\"qpgen2\", as.double(Dmat), dvec = as.double(dvec), \nas.integer(n), :\nIncorrect number of arguments (16), expecting 17 for qpgen2\n\nThe issue is that fPortfolio is calling the .Fortran entry point in \nquadprog.  This really is not a good idea, so can you\n\n- urgently put out a revision to fPortfolio which addresses this and \ndepends on quadprog >= 1.5-2 (or whatever is needed)\n\n- see if it is possible to work with the API functions in quadprog or \nif not negotiate with Berwin to add an R function wrapper that does \nwhat you need.\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "You will see failures for BLCOP and fPortfolio on the more recent \nentries on the CRAN Package checks at \nhttp://cran.r-project.org/web/checks/check_summary.html\n\nE.g.\n\nhttp://www.r-project.org/nosvn/",
+      "thread_id": "thread-3de50627f53f",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-fd847de4f999",
+      "message_id": "<19393.33845.78845.136207@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-04-11T08:11:33Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainers,\n\nThis concerns the packages\n\n    bayesCGH fRegression\n\nmaintained by one of you, for which R CMD check finds problems in the\n'for missing documentation entries' check, see below for details.\n\nCan we pls have updates fixing these within the next 2 weeks?\n\nNote that other R CMD check problems may need to be addressed as well.\n\nBest\n-k\n\n***********************************************************************\n\nPackage: bayesCGH Version: 0.6 Flavor: r-devel-linux-ix86\nCheck: for missing documentation entries ... WARNING\nUndocumented S4 classes:\n  AssayData\nAll user-level objects in a package (including S4 classes and methods)\nshould have documentation entries.\nSee the chapter 'Writing R documentation files' in manual 'Writing R\nExtensions'.\n\nPackage: fRegression Version: 2100.76 Flavor: r-devel-linux-ix86\nCheck: for missing documentation entries ... WARNING\nUndocumented S4 methods:\n  generic 'summary' and siglist 'sparseMatrix'\nAll user-level objects in a package (including S4 classes and methods)\nshould have documentation entries.\nSee the chapter 'Writing R documentation files' in manual 'Writing R\nExtensions'.",
+      "body_snippet": "Dear maintainers,\n\nThis concerns the packages\n\n    bayesCGH fRegression\n\nmaintained by one of you, for which R CMD check finds problems in the\n'for missing documentation entries' check, see below for ",
+      "thread_id": "thread-fd847de4f999",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-6617d13fec34",
+      "message_id": "<alpine.OSX.1.00.1004131152210.54431@tystie.local>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2010-04-13T10:58:51Z",
+      "subject": "timeDate and date-time classes",
+      "subject_clean": "timeDate and date-time classes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "We are changing some of the internals of date-time classes in R-devel,\nwhich affects people who want to assign to slots of S4 class\n\"POSIXct\".  I've attached a patch for timeDate -- of course\n2.12.0 is months off, but the idea is to cover the changes under\na .POSIXct function.\n\nI notice you use \"GMT\": since that can be confusing (it is used by \nMicrosoft as the name of the UK timezone), \"UTC\" is both clearer and \nmore politically correct.\n\nSince several packages depends directly or indirectly on timeDate we \nwould appreciate an early update for CRAN.\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595\n-------------- next part --------------\ndiff -ru orig/timeDate/R/stats-kurtosis.R timeDate/R/stats-kurtosis.R\n--- orig/timeDate/R/stats-kurtosis.R\t2009-10-24 03:19:11.000000000 +0100\n+++ timeDate/R/stats-kurtosis.R\t2010-04-13 08:35:58.000000000 +0100\n@@ -114,7 +114,7 @@\n     # FUNCTION:\n \n     # Return Value:\n-    structure(kurtosis(unclass(x), ...), class = c(\"POSIXt\", \"POSIXct\"))\n+    structure(kurtosis(unclass(x), ...), class = oldClass(x))\n }\n \n \ndiff -ru orig/timeDate/R/stats-skewness.R timeDate/R/stats-skewness.R\n--- orig/timeDate/R/stats-skewness.R\t2009-10-24 03:19:11.000000000 +0100\n+++ timeDate/R/stats-skewness.R\t2010-04-13 08:35:42.000000000 +0100\n@@ -115,7 +115,7 @@\n     # FUNCTION:\n \n     # Return Value:\n-    structure(skewness(unclass(x), ...), class = c(\"POSIXt\", \"POSIXct\"))\n+    structure(skewness(unclass(x), ...), class = oldClass(x))\n }\n \n \ndiff -ru orig/timeDate/R/timeDate.R timeDate/R/timeDate.R\n--- orig/timeDate/R/timeDate.R\t2009-10-24 03:19:12.000000000 +0100\n+++ timeDate/R/timeDate.R\t2010-04-13 11:35:26.000000000 +0100\n@@ -79,7 +79,6 @@\n \n # ------------------------------------------------------------------------------\n \n-\n setMethod(\"timeDate\", \"character\",\n     function(charvec, format = NULL, zone = \"\", FinCenter = \"\")\n {\n@@ -126,8 +125,10 @@\n \n     # faster to create manually the POSIXct object\n     # num <- structure(num, class = c(\"POSIXt\", \"POSIXct\"))\n-    class(num) <- c(\"POSIXt\", \"POSIXct\")\n-    attr(num, \"tzone\") <- \"GMT\"\n+    # class(num) <- c(\"POSIXt\", \"POSIXct\")\n+    # attr(num, \"tzone\") <- \"GMT\"\n+    num <- if(getRversion() >= \"2.12.0\") .POSIXct(num, \"GMT\") else\n+        structure(num, class = c(\"POSIXt\", \"POSIXct\"), tzone = \"GMT\")\n \n     new(\"timeDate\",\n         Data = num,",
+      "body_snippet": "We are changing some of the internals of date-time classes in R-devel,\nwhich affects people who want to assign to slots of S4 class\n\"POSIXct\".  I've attached a patch for timeDate -- of course\n2.12.0 i",
+      "thread_id": "thread-6617d13fec34",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-1dc0ec1d3751",
+      "message_id": "<20100414091918.79c4ab8b@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-14T07:19:18Z",
+      "subject": "timeDate and date-time classes",
+      "subject_clean": "timeDate and date-time classes",
+      "in_reply_to": "<alpine.OSX.1.00.1004131152210.54431@tystie.local>",
+      "references": [
+        "<alpine.OSX.1.00.1004131152210.54431@tystie.local>"
+      ],
+      "body_plain": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Tue, 13 Apr 2010 11:58:51 +0100 (BST)\n\n   PBR> We are changing some of the internals of date-time classes\n   PBR> in R-devel,\n   PBR> which affects people who want to assign to slots of S4 class\n   PBR> \"POSIXct\".  I've attached a patch for timeDate -- of course\n   PBR> 2.12.0 is months off, but the idea is to cover the changes\n   PBR> under\n   PBR> a .POSIXct function.\n   PBR>\n   PBR> I notice you use \"GMT\": since that can be confusing (it is\n   PBR> used by\n   PBR> Microsoft as the name of the UK timezone), \"UTC\" is both\n   PBR> clearer and\n   PBR> more politically correct.\n   PBR>\n   PBR> Since several packages depends directly or indirectly on\n   PBR> timeDate we\n   PBR> would appreciate an early update for CRAN.\n   PBR>\n   PBR> Brian Ripley\n\nThank you very much for your help !\n\nI have applied your patch and uploaded a new version of timeDate to\nCRAN.\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Tue, 13 Apr 2010 11:58:51 +0100 (BST)\n\n   PBR> We are changing some of the internals of date-time classes\n   PBR> in R-devel,\n   PBR>",
+      "thread_id": "thread-6617d13fec34",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-46e143861564",
+      "message_id": "<20100414092410.7143f4bc@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-14T07:24:10Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": "<19393.33845.78845.136207@fangorn.hornik.net>",
+      "references": [
+        "<19393.33845.78845.136207@fangorn.hornik.net>"
+      ],
+      "body_plain": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>> on Sun, 11 Apr 2010 10:11:33 +0200\n\n   KH> Dear maintainers,\n   KH>\n   KH> This concerns the packages\n   KH>\n   KH> bayesCGH fRegression\n   KH>\n   KH> maintained by one of you, for which R CMD check finds problems\n   KH> in the\n   KH> 'for missing documentation entries' check, see below for\n   KH> details.\n   KH>\n   KH> Can we pls have updates fixing these within the next 2 weeks?\n   KH>\n   KH> Note that other R CMD check problems may need to be addressed\n   KH> as well.\n   KH>\n   KH> Best\n   KH> -k\n   KH> [[...]]\n   KH>\n   KH> Package: fRegression Version: 2100.76 Flavor: r-devel-linux-ix86\n   KH> Check: for missing documentation entries ... WARNING\n   KH> Undocumented S4 methods:\n   KH> generic 'summary' and siglist 'sparseMatrix'\n   KH> All user-level objects in a package (including S4 classes\n   KH> and methods)\n   KH> should have documentation entries.\n   KH> See the chapter 'Writing R documentation files' in manual\n   KH> 'Writing R\n   KH> Extensions'.\n\nHi Kurt,\n\nThanks for your message.\n\nIt looks like methods implemented in Matrix pkg has been saved in the\nwrong S4 method table. Was there any change in R-devel that affect how\nS4 methods are saved ? \n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>> on Sun, 11 Apr 2010 10:11:33 +0200\n\n   KH> Dear maintainers,\n   KH>\n   KH> This concerns the packages\n   KH>\n   KH> bayesCGH fRegression\n   KH>\n",
+      "thread_id": "thread-fd847de4f999",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-a1d3c9fdce48",
+      "message_id": "<19397.39755.813175.92691@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-04-14T10:39:07Z",
+      "subject": "timeDate and date-time classes",
+      "subject_clean": "timeDate and date-time classes",
+      "in_reply_to": "<20100414091918.79c4ab8b@mimi>",
+      "references": [
+        "<alpine.OSX.1.00.1004131152210.54431@tystie.local>",
+        "<20100414091918.79c4ab8b@mimi>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Tue, 13 Apr 2010 11:58:51 +0100 (BST)\n\nPBR> We are changing some of the internals of date-time classes\nPBR> in R-devel,\nPBR> which affects people who want to assign to slots of S4 class\nPBR> \"POSIXct\".  I've attached a patch for timeDate -- of course\nPBR> 2.12.0 is months off, but the idea is to cover the changes\nPBR> under\nPBR> a .POSIXct function.\nPBR> \nPBR> I notice you use \"GMT\": since that can be confusing (it is\nPBR> used by\nPBR> Microsoft as the name of the UK timezone), \"UTC\" is both\nPBR> clearer and\nPBR> more politically correct.\nPBR> \nPBR> Since several packages depends directly or indirectly on\nPBR> timeDate we\nPBR> would appreciate an early update for CRAN.\nPBR> \nPBR> Brian Ripley\n\n> Thank you very much for your help !\n\n> I have applied your patch and uploaded a new version of timeDate to\n> CRAN.\n\nThanks, on CRAN now.\n\nBest\n-k\n\n\n> Regards,\n> Yohan\n\n> -- \n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n\n> www.ethz.ch",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Tue, 13 Apr 2010 11:58:51 +0100 (BST)\n\nPBR> We are changing some of the internals of date-time classes",
+      "thread_id": "thread-6617d13fec34",
+      "thread_depth": 2,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-efcf984888e0",
+      "message_id": "<01cadbc5$Blat.v2.2.2$10438b5c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-14T11:24:36Z",
+      "subject": "Package fImport_2110.79.tar.gz has been built for Windows",
+      "subject_clean": "Package fImport_2110.79.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.1 (2009-12-14)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fImport_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-efcf984888e0",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-52eeb64a2234",
+      "message_id": "<01cadbc5$Blat.v2.2.2$10f3b1fa@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-14T11:24:37Z",
+      "subject": "Package timeDate_2110.88.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2110.88.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2110.88.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.1 (2009-12-14)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2110.88.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-52eeb64a2234",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-f4bac96ed74c",
+      "message_id": "<19397.59493.219273.803649@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2010-04-14T16:08:05Z",
+      "subject": "timeDate and date-time classes",
+      "subject_clean": "timeDate and date-time classes",
+      "in_reply_to": "<19397.39755.813175.92691@fangorn.hornik.net>",
+      "references": [
+        "<alpine.OSX.1.00.1004131152210.54431@tystie.local>",
+        "<20100414091918.79c4ab8b@mimi>",
+        "<19397.39755.813175.92691@fangorn.hornik.net>"
+      ],
+      "body_plain": "The cran2deb autobuilder gets an error on fImport as the lintian checker (for\nthe resulting .deb package) treats the path /usr/local/bin/perl in\n\n     html-to-ascii.pl\n     html-to-rfc.pl\n\nas an error (as lintian can assume /usr/bin/perl on Debian).  \n\nIt's been a decade or two since Perl was mostly in /usr/local/bin -- should\nthis be changed for the next release of fImport? Could you check other\nrMetrics perl scripts?\n\nI'll create a patch for cran2deb for now but it may take a bit til I get to\nthat. \n\nDirk\n\n-- \n  Registration is open for the 2nd International conference R / Finance 2010\n  See http://www.RinFinance.com for details, and see you in Chicago in April!",
+      "body_snippet": "The cran2deb autobuilder gets an error on fImport as the lintian checker (for\nthe resulting .deb package) treats the path /usr/local/bin/perl in\n\n     html-to-ascii.pl\n     html-to-rfc.pl\n\nas an error",
+      "thread_id": "thread-6617d13fec34",
+      "thread_depth": 3,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-ccbe77fc4123",
+      "message_id": "<q2z3f1d2411004140957q8df47d0vab2ad39b41971a32@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2010-04-14T16:57:35Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": "<20100414092410.7143f4bc@mimi>",
+      "references": [
+        "<19393.33845.78845.136207@fangorn.hornik.net>",
+        "<20100414092410.7143f4bc@mimi>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100414/992c55de/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100414/992c55de/attachment.pl>",
+      "thread_id": "thread-fd847de4f999",
+      "thread_depth": 2,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-d371e22438c0",
+      "message_id": "<20100415144759.2a245332@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-15T12:47:59Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": "<q2z3f1d2411004140957q8df47d0vab2ad39b41971a32@mail.gmail.com>",
+      "references": [
+        "<19393.33845.78845.136207@fangorn.hornik.net>",
+        "<20100414092410.7143f4bc@mimi>",
+        "<q2z3f1d2411004140957q8df47d0vab2ad39b41971a32@mail.gmail.com>"
+      ],
+      "body_plain": ">>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n>>>> on Wed, 14 Apr 2010 18:57:35 +0200\n\n   MM> (\"summary\" , \"sparseMatrix\") is indeed a method from the\n   MM> Matrix package.\n   MM>\n   MM> How exactly do you import Matrix (methods)?  Could it be that\n   MM> you should\n   MM> change something there, e.g. if you define \"summary\" methods\n   MM> yourself?\n\nHi Martin,\n\nfRegression does not import any method from Matrix pkg.\n\nI could track down the problem to the call of .get_S4_methods_list\nin undoc().\n\ntools:::.get_S4_methods_list can return methods defined in other\npackage :\n\n\nlibrary(fRegression)\ncode_env <- as.environment(paste(\"package\", \"fRegression\", sep = \":\"))\ntools:::.get_S4_methods_list(\"summary\", code_env)\n\nOne option could be to update tools:::.get_S4_methods_list() with\nsomething like :\n\n\nget_S4_methods_list <- function(g, env) {\n    ## For the QC computations, we really only want the S4 methods\n    ## defined in a package, so we try to exclude derived default\n    ## methods as well as methods inherited from other environments.\n\n    env <- as.environment(env)\n    mlist <- methods::findMethods(g, env)\n\n    ## Derive methods defined in package environment. Note If pkg has no\n    ## namespace, environment name of method is \"\".\n    pkg <- gsub(\"package:\", \"\", environmentName(env))\n    mlist <- Filter(function(m)\n                    (environmentName(environment(m)) %in% c(pkg, \"\") &&\n                     !methods::is(m, \"derivedDefaultMethod\")),\n                    mlist)\n\n    mlist\n}\n\nget_S4_methods_list(\"summary\", code_env)\n\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n>>>> on Wed, 14 Apr 2010 18:57:35 +0200\n\n   MM> (\"summary\" , \"sparseMatrix\") is indeed a method from the\n   MM> Matrix package.\n   MM>\n   M",
+      "thread_id": "thread-fd847de4f999",
+      "thread_depth": 3,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-bb049eb9c55a",
+      "message_id": "<19399.7864.690926.475592@lynne.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2010-04-15T14:12:08Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": "<20100415144759.2a245332@mimi>",
+      "references": [
+        "<19393.33845.78845.136207@fangorn.hornik.net>",
+        "<20100414092410.7143f4bc@mimi>",
+        "<q2z3f1d2411004140957q8df47d0vab2ad39b41971a32@mail.gmail.com>",
+        "<20100415144759.2a245332@mimi>"
+      ],
+      "body_plain": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Thu, 15 Apr 2010 14:47:59 +0200 writes:\n\n    >>>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n    >>>>> on Wed, 14 Apr 2010 18:57:35 +0200\n\n    MM> (\"summary\" , \"sparseMatrix\") is indeed a method from the\n    MM> Matrix package.\n    MM> \n    MM> How exactly do you import Matrix (methods)?  Could it be that\n    MM> you should\n    MM> change something there, e.g. if you define \"summary\" methods\n    MM> yourself?\n\n    YC> Hi Martin,\n\n    YC> fRegression does not import any method from Matrix pkg.\n\n    YC> I could track down the problem to the call of .get_S4_methods_list\n    YC> in undoc().\n\n    YC> tools:::.get_S4_methods_list can return methods defined in other\n    YC> package :\n\n\n    library(fRegression)\n    code_env <- as.environment(paste(\"package\", \"fRegression\", sep = \":\"))\n    str(gml <-  tools:::.get_S4_methods_list(\"summary\", code_env))\n\nHmm, and that returns a single method with \"fREG\" signature for\nme (using R 2.11.0 rc).\nWhat do you get ?\n\n\n    YC> One option could be to update tools:::.get_S4_methods_list() with\n    YC> something like :\n\n> get_S4_methods_list <- function(g, env) {\n>     ## For the QC computations, we really only want the S4 methods\n>     ## defined in a package, so we try to exclude derived default\n>     ## methods as well as methods inherited from other environments.\n\n>     env <- as.environment(env)\n>     mlist <- methods::findMethods(g, env)\n\n>     ## Derive methods defined in package environment. Note If pkg has no\n>     ## namespace, environment name of method is \"\".\n>     pkg <- gsub(\"package:\", \"\", environmentName(env))\n>     mlist <- Filter(function(m)\n>                     (environmentName(environment(m)) %in% c(pkg, \"\") &&\n>                      !methods::is(m, \"derivedDefaultMethod\")),\n>                     mlist)\n\n>     mlist\n> }\n\n> get_S4_methods_list(\"summary\", code_env)",
+      "body_snippet": ">>>>> \"YC\" == Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>>>     on Thu, 15 Apr 2010 14:47:59 +0200 writes:\n\n    >>>>> \"MM\" == Martin Maechler <maechler at stat.math.ethz.ch>\n    >>>>> on Wed, 14 Apr 2",
+      "thread_id": "thread-fd847de4f999",
+      "thread_depth": 4,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-7e6c9c10cd6c",
+      "message_id": "<LTKLA-KLAMAIL1ZmcK800001645@ltkla-klamail1.baltic.dfds.root>",
+      "from_name": "caprice",
+      "from_email_hash": "4694b01863d0084a2024adb384b17b9e74ff96a69fda89dda98ec90e25b739b7",
+      "date": "2010-04-15T17:42:56Z",
+      "subject": "consumer database",
+      "subject_clean": "consumer database",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Trinidad,\n\nContact me at the email address below for a catalog of all our USA lists.\n\nAlso, this week we are offering reduced costs for more than one list.  \n  \n\nRegards,\n\n\nDwight Pugh\nEmail Address: Sonja.Askew at freshnewlists.co.cc\n\n\n\n\nto stop this email in future email us at rembox at freshnewlists.co.cc",
+      "body_snippet": "Trinidad,\n\nContact me at the email address below for a catalog of all our USA lists.\n\nAlso, this week we are offering reduced costs for more than one list.  \n  \n\nRegards,\n\n\nDwight Pugh\nEmail Address: ",
+      "thread_id": "thread-7e6c9c10cd6c",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-d960f3a50ad9",
+      "message_id": "<01cadce3$Blat.v2.2.2$9b65f51c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-15T21:35:45Z",
+      "subject": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.11.0 beta/rc\n(but not the current R-2.10.1). R-2.11.0 will be released on April 22.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.11.0 beta (2010-04-13 r51716)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.11/fPortfolio.Rcheck'\n* using R version 2.11.0 beta (2010-04-13 r51716)\n* using session charset: ISO8859-1\n* checking for file 'fPortfolio/DESCRIPTION' ... OK\n* this is package 'fPortfolio' version '2100.78'\n* checking package name space information ... OK\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fPortfolio' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking whether the name space can be loaded with stated dependencies ... OK\n* checking whether the name space can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking data for non-ASCII characters ... OK\n* checking examples ... ERROR\nRunning examples in 'fPortfolio-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * efficientPortfolio\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: efficientPortfolio\n> ### Title: Efficient Portfolios\n> ### Aliases: efficientPortfolio maxratioPortfolio tangencyPortfolio\n> ###   minriskPortfolio minvariancePortfolio maxreturnPortfolio\n> ### Keywords: models\n> \n> ### ** Examples\n> \n> ## data -\n>    Data = SMALLCAP.RET\n>    Data = Data[, c(\"BKE\", \"GG\", \"GYMB\", \"KRON\")]\n>    Data\nGMT\n                    BKE          GG         GYMB         KRON\n1997-01-31  0.115000002 -0.11764706  0.005464481  0.031250000\n1997-02-28 -0.094170406  0.06666667  0.070652172 -0.174242422\n1997-03-31  0.059405942  0.03125000  0.091370560 -0.357798159\n1997-04-30  0.102803737 -0.12121213  0.030232558  0.228571430\n1997-05-30  0.440677971  0.03448276 -0.097065464  0.209302321\n1997-06-30  0.082352944 -0.05000000 -0.039999999  0.057692308\n1997-07-31  0.032608695 -0.15789473 -0.010416667 -0.109090909\n1997-08-29 -0.021052632  0.00000000  0.031578947  0.107142858\n1997-09-30  0.048387095  0.06250000  0.061224490 -0.046082951\n1997-10-31  0.107692309 -0.13725491 -0.067307696  0.120772950\n1997-11-28  0.217592597 -0.45454547  0.190721646  0.077586204\n1997-12-31  0.041825093  0.29166666 -0.051948052 -0.014000000\n1998-01-30 -0.021897810  0.19354838 -0.036529679  0.010141988\n1998-02-27  0.227611944  0.01351351  0.018957347  0.108433738\n1998-03-31  0.218844980  0.01333333 -0.037209302  0.018115941\n1998-04-30  0.009975063  0.18421052 -0.289855063  0.024911031\n1998-05-29  0.007407407 -0.07777778 -0.139455780 -0.006944444\n1998-06-30 -0.132352948 -0.09638554 -0.041501977  0.013986014\n1998-07-31 -0.182203397 -0.08000000 -0.208247423 -0.041379310\n1998-08-31 -0.186528504 -0.40579709 -0.270833343  0.068345323\n1998-09-30 -0.082802549  1.00000000 -0.142857149 -0.003367003\n1998-10-30  0.006944444 -0.04878049 -0.108333334 -0.027027028\n1998-11-30  0.413793117  0.12820513  0.000000000  0.201388896\n1998-12-31 -0.063414633  0.04545455 -0.046728972  0.024566473\n1999-01-29  0.114583336  0.00000000  0.235294119  0.066290550\n1999-02-26 -0.086448595  0.02173913  0.333333343 -0.104497358\n1999-03-31 -0.079283886  0.02127659 -0.148809522 -0.131462336\n1999-04-30  0.038888890 -0.01041667  0.160839155  0.387755096\n1999-05-28  0.184491977 -0.13684210  0.186746985  0.088694856\n1999-06-30  0.038374718 -0.02439024 -0.147208124  0.229210630\n1999-07-30  0.052173913 -0.10000000 -0.505952358  0.063186817\n1999-08-31 -0.442148775  0.09722222  0.000000000  0.036821704\n1999-09-30  0.022222223  0.32911393  0.325301200 -0.268535823\n1999-10-29 -0.043478262 -0.03809524 -0.063636363  0.223168656\n1999-11-30 -0.060606062 -0.13861387 -0.048543688  0.155988857\n1999-12-31 -0.044354837  0.05747126 -0.081632651  0.156626508\n2000-01-31  0.059071731 -0.17391305 -0.194444448  0.000000000\n2000-02-29 -0.067729086  0.01315789  0.034482758  0.058333334\n2000-03-31  0.102564104  0.24675325 -0.119999997 -0.533464551\n2000-04-28 -0.205426350  0.00000000 -0.121212125  0.084388189\n2000-05-31  0.058536585  0.06250000 -0.224137932 -0.073929958\n2000-06-30 -0.133640558  0.12745099  0.066666670 -0.126050428\n2000-07-31  0.159574464 -0.15652174  0.729166687  0.317307681\n2000-08-31 -0.041284405  0.15463917 -0.048192769  0.091240875\n2000-09-29 -0.110047847 -0.03571429  0.101265825 -0.197324410\n2000-10-31  0.446236551 -0.09259259  0.643678188  0.214583337\n2000-11-30  0.059479553  0.00000000  0.447552443 -0.053173240\n2000-12-29 -0.014035088 -0.01020408  0.072463766 -0.103260867\n2001-01-31  0.166120976  0.01938141  0.036036037  0.282828271\n2001-02-28 -0.083496049  0.06634310 -0.182608694 -0.192125991\n2001-03-30 -0.001065554  0.02276174 -0.148936167 -0.019493178\n2001-04-30  0.079999998  0.29596412 -0.298999965  0.082465172\n2001-05-31 -0.029629648  0.05997688 -0.015691888 -0.037613835\n2001-06-29 -0.038167939  0.17410234  0.231884047  0.250381708\n2001-07-31  0.005291026 -0.09082480 -0.308235288  0.076190449\n2001-08-31  0.052631579  0.10193679  0.326530606  0.107329242\n2001-09-28 -0.174999997  0.07770582 -0.166666687 -0.158811480\n2001-10-31  0.099999979  0.02241378  0.330769181  0.398051172\n2001-11-30  0.101928398 -0.03826529  0.358381569  0.126502842\n2001-12-31  0.114999965  0.07603887  0.015319175  0.122505866\n>    \n> ## spec -\n>    Spec = portfolioSpec()\n>    setTargetReturn(Spec) = mean(colMeans(Data))\n>    Spec\n\nModel List:\t\n Type:                      MV\n Optimize:                  minRisk\n Estimator:                 covEstimator\n Tail Risk:                 list()\n Params:                    alpha = 0.05 a = 1\n\nPortfolio List:\t\n Portfolio Weights:         NA\n Target Return:             0.02430841\n Target Risk:               NA\n Risk-Free Rate:            0\n Number of Frontier Points: 50\n Status:                    NA\n\nOptim List:\t\n Solver:                    solveRquadprog\n Objective:                 list()\n Options:                   meq = 2\n Control:                   list()\n Trace:                     FALSE\n\nMessage List:\t\n List:                      NULL\n>    \n> ## constraints -\n>    Constraints = \"LongOnly\"\n>    Constraints\n[1] \"LongOnly\"\n>    \n> ## efficientPortfolio -\n>    efficientPortfolio(Data, Spec, Constraints)\nError in .Fortran(\"qpgen2\", as.double(Dmat), dvec = as.double(dvec), as.integer(n),  : \n  Incorrect number of arguments (16), expecting 17 for qpgen2\nCalls: efficientPortfolio -> Solver -> .rquadprog -> .Fortran\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-d960f3a50ad9",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-3776f8e49c9d",
+      "message_id": "<01cadd08$Blat.v2.2.2$8ed55753@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-16T02:00:15Z",
+      "subject": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows64/contrib/2.11/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.11.0 beta/rc\n(but not the current R-2.10.1). R-2.11.0 will be released on April 22.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.11.0 beta (2010-04-13 r51716)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local64/2.11/fPortfolio.Rcheck'\n* using R version 2.11.0 beta (2010-04-13 r51716)\n* using session charset: ISO8859-1\n* checking for file 'fPortfolio/DESCRIPTION' ... OK\n* this is package 'fPortfolio' version '2100.78'\n* checking package name space information ... OK\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fPortfolio' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking whether the name space can be loaded with stated dependencies ... OK\n* checking whether the name space can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking data for non-ASCII characters ... OK\n* checking examples ... ERROR\nRunning examples in 'fPortfolio-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * efficientPortfolio\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: efficientPortfolio\n> ### Title: Efficient Portfolios\n> ### Aliases: efficientPortfolio maxratioPortfolio tangencyPortfolio\n> ###   minriskPortfolio minvariancePortfolio maxreturnPortfolio\n> ### Keywords: models\n> \n> ### ** Examples\n> \n> ## data -\n>    Data = SMALLCAP.RET\n>    Data = Data[, c(\"BKE\", \"GG\", \"GYMB\", \"KRON\")]\n>    Data\nGMT\n                    BKE          GG         GYMB         KRON\n1997-01-31  0.115000002 -0.11764706  0.005464481  0.031250000\n1997-02-28 -0.094170406  0.06666667  0.070652172 -0.174242422\n1997-03-31  0.059405942  0.03125000  0.091370560 -0.357798159\n1997-04-30  0.102803737 -0.12121213  0.030232558  0.228571430\n1997-05-30  0.440677971  0.03448276 -0.097065464  0.209302321\n1997-06-30  0.082352944 -0.05000000 -0.039999999  0.057692308\n1997-07-31  0.032608695 -0.15789473 -0.010416667 -0.109090909\n1997-08-29 -0.021052632  0.00000000  0.031578947  0.107142858\n1997-09-30  0.048387095  0.06250000  0.061224490 -0.046082951\n1997-10-31  0.107692309 -0.13725491 -0.067307696  0.120772950\n1997-11-28  0.217592597 -0.45454547  0.190721646  0.077586204\n1997-12-31  0.041825093  0.29166666 -0.051948052 -0.014000000\n1998-01-30 -0.021897810  0.19354838 -0.036529679  0.010141988\n1998-02-27  0.227611944  0.01351351  0.018957347  0.108433738\n1998-03-31  0.218844980  0.01333333 -0.037209302  0.018115941\n1998-04-30  0.009975063  0.18421052 -0.289855063  0.024911031\n1998-05-29  0.007407407 -0.07777778 -0.139455780 -0.006944444\n1998-06-30 -0.132352948 -0.09638554 -0.041501977  0.013986014\n1998-07-31 -0.182203397 -0.08000000 -0.208247423 -0.041379310\n1998-08-31 -0.186528504 -0.40579709 -0.270833343  0.068345323\n1998-09-30 -0.082802549  1.00000000 -0.142857149 -0.003367003\n1998-10-30  0.006944444 -0.04878049 -0.108333334 -0.027027028\n1998-11-30  0.413793117  0.12820513  0.000000000  0.201388896\n1998-12-31 -0.063414633  0.04545455 -0.046728972  0.024566473\n1999-01-29  0.114583336  0.00000000  0.235294119  0.066290550\n1999-02-26 -0.086448595  0.02173913  0.333333343 -0.104497358\n1999-03-31 -0.079283886  0.02127659 -0.148809522 -0.131462336\n1999-04-30  0.038888890 -0.01041667  0.160839155  0.387755096\n1999-05-28  0.184491977 -0.13684210  0.186746985  0.088694856\n1999-06-30  0.038374718 -0.02439024 -0.147208124  0.229210630\n1999-07-30  0.052173913 -0.10000000 -0.505952358  0.063186817\n1999-08-31 -0.442148775  0.09722222  0.000000000  0.036821704\n1999-09-30  0.022222223  0.32911393  0.325301200 -0.268535823\n1999-10-29 -0.043478262 -0.03809524 -0.063636363  0.223168656\n1999-11-30 -0.060606062 -0.13861387 -0.048543688  0.155988857\n1999-12-31 -0.044354837  0.05747126 -0.081632651  0.156626508\n2000-01-31  0.059071731 -0.17391305 -0.194444448  0.000000000\n2000-02-29 -0.067729086  0.01315789  0.034482758  0.058333334\n2000-03-31  0.102564104  0.24675325 -0.119999997 -0.533464551\n2000-04-28 -0.205426350  0.00000000 -0.121212125  0.084388189\n2000-05-31  0.058536585  0.06250000 -0.224137932 -0.073929958\n2000-06-30 -0.133640558  0.12745099  0.066666670 -0.126050428\n2000-07-31  0.159574464 -0.15652174  0.729166687  0.317307681\n2000-08-31 -0.041284405  0.15463917 -0.048192769  0.091240875\n2000-09-29 -0.110047847 -0.03571429  0.101265825 -0.197324410\n2000-10-31  0.446236551 -0.09259259  0.643678188  0.214583337\n2000-11-30  0.059479553  0.00000000  0.447552443 -0.053173240\n2000-12-29 -0.014035088 -0.01020408  0.072463766 -0.103260867\n2001-01-31  0.166120976  0.01938141  0.036036037  0.282828271\n2001-02-28 -0.083496049  0.06634310 -0.182608694 -0.192125991\n2001-03-30 -0.001065554  0.02276174 -0.148936167 -0.019493178\n2001-04-30  0.079999998  0.29596412 -0.298999965  0.082465172\n2001-05-31 -0.029629648  0.05997688 -0.015691888 -0.037613835\n2001-06-29 -0.038167939  0.17410234  0.231884047  0.250381708\n2001-07-31  0.005291026 -0.09082480 -0.308235288  0.076190449\n2001-08-31  0.052631579  0.10193679  0.326530606  0.107329242\n2001-09-28 -0.174999997  0.07770582 -0.166666687 -0.158811480\n2001-10-31  0.099999979  0.02241378  0.330769181  0.398051172\n2001-11-30  0.101928398 -0.03826529  0.358381569  0.126502842\n2001-12-31  0.114999965  0.07603887  0.015319175  0.122505866\n>    \n> ## spec -\n>    Spec = portfolioSpec()\n>    setTargetReturn(Spec) = mean(colMeans(Data))\n>    Spec\n\nModel List:\t\n Type:                      MV\n Optimize:                  minRisk\n Estimator:                 covEstimator\n Tail Risk:                 list()\n Params:                    alpha = 0.05 a = 1\n\nPortfolio List:\t\n Portfolio Weights:         NA\n Target Return:             0.02430841\n Target Risk:               NA\n Risk-Free Rate:            0\n Number of Frontier Points: 50\n Status:                    NA\n\nOptim List:\t\n Solver:                    solveRquadprog\n Objective:                 list()\n Options:                   meq = 2\n Control:                   list()\n Trace:                     FALSE\n\nMessage List:\t\n List:                      NULL\n>    \n> ## constraints -\n>    Constraints = \"LongOnly\"\n>    Constraints\n[1] \"LongOnly\"\n>    \n> ## efficientPortfolio -\n>    efficientPortfolio(Data, Spec, Constraints)\nError in .Fortran(\"qpgen2\", as.double(Dmat), dvec = as.double(dvec), as.integer(n),  : \n  Incorrect number of arguments (16), expecting 17 for qpgen2\nCalls: efficientPortfolio -> Solver -> .rquadprog -> .Fortran\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding",
+      "thread_id": "thread-3776f8e49c9d",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-6c229d2b97ce",
+      "message_id": "<01cadd08$Blat.v2.2.2$8ebb27f1@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-16T02:00:15Z",
+      "subject": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows64/contrib/2.11/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.11.0 beta/rc\n(but not the current R-2.10.1). R-2.11.0 will be released on April 22.\nPlease consider to submit a fixed version without any ERROR or WARNING until release.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.11.0 beta (2010-04-13 r51716)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local64/2.11/fOptions.Rcheck'\n* using R version 2.11.0 beta (2010-04-13 r51716)\n* using session charset: ISO8859-1\n* checking for file 'fOptions/DESCRIPTION' ... OK\n* this is package 'fOptions' version '2100.76'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fOptions' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $BLAS_LIBS ... OK\n* checking examples ... ERROR\nRunning examples in 'fOptions-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * MonteCarloOptions\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: MonteCarloOptions\n> ### Title: Monte Carlo Valuation of Options\n> ### Aliases: MonteCarloOptions wienerMCPath plainVanillaMCPayoff\n> ###   arithmeticAsianMCPayoff MonteCarloOption\n> ### Keywords: programming\n> \n> ### ** Examples\n>   \n> ## How to perform a Monte Carlo Simulation?\n>    \n> ## First Step:\n>    # Write a function to generate the option's innovations. \n>    # Use scrambled normal Sobol numbers:\n>    sobolInnovations = function(mcSteps, pathLength, init, ...) {\n+      # Create Normal Sobol Innovations:\n+      innovations = rnorm.sobol(mcSteps, pathLength, init, ...)\n+      # Return Value:\n+      innovations }\n>     \n> ## Second Step: \n>    # Write a function to generate the option's price paths.  \n>    # Use a Wiener path:\n>    wienerPath = function(eps) { \n+      # Note, the option parameters must be globally defined!\n+      # Generate the Paths:\n+      path = (b-sigma*sigma/2)*delta.t + sigma*sqrt(delta.t)*eps\n+      # Return Value:\n+      path }\n>       \n> ## Third Step: \n>    # Write a function for the option's payoff\n>    \n>    # Example 1: use the payoff for a plain Vanilla Call or Put:\n>    plainVanillaPayoff = function(path) { \n+      # Note, the option parameters must be globally defined!\n+      # Compute the Call/Put Payoff Value:\n+      ST = S*exp(sum(path))\n+      if (TypeFlag == \"c\") payoff = exp(-r*Time)*max(ST-X, 0)\n+      if (TypeFlag == \"p\") payoff = exp(-r*Time)*max(0, X-ST)\n+      # Return Value:\n+      payoff }\n>    \n>    # Example 2: use the payoff for an arithmetic Asian Call or Put:\n>    arithmeticAsianPayoff = function(path) { \n+      # Note, the option parameters must be globally defined!\n+      # Compute the Call/Put Payoff Value:\n+      SM = mean(S*exp(cumsum(path)))\n+      if (TypeFlag == \"c\") payoff = exp(-r*Time)*max(SM-X, 0)\n+      if (TypeFlag == \"p\") payoff = exp(-r*Time)*max(0, X-SM)\n+      # Return Value:\n+      payoff }\n> \n> ## Final Step: \n>    # Set Global Parameters for the plain Vanilla / arithmetic Asian Options:\n>    TypeFlag <<- \"c\"; S <<- 100; X <<- 100\n>    Time <<- 1/12; sigma <<- 0.4; r <<- 0.10; b <<- 0.1\n>    \n>    # Do the Asian Simulation with scrambled random numbers:\n>    mc = MonteCarloOption(delta.t = 1/360, pathLength = 30, mcSteps = 5000, \n+      mcLoops = 50, init = TRUE, innovations.gen = sobolInnovations, \n+      path.gen = wienerPath, payoff.calc = arithmeticAsianPayoff, \n+      antithetic = TRUE, standardization = FALSE, trace = TRUE, \n+      scrambling = 2, seed = 4711)\n\nMonte Carlo Simulation Path:\n\n\nLoop:\t No\t\nLoop:\t 1 \t: NA NA\nLoop:\t 2 \t: NA NA\nLoop:\t 3 \t: NA NA\nLoop:\t 4 \t: Inf NA\nLoop:\t 5 \t: NA NA\nLoop:\t 6 \t: NA NA\nLoop:\t 7 \t: NA NA\nLoop:\t 8 \t: NA NA\nLoop:\t 9 \t: NA NA\nLoop:\t 10 \t: NA NA\nLoop:\t 11 \t: NA NA\nLoop:\t 12 \t: NA NA\nLoop:\t 13 \t: NA NA\nLoop:\t 14 \t: NA NA\nLoop:\t 15 \t: NA NA\nLoop:\t 16 \t: NA NA\nLoop:\t 17 \t: NA NA\nLoop:\t 18 \t: NA NA\nLoop:\t 19 \t: NA NA\nLoop:\t 20 \t: NA NA\nLoop:\t 21 \t: NA NA\nLoop:\t 22 \t: NA NA\nLoop:\t 23 \t: NA NA\nLoop:\t 24 \t: NA NA\nLoop:\t 25 \t: NA NA\nLoop:\t 26 \t: NA NA\nLoop:\t 27 \t: NA NA\nLoop:\t 28 \t: NA NA\nLoop:\t 29 \t: NA NA\nLoop:\t 30 \t: NA NA\nLoop:\t 31 \t: NA NA\nLoop:\t 32 \t: NA NA\nLoop:\t 33 \t: NA NA\nLoop:\t 34 \t: NA NA\nLoop:\t 35 \t: NA NA\nLoop:\t 36 \t: NA NA\nLoop:\t 37 \t: NA NA\nLoop:\t 38 \t: NA NA\nLoop:\t 39 \t: NA NA\nLoop:\t 40 \t: NA NA\nLoop:\t 41 \t: NA NA\nLoop:\t 42 \t: NA NA\nLoop:\t 43 \t: NA NA\nLoop:\t 44 \t: NA NA\nLoop:\t 45 \t: NA NA\nLoop:\t 46 \t: NA NA\nLoop:\t 47 \t: NA NA\nLoop:\t 48 \t: NA NA\nLoop:\t 49 \t: NA NA\nLoop:\t 50 \t: NA NA\n>    \n>    # Plot the MC Iteration Path:\n>    par(mfrow = c(1, 1))\n>    mcPrice = cumsum(mc)/(1:length(mc))\n>    plot(mcPrice, type = \"l\", main = \"Arithmetic Asian Option\", \n+      xlab = \"Monte Carlo Loops\", ylab = \"Option Price\") \nWarning in min(x) : no non-missing arguments to min; returning Inf\nWarning in max(x) : no non-missing arguments to max; returning -Inf\nError in plot.window(...) : need finite 'ylim' values\nCalls: plot -> plot -> plot.default -> localWindow -> plot.window\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding C",
+      "thread_id": "thread-6c229d2b97ce",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-c2ba8e780530",
+      "message_id": "<20100416141556.59f5f923@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-16T12:15:56Z",
+      "subject": "timeDate and date-time classes",
+      "subject_clean": "timeDate and date-time classes",
+      "in_reply_to": "<19397.59493.219273.803649@ron.nulle.part>",
+      "references": [
+        "<alpine.OSX.1.00.1004131152210.54431@tystie.local>",
+        "<20100414091918.79c4ab8b@mimi>",
+        "<19397.39755.813175.92691@fangorn.hornik.net>",
+        "<19397.59493.219273.803649@ron.nulle.part>"
+      ],
+      "body_plain": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Wed, 14 Apr 2010 11:08:05 -0500\n\n   DE> The cran2deb autobuilder gets an error on fImport as the\n   DE> lintian checker (for\n   DE> the resulting .deb package) treats the path /usr/local/bin/perl\n   DE> in\n   DE>\n   DE> html-to-ascii.pl\n   DE> html-to-rfc.pl\n\n\n\nHi Dirk,\n\nThanks to point this out. \n\nHave changed paths in both files on R-forge.\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Wed, 14 Apr 2010 11:08:05 -0500\n\n   DE> The cran2deb autobuilder gets an error on fImport as the\n   DE> lintian checker (for\n   DE> the resul",
+      "thread_id": "thread-6617d13fec34",
+      "thread_depth": 4,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-de41f340cbb0",
+      "message_id": "<20100417135947.1ec88d72@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-17T11:59:47Z",
+      "subject": "fPortfolio calls internals of quadprog which have changed",
+      "subject_clean": "fPortfolio calls internals of quadprog which have changed",
+      "in_reply_to": "<alpine.LFD.2.00.1004100758000.19159@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<alpine.LFD.2.00.1004100758000.19159@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Sat, 10 Apr 2010 08:06:38 +0100 (BST)\n\n   PBR> You will see failures for BLCOP and fPortfolio on the more\n   PBR> recent\n   PBR> entries on the CRAN Package checks at\n   PBR> http://cran.r-project.org/web/checks/check_summary.html\n   PBR>\n   PBR> E.g.\n   PBR>\n   PBR>\nhttp://www.r-project.org/nosvn/R.check/r-prerel-linux-x86_64-gcc-fedora/BLCOP-00check.html\nPBR> has PBR>\n   PBR> # File\n   PBR> /data/gannet/tmp/ripley/R/packages/tests-devel/BLCOP.Rcheck/inst/doc/BLCOP.Rnw\n   PBR> :\n   PBR> chunk 7\n   PBR> Error in .Fortran(\"qpgen2\", as.double(Dmat), dvec =\n   PBR> as.double(dvec),\n   PBR> as.integer(n), :\n   PBR> Incorrect number of arguments (16), expecting 17 for qpgen2\n   PBR>\n   PBR> The issue is that fPortfolio is calling the .Fortran entry\n   PBR> point in\n   PBR> quadprog.  This really is not a good idea, so can you\n   PBR>\n   PBR> - urgently put out a revision to fPortfolio which addresses\n   PBR> this and\n   PBR> depends on quadprog >= 1.5-2 (or whatever is needed)\n   PBR>\n   PBR> - see if it is possible to work with the API functions in\n   PBR> quadprog or\n   PBR> if not negotiate with Berwin to add an R function wrapper\n   PBR> that does\n   PBR> what you need.\n   PBR>\n   PBR> Brian Ripley\n\nThanks for your comments.\n\nPlease find a new version of fPortfolio on CRAN.\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>> on Sat, 10 Apr 2010 08:06:38 +0100 (BST)\n\n   PBR> You will see failures for BLCOP and fPortfolio on the more\n   PBR> recent\n   PBR> entr",
+      "thread_id": "thread-3de50627f53f",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-af3c849ec8cd",
+      "message_id": "<01cade64$Blat.v2.2.2$05f60458@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-17T19:27:31Z",
+      "subject": "Package fPortfolio_2110.79.tar.gz has been built for Windows",
+      "subject_clean": "Package fPortfolio_2110.79.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.1 (2009-12-14)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fPortfolio_2110.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-af3c849ec8cd",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-af39d9ed8080",
+      "message_id": "<19403.17578.396686.632247@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-04-18T17:43:06Z",
+      "subject": "fPortfolio calls internals of quadprog which have changed",
+      "subject_clean": "fPortfolio calls internals of quadprog which have changed",
+      "in_reply_to": "<20100417135947.1ec88d72@mimi>",
+      "references": [
+        "<alpine.LFD.2.00.1004100758000.19159@gannet.stats.ox.ac.uk>",
+        "<20100417135947.1ec88d72@mimi>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Sat, 10 Apr 2010 08:06:38 +0100 (BST)\n\nPBR> You will see failures for BLCOP and fPortfolio on the more\nPBR> recent\nPBR> entries on the CRAN Package checks at\nPBR> http://cran.r-project.org/web/checks/check_summary.html\nPBR> \nPBR> E.g.\nPBR> \nPBR> \n> http://www.r-project.org/nosvn/R.check/r-prerel-linux-x86_64-gcc-fedora/BLCOP-00check.html\nPBR> has PBR>\nPBR> # File\nPBR> /data/gannet/tmp/ripley/R/packages/tests-devel/BLCOP.Rcheck/inst/doc/BLCOP.Rnw\nPBR> :\nPBR> chunk 7\nPBR> Error in .Fortran(\"qpgen2\", as.double(Dmat), dvec =\nPBR> as.double(dvec),\nPBR> as.integer(n), :\nPBR> Incorrect number of arguments (16), expecting 17 for qpgen2\nPBR> \nPBR> The issue is that fPortfolio is calling the .Fortran entry\nPBR> point in\nPBR> quadprog.  This really is not a good idea, so can you\nPBR> \nPBR> - urgently put out a revision to fPortfolio which addresses\nPBR> this and\nPBR> depends on quadprog >= 1.5-2 (or whatever is needed)\nPBR> \nPBR> - see if it is possible to work with the API functions in\nPBR> quadprog or\nPBR> if not negotiate with Berwin to add an R function wrapper\nPBR> that does\nPBR> what you need.\nPBR> \nPBR> Brian Ripley\n\n> Thanks for your comments.\n\n> Please find a new version of fPortfolio on CRAN.\n\nThanks, on CRAN now.\n\nBest\n-k\n\n\n> Regards,\n> Yohan\n\n> -- \n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n\n> www.ethz.ch",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"PBR\" == Prof Brian Ripley <ripley at stats.ox.ac.uk>\n>>>>> on Sat, 10 Apr 2010 08:06:38 +0100 (BST)\n\nPBR> You will see failures for BLCOP and fPortfolio on the more",
+      "thread_id": "thread-3de50627f53f",
+      "thread_depth": 2,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-d2bd9a5daa33",
+      "message_id": "<20100423121337.4f0aec94@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-04-23T10:13:37Z",
+      "subject": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": "<01cadd08$Blat.v2.2.2$8ebb27f1@mail.statistik.tu-dortmund.de>",
+      "references": [
+        "<01cadd08$Blat.v2.2.2$8ebb27f1@mail.statistik.tu-dortmund.de>"
+      ],
+      "body_plain": ">>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n\n   ULPO> Dear package maintainer,\n   ULPO>\n   ULPO> this notification has been generated automatically.\n   ULPO> Your package fOptions_2100.76.tar.gz did *not* pass 'R CMD\n   ULPO> check' on\n   ULPO> Windows and will be omitted from the corresponding CRAN\n   ULPO> directory\n   ULPO> (CRAN/bin/windows64/contrib/2.11/).\n   ULPO> Please check the attached log-file and consider to resubmit\n   ULPO> a version\n   ULPO> with increased version number that passes R CMD check\n   ULPO> on Windows.\n   ULPO>\n   ULPO> Please note that we are talking about R-2.11.0 beta/rc\n   ULPO> (but not the current R-2.10.1). R-2.11.0 will be released\n   ULPO> on April 22.\n   ULPO> Please consider to submit a fixed version without any ERROR\n   ULPO> or WARNING until release.\n   ULPO> For details (and for results on other platforms) see\n   ULPO> http://cran.r-project.org/web/checks/check_summary.html\n   ULPO> R version 2.11.0 beta (2010-04-13 r51716)\n   ULPO>\n   ULPO> All the best,\n   ULPO> Uwe Ligges\n   ULPO> (Maintainer of binary packages for Windows)\n\n\nThanks for the notification.\n\n\nPlease find a new version of fOptions on CRAN.\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n\n   ULPO> Dear package maintainer,\n   ULPO>\n   ULPO> this notification has been generated automatically.\n   ULPO> You",
+      "thread_id": "thread-6c229d2b97ce",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-e3c06802fa6c",
+      "message_id": "<4BD173CA.9080102@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2010-04-23T10:17:46Z",
+      "subject": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": "<20100423121337.4f0aec94@mimi>",
+      "references": [
+        "<01cadd08$Blat.v2.2.2$8ebb27f1@mail.statistik.tu-dortmund.de>",
+        "<20100423121337.4f0aec94@mimi>"
+      ],
+      "body_plain": "On 23.04.2010 12:13, Yohan Chalabi wrote:\n>>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n>\n>     ULPO>  Dear package maintainer,\n>     ULPO>\n>     ULPO>  this notification has been generated automatically.\n>     ULPO>  Your package fOptions_2100.76.tar.gz did *not* pass 'R CMD\n>     ULPO>  check' on\n>     ULPO>  Windows and will be omitted from the corresponding CRAN\n>     ULPO>  directory\n>     ULPO>  (CRAN/bin/windows64/contrib/2.11/).\n>     ULPO>  Please check the attached log-file and consider to resubmit\n>     ULPO>  a version\n>     ULPO>  with increased version number that passes R CMD check\n>     ULPO>  on Windows.\n>     ULPO>\n>     ULPO>  Please note that we are talking about R-2.11.0 beta/rc\n>     ULPO>  (but not the current R-2.10.1). R-2.11.0 will be released\n>     ULPO>  on April 22.\n>     ULPO>  Please consider to submit a fixed version without any ERROR\n>     ULPO>  or WARNING until release.\n>     ULPO>  For details (and for results on other platforms) see\n>     ULPO>  http://cran.r-project.org/web/checks/check_summary.html\n>     ULPO>  R version 2.11.0 beta (2010-04-13 r51716)\n>     ULPO>\n>     ULPO>  All the best,\n>     ULPO>  Uwe Ligges\n>     ULPO>  (Maintainer of binary packages for Windows)\n>\n>\n> Thanks for the notification.\n>\n>\n> Please find a new version of fOptions on CRAN.\n>\n> Regards,\n> Yohan\n\n\nThanks, CCing CRAN at ... so that Kurt can make the preliminary check and \nmove it to CRAN.\n\nUwe",
+      "body_snippet": "On 23.04.2010 12:13, Yohan Chalabi wrote:\n>>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n>\n>     ULPO>  Dear package maintainer,\n>     ULPO>\n>     ULPO>  this not",
+      "thread_id": "thread-6c229d2b97ce",
+      "thread_depth": 2,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-a2e96d4559d0",
+      "message_id": "<19409.30054.685571.569240@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2010-04-23T10:24:38Z",
+      "subject": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": "<4BD173CA.9080102@statistik.tu-dortmund.de>",
+      "references": [
+        "<01cadd08$Blat.v2.2.2$8ebb27f1@mail.statistik.tu-dortmund.de>",
+        "<20100423121337.4f0aec94@mimi>",
+        "<4BD173CA.9080102@statistik.tu-dortmund.de>"
+      ],
+      "body_plain": ">>>>> Uwe Ligges writes:\n\nThanks, on CRAN now\n\nBest\n-k\n\n> On 23.04.2010 12:13, Yohan Chalabi wrote:\n>>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n>> \nULPO> Dear package maintainer,\nULPO> \nULPO> this notification has been generated automatically.\nULPO> Your package fOptions_2100.76.tar.gz did *not* pass 'R CMD\nULPO> check' on\nULPO> Windows and will be omitted from the corresponding CRAN\nULPO> directory\nULPO> (CRAN/bin/windows64/contrib/2.11/).\nULPO> Please check the attached log-file and consider to resubmit\nULPO> a version\nULPO> with increased version number that passes R CMD check\nULPO> on Windows.\nULPO> \nULPO> Please note that we are talking about R-2.11.0 beta/rc\nULPO> (but not the current R-2.10.1). R-2.11.0 will be released\nULPO> on April 22.\nULPO> Please consider to submit a fixed version without any ERROR\nULPO> or WARNING until release.\nULPO> For details (and for results on other platforms) see\nULPO> http://cran.r-project.org/web/checks/check_summary.html\nULPO> R version 2.11.0 beta (2010-04-13 r51716)\nULPO> \nULPO> All the best,\nULPO> Uwe Ligges\nULPO> (Maintainer of binary packages for Windows)\n>> \n>> \n>> Thanks for the notification.\n>> \n>> \n>> Please find a new version of fOptions on CRAN.\n>> \n>> Regards,\n>> Yohan\n\n\n> Thanks, CCing CRAN at ... so that Kurt can make the preliminary check and \n> move it to CRAN.\n\n> Uwe",
+      "body_snippet": ">>>>> Uwe Ligges writes:\n\nThanks, on CRAN now\n\nBest\n-k\n\n> On 23.04.2010 12:13, Yohan Chalabi wrote:\n>>>>> \"ULPO\" == Uwe.Ligges at r-project.org\n>>>>> on Fri, 16 Apr 2010 04:00:15 +0200\n>> \nULPO> Dear ",
+      "thread_id": "thread-6c229d2b97ce",
+      "thread_depth": 3,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-3eb9a081fab6",
+      "message_id": "<alpine.LFD.2.00.1004231344380.22795@localhost>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2010-04-23T12:57:15Z",
+      "subject": "Misuse of 8-bit characters in packages fBasics, fUtilities and rgr",
+      "subject_clean": "Misuse of 8-bit characters in packages fBasics, fUtilities and rgr",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "These packages generate 8-bit characters in the examples for\n\nfBasics: characterTable\nfOptions: the same (and why is the same example in two packages?)\nrgr: display.alts\n\nThis simply is not valid in MBCS locales, notably UTF-8, and the \nSolaris tests (which use a different iconv from glibc) are failing as \nyou can see in the CRAN check logs.  Do take a look at your examples \nin a UTF-8 locale ... I get lots of 'broken' boxes.\n\nI suggest you should rethink what you are trying to do, but at the \nleast these sections need to be inside\n\nif(!l10n.info()$MBCS) {\n}\n\nFor characterTable, the example in ?points seems to me to do a much \nbetter job *and* the authors had the sense to put all but the ASCII \ncases inside try().\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "These packages generate 8-bit characters in the examples for\n\nfBasics: characterTable\nfOptions: the same (and why is the same example in two packages?)\nrgr: display.alts\n\nThis simply is not valid in M",
+      "thread_id": "thread-3eb9a081fab6",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-fa369612b8e9",
+      "message_id": "<01cae3b8$Blat.v2.2.2$d602ab48@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-24T14:17:13Z",
+      "subject": "Package fOptions_2110.77.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fOptions_2110.77.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2110.77.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows64/contrib/2.11/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\nR version 2.11.0 (2010-04-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local64/2.11/fOptions.Rcheck'\n* using R version 2.11.0 (2010-04-22)\n* using session charset: ISO8859-1\n* checking for file 'fOptions/DESCRIPTION' ... OK\n* this is package 'fOptions' version '2110.77'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fOptions' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the package can be unloaded cleanly ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking Rd contents ... OK\n* checking line endings in C/C++/Fortran sources/headers ... OK\n* checking line endings in Makefiles ... OK\n* checking for portable compilation flags in Makevars ... OK\n* checking for portable use of $BLAS_LIBS ... OK\n* checking examples ... ERROR\nRunning examples in 'fOptions-Ex.R' failed.\nThe error most likely occurred in:\n\n> ### * MonteCarloOptions\n> \n> flush(stderr()); flush(stdout())\n> \n> ### Name: MonteCarloOptions\n> ### Title: Monte Carlo Valuation of Options\n> ### Aliases: MonteCarloOptions wienerMCPath plainVanillaMCPayoff\n> ###   arithmeticAsianMCPayoff MonteCarloOption\n> ### Keywords: programming\n> \n> ### ** Examples\n>   \n> ## How to perform a Monte Carlo Simulation?\n>    \n> ## First Step:\n>    # Write a function to generate the option's innovations. \n>    # Use scrambled normal Sobol numbers:\n>    sobolInnovations = function(mcSteps, pathLength, init, ...) {\n+      # Create Normal Sobol Innovations:\n+      innovations = rnorm.sobol(mcSteps, pathLength, init, ...)\n+      # Return Value:\n+      innovations }\n>     \n> ## Second Step: \n>    # Write a function to generate the option's price paths.  \n>    # Use a Wiener path:\n>    wienerPath = function(eps) { \n+      # Note, the option parameters must be globally defined!\n+      # Generate the Paths:\n+      path = (b-sigma*sigma/2)*delta.t + sigma*sqrt(delta.t)*eps\n+      # Return Value:\n+      path }\n>       \n> ## Third Step: \n>    # Write a function for the option's payoff\n>    \n>    # Example 1: use the payoff for a plain Vanilla Call or Put:\n>    plainVanillaPayoff = function(path) { \n+      # Note, the option parameters must be globally defined!\n+      # Compute the Call/Put Payoff Value:\n+      ST = S*exp(sum(path))\n+      if (TypeFlag == \"c\") payoff = exp(-r*Time)*max(ST-X, 0)\n+      if (TypeFlag == \"p\") payoff = exp(-r*Time)*max(0, X-ST)\n+      # Return Value:\n+      payoff }\n>    \n>    # Example 2: use the payoff for an arithmetic Asian Call or Put:\n>    arithmeticAsianPayoff = function(path) { \n+      # Note, the option parameters must be globally defined!\n+      # Compute the Call/Put Payoff Value:\n+      SM = mean(S*exp(cumsum(path)))\n+      if (TypeFlag == \"c\") payoff = exp(-r*Time)*max(SM-X, 0)\n+      if (TypeFlag == \"p\") payoff = exp(-r*Time)*max(0, X-SM)\n+      # Return Value:\n+      payoff }\n> \n> ## Final Step: \n>    # Set Global Parameters for the plain Vanilla / arithmetic Asian Options:\n>    TypeFlag <<- \"c\"; S <<- 100; X <<- 100\n>    Time <<- 1/12; sigma <<- 0.4; r <<- 0.10; b <<- 0.1\n>    \n>    # Do the Asian Simulation with scrambled random numbers:\n>    mc = MonteCarloOption(delta.t = 1/360, pathLength = 30, mcSteps = 5000, \n+      mcLoops = 50, init = TRUE, innovations.gen = sobolInnovations, \n+      path.gen = wienerPath, payoff.calc = arithmeticAsianPayoff, \n+      antithetic = TRUE, standardization = FALSE, trace = TRUE, \n+      scrambling = 2, seed = 4711)\n\nMonte Carlo Simulation Path:\n\n\nLoop:\t No\t\nLoop:\t 1 \t: NA NA\nLoop:\t 2 \t: NA NA\nLoop:\t 3 \t: NA NA\nLoop:\t 4 \t: Inf NA\nLoop:\t 5 \t: NA NA\nLoop:\t 6 \t: NA NA\nLoop:\t 7 \t: NA NA\nLoop:\t 8 \t: NA NA\nLoop:\t 9 \t: NA NA\nLoop:\t 10 \t: NA NA\nLoop:\t 11 \t: NA NA\nLoop:\t 12 \t: NA NA\nLoop:\t 13 \t: NA NA\nLoop:\t 14 \t: NA NA\nLoop:\t 15 \t: NA NA\nLoop:\t 16 \t: NA NA\nLoop:\t 17 \t: NA NA\nLoop:\t 18 \t: NA NA\nLoop:\t 19 \t: NA NA\nLoop:\t 20 \t: NA NA\nLoop:\t 21 \t: NA NA\nLoop:\t 22 \t: NA NA\nLoop:\t 23 \t: NA NA\nLoop:\t 24 \t: NA NA\nLoop:\t 25 \t: NA NA\nLoop:\t 26 \t: NA NA\nLoop:\t 27 \t: NA NA\nLoop:\t 28 \t: NA NA\nLoop:\t 29 \t: NA NA\nLoop:\t 30 \t: NA NA\nLoop:\t 31 \t: NA NA\nLoop:\t 32 \t: NA NA\nLoop:\t 33 \t: NA NA\nLoop:\t 34 \t: NA NA\nLoop:\t 35 \t: NA NA\nLoop:\t 36 \t: NA NA\nLoop:\t 37 \t: NA NA\nLoop:\t 38 \t: NA NA\nLoop:\t 39 \t: NA NA\nLoop:\t 40 \t: NA NA\nLoop:\t 41 \t: NA NA\nLoop:\t 42 \t: NA NA\nLoop:\t 43 \t: NA NA\nLoop:\t 44 \t: NA NA\nLoop:\t 45 \t: NA NA\nLoop:\t 46 \t: NA NA\nLoop:\t 47 \t: NA NA\nLoop:\t 48 \t: NA NA\nLoop:\t 49 \t: NA NA\nLoop:\t 50 \t: NA NA\n>    \n>    # Plot the MC Iteration Path:\n>    par(mfrow = c(1, 1))\n>    mcPrice = cumsum(mc)/(1:length(mc))\n>    plot(mcPrice, type = \"l\", main = \"Arithmetic Asian Option\", \n+      xlab = \"Monte Carlo Loops\", ylab = \"Option Price\") \nWarning in min(x) : no non-missing arguments to min; returning Inf\nWarning in max(x) : no non-missing arguments to max; returning -Inf\nError in plot.window(...) : need finite 'ylim' values\nCalls: plot -> plot -> plot.default -> localWindow -> plot.window\nExecution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2110.77.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding C",
+      "thread_id": "thread-fa369612b8e9",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-93914733abf5",
+      "message_id": "<01cae661$Blat.v2.2.2$2f8d09f8@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-04-27T23:27:21Z",
+      "subject": "Package fOptions_2110.78.tar.gz has been built for Windows",
+      "subject_clean": "Package fOptions_2110.78.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nR version 2.11.0 (2010-04-22) (32-bit)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-93914733abf5",
+      "thread_depth": 0,
+      "month": "2010-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-822ed0fc1043",
+      "subject": "fPortfolio ERRORs (caused by quadprog?)",
+      "message_count": 2,
+      "participants": [
+        "Berwin A Turlach",
+        "Uwe Ligges"
+      ],
+      "started": "2010-04-07T09:29:21Z",
+      "last_reply": "2010-04-07T13:30:17Z",
+      "root_message_id": "msg-822ed0fc1043"
+    },
+    {
+      "id": "thread-13fc08bf8d6e",
+      "subject": "help - garch estimation with exogenouse variables",
+      "message_count": 1,
+      "participants": [
+        "Changyou Sun"
+      ],
+      "started": "2010-04-09T16:53:00Z",
+      "last_reply": "2010-04-09T16:53:00Z",
+      "root_message_id": "msg-13fc08bf8d6e"
+    },
+    {
+      "id": "thread-3de50627f53f",
+      "subject": "fPortfolio calls internals of quadprog which have changed",
+      "message_count": 3,
+      "participants": [
+        "Kurt Hornik",
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2010-04-10T07:06:38Z",
+      "last_reply": "2010-04-18T17:43:06Z",
+      "root_message_id": "msg-3de50627f53f"
+    },
+    {
+      "id": "thread-fd847de4f999",
+      "subject": "CRAN packages maintained by you",
+      "message_count": 5,
+      "participants": [
+        "Kurt Hornik",
+        "Martin Maechler",
+        "Yohan Chalabi"
+      ],
+      "started": "2010-04-11T08:11:33Z",
+      "last_reply": "2010-04-15T14:12:08Z",
+      "root_message_id": "msg-fd847de4f999"
+    },
+    {
+      "id": "thread-6617d13fec34",
+      "subject": "timeDate and date-time classes",
+      "message_count": 5,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Kurt Hornik",
+        "Prof Brian Ripley",
+        "Yohan Chalabi"
+      ],
+      "started": "2010-04-13T10:58:51Z",
+      "last_reply": "2010-04-16T12:15:56Z",
+      "root_message_id": "msg-6617d13fec34"
+    },
+    {
+      "id": "thread-efcf984888e0",
+      "subject": "Package fImport_2110.79.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-14T11:24:36Z",
+      "last_reply": "2010-04-14T11:24:36Z",
+      "root_message_id": "msg-efcf984888e0"
+    },
+    {
+      "id": "thread-52eeb64a2234",
+      "subject": "Package timeDate_2110.88.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-14T11:24:37Z",
+      "last_reply": "2010-04-14T11:24:37Z",
+      "root_message_id": "msg-52eeb64a2234"
+    },
+    {
+      "id": "thread-7e6c9c10cd6c",
+      "subject": "consumer database",
+      "message_count": 1,
+      "participants": [
+        "caprice"
+      ],
+      "started": "2010-04-15T17:42:56Z",
+      "last_reply": "2010-04-15T17:42:56Z",
+      "root_message_id": "msg-7e6c9c10cd6c"
+    },
+    {
+      "id": "thread-d960f3a50ad9",
+      "subject": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-15T21:35:45Z",
+      "last_reply": "2010-04-15T21:35:45Z",
+      "root_message_id": "msg-d960f3a50ad9"
+    },
+    {
+      "id": "thread-3776f8e49c9d",
+      "subject": "Package fPortfolio_2100.78.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-16T02:00:15Z",
+      "last_reply": "2010-04-16T02:00:15Z",
+      "root_message_id": "msg-3776f8e49c9d"
+    },
+    {
+      "id": "thread-6c229d2b97ce",
+      "subject": "Package fOptions_2100.76.tar.gz did not pass R CMD check",
+      "message_count": 4,
+      "participants": [
+        "Kurt Hornik",
+        "Uwe Ligges",
+        "Uwe.Ligges at R-Project.org",
+        "Yohan Chalabi"
+      ],
+      "started": "2010-04-16T02:00:15Z",
+      "last_reply": "2010-04-23T10:24:38Z",
+      "root_message_id": "msg-6c229d2b97ce"
+    },
+    {
+      "id": "thread-af3c849ec8cd",
+      "subject": "Package fPortfolio_2110.79.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-17T19:27:31Z",
+      "last_reply": "2010-04-17T19:27:31Z",
+      "root_message_id": "msg-af3c849ec8cd"
+    },
+    {
+      "id": "thread-3eb9a081fab6",
+      "subject": "Misuse of 8-bit characters in packages fBasics, fUtilities and rgr",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2010-04-23T12:57:15Z",
+      "last_reply": "2010-04-23T12:57:15Z",
+      "root_message_id": "msg-3eb9a081fab6"
+    },
+    {
+      "id": "thread-fa369612b8e9",
+      "subject": "Package fOptions_2110.77.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-24T14:17:13Z",
+      "last_reply": "2010-04-24T14:17:13Z",
+      "root_message_id": "msg-fa369612b8e9"
+    },
+    {
+      "id": "thread-93914733abf5",
+      "subject": "Package fOptions_2110.78.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-04-27T23:27:21Z",
+      "last_reply": "2010-04-27T23:27:21Z",
+      "root_message_id": "msg-93914733abf5"
+    }
+  ]
+}

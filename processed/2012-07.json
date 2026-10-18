@@ -1,0 +1,209 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2012-07",
+  "messages": [
+    {
+      "id": "msg-75e91c64f55e",
+      "message_id": "<CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>",
+      "from_name": "JOSE FRANCISCO PERLES RIBES",
+      "from_email_hash": "f02ccf2efab25699654e0c10168fb38c513047f0d5c4d45477ba8d669806bd08",
+      "date": "2012-07-05T15:09:20Z",
+      "subject": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
+      "subject_clean": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl>",
+      "thread_id": "thread-75e91c64f55e",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-ee02a659b814",
+      "message_id": "<CAPRP4-dFOdXSUTV+syyg=DWUm-j3PQ0M7q=izxCGk-o3LCrMEw@mail.gmail.com>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-07-05T21:10:58Z",
+      "subject": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
+      "subject_clean": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
+      "in_reply_to": "<CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>",
+      "references": [
+        "<CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl>",
+      "thread_id": "thread-75e91c64f55e",
+      "thread_depth": 1,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-36e8eb01914e",
+      "message_id": "<01cd60f7$Blat.v2.2.2$f95411fe@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-07-13T13:04:01Z",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files and (if working) the binary package at:\nhttp://win-builder.r-project.org/gVwVj4H51OXJ\nThe files will be removed after roughly 72 hours.\nInstallation time in seconds: 6\nCheck time in seconds: 115\nCheck result: ERROR\nR version 2.15.1 (2012-06-22)\n \nAll the best,\nUwe Ligges\n(CRAN maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files an",
+      "thread_id": "thread-36e8eb01914e",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-f9a6597f9d5d",
+      "message_id": "<01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2012-07-13T14:18:54Z",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files and (if working) the binary package at:\nhttp://win-builder.r-project.org/avK8gaN9LVyT\nThe files will be removed after roughly 72 hours.\nInstallation time in seconds: 7\nCheck time in seconds: 106\nCheck result: ERROR\nR version 2.15.1 (2012-06-22)\n \nAll the best,\nUwe Ligges\n(CRAN maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\nPlease check the log files an",
+      "thread_id": "thread-f9a6597f9d5d",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-b39a0a801105",
+      "message_id": "<20480.23746.292913.297138@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2012-07-13T17:37:06Z",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "subject_clean": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "in_reply_to": "<01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>",
+      "references": [
+        "<01cd6102$Blat.v2.2.2$6f1c4e77@mail.statistik.tu-dortmund.de>"
+      ],
+      "body_plain": "I think  that  fUtilities  has been deprecated for a\nlong time.\n\nShouldn't we  \"defunct\" it now, i.e., ask the CRAN maintainers\nto put the last version into the 'Archives' ?\n\n{ and people will get an error when trying to install fUtilities from CRAN,\n from then on }\n\n??\n\nMartin\n\n\n\n> Dear package maintainer,\n> this notification has been generated automatically.\n> Your package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.\n> Please check the log files and (if working) the binary package at:\n> http://win-builder.r-project.org/avK8gaN9LVyT\n> The files will be removed after roughly 72 hours.\n> Installation time in seconds: 7\n> Check time in seconds: 106\n> Check result: ERROR\n> R version 2.15.1 (2012-06-22)\n \n> All the best,\n> Uwe Ligges\n> (CRAN maintainer of binary packages for Windows)\n\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "I think  that  fUtilities  has been deprecated for a\nlong time.\n\nShouldn't we  \"defunct\" it now, i.e., ask the CRAN maintainers\nto put the last version into the 'Archives' ?\n\n{ and people will get an ",
+      "thread_id": "thread-f9a6597f9d5d",
+      "thread_depth": 1,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-d500256ec2bf",
+      "message_id": "<CAAp4yadR+bW2NmCaWYEH9KOnigMZuo+RzQvRyeA8_HK=PG3=Cg@mail.gmail.com>",
+      "from_name": "Dominik Kudyba",
+      "from_email_hash": "b28d9e069e69e62f5247cfa43d14d5065e2eefaed6aa74d9aa164351dc5df150",
+      "date": "2012-07-26T05:26:29Z",
+      "subject": "EWMA",
+      "subject_clean": "EWMA",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl>",
+      "thread_id": "thread-d500256ec2bf",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-e31bc57535f6",
+      "message_id": "<50154592.1090705@stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2012-07-29T14:15:46Z",
+      "subject": "Use of R intenals in package optBiomarker, ptw and timeSeries",
+      "subject_clean": "Use of R intenals in package optBiomarker, ptw and timeSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "A recent check in R-devel shows that you are calling .Call()s in package \n\"stats\", which are not part of the API, specifcally\n\n*** optBiomarker\n.C(\"R_approx\", ..., PACKAGE = \"stats\")\n\n*** ptw\n.C(\"R_approx\", ..., PACKAGE = \"stats\")\n\n*** timeSeries\n.C(\"find_interv_vec\", ..., PACKAGE = \"base\")\n\nThe question also arises as to how you knew to make those calls unless \nyou copied code from R: and you do not credit such copying.\n\nCan we please have updates which do not use non-API internals, by Aug 20.\n\nSee the CRAN daily check pages for your package to see if there are \nother issues which need attention.\n\nBrian Ripley\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "A recent check in R-devel shows that you are calling .Call()s in package \n\"stats\", which are not part of the API, specifcally\n\n*** optBiomarker\n.C(\"R_approx\", ..., PACKAGE = \"stats\")\n\n*** ptw\n.C(\"R_ap",
+      "thread_id": "thread-e31bc57535f6",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-6a5735afc479",
+      "message_id": "<20502.14792.241832.597609@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2012-07-30T07:37:44Z",
+      "subject": "CRAN package fBasics",
+      "subject_clean": "CRAN package fBasics",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics maintainer(s?),\n\nAs you will soon be able to see from the fBasics check results page, for\nr-devel we now get\n\n* checking foreign function calls ... WARNING\nForeign function call(s) with ?PACKAGE? argument in a base package:\n.C(\"swilk\", ..., PACKAGE = \"stats\")\n\nand\n\n* checking examples ... ERROR\nRunning examples in ?fBasics-Ex.R? failed\nThe error most likely occurred in:\n\n> assign(\".ptime\", proc.time(), pos = \"CheckExEnv\")\n> ### Name: NormalityTests\n> ### Title: Normality Tests\n> ### Aliases: NormalityTests normalTest ksnormTest shapiroTest\n> ###   jarqueberaTest dagoTest jbTest adTest cvmTest lillieTest pchiTest\n> ###   sfTest\n> ### Keywords: htest\n> \n> ### ** Examples\n> \n> ## Series:\n>    x = rnorm(100)\n> \n> ## ksnormTests -\n>    # Kolmogorov - Smirnov One-Sampel Test\n>    ksnormTest(x)\n\nTitle:\n One-sample Kolmogorov-Smirnov test\n\nTest Results:\n  STATISTIC:\n    D: 0.0947\n  P VALUE:\n    Alternative Two-Sided: 0.3317 \n    Alternative      Less: 0.1666 \n    Alternative   Greater: 0.8637 \n\nDescription:\n Sun Jul 29 17:29:30 2012 by user: hornik\n\n> \n> ## shapiroTest - Shapiro-Wilk Test\n>    shapiroTest(x)\nError in .C(\"swilk\", init = FALSE, as.single(x), n, n1 = as.integer(n),  : \n  C symbol name \"swilk\" not in DLL for package \"stats\"\nCalls: shapiroTest -> .shapiro.test -> .C\nExecution halted\n\nSo obviously this needs fixing, but the underlying issue is quite\nserious: you have yet again copied from R (test-normalityTest.R even\nsays\n\n.shapiro.test <- \nfunction(x) \n{   \n    # A copy from R:\n\netc.) despite the CRAN policy:\n\n  'The ownership of copyright and intellectual property rights of all\n   components of the package must be clear and unambiguous (including\n   from the authors specification in the DESCRIPTION file). Where code\n   is copied (or derived) from the work of others (including from R\n   itself), care must be taken that any copyright statements are\n   preserved and authorship is not misrepresented.'\n\nIn principle, packages with copyright and/or license violations need to\nbe taken down from CRAN, which would mean removing fBasics and at least\narchiving all its dependencies.  In any case we will need to remove the\nhistory of fBasics unless you can tell us which earlier versions do meet\nthe policies.\n\nUnfortunately, this is not the first such issue arising for Rmetrics\npackages.  Hence, can you pls not only address the issue at hand, but\nalso make sure that all Rmetrics packages really comply with CRAN's\npolicy?\n\nBest\n-k",
+      "body_snippet": "Dear Rmetrics maintainer(s?),\n\nAs you will soon be able to see from the fBasics check results page, for\nr-devel we now get\n\n* checking foreign function calls ... WARNING\nForeign function call(s) with ",
+      "thread_id": "thread-6a5735afc479",
+      "thread_depth": 0,
+      "month": "2012-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-75e91c64f55e",
+      "subject": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
+      "message_count": 2,
+      "participants": [
+        "JOSE FRANCISCO PERLES RIBES",
+        "Martin Maechler"
+      ],
+      "started": "2012-07-05T15:09:20Z",
+      "last_reply": "2012-07-05T21:10:58Z",
+      "root_message_id": "msg-75e91c64f55e"
+    },
+    {
+      "id": "thread-36e8eb01914e",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-07-13T13:04:01Z",
+      "last_reply": "2012-07-13T13:04:01Z",
+      "root_message_id": "msg-36e8eb01914e"
+    },
+    {
+      "id": "thread-f9a6597f9d5d",
+      "subject": "Package fUtilities_2110.78.tar.gz has been checked and built",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2012-07-13T14:18:54Z",
+      "last_reply": "2012-07-13T17:37:06Z",
+      "root_message_id": "msg-f9a6597f9d5d"
+    },
+    {
+      "id": "thread-d500256ec2bf",
+      "subject": "EWMA",
+      "message_count": 1,
+      "participants": [
+        "Dominik Kudyba"
+      ],
+      "started": "2012-07-26T05:26:29Z",
+      "last_reply": "2012-07-26T05:26:29Z",
+      "root_message_id": "msg-d500256ec2bf"
+    },
+    {
+      "id": "thread-e31bc57535f6",
+      "subject": "Use of R intenals in package optBiomarker, ptw and timeSeries",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2012-07-29T14:15:46Z",
+      "last_reply": "2012-07-29T14:15:46Z",
+      "root_message_id": "msg-e31bc57535f6"
+    },
+    {
+      "id": "thread-6a5735afc479",
+      "subject": "CRAN package fBasics",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2012-07-30T07:37:44Z",
+      "last_reply": "2012-07-30T07:37:44Z",
+      "root_message_id": "msg-6a5735afc479"
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+From daniele.amberti at ors.it  Thu Jan 12 16:22:23 2012
+From: daniele.amberti at ors.it (Daniele Amberti)
+Date: Thu, 12 Jan 2012 15:22:23 +0000
+Subject: timeFirstDayInMonth() bug
+Message-ID: <F19672F7880134439F66EC21316E27F30987B944@Exch-Mailbox.ors.local>
+
+#
+# Below You can find an example that causes a crash in R 2.12.2, Package: timeDate Version 2150.95, Revision 5145.
+#
+
+library(timeDate)
+
+x <- logical(0)
+x <- as.timeDate(x)
+
+timeFirstDayInMonth(x)
+
+# Best regards, Daniele Amberti
+
+________________________________
+
+ORS Srl
+
+Via Agostino Morando 1/3 12060 Roddi (Cn) - Italy
+Tel. +39 0173 620211
+Fax. +39 0173 620299 / +39 0173 433111
+Web Site www.ors.it
+
+------------------------------------------------------------------------------------------------------------------------
+Qualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.
+Se lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso
+e degli eventuali allegati.
+Opinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o
+alla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.
+
+From adv4 at antek-cn.com  Fri Jan 13 06:42:54 2012
+From: adv4 at antek-cn.com (ANTEK SOLAR)
+Date: Fri, 13 Jan 2012 13:42:54 +0800
+Subject: Greenhouse Solar - Powered By Antek Solar Power
+Message-ID: <d034748429faef46a7fb977dbdfa65bd@LENOVO-101208Y6>
+
+Download technical datasheet here, or visit our website
+Antek Solar Power Co. Limited | ?Copyright (2009) All Rights Reserved
+If you prefer do not to receive future email, please unsubscribe here, Thank you
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120113/7ca9360e/attachment-0001.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/jpeg
+Size: 110703 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120113/7ca9360e/attachment-0001.jpe>
+
+From Uwe.Ligges at R-Project.org  Fri Jan 13 09:33:20 2012
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Fri, 13 Jan 2012 09:33:20 +0100
+Subject: Package fUtilities_2110.78.tar.gz has been checked and built
+Message-ID: <01ccd1ce$Blat.v2.2.2$01c0c9c5@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package fUtilities_2110.78.tar.gz has been built (if working) and checked for Windows.
+Please check the log files and (if working) the binary package at:
+http://win-builder.r-project.org/d824279I2CzI
+The files will be removed after roughly 72 hours.
+Installation time in seconds: 6
+Check time in seconds: 73
+Check result: ERROR
+R version 2.14.1 (2011-12-22)
+ 
+All the best,
+Uwe Ligges
+(CRAN maintainer of binary packages for Windows)
+
+
+From r.turner at auckland.ac.nz  Sat Jan 14 06:03:02 2012
+From: r.turner at auckland.ac.nz (Rolf Turner)
+Date: Sat, 14 Jan 2012 18:03:02 +1300
+Subject: rcauchy2d in package "fMultivar"
+Message-ID: <4F110C86.2080003@auckland.ac.nz>
+
+
+I have recently been trying to understand bivariate Cauchy distributions,
+and to this end I've been perusing the tools provided in the "fMultivar"
+package.
+
+I have hit a snag, in that I don't understand what rcauchy2d() is doing.
+
+Basically it calls rt2d with the default degrees of freedom, i.e. 4.
+
+My understanding is that the bivariate Cauchy distribution is the same as
+the bivariate t distribution with ***one*** degree of freedom.  So shouldn't
+rcauchy2d call
+
+     rt2d(n=n,rho=rho,nu=1)   ?
+
+I note that dcauchy2d calls dt2d(x = x, y = y, rho = rho, nu = 1), i.e.
+the degrees of freedom are set equal to 1 as I would have expected.
+
+Is this a bug in rcauchy2d(), or is there something that I am 
+misunderstanding?
+
+Thanks.
+
+     cheers,
+
+         Rolf Turner
+
+
+From maechler at stat.math.ethz.ch  Sat Jan 14 11:33:04 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat, 14 Jan 2012 11:33:04 +0100
+Subject: Somewhat *urgent*: fUtilities "gone" -- people crying ...
+Message-ID: <20241.23008.164128.339471@stat.math.ethz.ch>
+
+A belated happy new year!
+
+Hi guys, we have a problem:  People on R-help are complaining
+because fUtilities has disappeared from CRAN
+(because we have not fixed its problems after being asked to do so).
+
+I think I remember we wanted to deprecated fUtilities,
+i.e. ask useRs to use a replacement, but which one?
+
+Diethelm,
+can you remind me/us of the plans?
+
+Martin
+
+
+------- start of forwarded message -------
+List-Id: "Main R Mailing List: Primary help" <r-help.r-project.org>
+List-Unsubscribe: <https://stat.ethz.ch/mailman/options/r-help>,
+	<mailto:r-help-request at r-project.org?subject=unsubscribe>
+List-Archive: <https://stat.ethz.ch/pipermail/r-help>
+List-Post: <mailto:r-help at r-project.org>
+List-Help: <mailto:r-help-request at r-project.org?subject=help>
+List-Subscribe: <https://stat.ethz.ch/mailman/listinfo/r-help>,
+	<mailto:r-help-request at r-project.org?subject=subscribe>
+From: David Winsemius <dwinsemius at comcast.net>
+To: Dominic Comtois <dominic.comtois at gmail.com>
+CC: <r-help at r-project.org>
+Subject: Re: [R] fUtilities removed
+Date: Fri, 13 Jan 2012 13:52:57 -0500
+
+
+On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:
+
+> When setting up my new machine, I had the surprise to see that  
+> "Package
+> 'fUtilities' was removed from the CRAN repository."
+>
+
+https://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html
+https://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html
+
+>
+>
+> This is problematic for my work. I use many of its functions, and it  
+> will
+> complicate things a lot if other programmers want to use my previous  
+> code in
+> the future. Plus, nowhere can I find the justification for its  
+> removal.
+
+You need to send your questions to the maintainers. They apparently  
+did not respond to the requests to fix the errors.
+
+>
+> Thanks for any info on this
+
+You should perhaps subscribe to the list that is established for  
+discussion on this and related packages.
+
+-- 
+
+David Winsemius, MD
+West Hartford, CT
+
+______________________________________________
+R-help at r-project.org mailing list
+https://stat.ethz.ch/mailman/listinfo/r-help
+PLEASE do read the posting guide http://www.R-project.org/posting-guide.html
+and provide commented, minimal, self-contained, reproducible code.
+------- end of forwarded message -------
+
+
+From maechler at stat.math.ethz.ch  Sat Jan 14 12:38:41 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat, 14 Jan 2012 12:38:41 +0100
+Subject: [R] fUtilities removed --> use fBasics 
+In-Reply-To: <CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>
+References: <009b01ccd219$7a7e88b0$6f7b9a10$@gmail.com>
+	<CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>
+Message-ID: <20241.26945.768946.474017@stat.math.ethz.ch>
+
+>>>>> David Winsemius <dwinsemius at comcast.net>
+>>>>>     on Fri, 13 Jan 2012 13:52:57 -0500 writes:
+
+    > On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:
+
+    >> When setting up my new machine, I had the surprise to see
+    >> that "Package 'fUtilities' was removed from the CRAN
+    >> repository."
+    >> 
+
+    > https://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html
+    > https://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html
+
+indeed. thank you David (and Google, I presume ..)
+
+    >> 
+    >> This is problematic for my work. I use many of its
+    >> functions, and it will complicate things a lot if other
+    >> programmers want to use my previous code in the
+    >> future. Plus, nowhere can I find the justification for
+    >> its removal.
+
+For a longer time, the Rmetrics "management" had planned to
+deprecate  fUtilities (and fSeries and fCalendar),
+basically refactoring the functionality ``approximately'' along
+the lines of
+
+ old package     replacement pkgs
+ -----------     ----------------
+ fUtilities      fBasics
+ fSeries         timeSeries
+ fCalendar       timeDate
+
+but clearly not a 1:1 replacement, but a refactoring as said above.
+fBasics, indeed 'Depends' on both timeSeries and timeDate,
+so I think it is safe to say that you should replace
+
+   fUtilities by fBasics
+everywhere ... and things should work...
+
+Yes, the communication about these plans where not put out the
+way they should have; and indeed the deprecation would not have
+necessarily meant that the package be dropped without proper notice.
+One excuse has been the lack of resources and health on the side
+of Rmetrics.
+
+Disclaimer: I am one of Rmetrics-core at r-project.org, as having
+been an active co-maintainer of some parts of the Rmetrics collection,
+but I have not been part of the "management" nor the foundation.
+
+Martin Maechler, ETH Zurich
+
+    > You need to send your questions to the maintainers. They
+    > apparently did not respond to the requests to fix the
+    > errors.
+
+    >> 
+    >> Thanks for any info on this
+
+    > You should perhaps subscribe to the list that is
+    > established for discussion on this and related packages.
+
+    > -- 
+
+    > David Winsemius, MD West Hartford, CT
+
+    > ______________________________________________
+    > R-help at r-project.org mailing list
+    > https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do
+    > read the posting guide
+    > http://www.R-project.org/posting-guide.html and provide
+    > commented, minimal, self-contained, reproducible code.
+
+
+From maechler at stat.math.ethz.ch  Sat Jan 14 13:01:58 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat, 14 Jan 2012 13:01:58 +0100
+Subject: rcauchy2d in package "fMultivar"
+In-Reply-To: <4F110C86.2080003@auckland.ac.nz>
+References: <4F110C86.2080003@auckland.ac.nz>
+Message-ID: <20241.28342.346173.130942@stat.math.ethz.ch>
+
+>>>>> Rolf Turner <r.turner at auckland.ac.nz>
+>>>>>     on Sat, 14 Jan 2012 18:03:02 +1300 writes:
+
+    > I have recently been trying to understand bivariate Cauchy
+    > distributions, and to this end I've been perusing the
+    > tools provided in the "fMultivar" package.
+
+    > I have hit a snag, in that I don't understand what
+    > rcauchy2d() is doing.
+
+    > Basically it calls rt2d with the default degrees of
+    > freedom, i.e. 4.
+
+    > My understanding is that the bivariate Cauchy distribution
+    > is the same as the bivariate t distribution with ***one***
+    > degree of freedom.  So shouldn't rcauchy2d call
+
+    >      rt2d(n=n,rho=rho,nu=1) ?
+
+    > I note that dcauchy2d calls dt2d(x = x, y = y, rho = rho,
+    > nu = 1), i.e.  the degrees of freedom are set equal to 1
+    > as I would have expected.
+
+    > Is this a bug in rcauchy2d(), or is there something that I
+    > am misunderstanding?
+
+Yes, this has been a bug, ... and I have fixed it now in the
+(R-forge) development sources.
+
+Thanks a lot, Rolf, for the report.
+
+Best regards,
+Martin
+
+
+From dominic.comtois at gmail.com  Sat Jan 14 19:47:59 2012
+From: dominic.comtois at gmail.com (Dominic Comtois)
+Date: Sat, 14 Jan 2012 13:47:59 -0500
+Subject: [R] fUtilities removed --> use fBasics
+In-Reply-To: <20241.26945.768946.474017@stat.math.ethz.ch>
+References: <009b01ccd219$7a7e88b0$6f7b9a10$@gmail.com>
+	<CB4CC63A-E72B-4FDF-9DED-298D6C7AF79B@comcast.net>
+	<20241.26945.768946.474017@stat.math.ethz.ch>
+Message-ID: <003001ccd2ed$0a4d6c30$1ee84490$@gmail.com>
+
+Thank you for your prompt and useful replies. I will be using fBasics from
+now on.
+
+Regards,
+
+Dominic Comtois, Montr?al
+
+-----Message d'origine-----
+De?: Martin Maechler [mailto:maechler at stat.math.ethz.ch] 
+Envoy??: 14 janvier 2012 06:39
+??: David Winsemius
+Cc?: Dominic Comtois; r-help at r-project.org; rmetrics-core at r-project.org
+Objet?: Re: [R] fUtilities removed --> use fBasics
+
+>>>>> David Winsemius <dwinsemius at comcast.net>
+>>>>>     on Fri, 13 Jan 2012 13:52:57 -0500 writes:
+
+    > On Jan 13, 2012, at 12:33 PM, Dominic Comtois wrote:
+
+    >> When setting up my new machine, I had the surprise to see
+    >> that "Package 'fUtilities' was removed from the CRAN
+    >> repository."
+    >> 
+
+    > https://stat.ethz.ch/pipermail/rmetrics-core/2012-January/000554.html
+    > https://stat.ethz.ch/pipermail/rmetrics-core/2011-November/000549.html
+
+indeed. thank you David (and Google, I presume ..)
+
+    >> 
+    >> This is problematic for my work. I use many of its
+    >> functions, and it will complicate things a lot if other
+    >> programmers want to use my previous code in the
+    >> future. Plus, nowhere can I find the justification for
+    >> its removal.
+
+For a longer time, the Rmetrics "management" had planned to deprecate
+fUtilities (and fSeries and fCalendar), basically refactoring the
+functionality ``approximately'' along the lines of
+
+ old package     replacement pkgs
+ -----------     ----------------
+ fUtilities      fBasics
+ fSeries         timeSeries
+ fCalendar       timeDate
+
+but clearly not a 1:1 replacement, but a refactoring as said above.
+fBasics, indeed 'Depends' on both timeSeries and timeDate, so I think it is
+safe to say that you should replace
+
+   fUtilities by fBasics
+everywhere ... and things should work...
+
+Yes, the communication about these plans where not put out the way they
+should have; and indeed the deprecation would not have necessarily meant
+that the package be dropped without proper notice.
+One excuse has been the lack of resources and health on the side of
+Rmetrics.
+
+Disclaimer: I am one of Rmetrics-core at r-project.org, as having been an
+active co-maintainer of some parts of the Rmetrics collection, but I have
+not been part of the "management" nor the foundation.
+
+Martin Maechler, ETH Zurich
+
+    > You need to send your questions to the maintainers. They
+    > apparently did not respond to the requests to fix the
+    > errors.
+
+    >> 
+    >> Thanks for any info on this
+
+    > You should perhaps subscribe to the list that is
+    > established for discussion on this and related packages.
+
+    > -- 
+
+    > David Winsemius, MD West Hartford, CT
+
+    > ______________________________________________
+    > R-help at r-project.org mailing list
+    > https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do
+    > read the posting guide
+    > http://www.R-project.org/posting-guide.html and provide
+    > commented, minimal, self-contained, reproducible code.
+
+
+From maechler at stat.math.ethz.ch  Thu Jan 19 22:23:10 2012
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 19 Jan 2012 22:23:10 +0100
+Subject: Fwd: fImport yahooKeystats
+In-Reply-To: <CA+nJqYNmjrk-fxkybDxXnZeSRAEuuYJORBjhskYROi0jWBmC0A@mail.gmail.com>
+References: <CA+nJqYNmjrk-fxkybDxXnZeSRAEuuYJORBjhskYROi0jWBmC0A@mail.gmail.com>
+Message-ID: <CAPRP4-eSazRC82o=K00ks3dqw_2H4Vef5HdB-sxAYMON2EsdTw@mail.gmail.com>
+
+Dear James,
+thanks a lot for your suggestion.
+
+Today, I've met with other Rmetrics core team members, but forgot to
+address this issue.
+I'm forwarding it hereby to the others.
+
+My personal opinion: I think it's a very good idea to work with (and
+hence 'Depend' on) the well maintained and known to be good quality
+package  'XML'.
+OTOH, I have not been involved in fImports, so
+I really do leave this to those among us who are mainly involved with
+'fImports'.
+
+Martin
+
+---------- Forwarded message ----------
+From: J Toll <jctoll at gmail.com>
+Date: Mon, Jan 16, 2012 at 03:57
+Subject: fImport yahooKeystats
+To: maechler at stat.math.ethz.ch
+
+
+Hi Martin,
+
+I was reading your response on the r-help mailing list "Re: [R]
+fUtilities removed --> use fBasics"
+
+Specifically you mentioned, "One excuse has been the lack of resources
+and health on the side
+of Rmetrics.
+
+Disclaimer: I am one of Rmetrics-core at r-project.org, as having
+been an active co-maintainer of some parts of the Rmetrics collection,
+but I have not been part of the "management" nor the foundation."
+
+A while back I noticed that the yahooKeystats function from the
+fImport package was broken. Since I wanted to use the function, I went
+ahead and fixed it for my use. ?Later, I went back and wrote a new
+version of the yahooKeystats function utilizing the XML package. ?I
+would be happy to provide that code as a replacement for yahooKeystats
+if Rmetrics would be interested.
+
+Best regards,
+
+James
+
+
+From t.linke at lancaster.ac.uk  Fri Jan 20 01:58:33 2012
+From: t.linke at lancaster.ac.uk (Linke, Tristan)
+Date: Fri, 20 Jan 2012 00:58:33 +0000
+Subject: Request: Garch Ox Fit extension of fGARCH
+Message-ID: <B5D20DF09705ED43B1E113ABB636A3E481AD5F@EX-1-MB2.lancs.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl>
+
+From klemen.koselj at gmail.com  Mon Jan 30 00:03:22 2012
+From: klemen.koselj at gmail.com (Klemen Koselj)
+Date: Sun, 29 Jan 2012 18:03:22 -0500
+Subject: Inconsistency in timeDate between isBizday and holidayNYSE
+Message-ID: <CALCp6BqdOhERVPTMMwRXjcGttfYMprJ6=Sy-eDeuLGKUxWO4Cw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl>
+

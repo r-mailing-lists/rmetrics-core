@@ -1,0 +1,113 @@
+From ripley at stats.ox.ac.uk  Mon Dec 10 12:42:47 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 10 Dec 2012 11:42:47 +0000
+Subject: Legacy .First.lib in CRAN package fNonlinear
+Message-ID: <20121210114247.3FFAA81777@gannet.stats.ox.ac.uk>
+
+You were reminded at the end of October that .First.lib would no
+longer be supported soon.  Your package fails once this is done, so
+will need to be archived on Dec 21 unless updated before then
+('before', not 'on'!).
+
+
+From ripley at stats.ox.ac.uk  Mon Dec 10 14:18:31 2012
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Mon, 10 Dec 2012 13:18:31 +0000
+Subject: Legacy .First.lib in CRAN package fUnitRoots
+Message-ID: <20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>
+
+You were reminded at the end of October that .First.lib would no
+longer be supported soon.
+
+Your package or one of its dependencies fails once this is done, so we
+needs an update as soon as possible and at the latest by Dec 21.
+
+
+From yohan.chalabi at rmetrics.org  Mon Dec 10 15:40:04 2012
+From: yohan.chalabi at rmetrics.org (Yohan Chalabi)
+Date: Mon, 10 Dec 2012 15:40:04 +0100
+Subject: Legacy .First.lib in CRAN package fUnitRoots
+In-Reply-To: <20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>
+References: <20121210131831.E48B480DF1@gannet.stats.ox.ac.uk>
+Message-ID: <m2wqwqc6o6.fsf@maci.home>
+
+Dear Brian,
+
+Thank you for your message.
+
+I have now submitted new versions of fNonlinear and fUnitRoots to CRAN.
+
+Kind regards,
+Yohan
+
+Prof Brian Ripley writes:
+
+> You were reminded at the end of October that .First.lib would no
+> longer be supported soon.
+>
+> Your package or one of its dependencies fails once this is done, so we
+> needs an update as soon as possible and at the latest by Dec 21.
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From yohan.chalabi at rmetrics.org  Mon Dec 10 16:06:49 2012
+From: yohan.chalabi at rmetrics.org (Yohan Chalabi)
+Date: Mon, 10 Dec 2012 16:06:49 +0100
+Subject: Legacy .First.lib call in CRAN package	=?utf-8?B?4oCYZkJvbmRz?=
+	=?utf-8?B?4oCZ?=
+In-Reply-To: <20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>
+References: <20121029150610.C9CC28132D@gannet.stats.ox.ac.uk>
+Message-ID: <m2sj7ec5fa.fsf@maci.home>
+
+Dear Brian,
+
+Thank you for your message.
+
+I have now submitted a new version of fBonds to CRAN.
+
+Kind regards,
+Yohan
+
+Prof Brian Ripley writes:
+
+> All packages installled under R >= 2.14.0 (and we are now at 2.15.2)
+> need a namepsace, but this package did not yet have one.  R CMD build
+> and R CMD INSTALL would add one, and we have now re-built your package
+> on CRAN to have such a namespace.
+>
+> However, the package used a .First.lib function which should be
+> replaced by .onLoad, .onAttach or both, or if the sole purpose is to
+> load compiled code, by a useDynlib declaration in the NAMESPACE file.
+>
+> Some packages are still using .First.lib() for library() calls: these
+> should be replaced by Depends: entries in DESCRIPTION, or removed if
+> there are already such entries.
+>
+> Please review the automatically-generated NAMESPACE file and improve
+> it as needed.  Shortly .First.lib functions will no longer be used so
+> you will need to submit an update not making use of one.
+>
+> There may be other issues that need fixing: see the CRAN check logs at
+> http://cran.r-project.org/web/checks/check_results_NAME.html,
+> replacing NAME by the name of your package.
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From zhangcr at cmschina.com.cn  Sat Dec 29 12:35:46 2012
+From: zhangcr at cmschina.com.cn (=?gb2312?B?1cW0usjZ?=)
+Date: Sat, 29 Dec 2012 19:35:46 +0800
+Subject: question for align
+Message-ID: <000001cde5b8$a503df50$ef0b9df0$@cmschina.com.cn>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl>
+

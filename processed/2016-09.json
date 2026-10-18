@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2016-09",
+  "messages": [
+    {
+      "id": "msg-9cf5a63d2d34",
+      "message_id": "<20160916073631.164B527183@esaopo.esaopo.u3.internal.cloudapp.net>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2016-09-16T07:36:31Z",
+      "subject": "MPF - Comparecimento em Audiência. (91368)",
+      "subject_clean": "MPF - Comparecimento em Audiência. (91368)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20160916/8d1abdd8/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20160916/8d1abdd8/attachment.html>",
+      "thread_id": "thread-9cf5a63d2d34",
+      "thread_depth": 0,
+      "month": "2016-09"
+    },
+    {
+      "id": "msg-28aa99d06226",
+      "message_id": "<20160922003649.67AD8322D4@kikisoz.kikisoz.f3.internal.cloudapp.net>",
+      "from_name": "rmetrics-core at r-project.org",
+      "from_email_hash": "fc245127a2068b2333f461de0b1a3e61793e067f3f1a2306183dee61ca217c49",
+      "date": "2016-09-22T00:36:49Z",
+      "subject": "Serasa - Comunicado Digital. (42911)",
+      "subject_clean": "Serasa - Comunicado Digital. (42911)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20160922/de941a96/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20160922/de941a96/attachment.html>",
+      "thread_id": "thread-28aa99d06226",
+      "thread_depth": 0,
+      "month": "2016-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9cf5a63d2d34",
+      "subject": "MPF - Comparecimento em Audiência. (91368)",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2016-09-16T07:36:31Z",
+      "last_reply": "2016-09-16T07:36:31Z",
+      "root_message_id": "msg-9cf5a63d2d34"
+    },
+    {
+      "id": "thread-28aa99d06226",
+      "subject": "Serasa - Comunicado Digital. (42911)",
+      "message_count": 1,
+      "participants": [
+        "rmetrics-core at r-project.org"
+      ],
+      "started": "2016-09-22T00:36:49Z",
+      "last_reply": "2016-09-22T00:36:49Z",
+      "root_message_id": "msg-28aa99d06226"
+    }
+  ]
+}

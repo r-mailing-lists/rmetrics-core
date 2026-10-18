@@ -1,0 +1,208 @@
+From ripley at stats.ox.ac.uk  Thu Mar 14 11:25:02 2013
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Thu, 14 Mar 2013 10:25:02 +0000
+Subject: Use of .find.package or .path.package in CRAN package fImport
+Message-ID: <20130314102502.A8D2781884@gannet.stats.ox.ac.uk>
+
+This concerns CRAN packages which call .find.package and/or .path.package: these have never been public functions.  Way back in R 2.13.0 public functions find.package and path.package were added, so please update your package to use them and check (and update if necessary) the R version requirement in the DESCRIPTION file.
+
+The dot versions are deprecated and will be removed shortly (but not for 3.0.0 on April 3).
+
+Please submit a corrected update to CRAN following the CRAN policies at http://cran.r-project.org/web/packages/policies.html by April 11 at the latest.
+
+There may be other issues that need fixing: see the CRAN check logs at
+http://cran.r-project.org/web/checks/check_results_NAME.html,
+replacing NAME by the name of your package.
+
+
+From chalabi at phys.ethz.ch  Fri Mar 15 14:08:15 2013
+From: chalabi at phys.ethz.ch (Yohan Chalabi)
+Date: Fri, 15 Mar 2013 14:08:15 +0100
+Subject: Use of .find.package or .path.package in CRAN package fImport
+In-Reply-To: <20130314102502.A8D2781884@gannet.stats.ox.ac.uk>
+References: <20130314102502.A8D2781884@gannet.stats.ox.ac.uk>
+Message-ID: <m238vwu7y8.fsf@phys.ethz.ch>
+
+Dear Brian,
+
+Thank you to point this out.
+
+I have now submitted a new version of fImport.
+
+Regards,
+Yohan
+
+
+On Thu, Mar 14 2013, Prof Brian Ripley wrote:
+
+> This concerns CRAN packages which call .find.package and/or .path.package: these have never been public functions.  Way back in R 2.13.0 public functions find.package and path.package were added, so please update your package to use them and check (and update if necessary) the R version requirement in the DESCRIPTION file.
+>
+> The dot versions are deprecated and will be removed shortly (but not for 3.0.0 on April 3).
+>
+> Please submit a corrected update to CRAN following the CRAN policies at http://cran.r-project.org/web/packages/policies.html by April 11 at the latest.
+>
+> There may be other issues that need fixing: see the CRAN check logs at
+> http://cran.r-project.org/web/checks/check_results_NAME.html,
+> replacing NAME by the name of your package.
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+
+
+From ligges at statistik.tu-dortmund.de  Fri Mar 15 18:04:44 2013
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Fri, 15 Mar 2013 18:04:44 +0100
+Subject: CRAN submission timeSeries 3000.96
+In-Reply-To: <m21ubgu4dj.fsf@phys.ethz.ch>
+References: <m21ubgu4dj.fsf@phys.ethz.ch>
+Message-ID: <514354AC.90001@statistik.tu-dortmund.de>
+
+
+
+On 15.03.2013 15:25, Yohan Chalabi wrote:
+> Dear CRAN maintainers,
+>
+> Please find a new version of timeSeries with
+>
+> - updated maintainer field
+> - and without deprecated .First.lib().
+>
+> Thanks in advance for your help.
+>
+> Regards,
+> Yohan
+>
+
+
+Thanks.
+
+In principle we need a formal acceptance of the old maintainer for such 
+maintainer changes, hence replying formally correct to Rmetrics Core 
+Team <Rmetrics-core at r-project.org> and waiting for a confirmation.
+
+Best,
+Uwe Ligges
+
+
+From maechler at stat.math.ethz.ch  Fri Mar 15 21:41:09 2013
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Fri, 15 Mar 2013 21:41:09 +0100
+Subject: CRAN submission timeSeries 3000.96
+In-Reply-To: <514354AC.90001@statistik.tu-dortmund.de>
+References: <m21ubgu4dj.fsf@phys.ethz.ch>
+	<514354AC.90001@statistik.tu-dortmund.de>
+Message-ID: <CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>
+
+On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges
+<ligges at statistik.tu-dortmund.de> wrote:
+>
+>
+> On 15.03.2013 15:25, Yohan Chalabi wrote:
+>>
+>> Dear CRAN maintainers,
+>>
+>> Please find a new version of timeSeries with
+>>
+>> - updated maintainer field
+>> - and without deprecated .First.lib().
+>>
+>> Thanks in advance for your help.
+>>
+>> Regards,
+>> Yohan
+>>
+>
+>
+> Thanks.
+>
+> In principle we need a formal acceptance of the old maintainer for such
+> maintainer changes, hence replying formally correct to Rmetrics Core Team
+> <Rmetrics-core at r-project.org> and waiting for a confirmation.
+>
+
+:-)   well,  as you've urged us to change the maintainer..
+
+   indeed, it's fine and great that Yohan Chalabi acts as maintainer
+now, of most former Rmetrics-core maintained  packages.
+
+Martin
+
+> Best,
+> Uwe Ligges
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+
+
+From ligges at statistik.tu-dortmund.de  Sat Mar 16 14:39:16 2013
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Sat, 16 Mar 2013 14:39:16 +0100
+Subject: CRAN submission timeSeries 3000.96
+In-Reply-To: <CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>
+References: <m21ubgu4dj.fsf@phys.ethz.ch>
+	<514354AC.90001@statistik.tu-dortmund.de>
+	<CAPRP4-fQGYR-hnC0gzKtuWFMU8LMWwNC5C+6oYMgzUWeNjWGpA@mail.gmail.com>
+Message-ID: <51447604.4040700@statistik.tu-dortmund.de>
+
+
+
+On 15.03.2013 21:41, Martin Maechler wrote:
+> On Fri, Mar 15, 2013 at 6:04 PM, Uwe Ligges
+> <ligges at statistik.tu-dortmund.de> wrote:
+>>
+>>
+>> On 15.03.2013 15:25, Yohan Chalabi wrote:
+>>>
+>>> Dear CRAN maintainers,
+>>>
+>>> Please find a new version of timeSeries with
+>>>
+>>> - updated maintainer field
+>>> - and without deprecated .First.lib().
+>>>
+>>> Thanks in advance for your help.
+>>>
+>>> Regards,
+>>> Yohan
+>>>
+>>
+>>
+>> Thanks.
+>>
+>> In principle we need a formal acceptance of the old maintainer for such
+>> maintainer changes, hence replying formally correct to Rmetrics Core Team
+>> <Rmetrics-core at r-project.org> and waiting for a confirmation.
+>>
+>
+> :-)   well,  as you've urged us to change the maintainer..
+
+Yes, I know. Hence I moved the package to CRAN yesterday already and 
+feel happy now that the formalism is in oder.
+
+>
+>     indeed, it's fine and great that Yohan Chalabi acts as maintainer
+> now, of most former Rmetrics-core maintained  packages.
+
+
+Thanks from here, too.
+
+Uwe
+
+
+> Martin
+>
+>> Best,
+>> Uwe Ligges
+>>
+>> _______________________________________________
+>> Rmetrics-core mailing list
+>> Rmetrics-core at r-project.org
+>> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>>
+
+

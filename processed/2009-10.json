@@ -1,0 +1,271 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-10",
+  "messages": [
+    {
+      "id": "msg-4b7cb5dee278",
+      "message_id": "<01ca421d$Blat.v2.2.2$230560c8@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-09-30T22:27:04Z",
+      "subject": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "subject_clean": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.2 Patched (2009-09-02 r49531)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-4b7cb5dee278",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-d71cf52206d3",
+      "message_id": "<01ca421d$Blat.v2.2.2$22e66edb@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-09-30T22:27:04Z",
+      "subject": "Package fAsianOptions_2100.76.tar.gz has been built for Windows",
+      "subject_clean": "Package fAsianOptions_2100.76.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nR version 2.9.2 Patched (2009-09-02 r49531)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_2100.76.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresp",
+      "thread_id": "thread-d71cf52206d3",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-194e7f57942e",
+      "message_id": "<19147.3393.816038.402321@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2009-10-06T09:26:25Z",
+      "subject": "CRAN packages maintained by you",
+      "subject_clean": "CRAN packages maintained by you",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear maintainers,\n\nThis concerns the packages\n\n  MarkedPointProcess, approximator, bindata, copula, emulator, fCopulae,\n  hyperdirichlet, markerSearchPower, pgs\n\nand\n\n  mlegp\n\nmaintained by one of you.  These packages depend on or (mlegp) suggest\npackage adapt, for which no valid license information is available.  We\ntherefore may be forced to withdraw adapt from CRAN, in which case\npackages which depend on adapt will no longer be installable.\n\nPlease consider the possible implications for you.  Please also note\nthat FORTRAN code by Alan Genz is still made available at\nhttp://www.math.wsu.edu/faculty/genz/software/software.html, but without\na license statement: it might be possible to obtain a valid and useful\nlicense from Alan Genz.\n\nBest\n-k",
+      "body_snippet": "Dear maintainers,\n\nThis concerns the packages\n\n  MarkedPointProcess, approximator, bindata, copula, emulator, fCopulae,\n  hyperdirichlet, markerSearchPower, pgs\n\nand\n\n  mlegp\n\nmaintained by one of you",
+      "thread_id": "thread-194e7f57942e",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-3251c6e75a6c",
+      "message_id": "<01ca4958$Blat.v2.2.2$a0176c7d@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-10-10T03:20:32Z",
+      "subject": "Package fAsianOptions_2100.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fAsianOptions_2100.76.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.10.0 alpha\n(but not the current R-2.9.2). R-2.10.0 will be released on October 26.\nPlease consider to submit a fixed version until October 16.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.10.0 alpha (2009-10-07 r49971)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.10/fAsianOptions.Rcheck'\n* using R version 2.10.0 alpha (2009-10-07 r49971)\n* using session charset: ISO8859-1\n* checking for file 'fAsianOptions/DESCRIPTION' ... OK\n* this is package 'fAsianOptions' version '2100.76'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fAsianOptions' can be installed ... ERROR\nInstallation failed.\nThe installation logfile:\n* installing *source* package 'fAsianOptions' ...\n** libs\n  making DLL ...\nmake[1]: Entering directory `/cygdrive/d/Rcompile/CRANpkg/local/2.10/fAsianOptions/src'\ngfortran     -O3  -c EBMAsianOptions.f -o EBMAsianOptions.o\ngfortran     -O3  -c GammaFunctions.f -o GammaFunctions.o\ngfortran     -O3  -c HypergeometricFunctions.f -o HypergeometricFunctions.o\ngcc -shared -s -o fAsianOptions.dll tmp.def EBMAsianOptions.o GammaFunctions.o HypergeometricFunctions.o -Ld:/Rcompile/recent/R/bin -lRlapack -Ld:/Rcompile/recent/R/bin -lRblas -lgfortran -lgfortran -Ld:/Rcompile/recent/R/bin -lR\nmake[1]: Leaving directory `/cygdrive/d/Rcompile/CRANpkg/local/2.10/fAsianOptions/src'\n  ... done\n** R\n** inst\n** preparing package for lazy loading\nLoading required package: MASS\nWarning in loadNamespace(package, c(which.lib.loc, lib.loc), keep.source = keep.source) :\n  package 'fBasics' contains no R code\nWarning: S3 methods 'stdev.default', 'termPlot.default', 'volatility.default' were declared in NAMESPACE but not found\nError in namespaceExport(ns, exports) : \n  undefined exports: acfPlot, .acfPlot, adTest, akimaInterp, akimaInterpp, .ansari2Test, .ansariTest, .aRecursionGH, .asRGB, .bartlett2Test, basicStats, .besselZ, .blue2greenPalette, .blue2redPalette, .blue2yellowPalette, box_, Boxcar, boxL, boxPercentilePlot, boxPlot, .bwAndrews2, .bwNeweyWest2, .ccfPlot, characterTable, .chcode, .checkGHMuMoments, .checkGHRawMoments, .circlesPlot, cmPalette, .cnvrt.coords, colIds, colIds<-, colorLocator, colorMatrix, colorTable, colVec, .contourPlot, copyright, correlationTest, countFunctions, .counts1Plot, .counts2Plot, cumulatedPlot, cvmTest, .cyan2magentaPalette, dagoTest, decor, .dec.to.hex, Delta, .deltaKappaGH, densityPlot, dgh, dght, dhyp, .dhyp1, .dhyp2, .dhyp3, .dhyp4, distCheck, .distCheck, divPalette, dmaxdd, dnig, drawdownPlot, dsgh, dsnig, dstable, .emptyPlot, .fct1, .FCT1, .fct2, .FCT2, .firePlot, .fligner2Test, focusPalette, .g1, .G1, .g2, .G2, .gel, getCall, .get_dat, getDescription, .get_lamb, get.lcgseed, getModel, getSlot\n , getTitle, ghFit, ghMode, .ghMuMoments, .ghMuMomentsIntegrated, .ghRawMoments, .ghRawMomentsIntegrated, ghSlider, ghtFit, .ghtMode, .gmm, .green2redPalette, greyPalette, gridVector, .HAC, heatPalette, Heaviside, .heavisideSlider, .hex.to.dec, hgrid, hilbert, histPlot, .histStack, .hyp1Mode, .hyp2Mode, .hyp3Mode, .hyp4Mode, .hyperb.change.pars, hypFit, hypMode, hypSlider, .integrateStable, interactivePlot, .interp.new, .interp.old, .interpp.new, .interpp.old, inv, .is.positive.definite, isPositiveDefinite, jarqueberaTest, .jbALM, .jbLM, .jbPlot, .jbTable, .jb.test, jbTest, .kappaGH, kendallTest, krigeInterp, kron, ks2Test, ksnormTest, .kurtosis.test, .kw2Test, .kweights, lacfPlot, lillieTest, linearInterp, linearInterpp, .lintest, listDescription, listFunctions, listIndex, .lmacfPlot, locationTest, logDensityPlot, .logpdfPlot, .make.positive.definite, makePositiveDefinite, maxddStats, .maxddStats, .mleStableFit, monoPalette, .moodTest, .mrlPlot, nFit, nigFit, .nigFit.gmm, .n\n igFit.mle, .nigFit.mps, .nigKurt, .nigMean, .nigMode, nigShapeTriangle, .nigSkew, nigSlider, .nigVar, norm, normalTest, .omnibus.test, pacfPlot, .pacfPlot, .paramGH, pascal, pchiTest, pdl, pearsonTest, .perspPlot, pgh, pght, .phiStable, phyp, .phyp1, .phyp2, .phyp3, .phyp4, .pjb, .plot, .plot.histogram, pmaxdd, pnig, .pnigC, .predict, .print, print.control, psgh, psnig, .psnigC, pstable, .purple2greenPalette, qgh, qght, qhyp, .qhyp1, .qhyp2, .qhyp3, .qhyp4, .qjb, qnig, .qnigC, .qqgaussPlot, qqghtPlot, qqnigPlot, qqnormPlot, qsgh, qsnig, .qsnigC, qstable, .qStableFit, qualiPalette, rainbowPalette, Ramp, rampPalette, .recessionLines, .residualsPlot, .responsesPlot, returnPlot, returnSeriesGUI, rgh, rght, .rghyp, .rgigjd, .rgigjd1, .rho, rhyp, .rhyp1, .rhyp2, .rhyp3, .rhyp4, .rhyperb, rk, rmaxdd, .rmetricsPackages, .rmetricsUnitTest, rnig, rnorm.lcg, rowAvgs, rowIds, rowIds<-, rowKurtosis, rowMaxs, rowMins, rowProds, rowQuantiles, rowSds, rowSkewness, rowStats, rowStdevs, rowVa\n rs, rowVec, rsgh, rsnig, rstable, rt.lcg, runif.lcg, .runitTest, scaleTest, scalinglawPlot, seqPalette, seriesPlot, set.lcgseed, sfTest, sghFit, .shapiro.test, shapiroTest, Sign, .skewness.test, .sliderMenu, .smooth_g, snigFit, spearmanTest, stableFit, stableMode, .stablePlot, stableSlider, stdev, .stylizedFactsGUI, .subPlot, .subStars, .summary, .summary.gel, .summary.gmm, symbolTable, .tdSliderMenu, teffectPlot, termPlot, terrainPalette, tFit, timPalette, topoPalette, tr, triang, Triang, tslag, .tslag1, .tTest, .unirootNA, .varfTest, varianceTest, .varpieDemo, .varpiePlot, vec, vech, vgrid, volatility, .weightsAndrews2, .xrug, .yrug\nError : package 'fBasics' could not be loaded\nERROR: lazy loading failed for package 'fAsianOptions'\n* removing 'd:/Rcompile/CRANpkg/lib/2.10/fAsianOptions'\n* restoring previous 'd:/Rcompile/CRANpkg/lib/2.10/fAsianOptions'",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAsianOptions_2100.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the correspond",
+      "thread_id": "thread-3251c6e75a6c",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-8aacac217d10",
+      "message_id": "<01ca4958$Blat.v2.2.2$a03b211d@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-10-10T03:20:32Z",
+      "subject": "Package fAssets_2100.78.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fAssets_2100.78.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.10.0 alpha\n(but not the current R-2.9.2). R-2.10.0 will be released on October 26.\nPlease consider to submit a fixed version until October 16.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.10.0 alpha (2009-10-07 r49971)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.10/fAssets.Rcheck'\n* using R version 2.10.0 alpha (2009-10-07 r49971)\n* using session charset: ISO8859-1\n* checking for file 'fAssets/DESCRIPTION' ... OK\n* this is package 'fAssets' version '2100.78'\n* checking package name space information ... OK\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fAssets' can be installed ... ERROR\nInstallation failed.\nThe installation logfile:\n* installing *source* package 'fAssets' ...\n** libs\n  making DLL ...\nmake[1]: Entering directory `/cygdrive/d/Rcompile/CRANpkg/local/2.10/fAssets/src'\ngcc -I\"d:/Rcompile/recent/R/include\"        -O3 -Wall  -std=gnu99 -c energy.c -o energy.o\ngcc -shared -s -o fAssets.dll tmp.def energy.o -Ld:/Rcompile/recent/R/bin -lR\nmake[1]: Leaving directory `/cygdrive/d/Rcompile/CRANpkg/local/2.10/fAssets/src'\n  ... done\n** R\n** inst\n** preparing package for lazy loading\nLoading required package: mnormt\nWarning in loadNamespace(package, c(which.lib.loc, lib.loc), keep.source = keep.source) :\n  package 'fBasics' contains no R code\nWarning: S3 methods 'stdev.default', 'termPlot.default', 'volatility.default' were declared in NAMESPACE but not found\nError in namespaceExport(ns, exports) : \n  undefined exports: acfPlot, .acfPlot, adTest, akimaInterp, akimaInterpp, .ansari2Test, .ansariTest, .aRecursionGH, .asRGB, .bartlett2Test, basicStats, .besselZ, .blue2greenPalette, .blue2redPalette, .blue2yellowPalette, box_, Boxcar, boxL, boxPercentilePlot, boxPlot, .bwAndrews2, .bwNeweyWest2, .ccfPlot, characterTable, .chcode, .checkGHMuMoments, .checkGHRawMoments, .circlesPlot, cmPalette, .cnvrt.coords, colIds, colIds<-, colorLocator, colorMatrix, colorTable, colVec, .contourPlot, copyright, correlationTest, countFunctions, .counts1Plot, .counts2Plot, cumulatedPlot, cvmTest, .cyan2magentaPalette, dagoTest, decor, .dec.to.hex, Delta, .deltaKappaGH, densityPlot, dgh, dght, dhyp, .dhyp1, .dhyp2, .dhyp3, .dhyp4, distCheck, .distCheck, divPalette, dmaxdd, dnig, drawdownPlot, dsgh, dsnig, dstable, .emptyPlot, .fct1, .FCT1, .fct2, .FCT2, .firePlot, .fligner2Test, focusPalette, .g1, .G1, .g2, .G2, .gel, getCall, .get_dat, getDescription, .get_lamb, get.lcgseed, getModel, getSlot\n , getTitle, ghFit, ghMode, .ghMuMoments, .ghMuMomentsIntegrated, .ghRawMoments, .ghRawMomentsIntegrated, ghSlider, ghtFit, .ghtMode, .gmm, .green2redPalette, greyPalette, gridVector, .HAC, heatPalette, Heaviside, .heavisideSlider, .hex.to.dec, hgrid, hilbert, histPlot, .histStack, .hyp1Mode, .hyp2Mode, .hyp3Mode, .hyp4Mode, .hyperb.change.pars, hypFit, hypMode, hypSlider, .integrateStable, interactivePlot, .interp.new, .interp.old, .interpp.new, .interpp.old, inv, .is.positive.definite, isPositiveDefinite, jarqueberaTest, .jbALM, .jbLM, .jbPlot, .jbTable, .jb.test, jbTest, .kappaGH, kendallTest, krigeInterp, kron, ks2Test, ksnormTest, .kurtosis.test, .kw2Test, .kweights, lacfPlot, lillieTest, linearInterp, linearInterpp, .lintest, listDescription, listFunctions, listIndex, .lmacfPlot, locationTest, logDensityPlot, .logpdfPlot, .make.positive.definite, makePositiveDefinite, maxddStats, .maxddStats, .mleStableFit, monoPalette, .moodTest, .mrlPlot, nFit, nigFit, .nigFit.gmm, .n\n igFit.mle, .nigFit.mps, .nigKurt, .nigMean, .nigMode, nigShapeTriangle, .nigSkew, nigSlider, .nigVar, norm, normalTest, .omnibus.test, pacfPlot, .pacfPlot, .paramGH, pascal, pchiTest, pdl, pearsonTest, .perspPlot, pgh, pght, .phiStable, phyp, .phyp1, .phyp2, .phyp3, .phyp4, .pjb, .plot, .plot.histogram, pmaxdd, pnig, .pnigC, .predict, .print, print.control, psgh, psnig, .psnigC, pstable, .purple2greenPalette, qgh, qght, qhyp, .qhyp1, .qhyp2, .qhyp3, .qhyp4, .qjb, qnig, .qnigC, .qqgaussPlot, qqghtPlot, qqnigPlot, qqnormPlot, qsgh, qsnig, .qsnigC, qstable, .qStableFit, qualiPalette, rainbowPalette, Ramp, rampPalette, .recessionLines, .residualsPlot, .responsesPlot, returnPlot, returnSeriesGUI, rgh, rght, .rghyp, .rgigjd, .rgigjd1, .rho, rhyp, .rhyp1, .rhyp2, .rhyp3, .rhyp4, .rhyperb, rk, rmaxdd, .rmetricsPackages, .rmetricsUnitTest, rnig, rnorm.lcg, rowAvgs, rowIds, rowIds<-, rowKurtosis, rowMaxs, rowMins, rowProds, rowQuantiles, rowSds, rowSkewness, rowStats, rowStdevs, rowVa\n rs, rowVec, rsgh, rsnig, rstable, rt.lcg, runif.lcg, .runitTest, scaleTest, scalinglawPlot, seqPalette, seriesPlot, set.lcgseed, sfTest, sghFit, .shapiro.test, shapiroTest, Sign, .skewness.test, .sliderMenu, .smooth_g, snigFit, spearmanTest, stableFit, stableMode, .stablePlot, stableSlider, stdev, .stylizedFactsGUI, .subPlot, .subStars, .summary, .summary.gel, .summary.gmm, symbolTable, .tdSliderMenu, teffectPlot, termPlot, terrainPalette, tFit, timPalette, topoPalette, tr, triang, Triang, tslag, .tslag1, .tTest, .unirootNA, .varfTest, varianceTest, .varpieDemo, .varpiePlot, vec, vech, vgrid, volatility, .weightsAndrews2, .xrug, .yrug\nError : package 'fBasics' could not be loaded\nERROR: lazy loading failed for package 'fAssets'\n* removing 'd:/Rcompile/CRANpkg/lib/2.10/fAssets'\n* restoring previous 'd:/Rcompile/CRANpkg/lib/2.10/fAssets'",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fAssets_2100.78.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CR",
+      "thread_id": "thread-8aacac217d10",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-befbd959ce0a",
+      "message_id": "<01ca4958$Blat.v2.2.2$a0c2cf7d@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-10-10T03:20:33Z",
+      "subject": "Package fExtremes_2100.77.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fExtremes_2100.77.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\n\nPlease note that we are talking about R-2.10.0 alpha\n(but not the current R-2.9.2). R-2.10.0 will be released on October 26.\nPlease consider to submit a fixed version until October 16.\nFor details (and for results on other platforms) see\nhttp://cran.r-project.org/web/checks/check_summary.html\nR version 2.10.0 alpha (2009-10-07 r49971)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.10/fExtremes.Rcheck'\n* using R version 2.10.0 alpha (2009-10-07 r49971)\n* using session charset: ISO8859-1\n* checking for file 'fExtremes/DESCRIPTION' ... OK\n* this is package 'fExtremes' version '2100.77'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fExtremes' can be installed ... ERROR\nInstallation failed.\nThe installation logfile:\n* installing *source* package 'fExtremes' ...\n** R\n** data\n**  moving datasets to lazyload DB\n** inst\n** preparing package for lazy loading\nLoading required package: MASS\nWarning in loadNamespace(package, c(which.lib.loc, lib.loc), keep.source = keep.source) :\n  package 'fGarch' contains no R code\nWarning: S3 method 'volatility.fGARCH' was declared in NAMESPACE but not found\nError in library.dynam(lib, package, package.lib) : \n  shared library 'fGarch' not found\nError : package 'fGarch' could not be loaded\nERROR: lazy loading failed for package 'fExtremes'\n* removing 'd:/Rcompile/CRANpkg/lib/2.10/fExtremes'\n* restoring previous 'd:/Rcompile/CRANpkg/lib/2.10/fExtremes'",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_2100.77.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding ",
+      "thread_id": "thread-befbd959ce0a",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-dc7626760f27",
+      "message_id": "<1256287019.4817.3.camel@t41p>",
+      "from_name": "Damien Challet",
+      "from_email_hash": "5324059476fbab3313489cc886b8e40fda7e842c76c0748a91d2ea3bb7b3f82a",
+      "date": "2009-10-23T08:36:59Z",
+      "subject": "timeSeries 2100.84 fails to install",
+      "subject_clean": "timeSeries 2100.84 fails to install",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics Core Team,\n\nI came across the following\nproblem while trying to install timeSeries. This may of course due to\nthe last version of timeDate.\n\nYours sincerely\n\nDamien Challet\n\n\ntrying URL\n'http://cran.ch.r-project.org/src/contrib/timeSeries_2100.84.tar.gz'\nContent type 'application/x-gzip' length 333232 bytes (325 Kb)\nopened URL\n==================================================\ndownloaded 325 Kb\n\n* Installing *source* package 'timeSeries' ...\n** R\n** data\n**  moving datasets to lazyload DB\n** inst\n** preparing package for lazy loading\nLoading required package: timeDate\nWarning in namespaceImportFrom(self, asNamespace(ns)) :\n  replacing previous import: abline\nWarning in namespaceImportFrom(self, asNamespace(ns)) :\n  replacing previous import: frequency\nWarning in namespaceImportFrom(self, asNamespace(ns)) :\n  replacing previous import: lines\nWarning in namespaceImportFrom(self, asNamespace(ns)) :\n  replacing previous import: plot\nWarning in namespaceImportFrom(self, asNamespace(ns)) :\n  replacing previous import: points\nError in setClassUnion(\"time_timeSeries\", members = c(\"POSIXt\",\n\"Date\")) : \n  the member classes must be defined: not true of \"POSIXt\", \"Date\"\nError: unable to load R code in package 'timeSeries'\nExecution halted\nERROR: lazy loading failed for package 'timeSeries'\n** Removing '/home/shien/R/i486-pc-linux-gnu-library/2.6/timeSeries'\n\nThe downloaded packages are in\n        /tmp/RtmpTQpyLM/downloaded_packages\nWarning message:\nIn install.packages(\"timeSeries\") :\n  installation of package 'timeSeries' had non-zero exit status",
+      "body_snippet": "Dear Rmetrics Core Team,\n\nI came across the following\nproblem while trying to install timeSeries. This may of course due to\nthe last version of timeDate.\n\nYours sincerely\n\nDamien Challet\n\n\ntrying URL\n",
+      "thread_id": "thread-dc7626760f27",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-8ef0dcf8f74a",
+      "message_id": "<20091023105029.02e3b53c@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-10-23T08:50:29Z",
+      "subject": "timeSeries 2100.84 fails to install",
+      "subject_clean": "timeSeries 2100.84 fails to install",
+      "in_reply_to": "<1256287019.4817.3.camel@t41p>",
+      "references": [
+        "<1256287019.4817.3.camel@t41p>"
+      ],
+      "body_plain": ">>>> \"DC\" == Damien Challet <damien.challet at gmail.com>\n>>>> on Fri, 23 Oct 2009 10:36:59 +0200\n\n   DC> Dear Rmetrics Core Team,\n   DC>\n   DC> I came across the following\n   DC> problem while trying to install timeSeries. This may of course\n   DC> due to\n   DC> the last version of timeDate.\n   DC>\n   DC> Yours sincerely\n   DC>\n   DC> Damien Challet\n\n\nHi Damien,\n\nAs far as I can tell from your log, you are using R 2.6. Please update\nyour R installation and packages.\n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DC\" == Damien Challet <damien.challet at gmail.com>\n>>>> on Fri, 23 Oct 2009 10:36:59 +0200\n\n   DC> Dear Rmetrics Core Team,\n   DC>\n   DC> I came across the following\n   DC> problem while trying",
+      "thread_id": "thread-dc7626760f27",
+      "thread_depth": 1,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-7f46c0abdcfb",
+      "message_id": "<2060b4520910241830pac16f9cg4648bc0b43f160a1@mail.gmail.com>",
+      "from_name": "Michael Cohen",
+      "from_email_hash": "df69e10bdad10d277b16c884d38f06c0894e21d343483edb44a5d4cf36530a5b",
+      "date": "2009-10-25T01:30:52Z",
+      "subject": "Apparent Bug in Whittle Fit Code on FARMA",
+      "subject_clean": "Apparent Bug in Whittle Fit Code on FARMA",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091024/cd3a37a3/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091024/cd3a37a3/attachment.pl>",
+      "thread_id": "thread-7f46c0abdcfb",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-ece673e49fa8",
+      "message_id": "<01ca57b0$Blat.v2.2.2$b9206560@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-10-28T09:26:26Z",
+      "subject": "Package fCopulae_2110.78.tar.gz has been built for Windows",
+      "subject_clean": "Package fCopulae_2110.78.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCopulae_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fCopulae_2110.78.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-ece673e49fa8",
+      "thread_depth": 0,
+      "month": "2009-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-4b7cb5dee278",
+      "subject": "Package fExtremes_2100.77.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-09-30T22:27:04Z",
+      "last_reply": "2009-09-30T22:27:04Z",
+      "root_message_id": "msg-4b7cb5dee278"
+    },
+    {
+      "id": "thread-d71cf52206d3",
+      "subject": "Package fAsianOptions_2100.76.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-09-30T22:27:04Z",
+      "last_reply": "2009-09-30T22:27:04Z",
+      "root_message_id": "msg-d71cf52206d3"
+    },
+    {
+      "id": "thread-194e7f57942e",
+      "subject": "CRAN packages maintained by you",
+      "message_count": 1,
+      "participants": [
+        "Kurt Hornik"
+      ],
+      "started": "2009-10-06T09:26:25Z",
+      "last_reply": "2009-10-06T09:26:25Z",
+      "root_message_id": "msg-194e7f57942e"
+    },
+    {
+      "id": "thread-3251c6e75a6c",
+      "subject": "Package fAsianOptions_2100.76.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-10-10T03:20:32Z",
+      "last_reply": "2009-10-10T03:20:32Z",
+      "root_message_id": "msg-3251c6e75a6c"
+    },
+    {
+      "id": "thread-8aacac217d10",
+      "subject": "Package fAssets_2100.78.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-10-10T03:20:32Z",
+      "last_reply": "2009-10-10T03:20:32Z",
+      "root_message_id": "msg-8aacac217d10"
+    },
+    {
+      "id": "thread-befbd959ce0a",
+      "subject": "Package fExtremes_2100.77.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-10-10T03:20:33Z",
+      "last_reply": "2009-10-10T03:20:33Z",
+      "root_message_id": "msg-befbd959ce0a"
+    },
+    {
+      "id": "thread-dc7626760f27",
+      "subject": "timeSeries 2100.84 fails to install",
+      "message_count": 2,
+      "participants": [
+        "Damien Challet",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-10-23T08:36:59Z",
+      "last_reply": "2009-10-23T08:50:29Z",
+      "root_message_id": "msg-dc7626760f27"
+    },
+    {
+      "id": "thread-7f46c0abdcfb",
+      "subject": "Apparent Bug in Whittle Fit Code on FARMA",
+      "message_count": 1,
+      "participants": [
+        "Michael Cohen"
+      ],
+      "started": "2009-10-25T01:30:52Z",
+      "last_reply": "2009-10-25T01:30:52Z",
+      "root_message_id": "msg-7f46c0abdcfb"
+    },
+    {
+      "id": "thread-ece673e49fa8",
+      "subject": "Package fCopulae_2110.78.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-10-28T09:26:26Z",
+      "last_reply": "2009-10-28T09:26:26Z",
+      "root_message_id": "msg-ece673e49fa8"
+    }
+  ]
+}

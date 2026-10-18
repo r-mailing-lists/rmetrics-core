@@ -1,0 +1,141 @@
+From chlondono at yahoo.es  Sun Nov  7 19:37:46 2010
+From: chlondono at yahoo.es (=?iso-8859-1?Q?Charle_Augusto_Londo=F1o?=)
+Date: Sun, 7 Nov 2010 18:37:46 +0000 (GMT)
+Subject: Questions about library fGarch
+Message-ID: <127998.5687.qm@web25708.mail.ukl.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl>
+
+From feanor0 at hotmail.com  Mon Nov 15 16:38:46 2010
+From: feanor0 at hotmail.com (Murali Menon)
+Date: Mon, 15 Nov 2010 15:38:46 +0000
+Subject: GBBankHoliday() function in timeDate
+Message-ID: <COL113-W41B11E9E3D3A5D0E9C4F07EE360@phx.gbl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl>
+
+From brooks at rimesrv.net  Thu Nov 18 22:48:14 2010
+From: brooks at rimesrv.net (Brooks Rimes)
+Date: Thu, 18 Nov 2010 16:48:14 -0500
+Subject: =?us-ascii?Q?Package_'fPortfolio'_&_R?=
+Message-ID: <FF111CF91DD8429DB8EE6F18318F1D19@toshibauser>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl>
+
+From tobias.verbeke at openanalytics.eu  Fri Nov 26 11:51:14 2010
+From: tobias.verbeke at openanalytics.eu (Tobias Verbeke)
+Date: Fri, 26 Nov 2010 11:51:14 +0100
+Subject: Fwd: advanced portfolio optim ToC
+Message-ID: <4CEF9122.9010408@openanalytics.eu>
+
+L.S.
+
+My initial choice of e-mail address
+might not have been appropriate.
+
+Best,
+Tobias
+
+-------- Original Message --------
+Subject: advanced portfolio optim ToC
+Date: Wed, 24 Nov 2010 16:57:42 +0100
+From: Tobias Verbeke <tobias.verbeke at openanalytics.eu>
+Reply-To: tobias.verbeke at openanalytics.eu
+Organization: OpenAnalytics
+To: ebooks at rmetrics.org
+
+L.S.
+
+First of all allow me to congratulate
+you with the quality both of the RMetrics
+software project and the accompanying
+e-books.
+
+I'm currently working on a computational
+engine for a financial institution and
+plan to give RMetrics a prominent place.
+
+One question which arose was about the
+roadmap of the portfolio optimization
+functionality. The current fPortfolio
+e-book mentions an Advanced Portfolio
+Optimization book to come and I was
+wondering whether you would  be willing
+to share the table of contents of it in
+order to have some insight into the
+directions you would like to take.
+
+Many thanks in advance for any information
+you can provide. If there is already the
+possibility to subscribe for the Early
+Bird Access Program for this book, I'm
+perfectly willing to go that way as well.
+
+Kind regards,
+Tobias
+
+-- 
+
+Tobias Verbeke
+Manager
+
+OpenAnalytics BVBA
+Kortestraat 30A
+2220 Heist-op-den-Berg
+Belgium
+
+E tobias.verbeke at openanalytics.eu
+M +32 499 36 33 15
+
+http://www.openanalytics.eu
+
+
+From spencer.graves at structuremonitoring.com  Sun Nov 28 02:46:40 2010
+From: spencer.graves at structuremonitoring.com (Spencer Graves)
+Date: Sat, 27 Nov 2010 17:46:40 -0800
+Subject: mean.acf?
+Message-ID: <4CF1B480.9050500@structuremonitoring.com>
+
+Hello:
+
+
+       Does there exist a "mean.acf" in any contributed package that you 
+know?  I could not find such but felt a need so created the attached.
+
+
+       If you think this would be a useful addition to Rmetrics, I can 
+add it to, e.g., "fBasics".  However, I felt a need to ask before I did it.
+
+
+       If you think it should be modified, I can do that.  For example, 
+it might be appropriate add a logical argument "weights" indicating 
+whether to use a simple average or a weighted average using, e.g, 
+(n.used-1) for the weights.
+
+
+       Best Wishes,
+       Spencer
+
+-- 
+Spencer Graves, PE, PhD
+President and Chief Operating Officer
+Structure Inspection and Monitoring, Inc.
+751 Emerson Ct.
+San Jos?, CA 95126
+ph:  408-655-4567
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mean.acf.Rd
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101127/a0c446e3/attachment.pl>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mean.acf.R
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101127/a0c446e3/attachment-0001.pl>
+

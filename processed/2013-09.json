@@ -1,0 +1,63 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-09",
+  "messages": [
+    {
+      "id": "msg-d94001e724cc",
+      "message_id": "<94.C2.32518.EFB19225@mail07.netnoc>",
+      "from_name": "Rihard prek strani Twoo",
+      "from_email_hash": "01ff3f438a51f9f449accd6d2cc2d11b1b86c75280e47c68e9c48f24516bbb64",
+      "date": "2013-09-06T00:04:14Z",
+      "subject": "Zadnje obvestilo: Rihard te vabi na Twoo",
+      "subject_clean": "Zadnje obvestilo: Rihard te vabi na Twoo",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130906/183ad0fd/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130906/183ad0fd/attachment.pl>",
+      "thread_id": "thread-d94001e724cc",
+      "thread_depth": 0,
+      "month": "2013-09"
+    },
+    {
+      "id": "msg-2946de1c8fce",
+      "message_id": "<001a11c3271ee4491f04e68ac074@google.com>",
+      "from_name": "Bluetooth Pedometer Supply",
+      "from_email_hash": "5bee42f9a7a688da607f03062b5ab6396bcdc5b03895b8d33c03d21ea03a15d1",
+      "date": "2013-09-17T02:05:22Z",
+      "subject": "Bluetooth Pedometer Supply与您共享了相册。",
+      "subject_clean": "Bluetooth Pedometer Supply与您共享了相册。",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Sir or Madam,\n\nWe specialize in electronic devices field with full experience and we have  \n100 % confidence in our technology and quality.\n\nNow our hot seller is pedometer. The new pedometer is more intelligent with  \nmore beautiful interface and easier operation.\n\nPedometer is a little guy with the blueooth function can fit for ipone and  \nipad.Once connected with the phone by bluetooth,it can help you record the  \namount of exercise, calorie consumpion and master the time when you are  \nexercising.Let you have a regular exercise and healthy body.Besides,it also  \nsupports off-line record function and reread the historical data records.\n\nIf you are interested in,Pls contact me.\n\nBest regards,\n\nKayla\n\nELECTRONICS LIMITED\nFactory add:East of industry Rd,  Longhua town, Bao\"an district, Shenzhen,  \nP.R.China\n\nhttps://picasaweb.google.com/lh/sredir?uname=101964284961069895909&target=ALBUM&id=5915302456169761745&authkey=Gv1sRgCPvKzKCQxIuergE&invite=CKT3tdQP&feat=email\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130917/f3ecc04d/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: picasaweblogo-zh_CN.gif\nType: image/gif\nSize: 1646 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130917/f3ecc04d/attachment.gif>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: email.jpg\nType: image/jpeg\nSize: 5785 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130917/f3ecc04d/attachment.jpg>",
+      "body_snippet": "Dear Sir or Madam,\n\nWe specialize in electronic devices field with full experience and we have  \n100 % confidence in our technology and quality.\n\nNow our hot seller is pedometer. The new pedometer is ",
+      "thread_id": "thread-2946de1c8fce",
+      "thread_depth": 0,
+      "month": "2013-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d94001e724cc",
+      "subject": "Zadnje obvestilo: Rihard te vabi na Twoo",
+      "message_count": 1,
+      "participants": [
+        "Rihard prek strani Twoo"
+      ],
+      "started": "2013-09-06T00:04:14Z",
+      "last_reply": "2013-09-06T00:04:14Z",
+      "root_message_id": "msg-d94001e724cc"
+    },
+    {
+      "id": "thread-2946de1c8fce",
+      "subject": "Bluetooth Pedometer Supply与您共享了相册。",
+      "message_count": 1,
+      "participants": [
+        "Bluetooth Pedometer Supply"
+      ],
+      "started": "2013-09-17T02:05:22Z",
+      "last_reply": "2013-09-17T02:05:22Z",
+      "root_message_id": "msg-2946de1c8fce"
+    }
+  ]
+}

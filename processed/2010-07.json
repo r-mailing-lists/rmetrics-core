@@ -1,0 +1,117 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-07",
+  "messages": [
+    {
+      "id": "msg-63606797d5c0",
+      "message_id": "<01cb1cfe$Blat.v2.2.2$16a3c93c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-07-06T11:26:33Z",
+      "subject": "Package timeDate_2120.89.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2120.89.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2120.89.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nR version 2.11.1 (2010-05-31) (32-bit)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2120.89.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-63606797d5c0",
+      "thread_depth": 0,
+      "month": "2010-07"
+    },
+    {
+      "id": "msg-7d7ec03cb511",
+      "message_id": "<01cb1cfe$Blat.v2.2.2$171f932c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-07-06T11:26:34Z",
+      "subject": "Package timeSeries_2120.88.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2120.88.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2120.88.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nR version 2.11.1 (2010-05-31) (32-bit)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2120.88.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-7d7ec03cb511",
+      "thread_depth": 0,
+      "month": "2010-07"
+    },
+    {
+      "id": "msg-e1146d498f4f",
+      "message_id": "<01cb2cd4$Blat.v2.2.2$e519b2d9@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-07-26T15:11:59Z",
+      "subject": "Package timeDate_2120.90.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2120.90.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2120.90.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nR version 2.11.1 (2010-05-31) (32-bit)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2120.90.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-e1146d498f4f",
+      "thread_depth": 0,
+      "month": "2010-07"
+    },
+    {
+      "id": "msg-72969e9aa0bc",
+      "message_id": "<01cb2cd4$Blat.v2.2.2$e546ed0c@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-07-26T15:12:00Z",
+      "subject": "Package timeSeries_2120.89.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2120.89.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2120.89.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.11/).\nR version 2.11.1 (2010-05-31) (32-bit)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2120.89.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-72969e9aa0bc",
+      "thread_depth": 0,
+      "month": "2010-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-63606797d5c0",
+      "subject": "Package timeDate_2120.89.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-07-06T11:26:33Z",
+      "last_reply": "2010-07-06T11:26:33Z",
+      "root_message_id": "msg-63606797d5c0"
+    },
+    {
+      "id": "thread-7d7ec03cb511",
+      "subject": "Package timeSeries_2120.88.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-07-06T11:26:34Z",
+      "last_reply": "2010-07-06T11:26:34Z",
+      "root_message_id": "msg-7d7ec03cb511"
+    },
+    {
+      "id": "thread-e1146d498f4f",
+      "subject": "Package timeDate_2120.90.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-07-26T15:11:59Z",
+      "last_reply": "2010-07-26T15:11:59Z",
+      "root_message_id": "msg-e1146d498f4f"
+    },
+    {
+      "id": "thread-72969e9aa0bc",
+      "subject": "Package timeSeries_2120.89.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-07-26T15:12:00Z",
+      "last_reply": "2010-07-26T15:12:00Z",
+      "root_message_id": "msg-72969e9aa0bc"
+    }
+  ]
+}

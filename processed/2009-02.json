@@ -1,0 +1,313 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-02",
+  "messages": [
+    {
+      "id": "msg-50ec06f1e7da",
+      "message_id": "<01c986ba$Blat.v2.2.2$c551ab31@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-02-04T11:21:48Z",
+      "subject": "Package timeDate_290.83.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_290.83.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.83.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.83.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-50ec06f1e7da",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-4d2859eac324",
+      "message_id": "<01c986ba$Blat.v2.2.2$c57ee577@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-02-04T11:21:49Z",
+      "subject": "Package timeSeries_290.80.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_290.80.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_290.80.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondi",
+      "thread_id": "thread-4d2859eac324",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-0fd6bb518458",
+      "message_id": "<18831.15939.739163.2800@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "af316eba824f81591e5ba568c47fb6a236f37dc698deeb0a0c2e83a757893f95",
+      "date": "2009-02-08T20:19:15Z",
+      "subject": "CRAN package timeDate",
+      "subject_clean": "CRAN package timeDate",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Guys,\n\nThis actually fails R CMD check in most cases, see\n\n  http://cran.r-project.org/web/checks/check_results_timeDate.html\n\nfrom\n\ntimeDate/R/subset.R:            length(grep(\"[a-Z]\", subset)), sep = \"\")\n\nwhich is invalid in many locales (not with a complete UTF-8 one, though,\nbut e.g. with LC_COLLATE=C).\n\nIf you want the locale's idea of letters, you can use [[:alpha:]]\ninstead.  If just the ASCII letters, you need to give them explicitly.\n\nCan you pls have an update fixing this?\n\nBest\n-k",
+      "body_snippet": "Guys,\n\nThis actually fails R CMD check in most cases, see\n\n  http://cran.r-project.org/web/checks/check_results_timeDate.html\n\nfrom\n\ntimeDate/R/subset.R:            length(grep(\"[a-Z]\", subset)), sep ",
+      "thread_id": "thread-0fd6bb518458",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-4586b6d6203a",
+      "message_id": "<20090208222129.4071fa09@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-02-08T21:21:29Z",
+      "subject": "CRAN package timeDate",
+      "subject_clean": "CRAN package timeDate",
+      "in_reply_to": "<18831.15939.739163.2800@fangorn.hornik.net>",
+      "references": [
+        "<18831.15939.739163.2800@fangorn.hornik.net>"
+      ],
+      "body_plain": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>\n>>>> on Sun, 8 Feb 2009 21:19:15 +0100\n\n   KH> Guys,\n   KH>\n   KH> This actually fails R CMD check in most cases, see\n   KH>\n   KH> http://cran.r-project.org/web/checks/check_results_timeDate.html\n   KH>\n   KH> from\n   KH>\n   KH> timeDate/R/subset.R: length(grep([a-Z], subset)), sep = )\n   KH>\n   KH> which is invalid in many locales (not with a complete UTF-8\n   KH> one, though,\n   KH> but e.g. with LC_COLLATE=C).\n   KH>\n   KH> If you want the locale's idea of letters, you can use\n   KH> [[:alpha:]]\n   KH> instead.  If just the ASCII letters, you need to give them\n   KH> explicitly.\n   KH>\n   KH> Can you pls have an update fixing this?\n   KH>\n   KH> Best\n   KH> -k\n  \nHi Kurt,\n\nThanks for your message!\n\nI have updated the package with your suggestion and you can find the new\nversion on CRAN ftp server. \n\nThanks again for your feedback!\n\nRegards,\nYohan\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>\n>>>> on Sun, 8 Feb 2009 21:19:15 +0100\n\n   KH> Guys,\n   KH>\n   KH> This actually fails R CMD check in most cases, see\n   KH>\n   KH> http://cran.",
+      "thread_id": "thread-0fd6bb518458",
+      "thread_depth": 1,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-672eeaa8f2a1",
+      "message_id": "<18831.20239.728930.221580@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "af316eba824f81591e5ba568c47fb6a236f37dc698deeb0a0c2e83a757893f95",
+      "date": "2009-02-08T21:30:55Z",
+      "subject": "CRAN package timeDate",
+      "subject_clean": "CRAN package timeDate",
+      "in_reply_to": "<20090208222129.4071fa09@mimi>",
+      "references": [
+        "<18831.15939.739163.2800@fangorn.hornik.net>",
+        "<20090208222129.4071fa09@mimi>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>\n>>>>> on Sun, 8 Feb 2009 21:19:15 +0100\n\nKH> Guys,\nKH> \nKH> This actually fails R CMD check in most cases, see\nKH> \nKH> http://cran.r-project.org/web/checks/check_results_timeDate.html\nKH> \nKH> from\nKH> \nKH> timeDate/R/subset.R: length(grep([a-Z], subset)), sep = )\nKH> \nKH> which is invalid in many locales (not with a complete UTF-8\nKH> one, though,\nKH> but e.g. with LC_COLLATE=C).\nKH> \nKH> If you want the locale's idea of letters, you can use\nKH> [[:alpha:]]\nKH> instead.  If just the ASCII letters, you need to give them\nKH> explicitly.\nKH> \nKH> Can you pls have an update fixing this?\nKH> \nKH> Best\nKH> -k\n  \n> Hi Kurt,\n\n> Thanks for your message!\n\n> I have updated the package with your suggestion and you can find the new\n> version on CRAN ftp server. \n\n> Thanks again for your feedback!\n\nThanks for the quick update, on its way to CRAN ...\n\nBest\n-k",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu-wien.ac.at>\n>>>>> on Sun, 8 Feb 2009 21:19:15 +0100\n\nKH> Guys,\nKH> \nKH> This actually fails R CMD check in most cases, see\nKH>",
+      "thread_id": "thread-0fd6bb518458",
+      "thread_depth": 2,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-7f58f53962db",
+      "message_id": "<01c98a43$Blat.v2.2.2$f606b285@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-02-08T23:21:25Z",
+      "subject": "Package timeDate_290.84.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_290.84.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.84.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.8/).\nR version 2.8.1 (2008-12-22)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_290.84.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding",
+      "thread_id": "thread-7f58f53962db",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-858fb8c9d40d",
+      "message_id": "<20090210162325.4b86d154@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-02-10T15:23:25Z",
+      "subject": "fUtilities::isS4",
+      "subject_clean": "fUtilities::isS4",
+      "in_reply_to": "<18819.13195.192703.787718@ron.nulle.part>",
+      "references": [
+        "<alpine.DEB.1.00.0901291028290.14312@springer.Berkeley.EDU>",
+        "<20090130091714.71f715cf@mimi>",
+        "<18819.13195.192703.787718@ron.nulle.part>"
+      ],
+      "body_plain": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Fri, 30 Jan 2009 11:06:19 -0600\n\n   DE>\n   DE> Yohan, Diethelm,\n   DE>\n   DE> On 30 January 2009 at 09:17, Yohan Chalabi wrote:\n   DE> | BTW, have you noticed that the new Rmetrics packages\n   DE> should not\n   DE> | depend on 'fUtilities' which will be considered as deprecated\n   DE> in the\n   DE> | future.\n   DE> |\n   DE> | If you are using 'fCalendar' and 'fSeries', please move to\n   DE> their new\n   DE> | versions named timeDate and timeSeries respectively.\n   DE>\n   DE> Would it be possible to get more regular updates about what is,\n   DE> or is not, or\n   DE> will be, or will no longer be, part of what is considered to\n   DE> be Rmetrics ?\n\nHi Dirk!\n\n\nFYI we made two announcements on the mailing-list describing the changes\nin the packages. \n\n\n   DE>\n   DE> Maybe it is just me, but I find it confusing that a project\n   DE> called 'Rmetrics'\n   DE> once had a package called Rmetrics which it no longer has\n   DE> ... The calendar /\n   DE> date package transition wasn't all that smooth either. As start,\n   DE> a high-level\n\nnot smooth? To recall, we made important changes in the S4 objects.\nSo, we decided to rename the packages to avoid backward compatibilities.\n\nAs you might have noticed, the old packages are still available on CRAN.\n\nAnd when one loads the old packages, one gets a banner\nencouraging to switch to the new version.\n\n   DE> changelog and/or roadmap could be added to the wiki.  You may\n   DE> also want to\n   DE> use this list. And/or the r-packages or r-sig-finance list.\n\nThe ChangeLog is a good point. I have started to add a ChangeLog in the\npackages.\n\n   DE>\n   DE> Finally, I personally would also vote for re-instating the\n   DE> Rmetrics package\n   DE> as it can give you at least a small hook (by looking at the\n   DE> search path, or\n   DE> at installed.packages(), or ...) into alerting actual users\n   DE> to the fact that\n   DE> they still have something installed that you now deem\n   DE> deprecated.  Otherwise,\n   DE> I fear you will be confronted with this problem for a long\n   DE> time indeed.\n\nYou can get the list of all Rmetrics packages from our website with\n\nsource(\"http://www.rmetrics.org/Rmetrics.R\")\npkgsRmetrics() # will give you the list of the packages and \ninstall.Rmetrics() # should install all packages.\n\nor search all Rmetrics help pages at http://help.rmetrics.org\n\nThese are new tools and we will announce them on the mailing-list as\nsoon as we have finished our ebook on portfolio optimization\nwith Rmetrics.\n\nBest regards,\nYohan\n\n   DE>\n   DE> Just my sh.02.\n   DE>\n   DE> Regards, Dirk\n   DE>\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"DE\" == Dirk Eddelbuettel <edd at debian.org>\n>>>> on Fri, 30 Jan 2009 11:06:19 -0600\n\n   DE>\n   DE> Yohan, Diethelm,\n   DE>\n   DE> On 30 January 2009 at 09:17, Yohan Chalabi wrote:\n   DE> | BTW,",
+      "thread_id": "thread-858fb8c9d40d",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-460133298f9a",
+      "message_id": "<F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>",
+      "from_name": "Ng, Wing L",
+      "from_email_hash": "f8414709cf9fbc7373768bcad76704d85df6f96cd8419b2c18da0c9e8afa8b02",
+      "date": "2009-02-13T09:51:38Z",
+      "subject": "problem with \"timeSeries\"",
+      "subject_clean": "problem with \"timeSeries\"",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl>",
+      "thread_id": "thread-460133298f9a",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-25fdef0a3a26",
+      "message_id": "<1234525113.5535.6.camel@hume>",
+      "from_name": "Dott. Sergio Guirreri",
+      "from_email_hash": "d6b9a93c76737f90af7b838af746511c1f717a3cb602d0dc79c66383655c63f1",
+      "date": "2009-02-13T11:38:33Z",
+      "subject": "Package fBonds - Svensson function",
+      "subject_clean": "Package fBonds - Svensson function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I want to inform you about the result of the function \"Svensson\"  in the\npackage \"fBonds\" . I want to estimate the parameters of a term structure\nbut the resulting tau1 parameter is negative in contrast with the theory\nof Svensson model!!\n\nWhat happens ? why ? It's a my mistake ?\n\nThe data are:\n\n  m6       y1       y5       y7      y10      y20 \n3.550001 3.583334 4.875673 5.198603 5.324215 5.848792 \n\nKind Regards SG\n\n\n-- \n__________________________________________\nDott. Sergio S. Guirreri\n\nUniversity of Palermo\n\nDepartment of Science Statistics and Mathematical \"S. Vianelli\" - http://dssm.unipa.it\n\ntel: (+39) 0916626442 - http://www.webalice.it/sergio.guirreri",
+      "body_snippet": "I want to inform you about the result of the function \"Svensson\"  in the\npackage \"fBonds\" . I want to estimate the parameters of a term structure\nbut the resulting tau1 parameter is negative in contra",
+      "thread_id": "thread-25fdef0a3a26",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-ac46d3247444",
+      "message_id": "<1234532580.5535.9.camel@hume>",
+      "from_name": "Dott. Sergio Guirreri",
+      "from_email_hash": "d6b9a93c76737f90af7b838af746511c1f717a3cb602d0dc79c66383655c63f1",
+      "date": "2009-02-13T13:43:00Z",
+      "subject": "Package fBonds - Svensson function",
+      "subject_clean": "Package fBonds - Svensson function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "There is an inversion of estimation of parameter beta3 with tau1.\n-- \n__________________________________________\nDott. Sergio S. Guirreri\n\nUniversity of Palermo\n\nDepartment of Science Statistics and Mathematical \"S. Vianelli\" - http://dssm.unipa.it\n\ntel: (+39) 0916626442 - http://www.webalice.it/sergio.guirreri",
+      "body_snippet": "There is an inversion of estimation of parameter beta3 with tau1.\n-- \n__________________________________________\nDott. Sergio S. Guirreri\n\nUniversity of Palermo\n\nDepartment of Science Statistics and M",
+      "thread_id": "thread-ac46d3247444",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-fbec2ddfa2d9",
+      "message_id": "<20090216154901.2883a0b8@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-02-16T14:49:01Z",
+      "subject": "problem with \"timeSeries\"",
+      "subject_clean": "problem with \"timeSeries\"",
+      "in_reply_to": "<F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>",
+      "references": [
+        "<F1FD5FA3F529364985E8E09F50ABC48903DC63C8@sernt14.essex.ac.uk>"
+      ],
+      "body_plain": ">>>> \"NWL\" == \"Ng, Wing L\" <wlng at essex.ac.uk>\n>>>> on Fri, 13 Feb 2009 09:51:38 -0000\n\n   NWL> Dear Sir/Madam,\n   NWL>\n   NWL>\n   NWL>\n   NWL> I have an old R-code using R-metrics functions that worked\n   NWL> quite well\n   NWL> under R2.7.\n   NWL>\n   NWL>\n   NWL>\n   NWL> Having updated R to 2.8 and all packages as well, the same\n   NWL> (!) code does\n   NWL> not work any more. The main problem that I have is that R keeps\n   NWL> complaining that the timeSeries object does not contain any\n   NWL> data which\n   NWL> is not true. You will find one example below. Can you\n   NWL> help? Thank you.\n   NWL>\n   NWL>\n   NWL>\n   NWL> Yours truly,\n\n\nHave a look at this entry\n[https://wiki.rmetrics.org/doku.php?id=timeseries_data]\n\nIt might respond to your question.\n\nregards,\nYohan\n\n\n-- \nPhD student\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"NWL\" == \"Ng, Wing L\" <wlng at essex.ac.uk>\n>>>> on Fri, 13 Feb 2009 09:51:38 -0000\n\n   NWL> Dear Sir/Madam,\n   NWL>\n   NWL>\n   NWL>\n   NWL> I have an old R-code using R-metrics functions that wo",
+      "thread_id": "thread-460133298f9a",
+      "thread_depth": 1,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-222e5df936d9",
+      "message_id": "<8c0ddffa0902181324m3db97a57vc73190d577a942b7@mail.gmail.com>",
+      "from_name": "Per Jensen",
+      "from_email_hash": "d21cd6689198b2a5dba247a0a8e588dde6e3f48f39a9ce8b507a70557b9329c9",
+      "date": "2009-02-18T21:24:04Z",
+      "subject": "yahooKeystats",
+      "subject_clean": "yahooKeystats",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl>",
+      "thread_id": "thread-222e5df936d9",
+      "thread_depth": 0,
+      "month": "2009-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-50ec06f1e7da",
+      "subject": "Package timeDate_290.83.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-02-04T11:21:48Z",
+      "last_reply": "2009-02-04T11:21:48Z",
+      "root_message_id": "msg-50ec06f1e7da"
+    },
+    {
+      "id": "thread-4d2859eac324",
+      "subject": "Package timeSeries_290.80.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-02-04T11:21:49Z",
+      "last_reply": "2009-02-04T11:21:49Z",
+      "root_message_id": "msg-4d2859eac324"
+    },
+    {
+      "id": "thread-0fd6bb518458",
+      "subject": "CRAN package timeDate",
+      "message_count": 3,
+      "participants": [
+        "Kurt Hornik",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-02-08T20:19:15Z",
+      "last_reply": "2009-02-08T21:30:55Z",
+      "root_message_id": "msg-0fd6bb518458"
+    },
+    {
+      "id": "thread-7f58f53962db",
+      "subject": "Package timeDate_290.84.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-02-08T23:21:25Z",
+      "last_reply": "2009-02-08T23:21:25Z",
+      "root_message_id": "msg-7f58f53962db"
+    },
+    {
+      "id": "thread-858fb8c9d40d",
+      "subject": "fUtilities::isS4",
+      "message_count": 1,
+      "participants": [
+        "Yohan Chalabi"
+      ],
+      "started": "2009-02-10T15:23:25Z",
+      "last_reply": "2009-02-10T15:23:25Z",
+      "root_message_id": "msg-858fb8c9d40d"
+    },
+    {
+      "id": "thread-460133298f9a",
+      "subject": "problem with \"timeSeries\"",
+      "message_count": 2,
+      "participants": [
+        "Ng, Wing L",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-02-13T09:51:38Z",
+      "last_reply": "2009-02-16T14:49:01Z",
+      "root_message_id": "msg-460133298f9a"
+    },
+    {
+      "id": "thread-25fdef0a3a26",
+      "subject": "Package fBonds - Svensson function",
+      "message_count": 1,
+      "participants": [
+        "Dott. Sergio Guirreri"
+      ],
+      "started": "2009-02-13T11:38:33Z",
+      "last_reply": "2009-02-13T11:38:33Z",
+      "root_message_id": "msg-25fdef0a3a26"
+    },
+    {
+      "id": "thread-ac46d3247444",
+      "subject": "Package fBonds - Svensson function",
+      "message_count": 1,
+      "participants": [
+        "Dott. Sergio Guirreri"
+      ],
+      "started": "2009-02-13T13:43:00Z",
+      "last_reply": "2009-02-13T13:43:00Z",
+      "root_message_id": "msg-ac46d3247444"
+    },
+    {
+      "id": "thread-222e5df936d9",
+      "subject": "yahooKeystats",
+      "message_count": 1,
+      "participants": [
+        "Per Jensen"
+      ],
+      "started": "2009-02-18T21:24:04Z",
+      "last_reply": "2009-02-18T21:24:04Z",
+      "root_message_id": "msg-222e5df936d9"
+    }
+  ]
+}

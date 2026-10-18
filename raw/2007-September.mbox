@@ -1,0 +1,72 @@
+From maechler at stat.math.ethz.ch  Thu Sep 13 10:14:00 2007
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Thu, 13 Sep 2007 10:14:00 +0200
+Subject: Rmetrics-core Mailing list
+In-Reply-To: <Pine.LNX.4.64.0709130213060.1877@eowyn>
+References: <46E5196A.4000003@itp.phys.ethz.ch>
+	<Pine.LNX.4.64.0709130050190.1877@eowyn>
+	<18152.32560.299313.933401@ron.nulle.part>
+	<Pine.LNX.4.64.0709130213060.1877@eowyn>
+Message-ID: <18152.61768.596607.700251@stat.math.ethz.ch>
+
+[A resend --- this time  Rmetrics-core;
+ Note that  I cannot send e-mail to Dirk anymore; possibly
+ because we use more spam-protection and our mail server does
+ not react quickly enough to debian.org's one.
+ 
+ Maybe this reaches Dirk ?  -- Martin
+]
+
+>>>>> "AZ" == Achim Zeileis <Achim.Zeileis at wu-wien.ac.at>
+>>>>>     on Thu, 13 Sep 2007 02:21:52 +0200 (CEST) writes:
+
+    AZ> On Wed, 12 Sep 2007, Dirk Eddelbuettel wrote:
+    >> On 13 September 2007 at 00:56, Achim Zeileis wrote:
+    >> | Wie von Kurt bereits angemerkt kann man deshalb die Namensgebung
+    >> | sicherlich freier gestalten und braucht die Zusammengehoerigkeit nicht
+    >> | durch Namenskonventionen verdeutlichen.
+    >> 
+    >> Ich bin da anderer Meinung.  CRAN + BioC sind nun um die 2000 Pakete, und es
+    >> ist mE einfacher wenn da gemeinsame 'Wurzeln' deutlich gemacht.  Meine $0.02
+    >> fuer nen Rmetrix-Prefix oder sowas.
+
+    AZ> Ohne es muehsam machen zu wollen:
+    AZ> o Die Leute, die "Rmetrics" wollen, brauchen halt eine geeignete
+    AZ> Info-Uebersicht, die kann man auf Rmetrics.org bekommen, und angenehme
+    AZ> Installations- und Lademechanismen bspw. durch das "Rmetrics"
+    AZ> Meta-Paket oder einen CRAN Task View.
+    AZ> o Andererseits moechte man fuer ander Nutzer, die sich nicht fuer
+    AZ> Rmetrics an sich interessieren, die Benutzung nicht unnoetig
+    AZ> kompliziert machen (wenn man nur ein bestimmtes Teil-Feature oder
+    AZ> einen Algorithmus o.ae. braucht). Gemeinsame Namen oder stark
+    AZ> Inderpedendenzen koennen da hemmend wirken. Bei BioC finde ich das bei
+    AZ> vielen Paketen etwas stoerend.
+
+    AZ> Aber letztendlich ist es nur ein Detailfrage und es gibt sicherlich 
+    AZ> wichtigere Designentscheidungen...
+
+Da bin ich auch einverstanden.
+Ich bin sowieso der Meinung, etwas entgegen dem Vorschlag von
+Diethelm, dass man weitere Package-Reorganisation nicht
+unbedingt wieder mit neuen etc bewerkstelligen soll.
+
+Der End-User m??chte nicht dauernd seine "Produktion"-Skripts
+modifizieren m??ssen, wo 
+	     
+require(<pkgname>)  oder
+library(<pkgname>)  drin steht.
+
+Die Package k??nnen und sollen intern re-organisiert werden,
+einen NAMESPACE bekommen etc, aber nicht wieder umbenannt
+werden.
+
+PS: Wer von Euch (ausser Dirk) m??chte jetzt noch zu
+    Rmetrics-core (erst mal nur E-mail Verteiler) dazu kommen?
+
+Meiner Meinung nach sollten solche Dinge unbedingt auf
+Rmetrics-core diskutiert werden, wo sie auch archiviert bleiben,
+und sichtbar werden, f??r zuk??nftige 'Rmetrics-core' Mitglieder.
+
+Martin
+
+

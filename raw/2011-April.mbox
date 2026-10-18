@@ -1,0 +1,102 @@
+From Uwe.Ligges at R-Project.org  Wed Apr  6 17:27:40 2011
+From: Uwe.Ligges at R-Project.org (Uwe.Ligges at R-Project.org)
+Date: Wed, 06 Apr 2011 17:27:40 +0200
+Subject: Package timeDate_2130.93.tar.gz has been built for Windows
+Message-ID: <01cbf46f$Blat.v2.2.2$2a93e445@mail.statistik.tu-dortmund.de>
+
+Dear package maintainer,
+ 
+this notification has been generated automatically.
+Your package timeDate_2130.93.tar.gz has been built for Windows and
+will be published within 24 hours in the corresponding CRAN directory
+(CRAN/bin/windows/contrib/2.12/).
+R version 2.12.2 (2011-02-25)
+ 
+All the best,
+Uwe Ligges
+(Maintainer of binary packages for Windows)
+
+
+From chalabi at phys.ethz.ch  Fri Apr  8 11:52:25 2011
+From: chalabi at phys.ethz.ch (Yohan)
+Date: Fri, 8 Apr 2011 11:52:25 +0200
+Subject: Question
+In-Reply-To: <OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>
+References: <OFD4945C33.B39A94AB-ON4825785C.0009BEA6-48257861.0020B521@mail.clic>
+Message-ID: <39ED754E-81A7-4402-9F95-30045666AC40@phys.ethz.ch>
+
+Hi,
+
+I cannot reproduce it.
+
+Please provide code to show your problem.
+
+Regards,
+Yohan
+
+Le 28 mars 11 ? 07:56, ?? a ?crit :
+
+> Dear Rmetrics Core Team:
+>
+> I have encountered a problem when using the garchFit model in the  
+> fGarch
+> Package, and I hope you can help me .
+>
+> The problem is  describled as the following
+>
+> The length of the financial return series to be fitted by garchFit is
+> 2599,but the length of the vector of the fitted values(@fitted)  
+> returned
+> by the garchFit model is 1974.
+>
+> And what's more when I change  the return series to a length of  
+> 1000, the
+> length of the fitted vector returned by the garchFit model is also  
+> 1974.
+> I'm totally at
+>
+> a loss,because I think the length of the return series and of the  
+> fitted
+> values should be the same ,why the garchFit model returns a fitted  
+> values
+> vector with a different
+> length with that of the financial return serires being fitted.
+>
+>
+> Please give me a help .I'm looking forward for your reply.
+>
+> Thank you very much.
+>
+> Yours sincerely,
+> Sophia Song
+> Tel?:(8610)-63635803
+> Email?songjie at clpc.e-chinalife.com
+>
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> Rmetrics-core mailing list
+> Rmetrics-core at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/rmetrics-core
+>
+
+--
+PhD candidate
+Swiss Federal Institute of Technology
+Zurich
+
+www.ethz.ch
+
+
+From statconsult90 at gmail.com  Sun Apr 17 07:31:06 2011
+From: statconsult90 at gmail.com (Stat Consult)
+Date: Sun, 17 Apr 2011 10:01:06 +0430
+Subject: kpss
+Message-ID: <BANLkTi=MR+Bqd-DVkCKCF6FDhF1ASsUN5Q@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl>
+

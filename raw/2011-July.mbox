@@ -1,0 +1,131 @@
+From mpbleader at gmail.com  Sun Jul  3 16:40:57 2011
+From: mpbleader at gmail.com (Scott Bland)
+Date: Sun, 3 Jul 2011 10:40:57 -0400 (EDT)
+Subject: Your Telephone Call
+Message-ID: <201107031440.p63EevMp059555@www.watchtv.net>
+
+Hello!!
+
+If you are open to additional income, PLEASE read on!!  If not, I wish you nothing but success in what you are currently doing.  
+
+I just wanted to reach out to you to make you aware of something I have come across that's fun, fast and easy! There is a lot more to it, but the bottom line is, for a one time flat fee you can drastically reduce or totally eliminate your on-going gasoline and grocery expenses
+ and get paid on top of that! 
+
+It's one of best programs I have come across in years.  To me it was a no-brainer, and I jumped in IMMEDIATELY and have been receiving FREE groceries and gas now for about 10 months!!  You should really check it out for yourself. 
+
+Please call 253-780-9870 for a 3 minute overview and site details to obtain full information on this nationwide program that is helping all sorts of people!!  You will thank me you did.
+
+All the best,
+Scott Bland
+Lima, Ohio
+253-780-9870
+======================== NOTICE =========================
+** You are NOT part of some mailing campaign. This is a ONE TIME
+MAILING, however; due to the CAN spam act, I must place this information below:
+
+You received a call/email because you:
+1) Requested more information via an online form
+2) Requested more information via a call to our office
+3) Had expressed an interest in receiving information about online opportunities
+4) Business to business email exchange.
+5) or were on an opt-in safe list. 
+
+As stated this is a ONE TIME mailing however; if you believe this email in error and you do not need help then please accept my most sincere apology, and simply hit "reply" and write "Rem0ve Me" in the subject line.
+
+
+From pmaclean2011 at yahoo.com  Mon Jul  4 01:38:00 2011
+From: pmaclean2011 at yahoo.com (Peter Maclean)
+Date: Sun, 3 Jul 2011 16:38:00 -0700 (PDT)
+Subject: SAVING RETURN LEVELS FROM fEXTREME PACKAGE BY GROUPD
+Message-ID: <1309736280.3169.YahooMailRC@web121710.mail.ne1.yahoo.com>
+
+#I hope you will be able to help me out.
+#My interest is how to save the returned quantiles in qmax (below)?and how to 
+use the "gevrlevelPlot" function to #plot and save the return level with 
+confidence intervals.
+#Example
+n <- c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3,3)
+y <- c(2,3,2,3,4,5,6,1,4,1,2,6, 2, 1, 2, 0,9,3)
+z <- data.frame(n=factor(n),y=y)
+z <- split(z, z$n)
+library(fExtremes)
+res2 <- lapply(z, function(x){
+????????????? m <- as.numeric(x$y)
+????????????? gevFit(m, block = 1, type = c("pwm"))
+?????????????? })
+
+res3 <- data.frame(n = names(res2), t(sapply(res2, function(l) l at fit$par.ests)))
+res4 <- split(res3, res3$n) 
+qmax <- lapply(res4, function(x) {
+??????????????????????? a <- x$xi 
+??????????????????????? b <- x$mu 
+??????????????????????? c <- x$beta
+??????????????????????? qgev(0.95, xi = a, mu = b, beta = c, lower.tail = TRUE)
+})
+#Did not work
+gmax1 <- data.frame(n = names(qmax), t(sapply(qmax, function(l) l at fit$n)))
+?Peter Maclean
+
+
+
+From ripley at stats.ox.ac.uk  Tue Jul 26 14:01:44 2011
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Tue, 26 Jul 2011 13:01:44 +0100 (BST)
+Subject: Package updates needed for R-devel
+Message-ID: <alpine.LFD.2.02.1107261248390.21173@gannet.stats.ox.ac.uk>
+
+R-devel has
+
+     ? All packages must have a namespace, and one is created on
+       installation if not supplied in the sources.  This means that any
+       package without a namespace must be re-installed under this
+       version of R (but data-only packages without R code can still be
+       used).
+
+It also means that the bindings in the package are locked, and 
+packages
+
+ArDec
+SSSR
+bs
+fCalendar
+fSeries
+fUtilities
+fork
+lspls
+miniGUI
+reportr
+tractor.base
+
+try to change them.  The exact errors can be seen at
+http://cran.r-project.org/web/checks/check_summary.html
+at least in the third column.
+
+The best thing to do here is to add a NAMESPACE file manually (the 
+automated one is simply the line
+
+exportPattern(".")
+
+) and then work out what do with the things you try to change.  Often 
+the best way is to use a separate environment, as package grDevices 
+does, but sometimes one can use local() to set an environment on a 
+function other than the package/namespace.
+
+Oh, and (SSSR)
+
+LazyLoad: no
+
+no longer works, so please remove it.
+
+We will need an updated package in due course, definitely before the 
+alpha testing for 2.14.0 starts in a couple of months.
+
+Brian Ripley
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+

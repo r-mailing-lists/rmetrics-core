@@ -1,0 +1,117 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2013-01",
+  "messages": [
+    {
+      "id": "msg-fe46b11f2de2",
+      "message_id": "<E1TsbYu-00075N-7u@server.tapscotthosting.com>",
+      "from_name": "Mrs Johnson",
+      "from_email_hash": "5658fdf667b5c057636a4c084613af0d0458ab5063d10a92ada5712c46a72f7f",
+      "date": "2013-01-08T15:58:00Z",
+      "subject": "Pray",
+      "subject_clean": "Pray",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130108/540cf3b5/attachment.html>",
+      "body_snippet": "An HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130108/540cf3b5/attachment.html>",
+      "thread_id": "thread-fe46b11f2de2",
+      "thread_depth": 0,
+      "month": "2013-01"
+    },
+    {
+      "id": "msg-3f825c69ec9b",
+      "message_id": "<20130110155742.248898181B@gannet.stats.ox.ac.uk>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2013-01-10T15:57:42Z",
+      "subject": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "subject_clean": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Functions real(), as.real() and is.real() have been 'deprecated' and\n'for backwards compatibility only' for over 5 years now, but are still\nused in your package (or something it calls, but I have tried to\nelminate those).  They now give formal warnings in R-patched and\nR-devel, and will become defunct shortly, most likely for R 3.0.0 in a\ncouple of months.\n\nAll that was needed was to use the 'double' versions.\n\nPlease submit an update to the package correcting this, to CRAN\nfollowing http://cran.r-project.org/web/packages/policies.html .\n\nThere may be other issues that need fixing: see the CRAN check logs at\nhttp://cran.r-project.org/web/checks/check_results_NAME.html,\nreplacing NAME by the name of your package.",
+      "body_snippet": "Functions real(), as.real() and is.real() have been 'deprecated' and\n'for backwards compatibility only' for over 5 years now, but are still\nused in your package (or something it calls, but I have trie",
+      "thread_id": "thread-3f825c69ec9b",
+      "thread_depth": 0,
+      "month": "2013-01"
+    },
+    {
+      "id": "msg-8961685bf739",
+      "message_id": "<ADB2D0C4438D9C40B1C26BC69CCAB6391342CE08@Exch-Mailbox.ors.local>",
+      "from_name": "Marco Giuliano",
+      "from_email_hash": "6d620637f5b3b3e904a08a2c0e1a8f97e232e3d3346415bae8a6dee48d62445b",
+      "date": "2013-01-18T08:12:33Z",
+      "subject": "TimeSeries align odd behavior",
+      "subject_clean": "TimeSeries align odd behavior",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl>",
+      "thread_id": "thread-8961685bf739",
+      "thread_depth": 0,
+      "month": "2013-01"
+    },
+    {
+      "id": "msg-5cec9559b143",
+      "message_id": "<1358774864.42564.YahooMailNeo@web162203.mail.bf1.yahoo.com>",
+      "from_name": "Amjad Ali",
+      "from_email_hash": "63306c7fcebf94df407e2bea8105ba622f49d7fdd3ca9758402358c2835dd200",
+      "date": "2013-01-21T13:27:44Z",
+      "subject": "No subject",
+      "subject_clean": "No subject",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl>",
+      "thread_id": "thread-5cec9559b143",
+      "thread_depth": 0,
+      "month": "2013-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fe46b11f2de2",
+      "subject": "Pray",
+      "message_count": 1,
+      "participants": [
+        "Mrs Johnson"
+      ],
+      "started": "2013-01-08T15:58:00Z",
+      "last_reply": "2013-01-08T15:58:00Z",
+      "root_message_id": "msg-fe46b11f2de2"
+    },
+    {
+      "id": "thread-3f825c69ec9b",
+      "subject": "Use of deprecated {as.,is.,}real() functions in CRAN package fAsianOptions",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2013-01-10T15:57:42Z",
+      "last_reply": "2013-01-10T15:57:42Z",
+      "root_message_id": "msg-3f825c69ec9b"
+    },
+    {
+      "id": "thread-8961685bf739",
+      "subject": "TimeSeries align odd behavior",
+      "message_count": 1,
+      "participants": [
+        "Marco Giuliano"
+      ],
+      "started": "2013-01-18T08:12:33Z",
+      "last_reply": "2013-01-18T08:12:33Z",
+      "root_message_id": "msg-8961685bf739"
+    },
+    {
+      "id": "thread-5cec9559b143",
+      "subject": "No subject",
+      "message_count": 1,
+      "participants": [
+        "Amjad Ali"
+      ],
+      "started": "2013-01-21T13:27:44Z",
+      "last_reply": "2013-01-21T13:27:44Z",
+      "root_message_id": "msg-5cec9559b143"
+    }
+  ]
+}

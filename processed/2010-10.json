@@ -1,0 +1,156 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2010-10",
+  "messages": [
+    {
+      "id": "msg-ce0837dde46b",
+      "message_id": "<20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>",
+      "from_name": "torgrims at stud.ntnu.no",
+      "from_email_hash": "409bf507c71caee03dc1308965bfaaee95d74dd075444efbdd81415d38d3b0a2",
+      "date": "2010-10-07T13:40:03Z",
+      "subject": "building classes with slots of type \"timeDate\"",
+      "subject_clean": "building classes with slots of type \"timeDate\"",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear rmetrics core team,\n\nAs this email was listed in the package timeDate july26.2010 I post  \nthis question here. When defining an S4 class with slot of type  \n\"timeDate\", I get this warning. Is this a bug or a feature?\n\n> library(timeDate)\n> setClass(\n+         \"testClass\",\n+         representation(\n+                 slot = \"timeDate\"\n+         )\n+ )\n[1] \"testClass\"\nWarning message:\nIn is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'\n>\n\nBest regards\nTomas",
+      "body_snippet": "Dear rmetrics core team,\n\nAs this email was listed in the package timeDate july26.2010 I post  \nthis question here. When defining an S4 class with slot of type  \n\"timeDate\", I get this warning. Is thi",
+      "thread_id": "thread-ce0837dde46b",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-df028ae46dbc",
+      "message_id": "<19630.127.862184.820551@lynne.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2010-10-07T17:16:47Z",
+      "subject": "building classes with slots of type \"timeDate\"",
+      "subject_clean": "building classes with slots of type \"timeDate\"",
+      "in_reply_to": "<20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>",
+      "references": [
+        "<20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>"
+      ],
+      "body_plain": "I digged and found that the warning can be more easily\nproduced by\n\n  new(\"timeDate\")\n\nand we should fix that, maybe by providing a prototype.\nor rather I think by fixing the initialize() method we have\nthere..\n\nThank you, Tomas, for your good report!\n\nMartin Maechler, ETH Zurich\n\n\n>>>>> \"t\" == torgrims  <torgrims at stud.ntnu.no>\n>>>>>     on Thu,  7 Oct 2010 15:40:03 +0200 writes:\n\n    t> Dear rmetrics core team,\n    t> As this email was listed in the package timeDate july26.2010 I post  \n    t> this question here. When defining an S4 class with slot of type  \n    t> \"timeDate\", I get this warning. Is this a bug or a feature?\n\n    >> library(timeDate)\n    >> setClass(\n    t> +         \"testClass\",\n    t> +         representation(\n    t> +                 slot = \"timeDate\"\n    t> +         )\n    t> + )\n    t> [1] \"testClass\"\n    t> Warning message:\n    t> In is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'\n    >> \n\n    t> Best regards\n    t> Tomas\n\n    t> _______________________________________________\n    t> Rmetrics-core mailing list\n    t> Rmetrics-core at r-project.org\n    t> https://stat.ethz.ch/mailman/listinfo/rmetrics-core",
+      "body_snippet": "I digged and found that the warning can be more easily\nproduced by\n\n  new(\"timeDate\")\n\nand we should fix that, maybe by providing a prototype.\nor rather I think by fixing the initialize() method we ha",
+      "thread_id": "thread-ce0837dde46b",
+      "thread_depth": 1,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-31630207820c",
+      "message_id": "<4CB48001.2030606@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2010-10-12T15:34:25Z",
+      "subject": "building classes with slots of type \"timeDate\"",
+      "subject_clean": "building classes with slots of type \"timeDate\"",
+      "in_reply_to": "<19630.127.862184.820551@lynne.math.ethz.ch>",
+      "references": [
+        "<20101007154003.s65ul9418o88o8oo@webmail.ntnu.no>",
+        "<19630.127.862184.820551@lynne.math.ethz.ch>"
+      ],
+      "body_plain": "Thanks for the report,\n\nPlease find an updated initialize,timeDate method on R-forge to avoid \nthe mentioned warning.\n\nRegards,\nYohan\n\nOn 10/7/10 7:16 PM, Martin Maechler wrote:\n> I digged and found that the warning can be more easily\n> produced by\n>\n>    new(\"timeDate\")\n>\n> and we should fix that, maybe by providing a prototype.\n> or rather I think by fixing the initialize() method we have\n> there..\n>\n> Thank you, Tomas, for your good report!\n>\n> Martin Maechler, ETH Zurich\n>\n>\n>>>>>> \"t\" == torgrims<torgrims at stud.ntnu.no>\n>>>>>>      on Thu,  7 Oct 2010 15:40:03 +0200 writes:\n>      t>  Dear rmetrics core team,\n>      t>  As this email was listed in the package timeDate july26.2010 I post\n>      t>  this question here. When defining an S4 class with slot of type\n>      t>  \"timeDate\", I get this warning. Is this a bug or a feature?\n>\n>      >>  library(timeDate)\n>      >>  setClass(\n>      t>  +         \"testClass\",\n>      t>  +         representation(\n>      t>  +                 slot = \"timeDate\"\n>      t>  +         )\n>      t>  + )\n>      t>  [1] \"testClass\"\n>      t>  Warning message:\n>      t>  In is.na(num) : is.na() applied to non-(list or vector) of type 'NULL'\n>      >>\n>\n>      t>  Best regards\n>      t>  Tomas\n>\n>      t>  _______________________________________________\n>      t>  Rmetrics-core mailing list\n>      t>  Rmetrics-core at r-project.org\n>      t>  https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>\n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>",
+      "body_snippet": "Thanks for the report,\n\nPlease find an updated initialize,timeDate method on R-forge to avoid \nthe mentioned warning.\n\nRegards,\nYohan\n\nOn 10/7/10 7:16 PM, Martin Maechler wrote:\n> I digged and found t",
+      "thread_id": "thread-ce0837dde46b",
+      "thread_depth": 2,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-6ff18e318d1a",
+      "message_id": "<AA3A69FCFCA0624A8305B3FE3D68886E2B176EB3@ex2k.bankofamerica.com>",
+      "from_name": "Ombach, Maciej",
+      "from_email_hash": "ea1730dc6068ba580501191f27eaa2f3c8eecb72891217beafb18a5277f4070a",
+      "date": "2010-10-27T16:06:31Z",
+      "subject": "portfolioFrontier question",
+      "subject_clean": "portfolioFrontier question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl>",
+      "thread_id": "thread-6ff18e318d1a",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-15ddc731dd8e",
+      "message_id": "<01cb762f$Blat.v2.2.2$d11cfce2@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-10-27T23:36:45Z",
+      "subject": "Package timeDate_2130.91.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2130.91.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.91.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.0 (2010-10-15)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2130.91.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-15ddc731dd8e",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-192648718b87",
+      "message_id": "<01cb762f$Blat.v2.2.2$d14a3728@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2010-10-27T23:36:45Z",
+      "subject": "Package timeSeries_2130.90.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2130.90.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.90.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.12/).\nR version 2.12.0 (2010-10-15)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2130.90.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-192648718b87",
+      "thread_depth": 0,
+      "month": "2010-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ce0837dde46b",
+      "subject": "building classes with slots of type \"timeDate\"",
+      "message_count": 3,
+      "participants": [
+        "Martin Maechler",
+        "Yohan Chalabi",
+        "torgrims at stud.ntnu.no"
+      ],
+      "started": "2010-10-07T13:40:03Z",
+      "last_reply": "2010-10-12T15:34:25Z",
+      "root_message_id": "msg-ce0837dde46b"
+    },
+    {
+      "id": "thread-6ff18e318d1a",
+      "subject": "portfolioFrontier question",
+      "message_count": 1,
+      "participants": [
+        "Ombach, Maciej"
+      ],
+      "started": "2010-10-27T16:06:31Z",
+      "last_reply": "2010-10-27T16:06:31Z",
+      "root_message_id": "msg-6ff18e318d1a"
+    },
+    {
+      "id": "thread-15ddc731dd8e",
+      "subject": "Package timeDate_2130.91.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-10-27T23:36:45Z",
+      "last_reply": "2010-10-27T23:36:45Z",
+      "root_message_id": "msg-15ddc731dd8e"
+    },
+    {
+      "id": "thread-192648718b87",
+      "subject": "Package timeSeries_2130.90.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2010-10-27T23:36:45Z",
+      "last_reply": "2010-10-27T23:36:45Z",
+      "root_message_id": "msg-192648718b87"
+    }
+  ]
+}

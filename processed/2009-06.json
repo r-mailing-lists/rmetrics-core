@@ -1,0 +1,90 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-06",
+  "messages": [
+    {
+      "id": "msg-d0bee225ade8",
+      "message_id": "<4A2E50FD.3080902@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2009-06-09T12:09:33Z",
+      "subject": "package fails on R < 2.9.0",
+      "subject_clean": "package fails on R < 2.9.0",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainers,\n\nyour packages\n\n      gmodels      2.15.0    ERROR\n      VDCutil        1.15    ERROR\noblique.tree         1.0    ERROR\n  fRegression      290.75    ERROR\n    SharedHT2         2.0    ERROR\n      Ratings       0.1-1    ERROR\n        Rcsdp       0.1-4    ERROR\n\nfail for R-2.8.1. You probably forgot to declare changed dependencies \n(i.e. R >= 2.9.0 or another package's version dependency) in the \nDESCRIPTION file.\n\nPlease declare the version dependencies in your DESCRIPTION files (or \nwhat else causes the ERROR) and upload fixed versions with increased \nversion numbers to CRAN.\n\nFor reference, see the 2.8.1 check results on\nhttp://cran.r-project.org/bin/windows/contrib/checkSummaryWin.html\n\nThank you very much,\nUwe Ligges",
+      "body_snippet": "Dear package maintainers,\n\nyour packages\n\n      gmodels      2.15.0    ERROR\n      VDCutil        1.15    ERROR\noblique.tree         1.0    ERROR\n  fRegression      290.75    ERROR\n    SharedHT2      ",
+      "thread_id": "thread-d0bee225ade8",
+      "thread_depth": 0,
+      "month": "2009-06"
+    },
+    {
+      "id": "msg-c8da8b0e2b9d",
+      "message_id": "<32BD2A8AF28D794DB8E14E9D0DE3F81B064AB23B@exchange-be6.lancs.local>",
+      "from_name": "Pavlidis, Efthymios",
+      "from_email_hash": "a7bd2a140697201153b09806e07449536dd328bc635b602fff6073ebb1b70cc3",
+      "date": "2009-06-11T17:48:23Z",
+      "subject": "Hill Estimator",
+      "subject_clean": "Hill Estimator",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl>",
+      "thread_id": "thread-c8da8b0e2b9d",
+      "thread_depth": 0,
+      "month": "2009-06"
+    },
+    {
+      "id": "msg-a6cdce6ab4da",
+      "message_id": "<01c9f8cc$Blat.v2.2.2$0dc9b067@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at r-project.org",
+      "from_email_hash": "c17cae670f8f8c752d6cde87e94fcb58a5bfee16d5d4c88c9cb2b95d2275685b",
+      "date": "2009-06-29T15:12:44Z",
+      "subject": "Package fExtremes_290.76.tar.gz did not pass R CMD check",
+      "subject_clean": "Package fExtremes_290.76.tar.gz did not pass R CMD check",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_290.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.9/).\nPlease check the attached log-file and consider to resubmit a version\nwith increased version number that passes R CMD check on Windows.\nR version 2.9.1 (2009-06-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.9/fExtremes.Rcheck'\n* using R version 2.9.1 (2009-06-26)\n* using session charset: ISO8859-1\n* checking for file 'fExtremes/DESCRIPTION' ... OK\n* this is package 'fExtremes' version '290.76'\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'fExtremes' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd files against version 2 parser ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... OK\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking data for non-ASCII characters ... OK\n* checking examples ... OK\n* checking tests ... ERROR\nRunning the tests in 'tests/doRUnit.R' failed.\nLast 13 lines of output:\n   \n  1 Test Suite : \n  fExtremes unit testing - 47 test functions, 2 errors, 0 failures\n  ERROR in test.gevFitByBlocks: Error in as.matrix(applySeries(x, from, to, FUN = which.max)) : \n    error in evaluating the argument 'x' in selecting a method for function 'as.matrix'\n  ERROR in test.timeSeriesBlocks: Error in as.matrix(applySeries(x, from, to, FUN = which.max)) : \n    error in evaluating the argument 'x' in selecting a method for function 'as.matrix'\n  Error in eval.with.vis(expr, envir, enclos) : \n  \n  unit testing failed (#test failures: 0, R errors: 2)\n  \n  Calls: source -> eval.with.vis -> eval.with.vis\n  Execution halted",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fExtremes_290.76.tar.gz did *not* pass 'R CMD check' on\nWindows and will be omitted from the corresponding C",
+      "thread_id": "thread-a6cdce6ab4da",
+      "thread_depth": 0,
+      "month": "2009-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d0bee225ade8",
+      "subject": "package fails on R < 2.9.0",
+      "message_count": 1,
+      "participants": [
+        "Uwe Ligges"
+      ],
+      "started": "2009-06-09T12:09:33Z",
+      "last_reply": "2009-06-09T12:09:33Z",
+      "root_message_id": "msg-d0bee225ade8"
+    },
+    {
+      "id": "thread-c8da8b0e2b9d",
+      "subject": "Hill Estimator",
+      "message_count": 1,
+      "participants": [
+        "Pavlidis, Efthymios"
+      ],
+      "started": "2009-06-11T17:48:23Z",
+      "last_reply": "2009-06-11T17:48:23Z",
+      "root_message_id": "msg-c8da8b0e2b9d"
+    },
+    {
+      "id": "thread-a6cdce6ab4da",
+      "subject": "Package fExtremes_290.76.tar.gz did not pass R CMD check",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at r-project.org"
+      ],
+      "started": "2009-06-29T15:12:44Z",
+      "last_reply": "2009-06-29T15:12:44Z",
+      "root_message_id": "msg-a6cdce6ab4da"
+    }
+  ]
+}

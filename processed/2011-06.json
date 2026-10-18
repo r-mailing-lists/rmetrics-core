@@ -1,0 +1,617 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2011-06",
+  "messages": [
+    {
+      "id": "msg-087bd98f245c",
+      "message_id": "<576914.84791.qm@web121702.mail.ne1.yahoo.com>",
+      "from_name": "Peter Maclean",
+      "from_email_hash": "3badbe10c8629a0dd640792cbe22f95622d207bf8c81867bafaecd8260b1e959",
+      "date": "2011-06-02T01:46:58Z",
+      "subject": "fExtremes package",
+      "subject_clean": "fExtremes package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\nI am new in R and I want to the fExtremes?package for data analysis. I usually \nuse SAS. I have rainfall data for different points (50 locations). Each point \nhas 120 observations. The rainfall data is in the first column (RAIN) and the \ncategorical variable that group the data is in the second column (GROUP). The \ndata frame is rain.data. How can I use the gevFit function to estimate all three \nparameters by?GROUP variable group? In SAS there is a by() function that \nestimate the model by group. However, I would like to move to R.\nWith thanks, \n?Peter Maclean\nDepartment of Economics\nUDSM",
+      "body_snippet": "Hi,\nI am new in R and I want to the fExtremes?package for data analysis. I usually \nuse SAS. I have rainfall data for different points (50 locations). Each point \nhas 120 observations. The rainfall da",
+      "thread_id": "thread-087bd98f245c",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-22b0746a3e82",
+      "message_id": "<19950.11509.578271.657715@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-07T13:51:49Z",
+      "subject": "AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+      "references": [
+        "<19937.28328.344276.477939@max.nulle.part>",
+        "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>"
+      ],
+      "body_plain": "Hi Bernhard,\n\nThanks for the note.\n\nOn 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrote:\n| Hello Dirk,\n| \n| a couple of weeks ago BDR reminded package maintainers of a change with respect to BIC. He suggested for 'urca' the NAMESPEACE insertion you provided below. The latest CRAN Package Check does not indicate an error for 'urca'. If I recall correctly, the package fUnitRoots was mentioned in that email of BDR, too. Maybe the required changes have not implemented in there?\n\nSeems like it, and the R-Metrics team appears to be too busy before the\nupcoming retreat.\n\nWould you have a suggestion as to how to fix this on the side of fUnitRoots\nso that it builds again?  Else I may have to withdraw the package.\n\nThanks, Dirk\n\n| \n| Best,\n| Bernhard   \n| \n| > -----Urspr?ngliche Nachricht-----\n| > Von: Dirk Eddelbuettel [mailto:edd at debian.org] \n| > Gesendet: Samstag, 28. Mai 2011 23:53\n| > An: rmetrics-core; Pfaff, Bernhard Dr.\n| > Betreff: fUnitRoots failing with urca import due to BIC\n| > \n| > \n| > Hi all,\n| > \n| > During a routine rebuild of the Debian archive, it was \n| > noticed that fUnitRoots no longer builds \n| > (http://bugs.debian.org/628324):\n| > \n| > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n| > gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o \n| > UnitRootMacKinnon.o\n| > gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack \n| > -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath \n| > -L/usr/lib/R/lib -lR\n| > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n| > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n| > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n| > installing to \n| > /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li\n| b/R/site-library/fUnitRoots/libs\n| > ** R\n| > ** inst\n| > ** preparing package for lazy loading\n| > Error : object 'BIC' is not exported by 'namespace:nlme'\n| > Error : package 'urca' could not be loaded\n| > ERROR: lazy loading failed for package 'fUnitRoots'\n| > \n| > \n| > Did something change in nlme which upsets urca?  I only see (in urca's\n| > NAMESPACE)\n| > \n| > ## Import functions\n| > \n| > importFrom(graphics, plot)\n| > \n| > if (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n| >     importFrom(nlme, BIC)\n| > } else {\n| >     importFrom(stats, BIC) # unless you already import stats }\n| > \n| > I tried adding 'stats' to the Depends: in urca's DESCRIPTION \n| > but not beans. \n| > \n| > Any ideas?\n| > \n| > --\n| > Gauss once played himself in a zero-sum game and won $50.\n| >                       -- #11 at http://www.gaussfacts.com\n| > \n| *****************************************************************\n| Confidentiality Note: The information contained in this message,\n| and any attachments, may contain confidential and/or privileged\n| material. It is intended solely for the person(s) or entity to\n| which it is addressed. Any review, retransmission, dissemination,\n| or taking of any action in reliance upon this information by\n| persons or entities other than the intended recipient(s) is\n| prohibited. If you received this in error, please contact the\n| sender and delete the material from any computer.\n| *****************************************************************\n| \n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "Hi Bernhard,\n\nThanks for the note.\n\nOn 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrote:\n| Hello Dirk,\n| \n| a couple of weeks ago BDR reminded package maintainers of a change with respect to BIC. He su",
+      "thread_id": "thread-22b0746a3e82",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-42c978f28270",
+      "message_id": "<19950.11727.608277.838253@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-07T13:55:27Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19937.28671.8475.273520@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>"
+      ],
+      "body_plain": "Christophe,\n\nWould you be able to help in this Fortran-related build failure for fOptions?\nThe compiler now complains that LowDiscrepancy has conflicting types, and\nwith my limited Fortran skills I see no fix -- the declarations seem fine to\nme.\n\nThe URL below has more detail, and I'd be happy to fill in more details.\n\nThanks,  Dirk\n\nOn 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n| \n| Hi all,\n| \n| During a routine rebuild of the Debian archive, it was noticed that\n| fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n| compiler (now gfortan-4.6) seems pickier:\n| \n| > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n| > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n| > 085A-LowDiscrepancy.f:181.32:\n| > \n| >                QN(I, J) = HQNORM(QUASI(J))                              \n| >                                 1\n| > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n| > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n| \n| I do not write Fortran so would not know how to fix this. Any RMetrics export\n| who can fix this?\n| \n| Dirk\n| \n| -- \n| Gauss once played himself in a zero-sum game and won $50.\n|                       -- #11 at http://www.gaussfacts.com\n| \n| _______________________________________________\n| Rmetrics-core mailing list\n| Rmetrics-core at r-project.org\n| https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "Christophe,\n\nWould you be able to help in this Fortran-related build failure for fOptions?\nThe compiler now complains that LowDiscrepancy has conflicting types, and\nwith my limited Fortran skills I se",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-413da96bebe4",
+      "message_id": "<B89F0CE41D45644A97CCC93DF548C1C3285776BD@GBHENXMB02.corp.amvescap.net>",
+      "from_name": "Pfaff, Bernhard Dr.",
+      "from_email_hash": "33cf90f6270884b3fcece1aa7503158c5a8b66548e930a2071ff7a81df8c2c39",
+      "date": "2011-06-07T14:46:48Z",
+      "subject": "AW: AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<19950.11509.578271.657715@max.nulle.part>",
+      "references": [
+        "<19937.28328.344276.477939@max.nulle.part>",
+        "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+        "<19950.11509.578271.657715@max.nulle.part>"
+      ],
+      "body_plain": "Hello Dirk:\n\nwhen I am back home, I will check my old emails and see whether I have not deleted BDR's email (which would come close to committing a sacrilege) and see if the email contains a pointer with respect to fUnitRoots. IIRC, this was the case. \n\nBest,\nBernhard \n\n> -----Urspr?ngliche Nachricht-----\n> Von: Dirk Eddelbuettel [mailto:edd at debian.org] \n> Gesendet: Dienstag, 7. Juni 2011 15:52\n> An: Pfaff, Bernhard Dr.\n> Cc: Dirk Eddelbuettel; rmetrics-core\n> Betreff: Re: AW: fUnitRoots failing with urca import due to BIC\n> \n> \n> Hi Bernhard,\n> \n> Thanks for the note.\n> \n> On 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrote:\n> | Hello Dirk,\n> | \n> | a couple of weeks ago BDR reminded package maintainers of a \n> change with respect to BIC. He suggested for 'urca' the \n> NAMESPEACE insertion you provided below. The latest CRAN \n> Package Check does not indicate an error for 'urca'. If I \n> recall correctly, the package fUnitRoots was mentioned in \n> that email of BDR, too. Maybe the required changes have not \n> implemented in there?\n> \n> Seems like it, and the R-Metrics team appears to be too busy \n> before the upcoming retreat.\n> \n> Would you have a suggestion as to how to fix this on the side \n> of fUnitRoots so that it builds again?  Else I may have to \n> withdraw the package.\n> \n> Thanks, Dirk\n> \n> | \n> | Best,\n> | Bernhard   \n> | \n> | > -----Urspr?ngliche Nachricht-----\n> | > Von: Dirk Eddelbuettel [mailto:edd at debian.org]\n> | > Gesendet: Samstag, 28. Mai 2011 23:53\n> | > An: rmetrics-core; Pfaff, Bernhard Dr.\n> | > Betreff: fUnitRoots failing with urca import due to BIC\n> | > \n> | > \n> | > Hi all,\n> | > \n> | > During a routine rebuild of the Debian archive, it was \n> noticed that \n> | > fUnitRoots no longer builds\n> | > (http://bugs.debian.org/628324):\n> | > \n> | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> | > gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o \n> | > UnitRootMacKinnon.o\n> | > gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack -lblas \n> | > -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath \n> -L/usr/lib/R/lib \n> | > -lR\n> | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> | > installing to\n> | > /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li\n> | b/R/site-library/fUnitRoots/libs\n> | > ** R\n> | > ** inst\n> | > ** preparing package for lazy loading Error : object 'BIC' is not \n> | > exported by 'namespace:nlme'\n> | > Error : package 'urca' could not be loaded\n> | > ERROR: lazy loading failed for package 'fUnitRoots'\n> | > \n> | > \n> | > Did something change in nlme which upsets urca?  I only see (in \n> | > urca's\n> | > NAMESPACE)\n> | > \n> | > ## Import functions\n> | > \n> | > importFrom(graphics, plot)\n> | > \n> | > if (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n> | >     importFrom(nlme, BIC)\n> | > } else {\n> | >     importFrom(stats, BIC) # unless you already import stats }\n> | > \n> | > I tried adding 'stats' to the Depends: in urca's \n> DESCRIPTION but not \n> | > beans.\n> | > \n> | > Any ideas?\n> | > \n> | > --\n> | > Gauss once played himself in a zero-sum game and won $50.\n> | >                       -- #11 at http://www.gaussfacts.com\n> | > \n> | *****************************************************************\n> | Confidentiality Note: The information contained in this \n> message, and \n> | any attachments, may contain confidential and/or privileged \n> material. \n> | It is intended solely for the person(s) or entity to which it is \n> | addressed. Any review, retransmission, dissemination, or \n> taking of any \n> | action in reliance upon this information by persons or \n> entities other \n> | than the intended recipient(s) is prohibited. If you \n> received this in \n> | error, please contact the sender and delete the material from any \n> | computer.\n> | *****************************************************************\n> | \n> \n> --\n> Gauss once played himself in a zero-sum game and won $50.\n>                       -- #11 at http://www.gaussfacts.com\n>",
+      "body_snippet": "Hello Dirk:\n\nwhen I am back home, I will check my old emails and see whether I have not deleted BDR's email (which would come close to committing a sacrilege) and see if the email contains a pointer w",
+      "thread_id": "thread-22b0746a3e82",
+      "thread_depth": 1,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-493af8f2eb5e",
+      "message_id": "<B89F0CE41D45644A97CCC93DF548C1C3285776C0@GBHENXMB02.corp.amvescap.net>",
+      "from_name": "Pfaff, Bernhard Dr.",
+      "from_email_hash": "33cf90f6270884b3fcece1aa7503158c5a8b66548e930a2071ff7a81df8c2c39",
+      "date": "2011-06-07T14:50:22Z",
+      "subject": "AW: AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<19950.11509.578271.657715@max.nulle.part>",
+      "references": [
+        "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+        "<19950.11509.578271.657715@max.nulle.part>"
+      ],
+      "body_plain": "Hello Dirk:\n\nwhen I am back home, I will check my old emails and see whether I have not deleted BDR's email (which would come close to committing a sacrilege) and see if the email contains a pointer with respect to fUnitRoots. IIRC, this was the case. \n\nBest,\nBernhard  \n\n> -----Urspr?ngliche Nachricht-----\n> Von: Dirk Eddelbuettel [mailto:edd at debian.org] \n> Gesendet: Dienstag, 7. Juni 2011 15:52\n> An: Pfaff, Bernhard Dr.\n> Cc: Dirk Eddelbuettel; rmetrics-core\n> Betreff: Re: AW: fUnitRoots failing with urca import due to BIC\n> \n> \n> Hi Bernhard,\n> \n> Thanks for the note.\n> \n> On 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrote:\n> | Hello Dirk,\n> | \n> | a couple of weeks ago BDR reminded package maintainers of a \n> change with respect to BIC. He suggested for 'urca' the \n> NAMESPEACE insertion you provided below. The latest CRAN \n> Package Check does not indicate an error for 'urca'. If I \n> recall correctly, the package fUnitRoots was mentioned in \n> that email of BDR, too. Maybe the required changes have not \n> implemented in there?\n> \n> Seems like it, and the R-Metrics team appears to be too busy \n> before the upcoming retreat.\n> \n> Would you have a suggestion as to how to fix this on the side \n> of fUnitRoots so that it builds again?  Else I may have to \n> withdraw the package.\n> \n> Thanks, Dirk\n> \n> | \n> | Best,\n> | Bernhard   \n> | \n> | > -----Urspr?ngliche Nachricht-----\n> | > Von: Dirk Eddelbuettel [mailto:edd at debian.org]\n> | > Gesendet: Samstag, 28. Mai 2011 23:53\n> | > An: rmetrics-core; Pfaff, Bernhard Dr.\n> | > Betreff: fUnitRoots failing with urca import due to BIC\n> | > \n> | > \n> | > Hi all,\n> | > \n> | > During a routine rebuild of the Debian archive, it was \n> noticed that \n> | > fUnitRoots no longer builds\n> | > (http://bugs.debian.org/628324):\n> | > \n> | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> | > gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o \n> | > UnitRootMacKinnon.o\n> | > gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack -lblas \n> | > -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath \n> -L/usr/lib/R/lib \n> | > -lR\n> | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n> | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n> | > installing to\n> | > /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li\n> | b/R/site-library/fUnitRoots/libs\n> | > ** R\n> | > ** inst\n> | > ** preparing package for lazy loading Error : object 'BIC' is not \n> | > exported by 'namespace:nlme'\n> | > Error : package 'urca' could not be loaded\n> | > ERROR: lazy loading failed for package 'fUnitRoots'\n> | > \n> | > \n> | > Did something change in nlme which upsets urca?  I only see (in \n> | > urca's\n> | > NAMESPACE)\n> | > \n> | > ## Import functions\n> | > \n> | > importFrom(graphics, plot)\n> | > \n> | > if (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n> | >     importFrom(nlme, BIC)\n> | > } else {\n> | >     importFrom(stats, BIC) # unless you already import stats }\n> | > \n> | > I tried adding 'stats' to the Depends: in urca's \n> DESCRIPTION but not \n> | > beans.\n> | > \n> | > Any ideas?\n> | > \n> | > --\n> | > Gauss once played himself in a zero-sum game and won $50.\n> | >                       -- #11 at http://www.gaussfacts.com\n> | > \n> | *****************************************************************\n> | Confidentiality Note: The information contained in this \n> message, and \n> | any attachments, may contain confidential and/or privileged \n> material. \n> | It is intended solely for the person(s) or entity to which it is \n> | addressed. Any review, retransmission, dissemination, or \n> taking of any \n> | action in reliance upon this information by persons or \n> entities other \n> | than the intended recipient(s) is prohibited. If you \n> received this in \n> | error, please contact the sender and delete the material from any \n> | computer.\n> | *****************************************************************\n> | \n> \n> --\n> Gauss once played himself in a zero-sum game and won $50.\n>                       -- #11 at http://www.gaussfacts.com\n>",
+      "body_snippet": "Hello Dirk:\n\nwhen I am back home, I will check my old emails and see whether I have not deleted BDR's email (which would come close to committing a sacrilege) and see if the email contains a pointer w",
+      "thread_id": "thread-22b0746a3e82",
+      "thread_depth": 1,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-d81aeb2cd210",
+      "message_id": "<19950.16935.885057.444334@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-06-07T15:22:15Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19950.11727.608277.838253@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>"
+      ],
+      "body_plain": "Thank you, Dirk,\n\n>>>>> Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Tue, 7 Jun 2011 08:55:27 -0500 writes:\n\n    > Christophe,\n\n    > Would you be able to help in this Fortran-related build failure\n    > for fOptions?  The compiler now complains that LowDiscrepancy\n    > has conflicting types, and with my limited Fortran skills I see\n    > no fix -- the declarations seem fine to me.\n\n    > The URL below has more detail, and I'd be happy to fill in more\n    > details.\n\n    > Thanks,  Dirk\n\n> On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n> | \n> | Hi all,\n> | \n> | During a routine rebuild of the Debian archive, it was noticed that\n> | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n> | compiler (now gfortan-4.6) seems pickier:\n> | \n> | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n> | > 085A-LowDiscrepancy.f:181.32:\n> | > \n> | >                QN(I, J) = HQNORM(QUASI(J))                              \n> | >                                 1\n> | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n> | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n> | \n> | I do not write Fortran so would not know how to fix this. Any RMetrics export\n> | who can fix this?\n\nwould 'export' be 'expert' ?\n\nAs you say somewhere, we may rather need an extreme Fortran\nexpert, as indeed the Fortran source's declaration seem ok, to\nme as well.\n\nCan we be 99.99% sure that this is *not* a compiler bug/error ?\n\nMy approach in such cases would be to translate to C \nand continue working with that...\n\nMartin\n\n\n\n> | \n> | Dirk\n> | \n..",
+      "body_snippet": "Thank you, Dirk,\n\n>>>>> Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Tue, 7 Jun 2011 08:55:27 -0500 writes:\n\n    > Christophe,\n\n    > Would you be able to help in this Fortran-related build fail",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 1,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-f12574327c59",
+      "message_id": "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-06-07T15:22:22Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19950.11727.608277.838253@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>"
+      ],
+      "body_plain": "Hi Dirk,\n\nThanks to point this out.\n\nHQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n\nI will upload a patch later today and see if it works.\n\nRegards,\nYohan\n\n\nOn Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n\n> \n> Christophe,\n> \n> Would you be able to help in this Fortran-related build failure for fOptions?\n> The compiler now complains that LowDiscrepancy has conflicting types, and\n> with my limited Fortran skills I see no fix -- the declarations seem fine to\n> me.\n> \n> The URL below has more detail, and I'd be happy to fill in more details.\n> \n> Thanks,  Dirk\n> \n> On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n> | \n> | Hi all,\n> | \n> | During a routine rebuild of the Debian archive, it was noticed that\n> | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n> | compiler (now gfortan-4.6) seems pickier:\n> | \n> | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n> | > 085A-LowDiscrepancy.f:181.32:\n> | > \n> | >                QN(I, J) = HQNORM(QUASI(J))                              \n> | >                                 1\n> | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n> | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n> | \n> | I do not write Fortran so would not know how to fix this. Any RMetrics export\n> | who can fix this?\n> | \n> | Dirk\n> | \n> | -- \n> | Gauss once played himself in a zero-sum game and won $50.\n> |                       -- #11 at http://www.gaussfacts.com\n> | \n> | _______________________________________________\n> | Rmetrics-core mailing list\n> | Rmetrics-core at r-project.org\n> | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> \n> -- \n> Gauss once played himself in a zero-sum game and won $50.\n>                      -- #11 at http://www.gaussfacts.com\n> \n> _______________________________________________\n> Rmetrics-core mailing list\n> Rmetrics-core at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> \n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi Dirk,\n\nThanks to point this out.\n\nHQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n\nI will upload a patch later today and see if",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 1,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-fd24bb092e6b",
+      "message_id": "<19950.18894.633790.310355@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-06-07T15:54:54Z",
+      "subject": "AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<19950.11509.578271.657715@max.nulle.part>",
+      "references": [
+        "<19937.28328.344276.477939@max.nulle.part>",
+        "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+        "<19950.11509.578271.657715@max.nulle.part>"
+      ],
+      "body_plain": ">>>>> Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Tue, 7 Jun 2011 08:51:49 -0500 writes:\n\n    > Hi Bernhard,\n\n    > Thanks for the note.\n\n    > On 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrote: |\n    > Hello Dirk,\n    > | \n    > | a couple of weeks ago BDR reminded package maintainers\n    > of a change with respect to BIC. He suggested for 'urca'\n    > the NAMESPEACE insertion you provided below. The latest\n    > CRAN Package Check does not indicate an error for\n    > 'urca'. If I recall correctly, the package fUnitRoots was\n    > mentioned in that email of BDR, too. Maybe the required\n    > changes have not implemented in there?\n\n    > Seems like it, and the R-Metrics team appears to be too\n    > busy before the upcoming retreat.\n\n    > Would you have a suggestion as to how to fix this on the\n    > side of fUnitRoots so that it builds again?  Else I may\n    > have to withdraw the package.\n\nwhich one? (:-)\n\nNote that  fUnitRoots  does not once use  BIC in its code,\ni.e. the error really happens when  require(\"urca\") is used \nsomewhere.\n\nAlso, the error message below indicates a problem with urca\n(only)?\n\nInterestingly, when I tried things, I got the same error as the\nDebian testing machine.\n\nBut then I re-installed  urca  and all was fine.\n\nSo, I hope that this (first re-install urca, then check and\ninstall fUnitRoots) should also work on the debian test\nmachine(s) ?\n\nMartin\n\n | \n | Best,\n | Bernhard   \n | \n | > -----Urspr?ngliche Nachricht-----\n | > Von: Dirk Eddelbuettel [mailto:edd at debian.org] \n | > Gesendet: Samstag, 28. Mai 2011 23:53\n | > An: rmetrics-core; Pfaff, Bernhard Dr.\n | > Betreff: fUnitRoots failing with urca import due to BIC\n | > \n | > \n | > Hi all,\n | > \n | > During a routine rebuild of the Debian archive, it was \n | > noticed that fUnitRoots no longer builds \n | > (http://bugs.debian.org/628324):\n | > \n | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n | > gfortran   -fpic  -O3 -pipe  -g -c UnitRootMacKinnon.f -o \n | > UnitRootMacKinnon.o\n | > gcc -shared -o fUnitRoots.so UnitRootMacKinnon.o -llapack \n | > -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath \n | > -L/usr/lib/R/lib -lR\n | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n | > make[1]: Entering directory `/tmp/buildd/funitroots-2100.76/src'\n | > make[1]: Leaving directory `/tmp/buildd/funitroots-2100.76/src'\n | > installing to \n | > /tmp/buildd/funitroots-2100.76/debian/r-cran-funitroots/usr/li\n | b/R/site-library/fUnitRoots/libs\n | > ** R\n | > ** inst\n | > ** preparing package for lazy loading\n | > Error : object 'BIC' is not exported by 'namespace:nlme'\n | > Error : package 'urca' could not be loaded\n | > ERROR: lazy loading failed for package 'fUnitRoots'\n | > \n | > \n | > Did something change in nlme which upsets urca?  I only see (in urca's\n | > NAMESPACE)\n | > \n | > ## Import functions\n | > \n | > importFrom(graphics, plot)\n | > \n | > if (!exists(\"BIC\", envir=asNamespace(\"stats\"))) {\n | >     importFrom(nlme, BIC)\n | > } else {\n | >     importFrom(stats, BIC) # unless you already import stats }\n | > \n | > I tried adding 'stats' to the Depends: in urca's DESCRIPTION \n | > but not beans. \n | > \n | > Any ideas?\n | > \n | > --\n | > Gauss once played himself in a zero-sum game and won $50.\n | >                       -- #11 at http://www.gaussfacts.com",
+      "body_snippet": ">>>>> Dirk Eddelbuettel <edd at debian.org>\n>>>>>     on Tue, 7 Jun 2011 08:51:49 -0500 writes:\n\n    > Hi Bernhard,\n\n    > Thanks for the note.\n\n    > On 30 May 2011 at 08:25, Pfaff, Bernhard Dr. wrot",
+      "thread_id": "thread-22b0746a3e82",
+      "thread_depth": 1,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-3f5119ab4e0d",
+      "message_id": "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+      "from_name": "Christophe Dutang",
+      "from_email_hash": "71db47fbb88383c85c0a4105bb9dd5508a39e5eb48ded58e22bd31403fb35064",
+      "date": "2011-06-07T16:23:02Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110607/8f23b88c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110607/8f23b88c/attachment.pl>",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 2,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-baa1dacd8c6a",
+      "message_id": "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-06-07T16:33:13Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Christophe,\n\nDirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n\nI commited few minutes ago a patch in fOptions that fix the implicit declaration.\n\n\n\nRegards,\nYohan\n\n\nOn Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n\n> Hello all,\n> \n> Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n> \n> C ------------------------------------------------------------------------------\n> \n> \n>       DOUBLE PRECISION FUNCTION HQNORM(P)\n> \n> \n> So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n> gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n> \n> I don't know what to do more!\n> \n> Christophe\n> \n> 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n> Hi Dirk,\n> \n> Thanks to point this out.\n> \n> HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n> \n> I will upload a patch later today and see if it works.\n> \n> Regards,\n> Yohan\n> \n> \n> On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n> \n> >\n> > Christophe,\n> >\n> > Would you be able to help in this Fortran-related build failure for fOptions?\n> > The compiler now complains that LowDiscrepancy has conflicting types, and\n> > with my limited Fortran skills I see no fix -- the declarations seem fine to\n> > me.\n> >\n> > The URL below has more detail, and I'd be happy to fill in more details.\n> >\n> > Thanks,  Dirk\n> >\n> > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n> > |\n> > | Hi all,\n> > |\n> > | During a routine rebuild of the Debian archive, it was noticed that\n> > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n> > | compiler (now gfortan-4.6) seems pickier:\n> > |\n> > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n> > | > 085A-LowDiscrepancy.f:181.32:\n> > | >\n> > | >                QN(I, J) = HQNORM(QUASI(J))\n> > | >                                 1\n> > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n> > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n> > |\n> > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n> > | who can fix this?\n> > |\n> > | Dirk\n> > |\n> > | --\n> > | Gauss once played himself in a zero-sum game and won $50.\n> > |                       -- #11 at http://www.gaussfacts.com\n> > |\n> > | _______________________________________________\n> > | Rmetrics-core mailing list\n> > | Rmetrics-core at r-project.org\n> > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> >\n> > --\n> > Gauss once played himself in a zero-sum game and won $50.\n> >                      -- #11 at http://www.gaussfacts.com\n> >\n> > _______________________________________________\n> > Rmetrics-core mailing list\n> > Rmetrics-core at r-project.org\n> > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> >\n> \n> --\n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n> \n> www.ethz.ch\n> \n> \n> \n> \n> -- \n> Christophe DUTANG\n> Ph. D. student at ISFA, Lyon, France\n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "Hi Christophe,\n\nDirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n\nI commited few minutes ago a patch in fOptions that fix the implicit declaration.\n\n\n\nRe",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 3,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-83a6d0d1c4b2",
+      "message_id": "<19950.22183.18341.205021@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-07T16:49:43Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>"
+      ],
+      "body_plain": "On 7 June 2011 at 18:23, Christophe Dutang wrote:\n| Hello all,\n| \n| Actually, HQNORM (at least in the latest R forge version, see https://\n| r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=\n| markup&revision=5094&root=rmetrics ) is declared as\n| \n| \n| C ------------------------------------------------------------------------------\n| \n| \n|       DOUBLE PRECISION FUNCTION HQNORM(P)\n| \n| \n| \n| So it should be ok. I spent a lot of time few weeks ago to remove any implicit\n| type declaration, so I'm pretty sure there aren't any since the code passes\n| \n| gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f\n| \n| \n| I don't know what to do more!\n\nThe error occurs with __fOptions__ CRAN package which appears to carry a copy of your code.\n\nDirk\n\n| \n| Christophe\n| \n| 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n| \n|     Hi Dirk,\n| \n|     Thanks to point this out.\n| \n|     HQNORM is not declared as a double precision function in HALTON and might\n|     be implicitly declared as single precision.\n| \n|     I will upload a patch later today and see if it works.\n| \n|     Regards,\n|     Yohan\n| \n| \n|     On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n| \n|     >\n|     > Christophe,\n|     >\n|     > Would you be able to help in this Fortran-related build failure for\n|     fOptions?\n|     > The compiler now complains that LowDiscrepancy has conflicting types, and\n|     > with my limited Fortran skills I see no fix -- the declarations seem fine\n|     to\n|     > me.\n|     >\n|     > The URL below has more detail, and I'd be happy to fill in more details.\n|     >\n|     > Thanks, ?Dirk\n|     >\n|     > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n|     > |\n|     > | Hi all,\n|     > |\n|     > | During a routine rebuild of the Debian archive, it was noticed that\n|     > | fOptions no longer builds (http://bugs.debian.org/628314) as the\n|     Fortran\n|     > | compiler (now gfortan-4.6) seems pickier:\n|     > |\n|     > | > make[1]: Entering directory `/build/\n|     user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n|     > | > gfortran ? -fpic ?-O3 -pipe ?-g -c 085A-LowDiscrepancy.f -o\n|     085A-LowDiscrepancy.o\n|     > | > 085A-LowDiscrepancy.f:181.32:\n|     > | >\n|     > | > ? ? ? ? ? ? ? ?QN(I, J) = HQNORM(QUASI(J))\n|     > | > ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 1\n|     > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL\n|     (8))\n|     > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n|     > |\n|     > | I do not write Fortran so would not know how to fix this. Any RMetrics\n|     export\n|     > | who can fix this?\n|     > |\n|     > | Dirk\n|     > |\n|     > | --\n|     > | Gauss once played himself in a zero-sum game and won $50.\n|     > | ? ? ? ? ? ? ? ? ? ? ? -- #11 at http://www.gaussfacts.com\n|     > |\n|     > | _______________________________________________\n|     > | Rmetrics-core mailing list\n|     > | Rmetrics-core at r-project.org\n|     > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n|     >\n|     > --\n|     > Gauss once played himself in a zero-sum game and won $50.\n|     > ? ? ? ? ? ? ? ? ? ? ?-- #11 at http://www.gaussfacts.com\n|     >\n|     > _______________________________________________\n|     > Rmetrics-core mailing list\n|     > Rmetrics-core at r-project.org\n|     > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n|     >\n| \n|     --\n|     PhD candidate\n|     Swiss Federal Institute of Technology\n|     Zurich\n| \n|     www.ethz.ch\n| \n| \n| \n| \n| \n| --\n| Christophe DUTANG\n| Ph. D. student at ISFA, Lyon, France\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "On 7 June 2011 at 18:23, Christophe Dutang wrote:\n| Hello all,\n| \n| Actually, HQNORM (at least in the latest R forge version, see https://\n| r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/Lo",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 3,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-587d5411a2c3",
+      "message_id": "<19950.24785.468432.301592@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-07T17:33:05Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>"
+      ],
+      "body_plain": "On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n| Hi Christophe,\n| \n| Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n| \n| I commited few minutes ago a patch in fOptions that fix the implicit declaration.\n\nThank you!  \n\nDo you plan to make a new release to update fOptions_2110.78, or should I\nfetch the diffs?\n\nDirk \n \n \n| Regards,\n| Yohan\n| \n| \n| On Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n| \n| > Hello all,\n| > \n| > Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n| > \n| > C ------------------------------------------------------------------------------\n| > \n| > \n| >       DOUBLE PRECISION FUNCTION HQNORM(P)\n| > \n| > \n| > So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n| > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n| > \n| > I don't know what to do more!\n| > \n| > Christophe\n| > \n| > 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n| > Hi Dirk,\n| > \n| > Thanks to point this out.\n| > \n| > HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n| > \n| > I will upload a patch later today and see if it works.\n| > \n| > Regards,\n| > Yohan\n| > \n| > \n| > On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n| > \n| > >\n| > > Christophe,\n| > >\n| > > Would you be able to help in this Fortran-related build failure for fOptions?\n| > > The compiler now complains that LowDiscrepancy has conflicting types, and\n| > > with my limited Fortran skills I see no fix -- the declarations seem fine to\n| > > me.\n| > >\n| > > The URL below has more detail, and I'd be happy to fill in more details.\n| > >\n| > > Thanks,  Dirk\n| > >\n| > > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n| > > |\n| > > | Hi all,\n| > > |\n| > > | During a routine rebuild of the Debian archive, it was noticed that\n| > > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n| > > | compiler (now gfortan-4.6) seems pickier:\n| > > |\n| > > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n| > > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n| > > | > 085A-LowDiscrepancy.f:181.32:\n| > > | >\n| > > | >                QN(I, J) = HQNORM(QUASI(J))\n| > > | >                                 1\n| > > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n| > > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n| > > |\n| > > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n| > > | who can fix this?\n| > > |\n| > > | Dirk\n| > > |\n| > > | --\n| > > | Gauss once played himself in a zero-sum game and won $50.\n| > > |                       -- #11 at http://www.gaussfacts.com\n| > > |\n| > > | _______________________________________________\n| > > | Rmetrics-core mailing list\n| > > | Rmetrics-core at r-project.org\n| > > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n| > >\n| > > --\n| > > Gauss once played himself in a zero-sum game and won $50.\n| > >                      -- #11 at http://www.gaussfacts.com\n| > >\n| > > _______________________________________________\n| > > Rmetrics-core mailing list\n| > > Rmetrics-core at r-project.org\n| > > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n| > >\n| > \n| > --\n| > PhD candidate\n| > Swiss Federal Institute of Technology\n| > Zurich\n| > \n| > www.ethz.ch\n| > \n| > \n| > \n| > \n| > -- \n| > Christophe DUTANG\n| > Ph. D. student at ISFA, Lyon, France\n| \n| --\n| PhD candidate\n| Swiss Federal Institute of Technology\n| Zurich\n| \n| www.ethz.ch\n| \n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n| Hi Christophe,\n| \n| Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n| \n| I commited few minutes ago a pa",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 4,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-0135bff24779",
+      "message_id": "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-06-07T17:57:55Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19950.24785.468432.301592@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>"
+      ],
+      "body_plain": "On Jun 7, 2011, at 7:33 PM, Dirk Eddelbuettel wrote:\n\n> \n> On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n> | Hi Christophe,\n> | \n> | Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n> | \n> | I commited few minutes ago a patch in fOptions that fix the implicit declaration.\n> \n> Thank you!  \n> \n> Do you plan to make a new release to update fOptions_2110.78, or should I\n> fetch the diffs?\n> \n\nI will upload a new version of fOptions to CRAN.\n\nYohan\n\n> Dirk \n> \n> \n> | Regards,\n> | Yohan\n> | \n> | \n> | On Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n> | \n> | > Hello all,\n> | > \n> | > Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n> | > \n> | > C ------------------------------------------------------------------------------\n> | > \n> | > \n> | >       DOUBLE PRECISION FUNCTION HQNORM(P)\n> | > \n> | > \n> | > So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n> | > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n> | > \n> | > I don't know what to do more!\n> | > \n> | > Christophe\n> | > \n> | > 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n> | > Hi Dirk,\n> | > \n> | > Thanks to point this out.\n> | > \n> | > HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n> | > \n> | > I will upload a patch later today and see if it works.\n> | > \n> | > Regards,\n> | > Yohan\n> | > \n> | > \n> | > On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n> | > \n> | > >\n> | > > Christophe,\n> | > >\n> | > > Would you be able to help in this Fortran-related build failure for fOptions?\n> | > > The compiler now complains that LowDiscrepancy has conflicting types, and\n> | > > with my limited Fortran skills I see no fix -- the declarations seem fine to\n> | > > me.\n> | > >\n> | > > The URL below has more detail, and I'd be happy to fill in more details.\n> | > >\n> | > > Thanks,  Dirk\n> | > >\n> | > > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n> | > > |\n> | > > | Hi all,\n> | > > |\n> | > > | During a routine rebuild of the Debian archive, it was noticed that\n> | > > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n> | > > | compiler (now gfortan-4.6) seems pickier:\n> | > > |\n> | > > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> | > > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n> | > > | > 085A-LowDiscrepancy.f:181.32:\n> | > > | >\n> | > > | >                QN(I, J) = HQNORM(QUASI(J))\n> | > > | >                                 1\n> | > > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n> | > > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n> | > > |\n> | > > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n> | > > | who can fix this?\n> | > > |\n> | > > | Dirk\n> | > > |\n> | > > | --\n> | > > | Gauss once played himself in a zero-sum game and won $50.\n> | > > |                       -- #11 at http://www.gaussfacts.com\n> | > > |\n> | > > | _______________________________________________\n> | > > | Rmetrics-core mailing list\n> | > > | Rmetrics-core at r-project.org\n> | > > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> | > >\n> | > > --\n> | > > Gauss once played himself in a zero-sum game and won $50.\n> | > >                      -- #11 at http://www.gaussfacts.com\n> | > >\n> | > > _______________________________________________\n> | > > Rmetrics-core mailing list\n> | > > Rmetrics-core at r-project.org\n> | > > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> | > >\n> | > \n> | > --\n> | > PhD candidate\n> | > Swiss Federal Institute of Technology\n> | > Zurich\n> | > \n> | > www.ethz.ch\n> | > \n> | > \n> | > \n> | > \n> | > -- \n> | > Christophe DUTANG\n> | > Ph. D. student at ISFA, Lyon, France\n> | \n> | --\n> | PhD candidate\n> | Swiss Federal Institute of Technology\n> | Zurich\n> | \n> | www.ethz.ch\n> | \n> \n> -- \n> Gauss once played himself in a zero-sum game and won $50.\n>                      -- #11 at http://www.gaussfacts.com\n> \n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "On Jun 7, 2011, at 7:33 PM, Dirk Eddelbuettel wrote:\n\n> \n> On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n> | Hi Christophe,\n> | \n> | Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 5,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-a3fc3ed92548",
+      "message_id": "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+      "from_name": "Christophe Dutang",
+      "from_email_hash": "71db47fbb88383c85c0a4105bb9dd5508a39e5eb48ded58e22bd31403fb35064",
+      "date": "2011-06-07T18:18:39Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>"
+      ],
+      "body_plain": "Why do you still use that version of LowDiscrepancy.f ? the purpose of the randtoolbox package is the generation of random numbers! \n\nThis also emphasizes, we miss a dependency tree at the Rmetrics project, because otherwise we would have seen that randtoolbox is not called by any other packages... \n\nI think it is time to maintain a tree like the file RmetricsNebulous.pdf in the share folder of the R forge project, don't you think?\n\nChristophe\n\n--\nChristophe Dutang\nPh.D. student at ISFA, Lyon, France\nwebsite: http://dutangc.free.fr\n\nLe 7 juin 2011 ? 19:57, Yohan Chalabi a ?crit :\n\n> \n> On Jun 7, 2011, at 7:33 PM, Dirk Eddelbuettel wrote:\n> \n>> \n>> On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n>> | Hi Christophe,\n>> | \n>> | Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n>> | \n>> | I commited few minutes ago a patch in fOptions that fix the implicit declaration.\n>> \n>> Thank you!  \n>> \n>> Do you plan to make a new release to update fOptions_2110.78, or should I\n>> fetch the diffs?\n>> \n> \n> I will upload a new version of fOptions to CRAN.\n> \n> Yohan\n> \n>> Dirk \n>> \n>> \n>> | Regards,\n>> | Yohan\n>> | \n>> | \n>> | On Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n>> | \n>> | > Hello all,\n>> | > \n>> | > Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n>> | > \n>> | > C ------------------------------------------------------------------------------\n>> | > \n>> | > \n>> | >       DOUBLE PRECISION FUNCTION HQNORM(P)\n>> | > \n>> | > \n>> | > So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n>> | > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n>> | > \n>> | > I don't know what to do more!\n>> | > \n>> | > Christophe\n>> | > \n>> | > 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n>> | > Hi Dirk,\n>> | > \n>> | > Thanks to point this out.\n>> | > \n>> | > HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n>> | > \n>> | > I will upload a patch later today and see if it works.\n>> | > \n>> | > Regards,\n>> | > Yohan\n>> | > \n>> | > \n>> | > On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n>> | > \n>> | > >\n>> | > > Christophe,\n>> | > >\n>> | > > Would you be able to help in this Fortran-related build failure for fOptions?\n>> | > > The compiler now complains that LowDiscrepancy has conflicting types, and\n>> | > > with my limited Fortran skills I see no fix -- the declarations seem fine to\n>> | > > me.\n>> | > >\n>> | > > The URL below has more detail, and I'd be happy to fill in more details.\n>> | > >\n>> | > > Thanks,  Dirk\n>> | > >\n>> | > > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n>> | > > |\n>> | > > | Hi all,\n>> | > > |\n>> | > > | During a routine rebuild of the Debian archive, it was noticed that\n>> | > > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n>> | > > | compiler (now gfortan-4.6) seems pickier:\n>> | > > |\n>> | > > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n>> | > > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n>> | > > | > 085A-LowDiscrepancy.f:181.32:\n>> | > > | >\n>> | > > | >                QN(I, J) = HQNORM(QUASI(J))\n>> | > > | >                                 1\n>> | > > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n>> | > > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n>> | > > |\n>> | > > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n>> | > > | who can fix this?\n>> | > > |\n>> | > > | Dirk\n>> | > > |\n>> | > > | --\n>> | > > | Gauss once played himself in a zero-sum game and won $50.\n>> | > > |                       -- #11 at http://www.gaussfacts.com\n>> | > > |\n>> | > > | _______________________________________________\n>> | > > | Rmetrics-core mailing list\n>> | > > | Rmetrics-core at r-project.org\n>> | > > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>> | > >\n>> | > > --\n>> | > > Gauss once played himself in a zero-sum game and won $50.\n>> | > >                      -- #11 at http://www.gaussfacts.com\n>> | > >\n>> | > > _______________________________________________\n>> | > > Rmetrics-core mailing list\n>> | > > Rmetrics-core at r-project.org\n>> | > > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>> | > >\n>> | > \n>> | > --\n>> | > PhD candidate\n>> | > Swiss Federal Institute of Technology\n>> | > Zurich\n>> | > \n>> | > www.ethz.ch\n>> | > \n>> | > \n>> | > \n>> | > \n>> | > -- \n>> | > Christophe DUTANG\n>> | > Ph. D. student at ISFA, Lyon, France\n>> | \n>> | --\n>> | PhD candidate\n>> | Swiss Federal Institute of Technology\n>> | Zurich\n>> | \n>> | www.ethz.ch\n>> | \n>> \n>> -- \n>> Gauss once played himself in a zero-sum game and won $50.\n>>                     -- #11 at http://www.gaussfacts.com\n>> \n> \n> --\n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n> \n> www.ethz.ch\n>",
+      "body_snippet": "Why do you still use that version of LowDiscrepancy.f ? the purpose of the randtoolbox package is the generation of random numbers! \n\nThis also emphasizes, we miss a dependency tree at the Rmetrics pr",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 6,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-0e9c927e1160",
+      "message_id": "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2011-06-07T18:32:08Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+        "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>"
+      ],
+      "body_plain": "On Jun 7, 2011, at 8:18 PM, Christophe Dutang wrote:\n\n> Why do you still use that version of LowDiscrepancy.f ? the purpose of the randtoolbox package is the generation of random numbers! \n\nbecause randtoolbox is not available on Debian.\n\n> \n> This also emphasizes, we miss a dependency tree at the Rmetrics project, because otherwise we would have seen that randtoolbox is not called by any other packages... \n> \n> I think it is time to maintain a tree like the file RmetricsNebulous.pdf in the share folder of the R forge project, don't you think?\n> \n> Christophe\n> \n> --\n> Christophe Dutang\n> Ph.D. student at ISFA, Lyon, France\n> website: http://dutangc.free.fr\n> \n> Le 7 juin 2011 ? 19:57, Yohan Chalabi a ?crit :\n> \n>> \n>> On Jun 7, 2011, at 7:33 PM, Dirk Eddelbuettel wrote:\n>> \n>>> \n>>> On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n>>> | Hi Christophe,\n>>> | \n>>> | Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n>>> | \n>>> | I commited few minutes ago a patch in fOptions that fix the implicit declaration.\n>>> \n>>> Thank you!  \n>>> \n>>> Do you plan to make a new release to update fOptions_2110.78, or should I\n>>> fetch the diffs?\n>>> \n>> \n>> I will upload a new version of fOptions to CRAN.\n>> \n>> Yohan\n>> \n>>> Dirk \n>>> \n>>> \n>>> | Regards,\n>>> | Yohan\n>>> | \n>>> | \n>>> | On Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n>>> | \n>>> | > Hello all,\n>>> | > \n>>> | > Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n>>> | > \n>>> | > C ------------------------------------------------------------------------------\n>>> | > \n>>> | > \n>>> | >       DOUBLE PRECISION FUNCTION HQNORM(P)\n>>> | > \n>>> | > \n>>> | > So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n>>> | > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n>>> | > \n>>> | > I don't know what to do more!\n>>> | > \n>>> | > Christophe\n>>> | > \n>>> | > 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n>>> | > Hi Dirk,\n>>> | > \n>>> | > Thanks to point this out.\n>>> | > \n>>> | > HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n>>> | > \n>>> | > I will upload a patch later today and see if it works.\n>>> | > \n>>> | > Regards,\n>>> | > Yohan\n>>> | > \n>>> | > \n>>> | > On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n>>> | > \n>>> | > >\n>>> | > > Christophe,\n>>> | > >\n>>> | > > Would you be able to help in this Fortran-related build failure for fOptions?\n>>> | > > The compiler now complains that LowDiscrepancy has conflicting types, and\n>>> | > > with my limited Fortran skills I see no fix -- the declarations seem fine to\n>>> | > > me.\n>>> | > >\n>>> | > > The URL below has more detail, and I'd be happy to fill in more details.\n>>> | > >\n>>> | > > Thanks,  Dirk\n>>> | > >\n>>> | > > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n>>> | > > |\n>>> | > > | Hi all,\n>>> | > > |\n>>> | > > | During a routine rebuild of the Debian archive, it was noticed that\n>>> | > > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n>>> | > > | compiler (now gfortan-4.6) seems pickier:\n>>> | > > |\n>>> | > > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n>>> | > > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n>>> | > > | > 085A-LowDiscrepancy.f:181.32:\n>>> | > > | >\n>>> | > > | >                QN(I, J) = HQNORM(QUASI(J))\n>>> | > > | >                                 1\n>>> | > > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n>>> | > > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n>>> | > > |\n>>> | > > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n>>> | > > | who can fix this?\n>>> | > > |\n>>> | > > | Dirk\n>>> | > > |\n>>> | > > | --\n>>> | > > | Gauss once played himself in a zero-sum game and won $50.\n>>> | > > |                       -- #11 at http://www.gaussfacts.com\n>>> | > > |\n>>> | > > | _______________________________________________\n>>> | > > | Rmetrics-core mailing list\n>>> | > > | Rmetrics-core at r-project.org\n>>> | > > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>> | > >\n>>> | > > --\n>>> | > > Gauss once played himself in a zero-sum game and won $50.\n>>> | > >                      -- #11 at http://www.gaussfacts.com\n>>> | > >\n>>> | > > _______________________________________________\n>>> | > > Rmetrics-core mailing list\n>>> | > > Rmetrics-core at r-project.org\n>>> | > > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>> | > >\n>>> | > \n>>> | > --\n>>> | > PhD candidate\n>>> | > Swiss Federal Institute of Technology\n>>> | > Zurich\n>>> | > \n>>> | > www.ethz.ch\n>>> | > \n>>> | > \n>>> | > \n>>> | > \n>>> | > -- \n>>> | > Christophe DUTANG\n>>> | > Ph. D. student at ISFA, Lyon, France\n>>> | \n>>> | --\n>>> | PhD candidate\n>>> | Swiss Federal Institute of Technology\n>>> | Zurich\n>>> | \n>>> | www.ethz.ch\n>>> | \n>>> \n>>> -- \n>>> Gauss once played himself in a zero-sum game and won $50.\n>>>                    -- #11 at http://www.gaussfacts.com\n>>> \n>> \n>> --\n>> PhD candidate\n>> Swiss Federal Institute of Technology\n>> Zurich\n>> \n>> www.ethz.ch\n>> \n> \n\n--\nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": "On Jun 7, 2011, at 8:18 PM, Christophe Dutang wrote:\n\n> Why do you still use that version of LowDiscrepancy.f ? the purpose of the randtoolbox package is the generation of random numbers! \n\nbecause ra",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 7,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-e731ad35a30f",
+      "message_id": "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>",
+      "from_name": "Christophe Dutang",
+      "from_email_hash": "71db47fbb88383c85c0a4105bb9dd5508a39e5eb48ded58e22bd31403fb35064",
+      "date": "2011-06-07T18:35:53Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+        "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+        "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>"
+      ],
+      "body_plain": "why? what's not working on Debian with my package? the dependency on rngWELL?\n\n--\nChristophe Dutang\nPh.D. student at ISFA, Lyon, France\nwebsite: http://dutangc.free.fr\n\nLe 7 juin 2011 ? 20:32, Yohan Chalabi a ?crit :\n\n> \n> On Jun 7, 2011, at 8:18 PM, Christophe Dutang wrote:\n> \n>> Why do you still use that version of LowDiscrepancy.f ? the purpose of the randtoolbox package is the generation of random numbers! \n> \n> because randtoolbox is not available on Debian.\n> \n>> \n>> This also emphasizes, we miss a dependency tree at the Rmetrics project, because otherwise we would have seen that randtoolbox is not called by any other packages... \n>> \n>> I think it is time to maintain a tree like the file RmetricsNebulous.pdf in the share folder of the R forge project, don't you think?\n>> \n>> Christophe\n>> \n>> --\n>> Christophe Dutang\n>> Ph.D. student at ISFA, Lyon, France\n>> website: http://dutangc.free.fr\n>> \n>> Le 7 juin 2011 ? 19:57, Yohan Chalabi a ?crit :\n>> \n>>> \n>>> On Jun 7, 2011, at 7:33 PM, Dirk Eddelbuettel wrote:\n>>> \n>>>> \n>>>> On 7 June 2011 at 18:33, Yohan Chalabi wrote:\n>>>> | Hi Christophe,\n>>>> | \n>>>> | Dirk is talking about 085A-LowDiscrepancy.f in fOptions and not the one that is in randtoolbox.\n>>>> | \n>>>> | I commited few minutes ago a patch in fOptions that fix the implicit declaration.\n>>>> \n>>>> Thank you!  \n>>>> \n>>>> Do you plan to make a new release to update fOptions_2110.78, or should I\n>>>> fetch the diffs?\n>>>> \n>>> \n>>> I will upload a new version of fOptions to CRAN.\n>>> \n>>> Yohan\n>>> \n>>>> Dirk \n>>>> \n>>>> \n>>>> | Regards,\n>>>> | Yohan\n>>>> | \n>>>> | \n>>>> | On Jun 7, 2011, at 6:23 PM, Christophe Dutang wrote:\n>>>> | \n>>>> | > Hello all,\n>>>> | > \n>>>> | > Actually, HQNORM (at least in the latest R forge version, see https://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics ) is declared as \n>>>> | > \n>>>> | > C ------------------------------------------------------------------------------\n>>>> | > \n>>>> | > \n>>>> | >       DOUBLE PRECISION FUNCTION HQNORM(P)\n>>>> | > \n>>>> | > \n>>>> | > So it should be ok. I spent a lot of time few weeks ago to remove any implicit type declaration, so I'm pretty sure there aren't any since the code passes \n>>>> | > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f \n>>>> | > \n>>>> | > I don't know what to do more!\n>>>> | > \n>>>> | > Christophe\n>>>> | > \n>>>> | > 2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n>>>> | > Hi Dirk,\n>>>> | > \n>>>> | > Thanks to point this out.\n>>>> | > \n>>>> | > HQNORM is not declared as a double precision function in HALTON and might be implicitly declared as single precision.\n>>>> | > \n>>>> | > I will upload a patch later today and see if it works.\n>>>> | > \n>>>> | > Regards,\n>>>> | > Yohan\n>>>> | > \n>>>> | > \n>>>> | > On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n>>>> | > \n>>>> | > >\n>>>> | > > Christophe,\n>>>> | > >\n>>>> | > > Would you be able to help in this Fortran-related build failure for fOptions?\n>>>> | > > The compiler now complains that LowDiscrepancy has conflicting types, and\n>>>> | > > with my limited Fortran skills I see no fix -- the declarations seem fine to\n>>>> | > > me.\n>>>> | > >\n>>>> | > > The URL below has more detail, and I'd be happy to fill in more details.\n>>>> | > >\n>>>> | > > Thanks,  Dirk\n>>>> | > >\n>>>> | > > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n>>>> | > > |\n>>>> | > > | Hi all,\n>>>> | > > |\n>>>> | > > | During a routine rebuild of the Debian archive, it was noticed that\n>>>> | > > | fOptions no longer builds (http://bugs.debian.org/628314) as the Fortran\n>>>> | > > | compiler (now gfortan-4.6) seems pickier:\n>>>> | > > |\n>>>> | > > | > make[1]: Entering directory `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n>>>> | > > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o 085A-LowDiscrepancy.o\n>>>> | > > | > 085A-LowDiscrepancy.f:181.32:\n>>>> | > > | >\n>>>> | > > | >                QN(I, J) = HQNORM(QUASI(J))\n>>>> | > > | >                                 1\n>>>> | > > | > Error: Return type mismatch of function 'hqnorm' at (1) (REAL(4)/REAL(8))\n>>>> | > > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n>>>> | > > |\n>>>> | > > | I do not write Fortran so would not know how to fix this. Any RMetrics export\n>>>> | > > | who can fix this?\n>>>> | > > |\n>>>> | > > | Dirk\n>>>> | > > |\n>>>> | > > | --\n>>>> | > > | Gauss once played himself in a zero-sum game and won $50.\n>>>> | > > |                       -- #11 at http://www.gaussfacts.com\n>>>> | > > |\n>>>> | > > | _______________________________________________\n>>>> | > > | Rmetrics-core mailing list\n>>>> | > > | Rmetrics-core at r-project.org\n>>>> | > > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>>> | > >\n>>>> | > > --\n>>>> | > > Gauss once played himself in a zero-sum game and won $50.\n>>>> | > >                      -- #11 at http://www.gaussfacts.com\n>>>> | > >\n>>>> | > > _______________________________________________\n>>>> | > > Rmetrics-core mailing list\n>>>> | > > Rmetrics-core at r-project.org\n>>>> | > > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n>>>> | > >\n>>>> | > \n>>>> | > --\n>>>> | > PhD candidate\n>>>> | > Swiss Federal Institute of Technology\n>>>> | > Zurich\n>>>> | > \n>>>> | > www.ethz.ch\n>>>> | > \n>>>> | > \n>>>> | > \n>>>> | > \n>>>> | > -- \n>>>> | > Christophe DUTANG\n>>>> | > Ph. D. student at ISFA, Lyon, France\n>>>> | \n>>>> | --\n>>>> | PhD candidate\n>>>> | Swiss Federal Institute of Technology\n>>>> | Zurich\n>>>> | \n>>>> | www.ethz.ch\n>>>> | \n>>>> \n>>>> -- \n>>>> Gauss once played himself in a zero-sum game and won $50.\n>>>>                   -- #11 at http://www.gaussfacts.com\n>>>> \n>>> \n>>> --\n>>> PhD candidate\n>>> Swiss Federal Institute of Technology\n>>> Zurich\n>>> \n>>> www.ethz.ch\n>>> \n>> \n> \n> --\n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n> \n> www.ethz.ch\n>",
+      "body_snippet": "why? what's not working on Debian with my package? the dependency on rngWELL?\n\n--\nChristophe Dutang\nPh.D. student at ISFA, Lyon, France\nwebsite: http://dutangc.free.fr\n\nLe 7 juin 2011 ? 20:32, Yohan C",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 8,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-6a4523c28a47",
+      "message_id": "<19950.29778.188592.524184@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-07T18:56:18Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+        "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+        "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>",
+        "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>"
+      ],
+      "body_plain": "On 7 June 2011 at 20:35, Christophe Dutang wrote:\n| why? \n\nBecause the vast number of the 3000+ CRAN packages are not in Debian. \n\nThat said, I do agree with your general sentiment that Depends: is better\nthan hidden copies, but that is a lesson the Rmetrics team appears to have\nlearned as well. \n\nBut converting all the existing code is a) no small task and b) may have side\neffects (as eg I may well decide against maintaining more CRAN packages\ninside Debian given my current 120+ packages).\n\nDirk\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "On 7 June 2011 at 20:35, Christophe Dutang wrote:\n| why? \n\nBecause the vast number of the 3000+ CRAN packages are not in Debian. \n\nThat said, I do agree with your general sentiment that Depends: is be",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 9,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-567daba6c6c5",
+      "message_id": "<7CF0DABC-FC76-4B82-8A94-62A9ABA049FC@gmail.com>",
+      "from_name": "Christophe Dutang",
+      "from_email_hash": "71db47fbb88383c85c0a4105bb9dd5508a39e5eb48ded58e22bd31403fb35064",
+      "date": "2011-06-07T19:29:41Z",
+      "subject": "fOptions no longer builds: Fortran error",
+      "subject_clean": "fOptions no longer builds: Fortran error",
+      "in_reply_to": "<19950.29778.188592.524184@max.nulle.part>",
+      "references": [
+        "<19937.28671.8475.273520@max.nulle.part>",
+        "<19950.11727.608277.838253@max.nulle.part>",
+        "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>",
+        "<BANLkTinredvqtJ0rJxR1avM4ynEJvKU-2Q@mail.gmail.com>",
+        "<650A3C59-8AE6-4E3F-A1D1-19B1362CAD4C@phys.ethz.ch>",
+        "<19950.24785.468432.301592@max.nulle.part>",
+        "<321BB7F0-FEE7-44EB-8AC6-59239C77B3C7@phys.ethz.ch>",
+        "<8386808D-D766-4A6C-9D5F-C81B5A1C4E08@gmail.com>",
+        "<020C3F68-935F-4239-9F22-7D503E18359F@phys.ethz.ch>",
+        "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>",
+        "<19950.29778.188592.524184@max.nulle.part>"
+      ],
+      "body_plain": "a) Is there a compiling problem for randtoolbox not to be on Debian? on which linux distrib is used on R forge? \nb) If I well understand, on Debian there is an incentive to maintain less packages than on CRAN? Is there a website like CRAN dedicated to Debian compiled/built packages? \n\nChristophe\n\nLe 7 juin 2011 ? 20:56, Dirk Eddelbuettel a ?crit :\n\n> \n> On 7 June 2011 at 20:35, Christophe Dutang wrote:\n> | why? \n> \n> Because the vast number of the 3000+ CRAN packages are not in Debian. \n> \n> That said, I do agree with your general sentiment that Depends: is better\n> than hidden copies, but that is a lesson the Rmetrics team appears to have\n> learned as well. \n> \n> But converting all the existing code is a) no small task and b) may have side\n> effects (as eg I may well decide against maintaining more CRAN packages\n> inside Debian given my current 120+ packages).\n> \n> Dirk\n> \n> -- \n> Gauss once played himself in a zero-sum game and won $50.\n>                      -- #11 at http://www.gaussfacts.com\n\n\n--\nChristophe Dutang\nPh.D. student at ISFA, Lyon, France\nwebsite: http://dutangc.free.fr",
+      "body_snippet": "a) Is there a compiling problem for randtoolbox not to be on Debian? on which linux distrib is used on R forge? \nb) If I well understand, on Debian there is an incentive to maintain less packages than",
+      "thread_id": "thread-42c978f28270",
+      "thread_depth": 10,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-8f43bf7138c8",
+      "message_id": "<19950.49442.131494.512250@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2011-06-08T00:24:02Z",
+      "subject": "AW: fUnitRoots failing with urca import due to BIC",
+      "subject_clean": "AW: fUnitRoots failing with urca import due to BIC",
+      "in_reply_to": "<19950.18894.633790.310355@stat.math.ethz.ch>",
+      "references": [
+        "<19937.28328.344276.477939@max.nulle.part>",
+        "<B89F0CE41D45644A97CCC93DF548C1C328577697@GBHENXMB02.corp.amvescap.net>",
+        "<19950.11509.578271.657715@max.nulle.part>",
+        "<19950.18894.633790.310355@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Hi Martin,\n\nOn 7 June 2011 at 17:54, Martin Maechler wrote:\n| Note that  fUnitRoots  does not once use  BIC in its code,\n| i.e. the error really happens when  require(\"urca\") is used \n| somewhere.\n| \n| Also, the error message below indicates a problem with urca\n| (only)?\n| \n| Interestingly, when I tried things, I got the same error as the\n| Debian testing machine.\n| \n| But then I re-installed  urca  and all was fine.\n| \n| So, I hope that this (first re-install urca, then check and\n| install fUnitRoots) should also work on the debian test\n| machine(s) ?\n\nYes, might be a spillover from a change in nlme which gets to urca.  So I\njust re-uploaded urca as r-cran-urca_1.2-5-2, and will trigger a rebuild of\nfUnitRoot depending on this version.  \n\nThat, as you indicate and as confirmed by some casual tests, should do it.\n\nHence sorry for what turns out to be a false alarm.\n\nDirk\n\n-- \nGauss once played himself in a zero-sum game and won $50.\n                      -- #11 at http://www.gaussfacts.com",
+      "body_snippet": "Hi Martin,\n\nOn 7 June 2011 at 17:54, Martin Maechler wrote:\n| Note that  fUnitRoots  does not once use  BIC in its code,\n| i.e. the error really happens when  require(\"urca\") is used \n| somewhere.\n| \n",
+      "thread_id": "thread-22b0746a3e82",
+      "thread_depth": 2,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-ca380ed5b239",
+      "message_id": "<01cc25ac$Blat.v2.2.2$f4316ad5@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2011-06-08T07:23:24Z",
+      "subject": "Package fOptions_2140.79.tar.gz has been built for Windows",
+      "subject_clean": "Package fOptions_2140.79.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2140.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.13/).\nR version 2.13.0 Patched (2011-05-13 r55886)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package fOptions_2140.79.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-ca380ed5b239",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-d39c41dba673",
+      "message_id": "<BANLkTim7cvHrJy67xh93teKkTgCBar31yA@mail.gmail.com>",
+      "from_name": "J Toll",
+      "from_email_hash": "7983c06d16e049cbfb4f3cb939b0906207a4acc5daff9df661931db559d830a8",
+      "date": "2011-06-12T02:50:33Z",
+      "subject": "yahooKeystats function",
+      "subject_clean": "yahooKeystats function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI'm contacting you because I believe that the yahooKeystats function\nin the current fImport package (Version:\t2110.79) is broken.  It\nappears that Yahoo changed their HTML slightly which has caused the\nfunction to break.  Several months ago, I attempted to edit the\nfunction and managed to get it working.  I posted those changes to the\nR-SIG-FINANCE list in case anyone else was interested.\n\nhttps://stat.ethz.ch/pipermail/r-sig-finance/2011q1/007250.html\n\nSince then, I started using the XML package for the processing of HTML\nand went ahead and rewrote the yahooKeystats function using this\npackage.  I was wondering if you would be interested in using the\nfunction I wrote in place of the broken yahooKeystats function?  I\nbelieve this version might prove to be easier to maintain over time.\n\nBest regards,\n\nJames Toll",
+      "body_snippet": "Hi,\n\nI'm contacting you because I believe that the yahooKeystats function\nin the current fImport package (Version:\t2110.79) is broken.  It\nappears that Yahoo changed their HTML slightly which has caus",
+      "thread_id": "thread-d39c41dba673",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-3917e45a3241",
+      "message_id": "<19969.39597.264633.90895@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2011-06-22T07:33:01Z",
+      "subject": "fBasics / fUtilities --  getCall() // Martin's summer absence",
+      "subject_clean": "fBasics / fUtilities --  getCall() // Martin's summer absence",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Rmetrics co-maintainers,\n{i.e. mainly  dear Diethelm and Yohan, right ?}\n\nFor the next (major) version of R 2.14.0, due in October,\nI've introduced a  'getCall()' {S3} generic with a default\nmethod, which is used in stats::update() {for model updating}.\n\nBecause of that, I've found that the CRAN versions of fExtremes and fGarch\nnow warn.. ===> I've wanted to \"fix\" this smartly,\nnamely, depending on if the package runs in\nR version <= 2.13.x (where there's no getCall() in stats)\nand R version >= 2.14.0, define it as a function or as a Method.\n\n    (--> see another e-mail just to you two).\n\nFor that, I've looked in the R-forge versions of all Rmetrics\npackages, and found that\n*both*  packages\n\n \tfUtilities  and\tfBasics\n\ndefine a getCall() function.. and I've wondered, when I saw that\nthe two packages have basically the same\n\n    fBasics/R/utils-getS4.R\n    fUtilities/R/getS4.R      \n\nand I see more  fBasics/R/utils-*.R  source files.\n\nDo I guess correctly, that\nfUtilities is deprecated already now  (together with fCalendar and fSeries)?\n(-- but then, why did you (Yohan) still add changes to fUtilities in\n February 2010?)\n\nWith respect to that:\n\n  Is there somewhere written up ... hopefully as part of the\n  R-forge sources, the current Rmetrics\n  strategy of dependencies of packages,\n  so I can read it and look it up ..\n  (and also add to it the fact that we agreed on factoring out \n   'stabledist' from 'fBasics')\n?\n\nThank you for feedback...\n\nBTW: Note that I will spend the next 3 days in Vienna (with part of R core),\nand then travel to Columbia and Ecuador ... for full three weeks ...\nup to July 18,\nfor vacation (visiting, traveling)  where I won't work, and only\nhave quite intermittent and short internet connection, probably.\n\nBest regards,\nMartin",
+      "body_snippet": "Dear Rmetrics co-maintainers,\n{i.e. mainly  dear Diethelm and Yohan, right ?}\n\nFor the next (major) version of R 2.14.0, due in October,\nI've introduced a  'getCall()' {S3} generic with a default\nmeth",
+      "thread_id": "thread-3917e45a3241",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-24a8b201b4ea",
+      "message_id": "<7CA8B55ED113F7489808900F18D75FDB26D2DFE5C9@RIOUEXC.pedago.escmp>",
+      "from_name": "Leoni Patrick",
+      "from_email_hash": "652647e81695a01d5b25662ae242649b8688311755599604f5d3027df31a2f32",
+      "date": "2011-06-27T20:46:43Z",
+      "subject": "Need for garchOxFit",
+      "subject_clean": "Need for garchOxFit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110627/5bbace2d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110627/5bbace2d/attachment.pl>",
+      "thread_id": "thread-24a8b201b4ea",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-b67e98b991d0",
+      "message_id": "<9530A3E1599DBD4AA061423EEDCF7E9D0174807A@USXLXEXC100.NG.CORP>",
+      "from_name": "Wang Yu",
+      "from_email_hash": "c87f21c5c08157565359ac16856d14f8feedb196c7f32d18253e18214470361d",
+      "date": "2011-06-29T17:16:33Z",
+      "subject": "Bug reports on SpreadApproxOption and holidayNERC",
+      "subject_clean": "Bug reports on SpreadApproxOption and holidayNERC",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110629/44667113/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110629/44667113/attachment.pl>",
+      "thread_id": "thread-b67e98b991d0",
+      "thread_depth": 0,
+      "month": "2011-06"
+    },
+    {
+      "id": "msg-35dfe696e1d1",
+      "message_id": "<1309407375.93675.YahooMailRC@web121703.mail.ne1.yahoo.com>",
+      "from_name": "Peter Maclean",
+      "from_email_hash": "3badbe10c8629a0dd640792cbe22f95622d207bf8c81867bafaecd8260b1e959",
+      "date": "2011-06-30T04:16:15Z",
+      "subject": "Saving fExtremes estimates and k-block return level with confidence intervals.",
+      "subject_clean": "Saving fExtremes estimates and k-block return level with confidence intervals.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I am estimating a large model by groups. How do you save the results and?returns \nthe associated quantiles?\nFor this example I need a data frame \nn?? ?xi??????? mu????????beta \n1?? 0.1033614? 2.5389580 0.9092611\n2? ?0.3401922? 0.5192882 1.5290615 \n3?? 0.5130798? 0.5668308 1.2105666\nI also want to apply gevrlevelPlot() for each \"n\" or group.\n?\n#Example\nn <- c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3,3)\ny <- c(2,3,2,3,4,5,6,1,0,0,0,6, 2, 1, 0, 0,9,3)\nz <- as.data.frame(cbind(n,y))\ncolnames(z) <- c(\"n\",\"y\")\nlibrary(fExtremes)\nz <- split(z, z$n)\nres2 <-lapply(z, function(x){\n?????????????? m <- as.numeric(x$y)\n?????????????? gevFit(m, block = 1, type = c(\"pwm\"))\n??????????????? })\n> res2\n$`1`\nTitle:\n?GEV Parameter Estimation \nCall:\n?gevFit(x = m, block = 1, type = c(\"pwm\"))\nEstimation Type:\n? gev pwm \nEstimated Parameters:\n?????? xi??????? mu????? beta \n0.1033614 2.5389580 0.9092611 \nDescription\n? Wed Jun 29 23:07:48 2011 \n\n$`2`\nTitle:\n?GEV Parameter Estimation \nCall:\n?gevFit(x = m, block = 1, type = c(\"pwm\"))\nEstimation Type:\n? gev pwm \nEstimated Parameters:\n?????? xi??????? mu????? beta \n0.3401922 0.5192882 1.5290615 \nDescription\n? Wed Jun 29 23:07:48 2011 \n\n$`3`\nTitle:\n?GEV Parameter Estimation \nCall:\n?gevFit(x = m, block = 1, type = c(\"pwm\"))\nEstimation Type:\n? gev pwm \nEstimated Parameters:\n?????? xi??????? mu????? beta \n0.5130798 0.5668308 1.2105666 \nDescription\n? Wed Jun 29 23:07:48 2011?",
+      "body_snippet": "I am estimating a large model by groups. How do you save the results and?returns \nthe associated quantiles?\nFor this example I need a data frame \nn?? ?xi??????? mu????????beta \n1?? 0.1033614? 2.538958",
+      "thread_id": "thread-35dfe696e1d1",
+      "thread_depth": 0,
+      "month": "2011-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-087bd98f245c",
+      "subject": "fExtremes package",
+      "message_count": 1,
+      "participants": [
+        "Peter Maclean"
+      ],
+      "started": "2011-06-02T01:46:58Z",
+      "last_reply": "2011-06-02T01:46:58Z",
+      "root_message_id": "msg-087bd98f245c"
+    },
+    {
+      "id": "thread-22b0746a3e82",
+      "subject": "AW: fUnitRoots failing with urca import due to BIC",
+      "message_count": 5,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Martin Maechler",
+        "Pfaff, Bernhard Dr."
+      ],
+      "started": "2011-06-07T13:51:49Z",
+      "last_reply": "2011-06-08T00:24:02Z",
+      "root_message_id": "msg-22b0746a3e82"
+    },
+    {
+      "id": "thread-42c978f28270",
+      "subject": "fOptions no longer builds: Fortran error",
+      "message_count": 13,
+      "participants": [
+        "Christophe Dutang",
+        "Dirk Eddelbuettel",
+        "Martin Maechler",
+        "Yohan Chalabi"
+      ],
+      "started": "2011-06-07T13:55:27Z",
+      "last_reply": "2011-06-07T19:29:41Z",
+      "root_message_id": "msg-42c978f28270"
+    },
+    {
+      "id": "thread-ca380ed5b239",
+      "subject": "Package fOptions_2140.79.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2011-06-08T07:23:24Z",
+      "last_reply": "2011-06-08T07:23:24Z",
+      "root_message_id": "msg-ca380ed5b239"
+    },
+    {
+      "id": "thread-d39c41dba673",
+      "subject": "yahooKeystats function",
+      "message_count": 1,
+      "participants": [
+        "J Toll"
+      ],
+      "started": "2011-06-12T02:50:33Z",
+      "last_reply": "2011-06-12T02:50:33Z",
+      "root_message_id": "msg-d39c41dba673"
+    },
+    {
+      "id": "thread-3917e45a3241",
+      "subject": "fBasics / fUtilities --  getCall() // Martin's summer absence",
+      "message_count": 1,
+      "participants": [
+        "Martin Maechler"
+      ],
+      "started": "2011-06-22T07:33:01Z",
+      "last_reply": "2011-06-22T07:33:01Z",
+      "root_message_id": "msg-3917e45a3241"
+    },
+    {
+      "id": "thread-24a8b201b4ea",
+      "subject": "Need for garchOxFit",
+      "message_count": 1,
+      "participants": [
+        "Leoni Patrick"
+      ],
+      "started": "2011-06-27T20:46:43Z",
+      "last_reply": "2011-06-27T20:46:43Z",
+      "root_message_id": "msg-24a8b201b4ea"
+    },
+    {
+      "id": "thread-b67e98b991d0",
+      "subject": "Bug reports on SpreadApproxOption and holidayNERC",
+      "message_count": 1,
+      "participants": [
+        "Wang Yu"
+      ],
+      "started": "2011-06-29T17:16:33Z",
+      "last_reply": "2011-06-29T17:16:33Z",
+      "root_message_id": "msg-b67e98b991d0"
+    },
+    {
+      "id": "thread-35dfe696e1d1",
+      "subject": "Saving fExtremes estimates and k-block return level with confidence intervals.",
+      "message_count": 1,
+      "participants": [
+        "Peter Maclean"
+      ],
+      "started": "2011-06-30T04:16:15Z",
+      "last_reply": "2011-06-30T04:16:15Z",
+      "root_message_id": "msg-35dfe696e1d1"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "list": "rmetrics-core",
+  "description": "",
+  "month": "2009-12",
+  "messages": [
+    {
+      "id": "msg-92e2d30d13c2",
+      "message_id": "<7C2FE308-1F20-4B17-A9AF-B764A12E0801@lugos.name>",
+      "from_name": "Scott Locklin",
+      "from_email_hash": "889eda1370ca2279c709da6584eb90f8f282bacf04697690a865656efb778b7a",
+      "date": "2009-12-04T06:49:30Z",
+      "subject": "Are you guys trying to drive me nuts? (bug report on getReturns)",
+      "subject_clean": "Are you guys trying to drive me nuts? (bug report on getReturns)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "> getReturns(t2,na.omit=TRUE)[1]\n[1] NA\n\nYo, VERY MUCH NOT COOL!",
+      "body_snippet": "> getReturns(t2,na.omit=TRUE)[1]\n[1] NA\n\nYo, VERY MUCH NOT COOL!",
+      "thread_id": "thread-92e2d30d13c2",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-936053ff6494",
+      "message_id": "<alpine.OSX.1.00.0912050447390.8883@tystie.local>",
+      "from_name": "Prof Brian Ripley",
+      "from_email_hash": "375ec446f7a1157a4f0268b6dc682d6c2a5b186f57aa61253477aa48159d2329",
+      "date": "2009-12-05T07:56:23Z",
+      "subject": "CRAN packages filehash, hash, timeSeries and trip",
+      "subject_clean": "CRAN packages filehash, hash, timeSeries and trip",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "John Chambers added the following in r50609 in R-devel:\n\n     o\tThe R grammar prevents using the argument \"name\" in signatures\n         of methods for \"$\" and \"$<-\".  The generic functions have been\n         changed to reflect this.\n\n(He means the implicit S4 generics: the actual functions are \nunchanged.)\n\nIt has had to be temporarily reverted, but will be restored soon. \nThis means that packages that define methods for $ or $<- with 'name' \nin the signature (which was pointless as it is always class \n\"character\") need to be corrected: these were sp, rgdal and those \nlisted in the subject.\n\nFor setMethod(\"$\" ...) all you have ever needed was signature \n\"myclass\".  In principle for setReplaceMethod(\"$\" ...) you could give \na signature of the form signature(x=\"myclass\", value=\"someclass\") but \nas implemented that does not work: only the class of 'x' is used in \ndispatching.  So in both cases the signature should simply be the \nclass of x.\n\nCan we please have updates that do this.\n\n-- \nBrian D. Ripley,                  ripley at stats.ox.ac.uk\nProfessor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/\nUniversity of Oxford,             Tel:  +44 1865 272861 (self)\n1 South Parks Road,                     +44 1865 272866 (PA)\nOxford OX1 3TG, UK                Fax:  +44 1865 272595",
+      "body_snippet": "John Chambers added the following in r50609 in R-devel:\n\n     o\tThe R grammar prevents using the argument \"name\" in signatures\n         of methods for \"$\" and \"$<-\".  The generic functions have been\n ",
+      "thread_id": "thread-936053ff6494",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-07924b307429",
+      "message_id": "<01ca7a00$Blat.v2.2.2$d46d5efe@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-12-11T01:25:31Z",
+      "subject": "Package timeSeries_2110.85.tar.gz has been built for Windows - with a WARNING",
+      "subject_clean": "Package timeSeries_2110.85.tar.gz has been built for Windows - with a WARNING",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2110.85.tar.gz did pass 'R CMD check' only with WARNING(s).\nIt has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)\n-------------- next part --------------\n* using log directory 'd:/Rcompile/CRANpkg/local/2.10/timeSeries.Rcheck'\n* using R version 2.10.0 (2009-10-26)\n* using session charset: ISO8859-1\n* checking for file 'timeSeries/DESCRIPTION' ... OK\n* this is package 'timeSeries' version '2110.85'\n* checking package name space information ... OK\n* checking package dependencies ... OK\n* checking if this is a source package ... OK\n* checking whether package 'timeSeries' can be installed ... OK\n* checking package directory ... OK\n* checking for portable file names ... OK\n* checking DESCRIPTION meta-information ... OK\n* checking top-level files ... OK\n* checking index information ... OK\n* checking package subdirectories ... OK\n* checking R files for non-ASCII characters ... OK\n* checking R files for syntax errors ... OK\n* checking whether the package can be loaded ... OK\n* checking whether the package can be loaded with stated dependencies ... OK\n* checking whether the name space can be loaded with stated dependencies ... OK\n* checking for unstated dependencies in R code ... OK\n* checking S3 generic/method consistency ... OK\n* checking replacement functions ... OK\n* checking foreign function calls ... OK\n* checking R code for possible problems ... OK\n* checking Rd files ... OK\n* checking Rd metadata ... OK\n* checking Rd cross-references ... OK\n* checking for missing documentation entries ... WARNING\nUndocumented S4 methods:\n  generic '$<-' and siglist 'timeSeries,ANY,ANY'\n  generic '$<-' and siglist 'timeSeries,ANY,factor'\n  generic '$<-' and siglist 'timeSeries,ANY,numeric'\nAll user-level objects in a package (including S4 classes and methods)\nshould have documentation entries.\nSee the chapter 'Writing R documentation files' in manual 'Writing R\nExtensions'.\n* checking for code/documentation mismatches ... OK\n* checking Rd \\usage sections ... OK\n* checking data for non-ASCII characters ... OK\n* checking examples ... OK\n* checking tests ... OK\n* checking PDF version of manual ... OK",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2110.85.tar.gz did pass 'R CMD check' only with WARNING(s).\nIt has been built for Windows and\nwil",
+      "thread_id": "thread-07924b307429",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-6feb3d15052c",
+      "message_id": "<01ca7a00$Blat.v2.2.2$d44748ee@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-12-11T01:25:31Z",
+      "subject": "Package timeDate_2110.87.tar.gz has been built for Windows",
+      "subject_clean": "Package timeDate_2110.87.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2110.87.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeDate_2110.87.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspondin",
+      "thread_id": "thread-6feb3d15052c",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-28f0d05180ec",
+      "message_id": "<19236.47800.832108.421478@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2009-12-13T09:58:16Z",
+      "subject": "CRAN package timeSeries",
+      "subject_clean": "CRAN package timeSeries",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Grr: seems that this checks ok with r-devel but otherwise gives\n\nchecking for missing documentation entries ... WARNING\nUndocumented S4 methods:\ngeneric '$<-' and siglist 'timeSeries,ANY,ANY'\ngeneric '$<-' and siglist 'timeSeries,ANY,factor'\ngeneric '$<-' and siglist 'timeSeries,ANY,numeric'\n\n-k",
+      "body_snippet": "Grr: seems that this checks ok with r-devel but otherwise gives\n\nchecking for missing documentation entries ... WARNING\nUndocumented S4 methods:\ngeneric '$<-' and siglist 'timeSeries,ANY,ANY'\ngeneric ",
+      "thread_id": "thread-28f0d05180ec",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-7a46cb583f77",
+      "message_id": "<20091213144618.05ae3866@mimi>",
+      "from_name": "Yohan Chalabi",
+      "from_email_hash": "56b411de5bdb2ce7345bb8428a4b3656ff1b5eceacaaca0f3b276b8395271e5a",
+      "date": "2009-12-13T13:46:18Z",
+      "subject": "CRAN package timeSeries",
+      "subject_clean": "CRAN package timeSeries",
+      "in_reply_to": "<19236.47800.832108.421478@fangorn.hornik.net>",
+      "references": [
+        "<19236.47800.832108.421478@fangorn.hornik.net>"
+      ],
+      "body_plain": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>> on Sun, 13 Dec 2009 10:58:16 +0100\n\n   KH> Grr: seems that this checks ok with r-devel but otherwise gives\n   KH>\n   KH> checking for missing documentation entries ... WARNING\n   KH> Undocumented S4 methods:\n   KH> generic '$<-' and siglist 'timeSeries,ANY,ANY'\n   KH> generic '$<-' and siglist 'timeSeries,ANY,factor'\n   KH> generic '$<-' and siglist 'timeSeries,ANY,numeric'\n\n\nHi Kurt,\n\nThanks for the message.\n\nPlease find a new version on CRAN ftp server. \n\nRegards,\nYohan\n\n-- \nPhD candidate\nSwiss Federal Institute of Technology\nZurich\n\nwww.ethz.ch",
+      "body_snippet": ">>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>> on Sun, 13 Dec 2009 10:58:16 +0100\n\n   KH> Grr: seems that this checks ok with r-devel but otherwise gives\n   KH>\n   KH> checking for missing do",
+      "thread_id": "thread-28f0d05180ec",
+      "thread_depth": 1,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-4a19a46afaeb",
+      "message_id": "<19237.17976.221537.828327@fangorn.hornik.net>",
+      "from_name": "Kurt Hornik",
+      "from_email_hash": "6740dd468a52e648b787a10cae32d1e43b6db87654353fbd95012a5ae5b82a59",
+      "date": "2009-12-13T19:53:28Z",
+      "subject": "CRAN package timeSeries",
+      "subject_clean": "CRAN package timeSeries",
+      "in_reply_to": "<20091213144618.05ae3866@mimi>",
+      "references": [
+        "<19236.47800.832108.421478@fangorn.hornik.net>",
+        "<20091213144618.05ae3866@mimi>"
+      ],
+      "body_plain": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>>> on Sun, 13 Dec 2009 10:58:16 +0100\n\nKH> Grr: seems that this checks ok with r-devel but otherwise gives\nKH> \nKH> checking for missing documentation entries ... WARNING\nKH> Undocumented S4 methods:\nKH> generic '$<-' and siglist 'timeSeries,ANY,ANY'\nKH> generic '$<-' and siglist 'timeSeries,ANY,factor'\nKH> generic '$<-' and siglist 'timeSeries,ANY,numeric'\n\n\n> Hi Kurt,\n\n> Thanks for the message.\n\n> Please find a new version on CRAN ftp server. \n\n> Regards,\n> Yohan\n\n> -- \n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n\n> www.ethz.ch\n\nThanks, on CRAN now.\n\nBest\n-k",
+      "body_snippet": ">>>>> Yohan Chalabi writes:\n\n>>>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n>>>>> on Sun, 13 Dec 2009 10:58:16 +0100\n\nKH> Grr: seems that this checks ok with r-devel but otherwise gives\nKH> \nKH> ",
+      "thread_id": "thread-28f0d05180ec",
+      "thread_depth": 2,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-417670b45b41",
+      "message_id": "<01ca7c5b$Blat.v2.2.2$c83ea5ac@mail.statistik.tu-dortmund.de>",
+      "from_name": "Uwe.Ligges at R-Project.org",
+      "from_email_hash": "023b5aa3cd3d9127ecd7623de6d8166e73462b8e1a608a7916597fb3174bef74",
+      "date": "2009-12-14T01:21:37Z",
+      "subject": "Package timeSeries_2110.86.tar.gz has been built for Windows",
+      "subject_clean": "Package timeSeries_2110.86.tar.gz has been built for Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2110.86.tar.gz has been built for Windows and\nwill be published within 24 hours in the corresponding CRAN directory\n(CRAN/bin/windows/contrib/2.10/).\nR version 2.10.0 (2009-10-26)\n \nAll the best,\nUwe Ligges\n(Maintainer of binary packages for Windows)",
+      "body_snippet": "Dear package maintainer,\n \nthis notification has been generated automatically.\nYour package timeSeries_2110.86.tar.gz has been built for Windows and\nwill be published within 24 hours in the correspond",
+      "thread_id": "thread-417670b45b41",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-a3ca2561131f",
+      "message_id": "<4B38BB590200001B00032FB3@smtp1.msb.edu>",
+      "from_name": "Puneet Gandhi",
+      "from_email_hash": "b37ff3ee779fa7eb26a16e4e9a2fc2e41c1305edbf590fd31dd318c2f0d78fe8",
+      "date": "2009-12-28T19:06:17Z",
+      "subject": "question about R package",
+      "subject_clean": "question about R package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091228/95951dcd/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091228/95951dcd/attachment.pl>",
+      "thread_id": "thread-a3ca2561131f",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-e0809baaa4df",
+      "message_id": "<67821.97263.qm@web65703.mail.ac4.yahoo.com>",
+      "from_name": "Stphania HOUNGAN",
+      "from_email_hash": "4c81263e7f4cd5c10b59be4c22f07feef8566eff500c3c24cb8b6025527ed301",
+      "date": "2009-12-31T04:05:06Z",
+      "subject": "Adj Close",
+      "subject_clean": "Adj Close",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091230/f2b0f515/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091230/f2b0f515/attachment.pl>",
+      "thread_id": "thread-e0809baaa4df",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-d90c723a277e",
+      "message_id": "<19260.9615.201416.669407@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2009-12-31T04:16:15Z",
+      "subject": "Adj Close",
+      "subject_clean": "Adj Close",
+      "in_reply_to": "<67821.97263.qm@web65703.mail.ac4.yahoo.com>",
+      "references": [
+        "<67821.97263.qm@web65703.mail.ac4.yahoo.com>"
+      ],
+      "body_plain": "On 30 December 2009 at 20:05, Stphania HOUNGAN wrote:\n| Dear Rmetrics Core Team,\n| I'm trying to import data from yahooFinance with the function yahooSeries from packages fImport. I want to download ?Open?, ?High?, ?Low?, ?Close?, ?Volume?, and ?Adj Close?. But the function yahooSeries don't allow me to download the adjusted series which is in the last column. How can I download this last column named ?Adj Close?? I have R version 2.6.1\n\nWow, R 2.6.1?  That is _two years_ old. For software that is free to\nupgrade. You should consider upgrading.\n\nAnyway, you could try one of the non-Rmetrics packages:\n\nR> library(quantmod)\nLoading required package: xts\nLoading required package: zoo\nLoading required package: Defaults\nLoading required package: TTR\nR> IBM <- getSymbols(\"IBM\", from=\"2007-01-01\", to=\"2009-12-30\", auto.assign=FALSE, adjust=TRUE)\nR> head(IBM)\n           IBM.Open IBM.High IBM.Low IBM.Close IBM.Volume IBM.Adjusted\n2007-01-03    92.34    93.50   91.47     92.43    9678856        92.43\n2007-01-04    92.41    93.87   92.05     93.41   11076148        93.41\n2007-01-05    92.74    93.07   92.08     92.57    7599809        92.57\n2007-01-08    93.59    94.54   93.45     93.97   10881977        93.97\n2007-01-09    94.15    95.33   94.14     95.09   11690443        95.09\n2007-01-10    93.59    94.12   93.05     93.96    9203164        93.96\nR> IBM <- getSymbols(\"IBM\", from=\"2007-01-01\", to=\"2009-12-30\", auto.assign=FALSE, adjust=FALSE)\nR> head(IBM)\n           IBM.Open IBM.High IBM.Low IBM.Close IBM.Volume IBM.Adjusted\n2007-01-03    97.18    98.40   96.26     97.27    9196800        92.43\n2007-01-04    97.25    98.79   96.88     98.31   10524500        93.41\n2007-01-05    97.60    97.95   96.91     97.42    7221300        92.57\n2007-01-08    98.50    99.50   98.35     98.90   10340000        93.97\n2007-01-09    99.08   100.33   99.07    100.07   11108200        95.09\n2007-01-10    98.50    99.05   97.93     98.89    8744800        93.96\nR> \n\nAs you can see, this can adjust OHLC based on the Adj.Close/Close ratio.\n\nBonne Annee,  Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "On 30 December 2009 at 20:05, Stphania HOUNGAN wrote:\n| Dear Rmetrics Core Team,\n| I'm trying to import data from yahooFinance with the function yahooSeries from packages fImport. I want to download ?",
+      "thread_id": "thread-e0809baaa4df",
+      "thread_depth": 1,
+      "month": "2009-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-92e2d30d13c2",
+      "subject": "Are you guys trying to drive me nuts? (bug report on getReturns)",
+      "message_count": 1,
+      "participants": [
+        "Scott Locklin"
+      ],
+      "started": "2009-12-04T06:49:30Z",
+      "last_reply": "2009-12-04T06:49:30Z",
+      "root_message_id": "msg-92e2d30d13c2"
+    },
+    {
+      "id": "thread-936053ff6494",
+      "subject": "CRAN packages filehash, hash, timeSeries and trip",
+      "message_count": 1,
+      "participants": [
+        "Prof Brian Ripley"
+      ],
+      "started": "2009-12-05T07:56:23Z",
+      "last_reply": "2009-12-05T07:56:23Z",
+      "root_message_id": "msg-936053ff6494"
+    },
+    {
+      "id": "thread-07924b307429",
+      "subject": "Package timeSeries_2110.85.tar.gz has been built for Windows - with a WARNING",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-12-11T01:25:31Z",
+      "last_reply": "2009-12-11T01:25:31Z",
+      "root_message_id": "msg-07924b307429"
+    },
+    {
+      "id": "thread-6feb3d15052c",
+      "subject": "Package timeDate_2110.87.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-12-11T01:25:31Z",
+      "last_reply": "2009-12-11T01:25:31Z",
+      "root_message_id": "msg-6feb3d15052c"
+    },
+    {
+      "id": "thread-28f0d05180ec",
+      "subject": "CRAN package timeSeries",
+      "message_count": 3,
+      "participants": [
+        "Kurt Hornik",
+        "Yohan Chalabi"
+      ],
+      "started": "2009-12-13T09:58:16Z",
+      "last_reply": "2009-12-13T19:53:28Z",
+      "root_message_id": "msg-28f0d05180ec"
+    },
+    {
+      "id": "thread-417670b45b41",
+      "subject": "Package timeSeries_2110.86.tar.gz has been built for Windows",
+      "message_count": 1,
+      "participants": [
+        "Uwe.Ligges at R-Project.org"
+      ],
+      "started": "2009-12-14T01:21:37Z",
+      "last_reply": "2009-12-14T01:21:37Z",
+      "root_message_id": "msg-417670b45b41"
+    },
+    {
+      "id": "thread-a3ca2561131f",
+      "subject": "question about R package",
+      "message_count": 1,
+      "participants": [
+        "Puneet Gandhi"
+      ],
+      "started": "2009-12-28T19:06:17Z",
+      "last_reply": "2009-12-28T19:06:17Z",
+      "root_message_id": "msg-a3ca2561131f"
+    },
+    {
+      "id": "thread-e0809baaa4df",
+      "subject": "Adj Close",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Stphania HOUNGAN"
+      ],
+      "started": "2009-12-31T04:05:06Z",
+      "last_reply": "2009-12-31T04:16:15Z",
+      "root_message_id": "msg-e0809baaa4df"
+    }
+  ]
+}
