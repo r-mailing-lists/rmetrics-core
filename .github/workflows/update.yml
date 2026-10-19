@@ -20,6 +20,16 @@ on:
         description: 'Source pages: requests this run may make, with no limit on periods. This is how history is fetched. Leave empty for an ordinary run. Used only where a sources/ directory exists.'
         type: string
         default: ''
+      max_scrubbed:
+        description: 'Scrubbed text: requests this run may make. Leave empty for 3000.'
+        type: string
+        default: ''
+
+# One run at a time: a run started by hand waits for the nightly, and the reverse, so
+# two runs never fetch at once or push over each other. Neither is cancelled.
+concurrency:
+  group: update-archive
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -244,6 +254,44 @@ jobs:
             ./rmail-parser sources --raw raw/ --out sources/ --base-url "$BASE_URL" --max-requests "$MAX_REQUESTS"
           fi
 
+      - name: Fetch scrubbed text
+        env:
+          MAX_SCRUBBED: ${{ inputs.max_scrubbed }}
+        run: |
+          # Mailman scrubs some text out of messages and leaves a link to it. This fetches
+          # that text, once, into attachments/, and parse puts it back. It runs for every
+          # public archive, with or without sources/, and checks its own input.
+          case "$MAX_SCRUBBED" in
+            *[!0-9]*) echo "::error::max_scrubbed must be a whole number, got '$MAX_SCRUBBED'"; exit 1 ;;
+          esac
+          if [ "${#MAX_SCRUBBED}" -gt 4 ]; then
+            echo "::error::max_scrubbed must have at most four digits, got '$MAX_SCRUBBED'"; exit 1
+          fi
+          BASE_URL=$(jq -r '.source_url' config.json)
+          # The parser sends no cookie, so it cannot fetch from a members-only archive.
+          case "$BASE_URL" in
+            */mailman/private/*) echo "Scrubbed text is not fetched for a members-only archive."; exit 0 ;;
+          esac
+          # The parser's report goes to the log as it is, and each of its lines that starts
+          # with "warning:" (a run that stopped early) is also shown as an annotation.
+          # pipefail keeps the parser's exit status rather than the loop's. A run that
+          # takes more than 75 minutes is stopped: what it stored by then is kept, and
+          # the run goes on to parse and commit it. Any other failure fails the step.
+          set -o pipefail
+          STATUS=0
+          timeout 75m ./rmail-parser attachments --raw raw/ --out attachments/ --base-url "$BASE_URL" --max-requests "${MAX_SCRUBBED:-3000}" 2>&1 \
+            | while IFS= read -r line; do
+                printf '%s\n' "$line"
+                case "$line" in
+                  warning:*) printf '::warning::Scrubbed text: %s\n' "${line#warning: }" ;;
+                esac
+              done || STATUS=$?
+          if [ "$STATUS" -eq 124 ]; then
+            echo "::warning::Fetching scrubbed text was stopped after 75 minutes. What it stored is kept, and the next run carries on."
+          elif [ "$STATUS" -ne 0 ]; then
+            exit "$STATUS"
+          fi
+
       - name: Parse mbox files
         run: |
           LIST_NAME=$(jq -r '.list' config.json)
@@ -255,11 +303,16 @@ jobs:
           case "$(jq -r '.source_url' config.json)" in
             */mailman/private/*) HIDE=(--hide-addresses) ;;
           esac
+          # Text fetched from Mailman's scrubbed-attachment links is put back where it was.
+          ATTACH=()
+          if [ -d attachments ]; then
+            ATTACH=(--attachments attachments/)
+          fi
           if [ -d sources ]; then
             BASE_URL=$(jq -r '.source_url' config.json)
-            ./rmail-parser parse --input raw/ --output processed/ --list "$LIST_NAME" --aliases aliases.json --sources sources/ --base-url "$BASE_URL" "${HIDE[@]}"
+            ./rmail-parser parse --input raw/ --output processed/ --list "$LIST_NAME" --aliases aliases.json --sources sources/ --base-url "$BASE_URL" "${HIDE[@]}" "${ATTACH[@]}"
           else
-            ./rmail-parser parse --input raw/ --output processed/ --list "$LIST_NAME" --aliases aliases.json "${HIDE[@]}"
+            ./rmail-parser parse --input raw/ --output processed/ --list "$LIST_NAME" --aliases aliases.json "${HIDE[@]}" "${ATTACH[@]}"
           fi
           mv processed/meta.json meta.json
           mv processed/index.json index.json
@@ -275,6 +328,11 @@ jobs:
             # A run that was cut off can leave a temporary file behind. It is never committed.
             find sources -name '*.json.tmp' -delete
             git add sources/
+          fi
+          if [ -d attachments ]; then
+            # A run that was cut off can leave a temporary file behind. It is never committed.
+            find attachments -name '*.tmp' -delete
+            git add attachments/
           fi
           if git diff --staged --quiet; then
             echo "No changes to commit"
