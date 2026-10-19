@@ -35,7 +35,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # The branch as it is now: a run that waited behind another (see concurrency
+      # above) would otherwise check out the commit it was queued at, fetch again
+      # what the other run committed, and fail to push.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
 
       - name: Check source page inputs
         env:
