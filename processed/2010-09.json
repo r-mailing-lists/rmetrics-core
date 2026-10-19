@@ -13,11 +13,14 @@
       "subject_clean": "time series, gap, fill-in time stamp",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl>",
+      "body_plain": "Using Rmetrics function, what is the best way to fill-in missing time stamp\nin a time series? For example, I got\nsome data like the following:\n\ntimestamp    time-step-index    value\n2009-11-23 15:58:21      23301  800\n2009-11-23 15:58:29      23309  950\n\nThere is a gap of 8 seconds between 15:58:21 and 15:58:29 . I want to\nfill-in the missing time stamp for these seconds.\n\nCurrent I am using a loop to do this, but it seems to be not very efficient\n:\n\nstart=time(someData[1,]);\nnumSec =  60000;\n     for (k in 1:numSec ) {\n        timeTemplate[k,1]=as.\ncharacter(start + k, format=\"%Y%m%d%H%M%S\");\n         }\nwhere someData is a timeSeries object.\n\n-tsf\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Using Rmetrics function, what is the best way to fill-in missing time stamp\nin a time series? For example, I got\nsome data like the following:\n\ntimestamp    time-step-index    value\n2009-11-23 15:58:2",
       "thread_id": "thread-44279f77f9b2",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100906/5d5c49ca/attachment.pl"
+      ]
     },
     {
       "id": "msg-694dfaa90114",

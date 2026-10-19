@@ -225,11 +225,14 @@
       "subject_clean": "VaR constraint in fPortfolio",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120814/148571bc/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120814/148571bc/attachment.pl>",
+      "body_plain": "Hello,\n\nthank you for contributing to R with you package fPortfolio.\nI am looking at it and have a question for you.\n\n1/ I would like to maximise the return of a portfolio, over the following\nconstraints:\n   * each asset cannot be allocated more than a cap\n   * each group of asset cannot be allocated more than a cap (gross or net\nsum of weights)\n   * VaR or CVaR constraint on group of assets\nIs it possible using fPortfolio?\n\n2/ I understand that we can setup group constraints in terms of weight cap.\nBut can we do the same for VaR or CVaR constraints? Let's suppose that I\nhave chosen CVaR as risk measure in the model. How will the constraint be\ndefined?\n\nThank you for you help. I read carefully the help for the package but could\nnot manage to understand precisely how to use the functions.\n\nXavier\n\n-- \n\n*Four Elements Capital Pte Ltd*\n\n*96 Robinson Road, #16-01*\n\n*Singapore 068898*\n\n* *\n\n*Office: +65 6557 0578\nFax: **+65 6557 0498*\n\n***www.fourelementscapital.com* <http://www.fourelementscapital.com/>**\n\n* *\n\n*Disclaimer:* This email does not constitute investment advice or counsel\nor solicitation for investment of any product or fund. This email does not\nconstitute or form part of, and should not be construed as, any offer for\nsale or subscription of, or any invitation to offer to buy or subscribe\nfor, any investments, nor should it or any part of it form the basis of, or\nbe relied on in any connection with, any contract or commitment whatsoever.\nFOUR ELEMENTS CAPITAL expressly disclaims any and all responsibility for\nany direct or consequential loss or damage of any kind whatsoever arising\ndirectly or indirectly from: (i) the use of this email, (ii) reliance on\nany information contained herein, (iii) any error, omission or inaccuracy\nin any such information. This communication is confidential, may be\nprivileged and is meant only for the intended recipient.  If you are not\nthe intended recipient, please notify the sender by reply and delete this\nmessage from your system.  Any unauthorised dissemination, distribution or\ncopying hereof is prohibited.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nthank you for contributing to R with you package fPortfolio.\nI am looking at it and have a question for you.\n\n1/ I would like to maximise the return of a portfolio, over the following\nconstrai",
       "thread_id": "thread-e3b360bec2b9",
       "thread_depth": 0,
-      "month": "2012-08"
+      "month": "2012-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120814/148571bc/attachment.pl"
+      ]
     }
   ],
   "threads": [

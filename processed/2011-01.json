@@ -129,11 +129,14 @@
       "subject_clean": "skewness and kurtosis in package timeDate returns incorrect results",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110124/43e82148/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110124/43e82148/attachment.pl>",
+      "body_plain": "Dear Rmetrics Core Team members,\n\nI suspect functions skewness and kurtosis supplied in package timeDate, which I downloaded a while ago but no earlier than August, 2010, return results which I believe are incorrect, and would like to ask you to have the codes checked.\n\nWhen the method= \"moment\" is specified, the code calculates skewness as\n\nskewness = sum((x – mean(x))^3/sqrt(as.numeric(var(x)))^3)/length(x),\n\nwhere x is a numeric vector or object and n = length(x). However, if this skewness is supposed to calculate skewness for distributions, i.e., biased skewness, var(x) in the denominator should be corrected as var(x)*(n-1)/n to convert it to the biased variance.\n\nWhen the method =”fisher” is specified, the skewness is calculated as\n\nskewness = ((sqrt(n * (n - 1))/(n - 2)) * (sum(x^3)/n))/((sum(x^2)/n)^(3/2)).\n\nThe summations in the numerator and the denominator, however, should be \n\nsum((x-mean(x))^3)/n) and ((sum((x-mean(x))^2)/n), respectively, if the “fisher” skewness corresponds to the usual “unbiased” skewness. \n\nSubtraction of mean(x) from the vector x apparently is missing.\n\nThe same “anomalities” are found in the code for function kurtosis, as follows.\n\nif (method == \"excess\") {\n\nkurtosis = sum((x - mean(x))^4/as.numeric(var(x))^2)/length(x) - 3\n\n}\n\nif (method == \"moment\") {\n\nkurtosis = sum((x - mean(x))^4/as.numeric(var(x))^2)/length(x)\n\n}\n\nif (method == \"fisher\") {\n\nkurtosis = ((n + 1) * (n - 1) * ((sum(x^4)/n)/(sum(x^2)/n)^2 - (3 * (n - 1))/(n + 1)))/((n - 2) * (n - 3))\n\n}\n\nWhen I made those correcions mentioned above, both skewness and kurtosis returened results in agreement with those returened by the corresponding functions supplied with some other software.\n\nWith thanks.\n\nHiroshi Sawada\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team members,\n\nI suspect functions skewness and kurtosis supplied in package timeDate, which I downloaded a while ago but no earlier than August, 2010, return results which I believ",
       "thread_id": "thread-c5f817b37a62",
       "thread_depth": 0,
-      "month": "2011-01"
+      "month": "2011-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110124/43e82148/attachment.pl"
+      ]
     },
     {
       "id": "msg-325d286bac52",

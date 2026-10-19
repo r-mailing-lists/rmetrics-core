@@ -25,11 +25,14 @@
         "<1112D681-9275-4D33-B251-1E0632302AC2@gmail.com>",
         "<19950.29778.188592.524184@max.nulle.part>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111003/bcf21a8c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111003/bcf21a8c/attachment.pl>",
+      "body_plain": "Hello all,\n\nIt appears that the Sobol and Halton sequences implemented in fOptions\n(formerly fBasics) are still used by other Rmetrics packages. In particular,\nin Debian, randtoolbox is not ported, therefore using fBasics implementation\nis necessary.\n\nTell me if I'm wrong, but one issue with the randtoolbox package is that it\ndepends on a non GPL package rngWELL.\n\nAfter a long discussion with Petr Savicky (co-developper), we plan to split\nthe randtoolbox into smaller R packages. One of them will be quasiRNG\ncontaining only the quasi random sequences. Useless to say that quasiRNG\nwill not depend on any packages.\n\nIn a such framework, will you be interested to use this package? rather than\nthe fOptions implementation of Sobol and Halton?\n\nNote that the quasiRNG will be a significantly lighter since it will not\nhave a vignette and other pseudo RNGs.\n\nKind regards\n\nChristophe\n\n\n-- \nChristophe DUTANG\nPh. D. student at ISFA, Lyon, France\n---------- Forwarded message ----------\nFrom: Dirk Eddelbuettel <edd at debian.org>\nDate: 2011/6/7\nSubject: Re: fOptions no longer builds: Fortran error\nTo: Christophe Dutang <dutangc at gmail.com>\nCc: Yohan Chalabi <chalabi at phys.ethz.ch>, Dirk Eddelbuettel <edd at debian.org>,\nrmetrics-core <rmetrics-core at r-project.org>\n\n\n\nOn 7 June 2011 at 20:35, Christophe Dutang wrote:\n| why?\n\nBecause the vast number of the 3000+ CRAN packages are not in Debian.\n\nThat said, I do agree with your general sentiment that Depends: is better\nthan hidden copies, but that is a lesson the Rmetrics team appears to have\nlearned as well.\n\nBut converting all the existing code is a) no small task and b) may have\nside\neffects (as eg I may well decide against maintaining more CRAN packages\ninside Debian given my current 120+ packages).\n\nDirk\n\n--\nGauss once played himself in a zero-sum game and won $50.\n                     -- #11 at http://www.gaussfacts.com\n\n\n\n-- \nChristophe DUTANG\nPh. D. student at ISFA, Lyon, France\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n\nIt appears that the Sobol and Halton sequences implemented in fOptions\n(formerly fBasics) are still used by other Rmetrics packages. In particular,\nin Debian, randtoolbox is not ported, th",
       "thread_id": "thread-929ed03632cd",
       "thread_depth": 0,
-      "month": "2011-10"
+      "month": "2011-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111003/bcf21a8c/attachment.pl"
+      ]
     },
     {
       "id": "msg-13f4eda18e58",
@@ -57,11 +60,14 @@
       "subject_clean": "bug in fGarch R contributed package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111012/d5144ad6/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111012/d5144ad6/attachment.pl>",
+      "body_plain": "Hello Rmetrics Core Team:\n\n \n\nI think I've found a small bug in the q=qsnorm(p,mean=,sd=,xi=) function\nof the fGarch R package. The symptoms are that the output, q, is\nincorrect and even discontinuous around p=0.5 for xi > 1 (and probably\nalso for xi < 1; I haven't checked). \n\n \n\nChanging \"1/2\" to \"g/xi/2\" in the following 2 lines of the function\n.qsnorm() fixes the issue:\n\n \n\nChange \"sig = sign(p-1/2)\" to \"sig = sign(p-g/xi/2)\"\n\nChange \"p = (Heaviside(p-1/2)-sig*p) / (g*Xi)\" to \"p =\n(Heaviside(p-g/xi/2)-sig*p) / (g*Xi)\"\n\n \n\nExplanation: sign(z) and Heaviside(z) are used correctly in the\n.psnorm() function. The qsnorm() function is the inverse of the psnorm()\nfunction, but p was incorrectly substituted for z in the sign() and\nHeaviside() functions.\n\n \n\nThanks,\n\n-Eric\n\n \n\n \n\n---------------------------\n\nEric K. Sutton, PhD\n\nResearch Physicist\n\nAFRL/RVBXI\n\n(505) 846-7846\n\nDSN 246-7846\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello Rmetrics Core Team:\n\n \n\nI think I've found a small bug in the q=qsnorm(p,mean=,sd=,xi=) function\nof the fGarch R package. The symptoms are that the output, q, is\nincorrect and even discontinuous",
       "thread_id": "thread-24eb7980f230",
       "thread_depth": 0,
-      "month": "2011-10"
+      "month": "2011-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111012/d5144ad6/attachment.pl"
+      ]
     },
     {
       "id": "msg-3ffe651322b6",
@@ -287,11 +293,14 @@
       "subject_clean": "invalid names/units created by lag()",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111019/8e8cab98/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111019/8e8cab98/attachment.pl>",
+      "body_plain": "# function lag() on a timeSeries makes syntactically invalid names\n# when used with other functions from base package  (e.g. merge)\n# problems arise.\n# Suggestion is to check units with function make.names().\n# make.names() restrict freedom on units but ensure compatibility.\n\n\nlibrary(timeSeries) # 2130.92 on R 2.12.2\n\nset.seed(1953)\n\ndata <- matrix(runif(18), ncol = 3)\n\ncharvec <- rev(paste(\"2009-0\", 1:6, \"-01\", sep = \"\"))\n\nS <- timeSeries(data, charvec)\n\ncolnames(S) <- paste(\"S\", 1:3, sep = \".\")\n\nmerge(S[,2], lag(S[,1], -1:1))\n\n\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "# function lag() on a timeSeries makes syntactically invalid names\n# when used with other functions from base package  (e.g. merge)\n# problems arise.\n# Suggestion is to check units with function make.",
       "thread_id": "thread-3bf26a93abda",
       "thread_depth": 0,
-      "month": "2011-10"
+      "month": "2011-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111019/8e8cab98/attachment.pl"
+      ]
     },
     {
       "id": "msg-ec7a299e5503",
@@ -398,11 +407,14 @@
       "references": [
         "<BAY166-W32C8DD25A490266E073915A4ED0@phx.gbl>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111026/939d66ca/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111026/939d66ca/attachment.pl>",
+      "body_plain": "Dear Sir/madam,\n \nThe (maximum) limit for shape is set on 10 for the function garchfit. I wonder how to change this parameter. I hope you could give me the answer. Thank you verry much in advance!\n\n\n \nKind regards,\n \nTom Ruyter \t\t \t   \t\t  \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir/madam,\n \nThe (maximum) limit for shape is set on 10 for the function garchfit. I wonder how to change this parameter. I hope you could give me the answer. Thank you verry much in advance!\n\n\n ",
       "thread_id": "thread-8171a65ae047",
       "thread_depth": 0,
-      "month": "2011-10"
+      "month": "2011-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111026/939d66ca/attachment.pl"
+      ]
     },
     {
       "id": "msg-03e841c31e90",
@@ -414,11 +426,14 @@
       "subject_clean": "R package fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111028/f96e2515/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111028/f96e2515/attachment.pl>",
+      "body_plain": "Sehr geehrte Damen und Herren,\n\n \n\nich schreibe Ihnen, da ich eine Frage zum package fGarch der\nStatistiksoftware R habe. Kurz zu meiner Person. Ich komme aus Österreich\ngenauer gesagt aus Wien und studiere an der Fachhochschule des bfi Wien\n„Quantitative Asset and Risk Management“. Zur Zeit befinde ich mich  im 3.\nSemester des Masterlehrganges und schreibe an meiner Master Thesis. Der\nTitel lautet „AN EXTREME VALUE THEORY APPROACH IN MARKET RISK MANAGEMENT”.\nIch untersuche ob die Value at Risk Berechnung im Marktrisikobereich mit\nHilfe der Extremwerttheorie besser oder genauer funktioniert als\nStandardmethoden (Normal oder Student t Verteilung, Historische Simulation\nvs. Parametrischer Ansatz). Ich programmiere die verschiedenen VaR Modelle\nin R und verwende unter anderem auch das package „fGarch“. Um einen GARCH\nProzess an eine Zeitreihe zu fitten verwende ich die  Funktion „garchFit“.\nIch verwende in dieser Funktion verschieden Verteilungen. Also\nNormalverteilung und Student-t Verteilung. Wenn ich bei cond.dist=“std“\neingebe schätzt die Funktion mir die GARCH Parameter mit student-t\ninnovations. Das funktioniert alles soweit jedoch sind die Freiheitsgrade\nmit max. 10 begrenzt. Dh es gibt, wenn ich die Schätzung 5000 mal auf einer\nZeitreihe mit rolling window laufen lasse, keine Situation wo die\nFreiheitsgrade 10 übersteigen. Ist dies so gewollt, oder einfach ein Fehler\nin der Funktion? \n\n \n\nMeiner Meinung sollten die Freiheitsgrade einer Student-t Verteilung 10\nübersteigen, da man allgemein sagt dass erst ab 30 FG eine Normalverteilung\napproximiert wird.\n\n \n\nVielleicht können Sie mir weiterhelfen. Ich wäre Ihnen sehr dankbar!\n\nLiebe Grüße aus Österreich\n\nHeinrich Lahmer\n\n \n\n \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Sehr geehrte Damen und Herren,\n\n \n\nich schreibe Ihnen, da ich eine Frage zum package fGarch der\nStatistiksoftware R habe. Kurz zu meiner Person. Ich komme aus Österreich\ngenauer gesagt aus Wien und st",
       "thread_id": "thread-03e841c31e90",
       "thread_depth": 0,
-      "month": "2011-10"
+      "month": "2011-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111028/f96e2515/attachment.pl"
+      ]
     }
   ],
   "threads": [

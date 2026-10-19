@@ -15,11 +15,14 @@
       "references": [
         "<87B8D8ED-B7BF-4919-9D88-92F9D9A553D6@wanadoo.fr>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080601/a3306f17/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080601/a3306f17/attachment.pl>",
+      "body_plain": "Hi,\n\nI'm currently making a R package (named randtoolbox and under GNU GPL)  \nwith pseudo and quasi random generators. And I wanted to add Sobol and  \nHalton low discrepancy sequences to my package.\n\nBut I found out the package fOptions already implemented that stuff.  \nSo I ask you the permission to use your Fortran code (i.e. 085A- \nLowDiscrepancy.f) in my package.\n\nI already use foreign codes under GNU GPL: the C code from Matsumoto  \nand Saito for SF-mersenne twister.\n\nIf you accept, there will be an explicit banner in my help page saying  \nI use the Rmetrics code such as for SF-mersenne twister.\n\nOtherwise could you advise me some code on www.mcqmc.org/Software.html?\n\nThanks in advance\n\nBest regards\n\nChristophe Dutang\n\nPS : my package randtoolbox can be found on CRAN.\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI'm currently making a R package (named randtoolbox and under GNU GPL)  \nwith pseudo and quasi random generators. And I wanted to add Sobol and  \nHalton low discrepancy sequences to my package.\n\n",
       "thread_id": "thread-f0f97a29f80f",
       "thread_depth": 0,
-      "month": "2008-06"
+      "month": "2008-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080601/a3306f17/attachment.pl"
+      ]
     },
     {
       "id": "msg-72ef902baa78",
@@ -283,11 +286,14 @@
       "subject_clean": "Error in MDA estimate of Hill",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080626/e16decb5/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080626/e16decb5/attachment.pl>",
+      "body_plain": "Dear Diethelm and Core team, \n\nI am using your fExtremes package and specifically the hill.Plot and\nshaparmHill function to fit a vector of (non-negative) wealth values.\n\nHill.plot works perfectly, but when I try to use shaparmHill I get the\nfollowing message:\n\n \n\nError in plot.window(...) : need finite 'xlim' values\n\nIn addition: Warning messages:\n\n1: In min(x) : no non-missing arguments to min; returning Inf\n\n2: In max(x) : no non-missing arguments to max; returning -Inf\n\n \n\nI was using simply:\n\nx<-read.table(\"C:/Documents and\nSettings/teytelbo/Desktop/test_us_nw2.dat\", header=TRUE)\n\nx<-x[,2]\n\nx<-x[x>0]\n\nhillPlot.summary(x, plottype=\"alpha\")\n\nshaparmHill(x, p = 0.05, xiRange = NULL,doplot = TRUE, plottype =\nc(\"both\")\n\n \n\nIn the end I am hoping to get an optimal parameter to fit the\ndistribution.\n\n \n\nI look forward to hearing from you.\n\nBest, \n\nAlex\n\n\nPlease access the attached hyperlink for an important electronic communications disclaimer: http://www.lse.ac.uk/collections/secretariat/legal/disclaimer.htm\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Diethelm and Core team, \n\nI am using your fExtremes package and specifically the hill.Plot and\nshaparmHill function to fit a vector of (non-negative) wealth values.\n\nHill.plot works perfectly, bu",
       "thread_id": "thread-f747c11c2f5d",
       "thread_depth": 0,
-      "month": "2008-06"
+      "month": "2008-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080626/e16decb5/attachment.pl"
+      ]
     }
   ],
   "threads": [

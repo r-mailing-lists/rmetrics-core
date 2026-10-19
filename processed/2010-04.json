@@ -47,11 +47,14 @@
       "subject_clean": "help - garch estimation with exogenouse variables",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100409/11e94661/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100409/11e94661/attachment.pl>",
+      "body_plain": "Hello,\n\n \n\nI wonder if you have any idea about this technical issue. I notice from\nthe internet that S-plus has a function like this:\n\n \n\nCall: garch(formula.mean =... , formula.var=...)\n\n \n\nI need to estimate a GARCH model and the mean equation contains\nexogenous variables like Y = B * X + et. I understand the garch function\nin tseries package can handle an univariate model, and garchFit in\nfGarch can handle ARMA specification. I have no access to S-plus so I\nwonder if there is any R function that can handle exogenous variables?\n\n \n\nThank you,\n\n \n\n \n\nEdwin\n\n \n\nChangyou Sun, Ph.D.\n\nAssociate Professor\n\nNatural Resource Policy & Economics\n\nBox 9681, Department of Forestry\n\nMississippi State University\n\nMississippi State, MS 39762\n\n \n\n#363 Thompson Hall\n\n(662) 325 7271 (ph), 325 8726 (fax)\n\ncsun at cfr.msstate.edu\n\nwww.cfr.msstate.edu/forestry\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\n \n\nI wonder if you have any idea about this technical issue. I notice from\nthe internet that S-plus has a function like this:\n\n \n\nCall: garch(formula.mean =... , formula.var=...)\n\n \n\nI need to",
       "thread_id": "thread-13fc08bf8d6e",
       "thread_depth": 0,
-      "month": "2010-04"
+      "month": "2010-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100409/11e94661/attachment.pl"
+      ]
     },
     {
       "id": "msg-3de50627f53f",
@@ -221,11 +224,14 @@
         "<19393.33845.78845.136207@fangorn.hornik.net>",
         "<20100414092410.7143f4bc@mimi>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100414/992c55de/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100414/992c55de/attachment.pl>",
+      "body_plain": ">From the message, that Yohan shows,\nit does indeed look a bit funny (a possible buglet in R-devel's checking ?).\n\n  (\"summary\" , \"sparseMatrix\") is indeed a method from the Matrix package.\n\nHow exactly do you import Matrix (methods)?  Could it be that you should\nchange something there, e.g. if you define \"summary\" methods yourself?\n\nRegards,\nMartin\n\nOn Wed, Apr 14, 2010 at 09:24, Yohan Chalabi <chalabi at phys.ethz.ch> wrote:\n\n> >>>> \"KH\" == Kurt Hornik <Kurt.Hornik at wu.ac.at>\n> >>>> on Sun, 11 Apr 2010 10:11:33 +0200\n>\n>   KH> Dear maintainers,\n>   KH>\n>   KH> This concerns the packages\n>   KH>\n>   KH> bayesCGH fRegression\n>   KH>\n>   KH> maintained by one of you, for which R CMD check finds problems\n>   KH> in the\n>   KH> 'for missing documentation entries' check, see below for\n>   KH> details.\n>   KH>\n>   KH> Can we pls have updates fixing these within the next 2 weeks?\n>   KH>\n>   KH> Note that other R CMD check problems may need to be addressed\n>   KH> as well.\n>   KH>\n>   KH> Best\n>   KH> -k\n>   KH> [[...]]\n>   KH>\n>   KH> Package: fRegression Version: 2100.76 Flavor: r-devel-linux-ix86\n>   KH> Check: for missing documentation entries ... WARNING\n>   KH> Undocumented S4 methods:\n>   KH> generic 'summary' and siglist 'sparseMatrix'\n>   KH> All user-level objects in a package (including S4 classes\n>   KH> and methods)\n>   KH> should have documentation entries.\n>   KH> See the chapter 'Writing R documentation files' in manual\n>   KH> 'Writing R\n>   KH> Extensions'.\n>\n> Hi Kurt,\n>\n> Thanks for your message.\n>\n> It looks like methods implemented in Matrix pkg has been saved in the\n> wrong S4 method table. Was there any change in R-devel that affect how\n> S4 methods are saved ?\n>\n> Regards,\n> Yohan\n>\n> --\n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n>\n> www.ethz.ch\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": ">From the message, that Yohan shows,\nit does indeed look a bit funny (a possible buglet in R-devel's checking ?).\n\n  (\"summary\" , \"sparseMatrix\") is indeed a method from the Matrix package.\n\nHow exact",
       "thread_id": "thread-fd847de4f999",
       "thread_depth": 2,
-      "month": "2010-04"
+      "month": "2010-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100414/992c55de/attachment.pl"
+      ]
     },
     {
       "id": "msg-d371e22438c0",

@@ -150,11 +150,14 @@
       "subject_clean": "Question",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh>",
+      "body_plain": "Dear Rmetrics Core Team:\n\nI have encountered a problem when using the garchFit model in the fGarch \nPackage, and I hope you can help me .\n\nThe problem is  describled as the following\n\nThe length of the financial return series to be fitted by garchFit is \n2599,but the length of the vector of the fitted values(@fitted) returned \nby the garchFit model is 1974.\n\nAnd what's more when I change  the return series to a length of 1000, the \nlength of the fitted vector returned by the garchFit model is also 1974. \nI'm totally at \n\na loss,because I think the length of the return series and of the fitted \nvalues should be the same ,why the garchFit model returns a fitted values \nvector with a different \nlength with that of the financial return serires being fitted.\n\n\nPlease give me a help .I'm looking forward for your reply. \n\nThank you very much.\n\nYours sincerely, \nSophia Song \nTel\u001b$B!'\u001b(B:(8610)-63635803\nEmail\u001b$B!'\u001b(Bsongjie at clpc.e-chinalife.com \n\n\n \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team:\n\nI have encountered a problem when using the garchFit model in the fGarch \nPackage, and I hope you can help me .\n\nThe problem is  describled as the following\n\nThe length of th",
       "thread_id": "thread-45c31b33163e",
       "thread_depth": 0,
-      "month": "2011-03"
+      "month": "2011-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110323/29978cb8/attachment.ksh"
+      ]
     },
     {
       "id": "msg-95ff65e350a2",
@@ -166,11 +169,14 @@
       "subject_clean": "Question",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl>",
+      "body_plain": "Dear Rmetrics Core Team:\n\nI have encountered a problem when using the garchFit model in the fGarch \nPackage, and I hope you can help me .\n\nThe problem is  describled as the following\n\nThe length of the financial return series to be fitted by garchFit is \n2599,but the length of the vector of the fitted values(@fitted) returned \nby the garchFit model is 1974.\n\nAnd what's more when I change  the return series to a length of 1000, the \nlength of the fitted vector returned by the garchFit model is also 1974. \nI'm totally at \n\na loss,because I think the length of the return series and of the fitted \nvalues should be the same ,why the garchFit model returns a fitted values \nvector with a different \nlength with that of the financial return serires being fitted.\n\n\nPlease give me a help .I'm looking forward for your reply. \n\nThank you very much.\n\nYours sincerely, \nSophia Song \nTel\u001b$B!'\u001b(B:(8610)-63635803\nEmail\u001b$B!'\u001b(Bsongjie at clpc.e-chinalife.com \n\n\n \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team:\n\nI have encountered a problem when using the garchFit model in the fGarch \nPackage, and I hope you can help me .\n\nThe problem is  describled as the following\n\nThe length of th",
       "thread_id": "thread-95ff65e350a2",
       "thread_depth": 0,
-      "month": "2011-03"
+      "month": "2011-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110328/4b7cd446/attachment.pl"
+      ]
     },
     {
       "id": "msg-644cbeea5cad",

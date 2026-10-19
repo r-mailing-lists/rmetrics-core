@@ -13,11 +13,14 @@
       "subject_clean": "Bug with residuals?",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090907/2b84b67a/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090907/2b84b67a/attachment.pl>",
+      "body_plain": "Hello,\n\nI am not an expert in fitting GARCH models, but the computation\nof residuals looks strange to me:\n\nrequire(fGarch)\nx <- rnorm(200)\ng <- garchFit(formula ~ garch(1,1), x, include.mean = FALSE, trace =  \nFALSE)\nabs( residuals(g) ) - abs(x)\n\nIn fact, in general it outputs data +- mu. On the other hand, the  \noutput of\n\nresiduals(g, standard = TRUE)\n\nlooks more familiar, as it resembles other residuals:\n\nrequire(tseries)\nresiduals(garch(x,trace=FALSE))\n\nIs this behavior normal? Maybe I missed something, so thank you in  \nadvance for any comment or explanation.\n\n\nDavid Morton de Lachapelle\nSwissquote-EPFL\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI am not an expert in fitting GARCH models, but the computation\nof residuals looks strange to me:\n\nrequire(fGarch)\nx <- rnorm(200)\ng <- garchFit(formula ~ garch(1,1), x, include.mean = FALSE, ",
       "thread_id": "thread-7374830283dc",
       "thread_depth": 0,
-      "month": "2009-09"
+      "month": "2009-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090907/2b84b67a/attachment.pl"
+      ]
     },
     {
       "id": "msg-c9f424640201",

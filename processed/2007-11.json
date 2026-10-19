@@ -61,11 +61,14 @@
       "subject_clean": "A bug in summary.fGarch?",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl",
+      "body_plain": "I fitted a GARCH(1,1) model to a data set using Rmetrics, and then check the\nsummary of the fit, I found the test stat for Shapiro-Wilk test on the\nresiduals is 0.9953833 while the p-value is 0.003871092. When I fit the same\ndata set to the same GARCH model using S-Plus, the Shapiro-Wilk test on the\nresiduals give a test stat of 0.9904, but the p-value is 0.9524.\n\nSo which one is right?\n\nThe output from R and S-Plus are below. Rmetrics version is 260.72\n\nCheers,\nWeimin\n\n\n# Begin R Output#\n> summary(ewk.fit)\n\nTitle:\n GARCH Modelling\n\nCall:\n garchFit(formula = seriesData(ewk.ret) ~ garch(1, 1), data = ewk.ret,\n    leverage = TRUE, trace = FALSE)\n\nMean and Variance Equation:\n ~arma(0, 0) + ~garch(1, 1)\n\nStandadized Residuals Tests:\n                                Statistic p-Value\n Jarque-Bera Test   R    Chi^2  17.95285  0.0001263537\n Shapiro-Wilk Test  R    W      0.9953833 0.003871092\n\n# End R Output#\n\n\n# Begin S-Plus Output #\n\n> summary( ewk.fit)\n\nCall:\n\ngarch(formula.mean =  ~ arma(0, 0), formula.var =  ~ garch(1, 1), series =\newk.ret,\n\nleverage = T)\n\nMean Equation: structure(.Data =  ~ arma(0, 0), class = \"formula\")\nConditional Variance Equation: structure(.Data =  ~ garch(1, 1) , class =\n\"formula\")\nConditional Distribution:  gaussian\n\nNormality Test:\n--------------------------------------------------------------\nJarque-Bera   P-value Shapiro-Wilk P-value\n\n      17.99 0.0001243       0.9904  0.9524\n # End S-Plus Output#\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I fitted a GARCH(1,1) model to a data set using Rmetrics, and then check the\nsummary of the fit, I found the test stat for Shapiro-Wilk test on the\nresiduals is 0.9953833 while the p-value is 0.003871",
       "thread_id": "thread-6488802ab74a",
       "thread_depth": 0,
-      "month": "2007-11"
+      "month": "2007-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071117/ffc36e7d/attachment.pl"
+      ]
     },
     {
       "id": "msg-775f4ce0ee8e",

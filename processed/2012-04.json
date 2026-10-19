@@ -13,11 +13,14 @@
       "subject_clean": "Reminder about your invitation from Michael Cohen",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl>",
+      "body_plain": "LinkedIn\n------------\n\n\nThis is a reminder that on March 28, Michael Cohen sent you an invitation to become part of their professional network at LinkedIn.\n\nAccept Michael Cohen's Invitation\n\n----------\nOn March 28, Michael Cohen wrote:\n\n> To:  [rmetrics-core at r-project.org]\n> From: Michael Cohen [mike1947n at gmail.com]\n> Subject: Invitation to connect on LinkedIn\n>\n> I'd like to add you to my professional network on LinkedIn.\n> \n> - Michael\n\n----------\n\nYou are receiving Reminder emails for pending invitations. Click to unsubscribe:\nhttp://www.linkedin.com/e/-osejg1-h0jgaoq0-5i/XL-ahFHA_AllCZQUw2i3_Vo3Du_f1qQ3gTNWJT1yEJ/goo/rmetrics-core%40r-project%2Eorg/20060/I2245398777_1/?hs=false&tok=1JGOw29LS_5Rc1\n\n(c) 2012 LinkedIn Corporation. 2029 Stierlin Ct, Mountain View, CA 94043, USA.\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "LinkedIn\n------------\n\n\nThis is a reminder that on March 28, Michael Cohen sent you an invitation to become part of their professional network at LinkedIn.\n\nAccept Michael Cohen's Invitation\n\n--------",
       "thread_id": "thread-16d2286fd003",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120402/39a0e961/attachment.pl"
+      ]
     },
     {
       "id": "msg-fb9e47565dc5",
@@ -45,11 +48,14 @@
       "subject_clean": "Reminder about your invitation from Michael Cohen",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl>",
+      "body_plain": "LinkedIn\n------------\n\n\nThis is a reminder that on March 28, Michael Cohen sent you an invitation to become part of their professional network at LinkedIn.\n\nAccept Michael Cohen's Invitation\n\n----------\nOn March 28, Michael Cohen wrote:\n\n> To:  [rmetrics-core at r-project.org]\n> From: Michael Cohen [mike1947n at gmail.com]\n> Subject: Invitation to connect on LinkedIn\n>\n> I'd like to add you to my professional network on LinkedIn.\n> \n> - Michael\n\n----------\n\nYou are receiving Reminder emails for pending invitations. Click to unsubscribe:\nhttp://www.linkedin.com/e/-osejg1-h0t8zcic-31/XL-ahFHA_AllCZQUw2i3_Vo3Du_f1qQ3gTNWJT1yEJ/goo/rmetrics-core%40r-project%2Eorg/20060/I2245398777_1/?hs=false&tok=2cDckW4YFgfBc1\n\n(c) 2012 LinkedIn Corporation. 2029 Stierlin Ct, Mountain View, CA 94043, USA.\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "LinkedIn\n------------\n\n\nThis is a reminder that on March 28, Michael Cohen sent you an invitation to become part of their professional network at LinkedIn.\n\nAccept Michael Cohen's Invitation\n\n--------",
       "thread_id": "thread-22c0915bcdf2",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/2cd6fd13/attachment.pl"
+      ]
     },
     {
       "id": "msg-f853e5ecbf97",
@@ -61,11 +67,14 @@
       "subject_clean": "fArma problem",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl>",
+      "body_plain": "Hi All\n \nI just installed package fArma ( using R2.14.2) ... installed OK\n \nthen when I try to load and use the library I get an error message:\n \n>load(fArma)\nerror fArma not found?\n \nhow do we get to use this package?\n \nNB I also tried direct use of the procedures:\n  x = armaSim(model = list(ar = c(0.5, -0.5), ma = 0.1), n = 1000)\n \nbut with the same result. ... armaSim( .. ) not found\n \nSeveral other packages have installed fine, and do run ok, eg Hadley Wickham's ggPlot2 ... \n \nSo how do we get to use fArma?\n \nRegards\n \njefe\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi All\n \nI just installed package fArma ( using R2.14.2) ... installed OK\n \nthen when I try to load and use the library I get an error message:\n \n>load(fArma)\nerror fArma not found?\n \nhow do we get to",
       "thread_id": "thread-f853e5ecbf97",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/162792b4/attachment.pl"
+      ]
     },
     {
       "id": "msg-632a34cf27ac",
@@ -77,11 +86,14 @@
       "subject_clean": "fArma problem solved",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl>",
+      "body_plain": "The fArma problem is solved.\n \nI had been using another stats package, and had forgotten the R command is library(fArma)\n \nThanks ,,, the prediction examples and graphics are working fine.\n \n \nRegards\n \n \nJefe\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "The fArma problem is solved.\n \nI had been using another stats package, and had forgotten the R command is library(fArma)\n \nThanks ,,, the prediction examples and graphics are working fine.\n \n \nRegards",
       "thread_id": "thread-632a34cf27ac",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/86be6fd2/attachment.pl"
+      ]
     },
     {
       "id": "msg-3c0d6252874f",
@@ -93,11 +105,14 @@
       "subject_clean": "Garch Ox Fit",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl>",
+      "body_plain": "Dear Ladies and Gentlemen,\n\n \n\nAs Garch Ox Fit is no longer parto f the fGarch Package, could you please\ntell me, if there is a possibility of using it with fGarch?\n\n \n\nThanks\n\n \n\nMarcelo Klotzle\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Ladies and Gentlemen,\n\n \n\nAs Garch Ox Fit is no longer parto f the fGarch Package, could you please\ntell me, if there is a possibility of using it with fGarch?\n\n \n\nThanks\n\n \n\nMarcelo Klotzle\n\n\n\t[",
       "thread_id": "thread-3c0d6252874f",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120409/14640fe7/attachment.pl"
+      ]
     },
     {
       "id": "msg-965b7856e73a",
@@ -143,11 +158,14 @@
       "subject_clean": "questions on garchOxFit",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl>",
+      "body_plain": "Dear sir or mam,\n\nI am a researcher in economics in China, and interested in using garchOxFit the OX interface, as it seems providing more garch models. However, I have know idea how to get access to that. So may I ask for some help and instructions from you?\n\nThanks\n2012-04-13\n\n\n\nBest Regards,\n\nQIN Xiao\n覃   筱\n\nDepartment of Finance\nAntai College of Economics & Management\nShanghai Jiao Tong University\n\nRM710, Antai BLDG, 535 Fahua Zhen RD, Shanghai 200052, P.R. China\nTel: 86-21-52301261(O)\nEmail: miniqin at 126.com\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear sir or mam,\n\nI am a researcher in economics in China, and interested in using garchOxFit the OX interface, as it seems providing more garch models. However, I have know idea how to get access to ",
       "thread_id": "thread-42af9660dd7e",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120413/78d8c03c/attachment.pl"
+      ]
     },
     {
       "id": "msg-058c13d5db08",
@@ -159,11 +177,14 @@
       "subject_clean": "Rrgarding multivariate garch with fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl>",
+      "body_plain": "I am trying to use fGarch to fit to a multivariate data. I tried the syntax on page 15 of Package 'fGarch' (February 14, 2012) but got errors (see below). I am not sure whether I specified all the necessay parameter values!\n\nI would appreciate your help.\n\nMy code:\n\n> data(LPP2005REC)\n> class(LPP2005REC)\n[1] \"timeSeries\"\nattr(,\"package\")\n[1] \"timeSeries\"\n> names(LPP2005REC)\n[1] \"SBI\"   \"SPI\"   \"SII\"   \"LMI\"   \"MPI\"   \"ALT\"   \"LPP25\" \"LPP40\" \"LPP60\"\n> tmpx<-LPP2005REC[,1:3]  # the first 3 components\n> head(tmpx)\nGMT\n                    SBI          SPI          SII\n2005-11-01 -0.000612745  0.008414595 -0.003190926\n2005-11-02 -0.002762009  0.002519342 -0.004117638\n2005-11-03 -0.001153092  0.012707292 -0.005209409\n2005-11-04 -0.003235750 -0.000702757 -0.001127165\n2005-11-07  0.001310970  0.006205226 -0.001795839\n2005-11-08  0.000539312  0.000329260  0.002103374\n>\n> # First trial\n> garchFit(tmpx~garch(1,1),data=tmpx)\n[1] \"tmpx\"\n[1] \"SBI\" \"SPI\" \"SII\"\nError in .garchArgsParser(formula = formula, data = data, trace = FALSE) :\n  Formula and data units do not match.\n>\n> # Second trial\n> garchFit(as.matrix(tmpx)~garch(1,1),data=tmpx)\n[1] \"tmpx\"\n[1] \"SBI\" \"SPI\" \"SII\"\nError in .garchArgsParser(formula = formula, data = data, trace = FALSE) :\n  Formula and data units do not match.\n>\n\nRegards\nFarrokh Guiahi\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I am trying to use fGarch to fit to a multivariate data. I tried the syntax on page 15 of Package 'fGarch' (February 14, 2012) but got errors (see below). I am not sure whether I specified all the nec",
       "thread_id": "thread-058c13d5db08",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120414/44bf7fbe/attachment.pl"
+      ]
     },
     {
       "id": "msg-f7d66118e816",
@@ -209,11 +230,14 @@
       "references": [
         "<BLU149-W14AB38331BAAE65693EA6BB03D0@phx.gbl>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl>",
+      "body_plain": "Dear sir,\n\nHow can I change the starting value of beta in garchFit() function please,\n\ni can see that the starting value you have for beta is 0.8, \n\nI want to produce the same results of Brooks model (Autoregrssive conditional Kurtosis), which he has beta =0.7, Brooks used RATS software and I am using R software and your package fGarch\n\nMany thanks\n\nMajid\n \t\t \t   \t\t   \t\t \t   \t\t  \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear sir,\n\nHow can I change the starting value of beta in garchFit() function please,\n\ni can see that the starting value you have for beta is 0.8, \n\nI want to produce the same results of Brooks model ",
       "thread_id": "thread-12a8eb6f7741",
       "thread_depth": 1,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120420/83d107ad/attachment.pl"
+      ]
     }
   ],
   "threads": [

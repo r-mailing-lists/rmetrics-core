@@ -29,11 +29,14 @@
       "subject_clean": "GARCH MODELLING-garchoxfit()",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl>",
+      "body_plain": "Dear Sir/Madam\n\nI would like to use the function garchoxFit() from the OX GARCH for my thesis research . I am specifically interested in the EGARCH and GJR GARCH. I realise it is no longer available in the FGARCH package.Could you please advice me what i need to do to get it.\n\ni am new to R and i was comparing the log likelihood values for the standard garch(1,1) with those from an book example and the R values are significantly lower( Excel,Eviews,Matlab=13000 compared to my R value of 10500). Is this because of the ARCH parameter - 'mu'?\n\n Thanks in advance.\nAndrew\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir/Madam\n\nI would like to use the function garchoxFit() from the OX GARCH for my thesis research . I am specifically interested in the EGARCH and GJR GARCH. I realise it is no longer available i",
       "thread_id": "thread-88b514228cf2",
       "thread_depth": 0,
-      "month": "2010-05"
+      "month": "2010-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100531/6d0d231c/attachment.pl"
+      ]
     },
     {
       "id": "msg-779decccebff",

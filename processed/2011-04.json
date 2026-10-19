@@ -47,11 +47,14 @@
       "subject_clean": "kpss",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl>",
+      "body_plain": "Dear All\n\nI will be glade if you help me to understand what difference is between\n\"trend Stationary\" and \"level Stationary\" at kpss.test in tseries package.\n\n\nbest regards\nstat consult\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear All\n\nI will be glade if you help me to understand what difference is between\n\"trend Stationary\" and \"level Stationary\" at kpss.test in tseries package.\n\n\nbest regards\nstat consult\n\n\t[[alternative",
       "thread_id": "thread-f5ff635a70a8",
       "thread_depth": 0,
-      "month": "2011-04"
+      "month": "2011-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110417/18526ec2/attachment.pl"
+      ]
     }
   ],
   "threads": [

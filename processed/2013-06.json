@@ -13,11 +13,14 @@
       "subject_clean": "about portfolioData() function in fPortfolio package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl>",
+      "body_plain": "Dear sirs:\n\nWhen I use your great package 'fPortfolio', I have a question.\n\nThe help file about the function portfolioData() describles the 'data'\nargument as follows:\n\na time series or a named list, containing either a series of returns or\nnamed\n   entries ’mu’ and ’Sigma’ being mean and covariance matrix.\n\nIf I have 4 securities named \"AA\", \"BB\", \"CC\", and \"DD\".\n\nI only have their expected returns and covariance data, but I have not\ntheir returns time series data. How can I get the efficient frontier with\n'fPortfolio'?\n\nThanks.\n\n                                                              Yours\n                                                              Rho Zhang\n                                                              June 5th. 2013\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear sirs:\n\nWhen I use your great package 'fPortfolio', I have a question.\n\nThe help file about the function portfolioData() describles the 'data'\nargument as follows:\n\na time series or a named list, ",
       "thread_id": "thread-45ed07820019",
       "thread_depth": 0,
-      "month": "2013-06"
+      "month": "2013-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/5a3d69a9/attachment.pl"
+      ]
     },
     {
       "id": "msg-adc70b7360d1",
@@ -29,11 +32,14 @@
       "subject_clean": "stabledist",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl>",
+      "body_plain": "Dear Martin Maechler,\n\n \n\nI'm trying to install the stabledist package on R (operative System\nWindows).\n\nEvery time I run the install.packages(\"stabledist\") I get the same error\nmessage:\n\n \n\nWarning: unable to access index for repository\nhttp://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/2.9\n\nWarning message:\n\nIn getDependencies(pkgs, dependencies, available, lib) :\n\n  package 'stabledist' is not available\n\n \n\nCould you please help me I need this package urgent.\n\n \n\nKind Regards,\n\n \n\nStefan Hummel\n\n \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Martin Maechler,\n\n \n\nI'm trying to install the stabledist package on R (operative System\nWindows).\n\nEvery time I run the install.packages(\"stabledist\") I get the same error\nmessage:\n\n \n\nWarning: ",
       "thread_id": "thread-adc70b7360d1",
       "thread_depth": 0,
-      "month": "2013-06"
+      "month": "2013-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130605/e9741674/attachment.pl"
+      ]
     },
     {
       "id": "msg-0dc51cd0b300",
@@ -63,11 +69,14 @@
       "subject_clean": "From Stphania HOUNGAN",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl>",
+      "body_plain": "http://inqtechnologies.com/lfmxf/pewpaymkfkcfur.html    \n\n    \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "http://inqtechnologies.com/lfmxf/pewpaymkfkcfur.html    \n\n    \n\n\t[[alternative HTML version deleted]]",
       "thread_id": "thread-037a5dfb7767",
       "thread_depth": 0,
-      "month": "2013-06"
+      "month": "2013-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130606/fc7b0474/attachment.pl"
+      ]
     },
     {
       "id": "msg-2d8cdfe60915",
@@ -79,11 +88,14 @@
       "subject_clean": "Efficient frontier for Asymmetric Generalized Hyperbolic Distribution, Asymmetric Normal Inverse Gaussian, Asymmetric Variance Gamma and Gaussian Distributions",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl>",
+      "body_plain": "Hi there, this email is specifically for Diethelm Wuertz. I would like to\nknow how I can construct the above with the functions portfolioFrontier and\nfrontierPlot.  So far, I can only do it with time series objects and S4\nobject of class fPORTFOLIO.  Your help is very much appreciated.  Thanks.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi there, this email is specifically for Diethelm Wuertz. I would like to\nknow how I can construct the above with the functions portfolioFrontier and\nfrontierPlot.  So far, I can only do it with time ",
       "thread_id": "thread-2d8cdfe60915",
       "thread_depth": 0,
-      "month": "2013-06"
+      "month": "2013-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130624/95bd4f5c/attachment.pl"
+      ]
     }
   ],
   "threads": [

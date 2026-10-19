@@ -13,11 +13,14 @@
       "subject_clean": "fOptions- Error",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl>",
+      "body_plain": "Hi Team,\nI am using the following code:\nlibrary(timeDate)\n\nlibrary(timeSeries)\n\nlibrary(fBasics)\n\nlibrary(fOptions)\n\nR_Fit<-hngarchFit(R_Emp_Vol_HNGarch, model = list(lambda = -0.5, omega = var(R_Emp_Vol_HNGarch), alpha =0.1 * var(R_Emp_Vol_HNGarch), beta = 0.1, gamma = 0, rf = 0), symmetric = FALSE,trace = FALSE,title = NULL, description = NULL,)\n\nhngarchStats(R_Fit)\n\n\nWhere \"R_Emp_Vol_HNGarch\" is a vector of implied volabilities.\nI am getting following error and unable to decode it.\nERROR:\n  missing value in parameter\n\nCan you explain why it is coming? Or help me what to wrong I am doing?\nThanks and Regards,\nGaurang Mehta\n\nAviva plc, registered Office: St. Helen's, 1 Undershaft, London EC3P 3DQ. Registered in England No. 02468686. www.aviva.com\nThis message and any attachments may be confidential or ...{{dropped:10}}",
+      "body_snippet": "Hi Team,\nI am using the following code:\nlibrary(timeDate)\n\nlibrary(timeSeries)\n\nlibrary(fBasics)\n\nlibrary(fOptions)\n\nR_Fit<-hngarchFit(R_Emp_Vol_HNGarch, model = list(lambda = -0.5, omega = var(R_Emp_",
       "thread_id": "thread-358ae60014c6",
       "thread_depth": 0,
-      "month": "2012-09"
+      "month": "2012-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120914/9129aa80/attachment.pl"
+      ]
     },
     {
       "id": "msg-860e03240462",
@@ -102,11 +105,14 @@
       "subject_clean": "fOptions - Library Question",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl>",
+      "body_plain": "Hi Team,\nI am using fOptions library. I have question on the following function\nhngarchSim(model, n, innov, n.start, start.innov, rand.gen)\n\nI am not sure how can we use this function for the innovations other than normal. I have tried many options as follows but failed.\nPlease guide.\n\nmodel = list(lambda = 4, omega = 8e-5, alpha = 6e-5,beta = 0.7, gamma = 0, rf = 0)\nts = hngarchSim(model = model, n = 500, innov = \"t\", rand.gen=rt(10000,df=2,ncp=2))\nError: could not find function \"rand.gen\"\n\nI really the documentation for this library can be enhanced.\n\nRegards,\nGaurang Mehta\n\nAviva plc, registered Office: St. Helen's, 1 Undershaft, London EC3P 3DQ. Registered in England No. 02468686. www.aviva.com\nThis message and any attachments may be confidential or ...{{dropped:10}}",
+      "body_snippet": "Hi Team,\nI am using fOptions library. I have question on the following function\nhngarchSim(model, n, innov, n.start, start.innov, rand.gen)\n\nI am not sure how can we use this function for the innovati",
       "thread_id": "thread-08c3c4fce380",
       "thread_depth": 0,
-      "month": "2012-09"
+      "month": "2012-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120918/8bc323cb/attachment.pl"
+      ]
     }
   ],
   "threads": [

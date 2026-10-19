@@ -13,11 +13,14 @@
       "subject_clean": "Community & educational development",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130503/e1548274/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130503/e1548274/attachment.pl>",
+      "body_plain": "PRESS RELEASE\n\nThe American Grants and Loans Catalog is now available. Our new and revised\n2013 edition contains more than 2800 financial programs, subsidies, scholarships,\ngrants and loans offered by the US federal government.\n\nIn addition you will also have access to over 2400 programs funded by private\ncorporations and foundations. That is over 5200 programs available through\nvarious sources of financial providing organizations.\n\nNEW: You will also have access to our live Database that is updated on a daily\nbasis. This product also provides daily email alerts as programs are announced.\n\nThe Database is also available with IP recognition. This allows you to login\nwithout a username or password (Great for libraries or educational institutions\nwho want their users to access the database).\n\nBusinesses, students, researchers, scientists, teachers, doctors, private individuals,\nmunicipalities, government departments, educational institutions, law enforcement\nagencies, nonprofits, foundations and associations will find a wealth of information\nthat will help them with their new ventures or existing projects.\n\nThe document is a fully searchable PDF file for easy access to your particular\nneeds and interests. Simply enter your keywords to search through the publication.\n\nIt is the perfect tool for libraries and educational institutions to use as a\nreference guide for students who require funds to pursue their education.\n\n\nContents of the Directory:\n\n-Web link to program announcement page\n-Web link to Federal agency or foundation administering the program\n-Authorization upon which a program is based\n-Objectives and goals of the program\n-Types of financial assistance offered under a program\n-Uses and restrictions placed upon a program\n-Eligibility requirements\n-Application and award process\n-Regulations, guidelines and literature relevant to a program\n-Information contacts at the headquarters, regional, and local offices\n-Programs that are related based upon program objectives and uses\n\n\nPrograms in the Catalog provide a wide range of benefits and services\nfor categories such as:\n\nAgriculture\nBusiness and Commerce\nCommunity Development\nConsumer Protection\nCultural Affairs\nDisaster Prevention and Relief\nEducation\nEmployment, Labor and Training\nEnergy\nEnvironmental Quality\nFood and Nutrition\nHealth\nHousing\nIncome Security and Social Services\nInformation and Statistics\nLaw, Justice, and Legal Services\nNatural Resources\nRegional Development\nScience and Technology\nTransportation\n\n\nCD version: $69.95\nPrinted version: $149.95\n\nTo order please call: 1 (800) 610-4543\n\n\nPlease do not reply to the sender's email address as this address is only for outgoing mail.\n\nIf you do not wish to receive information from us in the future please reply here:\nrem218 at mail.com\n\nThis is a CANSPAM ACT compliant advertising broadcast sent by:\nAmerican Publishing Inc. , 7025 County Rd. 46A, Suite 1071, Lake Mary, FL, 32746-4753\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "PRESS RELEASE\n\nThe American Grants and Loans Catalog is now available. Our new and revised\n2013 edition contains more than 2800 financial programs, subsidies, scholarships,\ngrants and loans offered by",
       "thread_id": "thread-dcf14d904c67",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130503/e1548274/attachment.pl"
+      ]
     },
     {
       "id": "msg-227010b20d13",
@@ -31,11 +34,14 @@
       "references": [
         "<518783E9.2040502@unisa.it>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130506/2793099b/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130506/2793099b/attachment.pl>",
+      "body_plain": "Dear Rmetrics Core Team,\n\nI am Vincenzo Candila, student of the University of Salerno - Italy.\n\nI am experiencing some difficulties in using the minvarianceportfolio \ncommand. In particular,\nI would like to create a function for the calculation of the time \nvarying weights minimizing the portfolio variance.\n\nLet \"cond_cov\" the conditional covariance matrix obtained from a \nmultivariate GARCH model and \"daily_ret_ts\" the daily returns. The \nformer is a list and the\nlatter is a timeseries object.\n\nI need a function because I have several conditional covariance matrices \nfor 500 replicates of daily returns. Let \"daily_ret[[r]]\" be the r-th \nreplicate of the daily returns.\n\nI have written the following code:\n\nlibrary(fPortfolio)\n\nsize=length(daily_ret[[1]][,1])          # number of days\nnassets=length(daily_ret[[1]][1,])    # number of assets\n\nopt_weights_func=function(daily_ret_ts,cond_cov){\nopt_weights=list()\n\nfor(i in 1:size){\n\n## Spec\n    myEstimator <- function(x, spec = NULL, ...) list(mu = colMeans(x), \nSigma = cond_cov)\n    Spec = portfolioSpec()\n    setType(Spec) = \"MV\"\n    setSolver(Spec) = \"solveRquadprog\"\n    setEstimator(Spec)=\"myEstimator\"\n    Spec\n\n## constraints -\n    Constraints = \"LongOnly\"\n\n\n    myEstimator <- function(x, spec = NULL, ...) list(mu = colMeans(x), \nSigma = matrix(c(unlist(cond_cov[[i]])),ncol=nassets))\nopt_weights[[i]]=getWeights(minvariancePortfolio(daily_ret_ts[i,], Spec, \nConstraints))\n}\nreturn(opt_weights)\n}\n\ntry1=opt_weights_func(daily_ret[[1]],MGARCH[[1]])\n\nThe code works but when I check the optimal weights, they are always the \nsame, for all the days! I really do not know why this happens.\n\nIf, instead, I use the following code, the weights change over time:\n/\n/## Spec\n    myEstimator <- function(x, spec = NULL, ...) list(mu = colMeans(x), \nSigma =MGARCH[[1]])\n    Spec = portfolioSpec()\n    setType(Spec) = \"MV\"\n    setSolver(Spec) = \"solveRquadprog\"\n    setEstimator(Spec)=\"myEstimator\"\n    Spec\n\n## constraints -\n    Constraints = \"LongOnly\"\n\nopt_weights=list()\nfor(i in 1:size){\n    myEstimator <- function(x, spec = NULL, ...) list(mu = colMeans(x), \nSigma = MGARCH[[1]][[i]])\nopt_weights[[i]]=getWeights(minvariancePortfolio(day_ret[[1]][i,], Spec, \nConstraints))\n}\n\nAny help is highly appreciated,\n\nKind Regards,\nVincenzo\n\n\n\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team,\n\nI am Vincenzo Candila, student of the University of Salerno - Italy.\n\nI am experiencing some difficulties in using the minvarianceportfolio \ncommand. In particular,\nI would l",
       "thread_id": "thread-227010b20d13",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130506/2793099b/attachment.pl"
+      ]
     },
     {
       "id": "msg-0f6ab84b3d2f",
@@ -47,11 +53,14 @@
       "subject_clean": "fPortfolioBacktest could not be installed",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130516/636a4f11/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130516/636a4f11/attachment.pl>",
+      "body_plain": "Dear Sir,\n\nThe below link is missing. Only Linux and Ututu are available.\n\nhttps://r-forge.r-project.org/R/?group_id=156\n\nto install:\ninstall.packages(\"fPortfolioBacktest\",\nrepos=\"http://R-Forge.R-project.org <http://r-forge.r-project.org/>\")\n\n\nWhen I go to download it from some other place, I have the following message:\n\nError: package ‘fPortfolioBacktest’ was built before R 3.0.0: please\nre-install it\n\n\nPlease advice\n\nLeo\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir,\n\nThe below link is missing. Only Linux and Ututu are available.\n\nhttps://r-forge.r-project.org/R/?group_id=156\n\nto install:\ninstall.packages(\"fPortfolioBacktest\",\nrepos=\"http://R-Forge.R-pro",
       "thread_id": "thread-0f6ab84b3d2f",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130516/636a4f11/attachment.pl"
+      ]
     },
     {
       "id": "msg-2a61af78ca6f",
@@ -63,11 +72,14 @@
       "subject_clean": "Advanced portfolio management with R/Rmetrics",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130518/8ccd2d89/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130518/8ccd2d89/attachment.pl>",
+      "body_plain": "Hi,\n\nI know the book \"Advanced Portfolio Management with R/Rmetrics\" is still work in progress. I bought your book \"Portfolio Management with R/Rmetrics\" and like it a lot. If you are willing to share me the draft version of your Advanced Portfolio Management with R/Rmetrics\" book, I will be happy to give you feedback/suggestions and maybe even contribute to some writings. Let me know what you think. Thanks!\n\nYin\n\nYin Luo, CFA\nManaging Director, Global Head of QEDS (Quantitative Strategy, Equity Derivatives & Synthetics Strategy)\nDeutsche Bank\nDesk Tel: 1.212.250.8983 | Yin.Luo at db.com<mailto:yin.luo at db.com> | https://eqindex.db.com/gqs/\n\nDisclaimer: https://ederivatives.db.com/static/disclaimer.html\n\nAssumptions, estimates and opinions expressed constitute the author's judgment as of the date of this communication and are subject to change without notice. Past performance is not necessarily indicative of future results. This communication is based upon information that Deutsche Bank or one of its affiliates (collectively \"Deutsche Bank\") considers reliable as of the date hereof, but Deutsche Bank does not represent that it is accurate and complete. Deutsche Bank does not render legal or tax advice, and the information contained in this communication should not be regarded as such.\n\n\n---\nThis communication may contain confidential and/or privileged information. If you are not the intended recipient (or have received this communication in error) please notify the sender immediately and destroy this communication. Any unauthorized copying, disclosure or distribution of the material in this communication is strictly forbidden.\n\nDeutsche Bank does not render legal or tax advice, and the information contained in this communication should not be regarded as such.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI know the book \"Advanced Portfolio Management with R/Rmetrics\" is still work in progress. I bought your book \"Portfolio Management with R/Rmetrics\" and like it a lot. If you are willing to share",
       "thread_id": "thread-2a61af78ca6f",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130518/8ccd2d89/attachment.pl"
+      ]
     }
   ],
   "threads": [

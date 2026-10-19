@@ -29,11 +29,14 @@
       "subject_clean": "Hill Estimator",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl>",
+      "body_plain": "Dr.  Sir/Madam\n\nI have been using the package fExtremes for the statistical analysis of\nfinancial time series.  I find the package very useful. \n\n \n\nMy query concerns the function hillPlot and, in particular, the\nestimation of the Hill index. \n\n \n\nIf I am not wrong the formula for the Hill index (in latex form) is\ngiven by:\n\n \n\nGamma(k) = 1/k sum_{i=1}^{k}[ ln(x_{n-i+1})-ln(x_{n-k})]   \n\n \n\nWhere k+1 is the threshold and x are the ordered statistics. \n\nThe corresponding formula in the R function is:\n\n \n\nloggs = log(ordered)\n\navesumlog = cumsum(loggs)/(1:n) \n\nxihat = c(NA, (avesumlog - loggs)[2:n]) -\n\n \n\nthe second code line, as far as I can understand (probably I am wrong),\nis equivalent to\n\n \n\nGamma(k) = 1/k sum_{i=1}^{k}[ ln(x_{n-i})-ln(x_{n-k})]   \n\n \n\nThat is the first term in the summation is ln(x_{n-i}) rather than\nln(x_{n-i+1}). \n\n \n\nShould it be   xihat = c(NA, (avesumlog[-1] - logs[-n]) ?\n\n \n\nI apologize for the long email .\n\n \n\nBest,\n\nEfthymios\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dr.  Sir/Madam\n\nI have been using the package fExtremes for the statistical analysis of\nfinancial time series.  I find the package very useful. \n\n \n\nMy query concerns the function hillPlot and, in par",
       "thread_id": "thread-c8da8b0e2b9d",
       "thread_depth": 0,
-      "month": "2009-06"
+      "month": "2009-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090611/36e78c4d/attachment.pl"
+      ]
     },
     {
       "id": "msg-a6cdce6ab4da",

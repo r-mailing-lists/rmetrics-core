@@ -143,11 +143,14 @@
       "subject_clean": "Apparent Bug in Whittle Fit Code on FARMA",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091024/cd3a37a3/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091024/cd3a37a3/attachment.pl>",
+      "body_plain": "I've used this for a paper on frational brownian noise and wanted to extend\nthis work to FARIMA processes.  WhittleFit is normally the bed rock and\ni discoved on the data I was using after fixing a number of minor bugs\ni.e. p <- q <- 0 in .whittle causing difficulties later on.  I discovered\nthat .fspecARIMA has a major bug.  While an elegant attempt to vectorize\nthe power spectrum it takes an outer product of the Fourier frequencies\nwith the integers which define the lag.  What is necessary here is applying\ni.e. shifting the lagged data so that early lags don't multiply multiples of\nthe\nFourier sins and cosines but rather these series are shifted, i.e. one needs\nto\ncbind shfoted versions of these vectors.  This may work with one lag butg no\nmore.\n                    --mike\n\n-- \nMichael Cohen\nWork: 677 Beacon St Rm 213, Boston Mass\nHome: 25 Stearns Road #3 Brookline, MA\nPh: 1-617-353-9484(w) 617-734-8828(h) Fax: 617-353-7755\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I've used this for a paper on frational brownian noise and wanted to extend\nthis work to FARIMA processes.  WhittleFit is normally the bed rock and\ni discoved on the data I was using after fixing a nu",
       "thread_id": "thread-7f46c0abdcfb",
       "thread_depth": 0,
-      "month": "2009-10"
+      "month": "2009-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091024/cd3a37a3/attachment.pl"
+      ]
     },
     {
       "id": "msg-ece673e49fa8",

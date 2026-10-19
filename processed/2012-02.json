@@ -65,11 +65,14 @@
       "subject_clean": "fExtremes- how to access elements of gevFit",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl>",
+      "body_plain": "Hi Team,\nI am using fExtremes library.\nI am trying to fit gev distribution to empirical data.\nI am using following commands:\nlibrary(fExtremes)\nR_Fin_Index<-c(-0.2087252153,-0.0768767145,-0.0484901523,0.2788131528,0.2245888765,0.0306064856,0.2070258007,0.0868414676,-0.08358489,0.2448689911,0.2506638941,-0.1918558539,0.0593452689,0.1567020406,-0.0521478052,0.2957953564,0.3406681807,-0.3708866254,-0.4274910893,0.0515938564,0.1743945535,0.0185311258,-0.1326982801,0.7051977471,0.7901917599,0.2536877736,0.180987541,0.0980397894,0.1579255715,-0.076007445,-0.3127459331,-0.3410155502,-0.1234253159,0.0915867506,-0.0347408637,-0.0551266952,0.1502213702,0.1129879773,0.099070597,0.1227337024,0.0387420017,-0.0221215272,-0.057741001,-0.0442893572,-0.0149631583,0.0042289452,-0.0665624599,-0.0982805508,-0.0386644358,-0.0229822347,-0.0058860033,-0.025974609,-0.0143908325,-0.0022432144,-0.1021702407,-0.1306021689,-0.0572455358,-0.035050467,-0.0550475875,0.0253327722,0.079722496,-0.0604563332,-0.0820507932,0.0211698349,-0.0102667569,0.0426876552,0.1753350101,0.0990987319,-0.0041396282,-0.0681657159,-0.0741874591,-0.0013960402,0.0503343733,0.0690792409,0.0655127632,0.1055714312,0.0201050039,-0.0106110127,-0.0713798579,-0.14090128,-0.0906737228,-0.0105667057,-0.0189718287,0.0213335879,0.0929881738,-0.1219437411,-0.1156040032,-0.1077519639,-0.2196622313,-0.1240459161,0.0284747863,0.122219623,-0.008200712,0.0504356042,0.0493043065,-0.0327698709,-0.0360532001,-0.0664284903,-0.009527414,-0.0026359482,0.0763413824,0.0066861536,-0.1127465224,-0.0364182068,-0.0331912718,-0.0692182804,-0.0271989775,-0.1444828017,-0.1586747546,0.079352762,0.0899245908,-0.016633276,0.0655216851,-0.0489171399,-0.2020802972,-0.0874022166,-0.0076637237,-0.0709793618,-0.0462796151,0.051672494,0.0670657519,0.0559321148,0.0137457829,0.004231827,0.0209443517,0.0232843779,-0.0012611891,-0.0182785954,0.0526243122,0.0622109588,-0.1170159883,-0.1129313652,0.0133266252,0.005625579,-0.0888649691,-0.1424363086,-0.1688042235,-0.1663776929,-0.1065389925)\n\n\n####### Fitting GEV to Empirical Data    ##########\ndatafit<- gevFit(x = R_Fin_Index, type = \"pwm\")\n######### ###########################\n> datafit\n\nTitle:\n GEV Parameter Estimation\n\nCall:\n gevFit(x = R_Fin_Index, type = \"pwm\")\n\nEstimation Type:\n  gev pwm\n\nEstimated Parameters:\n         xi          mu        beta\n-0.21870805 -0.05379278  0.13789593\n\nDescription\n  Mon Feb 06 10:06:47 2012\n\n\nI am unable to access the xi, mu, beta automatically e.g. via datafit$xi or datafit[1] or something like that.\nIt would be great if you can help me accessing the elements of fits in R. (xi,mu and beta)\n\n\n\n\n\n\n\n\n\n\nGaurang Mehta\nRisk Calibration | Group Economic Capital | Aviva Group\nEmail: gaurang.jitendrabhai at aviva.com\n14th Floor, St Helen's\n1 Undershaft\nLondon, EC3P 3DQ\n\n\nAviva plc, registered Office: St. Helen's, 1 Undershaft, London EC3P 3DQ. Registered in England No. 02468686. www.aviva.com\nThis message and any attachments may be confidential or ...{{dropped:10}}",
+      "body_snippet": "Hi Team,\nI am using fExtremes library.\nI am trying to fit gev distribution to empirical data.\nI am using following commands:\nlibrary(fExtremes)\nR_Fin_Index<-c(-0.2087252153,-0.0768767145,-0.0484901523",
       "thread_id": "thread-f917e039c304",
       "thread_depth": 0,
-      "month": "2012-02"
+      "month": "2012-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120206/78fc622f/attachment.pl"
+      ]
     },
     {
       "id": "msg-21e202e46015",
@@ -184,11 +187,14 @@
       "subject_clean": "qq plot in fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl>",
+      "body_plain": "Dear Rmetrics-core,\n\nI am using the fGarch package to estimate some simple garch models.\n\nI want to ask when I choose for example t distribution or the ged distribution, the qq plot in the plot method plot the residuals agaisnt a normal distribution or the corresponding t or ged distribution.\n\nThanks! \nbest, zuyang\n \t\t \t   \t\t  \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics-core,\n\nI am using the fGarch package to estimate some simple garch models.\n\nI want to ask when I choose for example t distribution or the ged distribution, the qq plot in the plot method",
       "thread_id": "thread-ec98fe03b535",
       "thread_depth": 0,
-      "month": "2012-02"
+      "month": "2012-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120223/9bb3dd69/attachment.pl"
+      ]
     }
   ],
   "threads": [

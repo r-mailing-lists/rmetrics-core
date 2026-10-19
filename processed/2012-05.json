@@ -29,11 +29,14 @@
       "subject_clean": "Invitation | Transformation to Sustainable Economy: Global Sustainable Finance Conference, Germany",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120516/555e2380/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120516/555e2380/attachment.pl>",
+      "body_plain": "A Two Day International Conference on Global Sustainable Finance will be held from 5th to 6th of July, 2012 in Karlsruhe, Germany. This event will bring together top executives and senior members of financial institutions, policy makers, economists, academia, regulators, sustainable development practitioners, senior government officials, representatives of international development agencies and other relevant stakeholders engaged or interested in sustainable finance and green economy. \n \nThe delegates will discuss key emerging issues including: climate change, environmental degradation and the emergence of the green economy; unfolding financial and economic crisis; the changing role of financial service providers as the economies and financial markets get reshaped; success stories and best practices for embedding sustainability in financial industry; and the road to sustainable economic development. The conference offers a distinctive opportunity to deliberate on innovative solutions that will advance our transition to sustainable economy.\n \nFurther to knowledge sharing on sustainable finance and the emergence of the green economy; the upcoming conference will also help establish partnerships and alliances and in developing synergies. It provides an excellent opportunity to network with the senior members of financial community, multilateral agencies, governmental and non-governmental institutions, academia, sustainable development and environmental management practitioners and other stakeholders in Europe and globally. An optional excursion/ get-together will take place on Saturday the 7th of July 2012.\n \nYou are cordially invited to attend this international event and/ or nominate the member(s) of your institution.\n \nFor further information, please see the event details.\nhttp://etechgermany.com/GSFC_2012.pdf \nOr contact via email: sustainability at etechgermany.net \n \nSincerely,\nOrganizing Committee\n-----------------------------------------------------------------\nGlobal Sustainable Finance Conference\n-----------------------------------------------------------------\nEtech Germany\nDürkheimer Str. 24\nD - 76187 Karlsruhe\n-----------------------------------------------------------------\nTel.: 0049-721- 476 89 16\nFax.: 0049-721- 476 89 53\nEmail: mail at etechgermany.com\n-----------------------------------------------------------------\nWeb: www.etechgermany.com \n-----------------------------------------------------------------\n \n \nIf you wish to unsubscribe, please send a mail with subject unsubscribe to mailto at etechgermany.org \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "A Two Day International Conference on Global Sustainable Finance will be held from 5th to 6th of July, 2012 in Karlsruhe, Germany. This event will bring together top executives and senior members of f",
       "thread_id": "thread-0b1dabe2de3d",
       "thread_depth": 0,
-      "month": "2012-05"
+      "month": "2012-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120516/555e2380/attachment.pl"
+      ]
     },
     {
       "id": "msg-b669c3b6cb76",
@@ -61,11 +64,14 @@
       "subject_clean": "fUtilities package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120522/84757080/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120522/84757080/attachment.pl>",
+      "body_plain": "Hello,\n\nI am having some difficulty with installing and using the fUtilities\npackage.\n\n \n\nI have downloaded it from\nhttp://cran.uvigo.es/web/packages/fUtilities/index.html\n\n \n\nWhen I try to load it, the error message says there is no NAMESPACE\nfile.\n\n \n\nDo you happen to know if indeed I need this file and where I can get it\nfrom.\n\n \n\nThanks,\n\nElena\n\n\n=============================================================================== \nPlease access the attached hyperlink for an important el...{{dropped:8}}",
+      "body_snippet": "Hello,\n\nI am having some difficulty with installing and using the fUtilities\npackage.\n\n \n\nI have downloaded it from\nhttp://cran.uvigo.es/web/packages/fUtilities/index.html\n\n \n\nWhen I try to load it, t",
       "thread_id": "thread-8e791441b3e6",
       "thread_depth": 0,
-      "month": "2012-05"
+      "month": "2012-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120522/84757080/attachment.pl"
+      ]
     },
     {
       "id": "msg-ad40c31f689e",
@@ -79,11 +85,14 @@
       "references": [
         "<4FBB5557.5090406@stats.ox.ac.uk>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120529/cd69abbf/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120529/cd69abbf/attachment.pl>",
+      "body_plain": "OK. Will correct.\n\n=================================\nDepartment of Political Science\nDepartment of Statistics\nDirector, Center for Causal Inference and\n   Program Evaluation\nUC Berkeley\nhttp://sekhon.berkeley.edu/\n\n\nOn Tue, May 22, 2012 at 1:59 AM, Prof Brian Ripley <ripley at stats.ox.ac.uk>wrote:\n\n> All of these packages have R CMD check reports such as\n>\n> Found .Internal call in the following function:\n>  ‘tegarch.est’\n> with calls to .Internal functions\n>  ‘optimhess’\n>\n> Packages should not call .Internal(): it is not part of the API, for\n> use only by R itself and subject to change without notice.\n>\n> There is no longer such a .Internal function in the development version of\n> R.  Please update your package to use the R function optimhess() instead,\n> and add/incorporate\n> Depends: R (>= 2.15)\n> in your DESCRIPTION file.\n>\n> BDR\n>\n> --\n> Brian D. Ripley,                  ripley at stats.ox.ac.uk\n> Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~**ripley/<http://www.stats.ox.ac.uk/%7Eripley/>\n> University of Oxford,             Tel:  +44 1865 272861 (self)\n> 1 South Parks Road,                     +44 1865 272866 (PA)\n> Oxford OX1 3TG, UK                Fax:  +44 1865 272595\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "OK. Will correct.\n\n=================================\nDepartment of Political Science\nDepartment of Statistics\nDirector, Center for Causal Inference and\n   Program Evaluation\nUC Berkeley\nhttp://sekhon.",
       "thread_id": "thread-b669c3b6cb76",
       "thread_depth": 1,
-      "month": "2012-05"
+      "month": "2012-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120529/cd69abbf/attachment.pl"
+      ]
     },
     {
       "id": "msg-970b4bfa11cd",

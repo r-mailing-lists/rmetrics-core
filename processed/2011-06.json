@@ -167,11 +167,14 @@
         "<19950.11727.608277.838253@max.nulle.part>",
         "<F23A29F8-9976-46A6-B559-C446F51D2DB2@phys.ethz.ch>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110607/8f23b88c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110607/8f23b88c/attachment.pl>",
+      "body_plain": "Hello all,\n\nActually, HQNORM (at least in the latest R forge version, see\nhttps://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics)\nis declared as\n\nC ------------------------------------------------------------------------------\n\n\n      DOUBLE PRECISION FUNCTION HQNORM(P)\n\n\nSo it should be ok. I spent a lot of time few weeks ago to remove any\nimplicit type declaration, so I'm pretty sure there aren't any since the\ncode passes\n\ngfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f\n\n\nI don't know what to do more!\n\nChristophe\n\n2011/6/7 Yohan Chalabi <chalabi at phys.ethz.ch>\n\n> Hi Dirk,\n>\n> Thanks to point this out.\n>\n> HQNORM is not declared as a double precision function in HALTON and might\n> be implicitly declared as single precision.\n>\n> I will upload a patch later today and see if it works.\n>\n> Regards,\n> Yohan\n>\n>\n> On Jun 7, 2011, at 3:55 PM, Dirk Eddelbuettel wrote:\n>\n> >\n> > Christophe,\n> >\n> > Would you be able to help in this Fortran-related build failure for\n> fOptions?\n> > The compiler now complains that LowDiscrepancy has conflicting types, and\n> > with my limited Fortran skills I see no fix -- the declarations seem fine\n> to\n> > me.\n> >\n> > The URL below has more detail, and I'd be happy to fill in more details.\n> >\n> > Thanks,  Dirk\n> >\n> > On 28 May 2011 at 16:58, Dirk Eddelbuettel wrote:\n> > |\n> > | Hi all,\n> > |\n> > | During a routine rebuild of the Debian archive, it was noticed that\n> > | fOptions no longer builds (http://bugs.debian.org/628314) as the\n> Fortran\n> > | compiler (now gfortan-4.6) seems pickier:\n> > |\n> > | > make[1]: Entering directory\n> `/build/user-foptions_2110.78-1-amd64-xexJr_/foptions-2110.78/src'\n> > | > gfortran   -fpic  -O3 -pipe  -g -c 085A-LowDiscrepancy.f -o\n> 085A-LowDiscrepancy.o\n> > | > 085A-LowDiscrepancy.f:181.32:\n> > | >\n> > | >                QN(I, J) = HQNORM(QUASI(J))\n> > | >                                 1\n> > | > Error: Return type mismatch of function 'hqnorm' at (1)\n> (REAL(4)/REAL(8))\n> > | > make[1]: *** [085A-LowDiscrepancy.o] Error 1\n> > |\n> > | I do not write Fortran so would not know how to fix this. Any RMetrics\n> export\n> > | who can fix this?\n> > |\n> > | Dirk\n> > |\n> > | --\n> > | Gauss once played himself in a zero-sum game and won $50.\n> > |                       -- #11 at http://www.gaussfacts.com\n> > |\n> > | _______________________________________________\n> > | Rmetrics-core mailing list\n> > | Rmetrics-core at r-project.org\n> > | https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> >\n> > --\n> > Gauss once played himself in a zero-sum game and won $50.\n> >                      -- #11 at http://www.gaussfacts.com\n> >\n> > _______________________________________________\n> > Rmetrics-core mailing list\n> > Rmetrics-core at r-project.org\n> > https://stat.ethz.ch/mailman/listinfo/rmetrics-core\n> >\n>\n> --\n> PhD candidate\n> Swiss Federal Institute of Technology\n> Zurich\n>\n> www.ethz.ch\n>\n>\n\n\n-- \nChristophe DUTANG\nPh. D. student at ISFA, Lyon, France\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n\nActually, HQNORM (at least in the latest R forge version, see\nhttps://r-forge.r-project.org/scm/viewvc.php/pkg/randtoolbox/src/LowDiscrepancy.f?view=markup&revision=5094&root=rmetrics)\nis ",
       "thread_id": "thread-42c978f28270",
       "thread_depth": 2,
-      "month": "2011-06"
+      "month": "2011-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110607/8f23b88c/attachment.pl"
+      ]
     },
     {
       "id": "msg-baa1dacd8c6a",
@@ -469,11 +472,14 @@
       "subject_clean": "Need for garchOxFit",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110627/5bbace2d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110627/5bbace2d/attachment.pl>",
+      "body_plain": "Dear All,\n\nI am using the Rmetrics packages for research purposes, and I must say that I am fairly impress by the quality of your work.\n\nBeyond the usual congratulations you must be used to, I am writing to get the garchOxFit package. In particular, I need to fit EGARCH, FIGARCH models and so on, and then predict/forecast from the results of the fit.\n\nWould you be kind enough to send the package to me?\n\nBest regards,\n\nPatrick\n\n________________________________\n-------------\nCe message ?lectronique et tous les fichiers attach?s qu'il contient sont confidentiels et destin?s exclusivement ? l'usage des destinataires sauf erreur de saisie (si vous le recevez par erreur, merci de le retourner). La publication, l'usage, la distribution, l'impression ou la copie non autoris?e de ce message et des attachements qu'il contient sont strictement interdits.\nThe information contained in this electronic message may...{{dropped:15}}",
+      "body_snippet": "Dear All,\n\nI am using the Rmetrics packages for research purposes, and I must say that I am fairly impress by the quality of your work.\n\nBeyond the usual congratulations you must be used to, I am writ",
       "thread_id": "thread-24a8b201b4ea",
       "thread_depth": 0,
-      "month": "2011-06"
+      "month": "2011-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110627/5bbace2d/attachment.pl"
+      ]
     },
     {
       "id": "msg-b67e98b991d0",
@@ -485,11 +491,14 @@
       "subject_clean": "Bug reports on SpreadApproxOption and holidayNERC",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110629/44667113/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110629/44667113/attachment.pl>",
+      "body_plain": "Hi,\n\nHere is Wang Yu and I would like to report two bugs in the RMetrics package:\n\n\n1.       SpreadApproxOption appears to be double discounting the value\n\nCurrent Implementation:  SpreadApproximation <- (GBSOption(TypeFlag, FF, 1, Time, r, 0, sigma)@price * (F2 + X) * exp(-r * Time))\n         Should be: SpreadApproximation <- (GBSOption(TypeFlag, FF, 1, Time, r=0, 0, sigma)@price * (F2 + X) * exp(-r * Time))\n\n\n\n2.       holidayNERC appears to be not using FinCenter in its calculation\n\nCurrent Implementation: ans = timeDate(holidays)\n        Should Be: ans = timeDate(holidays, FinCenter=FinCenter)\n\n\nThanks, Wang\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nHere is Wang Yu and I would like to report two bugs in the RMetrics package:\n\n\n1.       SpreadApproxOption appears to be double discounting the value\n\nCurrent Implementation:  SpreadApproximation",
       "thread_id": "thread-b67e98b991d0",
       "thread_depth": 0,
-      "month": "2011-06"
+      "month": "2011-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110629/44667113/attachment.pl"
+      ]
     },
     {
       "id": "msg-35dfe696e1d1",

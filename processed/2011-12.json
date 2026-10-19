@@ -13,11 +13,14 @@
       "subject_clean": "fUnitRoots cannot obtain p.value",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111222/e6a256d1/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111222/e6a256d1/attachment.pl>",
+      "body_plain": "hi,\nI do not know , but maybe this is a bug .\n\nI have issue obtaining p.value in urersTest(x, type = c(\"DF-GLS\",\n\"P-test\"),lag.max = 4,doplot = FALSE)@test$p.value\n\nurersTest(...)@test indicates correct results but upon obtaining p.value as\nthis the result is NULL. Which seems not to be correct .\n\nRegards\n\nMike\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "hi,\nI do not know , but maybe this is a bug .\n\nI have issue obtaining p.value in urersTest(x, type = c(\"DF-GLS\",\n\"P-test\"),lag.max = 4,doplot = FALSE)@test$p.value\n\nurersTest(...)@test indicates corre",
       "thread_id": "thread-684fc0165673",
       "thread_depth": 0,
-      "month": "2011-12"
+      "month": "2011-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20111222/e6a256d1/attachment.pl"
+      ]
     }
   ],
   "threads": [

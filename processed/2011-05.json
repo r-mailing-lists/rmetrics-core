@@ -13,11 +13,14 @@
       "subject_clean": "A question about fPortfolio",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl>",
+      "body_plain": "Dear Rmetrics Core Team,\n\nThis is Rocky. I am considering to use efficientPortfolio function in fPortfolio \npackage to solve a question of mine. But I am not sure if efficientPortfolio is \nthe right choice. My question is like this:\n\nI have a matrix of returns from different trading strategies. I want to find the \noptimal weights under some user-defined constraints such as \"standard \ndeviation(risk) less than 5\". Can I specify constraints like that in \nefficientPortfolio? If I can, could you give me an example?\n\nThank you,\n\nRocky Shi\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team,\n\nThis is Rocky. I am considering to use efficientPortfolio function in fPortfolio \npackage to solve a question of mine. But I am not sure if efficientPortfolio is \nthe right c",
       "thread_id": "thread-ceec34994c7b",
       "thread_depth": 0,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110506/d9ab337c/attachment.pl"
+      ]
     },
     {
       "id": "msg-3a7a561bd841",

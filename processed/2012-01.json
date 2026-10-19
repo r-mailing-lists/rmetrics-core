@@ -168,11 +168,14 @@
       "subject_clean": "Request: Garch Ox Fit extension of fGARCH",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl>",
+      "body_plain": "Dear all\n\nAs suggested in the fGarch user outline (updated Jan 2012) I contact you to ask whether it is possible to get access to Garch Ox Fit for fitting e.g. GJR-Garch models in R. I'm a student at Lancaster university.\n\nThanks a lot in advance.\n\nKind regards\nTristan Linke\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear all\n\nAs suggested in the fGarch user outline (updated Jan 2012) I contact you to ask whether it is possible to get access to Garch Ox Fit for fitting e.g. GJR-Garch models in R. I'm a student at ",
       "thread_id": "thread-3fae78576c91",
       "thread_depth": 0,
-      "month": "2012-01"
+      "month": "2012-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120120/7faee7db/attachment.pl"
+      ]
     },
     {
       "id": "msg-a6720a95d523",
@@ -184,11 +187,14 @@
       "subject_clean": "Inconsistency in timeDate between isBizday and holidayNYSE",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl>",
+      "body_plain": "Hello timeDate package maintenars,\n\nThank you for great rmetrics packages. Thanks for yll the effort in\ndeveloping and maintaining them.\n\nI have encountered some issues with using timeDate package. Itcan of course\nbe that I just do not understand a few things...\n\nI am trying to check whether a particular date is business day (NYSE\nopened). When I check this for 2011-12-26 isBizday returns TRUE while\nholidayNYSE returns FALSE which is correct...\n\n> isBizday(as.timeDate(\"2011-12-26\"))\n2011-12-26\n      TRUE\n> holidayNYSE(2011)\nNewYork\n[1] [2011-01-17] [2011-02-21] [2011-04-22] [2011-05-30] [2011-07-04]\n[6] [2011-09-05] [2011-11-24] [2011-12-26]\n> isBizday(as.timeDate(\"2011-12-26\"), holidayNYSE())\n2011-12-26\n      TRUE\n\nWhat am I missing here?\n\nThanks in advance.\n\nKind regards,\nKlemen.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello timeDate package maintenars,\n\nThank you for great rmetrics packages. Thanks for yll the effort in\ndeveloping and maintaining them.\n\nI have encountered some issues with using timeDate package. It",
       "thread_id": "thread-a6720a95d523",
       "thread_depth": 0,
-      "month": "2012-01"
+      "month": "2012-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120129/25dc35d3/attachment.pl"
+      ]
     }
   ],
   "threads": [

@@ -79,11 +79,14 @@
       "subject_clean": "Misunderstanding/issues or even bug in timDate",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110924/419f367f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110924/419f367f/attachment.pl>",
+      "body_plain": "Hello authors of great rmetrics package,\n\nI use your packages on a daily basis supporting my market analysis. Thank\nyou for all your efforts developing/maintaining them.\n\nI have encountered some issues (or I may not be understanding the design)\nwhile using dateTime package. I have ask a question about the issue here\nhttp://stackoverflow.com/questions/7525226/find-whether-a-particular-date-is-an-option-expiration-friday-problem-with-timeand\nuser DWin researched a bit and send you a report on the issue.\n\nIf this is a bug, can I in anyway help/assist you in order to get the patch\nfor the package on r-forge as soon as possible? I am desperately dependent\non correct functioning of particular functions in very useful timeDate.\n\nThanks in advance.\n\nKind regards,\nSamo.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello authors of great rmetrics package,\n\nI use your packages on a daily basis supporting my market analysis. Thank\nyou for all your efforts developing/maintaining them.\n\nI have encountered some issue",
       "thread_id": "thread-cefd3c38e023",
       "thread_depth": 0,
-      "month": "2011-09"
+      "month": "2011-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110924/419f367f/attachment.pl"
+      ]
     },
     {
       "id": "msg-1400a31ecd4c",
@@ -154,11 +157,14 @@
         "<CAFNBy2mo8623X=EsY9h7-oufNaY-SqjvRpUat5_x7MMR9jME9Q@mail.gmail.com>",
         "<20096.41114.848341.708043@stat.math.ethz.ch>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110926/ceaacbc3/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110926/ceaacbc3/attachment.pl>",
+      "body_plain": "Martin,\n\nThank you very much for your effort in fixing this.\n\nBest regards,\nSamo.\n\n2011/9/26 Martin Maechler <maechler at stat.math.ethz.ch>\n\n> >>>>> Samo Pahor <samo.pahor at gmail.com>\n> >>>>>     on Sat, 24 Sep 2011 11:10:50 +0200 writes:\n>\n>    > Hello authors of great rmetrics package, I use your\n>    > packages on a daily basis supporting my market\n>    > analysis. Thank you for all your efforts\n>    > developing/maintaining them.\n>\n>    > I have encountered some issues (or I may not be understanding the\n>    > design) while using dateTime package. I have ask a question about the\n>    > issue here\n>    >\n> http://stackoverflow.com/questions/7525226/find-whether-a-particular-date-is-an-option-expiration-friday-problem-with-timeand\n>\n> We are typically not reading that...\n>\n>    > user DWin researched a bit and send you a report on the issue.\n>\n> Yes, though it was not reproducible:\n> The crucial part is timezone-dependent !\n>\n>    > If this is a bug, can I in anyway help/assist you in order\n>    > to get the patch for the package on r-forge as soon as\n>    > possible? I am desperately dependent on correct\n>    > functioning of particular functions in very useful\n>    > timeDate.\n>\n> I have now committed patches to the R-forge version of\n> 'timeDate',\n>        as revision 5121\n> {this is *not* yet visible on R-forge; you need to wait a few\n> hours, and for the binary Windows or Mac package, probably even a day\n> or two ...}\n>\n> Best regards,\n> Martin Maechler, ETH Zurich\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Martin,\n\nThank you very much for your effort in fixing this.\n\nBest regards,\nSamo.\n\n2011/9/26 Martin Maechler <maechler at stat.math.ethz.ch>\n\n> >>>>> Samo Pahor <samo.pahor at gmail.com>\n> >>>>>     o",
       "thread_id": "thread-cefd3c38e023",
       "thread_depth": 2,
-      "month": "2011-09"
+      "month": "2011-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20110926/ceaacbc3/attachment.pl"
+      ]
     }
   ],
   "threads": [

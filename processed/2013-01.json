@@ -45,11 +45,14 @@
       "subject_clean": "TimeSeries align odd behavior",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl>",
+      "body_plain": "Dear Rmetrics core team,\nsorry for bothering you again, but do you have any news on the issue described in the mail below?\n\nThanks,\nMarco Giuliano\n\nFrom: Marco Giuliano\nSent: martedì 2 ottobre 2012 18:41\nTo: 'Rmetrics-core at r-project.org'\nSubject: TimeSeries align odd behavior\n\nDear Rmetrics-core team,\nI have a question about a strange behavior of timeSeries align function.\n\nFor example, consider the following timeSeries:\n> TS <- timeSeries(c(1,NA,3,4),\n                   charvec=c('2010-01-01','2010-01-02','2010-01-03','2010-01-05'),\n                   format='%Y-%m-%d', zone='GMT', units='V')\n\n> TS\nGMT\n            V\n2010-01-01  1\n2010-01-02 NA\n2010-01-03  3\n2010-01-05  4\n\nIf we call the function align, with method='fillNA':\n> align(TS,by='day',include.weekends=T,method='fillNA')\nwe get the following result:\n> GMT\n            V\n2010-01-01  1\n2010-01-02  2\n2010-01-03  3\n2010-01-04 NA\n2010-01-05  4\n\nSo, basically the NA in the original timeSeries is interpolated and then the missing day is correctly added by setting the value to NA.\nThat doesn't seem correct to me, since only the missing days of the timeSeries should be filled with NA, while the other values should remain unchanged (in particular in case of fillNA method).\n\nLooking at the code, it appears clear what happens: when the method is fillNA, an approxfun with method \"linear\" is applied. Then to replace the interpolated values with NA the following code is performed:\nif (Method == \"fillNA\")\n      yout[!(xout %in% u)] = NA\nbut obviously this code will put NA only in the missing dates added to the original ts and not to ALL the interpolated values.\n\nIs this the desired behavior?\nIf so, in my opinion should be clearly specified in the align documentation.\n\n\nThanks in advance for any answer and thanks a lot for your work on this great package.\n\nRegards,\nMarco Giuliano\n\n\n\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati è vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attività e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla società stessa, né la impegnano in alcun modo.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics core team,\nsorry for bothering you again, but do you have any news on the issue described in the mail below?\n\nThanks,\nMarco Giuliano\n\nFrom: Marco Giuliano\nSent: martedì 2 ottobre 2012 18",
       "thread_id": "thread-8961685bf739",
       "thread_depth": 0,
-      "month": "2013-01"
+      "month": "2013-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130118/caeb16c0/attachment.pl"
+      ]
     },
     {
       "id": "msg-5cec9559b143",
@@ -61,11 +64,14 @@
       "subject_clean": "No subject",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl>",
+      "body_plain": "http://thedeepcleaners.com/wtloss.html\n\n\nAmjad Ali\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "http://thedeepcleaners.com/wtloss.html\n\n\nAmjad Ali\n\t[[alternative HTML version deleted]]",
       "thread_id": "thread-5cec9559b143",
       "thread_depth": 0,
-      "month": "2013-01"
+      "month": "2013-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20130121/3488af07/attachment.pl"
+      ]
     }
   ],
   "threads": [

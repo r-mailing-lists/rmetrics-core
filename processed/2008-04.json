@@ -13,11 +13,14 @@
       "subject_clean": "fGarch: possible bug in .garchLLH",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080401/386fa4cb/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080401/386fa4cb/attachment.pl",
+      "body_plain": "Hi,\n\nI wanted to estimate a garch-gjr model without leverage (which is, in fact, a garch model) using the following code:\n\narma11gjr11n <- garchFit(~ arma(1,1) + aparch(1,1), data, delta=2,\n            include.delta=FALSE, leverage=FALSE, algorithm=\"nlminb\", hessian=\"rcd\")\nsummary(arma11gjr11n)\n\nand obtained the following error:\n\n--- START OF TRACE ---\n\nR coded nlminb Solver: \n\nError in gamma[i] : object is not subsettable\n\n\nI would suggest to copy the below line from .garchInitParameters into .garchLLH:\n\nif(p > 0 & !leverage) gamma = rep(0, times = p)\n\nI tried this, recompiled the fGarch package and it worked fine.\n\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n\n\n      ____________________________________________________________________________________\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI wanted to estimate a garch-gjr model without leverage (which is, in fact, a garch model) using the following code:\n\narma11gjr11n <- garchFit(~ arma(1,1) + aparch(1,1), data, delta=2,\n          ",
       "thread_id": "thread-b3f4c3e5bd9e",
       "thread_depth": 0,
-      "month": "2008-04"
+      "month": "2008-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080401/386fa4cb/attachment.pl"
+      ]
     },
     {
       "id": "msg-060e4279ba10",
@@ -82,11 +85,14 @@
       "subject_clean": "bug in fTrading",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080410/c1ff044e/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080410/c1ff044e/attachment.pl",
+      "body_plain": "Hello,\n\n \n\nThanks for Rmetrics, a great package for R.  However I think there's a bug\nin sharpeRatio function in fTrading package.  It assigns y <- diff(x), which\nis the arithmetic difference.  I think you should use y <- x[-1]/x[-nrow(x)]\n-1, or y <- diff(log(x)).  I suppose the input is intuitively the index\ninstead of log index.  The current version is close when the returns are\nvery small, but can be off by a lot when the return is volatile.  I was\npuzzled why the sharpe ratio dropped so much after I increased the leverage\nin the portfolio.  \n\n \n\n \n\nThanks,\n\nHui\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\n \n\nThanks for Rmetrics, a great package for R.  However I think there's a bug\nin sharpeRatio function in fTrading package.  It assigns y <- diff(x), which\nis the arithmetic difference.  I thin",
       "thread_id": "thread-b908d35f339c",
       "thread_depth": 0,
-      "month": "2008-04"
+      "month": "2008-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080410/c1ff044e/attachment.pl"
+      ]
     },
     {
       "id": "msg-490824182ffb",

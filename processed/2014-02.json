@@ -13,11 +13,14 @@
       "subject_clean": "Question to fPortfolio",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140203/e7c4c2dc/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140203/e7c4c2dc/attachment.pl>",
+      "body_plain": "Dear R-Metrics Core Team\n\n \n\nHere is my problem:\n\n \n\nI want to hand in a vector of expected returns and a covariance matrix\nto the function \"portfolioFrontier\", i.e. these two variables shall not\nbe estimated from the data. Ideally, I would be able to set something\nlike:\n\n \n\nReturns = my_return_vector\n\nRisk = my_cov_matrix\n\n \n\nand the optimizer then uses these for the MV-optimization.\n\n \n\nI have studied the docs and seen the statements like\n\n \n\n\"data: a list, having a statistics named list, having named entries 'mu'\nand 'Sigma',\n\nContaining the information of the statistics.\"\n\n \n\nBut I was not able to specify it correctly.\n\n \n\nCan you help me out? Many many thanks in advance.\n\n \n\nBest regards\n\nAndreas Homberger\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear R-Metrics Core Team\n\n \n\nHere is my problem:\n\n \n\nI want to hand in a vector of expected returns and a covariance matrix\nto the function \"portfolioFrontier\", i.e. these two variables shall not\nbe e",
       "thread_id": "thread-f9c8763e97f8",
       "thread_depth": 0,
-      "month": "2014-02"
+      "month": "2014-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140203/e7c4c2dc/attachment.pl"
+      ]
     }
   ],
   "threads": [

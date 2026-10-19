@@ -109,11 +109,14 @@
       "subject_clean": "ARCH and GARCH implementations in CRAN",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100221/87229c1f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100221/87229c1f/attachment.pl>",
+      "body_plain": "Hello,\n\nI have been playing around with R as applied to Jim Hamilton's 1994 \"Time Series Analysis\" text.  I found at least two seemingly applicable implementations in CRAN, garch in package \"tseries\", and garchFit in package \"fGarch\".  What is a little strange, however, is that it doesn't seem to be possible to fit a simple ARCH specification (i.e. a GARCH(0,q)) that also simultaneously estimates regression coefficients as described on page 660 of Hamilton's book.  As near as I can tell \"garch\" has no place to specify such a regression, whereas garchFit does, but garch assumes the \"p\" of a GARCH(p,q) is greater than zero.\n\nIs this a correct assessment of the capabilities of these two packages?\n\nThanks,\nRobert Bell CFA,\nWilmington, DE\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI have been playing around with R as applied to Jim Hamilton's 1994 \"Time Series Analysis\" text.  I found at least two seemingly applicable implementations in CRAN, garch in package \"tseries\",",
       "thread_id": "thread-ac4502948f24",
       "thread_depth": 0,
-      "month": "2010-02"
+      "month": "2010-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100221/87229c1f/attachment.pl"
+      ]
     },
     {
       "id": "msg-73019f94b6ac",

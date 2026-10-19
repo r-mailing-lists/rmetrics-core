@@ -49,11 +49,14 @@
       "subject_clean": "fGarch: sqp algorithm",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080122/55d212c0/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080122/55d212c0/attachment.pl",
+      "body_plain": "Hi,\n\nI estimated several garch models with fGarch and I encountered some issues, which I would like to ask you about. I am using fGarch 260.72, R 2.6.1 on WinXP SP2.\n\n- The default optimisation algorithm is nlminb, although the documentation and the paper \"Parameter estimation of ARMA models with GARCH/APARCH errors - an R and Splus software implementation\" by Wuertz, Chalabi and Luksan state that the default algorithm is sqp. Is there a bug or just a typo in the documentation?\n- The sqp algorithm appears to be in trouble when MA terms are in the model to be estimated. I was able to estimate an ARMA(1,1) GARCH(1,1) model with the (default) nlminb algorithm, which produced results after approx. 1 minute. On the other hand, the sqp algorithm with mci recursion initiation did not produce anything after 5 minutes, R was not responding and processor was still running at 100%. I had to shut down R from the Windows task manager. The sqp algorithm with uev recursion initiation produced a result after a few seconds. What could be the problem with the sqp algorithm with init.rec=\"mci\"?\n- I tried to estimate the MA(1)-APARCH(1,1) model from the paper by Wuertz et al. on S&P500 daily log returns in the period 3 Jan 1950 - 30 Aug 1991. The nlminb algorithm produced results close to that reported in the paper. But the sqp algorithm (with mci recursion initiation, which cannot be changed for aparch models) got stuck again. Then I tried MA(1)-GARCH(1,1) with the sqp algorithm with uev recursion initiation and got stuck again. Therefore, I would like to ask how did you estimate the MA(1)-APARCH(1,1) model in the paper.\n\nThanks for your answer.\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI estimated several garch models with fGarch and I encountered some issues, which I would like to ask you about. I am using fGarch 260.72, R 2.6.1 on WinXP SP2.\n\n- The default optimisation algori",
       "thread_id": "thread-5b5a6c928f99",
       "thread_depth": 0,
-      "month": "2008-01"
+      "month": "2008-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080122/55d212c0/attachment.pl"
+      ]
     },
     {
       "id": "msg-40c78a506c11",

@@ -189,11 +189,14 @@
       "subject_clean": "<no subject>",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl>",
+      "body_plain": "Hi,\n\nI am very new to R (used mathematica and excel for years and final made the\njump) and have been looking at the fOptions package\nI wish to write my own R function and would like to see how it is done by\nthe experts ! It is possible to see the source file at all please.\n\nSince I am new to this I am not sure where I should be looking to see the\nsimple files that would provide a template for me to write my own option\npricing functions (un-compiled)\n\nRegards\n\nGlenn\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI am very new to R (used mathematica and excel for years and final made the\njump) and have been looking at the fOptions package\nI wish to write my own R function and would like to see how it is d",
       "thread_id": "thread-6fe6c0605826",
       "thread_depth": 0,
-      "month": "2008-12"
+      "month": "2008-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081209/97f4e7fb/attachment.pl"
+      ]
     },
     {
       "id": "msg-92eadb0df780",

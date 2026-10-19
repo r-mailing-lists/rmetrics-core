@@ -13,11 +13,14 @@
       "subject_clean": "NYSE holiday before 1971",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/e4e5ad6d/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/e4e5ad6d/attachment.pl",
+      "body_plain": "Hello\n\nThanks for writing and maintaining the Rmetrics package!\n\nI am working with the Rmetrics holiday calendar and noticed a slight \nerror in NYSE holidays before 1971.\nI have to admit my point to be picky (who cares about trading holiday's \nbefore 1971), but you might still want to correct the source code.\n\nAccording to NYSE's holiday calendar,  Washington's birthay was observed \nat NYSE as follows:\nhttp://www.nyse.com/about/newsevents/1176373643795.html:[..] * \nWashington's Birthday was first declared a federal holiday by an 1879 \nact of Congress. The Monday Holiday Law, enacted in 1968, shifted the \ndate of the commemoration of Washington's Birthday from February 22 to \nthe third Monday in February [..]\nhttp://www.nyse.com/pdfs/closings.pdf [..] Washington's Birthday (Feb. \n22) Closed every year. Observed on Mondays since 1971.[..]\n\nThe function holidayNYSE implements WashingtonsBirthday/PresidentsDay by \ncalling USWashingtonsBirthday() before 1971 and USPresidentsDay() from \n1971 on.\nUnfortunately, USWashingtonsBirthday() is defined in the same way as \nUSPresidentsDay() (third Monday in February) instead of returning \nFebruary 22nd.\n    USWashingtonsBirthday <- function (year = currentYear)\n    {\n        # instead of the third Monday in February (ans = \n.nth.of.nday(year, 2, 1, 3))\n        # use February 22nd as trading holiday on NYSE before 1971\n        ans = year * 10000 + 222\n        timeDate(as.character(ans))\n    }\n\nPlease also note a slight error in the holidayNYSE function: the \nfollowing conditions are both TRUE for the year 1970. The second \ncondition should read (y > 1970) instead of (y >= 1970).\n    holidayNSYE <- function( year=currentYear )\n    [..]\n        if (y <= 1970)\n            holidays = c(holidays, as.character(USWashingtonsBirthday(y)))\n        if (y >= 1970)\n            holidays = c(holidays, as.character(USPresidentsDay(y)))\n    [..]\n\n\nBest Regards,\nLukas Elmiger\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello\n\nThanks for writing and maintaining the Rmetrics package!\n\nI am working with the Rmetrics holiday calendar and noticed a slight \nerror in NYSE holidays before 1971.\nI have to admit my point to b",
       "thread_id": "thread-82da1108cf73",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/e4e5ad6d/attachment.pl"
+      ]
     },
     {
       "id": "msg-0be46f37e33d",
@@ -47,11 +50,14 @@
       "subject_clean": "fGarch: possible bug(s)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/13d166d2/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/13d166d2/attachment.pl",
+      "body_plain": "Hi,\n\nIn the summary function of fGarch, I would suggest that standardised residuals are computed as:\n\nr.s = object at residuals/object at sigma.t\n\nbecause r.s = object at residuals/sqrt(object at h.t) is wrong for aparch models, in which it does not hold that sigma = h^(1/2). The correct expression that holds in general is: sigma = h^(1/delta).\n\nIn fGarch 260.72 sigma.t is calculated as: (.series$h)^deltainv, where deltainv = 1/fit$params$delta. However, fit$params$delta does not get updated with coefficient estimates and thus is always equal to 2. This leads to wrong calculation of sigma.t, which is always equal to h^(1/2).\nHas this problem been solved in the development version of Rmetrics (fGarch)?\n\nThanks for your answer.\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nIn the summary function of fGarch, I would suggest that standardised residuals are computed as:\n\nr.s = object at residuals/object at sigma.t\n\nbecause r.s = object at residuals/sqrt(object at h.t)",
       "thread_id": "thread-59d2ce23e45b",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080202/13d166d2/attachment.pl"
+      ]
     },
     {
       "id": "msg-391cf5d07c31",
@@ -291,11 +297,14 @@
       "subject_clean": "fGarch: question & suggestion",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080207/30fe5424/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080207/30fe5424/attachment.pl",
+      "body_plain": "Hi,\n\nI would like to ask if was possible to implement in a function computing gradient in the fGarch package. Or is there a quick and easy way of implementing a gradient function so that I can do it myself? Based on the paper 'Parameter Estimation of ARMA Models with GARCH/APARCH Errors' by Wuertz, Chalabi and Luksan, I think that a function computing gradient was available for garch models in Rmetrics in the past. However, I did not find gradient in fGarch 260.72.\nThe reason for my question is that I would like to calculate robust covariance matrix (and robust standard errors) for a garch model estimated under the assumption of normally distributed standardised errors, for which I need hessian and gradient. The robust covariance matrix for such a QML estimator is computed as hessian^(-1)*OPG*hessian^(-1), where OPG is the outer product of the gradient, i.e. gradient*(transposed gradient). Clearly, hessian is available but I do not have the gradient.\nMaybe the robust covariance matrix could be implemented at some point in the future along the following lines:\n\n## robust works only for cond.dist == norm\nif (cov.matrix == \"robust\") {\nfit$cvar = solve(fit$hessian) %*% (gradient %o% gradient) %*% solve(fit$hessian)\n} else {\nfit$cvar = solve(fit$hessian) }\n\n\nThanks for your answer.\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI would like to ask if was possible to implement in a function computing gradient in the fGarch package. Or is there a quick and easy way of implementing a gradient function so that I can do it m",
       "thread_id": "thread-7f92850a9b69",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080207/30fe5424/attachment.pl"
+      ]
     },
     {
       "id": "msg-40323c136ef0",
@@ -307,11 +316,14 @@
       "subject_clean": "fGarch: possible bugs",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080211/5789f3ee/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080211/5789f3ee/attachment.pl",
+      "body_plain": "Hi,\n\nI have just installed the latest version of fGarch together with all other Rmetrics packages (i.e. 270.73, revision 2835) and I found a couple of possible bugs in the fGarch package:\n\n1. In the summary function, N should be calculated as length(object at data$Data) instead of length(object at data$x) because data$x does not exist (and thus normalised log likelihood is infinity).\n\n2. In plot types 10 and 11 of the plot function, it would be better to calculate standardised residuals as sres = as.numeric(residuals(x, standardize = TRUE)) and sres2 = as.numeric(residuals(x, standardize = TRUE))^2, respectively, since the acf function is not able to handle zoo objects while fGarch is and the residuals function assigns the same class to residuals as has the modeled data.\n\n3. In the summary function, 'object@' is missing in the command to print mean and variance equations.\n\n4. There seems to be a problem in the computation of the hessian. The default hessian=\"fda\" used with algorithm=\"nlminb\" produced a covariance matrix with negative numbers on the diagonal. First, I thought this inaccuracy is the price to pay for faster computation. The setting hessian=\"cda\" produced a covariance matrix with only positive numbers on the diagonal but it took longer to calculate the hessian. However, when I used algorithm=\"sqp\" both hessian=\"fda\" and hessian=\"cda\" produced covariance matrices with negative numbers on the diagonal. Therefore, I would like to ask if such a result is OK or if there is a bug in the fortran implementation of hessian computation.\n\nThank you for your answer.\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI have just installed the latest version of fGarch together with all other Rmetrics packages (i.e. 270.73, revision 2835) and I found a couple of possible bugs in the fGarch package:\n\n1. In the s",
       "thread_id": "thread-40323c136ef0",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080211/5789f3ee/attachment.pl"
+      ]
     },
     {
       "id": "msg-5c884723c02c",
@@ -396,11 +408,14 @@
       "subject_clean": "fGarch: possible bug(s)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080216/47b8f4ee/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080216/47b8f4ee/attachment.pl",
+      "body_plain": "Hi,\n\nI invoked the predict function in the fGarch package and got the following error:\n\nForecast APARCH Variance:\nError in f(x, ...) : object \"fun\" not found\n\nI am using the latest version of the fGarch package from the dev branch of Rmetrics. I got the same error when I estimated the DGE model for log returns of the S&P500 index. Here is the code:\n\nlibrary(fGarch)\ndata(sp500dge)\nSP500ret <- 100*sp500dge[,1]\narma01aparch11n <- garchFit(~arma(0,1) + aparch(1,1), SP500ret, cond.dist=\"norm\", algorithm=\"mnfb\", hessian=\"cda\")\nsummary(arma01aparch11n)\n\nThen I used:\n\npredict(arma01aparch11n, trace=TRUE)\n\nand got the above error.\n\nCould you please help me out? Thanks.\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI invoked the predict function in the fGarch package and got the following error:\n\nForecast APARCH Variance:\nError in f(x, ...) : object \"fun\" not found\n\nI am using the latest version of the fGar",
       "thread_id": "thread-34feba2aefbd",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080216/47b8f4ee/attachment.pl"
+      ]
     },
     {
       "id": "msg-f60ea4ed8763",
@@ -412,11 +427,14 @@
       "subject_clean": "fGarch: bug in the predict function",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080217/9a576758/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080217/9a576758/attachment.pl",
+      "body_plain": "Hi,\n\nI sent you an email concerning a possible bug in the predict function (in the fGarch package) yesterday. When I wanted to predict from an estimated APARCH model I got the following error:\n\nForecast APARCH Variance:\nError in f(x, ...) : object \"fun\" not found\n\nI think I have just identified the problem in forecasting APARCH variance: the word \"dnorm\" in the kappa = garchKappa( ... ) is the troublemaker. I would suggest that the kappa assignment should be:\n\nkappa = garchKappa(cond.dist = cond.dist, gamma = gamma[j], delta = delta, skew = skew, shape = shape)\n\nsince cond.dist is defined as: cond.dist = fit$params$cond.dist\n\nBest regards\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nLooking for last minute shopping deals?  \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI sent you an email concerning a possible bug in the predict function (in the fGarch package) yesterday. When I wanted to predict from an estimated APARCH model I got the following error:\n\nForeca",
       "thread_id": "thread-f60ea4ed8763",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080217/9a576758/attachment.pl"
+      ]
     },
     {
       "id": "msg-3918c758541f",
@@ -428,11 +446,14 @@
       "subject_clean": "fGarch: possible bug(s) in the predict function II",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/de9f6bf2/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/de9f6bf2/attachment.pl",
+      "body_plain": "Hi,\n\nI would like to put forward a change to APARCH variance forecasting in the fGarch predict function:\n\nif (i-j > 0) {\n   s = kappa * h[N + i - j]\n} else {\n   s = (abs(z[N + i - j]) - gamma[j]*z[N + i - j])^delta\n}\n\nI think this a better specification than the current 's = kappa' because if (i-j) <= 0, the values of z[N + i - j] are known and can be used to compute the prediction.\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nNever miss a thing.  Make Yahoo your home page. \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI would like to put forward a change to APARCH variance forecasting in the fGarch predict function:\n\nif (i-j > 0) {\n   s = kappa * h[N + i - j]\n} else {\n   s = (abs(z[N + i - j]) - gamma[j]*z[N +",
       "thread_id": "thread-3918c758541f",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/de9f6bf2/attachment.pl"
+      ]
     },
     {
       "id": "msg-44fdce97709b",
@@ -444,11 +465,14 @@
       "subject_clean": "fGarch: possbible bug(s) in garchSim",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/c1d89dc7/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/c1d89dc7/attachment.pl",
+      "body_plain": "Hi,\n\nI found a possible bug in the garchSim function in the iteration of a GARCH / APARCH model. More specifically, I would say that y[i] should be calculated as:\n\ny[i] = mu  +            sum(ar*y[i-(1:order.ar)]) + sum(ma*eps[i-(1:order.ma)]) + eps[i]\n\n(instead of ... sum(ma*(h[i-(1:order.ma)]**deltainv)) ...)\n\n\nSecondly, I would like to point out that, for the sake of consistency with the definition of an APARCH model, the sample should be:\n\n# Sample:\ndata = cbind(\n    z = z[(m+1):(n+m)],\n    sigma = h[(m+1):(n+m)]^deltainv,\n    y = y[(m+1):(n+m)])\n\nand colnames in return values should be:\n\n    colnames(ans) = c(\"garch\", \"sigma\", \"eps\")\n\n\nFinally, I would like to ask why are you using 'rev' in\n\nz = c(rev(spec at presample[, 1]), z)\nh = c(rev(spec at presample[, 2])^delta, rep(NA, times = n))\ny = c(rev(spec at presample[, 3]), rep(NA, times = n))\n\nThanks for your answer.\n\nBest regards,\n\nMichal Miklovic\n  \n\n\n\n      ____________________________________________________________________________________\nNever miss a thing.  Make Yahoo your home page. \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI found a possible bug in the garchSim function in the iteration of a GARCH / APARCH model. More specifically, I would say that y[i] should be calculated as:\n\ny[i] = mu  +            sum(ar*y[i-(",
       "thread_id": "thread-44fdce97709b",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080218/c1d89dc7/attachment.pl"
+      ]
     },
     {
       "id": "msg-6e9ad81ad43e",
@@ -529,11 +553,14 @@
       "subject_clean": "fGarch: possible bug(s) and suggestions",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080220/426cb940/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080220/426cb940/attachment.pl",
+      "body_plain": "Hi,\n\nFirst, I would like to report a possible bug in the garchSim function. In 'expanding to whole sample', I think h should be extracted as:\n\nh = c(rev(spec at presample[, 2]), rep(NA, times = n))\n\nThat is, the second column in presample should not be raised to the power of delta because it is conditional variance and not conditional sigma as I inferred from the garchSpec function.\n\n\nSecond, I would suggest to slightly alter the definition of 'getting and extending series' in the predict function in the following way:\n\n# Get and Extend Series:\nx = c(object at data$data, rep(mu, M))\nh = c(object at h.t, rep(omega, M))\nz = c(object at residuals, rep(0, M))\n\nIn this specification, the repeated values correspond to unconditional means (if there are no arma terms) and the extraction definitions clearer, in my opinion.\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nNever miss a thing.  Make Yahoo your home page. \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nFirst, I would like to report a possible bug in the garchSim function. In 'expanding to whole sample', I think h should be extracted as:\n\nh = c(rev(spec at presample[, 2]), rep(NA, times = n))\n\nT",
       "thread_id": "thread-29107329f998",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080220/426cb940/attachment.pl"
+      ]
     },
     {
       "id": "msg-ea37ae172e99",
@@ -599,11 +626,14 @@
       "subject_clean": "fGarch: possible bug(s) in ICS & LLH in summary",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/f09bfa13/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/f09bfa13/attachment.pl",
+      "body_plain": "Hi,\n\nI wanted to compare several garch models on the basis of information criteria statistics (ICS) and I found a possible bug, which affects a couple of computations in fGarch.\n\nFirst, I would suggest that the log likelihood in the summary function is reported as follows:\n\nLLH = (-1)*object at fit$value\n\nbecause it should be the value of maximised log likelihood (and not minimised negative log likelihood). The consequent discrepancy with the iteration path output could be solved by printing the following:\n\ncat(\"\\nFinal Estimate of the Negative LLH:\\n\")\n\n\nSecond, I would suggest changing the hessian and covariance matrices calculations to, respectively:\n\nfit$hessian = (-1)*.garch??DAHessian( ... )\n\nfit$cvar = (-1)*solve(fit$hessian)\n\nThese changes would have no effect on the estimates of covariance matrix (and thus also standard errors) but the hessian matrix would correspond to a maximised log likelihood, which is currently not the case, and would have negative numbers on the diagonal, which is rather intuitive for a maximum.\n\n\nFinally, I would suggest removing the minus sign from the computation of the ICS since (-2)*(-1)*fit$value = 2*fit$value = 2*LLH(as defined above, i.e. maximised log likelihood). I think the ICS should be computed from the maximised value of the (log) likelihood function (and not from minimised negative (log) likelihood). Tsay (2002) in Analysis of Financial Time Series states that, in AIC calculation, \"the likelihood function is evaluated at the maximum likelihood estimates\".\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\nBe a better friend, newshound, and \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI wanted to compare several garch models on the basis of information criteria statistics (ICS) and I found a possible bug, which affects a couple of computations in fGarch.\n\nFirst, I would sugges",
       "thread_id": "thread-65cb6d0916c7",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/f09bfa13/attachment.pl"
+      ]
     },
     {
       "id": "msg-02bb4e9552d8",
@@ -615,11 +645,14 @@
       "subject_clean": "fTrading bug",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/03965371/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/03965371/attachment.pl",
+      "body_plain": "Diethelm et al,\n\nHi, I have been using fairly regulary a number of packages in the rmetrics group--most recently both fImport and fTrading.  I noticed a bug in one of the functions in the fTrading package.  The function cdoTA() is defined as below:\n\n  \n> cdoTA\nfunction (x, lag1 = 12, lag2 = 26, lag3 = 9) \n{\n    cdo = macdTA(x, lag1, lag2) - cdsTA(x, lag3)\n    if (is.timeSeries(x)) \n        colnames(cdo) <- \"CDO\"\n    cdo\n}\n\nThe problem occurs when it calls cdsTA, which is defined as below:\n\n \n> cdsTA\nfunction (x, lag1 = 12, lag2 = 26, lag3 = 9) \n{\n    cds = emaTA(macdTA(x, lag1, lag2), lag3)\n    if (is.timeSeries(x)) \n        colnames(cds) <- \"CDS\"\n    cds\n}\n\ncdsTA is expecting a vector and three lag terms.  cdoTA feeds a vector and only one lag term, lag3.  However, cdsTA is expecting lag1 to be the first term.  Thus whatever cdoTA thinks lag3 is, cdsTA is treating it as if it's actually lag1.  This all seems a bit wordy, I know.  However, if you replace the blue text above with:\n\ncdo = macdTA(x, lag1, lag2) - cdsTA(x, lag3=lag3)\n\nThat should clear up the assignment problems.\n\nBest Regards,\nAdam Murphy\n\n\n\n \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Diethelm et al,\n\nHi, I have been using fairly regulary a number of packages in the rmetrics group--most recently both fImport and fTrading.  I noticed a bug in one of the functions in the fTrading pac",
       "thread_id": "thread-02bb4e9552d8",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080228/03965371/attachment.pl"
+      ]
     },
     {
       "id": "msg-49135b8f7029",
@@ -631,11 +664,14 @@
       "subject_clean": "about fSeries",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/aa0892ff/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/aa0892ff/attachment.pl",
+      "body_plain": "Dear Rmetrics Core Team members:\n      \n     I am a PHD student in South China University of Technology. I need to use the \"fSeries\" package in my reaserch. But I found the version 260.72 of fSeries is much different from the version 240.10068. The latter has useful tools for analysis long-range dependence which I need, however, the former is now needed for many other packages.\n\n    If I install both of the packages, there will be some conflicts. How can I solve this problem?\n\nBest regards\nRobert Chen                                                                                                                                                                          \n\n\n\nchuch\n2008-02-29\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team members:\n      \n     I am a PHD student in South China University of Technology. I need to use the \"fSeries\" package in my reaserch. But I found the version 260.72 of fSeries i",
       "thread_id": "thread-49135b8f7029",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/aa0892ff/attachment.pl"
+      ]
     },
     {
       "id": "msg-84034bd5c8cb",
@@ -647,11 +683,14 @@
       "subject_clean": "fGarch: possible bug(s) in ICS & LLH in summary II",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/79c14067/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/79c14067/attachment.pl",
+      "body_plain": "Hi,\n\nthere is a typo in the email regarding the information criteria statistics (ICS) that I sent you yesterday. The correct reasoning for advocating the change in the computation of the ICS should be:\n\n(-2)*(-1)*fit$value = 2*fit$value = (-2)*LLH(i.e., maximised log likelihood)\n\nSorry for any confusion this typo might have caused.\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nthere is a typo in the email regarding the information criteria statistics (ICS) that I sent you yesterday. The correct reasoning for advocating the change in the computation of the ICS should be",
       "thread_id": "thread-84034bd5c8cb",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080229/79c14067/attachment.pl"
+      ]
     },
     {
       "id": "msg-e6e15b5f85a6",

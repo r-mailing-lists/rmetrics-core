@@ -53,11 +53,14 @@
       "subject_clean": "Dickey-Fuller?",
       "in_reply_to": "<4754C89E.4090209@pdf.com>",
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/ac68d56c/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/ac68d56c/attachment.pl",
+      "body_plain": "Dear Spencer and everybody,\n\nI think the functions from fUnitRoots, urca, uroot and S-plus will agree after considering some points (I don´t know how to tackle this points in adf.test() from library(tseries))\n\nRegarding uroot be aware of some things (below the resulting example):\n  1) missprint: \"signif\" -> \"signf\".\n  2) the input must be a time series object.\n  3) You can choose the lag orders by using a numeric vector in \"mode\" within the selectlags argument.\n\nThen the ADF t-statistic from the following code matches the result from fUnitRoots and urca. \n\nNotice that no deterministic component (constant, linear trend, seasonal dummies) is included (itsd=c(0,0,0))\n\ngdp <- ts(gdp, frequency=4, start=c(1947,1))\nADF.d.l.gdp <- ADF.test(gdp, c(0,0,0),\n                        selectlags=list(mode=as.numeric(1:10)))\nADF.d.l.gdp\n\nAs regards your initial results from S-Plus:\n  1) according to the output a constant is being included in the regression, whereas in the results above no constant term was included. \n  2) The output from S-plus may be confusing, I think only 9 lags are actually being included. When it says lag1, I think it actually refers to the ADF statistic, not to the first lagged variable. So the ADF statistic appears two times in the output (the p-value reported first should be the right one).\n\nIncluding a constant and 9 lags the results from uroot and S-Plus coincide. The slot \"lmadf\" is useful to get even further details than from summary().\n\nADF.d.l.gdp <- ADF.test(gdp, c(1,0,0),\n                        selectlags=list(mode=c(1,2,3,4,5,6,7,8,9)))\n summary(ADF.d.l.gdp)\n summary(ADF.d.l.gdp at lmadf)\n\nTwo remarks nonetheless:\n\nLooking at summary(ADF.d.l.gdp at lmadf) I notice:\n  1) The residuals standard error is  0.009498 as in the output from S-Plus. This should be enough to believe that both regressions contain the same variables.\n  2) S-Plus reports 214 degrees of freedom. However the length of the residuals is  228-11=217 which makes 217- 12 regressors = 205 degrees of freedom.\n\nFinally, one remark concerning uroot. The functions that choose the number of lags (when selectlags=list(mode=\"aic\",...) is used) were built many time ago and although they seem to work in the right direction, I didn´t perform a formal check by simulations or other method. Anyway, they can give a useful first guess, indeed in practice I think it is advisable to try several lags and see if results change in a large extent or not.\n\nRegards,\n\nJavier.\n\n\nSpencer Graves <spencer.graves at pdf.com> escribió: Hello, Kurt, Bernhard, Diethelm, and Javier: \n\n      Can you help me find an R match for the S-Plus Finmetrics \n'unitroot' results below for the Augmented Dickey-Fuller test?  This \nwill become part of the \"FinTS\" package companion to Tsay (2005) \nAnalysis of Financial Time Series, 2nd ed. (Wiley).  This example is \ndiscussed on pp. 69-71 of Tsay (2005).  I'm writing to you, because you \nare the (primary) maintainers for packages with Augmented Dickey-Fuller \nfunctions, and I've so far been unable to replicate the 'unitroot' \nresults.  Below please find my best guess so far of how I should use \nyour functions, none of which produce answers sufficiently close to \n'unitroot' to convince me I knew what I was doing. \n\n      Any help you can give me will be greatly appreciated. \n      Spencer Graves\n##################################\n##\n## 1.  Get the data\n##\nFinTS.url <- \"http://gsbwww.uchicago.edu/fac/ruey.tsay/teaching/fts2/\"\ngdpFile <- paste(FinTS.url, \"q-gdp4703.txt\", sep=\"\")\ngdp. <- read.table(gdpFile)\ngdp <- log(gdp.[, 3])\n\n##\n## 2.  Try to replicate the analysis\n##\n\nlibrary(tseries)\n(adf.e.gdp <- adf.test(gdp, alternative=\"explosive\", k=10))\n#Dickey-Fuller = -0.9741, Lag order = 10, p-value = 0.05918\n\nlibrary(urca)\nsummary(ur.d.gdp <- ur.df(gdp, lags=10))\n# statistic = 2.262, between 1 and 5% levels\n\nlibrary(fUnitRoots)\n(fadf.c.gdp <- adfTest(gdp, lags=10))\n# ADF = 2.262, p-value = 0.99\n\nlibrary(uroot)\n(ADF.d.l.gdp <- ADF.test(gdp, c(1,0,0),\n                        selectlags=list(mode=\"signif\", Pmax=10)))\n#Error in switch(selectlags[[1]], aic = selP <- selPabic(lmdet = lmdf, \n#  argument is missing, with no default\n##################################\nRuey S. Tsay ,(Faculty) wrote:\n> Hi Spencer:\n>\n> GDP = ln(x), where x is the column three of the data file \"q-gdp4703.txt\". \n> The test result may depend onthe way people treat the order and constant term. \n> If you print out more information from R, you may be able to find the difference.\n>\n> Ruey\n>\n>\n> Below is the output I got from S-Plus. [I did it this morning.]\n>   \n>> x=read.table(\"q-gdp4703.txt\")\n>> gdp=log(x[,3])\n>>     \n>\n>   \n>> m=unitroot(gdp,trend='c',method='adf',lags=10)\n>> summary(m)\n>>     \n>\n> Test for Unit Root: Augmented DF Test\n>\n> Null Hypothesis: there is a unit root\n>    Type of Test: t-test\n>  Test Statistic: -1.131\n>         P-value: 0.7038\n>\n> Coefficients:\n>            Value Std. Error t value Pr(>|t|)\n>     lag1 -0.0006  0.0006    -1.1306  0.2595\n>     lag2  0.3797  0.0679     5.5946  0.0000\n>     lag3  0.1866  0.0719     2.5940  0.0102\n>     lag4 -0.1056  0.0730    -1.4474  0.1493\n>     lag5  0.0287  0.0728     0.3938  0.6942\n>     lag6 -0.1535  0.0718    -2.1376  0.0337\n>     lag7  0.0790  0.0725     1.0896  0.2772\n>     lag8  0.0685  0.0718     0.9550  0.3407\n>     lag9 -0.1006  0.0709    -1.4187  0.1575\n>    lag10  0.1798  0.0656     2.7405  0.0067\n> constant  0.0123  0.0048     2.5654  0.0110\n>\n> Regression Diagnostics:\n>\n>          R-Squared 0.2831\n> Adjusted R-Squared 0.2485\n> Durbin-Watson Stat 2.0265\n>\n> Residual standard error: 0.009498 on 214 degrees of freedom\n> F-statistic: 8.175 on 10 and 207 degrees of freedom, the p-value is 4.078e-11\n>\n>   \n\n\n       \n---------------------------------\n\n¿Chef por primera vez? - Sé un mejor Cocinillas.\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Spencer and everybody,\n\nI think the functions from fUnitRoots, urca, uroot and S-plus will agree after considering some points (I don´t know how to tackle this points in adf.test() from library(t",
       "thread_id": "thread-f578a4b6ef9e",
       "thread_depth": 1,
-      "month": "2007-12"
+      "month": "2007-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/ac68d56c/attachment.pl"
+      ]
     },
     {
       "id": "msg-32b9e6a7451e",
@@ -69,11 +72,14 @@
       "subject_clean": "unit root test 'urppTest' with no intercept",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/17a3b12c/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/17a3b12c/attachment.pl",
+      "body_plain": "Hi,\n\nI am studying Eric Zivot's book (financial time series with S-plus),\n and the\ncointegration test in the case where the cointegrated vector is\n estimated from\nthe data, uses 'nc' (no constant) when doing the unit root test on the\n residuals.\n\nS-plus supports this option in the 'unitroot' function;\nhowever 'urppTest' only has options for 'constant' and 'trend'.\n\nDo you plan to add support for this ?\nShould I try writing the code and submit it ?\nI tried to contact Bernhard Pfaff by e-mail as listed in the package but it bounced.\n\nIn any case, thanks for writing and providing this very useful code.\n\nThanks\nChristophe.\n\n\n\n\n\n      ____________________________________________________________________________________\nBe a better sports nut!  Let your teams follow you \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI am studying Eric Zivot's book (financial time series with S-plus),\n and the\ncointegration test in the case where the cointegrated vector is\n estimated from\nthe data, uses 'nc' (no constant) whe",
       "thread_id": "thread-32b9e6a7451e",
       "thread_depth": 0,
-      "month": "2007-12"
+      "month": "2007-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071204/17a3b12c/attachment.pl"
+      ]
     },
     {
       "id": "msg-f2384934bf05",
@@ -85,11 +91,14 @@
       "subject_clean": "Information fGarch Package R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071212/7ccd3217/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071212/7ccd3217/attachment.pl",
+      "body_plain": "Hello,\n\nI work in  a \"Gaz de France\" research unit and I use the R language for \nstatistical computing . \nI have a question about the fGarch package.\nCan I fix individual Arma + Garch coefficients in the new fGarch package?\n\nThanks for your answer,\n\nBest regards,\n\nEric Thibault\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI work in  a \"Gaz de France\" research unit and I use the R language for \nstatistical computing . \nI have a question about the fGarch package.\nCan I fix individual Arma + Garch coefficients in ",
       "thread_id": "thread-f2384934bf05",
       "thread_depth": 0,
-      "month": "2007-12"
+      "month": "2007-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071212/7ccd3217/attachment.pl"
+      ]
     },
     {
       "id": "msg-6d075a0d785e",

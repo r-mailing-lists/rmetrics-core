@@ -13,11 +13,14 @@
       "subject_clean": "Questions about library fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl>",
+      "body_plain": "Lords administrators\n\nI wondered if the library fGarch one can use different  independent variables to \nan ARMA model. ie\n\nY ~ ARMA (1,1) + GARCH (1.1)\n\nbut I want\n\nY ~ x1 + x2 +  x3 + Garch (1.1)\n\nwith Y (GDP), x1  (inflation), x2 (S & P), x3 (employment).\n\n Thanks for the reply\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Lords administrators\n\nI wondered if the library fGarch one can use different  independent variables to \nan ARMA model. ie\n\nY ~ ARMA (1,1) + GARCH (1.1)\n\nbut I want\n\nY ~ x1 + x2 +  x3 + Garch (1.1)\n\nwi",
       "thread_id": "thread-aa8799d470b5",
       "thread_depth": 0,
-      "month": "2010-11"
+      "month": "2010-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101107/682b293d/attachment.pl"
+      ]
     },
     {
       "id": "msg-6e6cd83d8cc9",
@@ -29,11 +32,14 @@
       "subject_clean": "GBBankHoliday() function in timeDate",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl>",
+      "body_plain": "Hi folks,\n \nI was trying to use the GBBankHoliday() function and found that it only returns one date for any year, unlike, say, holidayNYSE() that seems to be quite comprehensive. (I’m using R2.11.1 and timeDate_2130.91). \n \nSo I wrote up the following function (referring to Wikipedia for the history of English Bank Holidays). Would you care to validate? If it’s okay, or after you improve it for performance/readability, if you’d like to publish it in timeDate, please go ahead.\n \nI welcome your feedback.\n\nThanks,\n \nMurali\n \nGBBankHoliday <- function (year = getRmetricsOptions(\"currentYear\")) \n{\n    holidays <- NULL\n    for (y in year) {\n        if (y >= 1834 & y < 1870) {\n            # 1 May, 1 November, Good Friday and Christmas are the only England Bank Holidays\n            dts <- c(paste(y, \"-05-01\", sep = \"\"), paste(y, \"-11-01\", sep = \"\"))\n            holidays <- c(holidays, dts, as.character(GoodFriday(y)), as.character(ChristmasDay(y))) \n        } else {\n            # Good Friday and Easter Monday\n            holidays <- c(holidays, as.character(GoodFriday(y)), as.character(EasterMonday(y)))\n            if (y <= 1964) {\n                # Whit Monday, which is exactly 50 days after Easter\n                holidays <- c(holidays, as.character(Easter(y, 50)))\n                # First Monday in August\n                lon <- timeDate(.on.or.after(y, 8, 1, 1), zone = \"London\", FinCenter = \"Europe/London\")\n                holidays <- c(holidays, as.character(lon))\n            } else {\n                # Last Monday in May replaces Whit Monday\n                if (y == 2002) {\n                    # Last Monday in May holiday moved to June 3, and Queen's Jubilee on June 4\n                    dts <- c(paste(y, \"-06-03\", sep = \"\"), paste(y, \"-06-04\", sep = \"\"))\n                    holidays <- c(holidays, dts)    \n                } else if (y == 2012) {\n                    # Last Monday in May holiday moved to June 4, and Queen's Diamond Jubilee on June 5\n                    dts <- c(paste(y, \"-06-04\", sep = \"\"), paste(y, \"-06-05\", sep = \"\"))\n                    holidays <- c(holidays, dts)\n                } else {\n                    lon <- timeDate(.last.of.nday(y, 5, 31, 1), zone = \"London\", FinCenter = \"Europe/London\")\n                    holidays <- c(holidays, as.character(lon))\n                }\n                # Last Monday in August replaces first Monday in August\n                lon <- timeDate(.last.of.nday(y, 8, 31, 1), zone = \"London\", FinCenter = \"Europe/London\")\n                holidays <- c(holidays, as.character(lon))\n            }\n            \n            # Not entirely sure when Mon/Tue began to be given as holiday when Christmas/Boxing Day fell on\n            # Saturday/Sun. I'm assuming this was after the 1971 Banking and Financial Dealings Act which \n            # established the new holiday schedule.\n            if (y < 1970) {\n                # Christmas and Boxing Day\n                holidays <- c(holidays, as.character(ChristmasDay(y)), as.character(BoxingDay(y)))\n            } else {\n                posix1 <- as.POSIXlt(ChristmasDay(y))\n                # If Christmas on Saturday or Sunday, then the following Monday and Tuesday are holidays\n                if (posix1$wday == 0) { # Christmas Sunday\n                    holidays <- c(holidays, as.character(ChristmasDay(y) + (1 : 2) * 86400))\n                } else if (posix1$wday == 6) { #Christmas Saturday\n                    holidays <- c(holidays, as.character(ChristmasDay(y) + (2 : 3) * 86400)) \n                } else if (posix1$wday == 5) {# Christmas Friday\n                    # the next Monday is a holiday\n                    holidays <- c(holidays, as.character(ChristmasDay(y) + c(0, 3) * 86400))\n                } else {\n                    holidays <- c(holidays, as.character(ChristmasDay(y)), as.character(BoxingDay(y)))\n                }  \n            }\n            \n            if (y >= 1974) {\n                # New Year's Day: if it falls on Sat/Sun, then is moved to following Monday\n                posix1 <- as.POSIXlt(NewYearsDay(y))\n                if (posix1$wday == 0 | posix1$wday == 6) {\n                    lon <- timeDate(.on.or.after(y, 1, 1, 1), zone = \"London\", FinCenter = \"Europe/London\")    \n                } else {\n                    holidays <- c(holidays, as.character(posix1)) \n                }\n            }\n            if (y >= 1978) {\n                # First Monday of May became a bank holiday\n                if (y == 1995) {\n                    # Was moved to May 8 to celebrate VE Day's 50th anniversary\n                    dts <- paste(y, \"-05-08\", sep = \"\")\n                    holidays <- c(holidays, dts)\n                } else {\n                    lon <- timeDate(.on.or.after(y, 5, 1, 1), zone = \"London\", FinCenter = \"Europe/London\")\n                    holidays <- c(holidays, as.character(lon))\n                }\n            }\n        }\n    }\n    holidays <- sort(holidays)\n    ans <- timeDate(format(holidays), zone = \"London\", FinCenter = \"Europe/London\")\n    posix1 <- as.POSIXlt(ans, tz = \"GMT\")\n    ans[!(posix1$wday == 0 | posix1$wday == 6)] # Remove any Saturdays/Sundays\n} \t\t \t   \t\t  \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi folks,\n \nI was trying to use the GBBankHoliday() function and found that it only returns one date for any year, unlike, say, holidayNYSE() that seems to be quite comprehensive. (I’m using R2.11.1 a",
       "thread_id": "thread-6e6cd83d8cc9",
       "thread_depth": 0,
-      "month": "2010-11"
+      "month": "2010-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101115/8b8dfbd6/attachment.pl"
+      ]
     },
     {
       "id": "msg-02e47003d004",
@@ -45,11 +51,14 @@
       "subject_clean": "Package 'fPortfolio' & R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl>",
+      "body_plain": "Hello,\n\n \n\nI would like to use R and this package to solve for efficient frontiers on a\ngroup of stocks and/or mutual funds.\n\n \n\nI'm very familiar with modern portfolio theory and the efficient frontier\nand working with quote data.\n\n \n\nI have never used R before or an R package.\n\n \n\nI see there is a 63 page manual just for this package, which is\nintimidating.\n\n \n\nHow difficult is this going to be to accomplish?\n\n \n\nHow do you suggest I learn just enough R and fPortfolio to get this done?\n\n \n\nWould I be better off looking for an Excel solution?\n\n \n\nThank you.\n\n \n\nBrooks\n\n \n\nhttp://www.r-project.org/\n\n \n\n \n\n \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\n \n\nI would like to use R and this package to solve for efficient frontiers on a\ngroup of stocks and/or mutual funds.\n\n \n\nI'm very familiar with modern portfolio theory and the efficient fronti",
       "thread_id": "thread-02e47003d004",
       "thread_depth": 0,
-      "month": "2010-11"
+      "month": "2010-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101118/b06d312c/attachment.pl"
+      ]
     },
     {
       "id": "msg-cd9795bee56d",

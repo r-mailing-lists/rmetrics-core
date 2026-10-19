@@ -182,11 +182,14 @@
       "subject_clean": "Package fGarch: \"garchOxFit\"",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100127/18b94c95/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100127/18b94c95/attachment.pl>",
+      "body_plain": "Sehr geehrter Herr Dr. Würtz!\n \nIch habe in Ihrer \"Reference Manual\" zum CRAN-Package \"fGarch\" soeben gelesen, dass man sich an Sie wenden darf, falls man die Funktion \"garchOxFit\" zum Anpassen von E-Garch-Prozessen benötigt.\n \nKönnten Sie mir diese bitte zukommen lassen bzw. gibt es sonst eine Möglichkeit zur Anpassung von E-Garch in R?\n \nDanke für eine kurze Rückmeldung.\n \nMit freundlichen Grüßen,\nMichael Vorraber\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Sehr geehrter Herr Dr. Würtz!\n \nIch habe in Ihrer \"Reference Manual\" zum CRAN-Package \"fGarch\" soeben gelesen, dass man sich an Sie wenden darf, falls man die Funktion \"garchOxFit\" zum Anpassen von E-",
       "thread_id": "thread-13202ab1bd8b",
       "thread_depth": 0,
-      "month": "2010-01"
+      "month": "2010-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100127/18b94c95/attachment.pl"
+      ]
     }
   ],
   "threads": [

@@ -13,11 +13,14 @@
       "subject_clean": "fmultivar package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120308/c8e2a3b8/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120308/c8e2a3b8/attachment.pl>",
+      "body_plain": "Hello,\n\nI believe the package has a bug in it that when dim=1, the density of t\ndistribution isn't correct.\n\nHere is the code that shows visually that the density doesn't match the\nrandom variates.\n\n####################\n\nlibrary(fMultivar)\n\nn = 50000\nqtile = seq(-5,5,by=0.05)\n\nxtt = rmvst(n,dim=1,df=3)\nhist(xtt,300,xlim=c(-5,5),probability=TRUE)\nlines(qtile,dmvst(qtile,dim=1,df=3),col='red')\n\nxn = rmvsnorm(n,dim=1)\nhist(xn,300,xlim=c(-5,5),probability=TRUE)\nlines(qtile,dmvsnorm(qtile,dim=1),col='red')\n\nxt = rt(n,df=3)\nhist(xt,300,xlim=c(-5,5),probability=TRUE)\nlines(qtile,dt(qtile,df=3),col='red')\n\n####################\n\nI am trying to compare histogram of randomly generated data versus their\ncorresponding density functions.\n\nThe question is regarding \"xtt\" variable which are random t.\nThe histogram and the density function doesn't seem to agree.\nIf you try the others (\"xn\" and \"xt\"), you'll see that these \"hug the\ncurve\" especially in the beginning part of the tails.\nBut \"xt\" seem to be quite a bit off.\n\nThank you for your help.\n\nBest,\n\nSang\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI believe the package has a bug in it that when dim=1, the density of t\ndistribution isn't correct.\n\nHere is the code that shows visually that the density doesn't match the\nrandom variates.\n\n#",
       "thread_id": "thread-33a4f9175ceb",
       "thread_depth": 0,
-      "month": "2012-03"
+      "month": "2012-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120308/c8e2a3b8/attachment.pl"
+      ]
     },
     {
       "id": "msg-4fe22d4cb998",
@@ -29,11 +32,14 @@
       "subject_clean": "getWeights bug?",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120312/70a8ddcf/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120312/70a8ddcf/attachment.pl>",
+      "body_plain": "Hi!\n\nI'm trying to use the weightsLinePlot function of the fPortfolio library.\n\nit seems to call the function getWeights(fPortfolioObject), which is not\nreturning a matrix, but a single vector(a single line). Thus the\nweightsLinePlot is not working.\n\nCan you point me to a solution?\n\n \n\nBelow some specs, the code and the output.\n\n> version\n\n               _                            \n\nplatform       x86_64-pc-mingw32            \n\narch           x86_64                       \n\nos             mingw32                      \n\nsystem         x86_64, mingw32              \n\nstatus                                      \n\nmajor          2                            \n\nminor          13.2                         \n\nyear           2011                         \n\nmonth          09                           \n\nday            30                           \n\nsvn rev        57111                        \n\nlanguage       R                            \n\nversion.string R version 2.13.2 (2011-09-30)\n\n \n\n>library(fPortfolio)\n\n>Data = SMALLCAP.RET\n\n>Data = Data[, c(\"BKE\", \"GG\", \"GYMB\", \"KRON\")]\n\n>head(Data)\n\n>Spec = portfolioSpec();\n\n>frontier = portfolioFrontier(Data,Spec)\n\n>getWeights(frontier)\n\n>weightsLinePlot(frontier)\n\n \n\n##OUTPUT:\n\n> frontier = portfolioFrontier(Data,Spec)\n\n> getWeights(frontier)\n\n[1] 0.000000e+00 1.805789e-08 1.000000e+00 0.000000e+00\n\nattr(,\"invest\")\n\n[1] 1\n\n>  weightsLinePlot(frontier)\n\nError in plot.window(xlim, ylim, log, ...) : 'xlim' value not valid\n\n> \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi!\n\nI'm trying to use the weightsLinePlot function of the fPortfolio library.\n\nit seems to call the function getWeights(fPortfolioObject), which is not\nreturning a matrix, but a single vector(a singl",
       "thread_id": "thread-4fe22d4cb998",
       "thread_depth": 0,
-      "month": "2012-03"
+      "month": "2012-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120312/70a8ddcf/attachment.pl"
+      ]
     },
     {
       "id": "msg-b391d7258070",
@@ -63,11 +69,14 @@
       "subject_clean": "fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120315/cdc45370/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120315/cdc45370/attachment.pl>",
+      "body_plain": "Dear Rmetrics Team,\n\nI have the following problem: Right now I am trying to analyse a time series of heteroscedastic CO2-returns. For the joint estimation of ARMA-GARCH models I want to use the fGARCH package. For selecting the most suitable model I tried to program a loop that reports the AICs and BICs of the ARMA-GARCH estimations. Unfortunately I had to recognize that I cannot extract neither the AICs/BICS nor the Likelihood values. Is there any way to either extract the values or to use another command for calculating them with the given output?\nIt would be so great if you could help me with this problem.\n\nThank you so much in advance,\n\nChristoph Hörbelt\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Team,\n\nI have the following problem: Right now I am trying to analyse a time series of heteroscedastic CO2-returns. For the joint estimation of ARMA-GARCH models I want to use the fGARCH",
       "thread_id": "thread-4f0bda31a67f",
       "thread_depth": 0,
-      "month": "2012-03"
+      "month": "2012-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120315/cdc45370/attachment.pl"
+      ]
     },
     {
       "id": "msg-69c3fe369d9e",
@@ -79,11 +88,14 @@
       "subject_clean": "Invitation | Global Sustainable Finance Conference, Germany",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120316/bc6f6e8c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120316/bc6f6e8c/attachment.pl>",
+      "body_plain": "A Two Day International Conference on Sustainable Finance will be held from 5th to 6th of July, 2012 in Karlsruhe, Germany. This event will bring together top executives and senior members of financial institutions, policy makers, sustainable development and environmental management experts, commercial bankers, investment and project finance executives, cleantech and energy industry professionals, academia, senior government officials, representatives of international development institutions and other market players engaged or interested in sustainable finance and green economy. \n \nThe delegates will discuss key emerging issues including: climate change, environmental degradation and the emergence of the green economy; the changing role of financial service providers as the economies and financial markets get reshaped; and innovative solutions, success stories and best practices for embedding sustainability in financial institutions. It is a distinctive forum to deliberate on financial innovation and business case to green operations and modify or develop financial products to capitalise on opportunities emerging in numerous sectors, such as in the fields of sustainable infrastructure, energy efficient real estate, green mobility, clean energy production, organic agriculture, green consumer market and in businesses and projects that protect investors, green and enhance financial institutions´ performance and support our transition to low carbon and sustainable economy. \n \nFurther to knowledge sharing on issues related to sustainable finance and green economy; the upcoming conference will also help establish partnerships and alliances and in developing synergies. It provides an excellent opportunity to network with the senior members of financial community, multilateral agencies, governmental institutions, academia, sustainable and environmental management practitioners and other stakeholders in Europe and globally. An optional excursion/ get-together will take place on Saturday the 7th of July 2012.\n \nYou are cordially invited to attend this international event and/ or nominate member(s) of your institution.\n \nFor further information, please see the event details.\nhttp://etechgermany.com/GSFC_2012.pdf \nOr contact via email: mail at etechgermany.com \n \nSincerely,\nOrganizing Committee\n-----------------------------------------------------------------\nGlobal Sustainable Finance Conference\n-----------------------------------------------------------------\nEtech Germany\nDürkheimer Str. 24\nD - 76187 Karlsruhe\n-----------------------------------------------------------------\nTel.: 0049-721- 476 89 16\nFax.: 0049-721- 476 89 53\nEmail: mail at etechgermany.com\n-----------------------------------------------------------------\nWeb: www.etechgermany.com \n-----------------------------------------------------------------\n \n \nIf you wish to unsubscribe, please send a mail with subject unsubscribe to mailto at etechgermany.org\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "A Two Day International Conference on Sustainable Finance will be held from 5th to 6th of July, 2012 in Karlsruhe, Germany. This event will bring together top executives and senior members of financia",
       "thread_id": "thread-69c3fe369d9e",
       "thread_depth": 0,
-      "month": "2012-03"
+      "month": "2012-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120316/bc6f6e8c/attachment.pl"
+      ]
     },
     {
       "id": "msg-478b8dd6c90b",

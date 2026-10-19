@@ -45,11 +45,14 @@
       "subject_clean": "timeSeries Package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl>",
+      "body_plain": "Hi \nI am trying to use the timeSeries package along with the TTR package \"getYahooData\" the latter returns a timeSeries however, when using \"fapply\" or \"is.timeSeries(data1)\" it is saying False.  Can anyone pleaseeee assist me.\nThanks so much\n\nHere is my code:\n\nlibrary(TTR)\nlibrary(fPortfolio)\nlibrary(timeSeries)\nlibrary(fBasics)\n\n\ndata1 <- getYahooData(\"PSSMX\", start = 20080304, end = 20090309, freq = \"daily\", type = \"price\", adjust = TRUE)\nhead(data1, 10)\ndata2 <- getYahooData(\"^RUT\", start = 20030625, end = 20090304, freq = \"daily\", type = \"price\", adjust = TRUE)\nhead(data2)\n\nSP_high <- data1$High[length(data1$High):1]\nSP_low <- data1$Low[length(data1$Low):1]\nSP_close <-data1$Unadj.Close[length(data1$Unadj.Close):1]\nSP_Returns = round(returns(data1$Close , percentage = TRUE, trim = FALSE), digits = 2)\nSP_Returns\nRU_high <- data2$High[length(data1$High):1]\nRU_low <- data2$Low[length(data1$Low):1]\nRU_close <-data2$Unadj.Close[length(data1$Unadj.Close):1]\nRU_Returns = round(returns(data2$Close , percentage = TRUE, trim = FALSE), digits = 2)\nRU_Returns\nindex.table <-as.matrix(cbind(RU_Returns, SP_Returns), na.rm = TRUE)\ncolnames(index.table) <- c(\"RU_Returns\", \"SP_Returns\")\nindex.table\n\nfapply(index.table, by = \"monthly\", FUN = ColMeans, na.omit)\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi \nI am trying to use the timeSeries package along with the TTR package \"getYahooData\" the latter returns a timeSeries however, when using \"fapply\" or \"is.timeSeries(data1)\" it is saying False.  Can ",
       "thread_id": "thread-ed1f4b67cefa",
       "thread_depth": 0,
-      "month": "2009-03"
+      "month": "2009-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090309/2e35df80/attachment.pl"
+      ]
     },
     {
       "id": "msg-5412606445c5",

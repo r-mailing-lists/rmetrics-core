@@ -13,11 +13,14 @@
       "subject_clean": "Bug timeSeries 270.76.1",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl>",
+      "body_plain": "I found that if I specify  zone =”GMT” in timeSeries(), the low level function strptime() is called without specifying the zone.\n\nHaving an hourly time series with data around the daylightsaving switch date will cause an error and a count instead of dates.\n\nThanks\n\n________________________________\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati è vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attività e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla società stessa, né la impegnano in alcun modo.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I found that if I specify  zone =”GMT” in timeSeries(), the low level function strptime() is called without specifying the zone.\n\nHaving an hourly time series with data around the daylightsaving switc",
       "thread_id": "thread-5a34a6515f0d",
       "thread_depth": 0,
-      "month": "2008-11"
+      "month": "2008-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081103/64396af3/attachment.pl"
+      ]
     },
     {
       "id": "msg-6add2436d520",
@@ -29,11 +32,14 @@
       "subject_clean": "Dear Rmetrics authors",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl>",
+      "body_plain": "Dear Rmetrics authors,\nI am a Mac user and I want to know if it is possible to use the interface to\nconnect R to Oxmetrix.\nThank you\nJuan\n\n\n-- \nJuan Tomás Sayago\nStudente Istituto Universitario di Studi Superiori - I.U.S.S.\njuantomas.sayago.co.cc\nObjetivo: Garantizar a cada ser humano que habite en el país, una cantidad\nmínima de agua con calidad segura para el consumo humano, en forma regular,\npermanente y suficiente para la vida y la salud\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics authors,\nI am a Mac user and I want to know if it is possible to use the interface to\nconnect R to Oxmetrix.\nThank you\nJuan\n\n\n-- \nJuan Tomás Sayago\nStudente Istituto Universitario di Stu",
       "thread_id": "thread-6add2436d520",
       "thread_depth": 0,
-      "month": "2008-11"
+      "month": "2008-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20081104/8d37ef08/attachment.pl"
+      ]
     },
     {
       "id": "msg-b0273f75124b",

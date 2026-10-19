@@ -45,11 +45,14 @@
       "subject_clean": "Change in maintainer for bytd",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140717/b84e36be/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140717/b84e36be/attachment.pl>",
+      "body_plain": "This email is to confirm that, effective immediately, I will be stepping down as the maintainer of the bytd package and Daniel McCarthy (danielmc at wharton.upenn.edu<mailto:danielmc at wharton.upenn.edu>) will be taking my place.  This will be reflected in version 2.0 of the package, which will be submitted very shortly.\n\nThanks very much!\n\nElea McDonnell Feit, PhD\nOutgoing Executive Director, Wharton Customer Analytics Initiative\nLecturer in Marketing\nThe Wharton School\nUniversity of Pennsylvania\n248.444.4892 (mobile)\nefeit at wharton.upenn.edu<mailto:efeit at wharton.upenn.edu>\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "This email is to confirm that, effective immediately, I will be stepping down as the maintainer of the bytd package and Daniel McCarthy (danielmc at wharton.upenn.edu<mailto:danielmc at wharton.upenn.",
       "thread_id": "thread-e1586c1e1c81",
       "thread_depth": 0,
-      "month": "2014-07"
+      "month": "2014-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20140717/b84e36be/attachment.pl"
+      ]
     }
   ],
   "threads": [

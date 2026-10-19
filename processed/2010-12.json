@@ -13,11 +13,14 @@
       "subject_clean": "No subject",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101211/4196009f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101211/4196009f/attachment.pl>",
+      "body_plain": "Dear Sirs,\n \nPlease forgive me if this is the wrong address for such a request.\n \nI have installed the R package fGarch recently and note the following excerpt from the pdf file.\n \n\"NOTE: garchOxFit is no longer part of fGarch package. If you are interested to use, please contact\nus.\"\n \nI am.  Please let me know how I might go about getting it.\n \nBTW.  What about support for Garch-M?\n \nThanks in advance.\n \nSincerely,\nDavid Norris \t\t \t   \t\t  \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sirs,\n \nPlease forgive me if this is the wrong address for such a request.\n \nI have installed the R package fGarch recently and note the following excerpt from the pdf file.\n \n\"NOTE: garchOxFit i",
       "thread_id": "thread-293a3b529724",
       "thread_depth": 0,
-      "month": "2010-12"
+      "month": "2010-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101211/4196009f/attachment.pl"
+      ]
     },
     {
       "id": "msg-5afd375561cb",

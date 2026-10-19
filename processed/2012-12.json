@@ -81,11 +81,14 @@
       "subject_clean": "question for align",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl>",
+      "body_plain": "An example: I have a non-aligned time series\n\n> notAligned\n\nGMT\n\n           TS.1   TS.2  TS.3  TS.4\n\n2011-02-03   NA    1    4    8\n\n2011-02-04    1   NA    2   NA\n\n2011-02-07    5    6   NA   NA\n\n2011-02-08   NA    2   NA    9\n\n \n\nIf I use the align function, it returns this\n\n> align(notAligned)\n\nGMT\n\n           TS.1  TS.2  TS.3  TS.4\n\n2011-02-03   NA    1    4    8\n\n2011-02-04    1    1    2    8\n\n2011-02-07    5    6    2    8\n\n2011-02-08   NA    2   NA    9\n\n \n\nIt correctly fills NAs on row 2 and row 3, but it does not fill NAs on row 4\n(2011-02-08). \n\nI expect the last row look like this : \n\nTS.1  TS.2  TS.3  TS.4\n\n2011-02-08   5     2   2   9\n\n \n\nDid I misunderstand the function? Is there a way to work around this? \n\nThanks for your help\n\n \n\n \n\nZhang Chunrong\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "An example: I have a non-aligned time series\n\n> notAligned\n\nGMT\n\n           TS.1   TS.2  TS.3  TS.4\n\n2011-02-03   NA    1    4    8\n\n2011-02-04    1   NA    2   NA\n\n2011-02-07    5    6   NA   NA\n\n201",
       "thread_id": "thread-a8027980a2cc",
       "thread_depth": 0,
-      "month": "2012-12"
+      "month": "2012-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121229/5503f805/attachment.pl"
+      ]
     }
   ],
   "threads": [

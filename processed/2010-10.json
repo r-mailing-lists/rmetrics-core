@@ -66,11 +66,14 @@
       "subject_clean": "portfolioFrontier question",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl>",
+      "body_plain": "Dear Rmetrics team,\n\nI've been looking through the fPortfolio source code and examples and searching online for a few days, but I haven't found an answer.\n\nIn the code below (fPortfolio Version 2110.79, R 2.11.1), if min weights below (min.weights <- c(rep(0, 5), 0.2)) are 0, portfolioFrontier returns no errors.  But when, for example, mean weights increase (min.weights <- c(rep(0, 5), 0.2)), portfolioFrontier returns:\n\nExecution stopped:\n  The minimum risk portfolio could not be computed.\nPossible Reason:\n  Your portfolio constraints may be too restrictive.\n\nIt seems that the minvariancePortfolio function attempts to minimize risk subject to a return constraint that is not feasible (because it is simply set to the smallest mu).\n\nIs there a way to modify this code, so it runs without errors?  Any help would be much appreciated.\n\n\nlibrary(fPortfolio)\nx <- SMALLCAP.RET[,1:6]\nspec <- portfolioSpec()\nsetNFrontierPoints(spec) <- 50\nassets.num <- 1:ncol(x)\nmin.weights <- c(rep(0.1, 5), 0.2)\nconstraints.min <- paste(\"minW[\", assets.num, \"]=\", min.weights, sep = \"\")\nmax.weights <- c(rep(1, 5), 0.4)\nconstraints.max <- paste(\"maxW[\", assets.num, \"]=\", max.weights, sep = \"\")\nconstraints <- c(constraints.min, constraints.max)\nfrontier <- portfolioFrontier(x, spec = spec, constraints = constraints)\n\n\nMaciej Ombach\n\n\n----------------------------------------------------------------------\nThis message w/attachments (message) is intended solely ...{{dropped:10}}",
+      "body_snippet": "Dear Rmetrics team,\n\nI've been looking through the fPortfolio source code and examples and searching online for a few days, but I haven't found an answer.\n\nIn the code below (fPortfolio Version 2110.7",
       "thread_id": "thread-6ff18e318d1a",
       "thread_depth": 0,
-      "month": "2010-10"
+      "month": "2010-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20101027/94426be5/attachment.pl"
+      ]
     },
     {
       "id": "msg-15ddc731dd8e",

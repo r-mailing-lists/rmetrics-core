@@ -29,11 +29,14 @@
       "subject_clean": "Making R package- final step",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100620/abc5bc07/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100620/abc5bc07/attachment.pl>",
+      "body_plain": "Hello,\n \nI am a PhD student at Erasmus Medical Centre Rotterdam, The Netherlands. I am planning to make a R package for genetic risk prediction studies. The  . tar.gz for package source and  .pdf file for reference manual are ready. The R source file has already passed  R CMD check. In the final step can you please suggest me whether I will send the .tar.gz file to CRAN or also put this in a repository? Since you already wrote a R packege, you know all the steps before get it published. Please help me as I am having difficulty to clearly figure out the mentioned instruction in \" How to write a R extension\".\n \nKind regards,\nSuman Kundu\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n \nI am a PhD student at Erasmus Medical Centre Rotterdam, The Netherlands. I am planning to make a R package for genetic risk prediction studies. The  . tar.gz for package source and  .pdf file",
       "thread_id": "thread-c0e06600a21a",
       "thread_depth": 0,
-      "month": "2010-06"
+      "month": "2010-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100620/abc5bc07/attachment.pl"
+      ]
     }
   ],
   "threads": [

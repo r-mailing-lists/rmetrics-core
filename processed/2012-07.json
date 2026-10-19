@@ -13,11 +13,14 @@
       "subject_clean": "Comparing pvalues in ADF test in Gretl fUnitRoots and Eviews",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl>",
+      "body_plain": "Good morning:\n\nMy name is José Perles. I'm researcher of the University of Alicante\n(Spain) Applied Economics Analysis Department (Honorific Collaborator at\nthis moment).\n\nI'm doing a unit root test ADF with Gretl, R and Eviews on a serie of\ntourism market share of Spain specified with constant and trend.\n\nBy comparing the results with Eviews or R (package fUnitRoot) I get the same\nt-statistic, but although all programs indicate that the critical values\n​​are McKinnon (1996) MacKinnon, J. G. (1996) \"Numerical distribution\nfunctions for unit root and cointegration tests\", Journal of Applied\nEconometrics 11: 601-618 p-values ​​of the test are very different in either\ncase .\nGretl: t = -3.62 p-value 0.02 asymptotic\nEviews t = -3.62 p-value (one-sided) = 0.04 which is the same value\nobtained in R.\nI know that obtain similar values with different software is very strange.\nBut this difference is normal?\nAt what may be due, one side p-value of Eviews or fUnitRoots are for finite\nsample, or Gretl p-value is two-sided?\n\nThanks in advance and sorry for any inconvenience.\n\nJosé F. Perles\nUniversity of Alicante\nSpain\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Good morning:\n\nMy name is José Perles. I'm researcher of the University of Alicante\n(Spain) Applied Economics Analysis Department (Honorific Collaborator at\nthis moment).\n\nI'm doing a unit root test A",
       "thread_id": "thread-75e91c64f55e",
       "thread_depth": 0,
-      "month": "2012-07"
+      "month": "2012-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/6daf2b1b/attachment.pl"
+      ]
     },
     {
       "id": "msg-ee02a659b814",
@@ -31,11 +34,14 @@
       "references": [
         "<CAGKcx6CNUfJx10yByeZOOWQUaPjoqbdO3Tf0igBwsNuGQOstRQ@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl>",
+      "body_plain": "Dear Jose,\n\na good place to ask such questions may be the  R-SIG-Finance mailing list.\n--> https://stat.ethz.ch/mailman/listinfo/r-sig-finance\n\nRmetrics-core are dedicated developers.\nRegards,\nMartin Maechler\n\n\nOn Thursday, July 5, 2012, JOSE FRANCISCO PERLES RIBES wrote:\n\n> Good morning:\n>\n> My name is José Perles. I'm researcher of the University of Alicante\n> (Spain) Applied Economics Analysis Department (Honorific Collaborator at\n> this moment).\n>\n> I'm doing a unit root test ADF with Gretl, R and Eviews on a serie of\n> tourism market share of Spain specified with constant and trend.\n>\n> By comparing the results with Eviews or R (package fUnitRoot) I get the\n> same\n> t-statistic, but although all programs indicate that the critical values\n> are McKinnon (1996) MacKinnon, J. G. (1996) \"Numerical distribution\n> functions for unit root and cointegration tests\", Journal of Applied\n> Econometrics 11: 601-618 p-values of the test are very different in either\n> case .\n> Gretl: t = -3.62 p-value 0.02 asymptotic\n> Eviews t = -3.62 p-value (one-sided) = 0.04 which is the same value\n> obtained in R.\n> I know that obtain similar values with different software is very strange.\n> But this difference is normal?\n> At what may be due, one side p-value of Eviews or fUnitRoots are for finite\n> sample, or Gretl p-value is two-sided?\n>\n> Thanks in advance and sorry for any inconvenience.\n>\n> José F. Perles\n> University of Alicante\n> Spain\n>\n>         [[alternative HTML version deleted]]\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Jose,\n\na good place to ask such questions may be the  R-SIG-Finance mailing list.\n--> https://stat.ethz.ch/mailman/listinfo/r-sig-finance\n\nRmetrics-core are dedicated developers.\nRegards,\nMartin ",
       "thread_id": "thread-75e91c64f55e",
       "thread_depth": 1,
-      "month": "2012-07"
+      "month": "2012-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120705/c0ef0d2c/attachment.pl"
+      ]
     },
     {
       "id": "msg-36e8eb01914e",
@@ -97,11 +103,14 @@
       "subject_clean": "EWMA",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl>",
+      "body_plain": "Good Morning.\n\nI would like to ask how EWMA is computed,\n\nI Could You tell me which formula is used here.\n\n\n\nBest regards\n\nDominik Kudyba\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Good Morning.\n\nI would like to ask how EWMA is computed,\n\nI Could You tell me which formula is used here.\n\n\n\nBest regards\n\nDominik Kudyba\n\n\t[[alternative HTML version deleted]]",
       "thread_id": "thread-d500256ec2bf",
       "thread_depth": 0,
-      "month": "2012-07"
+      "month": "2012-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20120726/cd11d873/attachment.pl"
+      ]
     },
     {
       "id": "msg-e31bc57535f6",

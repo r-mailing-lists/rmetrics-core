@@ -13,11 +13,14 @@
       "subject_clean": "question on fImport",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080725/93979aff/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080725/93979aff/attachment.pl>",
+      "body_plain": "Hello,\n\n \n\nI am trying to import a medical CPI index using fImport.  The command I\ntried is:  \nMED <- economagicImport(query = \"blscu/CUUR0000SAM\", source = '\n<http://www.economagic.com/em-cgi/data.exe/'>\nhttp://www.economagic.com/em-cgi/data.exe/', frequency = \"monthly\", colname\n= \"CPI\").  It sort of works but it seems to have a problem reading the data\nbecause it only returns data through 2007-12-01 when there is data all the\nway to 2008-06-01.  If I go directly to the series at\n<http://www.economagic.com/em-cgi/data.exe/blscu/CUUR0000SAM>\nhttp://www.economagic.com/em-cgi/data.exe/blscu/CUUR0000SAM, the entire\nseries is there.   It appears that there are some errors in parsing the data\nbut I haven't been able to sort them out.\n\nI am able to read the general CPI data from FRED using the quantmod library\ngetSymbols command but FRED only has a couple of CPI indicies which don't\ninclude several of the ones I need.  Any ideas?   \n\n\nThanks!\nBill Jones\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\n \n\nI am trying to import a medical CPI index using fImport.  The command I\ntried is:  \nMED <- economagicImport(query = \"blscu/CUUR0000SAM\", source = '\n<http://www.economagic.com/em-cgi/data.ex",
       "thread_id": "thread-dc932b798c72",
       "thread_depth": 0,
-      "month": "2008-07"
+      "month": "2008-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080725/93979aff/attachment.pl"
+      ]
     }
   ],
   "threads": [

@@ -13,11 +13,14 @@
       "subject_clean": "fGarch: possible bug in .plot.garch.13",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080501/ab815e2f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080501/ab815e2f/attachment.pl>",
+      "body_plain": "Hi,\n\nI was wondering why qq plots for my models with cond.dist = std suggest that standardised residuals have thinner tails than the student distribution with the estimated shape parameter. Then, I found a possible bug in .plot.garch.13, where I would suggest to delete the current definitions of 'skew' and 'shape' and include them into the if statements in the following way:\n\nif (cond.dist == \"qnorm\")\n    .qqDist(sres, dist = cond.dist)\nif (cond.dist == \"qstd\" | cond.dist == \"qged\")\n    .qqDist(sres, dist = cond.dist, nu = x at fit$par[\"shape\"])\nif (cond.dist == \"qsnorm\")\n    .qqDist(sres, dist = cond.dist, xi = x at fit$par[\"skew\"])\nif (cond.dist == \"qsstd\" | cond.dist == \"qsged\")\n    .qqDist(sres, dist = cond.dist, xi = x at fit$par[\"skew\"], nu = x at fit$par[\"shape\"])\n\nThe reason is that x at fit$params does not include values of the estimated coefficients but only of the (default) starting values.\n\nBest regards,\n\nMichal Miklovic\n\n\n\n\n      ____________________________________________________________________________________\n\n[[elided Yahoo spam]]\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI was wondering why qq plots for my models with cond.dist = std suggest that standardised residuals have thinner tails than the student distribution with the estimated shape parameter. Then, I fo",
       "thread_id": "thread-8d8e97ba1424",
       "thread_depth": 0,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080501/ab815e2f/attachment.pl"
+      ]
     },
     {
       "id": "msg-36d17548c84d",

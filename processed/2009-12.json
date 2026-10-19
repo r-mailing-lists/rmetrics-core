@@ -146,11 +146,14 @@
       "subject_clean": "question about R package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091228/95951dcd/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091228/95951dcd/attachment.pl>",
+      "body_plain": "Dear Rmetrics-team,\n \nI am unable to find any package which calculates yield to maturity,\nyield to worst, duration, complexity and other such  parameters for\nbonds. I am sure they exist.\n \nI have looked through all the financial packages on the link\n \nhttp://cran.r-project.org/web/views/Finance.html\n \nand\nhttp://cran.r-project.org/web/packages/\n \nThe package fbonds has term structure modeling while financial package\njust has simple things such as TVM and cash flow analysis.\n \nBefore going ahead and writing this package myself, I wanted to make\nsure it doesn’t exist.\n \nI hope to hear back from you soon.\n \nThanks\nPuneet Gandhi\nCandidate MBA’10 | Georgetown University\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics-team,\n \nI am unable to find any package which calculates yield to maturity,\nyield to worst, duration, complexity and other such  parameters for\nbonds. I am sure they exist.\n \nI have look",
       "thread_id": "thread-a3ca2561131f",
       "thread_depth": 0,
-      "month": "2009-12"
+      "month": "2009-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091228/95951dcd/attachment.pl"
+      ]
     },
     {
       "id": "msg-e0809baaa4df",
@@ -162,11 +165,14 @@
       "subject_clean": "Adj Close",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091230/f2b0f515/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091230/f2b0f515/attachment.pl>",
+      "body_plain": "Dear Rmetrics Core Team,\nI'm trying to import data from yahooFinance with the function yahooSeries from packages fImport. I want to download “Open”, “High”, “Low”, “Close”, “Volume”, and “Adj Close”. But the function yahooSeries don't allow me to download the adjusted series which is in the last column. How can I download this last column named “Adj Close”? I have R version 2.6.1\n \nThank you in advance for your help\nHappy new year\n \nStéphania HOUNGAN\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics Core Team,\nI'm trying to import data from yahooFinance with the function yahooSeries from packages fImport. I want to download “Open”, “High”, “Low”, “Close”, “Volume”, and “Adj Close”. ",
       "thread_id": "thread-e0809baaa4df",
       "thread_depth": 0,
-      "month": "2009-12"
+      "month": "2009-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091230/f2b0f515/attachment.pl"
+      ]
     },
     {
       "id": "msg-d90c723a277e",

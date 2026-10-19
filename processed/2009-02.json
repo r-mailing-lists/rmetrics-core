@@ -134,11 +134,14 @@
       "subject_clean": "problem with \"timeSeries\"",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl>",
+      "body_plain": "Dear Sir/Madam,\n\n \n\nI have an old R-code using R-metrics functions that worked quite well\nunder R2.7.\n\n \n\nHaving updated R to 2.8 and all packages as well, the same (!) code does\nnot work any more. The main problem that I have is that R keeps\ncomplaining that the timeSeries object does not contain any data which\nis not true. You will find one example below. Can you help? Thank you.\n\n \n\nYours truly,\n\n \n\nWing Lon Ng\n\n \n\n==================================\n\n \n\n# EXAMPLE\n\n# name of object is \"facret\"\n\n \n\n> class(facret)\n\n[1] \"timeSeries\"\n\nattr(,\"package\")\n\n[1] \"timeSeries\"\n\n> head(facret)\n\nGMT\n\n              US.PDD  US.DDMR  US.DDME  US.CSV2\n\n1990-01-31       NaN      NaN      NaN 0.025768\n\n1990-02-01 0.0087583 0.020413 0.029236 0.025945\n\n1990-02-02 0.0087583 0.020413 0.029236 0.025308\n\n1990-02-05 0.0087583 0.020413 0.029236 0.026434\n\n1990-02-06 0.0087583 0.020413 0.029236 0.026690\n\n1990-02-07 0.0087583 0.020413 0.029236 0.032022\n\n> plot(facret)\n\nError: no slot of name \"Data\" for this object of class \"timeSeries\"\n\nError in plot(x = as.POSIXct(x at positions), y = x at Data, ...) : \n\n  error in evaluating the argument 'y' in selecting a method for\nfunction 'plot'\n\n> plot(facret[2:10,])\n\nError: no slot of name \"Data\" for this object of class \"timeSeries\"\n\nError in plot(x = as.POSIXct(x at positions), y = x at Data, ...) : \n\n  error in evaluating the argument 'y' in selecting a method for\nfunction 'plot'\n\n \n\n----------------------------------------------------\n\nDr Wing Lon Ng\n\nCentre for Computational Finance and Economic Agents\n\nUniversity of Essex\n\nWivenhoe Park\n\nColchester CO4 3SQ\n\nEssex, UK\n\nTel: +44 (0)1206 87-4684\n\nFax: +44 (0)1206 87-4122\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir/Madam,\n\n \n\nI have an old R-code using R-metrics functions that worked quite well\nunder R2.7.\n\n \n\nHaving updated R to 2.8 and all packages as well, the same (!) code does\nnot work any more. Th",
       "thread_id": "thread-460133298f9a",
       "thread_depth": 0,
-      "month": "2009-02"
+      "month": "2009-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090213/737a702d/attachment.pl"
+      ]
     },
     {
       "id": "msg-25fdef0a3a26",
@@ -200,11 +203,14 @@
       "subject_clean": "yahooKeystats",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl>",
+      "body_plain": "Hi\n\nI am having problems wih this function. On my ubuntu 8.10/R 2.8.1/fImport\n290.75 system I get:\n\n> yahooKeystats(\"IBM\")\ntrying URL 'http://finance.yahoo.com/q/ks?s=IBM'\nContent type 'text/html; charset=utf-8' length unknown\nopened URL\n.......... .......... .......... ....\ndownloaded 34 Kb\n\nRead 145 items\nError in matrix(unlist(strsplit(x, \"@\")), byrow = TRUE, ncol = 2) :\n  attempt to set an attribute on NULL\n[1] \"No Internet Access\"\n>\n\nCan you help me out?\n\nRegards\nPer Jensen\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi\n\nI am having problems wih this function. On my ubuntu 8.10/R 2.8.1/fImport\n290.75 system I get:\n\n> yahooKeystats(\"IBM\")\ntrying URL 'http://finance.yahoo.com/q/ks?s=IBM'\nContent type 'text/html; cha",
       "thread_id": "thread-222e5df936d9",
       "thread_depth": 0,
-      "month": "2009-02"
+      "month": "2009-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090218/b3aa107a/attachment.pl"
+      ]
     }
   ],
   "threads": [

@@ -13,11 +13,14 @@
       "subject_clean": "fPortfolio package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100308/dad70126/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100308/dad70126/attachment.pl>",
+      "body_plain": "I have developed code that does full-scale optimization (http://papers.ssrn.com/sol3/papers.cfm?abstract_id=881813). I was wondering how I might work with someone in the project to integrate this code into the portfolio package \n\n\nthanks\n Elliot Noma\n646-932-7651\n\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I have developed code that does full-scale optimization (http://papers.ssrn.com/sol3/papers.cfm?abstract_id=881813). I was wondering how I might work with someone in the project to integrate this code",
       "thread_id": "thread-4e555e0cbc90",
       "thread_depth": 0,
-      "month": "2010-03"
+      "month": "2010-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100308/dad70126/attachment.pl"
+      ]
     },
     {
       "id": "msg-47a8e7f7af1a",
@@ -45,11 +48,14 @@
       "subject_clean": "bug report",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100317/963ccb52/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100317/963ccb52/attachment.pl>",
+      "body_plain": "This is a bug report for R package fGarch.  The implementation of the skew\nGED distribution has the following problems:\n# psged() can return values outside the range [0,1]\n# qsged() is not a monotonic increasing function of its first argument\n\nExamples:\n\n> # psged() can return values outside the range [0,1]\n>\n> x <- psged(c(-1,1)*233.065168689948, 0, 1, 1.78515737364379,\n1.4524444560568)\n> x\n[1] -7.140628e-17  1.000000e+00\n> x*(1-x) >= 0\n[1] FALSE FALSE\n> x[2]-1\n[1] 2.220446e-16\n\n\n> # qsged() is not a monotonic increasing function of its first argument\n>\n> qsged(c(0.4,0.5))\n[1] -0.3646051 -0.5941504\n\n\n> sessionInfo()\nR version 2.10.1 Patched (2010-02-06 r51106)\ni386-pc-mingw32\n\nlocale:\n[1] LC_COLLATE=English_United States.1252\n[2] LC_CTYPE=English_United States.1252\n[3] LC_MONETARY=English_United States.1252\n[4] LC_NUMERIC=C\n[5] LC_TIME=English_United States.1252\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base\n\nother attached packages:\n[1] fGarch_2110.80     fBasics_2110.79    MASS_7.3-5\n[4] timeSeries_2110.87 timeDate_2110.87\n\n\n\n\n\nJ. R. M. Hosking\nJRMH001 at gmail.com\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "This is a bug report for R package fGarch.  The implementation of the skew\nGED distribution has the following problems:\n# psged() can return values outside the range [0,1]\n# qsged() is not a monotonic",
       "thread_id": "thread-06a2e4a9817e",
       "thread_depth": 0,
-      "month": "2010-03"
+      "month": "2010-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100317/963ccb52/attachment.pl"
+      ]
     },
     {
       "id": "msg-be81527c9402",

@@ -63,11 +63,14 @@
       "subject_clean": "Parabolic cylinder function",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl>",
+      "body_plain": "Dear all,\n\nI need your advice since I am looking for an implementation of the parabolic\ncylinder function in R. I found implemantations of the hypergemetric\nfunctions (the Whittaker and the confluent hypogeometric functions) in the\npackage fAsianOptions but the parabolic cylinder function was unfortunately\nnot there. Do you know of such implementation?\n\nThank you very much for your advice.\n\nCheers,\nZoe\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear all,\n\nI need your advice since I am looking for an implementation of the parabolic\ncylinder function in R. I found implemantations of the hypergemetric\nfunctions (the Whittaker and the confluent ",
       "thread_id": "thread-622ffd800beb",
       "thread_depth": 0,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080822/6caf8077/attachment.pl"
+      ]
     },
     {
       "id": "msg-1ae76eb6fa4e",

@@ -29,11 +29,14 @@
       "subject_clean": "fGarch",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091105/a319d82b/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091105/a319d82b/attachment.pl>",
+      "body_plain": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp://www.reservebank.co.za/disclaimer\nShould you be unable to access the link provided, please send a\nblank e-mail to Disclaimer at resbank.co.za \n----------------------- *** Disclaimer *** -----------------------\n\n\nDear Rmetrics Core Team,\n\nI am about to undertake a project involving GARCH modeling and I was planning on using fGarch.\n\nDespite the maturity of the package, it does appear to lack two items which are of interest to me:\nExponential GARCH models\nAbility to fix the long term volatility (volatility targeting)\nWhile I am pretty sure that I could easily modify the existing code to allow me to implement point 2, I would imagine that 1 requires considerable effort.\n\nHas any work been done on implementing E-GARCH? If so, I do not want to duplicate another's efforts and I would be interested in knowing what the progress is on that front. If not, could you advise me on how I could implement it in the Rmetrics package (the coding guidelines on your wiki has not yet been written)? I am a relatively skilled R user, capable of writing my own custom functions, but my knowledge of FORTRAN is quite basic and I have no experience using C/C++.\n\nLet me just say that the coverage of implemented models is already large, and I fully understand that you cannot implement every single GARCH model. Despite lacking E-GARCH, I appreciate the effort that has gone into all of the Rmetrics packages and look forward to any and all future developments from your side.\n\nKind regards,\n\n\n\n\n\nStefan Janse van Rensburg\nMacroprudential Division\nFinancial Stability Department\nSARB\nTel : 012-313 4687\nFax : 012 313 4772\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp",
       "thread_id": "thread-e2a246354fb8",
       "thread_depth": 0,
-      "month": "2009-11"
+      "month": "2009-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20091105/a319d82b/attachment.pl"
+      ]
     },
     {
       "id": "msg-abeaa212f92f",

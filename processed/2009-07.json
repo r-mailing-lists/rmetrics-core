@@ -29,11 +29,14 @@
       "subject_clean": "fImport question",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl>",
+      "body_plain": "Hello and thank you for the fImport package!  It is a very useful package\nfor R.  I was wondering if you could answer a question.  When I download\nstock price data using the yahooSeries function, the \"dates\" are read in as\n\"row.names\".  Is there any way that I can change this so that the \"dates\"\nare a variable?  For example, I would like to be able to sort by \"date\", but\nI do not think that I can do this if the \"date\" is not a variable.  Thank\nyou very much.\n\nGeoffrey Smith\nVisiting Assistant Professor\nDepartment of Finance\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello and thank you for the fImport package!  It is a very useful package\nfor R.  I was wondering if you could answer a question.  When I download\nstock price data using the yahooSeries function, the ",
       "thread_id": "thread-f4206cbdf949",
       "thread_depth": 0,
-      "month": "2009-07"
+      "month": "2009-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20090712/b9f9c561/attachment.pl"
+      ]
     },
     {
       "id": "msg-d157f602273d",

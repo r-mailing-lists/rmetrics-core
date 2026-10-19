@@ -364,11 +364,14 @@
       "subject_clean": "ArfimaOxInterface",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071019/d2007e18/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071019/d2007e18/attachment.pl",
+      "body_plain": "Hello,\n\nI'm trying to use arfimaOxFit, but some files are missing. According  \nto the documentation for fArma\n\nInstallation of the Interface:\nIn addition you have to copy the files \"ArfimaOxFit.ox\" and  \n\"ArfimaOxPredict.ox\" (which is the\ninterface written especially for Rmetrics) from the \"fSeries/data/\"  \ndirectory to the Ox library direc-\ntory \"C:\\Ox\\Ox3\\lib\".\n\nI can't find those .ox files in any Rmetrics package (I only found  \nfGarch/ox/GarchOxModelling[30].ox).\n\nCan I find the arfima ox files somewhere, or is this interface  \ndiscontinued?\n\nThanks in advance,\n\nCarlos Ungil\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI'm trying to use arfimaOxFit, but some files are missing. According  \nto the documentation for fArma\n\nInstallation of the Interface:\nIn addition you have to copy the files \"ArfimaOxFit.ox\" an",
       "thread_id": "thread-2024162e93e6",
       "thread_depth": 0,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071019/d2007e18/attachment.pl"
+      ]
     },
     {
       "id": "msg-a7aa881f0c82",
@@ -380,11 +383,14 @@
       "subject_clean": "timeSequence problem with new version",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071028/30ea6e47/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071028/30ea6e47/attachment.pl",
+      "body_plain": "Hello, \n   \n  First of all thank you for all the good work. I have started using the package for my analysis on Eurodollar/Treasury futures high frequency data for my boss at the CME Chicago and like it very much. When I upgraded to 2.6.0 and the latest of fCalenadr, the timeSequence in my script failed because it does not accept  - (  by = \"-1 month\" ) as it used to.  seq.POSIXt still works for -ve multiple periods of days months etc. , but you have now given a vector of default parms for the \"by\" parm and seems it constrains the flexibility of seq.POSIXt. . Wish you put it back to what it was, otherwise I have to modify it for my purpose\n   \n  Thank You\n   \n  Sharad Honavar\n  773-456-0125\n  Chicago\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello, \n   \n  First of all thank you for all the good work. I have started using the package for my analysis on Eurodollar/Treasury futures high frequency data for my boss at the CME Chicago and like ",
       "thread_id": "thread-a7aa881f0c82",
       "thread_depth": 0,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071028/30ea6e47/attachment.pl"
+      ]
     },
     {
       "id": "msg-a0613422612e",
@@ -396,11 +402,14 @@
       "subject_clean": "outliers in time series",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071031/5de1aacb/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071031/5de1aacb/attachment.pl",
+      "body_plain": "Dear Prof.Wuertz,\n \nIs there any package-module to find outliers in time series analysis? \nKind Regards\nOzlem Yorulmaz\n_________________________________________________________________\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Prof.Wuertz,\n \nIs there any package-module to find outliers in time series analysis? \nKind Regards\nOzlem Yorulmaz\n_________________________________________________________________\n\n\n\t[[alternativ",
       "thread_id": "thread-a0613422612e",
       "thread_depth": 0,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20071031/5de1aacb/attachment.pl"
+      ]
     },
     {
       "id": "msg-fa203dc4c7fa",

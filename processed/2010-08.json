@@ -113,11 +113,14 @@
       "subject_clean": "fPortfolioBacktest",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100820/a0a60f17/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100820/a0a60f17/attachment.pl>",
+      "body_plain": "Hello\n\nI have bought and read the ebook Port Optimization with R Metrics and I have \nsome questions:\n\n1) Where could I send a list of corrections I found (in the book or in the \nprograms)?\n\n2) Where can I find the library fPortfolioBacktesting described in part IV? (it \nis not available on Cran or Rmetrics)\n\n3) When do you plan to make the next ebook \"Advanced Portfolio Optim\" available?\n\nThanks in advance\nKind regards\n\nSébastien Dirren\n\n\n      \n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello\n\nI have bought and read the ebook Port Optimization with R Metrics and I have \nsome questions:\n\n1) Where could I send a list of corrections I found (in the book or in the \nprograms)?\n\n2) Where c",
       "thread_id": "thread-95d5eda927ba",
       "thread_depth": 0,
-      "month": "2010-08"
+      "month": "2010-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100820/a0a60f17/attachment.pl"
+      ]
     },
     {
       "id": "msg-eebb728e6022",
@@ -163,11 +166,14 @@
       "subject_clean": "ox interface in R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100826/1d5bf776/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100826/1d5bf776/attachment.pl>",
+      "body_plain": "Dear Sir:\n\nI need information on how to use ox interface in R, especially in fGARCH\npackage. Thanks for your help.\n\nBest regards,\n\nShyh-Weir Tzang\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Sir:\n\nI need information on how to use ox interface in R, especially in fGARCH\npackage. Thanks for your help.\n\nBest regards,\n\nShyh-Weir Tzang\n\n\t[[alternative HTML version deleted]]",
       "thread_id": "thread-a9e9952d996f",
       "thread_depth": 0,
-      "month": "2010-08"
+      "month": "2010-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20100826/1d5bf776/attachment.pl"
+      ]
     },
     {
       "id": "msg-2f748d02552f",

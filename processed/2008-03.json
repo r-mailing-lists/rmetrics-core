@@ -35,11 +35,14 @@
         "<loom.20080212T162838-798@post.gmane.org>",
         "<20080214161431.5570342f@yankee-laptop>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080302/954f0d87/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080302/954f0d87/attachment.pl",
+      "body_plain": "Yohan,\n\nI have been updating the multiassetoptions for the 2nd edition of Haug.  \nWould you review the spreadapproximation in fExoticOptions?  According \nto the formula on page 59 of Haug(1997) there should be a exp(-rt) in \nthe formula.\n\nSpreadApproximation = GBSOption(TypeFlag, FF, 1, Time, r,\n        0, sigma)@price * (F2 + X)\n\nThis should be\nSpreadApproximation = GBSOption(TypeFlag, FF, 1, Time, r,\n        0, sigma)@price * (F2 + X) * exp(-r *T)\n\nThank you\nJoe\n\n\nYohan Chalabi wrote:\n>>>>> \"JB\" == Joe Byers <ecjbosu at aol.com>\n>>>>> on Tue, 12 Feb 2008 16:29:55 +0000 (UTC)\n>>>>>           \n>\n>    JB> I am working on adding Haug's Multiasset greeks to the fExotics\n>    JB> package.\n>    JB> Are you interested in adding these?\n>\n> New contribution to any Rmetics package is always very welcome!\n>\n> Do not hesitate to directly contact me or send your\n> suggestion/contribution to the Rmetrics core team mailing list. \n> (Rmetrics-core at r-project.org)\n>\n> Thanks in advance for your contribution,\n> Yohan\n>   \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Yohan,\n\nI have been updating the multiassetoptions for the 2nd edition of Haug.  \nWould you review the spreadapproximation in fExoticOptions?  According \nto the formula on page 59 of Haug(1997) there ",
       "thread_id": "thread-ce0f46f30a82",
       "thread_depth": 0,
-      "month": "2008-03"
+      "month": "2008-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20080302/954f0d87/attachment.pl"
+      ]
     },
     {
       "id": "msg-83343fdc9803",

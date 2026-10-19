@@ -13,11 +13,14 @@
       "subject_clean": "TimeSeries align odd behavior",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl>",
+      "body_plain": "Dear Rmetrics-core team,\nI have a question about a strange behavior of timeSeries align function.\n\nFor example, consider the following timeSeries:\n> TS <- timeSeries(c(1,NA,3,4),\n                   charvec=c('2010-01-01','2010-01-02','2010-01-03','2010-01-05'),\n                   format='%Y-%m-%d', zone='GMT', units='V')\n\n> TS\nGMT\n            V\n2010-01-01  1\n2010-01-02 NA\n2010-01-03  3\n2010-01-05  4\n\nIf we call the function align, with method='fillNA':\n> align(TS,by='day',include.weekends=T,method='fillNA')\nwe get the following result:\n> GMT\n            V\n2010-01-01  1\n2010-01-02  2\n2010-01-03  3\n2010-01-04 NA\n2010-01-05  4\n\nSo, basically the NA in the original timeSeries is interpolated and then the missing day is correctly added by setting the value to NA.\nThat doesn't seem correct to me, since only the missing days of the timeSeries should be filled with NA, while the other values should remain unchanged (in particular in case of fillNA method).\n\nLooking at the code, it appears clear what happens: when the method is fillNA, an approxfun with method \"linear\" is applied. Then to replace the interpolated values with NA the following code is performed:\nif (Method == \"fillNA\")\n      yout[!(xout %in% u)] = NA\nbut obviously this code will put NA only in the missing dates added to the original ts and not to ALL the interpolated values.\n\nIs this the desired behavior?\nIf so, in my opinion should be clearly specified in the align documentation.\n\n\nThanks in advance for any answer and thanks a lot for your work on this great package.\n\nRegards,\nMarco Giuliano\n\n\n\n\n________________________________\n\nORS Srl\n\nVia Agostino Morando 1/3 12060 Roddi (Cn) - Italy\nTel. +39 0173 620211\nFax. +39 0173 620299 / +39 0173 433111\nWeb Site www.ors.it\n\n------------------------------------------------------------------------------------------------------------------------\nQualsiasi utilizzo non autorizzato del presente messaggio e dei suoi allegati ? vietato e potrebbe costituire reato.\nSe lei avesse ricevuto erroneamente questo messaggio, Le saremmo grati se provvedesse alla distruzione dello stesso\ne degli eventuali allegati.\nOpinioni, conclusioni o altre informazioni riportate nella e-mail, che non siano relative alle attivit? e/o\nalla missione aziendale di O.R.S. Srl si intendono non attribuibili alla societ? stessa, n? la impegnano in alcun modo.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Rmetrics-core team,\nI have a question about a strange behavior of timeSeries align function.\n\nFor example, consider the following timeSeries:\n> TS <- timeSeries(c(1,NA,3,4),\n                   ch",
       "thread_id": "thread-e167ca4065f9",
       "thread_depth": 0,
-      "month": "2012-10"
+      "month": "2012-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121002/2b1171f5/attachment.pl"
+      ]
     },
     {
       "id": "msg-b228895a4caa",
@@ -29,11 +32,14 @@
       "subject_clean": "Loss function in mean cvar optimization",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl>",
+      "body_plain": "Hi,\n\nIn a mean cvar optimization, the loss function is one of the parameters to\nbe specified. In the rmetrics implementation of the efficientPortfolio\nfunction, could you please clarify what is the loss function that is used\nin the implementation and how is one able to specify the loss function?\nThank you.\n\nGQ\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nIn a mean cvar optimization, the loss function is one of the parameters to\nbe specified. In the rmetrics implementation of the efficientPortfolio\nfunction, could you please clarify what is the lo",
       "thread_id": "thread-b228895a4caa",
       "thread_depth": 0,
-      "month": "2012-10"
+      "month": "2012-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121005/2c18640a/attachment.pl"
+      ]
     },
     {
       "id": "msg-cc436fbc0f2e",
@@ -45,11 +51,14 @@
       "subject_clean": "Community & educational development",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl>",
+      "body_plain": "PRESS RELEASE\n\nThe American Grants and Loans Catalog is now available. Our new and revised\n2012 edition contains more than 2800 financial programs, subsidies, scholarships,\ngrants and loans offered by the US federal government.\n\nIn addition you will also have access to over 2400 programs funded by private\ncorporations and foundations. That is over 5200 programs available through\nvarious sources of financial providing organizations.\n\nNEW: You will also have access to our live Database that is updated on a daily\nbasis. This product also provides daily email alerts as programs are announced.\n\nThe Database is also available with IP recognition. This allows you to login\nwithout a username or password (Great for libraries or educational institutions\nwho want their users to access the database).\n\nBusinesses, students, researchers, scientists, teachers, doctors, private individuals,\nmunicipalities, government departments, educational institutions, law enforcement\nagencies, nonprofits, foundations and associations will find a wealth of information\nthat will help them with their new ventures or existing projects.\n\nThe document is a fully searchable PDF file for easy access to your particular\nneeds and interests. Simply enter your keywords to search through the publication.\n\nIt is the perfect tool for libraries and educational institutions to use as a\nreference guide for students who require funds to pursue their education.\n\n\nContents of the Directory:\n\n-Web link to program announcement page\n-Web link to Federal agency or foundation administering the program\n-Authorization upon which a program is based\n-Objectives and goals of the program\n-Types of financial assistance offered under a program\n-Uses and restrictions placed upon a program\n-Eligibility requirements\n-Application and award process\n-Regulations, guidelines and literature relevant to a program\n-Information contacts at the headquarters, regional, and local offices\n-Programs that are related based upon program objectives and uses\n\n\nPrograms in the Catalog provide a wide range of benefits and services\nfor categories such as:\n\nAgriculture\nBusiness and Commerce\nCommunity Development\nConsumer Protection\nCultural Affairs\nDisaster Prevention and Relief\nEducation\nEmployment, Labor and Training\nEnergy\nEnvironmental Quality\nFood and Nutrition\nHealth\nHousing\nIncome Security and Social Services\nInformation and Statistics\nLaw, Justice, and Legal Services\nNatural Resources\nRegional Development\nScience and Technology\nTransportation\n\n\nCD version: $69.95\nPrinted version: $149.95\n\nTo order please call: 1 (888) 341-8645\n\n\nPlease do not reply to the sender's email address as this address is only for outgoing mail.\n\nIf you do not wish to receive information from us in the future please reply here:\nrem217 at mail.com\n\nThis is a CANSPAM ACT compliant advertising broadcast sent by:\nAmerican Publishing Inc. , 7025 County Rd. 46A, Suite 1071, Lake Mary, FL, 32746-4753\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "PRESS RELEASE\n\nThe American Grants and Loans Catalog is now available. Our new and revised\n2012 edition contains more than 2800 financial programs, subsidies, scholarships,\ngrants and loans offered by",
       "thread_id": "thread-cc436fbc0f2e",
       "thread_depth": 0,
-      "month": "2012-10"
+      "month": "2012-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/rmetrics-core/attachments/20121009/cb3e9254/attachment.pl"
+      ]
     },
     {
       "id": "msg-fdc4ccdd2664",
